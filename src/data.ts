@@ -223,7 +223,7 @@ Source: Channel 12`,
       titleEn: 'Foreign Intelligence Desk',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
     date: '2026-06-29',
     readTimeAr: '5 دقائق قراءة',
     readTimeEn: '5 min read',
@@ -2203,7 +2203,7 @@ The official warned: 'Sustaining an occupation of any part of Lebanon is a recip
       titleAr: 'مكتب الأمن القومي الاستخباري واشنطن',
       titleEn: 'National Security Desk, Washington'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&q=80&w=600',
     date: '19 يونيو 2026',
     readTimeAr: '4 دقائق قراءة',
     readTimeEn: '4 min read',
@@ -2762,7 +2762,7 @@ Following emergency ministerial orders, Lebanon incorporated satellite relays to
       titleAr: 'محلل مالي أول',
       titleEn: 'Senior Financial Analyst'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=600',
     date: '17 يونيو 2026',
     readTimeAr: '6 دقائق',
     readTimeEn: '6 min read',
@@ -2783,7 +2783,7 @@ Following emergency ministerial orders, Lebanon incorporated satellite relays to
       titleAr: 'المنسق الإقليمي لجريدة الوراق',
       titleEn: 'Regional Al-Warraq Coordinator'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600',
     date: '16 يونيو 2026',
     readTimeAr: '3 دقائق',
     readTimeEn: '3 min read',
