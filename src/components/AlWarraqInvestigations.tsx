@@ -32,7 +32,15 @@ import {
   Lock,
   Unlock,
   Sliders,
-  Sparkle
+  Sparkle,
+  Share2,
+  Send,
+  Check,
+  Link,
+  Download,
+  Facebook,
+  Twitter,
+  Linkedin
 } from 'lucide-react';
 import { Article } from '../types';
 
@@ -44,6 +52,50 @@ import { FifaPolymarketInfographic } from './FifaPolymarketInfographic';
 import AliAlTaherMap from './AliAlTaherMap';
 import LebanonConflictMap from './LebanonConflictMap';
 import LebanonAMLVisualizer from './LebanonAMLVisualizer';
+import { CeasefireInternalConflictInfographic } from './CeasefireInternalConflictInfographic';
+import { EconomicAbyssCrisisInfographic } from './EconomicAbyssCrisisInfographic';
+
+const DOSSIER_DESKTOP_META: Record<string, {
+  fileId: string;
+  badge: string;
+  titleAr: string;
+  titleEn: string;
+  descAr: string;
+  descEn: string;
+}> = {
+  'lebanon-framework-agreement-analysis-2026': {
+    fileId: 'AW-FILE-01',
+    badge: 'TOP SECRET',
+    titleAr: 'الملف الأول: غاز قانا والحدود الجنوبية (٢٠٢٦)',
+    titleEn: 'Dossier I: Maritime Gas Boundaries & South Border Realities',
+    descAr: 'تحليل لنتائج حفر بئر قانا المخيبة، ومخاطر الصراع العسكري على جغرافيا البلوكات الجنوبية وترسيم الحدود.',
+    descEn: 'TotalEnergies exploration drilling results, regional security risks, and oil/gas block maps.'
+  },
+  'solidere-extension-2069': {
+    fileId: 'AW-FILE-02',
+    badge: 'SOVEREIGN CORP',
+    titleAr: 'الملف الثاني: تمديد مرسوم سوليدير لعام ٢٠٦٩ وصراع الأسهم',
+    titleEn: 'Dossier II: Corporate Solidere Extension 2069 & Boardroom Battles',
+    descAr: 'كواليس تمديد الامتياز العقاري حتى عام ٢٠٦٩ وصراعات الحرس القديم والجديد للاستحواذ على وسط بيروت.',
+    descEn: 'The backstage of real estate extension decrees, Beirut stock peaks, and boardroom takeover bids.'
+  },
+  'lebanon-ceasefire-mirage-2026': {
+    fileId: 'AW-FILE-03',
+    badge: 'CIVIL SECURITY',
+    titleAr: 'الملف الثالث: سراب وقف إطلاق النار في لبنان وشبح الصراع الداخلي الذي يلوح في الأفق',
+    titleEn: 'Dossier III: Ceasefire Mirage & Looming Internal Conflict',
+    descAr: 'تحليل للمشهد اللبناني المعقد بعد نزوح أكثر من مليون مدني وتفجر خلافات جوهرية بين الحكومة وحزب الله.',
+    descEn: 'An intensive study of the deep friction between the Lebanese Cabinet and Hezbollah on disarmament demands.'
+  },
+  'lebanon-economic-abyss-2026': {
+    fileId: 'AW-FILE-04',
+    badge: 'ECONOMIC REPORT',
+    titleAr: 'الملف الرابع: الهاوية الاقتصادية: الأنقاض، واللاجئون، ونظام مالي مشلول',
+    titleEn: 'Dossier IV: The Economic Abyss: Rubble, Refugees, and a Crippled Financial System',
+    descAr: 'تشريح للأضرار الهيكلية، وأزمة النازحين الحادة بالبلاد، والعجز الصاعق المقدر بنحو ١١ مليار دولار.',
+    descEn: 'A detailed examination of the material damages, severe displacement crisis, and the $11 Billion rebuild gap.'
+  }
+};
 
 interface AlWarraqInvestigationsProps {
   language: 'ar' | 'en';
@@ -64,13 +116,24 @@ export default function AlWarraqInvestigations({
   // Text-To-Speech Narration States
   const [isPlayingContent, setIsPlayingContent] = useState(false);
   const [speechRate, setSpeechRate] = useState<number>(1.0);
+  const [copiedLink, setCopiedLink] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Filter to keep only the two main investigations
+  const handleCopyLink = () => {
+    const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 2000);
+    });
+  };
+
+  // Filter to keep only the main investigations
   const investigativeArticles = allArticles.filter(article => {
     return (
       article.id === 'lebanon-framework-agreement-analysis-2026' ||
-      article.id === 'solidere-extension-2069'
+      article.id === 'solidere-extension-2069' ||
+      article.id === 'lebanon-ceasefire-mirage-2026' ||
+      article.id === 'lebanon-economic-abyss-2026'
     );
   });
 
@@ -98,12 +161,6 @@ export default function AlWarraqInvestigations({
       displayAr: `${minutesAr} دقائق قراءة (${wordsAr.toLocaleString()} كلمة)`
     };
   };
-
-  const dossier1 = investigativeArticles.find(a => a.id === 'lebanon-framework-agreement-analysis-2026');
-  const d1Estimate = dossier1 ? getReadTimeEstimate(dossier1) : null;
-
-  const dossier2 = investigativeArticles.find(a => a.id === 'solidere-extension-2069');
-  const d2Estimate = dossier2 ? getReadTimeEstimate(dossier2) : null;
 
 
   // Cancel speech synthesis on unmount or on active dossier change to prevent overlapping audio
@@ -287,83 +344,52 @@ export default function AlWarraqInvestigations({
 
       {/* DOSSIER SELECTOR TABS - Vintage design, full width */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-        <button
-          onClick={() => {
-            setSelectedDossierId('lebanon-framework-agreement-analysis-2026');
-            if (scrollContainerRef.current) {
-              scrollContainerRef.current.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-          className={`p-5 text-right rtl:text-right ltr:text-left transition-all duration-200 cursor-pointer select-none rounded ${
-            selectedDossierId === 'lebanon-framework-agreement-analysis-2026'
-              ? 'bg-amber-50/70 text-red-950 font-bold shadow-sm'
-              : 'bg-stone-50 hover:bg-stone-100 text-zinc-850'
-          }`}
-        >
-          <div className="flex items-center gap-2 mb-2 justify-between border-b border-zinc-200 pb-2">
-            <span className={`px-2 py-0.5 text-[9px] font-mono font-black uppercase ${
-              selectedDossierId === 'lebanon-framework-agreement-analysis-2026' ? 'text-red-800 bg-red-100/40 font-bold' : 'text-zinc-500 bg-zinc-200/50'
-            }`}>
-              📁 AW-FILE-01
-            </span>
-            <span className="font-mono text-[9px] text-red-800 font-bold tracking-widest">TOP SECRET</span>
-          </div>
-          <h3 className={`text-sm md:text-base font-black font-sans leading-tight transition-colors ${
-            selectedDossierId === 'lebanon-framework-agreement-analysis-2026' ? 'text-red-900 font-extrabold' : 'text-zinc-950'
-          }`}>
-            {isAr ? 'الملف الأول: غاز قانا والحدود الجنوبية (٢٠٢٦)' : 'Dossier I: Maritime Gas Boundaries & South Border Realities'}
-          </h3>
-          <p className="font-serif text-xs text-zinc-600 mt-2 line-clamp-2 leading-relaxed">
-            {isAr 
-              ? 'تحليل لنتائج حفر بئر قانا المخيبة، ومخاطر الصراع العسكري على جغرافيا البلوكات الجنوبية وترسيم الحدود.' 
-              : 'TotalEnergies exploration drilling results, regional security risks, and oil/gas block maps.'}
-          </p>
-          {d1Estimate && (
-            <div className="flex items-center gap-1.5 mt-3 text-[11px] font-mono font-bold text-[#b91c1c] border-t border-dashed border-zinc-200 pt-2.5">
-              <Clock size={11} className="shrink-0 animate-pulse text-[#b91c1c]" />
-              <span>{isAr ? d1Estimate.displayAr : d1Estimate.displayEn}</span>
-            </div>
-          )}
-        </button>
-
-        <button
-          onClick={() => {
-            setSelectedDossierId('solidere-extension-2069');
-            if (scrollContainerRef.current) {
-              scrollContainerRef.current.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-          className={`p-5 text-right rtl:text-right ltr:text-left transition-all duration-200 cursor-pointer select-none rounded ${
-            selectedDossierId === 'solidere-extension-2069'
-              ? 'bg-amber-50/70 text-red-950 font-bold shadow-sm'
-              : 'bg-stone-50 hover:bg-stone-100 text-zinc-850'
-          }`}
-        >
-          <div className="flex items-center gap-2 mb-2 justify-between border-b border-zinc-200 pb-2">
-            <span className={`px-2 py-0.5 text-[9px] font-mono font-black uppercase ${
-              selectedDossierId === 'solidere-extension-2069' ? 'text-red-800 bg-red-100/40 font-bold' : 'text-zinc-500 bg-zinc-200/50'
-            }`}>
-              📁 AW-FILE-02
-            </span>
-            <span className="font-mono text-[9px] text-red-800 font-bold tracking-widest">SOVEREIGN CORP</span>
-          </div>
-          <h3 className={`text-sm md:text-base font-black font-sans leading-tight transition-colors ${
-            selectedDossierId === 'solidere-extension-2069' ? 'text-red-900 font-extrabold' : 'text-zinc-950'
-          }`}>
-            {isAr ? 'الملف الثاني: تمديد مرسوم سوليدير لعام ٢٠٦٩ وصراع الأسهم' : 'Dossier II: Corporate Solidere Extension 2069 & Boardroom Battles'}
-          </h3>
-          <p className="font-serif text-xs text-zinc-600 mt-2 line-clamp-2 leading-relaxed">
-            {isAr 
-              ? 'كواليس تمديد الامتياز العقاري حتى عام ٢٠٦٩ وصراعات الحرس القديم والجديد للاستحواذ على وسط بيروت.' 
-              : 'The backstage of real estate extension decrees, Beirut stock peaks, and boardroom takeover bids.'}
-          </p>
-          {d2Estimate && (
-            <div className="flex items-center gap-1.5 mt-3 text-[11px] font-mono font-bold text-[#b91c1c] border-t border-dashed border-zinc-200 pt-2.5">
-              <Clock size={11} className="shrink-0 animate-pulse text-[#b91c1c]" />
-              <span>{isAr ? d2Estimate.displayAr : d2Estimate.displayEn}</span>
-            </div>
-          )}
-        </button>
+        {investigativeArticles.map((article) => {
+          const meta = DOSSIER_DESKTOP_META[article.id];
+          const isSelected = selectedDossierId === article.id;
+          const estimate = getReadTimeEstimate(article);
+          if (!meta) return null;
+          
+          return (
+            <button
+              key={article.id}
+              onClick={() => {
+                setSelectedDossierId(article.id);
+                if (scrollContainerRef.current) {
+                  scrollContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className={`p-5 text-right rtl:text-right ltr:text-left transition-all duration-200 cursor-pointer select-none rounded ${
+                isSelected
+                  ? 'bg-amber-50/70 text-red-950 font-bold shadow-sm ring-1 ring-amber-200'
+                  : 'bg-stone-50 hover:bg-stone-100 text-zinc-850'
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-2 justify-between border-b border-zinc-200 pb-2">
+                <span className={`px-2 py-0.5 text-[9px] font-mono font-black uppercase ${
+                  isSelected ? 'text-red-800 bg-red-100/40 font-bold' : 'text-zinc-500 bg-zinc-200/50'
+                }`}>
+                  📁 {meta.fileId}
+                </span>
+                <span className="font-mono text-[9px] text-red-800 font-bold tracking-widest uppercase">{meta.badge}</span>
+              </div>
+              <h3 className={`text-sm md:text-base font-black font-sans leading-tight transition-colors ${
+                isSelected ? 'text-red-900 font-extrabold' : 'text-zinc-950'
+              }`}>
+                {isAr ? meta.titleAr : meta.titleEn}
+              </h3>
+              <p className="font-serif text-xs text-zinc-600 mt-2 line-clamp-2 leading-relaxed">
+                {isAr ? meta.descAr : meta.descEn}
+              </p>
+              {estimate && (
+                <div className="flex items-center gap-1.5 mt-3 text-[11px] font-mono font-bold text-[#b91c1c] border-t border-dashed border-zinc-200 pt-2.5">
+                  <Clock size={11} className="shrink-0 animate-pulse text-[#b91c1c]" />
+                  <span>{isAr ? estimate.displayAr : estimate.displayEn}</span>
+                </div>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       {/* FULL-WIDTH IMMERSIVE PHYSICAL DOCUMENT VAULT */}
@@ -579,6 +605,30 @@ export default function AlWarraqInvestigations({
                       </div>
                       <LebanonAMLVisualizer language={language} layoutMode="digital" />
                     </div>
+                  ) : activeDossier.id === 'lebanon-ceasefire-mirage-2026' ? (
+                    <div className="p-4 bg-zinc-950 relative overflow-hidden rounded-md shadow-sm border border-zinc-800">
+                      <span className="bg-red-800 text-white text-[8px] font-mono font-black px-2 py-0.5 absolute top-0 right-0 uppercase tracking-widest">
+                        {isAr ? 'وثيقة مدمجة أ' : 'EXHIBIT A'}
+                      </span>
+                      <div className="pt-2 mb-3">
+                        <h4 className="text-xs font-mono font-bold text-zinc-400 uppercase">
+                          {isAr ? '✦ المخطط التفاعلي لمؤشرات توتر ومخاطر الفتنة اللبنانية' : '✦ Interactive Tension Indicators & Lebanese Civil Strife Map'}
+                        </h4>
+                      </div>
+                      <CeasefireInternalConflictInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'lebanon-economic-abyss-2026' ? (
+                    <div className="p-4 bg-zinc-950 relative overflow-hidden rounded-md shadow-sm border border-zinc-800">
+                      <span className="bg-red-800 text-white text-[8px] font-mono font-black px-2 py-0.5 absolute top-0 right-0 uppercase tracking-widest">
+                        {isAr ? 'وثيقة مدمجة أ' : 'EXHIBIT A'}
+                      </span>
+                      <div className="pt-2 mb-3">
+                        <h4 className="text-xs font-mono font-bold text-zinc-400 uppercase">
+                          {isAr ? '✦ حاسبة العجز التمويلي وتقدير فجوات ميزانية الإعمار' : '✦ Reconstruction Gap Calculator & Emergency Ledger'}
+                        </h4>
+                      </div>
+                      <EconomicAbyssCrisisInfographic language={language} />
+                    </div>
                   ) : (
                     <div className="relative overflow-hidden rounded-md">
                       <img 
@@ -629,6 +679,89 @@ export default function AlWarraqInvestigations({
                     </div>
                   </div>
                 )}
+
+                {/* SOVEREIGN DISPATCH SHARE & PDF DOWNLOAD PANEL */}
+                <div className="border-t-2 border-black mt-8 pt-6 select-none print:hidden">
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+                    <div className="flex items-center gap-2">
+                      <Share2 size={14} className="text-red-800 shrink-0 animate-pulse" />
+                      <span className="font-mono text-[10px] font-black uppercase text-zinc-800 tracking-wider">
+                        {isAr ? 'منظومة بث ونشر الوثيقة السيادية' : 'SOVEREIGN DISPATCH TRANSMISSION'}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2 justify-start md:justify-end">
+                      {/* Twitter / X */}
+                      <a
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(isAr ? activeDossier.titleAr : activeDossier.titleEn)}&url=${encodeURIComponent(`${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-black hover:bg-zinc-850 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
+                        title={isAr ? 'مشاركة عبر إكس' : 'Share on X / Twitter'}
+                      >
+                        <Twitter size={10} />
+                        <span>X / TWITTER</span>
+                      </a>
+
+                      {/* Facebook */}
+                      <a
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-sky-900 hover:bg-sky-950 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
+                        title={isAr ? 'مشاركة عبر فيسبوك' : 'Share on Facebook'}
+                      >
+                        <Facebook size={10} />
+                        <span>FACEBOOK</span>
+                      </a>
+
+                      {/* LinkedIn */}
+                      <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-zinc-850 hover:bg-black text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
+                        title={isAr ? 'مشاركة عبر لينكد إن' : 'Share on LinkedIn'}
+                      >
+                        <Linkedin size={10} />
+                        <span>LINKEDIN</span>
+                      </a>
+
+                      {/* WhatsApp */}
+                      <a
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'هذا مستند استقصائي مفرج عنه من الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? activeDossier.titleAr : activeDossier.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
+                        title={isAr ? 'إرسال عبر واتساب' : 'Share on WhatsApp'}
+                      >
+                        <Send size={10} />
+                        <span>WHATSAPP</span>
+                      </a>
+
+                      {/* Copy Link */}
+                      <button
+                        onClick={handleCopyLink}
+                        className={`flex items-center gap-1 px-2.5 py-1.5 border border-black rounded-none text-[10px] font-mono font-bold uppercase transition-all cursor-pointer ${
+                          copiedLink ? 'bg-emerald-50 text-emerald-700 border-emerald-500' : 'bg-white text-black hover:bg-zinc-100'
+                        }`}
+                      >
+                        {copiedLink ? <Check size={10} /> : <Link size={10} />}
+                        <span>{copiedLink ? (isAr ? 'تم النسخ!' : 'COPIED!') : (isAr ? 'نسخ الرابط' : 'COPY LINK')}</span>
+                      </button>
+
+                      {/* PDF Download */}
+                      <button
+                        onClick={() => window.print()}
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-red-900 hover:bg-red-950 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors cursor-pointer border border-red-950"
+                        title={isAr ? 'تحميل كملف PDF رسمي' : 'Download official PDF'}
+                      >
+                        <Download size={10} />
+                        <span>{isAr ? 'تحميل كـ PDF' : 'DOWNLOAD PDF'}</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* DOSSIER FOOTER - DOCUMENT VALIDATION SEAL */}

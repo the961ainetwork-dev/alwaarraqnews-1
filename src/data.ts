@@ -27,6 +27,417 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 
 export const INITIAL_ARTICLES: Article[] = [
   {
+    id: 'ch12-hebrew-jd-vance-criticism-2026',
+    category: 'translations',
+    categories: ['translations', 'middle-east', 'us-politics'],
+    titleAr: '"أمي مدمنة وفقر مدقع".. صحيفة عبرية تشن هجوما حادا على نائب الرئيس الأمريكي',
+    titleEn: '"An Addicted Mother and Extreme Poverty": Hebrew Outlet Launches Sharp Attack on US Vice President JD Vance',
+    summaryAr: 'شنت "القناة 12" العبرية هجوما حادا على جي دي فانس نائب الرئيس الأمريكي دونالد ترامب، واصفة نشأته بالفقر المدقع، ومفصلة مواقفه المترددة ومزاعم تسريباته لخطط الموساد التي تثير قلقاً عميقاً في أوساط صناع القرار الإسرائيليين.',
+    summaryEn: 'Israel\'s Channel 12 launches a biting critique of US Vice President JD Vance, exploring his impoverished Appalachian upbringing, shifting political alignments, and rising concerns in Jerusalem over his "America First" foreign policy stance.',
+    excerptAr: 'هجوم حاد من القناة 12 العبرية على جي دي فانس نائب الرئيس الأمريكي تزامناً مع مفاوضات سويسرا وتلميحات تسريب خطط الموساد.',
+    excerptEn: 'Hebrew Channel 12 launches a biting critique of US Vice President JD Vance, highlighting rising tensions over his foreign policy views and alleged intelligence leaks.',
+    contentAr: `*تقرير استقصائي ومترجم حصرياً لصالح منصة الورّاق عن القناة العبرية الثانية عشرة (N12)*
+*الإثنين، ٢٩ يونيو / حزيران ٢٠٢٦*
+
+شنت "القناة 12" العبرية هجوما حادا على جي دي فانس نائب الرئيس الأمريكي دونالد ترامب.
+
+وفي مقدمة المقال المطول تقول القناة: "نشأ جي دي فانس في فقر مدقع في أوهايو برعاية أم مدمنة على المخدرات وجدة لديها 19 مسدسا محشوا في المنزل.. فانس الذي وصف دونالد ترامب بأنه "هتلر أمريكا" أصبح خليفته المفترض ونائبه الحالي.. يقود نهجا يُقصي إسرائيل عن المشهد.. من الكتاب الذي تحول إلى فيلم على نتفليكس إلى الشكوك حول تسريبه بعض خطط الموساد إلى أردوغان.. لمحة عن الرجل الذي قد يشغل البيت الأبيض عام 2028".
+
+وتضيف القناة العبرية، إن جي دي فانس نائب رئيس الولايات المتحدة حظي أخيرا بالظهور على الساحة الدولية وذلك في سويسرا وسط مناظر طبيعية خلابة تناقض تماما الدراما التي تتكشف في قاعات الاجتماعات وبعد مفاوضات شاقة مع الإيرانيين، في اللحظة التي قررت فيها أمريكا طي صفحة الشرق الأوسط القديم.
+
+وفي نظر الكثيرين حول العالم، كان هذا الظهور الأول لقائد شاب فصيح وطموح، لكن هنا في القدس حقيقة أخرى، اكتشف الإسرائيليون أن جي دي فانس الرجل الذي يطمح لرئاسة الولايات المتحدة، ليس في صفهم حقا.
+
+فانس الواقف أمام العالم أجمع يبدو كالرئيس المنصب الذي يطمح إليه، إنه مُهدّد، حاد الذكاء ولا يتردد في استخدام ما يطلق عليه السياسيون "أساليب المافيا في إدارة ترامب".
+
+والآن، طالت هذه الأساليب إسرائيل، فانس سياسي بارع، طموحاته لا تنتهي عند حد منصب نائب الرئيس، أحد أهم ما يقدمه الآن للشعب الأمريكي بسيط ومرعب في آن واحد: "لقد انتهى الأمر مع إسرائيل".
+
+### طفولة صعبة تم تحويلها إلى فيلم على نتفليكس
+
+لفهم كيف وصل جي دي فانس إلى مكانة الرجل الأقوى في المكان، لا بد من العودة إلى جبال الأبلاش في أوهايو.
+
+في أمريكا كما هو الحال في أي مكان آخر، يعشق الجمهور قصص سندريلا، وفانس بالتأكيد واحد منهم.
+
+تبدو قصة حياته التي تحولت إلى كتاب حقق أعلى المبيعات ("يوميات الأبلاش") وحتى فيلم عرض على نتفليكس، وكأنها مأخوذة من أحلك عوالم الخيال.
+
+نشأ فانس في فقر مدقع، لكن قلة المال لم تكن مشكلته الأكبر، كانت والدته مدمنة على المخدرات والكحول، وكانت تغير شركاءها وتيرة سريعة، أما والده فكان غائبا تماما عن حياته.
+
+لقد نشأ وسط أقسى ظروف الطبقة العاملة الأمريكية حيث اليأس والعنف وتعاطي المواد الأفيونية بكثرة.
+
+نشأ في كنف جدته وهي امرأة قوية لم تتخل عنه لحظة، لكنها كانت بدورها شخصية صعبة المراس.
+
+قال فانس إنه بعد وفاتها اكتشف ما لا يقل عن 19 مسدسا ملقّما في أماكن متفرقة من منزلها، تحسبا لأي طارئ.
+
+هذه هي البيئة التي شكلت نظرته للعالم: عالم البقاء، حيث لا يعتمد المرء إلا على نفسه وعائلته محدودة المؤهلات.
+
+### من قمة جامعة ييل إلى التحول السياسي
+
+رغم البداية الصعبة للغاية، لم يستسلم فانس حيث التحق بسلاح مشاة البحرية، وخدم في العراق، وتخرج من الجامعة بفضل المنح الدراسية.
+
+وواصل مسيرته الأكاديمية نحو القمة ودراسة القانون في جامعة ييل، أعرق كلية في الولايات المتحدة وهناك انفتحت أمامه أبواب لم يكن يحلم بها قط، حيث عيّن في شركة استثمارية في وادي السيليكون، وحظي بدعم الملياردير المحافظ بيتر ثيل.
+
+وفي سن الحادية والثلاثين، كان بالفعل ضيفا ناجحا ومرغوبا فيه، وكان ذلك في عام 2016، وكانت أمريكا تخوض غمار الانتخابات الرئاسية بمرشح مثير للجدل يدعى دونالد ترامب.
+
+وفي ذلك الوقت، لم يكن فانس معجبا بترامب على أقل تقدير، بل إنه تساءل بصوت عال في نقاش على "فيسبوك" عما إذا كان ترامب "هتلر أمريكا".
+
+لكن السياسة كما نعلم قد تكون مفاجئة وأدرك فانس كغيره الكثيرين، أن ترامب يمتلك كاريزما قادرة على استقطاب جماهير غفيرة، وتحديدا أولئك الذين نشأ بينهم.
+
+اقتنع فانس بأنه لا خيار أمامه سوى أن يصبح حليفا لترامب وأن مستقبله في الحزب الجمهوري يكمن فقط في مار أ لاغو، وأجرى تحولا سياسيا جذريا (كوع)، وساعده ترامب في الفوز بمقعد في مجلس الشيوخ عن ولاية أوهايو.
+
+وبعد فترة قصيرة استثنائية في الكونغرس، اختاره ترامب بالفعل ليخوض معه الانتخابات الرئاسية.
+
+وفاز هذا الثنائي: الرجل الأكبر سنا والأكثر مالا الذي ولد وفي فمه ملعقة من ذهب، وإلى جانبه الشاب الذي شق طريقه من الحضيض.
+
+### الزيارة إلى إسرائيل التي انتهت بصراحة ووضوح
+
+كان الإعلامي تاكر كارلسون هو من يقف وراء كواليس تعيين فانس نائبا للرئيس.
+
+وكارلسون الذي أصبح مع مرور الوقت أحد أشد معارضي إسرائيل، وجد في فانس حليفا أيديولوجيا وهذه العلاقة أعمق مما قد يتصوره المرء: حتى أن ابن كارلسون، باكلي، عمل في مكتب فانس حتى وقت قريب".
+
+وعلى الرغم من حياته السياسية المضطربة، إلا أن حياته الشخصية مستقرة، فهو متزوج من أوشا ابنة مهاجرين هنود وأم لأطفاله الثلاثة، وينتظر مولودا رابعا.
+
+بدأت علاقة فانس بإسرائيل بداية حادة، وصل إلى تل أبيب ظاهريا للمساعدة في محادثات وقف إطلاق النار في غزة، لكنه اكتشف أثناء وجوده هناك أن الكنيست قد صوت على ضم الضفة الغربية.
+
+وأدرك فانس على الفور مع من يتعامل، فتخلى عن الخطاب الدبلوماسي ورد بصراحة ووضوح.
+
+وكانت صفعة سياسية مدوية، ولم يزد الوضع إلا سوءا منذ ذلك الحين.
+
+### عملية "زئير الأسد" والطعنة في الظهر
+
+فانس يُعرّف نفسه بأنه شخصية مستقلة يكره الحروب وهو ما لا يتناسب مع واقع الشرق الأوسط، إنه نموذج كلاسيكي لأنصار شعار "لنجعل أمريكا عظيمة مجددا"، رجل أناني ذو سياسة خارجية محدودة يردد باستمرار: "لسنا شرطة العالم".
+
+وبالنسبة له، إسرائيل مشكلة تكلف الولايات المتحدة أموالا وتعقّد علاقاتها مع شركاءهم كدول الخليج والسعودية.
+
+بلغت الحرب ذروتها خلال عملية "زئير الأسد" وخان دونالد ترامب ناخبيه وفعل ما وعد بعدم فعله، فشن حربا طويلة في الشرق الأوسط، ألحقت ضررا بالغا بالاقتصاد الأمريكي.
+
+وكان فانس بصفته نائب الرئيس، معارضا لها منذ البداية، وتشير مصادر في الإدارة إلى أنه لو كان فانس رئيسا، لما اندلعت هذه الحرب أبدا.
+
+لكن ثمة مزاعم أشد خطورة، إذ يزعم مصدر أمني إسرائيلي رفيع أن فانس لم يكتف بمعارضة الحرب، بل ترأس مجموعة سعت إلى إفشالها وعملت على ذلك.
+
+ويقول المصدر: "نشتبه في أن فانس ورجاله هم من سربوا إلى الرئيس التركي أردوغان خطة الموساد السرية لتغيير النظام في إيران بمساعدة الأكراد"، وقد نفى فانس هذه المزاعم واصفا إياها بأنها "محاولة سياسية إسرائيلية لتحميلي مسؤولية فشل الحرب".
+
+### الصورة من سويسرا: من يملي على من؟
+
+بلغت المواجهة ذروتها هذا الأسبوع، حيث حاول فانس تسويق مذكرة التفاهم الجديدة مع إيران للعالم على أنها انتصار عظيم لأمريكا، لكنها اعتُبرت في إسرائيل اتفاق استسلام مُذل.
+
+صورة واحدة من قمة سويسرا لخصت الأمر برمته: فانس جالس أمام حاسوبه، والممثل القطري ينحني فوقه، وكأنه يملي عليه بنود الاتفاق.
+
+وكان الرد الإسرائيلي غير مسبوق في شدته ووصفوه بـ"الحثالة" و"الخاسر"، وقالوا إن اتفاقية الاستسلام هذه بمثابة صفعة في وجه البلاد، لكن فانس لم يقف مكتوف الأيدي ففي محادثات مغلقة أوضح أن إسرائيل لا تملك حق النقض على المصالح الأمريكية ويقول معاونوه: "أنتم دولة يبلغ تعداد سكانها تسعة ملايين نسمة، لا يمكنكم إملاء سياساتكم على أعظم قوة في العالم".
+
+وبالإضافة إلى ذلك، وفي أعقاب الانتقادات قال فانس على المنصة للعالم: "أي إسرائيلي يعتقد أن ترامب هو أكبر مشكلة تواجه إسرائيل عليه أن يستيقظ ويفهم الوضع الذي تمر به بلاده.. لو كنت عضوا في مجلس الوزراء الإسرائيلي، لما هاجمت الحليف القوي الوحيد المتبقي لي في العالم أجمع".
+
+هذه الأساليب، التي تُذكّر بسلوك المنظمات الإجرامية هي السمة المميزة للإدارة الحالية، فإذا لم يتصرف البنك المركزي وفقا لرغبات ترامب يفتح تحقيقا ضده، وإذا نجحت المدعية العامة لولاية نيويورك في إدانته، تصبح هي نفسها هدفا، والآن إسرائيل هي الهدف ويريد فانس السلام في المنطقة للفوز بانتخابات عام 2028، وهو مستعد للتضحية بمصالح تل أبيب في سبيل ذلك.
+
+### المستقبل: عام 2028 قادم
+
+رغم محاولات ممثلي الحزب الجمهوري في إسرائيل تهدئة الوضع وتصويره على أنه "براغماتي"، إلا أن الحقيقة أكثر تعقيدا حيث يمثل فانس جيلا شابا في الولايات المتحدة لا يحب إسرائيل ببساطة فبالنسبة له تمثل العلاقة مع إسرائيل عبئا اقتصاديا وسياسيا.
+
+وفي الانتخابات الرئاسية لعام 2028، سيواجه فانس شخصيات مثل ماركو روبيو، الذي يعتبر أكثر تأييدا لإسرائيل.
+
+وفي الوقت نفسه، سيستمتع الرئيس ترامب بإدارة هذا الصراع على خلافة الرئيس فهو يعلم أن فانس ورقة رابحة ضد الطبقة العاملة، وأنه في حال فشل الاتفاق النووي مع إيران، يمكن توجيه ضربة قاضية لنائب الرئيس.
+
+يجب على جي دي فانس أن يظهر ولاءه لترامب، لكنه في الوقت نفسه يشق لنفسه طريقا منفصلا وقد تكون ورقته الرابحة في الانتخابات المقبلة هي التخلي النهائي عن إسرائيل.
+
+وفي ختام المقال تقول القناة: "الشاب الذي نشأ في أسرة مفككة ووصل إلى أقصى ما يمكن، قد يصبح أقوى رجل في العالم خلال عامين.. بالنسبة لإسرائيل يثير هذا السيناريو قلقا عميقا.. والسؤال هو: هل هذا سياسي يتأثر بالرأي العام فحسب، أم شخص قرر بصدق وإخلاص أن هذا التحالف التاريخي قد طويت صفحته؟".
+
+المصدر: "القناة 12"`,
+    contentEn: `*Exclusive translation for Al-Warraq news portal from Hebrew Channel 12 (N12)*
+*Monday, June 29, 2026*
+
+Hebrew "Channel 12" has launched a sharp, biting critique of US Vice President JD Vance, who serves under Donald Trump.
+
+In the introduction to its extensive article, the channel writes: "JD Vance grew up in extreme poverty in Ohio under the care of a drug-addicted mother and a grandmother who kept 19 loaded guns in her house. Vance, who once described Donald Trump as 'America's Hitler,' has become his heir apparent and current vice president. He is leading an approach that marginalizes and excludes Israel from the picture. From his memoir that became a Netflix movie to suspicions surrounding his leaking of certain Mossad intelligence plans to Turkey's Erdogan—here is a detailed look at the man who could occupy the White House in 2028."
+
+The Hebrew channel adds that JD Vance, the Vice President of the United States, has finally stepped onto the international stage in Switzerland. He did so amidst scenic natural landscapes that completely contrast with the high-stakes drama unfolding in meeting rooms, following exhausting negotiations with the Iranians, at the exact moment America has decided to turn the page on the old Middle East.
+
+In the eyes of many worldwide, this was the debut of a young, articulate, and ambitious leader. However, here in Jerusalem, a different reality emerges: Israelis have discovered that JD Vance, the man who aspires to lead the United States, is not truly on their side.
+
+Standing before the world, Vance looks like the president-in-waiting he longs to be: menacing, sharp-witted, and unhesitant to employ what politicians refer to as "mafia tactics" within the Trump administration.
+
+Now, these tactics have reached Israel. Vance is a brilliant politician whose ambitions do not stop at the vice presidency. One of his key current messages to the American electorate is both simple and terrifying: "It is over with Israel."
+
+### A Troubled Childhood Turned into a Netflix Movie
+
+To understand how JD Vance reached the pinnacle of power, one must return to the Appalachian region of Ohio. In America, as elsewhere, the public loves a Cinderella story, and Vance is certainly one of them.
+
+His life story, which became a bestselling book ("Hillbilly Elegy") and even a Netflix film, reads like something from the darkest realms of fiction. Vance grew up in extreme poverty, but lack of money was not his biggest obstacle. His mother was addicted to drugs and alcohol, changing partners in rapid succession, while his father was completely absent from his life.
+
+He grew up amidst the harshest conditions of the American working class, defined by despair, violence, and rampant opioid abuse. He was raised by his grandmother, a tough woman who never abandoned him, but who was also a difficult personality herself. Vance recounted that after her death, he discovered at least 19 loaded handguns hidden throughout her house, kept ready for any emergency.
+
+This was the environment that shaped his worldview: a world of pure survival, where one relies only on himself and his immediate family.
+
+### From the Peak of Yale to Political Metamorphosis
+
+Despite his incredibly challenging start, Vance did not surrender. He joined the Marine Corps, served in Iraq, and graduated from college thanks to academic scholarships. He continued his academic climb to the peak, studying law at Yale, the most prestigious law school in the United States. There, doors he had never dreamed of swung open. He was hired by an investment firm in Silicon Valley and gained the backing of conservative billionaire Peter Thiel.
+
+By age 31, he was already a successful and sought-after guest. That was in 2016, when America was in the midst of a presidential election featuring a controversial candidate named Donald Trump. At the time, Vance was far from a fan of Trump, publicly questioning in a Facebook discussion whether Trump was "America's Hitler."
+
+But politics, as we know, can be full of surprises. Vance, like many others, realized that Trump possessed a unique charisma capable of attracting massive crowds, particularly those among whom Vance grew up. Vance became convinced that he had no choice but to align with Trump, and that his future in the Republican Party lay only through Mar-a-Lago. He executed a radical political pivot, and Trump subsequently helped him win a U.S. Senate seat representing Ohio.
+
+Following a remarkably brief tenure in Congress, Trump chose him as his vice-presidential running mate. The duo won: the older, wealthy man born with a silver spoon, and alongside him, the young man who fought his way up from the absolute bottom.
+
+### The Visit to Israel That Ended in Blunt Sincerity
+
+Media personality Tucker Carlson was the key figure working behind the scenes to secure Vance's nomination as vice president. Carlson, who has increasingly become one of Israel's fiercest critics, found an ideological ally in Vance. This relationship runs deeper than many assume; indeed, Carlson's son, Buckley, worked in Vance's office until recently.
+
+Despite his turbulent political career, Vance's personal life is stable. He is married to Usha, the daughter of Indian immigrants, who is the mother of his three children, and they are expecting a fourth.
+
+Vance's relationship with Israel got off to a sharp start. He arrived in Tel Aviv ostensibly to assist with Gaza ceasefire negotiations, but while there, he discovered that the Knesset had voted to annex the West West Bank. Vance immediately realized who he was dealing with, dropped all diplomatic double-speak, and replied with absolute clarity and bluntness. It was a resounding political slap, and relations have only deteriorated since.
+
+### Operation "Lion's Roar" and the Stab in the Back
+
+Vance defines himself as an independent figure who detests wars—a stance that clashes with Middle Eastern realities. He is a classic proponent of the "Make America Great Again" doctrine, a highly self-interested figure with a limited foreign policy focus who constantly repeats: "We are not the world's policeman."
+
+To him, Israel is an expensive problem that costs the United States money and complicates relations with vital partners like the Gulf states and Saudi Arabia.
+
+The conflict reached its peak during Operation "Lion's Roar." Donald Trump betrayed his voters, doing exactly what he promised not to do: launching a protracted war in the Middle East that severely damaged the American economy. Vance, as vice president, opposed it from the start. Administration sources indicate that if Vance were president, this war would never have broken out.
+
+But there are even more serious allegations. A senior Israeli security source claims that Vance did not just oppose the war but chaired a group that actively sought to disrupt and defeat it. The source states: "We suspect that Vance and his associates leaked Mossad's secret plan to Turkish President Erdogan to orchestrate regime change in Iran with Kurdish assistance." Vance has denied these claims, calling them "an Israeli political attempt to blame me for the failure of the war."
+
+### The Picture from Switzerland: Who is Dictating to Whom?
+
+The confrontation came to a head this week as Vance attempted to market the new Memorandum of Understanding with Iran as a great victory for America, while in Israel it was viewed as a humiliating capitulation agreement.
+
+A single photograph from the Switzerland summit summarized the situation: Vance seated at his computer, with the Qatari representative leaning over him, appearing to dictate the terms of the agreement.
+
+The Israeli response was unprecedented in its severity, with officials labeling him "scum" and a "loser," declaring this capitulation agreement a slap in the face. But Vance did not sit idly by. In closed-door meetings, he clarified that Israel does not hold a veto over American interests. His aides stated: "You are a nation of nine million people. You cannot dictate your policies to the greatest superpower in the world."
+
+Furthermore, in response to the criticism, Vance declared from the stage: "Any Israeli who believes Trump is the biggest problem facing Israel needs to wake up and understand the situation their country is in. If I were in the Israeli cabinet, I wouldn't be attacking the only strong ally left to me in the entire world."
+
+These methods, reminiscent of organized crime tactics, are the hallmark of the current administration. If the central bank does not comply with Trump's wishes, an investigation is opened against it. If the New York state attorney general secures a conviction against him, she becomes a target. Now, Israel is the target. Vance wants peace in the region to win the 2028 election, and he is willing to sacrifice Tel Aviv's interests to achieve it.
+
+### The Future: 2028 is Coming
+
+Despite attempts by Republican Party representatives in Israel to calm the waters and paint him as a "pragmatist," the reality is far more complex. Vance represents a younger generation in the United States that simply does not love Israel. For him, the relationship with Israel is a major economic and political liability.
+
+In the 2028 presidential race, Vance will face figures like Marco Rubio, who is seen as far more pro-Israel. Meanwhile, President Trump will enjoy managing this succession battle, knowing that Vance is a powerful asset to win over the working class, and that if the nuclear deal with Iran fails, it could deal a fatal blow to the vice president.
+
+JD Vance must demonstrate loyalty to Trump, but he is simultaneously carving out his own independent path. His trump card in the next election may well be the final abandonment of Israel.
+
+The channel concludes its article: "The young man who grew up in a broken family and reached the absolute top might become the most powerful man in the world in two years. For Israel, this scenario is deeply worrying. The question is: is this a politician merely swayed by public opinion, or someone who has genuinely and sincerely decided that this historic alliance is a closed chapter?"
+
+Source: Channel 12`,
+    author: {
+      nameAr: 'مكتب التحقيقات المترجمة',
+      nameEn: 'Foreign Intelligence & Translations Desk',
+      titleAr: 'متابعات أجنبية وتحقيقات استخباراتية مترجمة',
+      titleEn: 'Foreign Intelligence Desk',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+    date: '2026-06-29',
+    readTimeAr: '5 دقائق قراءة',
+    readTimeEn: '5 min read',
+    isFeatured: true,
+    isPremium: false,
+    tags: ['الولايات المتحدة', 'جي_دي_فانس', 'إسرائيل', 'ترجمات', 'دونالد_ترامب', 'القناة_12', 'US', 'JD_Vance', 'Israel', 'Trump', 'Channel_12'],
+    views: 12450
+  },
+  {
+    id: 'wsj-investigation-us-base-bahrain-2026',
+    category: 'translations',
+    categories: ['translations', 'war-room', 'lebanon'],
+    titleAr: 'تحقيق لوول ستريت جورنال: رصد الحجم الحقيقي للأضرار الناتجة عن الهجمات الإيرانية على قاعدة أمريكية بالبحرين',
+    titleEn: 'WSJ Visual Investigation: We Investigated Damage From Iran to a U.S. Naval Base. Here’s What We Found.',
+    summaryAr: 'كشف تحقيق استقصائي لصحيفة "وول ستريت جورنال" باستخدام صور الأقمار الصناعية وسجلات البنتاغون عن أضرار بالغة لحقت بمقر قيادة الأسطول الخامس بالبحرين، مما دفع واشنطن لإعادة تقييم تموضعها العسكري في الشرق الأوسط.',
+    summaryEn: 'Satellite imagery, social-media footage and Defense Department records analyzed by The Wall Street Journal reveal the extent of damage to the U.S. Navy’s Mideast headquarters in Bahrain from Iranian strikes, prompting a strategic rethink of America\'s footprint in the region.',
+    excerptAr: 'تحقيق استقصائي يكشف الحجم الحقيقي للدمار في قاعدة الأسطول الخامس بالبحرين جراء ضربات الصواريخ والمسيرات الإيرانية.',
+    excerptEn: 'Visual investigation uncovers extensive undisclosed damage from Iranian strikes at Naval Support Activity Bahrain.',
+    contentAr: `*تقرير مترجم حصرياً لصالح منصة الورّاق عن صحيفة وول ستريت جورنال (The Wall Street Journal)*
+*بقلم: أنيكا أرورا سيث، شيلبي هوليداي، دينيس بلوستين وميلان تشيرني | 27 يونيو 2026*
+
+كشف تحقيق استقصائي أجرته صحيفة "وول ستريت جورنال" أن الولايات المتحدة تعيد رسم استراتيجية وجودها العسكري وتقييم تموضعها الجغرافي في منطقة الشرق الأوسط، وذلك بعد أن تسببت الضربات الصاروخية والطائرات بدون طيار الإيرانية في أضرار مادية جسيمة بأكثر من 20 موقعاً تستخدمها القوات الأمريكية في المنطقة، بما في ذلك مقر قيادة الأسطول الخامس والمنشآت التابعة له في مملكة البحرين، وهي أضرار تتجاوز بكثير ما تم الكشف عنه سابقاً بصفة رسمية.
+
+وفيما يلي أربعة محاور أساسية يلخصها التحقيق البصري الاستقصائي:
+
+### 1. دمار واسع يطال القاعدة البحرية الأمريكية الوحيدة في الشرق الأوسط
+بين أواخر فبراير ويونيو، استهدفت إيران مراراً وتكراراً منشأة الدعم البحري الأمريكي في البحرين (Naval Support Activity Bahrain)، والمعروفة اختصاراً باسم **NSA Bahrain**.
+
+وقد أظهرت صور الأقمار الصناعية عالية الدقة والوثائق التي تم فحصها، تضرر مقر القيادة العملياتية المباشر وما لا يقل عن 12 مبنى ملحقاً آخراً داخل المجمع، إلى جانب تدمير أو تعطيل محطتين رئيسيتين للاتصالات السلكية واللاسلكية عبر الأقمار الصناعية.
+
+من جهتها، صرحت وزارة الدفاع الأمريكية (البنتاغون) بأنه لم تقع وفيات أو خسائر بشرية في الأرواح داخل القاعدة، وأن الضربات لم تؤثر بشكل حاسم على مجريات العمليات اليومية. إلا أن المصادر أكدت أن الولايات المتحدة قامت بإجلاء غالبية الموظفين غير الأساسيين وعائلاتهم، مبقية على طاقم عمل محدود للغاية على الأرض لتسيير المهام الحرجة.
+
+### 2. الجيش الأمريكي يعيد تقييم "بصمته العسكرية" في المنطقة
+وفقاً لمسؤولين أمريكيين مطلعين على المداولات الجارية، فإن البنتاغون يدرس حالياً إجراء مراجعة شاملة وإعادة تصميم هيكلية لقاعدته الحيوية في البحرين، مع خفض تدريجي ومستهدف للوجود العسكري المباشر في دول مثل الكويت والمملكة العربية السعودية، ونقل بعض القواعد الاستراتيجية أو وظائفها الأساسية غرباً، بعيداً عن المدى الفعال للصواريخ الباليستية والطائرات المسيرة الهجومية الإيرانية.
+
+وأفاد المسؤولون أن المنشآت الحيوية التي تعرضت للقصف قد لا يتم إعادة بنائها بشكلها التقليدي السابق؛ بل يُقترح نقل غرف العمليات وعقد القيادة والسيطرة الحساسة تحت الأرض في تحصينات خرسانية عميقة، وتشتيت القدرات القتالية واللوجستية للجيش الأمريكي على مساحات أوسع في المنطقة لتقليل جاذبيتها كأهداف مركزية. وتعد إسرائيل من بين المواقع المطروحة في النقاش كخيار بديل لاستضافة بعض هذه القدرات الدفاعية المتقدمة.
+
+### 3. تكاليف إعادة الإعمار تقدر بمئات الملايين من الدولارات
+أبلغ المراقب المالي للبنتاغون، جاي هيرست، الكونغرس الأمريكي في جلسة استماع مغلقة الشهر الماضي أن تقديرات الوزارة لكلفة العمليات الحربية في الشرق الأوسط (والتي بلغت حتى تاريخه 29 مليار دولار) لم تشمل على الإطلاق تكاليف إصلاح الأضرار الهيكلية التي لحقت بالقواعد العسكرية الأمريكية جراء القصف.
+
+وفي جلسة استماع علنية أخرى في مايو الماضي، سُئل وزير الدفاع الأمريكي بيت هيغسيث عن تقدير كلفة هذا الدمار، فأجاب متسائلاً بلهجة دلالية: "ما هي التكلفة المترتبة على حصول إيران على سلاح نووي؟" في إشارة إلى أن كلفة الردع والدفاع تظل ثانوية أمام الخطر الاستراتيجي الأكبر.
+
+وتقدر صحيفة "وول ستريت جورنال" - بناءً على مراجعة دقيقة لنموذج تكلفة البناء المعتمد لدى وزارة الدفاع وتقارير المشتريات المتاحة للعموم - أن تكلفة إعادة تشييد مبانٍ مماثلة لتلك التي تضررت في قاعدة البحرين (NSA Bahrain) لوحدها تبلغ حوالي **400 مليون دولار**. ولا يشمل هذا التقدير تكاليف إزالة الأنقاض والركام، والتحصينات الهندسية الإضافية، أو الاستبدال الفوري للأجهزة التقنية الحساسة وأنظمة الاتصالات المدمرة.
+
+بالمقابل، قدر "مركز الدراسات الاستراتيجية والدولية" (CSIS) في تقرير شامل نُشر مؤخراً، أن التكلفة الإجمالية المباشرة للصراع بلغت نحو 40 مليار دولار، مشيراً إلى أن تقديره يتضمن ما بين 2.2 مليار إلى 5.1 مليار دولار كأضرار مباشرة لحقت بالقواعد العسكرية الأمريكية المنتشرة في عموم دول المنطقة، وذلك استناداً إلى المنشآت والتحصينات المحددة بدقة عبر الرصد الفضائي.
+
+### 4. السلاح النقطي الحديث يجعل القواعد الثابتة فريسة سهلة
+تأسست قاعدة البحرين البحرية (NSA Bahrain) وتم توسيعها في فترات زمنية سبقت امتلاك طهران لترسانتها الحالية الضخمة من الصواريخ الموجهة بدقة وطائرات "كاميكازي" المسيرة منخفضة التكلفة، حيث كشفت هذه الجولة من الصراع المفتوح عن نقاط ضعف هيكلية خطيرة في بنية الدفاع الصاروخي التقليدي للمنشآت الثابتة المفتوحة.
+
+وقبل اندلاع هذه الموجة، حذر قادة عسكريون بارزون من أن القواعد الأمريكية المطلة على مياه الخليج العربي تقع بالكامل داخل نطاق نيران معادية مكثفة وغير محمية بما يكفي. وتم طرح مقترح في عهد الرئيس ترامب لنقل المنشآت نحو الغرب، لكنه ظل حبيس الأدراج دون تنفيذ عملي.
+
+وفي تعقيب على هذه التطورات، صرح المتحدث باسم القيادة المركزية الأمريكية (سنتكوم)، الكابتن تيم هوبكنز: "لقد منحت القيادة الأولوية القصوى والبديهية لحماية الأرواح البشرية والجنود قبل التفكير في سلامة الجدران والمباني الخرسانية، وقد نجحت استراتيجيتنا الحمائية بامتياز؛ إذ أطلقت إيران أكثر من 8000 صاروخ ومسيرة انتحارية طوال فترة الحرب، ولم تسفر هذه الاستهدافات سوى عن إصابتين قاتلتين فقط في صفوف جنودنا".`,
+    contentEn: `*Translated Report from The Wall Street Journal*
+*By Anika Arora Seth, Shelby Holliday, Denise Blostein and Milàn Czerny | June 27, 2026*
+
+A Wall Street Journal investigation found that the U.S. is rethinking its footprint in the Middle East after Iranian missile and drone attacks caused more damage than previously disclosed to at least 20 U.S. sites, including the Navy’s base in Bahrain. Here are four takeaways from our reporting.
+
+### 1. America’s only naval base in the Middle East was extensively damaged
+Between late February and June, Iran repeatedly targeted Naval Support Activity Bahrain, known as NSA Bahrain. Hit hard were the command headquarters and at least a dozen other buildings, along with two satellite communications terminals. 
+
+The military said no one was killed at the base and that the strikes didn’t significantly affect operations. The U.S. evacuated most personnel but has kept a small staff on the ground.
+
+### 2. The U.S. military is now re-evaluating its footprint in the Middle East
+The military is now considering revamping the base in Bahrain, reducing the U.S. presence in Kuwait and Saudi Arabia and moving some bases or base functions west, farther from the reach of Iranian missiles and drones, according to the officials familiar with the deliberations. 
+
+Structures that were attacked may not be rebuilt. Command and control nodes could be moved underground. And military capabilities could become more spread out across the region, the officials said, though they cautioned that no decisions had been made. Israel is one of the locations being considered for basing, according to two of the officials.
+
+### 3. Construction could cost hundreds of millions of dollars
+Pentagon comptroller Jay Hurst told Congress last month that the department’s estimated cost of the war, then at $29 billion, didn’t include damage to U.S. bases. In a May congressional hearing, Defense Secretary Pete Hegseth was pressed for a cost estimate of that damage. “What is the cost of Iran obtaining a nuclear weapon?” he replied.
+
+The Journal estimates that it would cost about $400 million to construct buildings of the same types as those damaged at NSA Bahrain, according to a review of a publicly available Defense Department cost model and procurement reports. 
+
+The estimates only cover construction, and don’t include other costs that could factor into the total if the buildings were to be rebuilt, such as debris removal and reinforcement.  
+
+The Center for Strategic and International Studies estimated in a report published Tuesday that the total cost of the war was about $40 billion—an estimate that included its calculus of $2.2 billion to $5.1 billion in damage to U.S. bases across the region, based on structures the think tank identified as damaged.
+
+### 4. Modern precision weapons have made bases more vulnerable
+NSA Bahrain was built long before Iran possessed the arsenal of precision missiles and drones it has today, and the war revealed its vulnerabilities. 
+
+Before the war, some military officials warned that bases in the Gulf were exposed. A proposal to move installations farther west was floated in President Trump’s first term but never acted on.
+
+Over the course of the war, “Centcom rightfully prioritized the protection of people over buildings, and our strategy of protecting people worked. Iran shot more than 8,000 missiles and drones and only two hits resulted in U.S. fatalities,” said Capt. Tim Hawkins, a spokesman for U.S. Central Command, which oversees U.S. forces in the Middle East.`,
+    author: {
+      nameAr: 'أنباء وول ستريت جورنال (ترجمة حرة لـ الورّاق)',
+      nameEn: 'WSJ Visual Investigation (Translated)',
+      titleAr: 'متابعات أجنبية وتحقيقات استخباراتية مترجمة',
+      titleEn: 'Foreign Intelligence & Translations Desk'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1507682531662-421b17ac4f83?auto=format&fit=crop&w=1200&q=80',
+    date: '2026-06-27',
+    readTimeAr: '4 دقائق قراءة',
+    readTimeEn: '4 min read',
+    isFeatured: true,
+    isPremium: false,
+    tags: ['الولايات المتحدة', 'البحرين', 'إيران', 'الأسطول الخامس', 'البنتاغون', 'USA', 'Bahrain', 'Iran', 'NSA Bahrain', 'WSJ'],
+    views: 8900
+  },
+  {
+    id: 'lebanon-ceasefire-mirage-2026',
+    category: 'translations',
+    categories: ['translations', 'war-room', 'lebanon'],
+    titleAr: 'سراب وقف إطلاق النار في لبنان وشبح الصراع الداخلي الذي يلوح في الأفق',
+    titleEn: 'The Mirage of Ceasefire in Lebanon and the Looming Shadow of Domestic Conflict',
+    summaryAr: 'تحليل استقصائي لتعثر الجهود الدبلوماسية لتطبيق القرار ١٧٠١ في لبنان، وتفجر الخلافات الجوهرية بين الدولة اللبنانية وحزب الله حول حصرية قرار الحرب وننزع السلاح.',
+    summaryEn: 'An investigative analysis of the structural hurdles facing the implementation of Resolution 1701 in Lebanon, and the explosive friction between the state cabinet and Hezbollah regarding weapons monopoly.',
+    excerptAr: 'كواليس التوترات السياسية والعسكرية بين الحكومة اللبنانية وحزب الله حول تمركز الجيش جنوب الليطاني ونزع سلاح الميليشيات.',
+    excerptEn: 'The behind-the-scenes political and military tension regarding the deploying of Lebanese army units and disarming non-state factions.',
+    contentAr: `### الشرخ المالي والسيادي المتفجر في لبنان
+اعتباراً من أواخر يونيو/حزيران 2026، يقف لبنان في أحد أكثر مفترقات الطرق تقلبًا في تاريخه الحديث. أدى الدمار الهائل الذي خلفه صراع عام 2026 - والذي أسفر عن نزوح أكثر من مليون مدني وتدمير البنية التحتية في الجنوب وضواحي بيروت - إلى فرض جهود دبلوماسية مكثفة لتأمين سلام دائم. ومع ذلك، فإن "الاختراقات" الدبلوماسية التي تتفاوض عليها الدولة تصطدم بعنف مع الواقع على الأرض: وهو شرخ متفجر بين الحكومة اللبنانية وحزب الله.
+
+يرتكز جوهر الخلاف على تنفيذ قرار مجلس الأمن الدولي رقم 1701، والذي يدعو إلى تمركز حصر السلاح بيد الجيش اللبناني وقوات اليونيفيل جنوب نهر الليطاني. وترى الحكومة اللبنانية، مدعومة بضغوط دولية وعربية هائلة، أن هذه اللحظة تمثل فرصة أخيرة لاستعادة سيادة الدولة الكاملة وتجنب جولة جديدة من التدمير الإسرائيلي الشامل.
+
+### مواقف متباعدة والخط الأحمر لسلاح المقاومة
+في المقابل، يرفض حزب الله بشكل قاطع أي مساس بترسانته العسكرية أو نزع سلاحه، معتبراً أن السلاح خط أحمر للدفاع والردع الوطني، وأن الضغوط الغربية هي "أملاءات استسلام" تخدم المصالح الإسرائيلية. ويتهم مسؤولو الحزب الحكومة بتقديم تنازلات سيادية دون ضمانات حقيقية لردع الاعتداءات المستقبلية.
+
+أدى هذا الاستقطاب الشديد إلى شحن الأجواء الطائفية والسياسية في بيروت بشكل يثير شبح الحرب الأهلية أو الصدام الداخلي الدامي. ويخشى المراقبون من أن يؤدي تفاقم هذا الانقسام إلى تفتيت بنية الجيش اللبناني نفسه، والذي يمثل صمام الأمان الوحيد المتبقي للاستقرار الأهلي.
+
+### مأزق المفاوضات والحلول المستحيلة
+تجد الدولة اللبنانية نفسها في مأزق مزدوج قاتل:
+1. **الخيار الأول:** الإصرار على نزع السلاح قسراً لتلبية الشروط الدولية، وهو ما يعني الانزلاق الفوري إلى صدام عسكري داخلي وفتنة طائفية قد تدمر ما تبقى من الكيان اللبناني.
+2. **الخيار الثاني:** التراجع والقبول باستمرار نفوذ حزب الله العسكري، مما يعرض لبنان لعزلة دولية خانقة ويشرع الباب لضربات إسرائيلية متواصلة تطال كافة المنشآت الحيوية في البلاد.
+
+بين هذين الخيارين الصعبين، يبدو السلم المستدام مجرد سراب دبلوماسي، في وقت تتراكم فيه أطنان الركام المادية والسياسية مهددة بنسف الهوية الوطنية والسيادة اللبنانية بشكل غير قابل للإصلاح.`,
+    contentEn: `### The Sovereign and Political Fracture in Lebanon
+As of late June 2026, Lebanon stands at one of the most volatile crossroads in its modern history. The devastating ruins left by the 2026 conflict—which displaced over a million civilians and destroyed infrastructure in the South and Beirut's suburbs—have forced intensive diplomatic efforts to secure a lasting peace. However, the diplomatic "breakthroughs" negotiated by the state are crashing violently into the reality on the ground: an explosive rift between the Lebanese Government and Hezbollah.
+
+The core of the dispute hinges on the implementation of UN Security Council Resolution 1701, which calls for the exclusive deployment of weapons to the Lebanese Army and UNIFIL south of the Litani River. The Lebanese Government, backed by immense international and Arab pressure, views this moment as a final opportunity to reclaim full state sovereignty and avert another round of total Israeli destruction.
+
+### Divergent Stances and the Redline of the Defensive Arsenal
+In contrast, Hezbollah flatly rejects any compromise on its military arsenal, declaring its weapons a non-negotiable redline for national defense and deterrence. Hezbollah officials accuse the cabinet of surrendering sovereign rights to US and Western diplomatic dictates without receiving real security guarantees to deter future Israeli raids.
+
+This intense polarization has charged sectarian and political sentiments in Beirut, raising the specter of civil strife or armed domestic clashes. Independent analysts fear that a prolonged division could fracture the cohesion of the Lebanese Armed Forces (LAF)—the country's final remaining anchor of domestic stability.
+
+### The Twin Trap of Impossible Resolutions
+The Lebanese state is caught in a deadly twin trap:
+1. **The First Path:** Aggressively enforcing disarmament to satisfy international donors, which guarantees an immediate descent into internal civil conflict and sectarian warfare.
+2. **The Second Path:** Backing down and accepting Hezbollah's parallel military authority, exposing Lebanon to global isolation and recurrent Israeli strikes.
+
+Between these two disastrous options, a sustainable peace remains a diplomatic mirage, as the pile of physical and political ruins threatens to permanently dissolve Lebanese sovereign identity.`,
+    author: {
+      nameAr: 'أنباء الورّاق (تحقيق سيادي خاص)',
+      nameEn: 'Al-Warraq Special Investigative Unit',
+      titleAr: 'شعبة التحريات السيادية والتحليل الميداني',
+      titleEn: 'Sovereign Investigations & Intelligence Desk'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+    date: '2026-06-28',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isFeatured: true,
+    isPremium: false,
+    tags: ['قرار_١٧٠١', 'سلاح_المقاومة', 'الجيش_اللبناني', 'الفتنة', 'Lebanon_Ceasefire', 'Resolution_1701', 'Civil_Strife', 'Sovereignty'],
+    views: 9400
+  },
+  {
+    id: 'lebanon-economic-abyss-2026',
+    category: 'translations',
+    categories: ['translations', 'war-room', 'lebanon'],
+    titleAr: 'الهاوية الاقتصادية: الأنقاض، واللاجئون، ونظام مالي مشلول',
+    titleEn: 'The Economic Abyss: Rubble, Refugees, and a Crippled Financial System',
+    summaryAr: 'تحليل للأرقام الكارثية للضرر الاقتصادي والدمار المادي المتراكم جراء صراع عام ٢٠٢٦، وتفشي الفقر والبطالة وشلل القطاع المصرفي اللبناني.',
+    summaryEn: 'An autopsy of the catastrophic economic damage and material destruction of the 2026 war, documenting deep poverty, refugees, and the frozen financial system.',
+    excerptAr: 'بلغت خسائر لبنان الاقتصادية ١٤ مليار دولار مع فجوة تمويلية تتجاوز ١١ ملياراً لإعادة إعمار البنية التحتية والجنوب.',
+    excerptEn: 'Lebanon’s economic losses have reached $14 Billion with a funding gap exceeding $11 Billion to rebuild basic utilities and housing.',
+    contentAr: `### الكارثة الصامتة: خسائر تفوق الناتج المحلي
+تجاوزت الأضرار والخسائر الاقتصادية الناجمة عن صراع عام 2026 في لبنان عتبة الـ 14 مليار دولار، وهو رقم كارثي يعادل تقريباً الناتج المحلي الإجمالي السنوي للبلاد. وفي بيئة مالية منهكة مسبقاً جراء أزمة الانهيار النقدي المستمر منذ عام 2019، يدخل لبنان مرحلة الهاوية الكاملة مع شلل تام للمرافق الخدمية والإنتاجية العامة.
+
+وتقدر الجهات الدولية المانحة والبنك الدولي كلفة إعادة إعمار البنية التحتية والمباني المهدمة بنحو 11 مليار دولار، وهي فجوة تمويلية صاعقة تفوق قدرة الدولة اللبنانية المفلسة على سدها بملايين المرات، في ظل إحجام المانحين الخليجيين والدوليين عن تقديم قروض أو منح جديدة دون إقرار حزمة الإصلاحات المالية الصارمة وإعادة هيكلة القطاع المصرفي المجمد.
+
+### أزمة النازحين الحادة وشلل التعليم والزراعة
+خلّف الصراع مأساة إنسانية ومعيشية غير مسبوقة:
+* 🏠 **نزوح أكثر من ١.٢ مليون مدني:** يعيش مئات الآلاف منهم في مخيمات عشوائية أو مدارس تحولت لمراكز إيواء مؤقتة تفتقر لأبسط مقومات الحياة والخدمات الأساسية.
+* 🎓 **تعطل العملية التعليمية:** حُرم أكثر من 166,000 طالب وطالبة من مقاعد الدراسة بعد أن تحولت جل المدارس الرسمية والجامعات إلى مراكز إيواء للنازحين.
+* 🌾 **شلل القطاع الزراعي في الجنوب والكورة:** تسببت القذائف الفوسفورية والحرائق المستمرة في تدمير وتلويث أكثر من 78% من الأراضي الزراعية والمحاصيل الأساسية، مما شل حركة الإنتاج المحلي ورفع معدلات الفقر المعيشي إلى مستويات قياسية بلغت 79% من إجمالي السكان.
+
+### شلل القطاع المصرفي واحتجاز أموال المودعين
+تكمن الفاجعة الكبرى في غياب أي نظام مالي أو مصرفي قادر على تمويل عجلة الاقتصاد؛ فالودائع الخاصة بالمواطنين والشركات محتجزة بالكامل داخل البنوك التجارية التي تعاني من عجز سيولة حاد وغيبوبة سريرية ممتدة. 
+
+ويرفض البنك المركزي اللبناني (مصرف لبنان) إقراض الدولة بالعملة الأجنبية أو المساس بما تبقى من احتياطيات دولارية شحيحة للحفاظ على استقرار سعر صرف الليرة الهش بالقرب من 89,500 ليرة للدولار، مما يحرم البلاد من أي سيولة مالية حقيقية لتمويل عمليات الإغاثة العاجلة أو إزالة ملايين الأطنان من الركام والأنقاض المتراكمة بالبلاد.
+
+ومع غياب قنوات التمويل الخارجي واشتراط صندوق النقد الدولي تمرير القوانين الإصلاحية المجمدة بمجلس النواب، يظل مستقبل لبنان رهينة شلل مؤسساتي ودستوري مطبق يهدد بتحويل البلاد من حالة "الدولة المأزومة" إلى الكيان الفاشل كلياً.`,
+    contentEn: `### The Silent Catastrophe: Losses Dwarfing GDP
+The economic damage and material losses resulting from the 2026 war in Lebanon have crossed the catastrophic threshold of $14 Billion—a figure almost equal to the country's entire annual GDP. Already battered by a chronic monetary collapse since 2019, Lebanon is sinking into an absolute economic abyss, defined by the complete paralysis of public services and production grids.
+
+International organizations and the World Bank estimate the immediate physical reconstruction cost for destroyed houses and utilities at $11 Billion. This represents a staggering funding gap that the bankrupt Lebanese Treasury has zero capacity to fill. Gulf and Western donors refuse to unlock any credit lines or developmental grants until the cabinet executes strict banking reforms and audits the frozen liabilities of local banks.
+
+### Deep Refugee Crisis and the Collapse of Education and Farming
+The war has triggered unprecedented humanitarian and social distress:
+* 🏠 **1.2 Million Forced Displaced:** Hundreds of thousands survive in temporary shelters or public schools lacking basic sanitation, clean water, and power.
+* 🎓 **Interrupted Schooling:** More than 166,000 students remain locked out of educational tracks because public schools and universities were converted into refugee shelters.
+* 🌾 **Agricultural Poisoning in the South:** Phosphorous shelling and continuous fires have damaged or poisoned over 78% of fertile farmlands in the South, destroying olive groves and citrus orchards, pushing the national poverty rate to an unprecedented 79%.
+
+### Comatose Banking System and Frozen Deposits
+The central pillar of the crisis is the total paralysis of the financial sector. Customer and commercial deposits remain locked inside comatose commercial banks experiencing extreme liquidity shortages.
+
+The Central Bank of Lebanon (BDL) refuses to finance the state in foreign currencies or deplete its remaining scarce dollar reserves, prioritizing the artificial stabilization of the Lebanese Pound exchange rate near 89,500 LBP per USD. This leaves the cabinet with no capital to fund basic disaster relief or clear millions of tons of rubble choking towns.
+
+Without external donor support and with the IMF conditioning its rescue package on structural laws frozen by parliament, Lebanons future remains trapped in a deep institutional paralysis that threatens to dissolve the state into a completely failed entity.`,
+    author: {
+      nameAr: 'أنباء الورّاق (قسم التحليل المالي والدمار)',
+      nameEn: 'Al-Warraq Sovereign Financial Desk',
+      titleAr: 'التحريات والتدقيق المالي والمكرو-اقتصادي',
+      titleEn: 'Macroeconomic Audit & Sovereign Assets Research'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80',
+    date: '2026-06-28',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isFeatured: true,
+    isPremium: false,
+    tags: ['الانهيار_المالي', 'إعادة_الإعمار', 'النازحون', 'الأزمة_المصرفية', 'Lebanon_Abyss', 'Financial_Collapse', 'Refugee_Crisis', 'Reconstruction_Gap'],
+    views: 11200
+  },
+  {
     id: 'lebanon-framework-agreement-analysis-2026',
     category: 'lebanon',
     categories: ['lebanon', 'opinion', 'editor-desk'],

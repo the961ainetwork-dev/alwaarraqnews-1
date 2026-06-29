@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Space Grotesk', 'Cairo', sans-serif;
+  --font-sans: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cairo', 'Space Grotesk', sans-serif;
   --font-serif: 'Amiri', 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 

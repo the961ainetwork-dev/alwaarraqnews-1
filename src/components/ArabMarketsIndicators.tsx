@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2 } from 'lucide-react';
+import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity } from 'lucide-react';
+import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, CartesianGrid } from 'recharts';
 
 interface ArabMarketsIndicatorsProps {
   language: 'ar' | 'en';
@@ -10,11 +11,12 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
   const [activeTab, setActiveTab] = useState<'stocks' | 'commodities'>('stocks');
-  const [isReportExpanded, setIsReportExpanded] = useState(false);
+  const [isReportExpanded, setIsReportExpanded] = useState(true);
+  const [infographicType, setInfographicType] = useState<'brent' | 'pipelines'>('brent');
 
   // Arab Stock Indices Mock/Dynamic Data matching real-time 2026 conditions
   const arabStocks = [
-    { nameAr: 'تداول السعودية (TASI)', nameEn: 'Saudi Tadawul (TASI)', value: '12,410.50', change: '+1.45%', up: true, volume: '$1.48B', high: '12,440.00', low: '12,280.20' },
+    { nameAr: 'تداول السعودية (TASI)', nameEn: 'Saudi Tadawul (TASI)', value: '10,933.00', change: '-1.20%', up: false, volume: '$1.48B', high: '11,120.00', low: '10,910.00' },
     { nameAr: 'سوق دبي المالي (DFM)', nameEn: 'Dubai Financial Market (DFM)', value: '4,180.20', change: '+1.12%', up: true, volume: '$124.5M', high: '4,202.90', low: '4,155.00' },
     { nameAr: 'سوق أبوظبي للأوراق المالية (ADX)', nameEn: 'Abu Dhabi Securities (ADX)', value: '9,340.60', change: '+0.88%', up: true, volume: '$310.2M', high: '9,380.00', low: '9,290.40' },
     { nameAr: 'بورصة الكويت (PRIME)', nameEn: 'Boursa Kuwait (PRIME)', value: '7,890.30', change: '+0.54%', up: true, volume: '$95.1M', high: '7,910.20', low: '7,840.10' },
@@ -23,7 +25,7 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
 
   // Energy & Commodities Active Tickers
   const commodities = [
-    { nameAr: 'خام برنت العالمي (Brent)', nameEn: 'Brent Crude Spot', value: '77.40', change: '-1.85%', up: false, unit: 'USD/bbl', range: '76.90 - 79.20' },
+    { nameAr: 'خام برنت العالمي (Brent)', nameEn: 'Brent Crude Spot', value: '81.50', change: '+1.85%', up: true, unit: 'USD/bbl', range: '77.40 - 82.10' },
     { nameAr: 'خام غرب تكساس (WTI)', nameEn: 'WTI Light Sweet', value: '75.33', change: '-1.90%', up: false, unit: 'USD/bbl', range: '74.80 - 77.10' },
     { nameAr: 'الغاز الطبيعي الفوري', nameEn: 'Natural Gas Spot', value: '2.14', change: '-3.12%', up: false, unit: 'USD/MMBtu', range: '2.10 - 2.25' },
     { nameAr: 'الذهب الفوري (Spot Gold)', nameEn: 'Spot Gold Index', value: '4,320.50', change: '+1.50%', up: true, unit: 'USD/oz', range: '4,240.00 - 4,336.00' },
@@ -40,6 +42,43 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
       "M 0,10 C 15,12 30,22 45,18 C 60,25 75,32 100,38" // Downward trend
     ];
     return paths[index % paths.length];
+  };
+
+  // Infographics data
+  const brentTrendData = [
+    { date: isAr ? '٢١ يونيو' : 'Jun 21', price: 126.00, label: isAr ? 'فترة صراع الذروة' : 'Peak Conflict Period' },
+    { date: isAr ? '٢٢ يونيو' : 'Jun 22', price: 112.00, label: isAr ? 'بداية مفاوضات سويسرا' : 'Swiss Talks Commenced' },
+    { date: isAr ? '٢٤ يونيو' : 'Jun 24', price: 98.00, label: isAr ? 'التوقيع على الاتفاق' : 'Agreement Signed' },
+    { date: isAr ? '٢٦ يونيو' : 'Jun 26', price: 77.40, label: isAr ? 'أدنى مستويات التهدئة' : 'Truce Bottom Pricing' },
+    { date: isAr ? '٢٩ يونيو' : 'Jun 29', price: 81.50, label: isAr ? 'التصعيد والمنوشات الأخيرة' : 'Recent Skirmish Escalation' },
+  ];
+
+  const pipelineData = [
+    { name: isAr ? 'أنابيب السعودية' : 'Saudi Petroline', max: 7.0, current: 4.5 },
+    { name: isAr ? 'أنابيب الإمارات' : 'UAE Habshan', max: 1.5, current: 1.2 },
+    { name: isAr ? 'أنابيب العراق' : 'Iraq Ceyhan', max: 0.5, current: 0.3 },
+  ];
+
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-black text-white p-2 border border-zinc-700 font-mono text-[10px] space-y-1">
+          <p className="font-bold">{label}</p>
+          {payload.map((item: any, idx: number) => (
+            <p key={idx} className="flex gap-2 justify-between">
+              <span>{item.name}:</span>
+              <span className="font-bold">{item.value} {infographicType === 'brent' ? 'USD/bbl' : 'M bpd'}</span>
+            </p>
+          ))}
+          {payload[0].payload.label && (
+            <p className="text-zinc-400 border-t border-zinc-800 pt-1 mt-1 text-[9px]">
+              {payload[0].payload.label}
+            </p>
+          )}
+        </div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -81,13 +120,121 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
         </div>
       </div>
 
-      {/* TOP FEATURED ROW: The In-Depth USA-Iran Pact Report */}
+      {/* INFOGRAPHICS DASHBOARD PANEL */}
+      <div className="border border-black mb-6 p-4 bg-zinc-50 space-y-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-200 pb-3 gap-3">
+          <div>
+            <span className="text-[10px] font-mono text-[#b91c1c] uppercase tracking-wider block font-black">
+              {isAr ? 'التحليلات المرئية التفاعلية' : 'INTERACTIVE VISUAL INFOGRAPHICS'}
+            </span>
+            <h5 className="font-sans font-black text-sm text-zinc-950">
+              {isAr ? 'بيانات معبر الطاقة هرمز وممرات الالتفاف الإقليمية' : 'Hormuz Transit Corridor & Regional Bypass Metrics'}
+            </h5>
+          </div>
+          <div className="flex border border-black p-0.5 text-[10px] font-mono font-bold bg-white select-none shrink-0">
+            <button
+              onClick={() => setInfographicType('brent')}
+              className={`px-2.5 py-1 cursor-pointer transition-all ${
+                infographicType === 'brent' ? 'bg-[#b91c1c] text-white' : 'text-zinc-700 hover:bg-zinc-100'
+              }`}
+            >
+              {isAr ? 'مؤشر نفط برنت وسعر التهدئة' : 'Brent Crude Index'}
+            </button>
+            <button
+              onClick={() => setInfographicType('pipelines')}
+              className={`px-2.5 py-1 cursor-pointer transition-all border-l border-black ${
+                infographicType === 'pipelines' ? 'bg-[#b91c1c] text-white' : 'text-zinc-700 hover:bg-zinc-100'
+              }`}
+            >
+              {isAr ? 'أنابيب الالتفاف الإقليمية' : 'Bypass Pipeline Capacities'}
+            </button>
+          </div>
+        </div>
+
+        <div className="h-64 w-full">
+          {infographicType === 'brent' ? (
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={brentTrendData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorBrent" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#b91c1c" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#b91c1c" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
+                <XAxis 
+                  dataKey="date" 
+                  stroke="#18181b" 
+                  tick={{ fontSize: 9, fontFamily: 'monospace', fontWeight: 700 }} 
+                />
+                <YAxis 
+                  domain={[60, 140]} 
+                  stroke="#18181b" 
+                  tick={{ fontSize: 9, fontFamily: 'monospace', fontWeight: 700 }} 
+                />
+                <RechartsTooltip content={<CustomTooltip />} />
+                <Area 
+                  name={isAr ? 'سعر خام برنت' : 'Brent Crude Price'} 
+                  type="monotone" 
+                  dataKey="price" 
+                  stroke="#b91c1c" 
+                  strokeWidth={2.5}
+                  fillOpacity={1} 
+                  fill="url(#colorBrent)" 
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          ) : (
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={pipelineData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
+                <XAxis 
+                  dataKey="name" 
+                  stroke="#18181b" 
+                  tick={{ fontSize: 9, fontWeight: 700 }} 
+                />
+                <YAxis 
+                  stroke="#18181b" 
+                  tick={{ fontSize: 9, fontFamily: 'monospace', fontWeight: 700 }} 
+                />
+                <RechartsTooltip content={<CustomTooltip />} />
+                <Bar 
+                  name={isAr ? 'السعة التصميمية القصوى (مليون برميل)' : 'Max Capacity (M bpd)'} 
+                  dataKey="max" 
+                  fill="#e4e4e7" 
+                  stroke="#71717a"
+                  strokeWidth={1}
+                />
+                <Bar 
+                  name={isAr ? 'التدفق التشغيلي النشط' : 'Current Active Flow (M bpd)'} 
+                  dataKey="current" 
+                  fill="#b91c1c" 
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          )}
+        </div>
+        
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-[9px] font-mono text-zinc-500 gap-2 border-t border-zinc-200 pt-2">
+          <span className="flex items-center gap-1">
+            <Info size={10} className="text-[#b91c1c]" />
+            {isAr 
+              ? 'تتضح تقلبات النفط الكبيرة بالتوازي مع تصاعد ونزول سقف التفاؤل الدبلوماسي وعودة الضربات.' 
+              : 'Oil volatility correlates tightly with rising/falling ceilings of diplomatic optimism and kinetic strikes.'}
+          </span>
+          <span className="font-bold">
+            {isAr ? 'المصدر: تحليلات الورّاق الاستراتيجية للطاقة • غولدن ساكس' : 'Source: Al-Warraq Strategic Energy Bureau • Goldman Sachs'}
+          </span>
+        </div>
+      </div>
+
+      {/* TOP FEATURED ROW: Middle East & North Africa Markets */}
       <div className="border border-black p-4 mb-6 bg-zinc-50 flex flex-col gap-4 relative overflow-hidden">
         {/* Editorial Top Ribbon */}
         <div className="flex justify-between items-center border-b border-zinc-300 pb-2.5">
-          <span className="bg-[#b91c1c] text-white px-2 py-0.5 font-mono text-[9px] font-mono font-black tracking-widest uppercase flex items-center gap-1">
+          <span className="bg-[#b91c1c] text-white px-2 py-0.5 font-mono text-[9px] font-black tracking-widest uppercase flex items-center gap-1">
             <Award size={11} />
-            {isAr ? 'تحليل عميق خاص' : 'SPECIAL STRATEGIC REPORT'}
+            {isAr ? 'تقرير استراتيجي حصري' : 'EXCLUSIVE STRATEGIC REPORT'}
           </span>
           <button 
             type="button"
@@ -97,12 +244,12 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
             {isReportExpanded ? (
               <>
                 <Minimize2 size={11} />
-                {isAr ? 'طي التحليل' : 'CONDENSE REPORT'}
+                {isAr ? 'طي التقرير' : 'CONDENSE FEATURE'}
               </>
             ) : (
               <>
                 <Maximize2 size={11} />
-                {isAr ? 'توسعة وقراءة كامل التقرير' : 'EXPAND FULL BRIEF'}
+                {isAr ? 'عرض قراءة موسعة' : 'EXPAND DETAILED LOOK'}
               </>
             )}
           </button>
@@ -112,177 +259,52 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
         <div className="space-y-4">
           <h5 className="font-sans font-black text-base md:text-lg text-zinc-950 leading-snug hover:text-[#b91c1c] transition-colors">
             {isAr 
-              ? 'تقرير شامل: تداعيات الاتفاق الأميركي-الإيراني المؤقت على الأسواق المالية العالمية وحركة الطاقة' 
-              : 'Implications of the Interim US-Iran MoU Pact on Global Financial Corridors & Energy Hubs'}
+              ? 'أسواق الشرق الأوسط وشمال أفريقيا: تقلبات هرمز والتوازن الخليجي الهش' 
+              : 'Middle East & North Africa Markets: Hormuz Volatility & Fragile Gulf Equilibrium'}
           </h5>
 
           <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
             {isAr 
-              ? 'أحدث اتفاق السلام المؤقت ومذكرة التفاهم الموقعة بين الولايات المتحدة وإيران تحولاً جذرياً في الأسواق المالية العالمية، حيث اتجه المستثمرون بقوة نحو الأصول عالية المخاطر (Risk-On). وقد أدى هذا التطور الجيوسياسي البارز إلى تفكيك سريع لعلاوة المخاطر الجيوسياسية والتضخمية التي سيطرت على التداولات خلال فترة الحرب، مما انعكس بشكل مباشر على أسواق الطاقة، والأسهم، والسياسات النقدية الإقليمية.'
-              : 'The latest interim peace agreement and Memorandum of Understanding (MoU) signed between the United States and Iran has triggered a radical shift in global financial markets, rotating heavy investment back into risk-on parameters. This landmark breakthrough rapidly disassembled the geopolitical and inflationary premium that overrode trade during the conflict, immediately influencing energy vectors, global stock indices, and regional monetary paradigms.'}
+              ? 'قدم الأسبوع الأخير من شهر يونيو/حزيران 2026 درساً بليغاً في تقلبات السوق، مما يؤكد مدى سرعة تبدد التفاؤل الدبلوماسي أمام الوقائع الميدانية والتحركات العسكرية. ومع اقتراب نهاية الشهر، تجد الأسواق العربية نفسها عالقة في شد حذْب محفوف بالمخاطر بين وعود الاتفاق المؤقت بين الولايات المتحدة وإيران والكوابيس اللوجستية الناجمة عن تعطل ممر الطاقة.'
+              : 'The final week of June 2026 provided a masterclass in market volatility, underscoring how quickly diplomatic optimism can evaporate in the face of on-the-ground realities and military maneuvers. As the month draws to a close, Arab markets find themselves caught in a perilous tug-of-war between the promises of the interim U.S.-Iran agreement and the logistic nightmares stemming from disruptions to the vital energy corridor.'}
           </p>
 
-          {/* Asset Responses - HTML Table styled beautifully just like InStats section */}
-          <div className="border border-black overflow-hidden bg-white">
-            <div className="bg-black text-white p-2 text-xxs font-mono font-bold tracking-wider uppercase flex justify-between">
-              <span>{isAr ? 'ملخص تحركات الأصول الجيوسياسية' : 'GEOPOLITICAL ASSET ACTION METRICS'}</span>
-              <span>{isAr ? 'عشرية ٢٠٢٦' : 'Q2 2026 UPDATE'}</span>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left font-sans text-xs border-collapse">
-                <thead>
-                  <tr className="bg-zinc-150 border-b border-black font-extrabold uppercase text-[10px] text-zinc-800">
-                    <th className="p-2.5 text-right rtl:text-right border-r border-zinc-200">{isAr ? 'فئة الأصل' : 'Asset Class'}</th>
-                    <th className="p-2.5 text-right rtl:text-right border-r border-zinc-200">{isAr ? 'المؤشر / السعر الحالي' : 'Ticker / Index Price'}</th>
-                    <th className="p-2.5 text-center border-r border-zinc-200">{isAr ? 'اتجاه الحركة' : 'Direction'}</th>
-                    <th className="p-2.5 text-right rtl:text-right">{isAr ? 'أبرز الملاحظات والتغيرات' : 'Structural Observations'}</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-200 font-medium">
-                  {[
-                    { catAr: 'الطاقة', catEn: 'Energy', nameAr: 'خام برنت', nameEn: 'Brent Crude', actionAr: 'هبوط', actionEn: 'Bearish (Drop)', up: false, notesAr: 'تراجع إلى مستويات 77 - 78 دولاراً للبرميل (بعد أن تجاوز ذروة 126 دولاراً).', notesEn: 'Retreated to $77–$78/bbl (down from a wartime peak of $126).' },
-                    { catAr: 'الطاقة', catEn: 'Energy', nameAr: 'خام غرب تكساس (WTI)', nameEn: 'WTI Crude Oil', actionAr: 'هبوط', actionEn: 'Bearish (Drop)', up: false, notesAr: 'انخفض بنسبة 1.9% ليستقر عند 75.33 دولاراً للبرميل.', notesEn: 'Declined by 1.9% to settle at $75.33/bbl.' },
-                    { catAr: 'الأسهم الأميركية', catEn: 'US Equities', nameAr: 'مؤشر إس آند بي 500', nameEn: 'S&P 500 Index', actionAr: 'صعود', actionEn: 'Bullish (Rise)', up: true, notesAr: 'ارتفعت العقود الآجلة بنسب تراوحت بين 0.7% إلى 0.9%.', notesEn: 'Futures rose in a 0.7% to 0.9% bandwidth.' },
-                    { catAr: 'الأسهم الأميركية', catEn: 'US Equities', nameAr: 'مؤشر ناسداك', nameEn: 'Nasdaq Index', actionAr: 'صعود', actionEn: 'Bullish (Rise)', up: true, notesAr: 'قفزت العقود الآجلة بنسبة 1.1% بدعم من تحسن المعنويات.', notesEn: 'Futures jumped 1.1% on robust risk appetite.' },
-                    { catAr: 'الأسهم الآسيوية', catEn: 'Asian Equities', nameAr: 'مؤشر نيكاي 225 (اليابان)', nameEn: 'Nikkei 225 (Japan)', actionAr: 'صعود', actionEn: 'Bullish (Rise)', up: true, notesAr: 'قفز بنسب قوية وصلت إلى 3.6% في بعض التداولات.', notesEn: 'Pointed up sharply, securing up to 3.6% in intraday trading.' },
-                    { catAr: 'المعادن النفيسة', catEn: 'Precious Metals', nameAr: 'الذهب الفوري', nameEn: 'Spot Gold Index', actionAr: 'صعود', actionEn: 'Bullish (Rise)', up: true, notesAr: 'ارتفع بنسبة 1.5% مسجلاً نحو 4320 دولاراً للأونصة (يعكس شكوكاً متبقية).', notesEn: 'Gained 1.5% marking $4,320/oz (illustrating residual hedging).' },
-                    { catAr: 'السندات', catEn: 'Sovereign Bonds', nameAr: 'سندات الخزانة الأميركية (10 سنوات)', nameEn: 'US 10-Yr Treasury', actionAr: 'هبوط العائد', actionEn: 'Yield Drop', up: false, notesAr: 'تراجع العائد بواقع 4 إلى 5 نقاط أساس ليسجل نحو 4.45%.', notesEn: 'Yield compressed by 4–5 bps to settle near 4.45%.' },
-                    { catAr: 'العملات المشفرة', catEn: 'Crypto', nameAr: 'بتكوين (Bitcoin)', nameEn: 'Bitcoin (BTC)', actionAr: 'هبوط', actionEn: 'Bearish (Drop)', up: false, notesAr: 'تراجعت بشكل طفيف بنسبة 0.4% لتسجل 64,142 دولاراً.', notesEn: 'Dipped microscopically by 0.4% trading at $64,142.' }
-                  ].map((row, index) => (
-                    <tr key={index} className="hover:bg-zinc-50 transition-colors">
-                      <td className="p-2.5 font-mono text-[10px] text-zinc-500 text-right rtl:text-right border-r border-zinc-200 font-bold whitespace-nowrap">
-                        {isAr ? row.catAr : row.catEn}
-                      </td>
-                      <td className="p-2.5 text-right rtl:text-right text-xs font-bold font-sans border-r border-zinc-200">
-                        {isAr ? row.nameAr : row.nameEn}
-                      </td>
-                      <td className="p-2.5 text-center border-r border-zinc-200">
-                        <span className={`inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 font-black uppercase tracking-wider select-none ${
-                          row.up ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-[#b91c1c]'
-                        }`}>
-                          {row.up ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
-                          <span>{isAr ? row.actionAr : row.actionEn}</span>
-                        </span>
-                      </td>
-                      <td className="p-2.5 text-right rtl:text-right text-[11px] leading-relaxed text-zinc-600 font-sans font-medium">
-                        {isAr ? row.notesAr : row.notesEn}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Expanded Sections containing II, III, IV */}
           {isReportExpanded && (
             <div className="space-y-6 pt-2 border-t border-zinc-200 animate-slide-down">
-              {/* II. Monetary Policy Impacts */}
+              {/* Part 1 */}
               <div className="space-y-2">
                 <h6 className="font-sans font-black text-sm text-zinc-950 uppercase border-r-4 border-[#b91c1c] pr-2.5">
-                  {isAr ? 'ثانياً: التأثيرات على السياسة النقدية والعملات' : 'II. Impact on Monetary Policy & Sovereign Currencies'}
+                  {isAr ? '١. النفط: تلاشي علاوة السلام وعودة التقلبات' : '1. Oil: Fading Peace Premium & Return of Volatility'}
                 </h6>
                 <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
                   {isAr 
-                    ? 'أدى تراجع أسعار الطاقة إلى إعادة تسعير طفيفة لمخاوف التضخم العالمية، إلا أن تأثيرات صدمة الطاقة السابقة لا تزال تلقي بظلالها على الأسواق الناشئة:'
-                    : 'Though softening energy prices slightly readjusted global inflation expectations, the aftershocks of the prior energy crunch continue to overshadow emerging economies:'}
+                    ? 'اتجهت أسعار النفط العالمية نحو الانخفاض في بداية الأسبوع بفعل أنباء الاتفاق الأمريكي الإيراني، حيث انخفض خام برنت إلى ما دون 77.40 دولاراً للبرميل، بعد أن فقد حوالي 4.5 دولار في جلسة واحدة عقب الإعلان عن الاتفاق السويسري. لكن هذا الانخفاض تبخر بسرعة مع نهاية الأسبوع، حيث أثارت المناوشات البحرية الجديدة والغموض الذي يحيط بتفسير شروط حرية الحركة في مضيق هرمز مخاوف جديدة من تجدد الصراع، مما دفع برنت للارتداد ليقترب من 81.50+ دولار وسط تداولات عاصفة.'
+                    : 'Global oil prices initially trended downward early in the week on news of the U.S.-Iran agreement, with Brent crude dipping to a low of $77.40 per barrel—shedding nearly $4.50 in a single session following the announcement of the Swiss accord. However, these losses evaporated by week\'s end as fresh naval skirmishes and ambiguity surrounding the interpretation of transit terms in the Strait of Hormuz sparked renewed fears of conflict, pushing Brent to bounce back above $81.50+ amid turbulent trading.'}
                 </p>
-                <ul className="list-disc list-inside text-xs text-zinc-650 space-y-1.5 pl-1.5 leading-relaxed font-sans font-medium">
-                  <li>
-                    <strong>{isAr ? 'الأسواق الناشئة الآسيوية:' : 'Emerging Asian Markets:'}</strong>{' '}
-                    {isAr 
-                      ? 'تراجعت معظم عملات هذه الأسواق أمام الدولار الأميركي، بما في ذلك الروبية الإندونيسية والبيزو الفلبيني.' 
-                      : 'Most regional currencies depreciated against the USD, including the Indonesian Rupiah and Philippine Peso.'}
-                  </li>
-                  <li>
-                    <strong>{isAr ? 'قرارات الفائدة المتوقعة:' : 'Benchmark Interest Rates:'}</strong>{' '}
-                    {isAr 
-                      ? 'يتجه البنك المركزي في كل من إندونيسيا والفلبين لرفع أسعار الفائدة الرئيسية بواقع ربع نقطة مئوية (0.25%) لمواجهة التبعات التضخمية السابقة، بينما يُتوقع أن يبقي البنك المركزي التايواني على أسعاره دون تغيير.' 
-                      : 'Central banks of Indonesia and the Philippines are poised to hike benchmark rates by 25 bps to counteract prior inflationary momentum, while Taiwan is favored to hold steady.'}
-                  </li>
-                  <li>
-                    <strong>{isAr ? 'الين الياباني:' : 'Japanese Yen (JPY):'}</strong>{' '}
-                    {isAr 
-                      ? 'استمرت معاناة العملة اليابانية، حيث هبط الين إلى أضعف مستوياته أمام الدولار منذ يوليو 2024 (نحو 160.58 ين للدولار)، مما يرفع من احتمالات التدخل الحكومي لاحتواء التضخم وتحقيق استقرار العملة.' 
-                      : 'The Yen weakened further to lows not seen since July 2024 (around 160.58/USD), elevating intervention speculative risk for stabilizing the local inflation curve.'}
-                  </li>
-                  <li>
-                    <strong>{isAr ? 'الدولار الأميركي:' : 'The US Dollar (USD):'}</strong>{' '}
-                    {isAr 
-                      ? 'تراجع مؤشر بلومبرغ للدولار الفوري بنسبة 0.2%، في حين حقق اليورو والدولار الأسترالي مكاسب طفيفة.' 
-                      : 'The Bloomberg Dollar Spot Index dipped 0.2%, allowing modest recoveries for the Euro and Australian Dollar.'}
-                  </li>
-                </ul>
               </div>
 
-              {/* III. Oil Flow logistics and Strait of Hormuz */}
+              {/* Part 2 */}
               <div className="space-y-2">
                 <h6 className="font-sans font-black text-sm text-zinc-950 uppercase border-r-4 border-[#b91c1c] pr-2.5">
-                  {isAr ? 'ثالثاً: مستقبل تدفقات النفط ومعضلة "مضيق هرمز"' : 'III. Oil Flow Logistics & Strait of Hormuz Corridor Dynamics'}
+                  {isAr ? '٢. الأسهم الخليجية: أداء متأرجح بقيادة تداول (تاسي)' : '2. Gulf Equities: Swing Performance Led by Tadawul (TASI)'}
                 </h6>
                 <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
                   {isAr 
-                    ? 'رغم إعادة فتح مضيق هرمز نظرياً بموجب الاتفاق، إلا أن المشهد النفطي الإقليمي قد تغير بشكل هيكلي. تشير تحليلات "غولدمان ساكس" إلى أن تعافي تدفقات النفط عبر المضيق قد يستقر عند 70% فقط من مستويات ما قبل الحرب.'
-                    : 'While the Strait of Hormuz has nominally reopened under the truce, the regional logistics landscape has experienced structural realignment. Goldman Sachs analytical briefs suggest shipping flows will stabilize near just 70% of pre-war volumes.'}
+                    ? 'شهدت الأسواق المالية في منطقة الخليج أسبوعاً متقلباً. فبينما تفاعلت أسواق دبي وأبوظبي إيجاباً مع فرص التهدئة، شهد المؤشر العام للسعودية (تاسي) تداولات حذرة، حيث أغلق منخفضاً بنسبة 1.2% ليدافع عن مستويات 10,933 نقطة، متأثراً بتراجع أسهم أرامكو والقطاع البتروكيماوي. من ناحية أخرى، سجلت البورصة الكويتية استقراراً نسبياً بدعم من آمال توسيع ممر التصدير عبر الأنابيب البرية والربط اللوجستي.'
+                    : 'Gulf stock markets experienced a highly volatile week. While Dubai and Abu Dhabi indices reacted positively to cooling tensions, Saudi Arabia\'s benchmark Tadawul All Share Index (TASI) saw cautious trading, closing down 1.2% to defend the 10,933-point level, weighed down by drops in Aramco and petrochemical giants. Conversely, the Kuwaiti bourse remained relatively stable, buoyed by hopes of expanding overland pipeline export routes and logistic integration.'}
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-                  <div className="bg-white border border-zinc-200 p-3 space-y-1">
-                    <span className="font-mono text-[9px] font-black text-zinc-400 uppercase tracking-wider">{isAr ? 'أولاً: الحاجة للتعافي' : 'A. Volume Requirements'}</span>
-                    <p className="text-[11px] text-zinc-650 leading-relaxed font-sans">
-                      {isAr 
-                        ? 'تتطلب العودة لمستويات ما قبل النزاع زيادة التدفقات عبر هرمز بمقدار 13 مليون برميل يومياً (مقارنة بـ 20 مليون برميل يومياً قبل الحرب).'
-                        : 'Resuming pre-war distribution benchmarks would necessitate adding 13 million barrels per day through Hormuz (vs. 20 million bpd beforehand).'}
-                    </p>
-                  </div>
-                  <div className="bg-white border border-zinc-200 p-3 space-y-1">
-                    <span className="font-mono text-[9px] font-black text-zinc-400 uppercase tracking-wider">{isAr ? 'ثانياً: البدائل الحالية' : 'B. Midstream Redirection'}</span>
-                    <p className="text-[11px] text-zinc-650 leading-relaxed font-sans">
-                      {isAr 
-                        ? 'نجحت دول المنطقة في تحويل نحو 7.5 مليون برميل يومياً عبر مسارات بديلة، حيث كثفت "أرامكو السعودية" النقل نحو ساحل البحر الأحمر (ينبع)، واعتمدت الإمارات على ميناء الفجيرة، بينما وجه العراق شحناته إلى ميناء جيهان التركي.'
-                        : 'Gulf states successfully diverted ~7.5 million bpd to alternative corridors: Saudi Aramco prioritized Red Sea terminals (Yanbu), the UAE relied on terminal infrastructure in Fujairah, and Iraq redirected shipments through Turkey (Ceyhan).'}
-                    </p>
-                  </div>
-                  <div className="bg-white border border-zinc-200 p-3 space-y-1">
-                    <span className="font-mono text-[9px] font-black text-zinc-400 uppercase tracking-wider">{isAr ? 'ثالثاً: فك الارتباط' : 'C. Structural Decoupling'}</span>
-                    <p className="text-[11px] text-zinc-650 leading-relaxed font-sans">
-                      {isAr 
-                        ? 'أعلنت دولة الإمارات صراحة عن خطة طموحة للوصول إلى "صفر اعتماد" على مضيق هرمز من خلال توسيع موانئها الشرقية. بالتوازي، تبحث الكويت عن بدائل لتصدير خامها عبر خطوط أنابيب بالتعاون مع السعودية والإمارات.'
-                        : 'The UAE explicitly announced an ambitious blueprint targeting "Zero reliance" on Hormuz by scaling its eastern deepwater ports, while Kuwait negotiates pipeline transmission access agreements with Saudi Arabia and the UAE.'}
-                    </p>
-                  </div>
-                </div>
               </div>
 
-              {/* IV. Macro forecasts and risks */}
+              {/* Part 3 */}
               <div className="space-y-2">
                 <h6 className="font-sans font-black text-sm text-zinc-950 uppercase border-r-4 border-[#b91c1c] pr-2.5">
-                  {isAr ? 'رابعاً: التوقعات الاقتصادية والمخاطر الكامنة' : 'IV. Macroeconomic Horizons & Embedded Tail-Risks'}
+                  {isAr ? '٣. معضلة هرمز وسيناريوهات فك الارتباط' : '3. The Hormuz Dilemma and Decoupling Scenarios'}
                 </h6>
                 <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
                   {isAr 
-                    ? 'على الرغم من احتفاء الأسواق بهذا الاختراق الدبلوماسي، يبقى المشهد الاقتصادي الكلي محفوفاً بالتعقيدات والمخاطر التي تراقبها البنوك المركزية والمؤسسات المالية الكبرى (مثل Schroders) عن كثب:'
-                    : 'Despite the enthusiastic risk-on reception, the broader macro environment remains complicated by systemic hazards monitored closely by central banks and asset management giants like Schroders:'}
+                    ? 'تتوقع أحدث تحليلات "غولدمان ساكس" و"سيتي جروب" أن تستقر تدفقات النفط عبر مضيق هرمز عند 70% فقط من مستويات ما قبل الحرب في الأمد القريب. ويعكس هذا التقييم الصدمة اللوجستية الهيكلية التي تعرض لها قطاع الشحن البحري، وتأخر تفعيل آلية "الخط الساخن" العسكري لتنسيق المرور بين واشنطن وطهران، مما يدفع دول المنطقة لتسريع مشاريع خطوط الأنابيب البرية الالتفافية لإنهاء اعتمادها الكامل على هذا الممر المائي الحرج.'
+                    : 'The latest analytic briefs from Goldman Sachs and Citigroup estimate that oil shipments through the Strait of Hormuz will stabilize at just 70% of pre-war volumes in the near term. This assessment reflects the structural logistical shock suffered by the marine shipping industry and the delayed activation of the military "hotline" between Washington and Tehran, driving regional states to accelerate bypass pipelines to decouple completely from the critical waterway.'}
                 </p>
-                <div className="space-y-2 text-xs text-zinc-650 font-sans font-medium">
-                  <p>
-                    📌 <strong>{isAr ? 'حزمة التعافي المالي المقدرة:' : 'Recovery Funding Underwriting:'}</strong>{' '}
-                    {isAr 
-                      ? 'يتطلب الاتفاق التمهيدي إقرار حزمة تعافي ضخمة بقيمة 300 مليار دولار، وهو ما سيفرض تحديات تمويلية واستثمارية جديدة.' 
-                      : 'The interim draft mandates a massive $300bn stabilization and development package, presenting substantial underwriting and fiscal strains.'}
-                  </p>
-                  <p>
-                    📌 <strong>{isAr ? 'ترحيل الملفات وتماسك الذهب:' : 'Deferred Negotiations & Metallic Hedging:'}</strong>{' '}
-                    {isAr 
-                      ? 'تم إرجاء البت في القضايا الأكثر تعقيداً، وعلى رأسها البرنامج النووي الإيراني، مما يبرر التماسك غير المعتاد لأسعار الذهب كملاذ آمن للتحوط ضد أي انهيار محتمل للاتفاق النهائي.' 
-                      : 'The most complex assets—notably the Iranian nuclear framework—have been deferred. This explains spot Gold\'s persistent elevation as a strategic premium hedge against a prospective breakdown.'}
-                  </p>
-                  <p>
-                    📌 <strong>{isAr ? 'البنية التحتية والخطوط اللوجستية:' : 'Energy & Transit Infrastructure Rehabilitation:'}</strong>{' '}
-                    {isAr 
-                      ? 'يرتبط التوازن الفعلي في أسواق النفط بسرعة إصلاح البنية التحتية المتضررة، وتجاوز العقبات اللوجستية، وتغلب مُلّاك السفن وناقلات النفط على مخاوفهم الأمنية للعودة إلى الإبحار عبر مضيق هرمز.' 
-                      : 'Tangible balance in the global crude markets depends on the speed of restoring damaged refining/extraction systems and shipowners bypassing security premiums to normalize freight paths.'}
-                  </p>
-                </div>
               </div>
             </div>
           )}

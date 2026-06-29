@@ -258,6 +258,188 @@ To bypass standard banking controls, Iranian entities have developed robust alte
     dateAr: '٢٠ يونيو ٢٠٢٦',
     sourceEn: 'Al-Warraq Cybersecurity Operations Unit',
     sourceAr: 'وحدة عمليات الأمن السيبراني بالورّاق'
+  },
+  {
+    id: 'us-iran-halt-strikes-2026',
+    codeName: 'OPERATION BRASS SHIELD',
+    titleEn: 'U.S. and Iran Agree to Halt Strikes and Meet This Week',
+    titleAr: 'مسؤول أمريكي: واشنطن وطهران تتفقان على وقف الضربات المتبادلة والاجتماع هذا الأسبوع',
+    summaryEn: 'The U.S. and Iran have agreed to stop attacking each other as the two sides plan to meet in Qatar to work out their dispute over the Strait of Hormuz.',
+    summaryAr: 'تفاصيل الاتفاق الأمريكي الإيراني المفاجئ لوقف الضربات العسكرية المتبادلة واستباق جولة مفاوضات حاسمة في الدوحة بشأن تأمين الملاحة المائية.',
+    contentEn: `The U.S. and Iran agreed to stop attacking each other, according to a senior U.S. official, as the two sides plan to meet Tuesday in Qatar's capital to work out their dispute over the Strait of Hormuz.
+
+**Why it matters:** The ceasefire is barely 11 days old and already on shaky ground with renewed strikes by both sides and President Trump's threat to restart the war and "complete the job."
+
+The renewed fighting was sparked by competing interpretations of the memorandum of understanding (MOU) to end the war — especially its terms on the Strait of Hormuz.
+
+**The latest:** "We decided to stop all the kinetic activity," a senior U.S. official tells Axios, using the military's term for strikes and other attacks.
+
+A second U.S. official tells Axios both sides will stand down "for now" and that "vessels can move freely" as technical talks are set to continue.
+Both U.S. officials and a third source with knowledge confirmed Tuesday's planned meeting.
+
+**Catch up quick:** Under the MOU, Iran committed to make its best efforts to allow safe passage of commercial vessels through the strait. In return, the U.S. lifted its blockade of Iranian ports.
+
+During negotiations in Switzerland last week, the U.S. delegation — headed by Vice President Vance — agreed with Iran to establish a "hotline" between the U.S. military and the IRGC (Islamic Revolutionary Guard Corps), Iran's military command, to coordinate traffic in the strait.
+As of Saturday, the "hotline" still wasn't operational even as Iran started claiming, again, that ships need to coordinate passage.
+
+**State of play:** The Tuesday talks were originally set to happen in Switzerland to address Iran's nuclear program, a source with knowledge of the talks said. The escalation moved them to a different venue and refocused them on the Strait of Hormuz.
+
+Nick Stewart, who heads the U.S. technical team, is expected to participate in the talks, according to a U.S. official and a source with knowledge.`,
+    contentAr: `وافقت الولايات المتحدة وإيران على وقف الهجمات المتبادلة، وفقاً لما صرح به مسؤول أمريكي رفيع المستوى، حيث يعتزم الجانبان الاجتماع يوم الثلاثاء في العاصمة القطرية الدوحة لتسوية خلافهما المتصاعد بشأن مضيق هرمز.
+
+**لماذا يهم الأمر:** لم يمر على اتفاق وقف إطلاق النار سوى 11 يوماً فقط، وهو يقف بالفعل على أرضية مهتزة للغاية في ظل الضربات المتجددة من كلا الطرفين وتهديدات الرئيس ترامب باستئناف الحرب و"إكمال المهمة".
+
+وقد اندلع القتال المتجدد بسبب التفسيرات المتعارضة لمذكرة التفاهم (MOU) الموقعة لإنهاء الحرب - وخاصة البنود المتعلقة بمضيق هرمز.
+
+**آخر المستجدات:** وصرح مسؤول أمريكي رفيع لـ "أكسيوس" قائلاً: "لقد قررنا وقف جميع الأنشطة الحركية (القتالية)"، مستخدماً المصالح العسكري للإشارة إلى الغارات والهجمات الأخرى.
+
+وأكد مسؤول أمريكي ثانٍ لـ "أكسيوس" أن كلا الجانبين سيتراجعان "في الوقت الحالي" وأن "السفن يمكنها التحرك بحرية" مع الاستعداد لمواصلة المحادثات الفنية والتقنية.
+وقد أكد المسؤولان الأمريكيان ومصدر ثالث مطلع التخطيط لعقد هذا الاجتماع المرتقب يوم الثلاثاء.
+
+**موجز سريع:** بموجب مذكرة التفاهم الموقعة، التزمت إيران ببذل قصارى جهدها للسماح بالمرور الآمن للسفن التجارية عبر مضيق هرمز. وفي المقابل, رفعت الولايات المتحدة حصارها عن الموانئ الإيرانية.
+
+وخلال المفاوضات التي جرت في سويسرا الأسبوع الماضي، وافق الوفد الأمريكي - برئاسة نائب الرئيس جيه دي فانس - مع إيران على إنشاء "خط ساخن" بين الجيش الأمريكي والحرس الثوري الإيراني لتنسيق حركة الملاحة في المضيق.
+وحتى يوم السبت، لم يكن "الخط الساخن" قد دخل حيز التشغيل الفعلي بعد، في حين بدأت إيران تطالب مجدداً بضرورة قيام السفن بتنسيق مرورها مسبقاً.
+
+**الوضع الراهن:** وكانت محادثات الثلاثاء مقررة في الأصل في سويسرا لمناقشة البرنامج النووي الإيراني، وفقاً لمصدر مطلع على سير المحادثات. إلا أن التصعيد العسكري الأخير نقلها إلى موقع جديد (الدوحة) وأعاد توجيهها بالكامل للتركيز على ملف مضيق هرمز الشائك.
+
+ومن المتوقع أن يشارك نيك ستيوارت، الذي يرأس الفريق الفني الأمريكي، في هذه المحادثات، وفقاً لمسؤول أمريكي ومصدر مطلع.`,
+    threatLevel: 'HIGH',
+    regionEn: 'Qatar / Strait of Hormuz',
+    regionAr: 'قطر / مضيق هرمز',
+    coordinates: '25.28° N, 51.53° E',
+    dateEn: 'June 29, 2026',
+    dateAr: '٢٩ يونيو ٢٠٢٦',
+    sourceEn: 'Barak Ravid (Axios News Intercept)',
+    sourceAr: 'باراك رافيد (أكسيوس - تغطية خاصة)'
+  },
+  {
+    id: 'israel-lebanon-deal-behind-scenes',
+    codeName: 'OPERATION LEBANON FIRST',
+    titleEn: 'Behind the Scenes: How Shared Fear of Iran Led to an Israel-Lebanon Deal',
+    titleAr: 'كواليس المفاوضات: كيف أدى الخوف المشترك من نفوذ إيران إلى اتفاق لبناني-إسرائيلي',
+    summaryEn: 'Four days of nonstop negotiations in Washington between the Israeli and Lebanese governments were propelled by one clear shared interest: weakening the influence of Hezbollah and Iran in Lebanon.',
+    summaryAr: 'مستند استخباري خاص يكشف تفاصيل الدبلوماسية السرية والضغوط المكثفة من إدارة ترامب لإبرام اتفاقية لبنان والالتفاف على النفوذ الإيراني.',
+    contentEn: `This story is based on conversations with six U.S., Israeli and Lebanese sources with direct knowledge of the negotiations.
+
+Four days of nonstop negotiations in Washington this week between the Israeli and Lebanese governments were propelled by one clear shared interest: weakening the influence of Hezbollah and Iran in Lebanon, according to U.S., Israeli and Lebanese officials.
+
+**Why it matters:** The framework agreement brokered by the Trump administration is the most significant political agreement between Israel and Lebanon in four decades — but all parties involved know the vision of peace it lays out may never materialize.
+
+Mixed with the skepticism is deep concern that the deal could lead to a violent response from Hezbollah that could throw the country back into civil war.
+The agreement also seems to contradict some of the understandings reached between the U.S. and Iran in Switzerland, and could thus complicate that fragile truce.
+
+**The backdrop:** Iran managed to wrap the situation in Lebanon into its negotiations with the U.S. in recent weeks.
+That resulted in a memorandum of understanding that calls on the parties to observe a ceasefire in Lebanon and ensure the country's territorial integrity — which is actively undermined by Israel's ongoing occupation of southern Lebanon.
+
+During talks in Switzerland last Sunday, the U.S. and Iran agreed to create a new "deconfliction cell," together with Lebanon and the Pakistani and Qatari mediators, to ensure the ceasefire in Lebanon holds.
+That shocked both Israeli and Lebanese officials, who saw it as bolstering Hezbollah and legitimizing Iran's influence in the country.
+The news also came as Israeli and Lebanese diplomats were preparing for a crucial round of negotiations in Washington.
+
+**Behind the scenes:** When they met at the State Department on Tuesday, Israeli Ambassador Yechiel Leiter opened the first session with a strongly worded speech calling the new U.S.-Iranian understandings on Lebanon "a train wreck."
+Leiter asked the U.S. mediators whether the U.S. was actually still interested in weakening Iran's influence in Lebanon, as the Israel-Lebanon talks had been aiming to do.
+Lebanon's representatives followed up with their own demands for clarification. "The Lebanese were on their heels," a source with direct knowledge said.
+
+While the U.S. mediators stressed the goal was to get an Israeli-Lebanese agreement with no outside interference, the first day of the talks was "pretty ugly," a U.S. official conceded.
+The parties dug in on their positions, particularly on security issues, and it felt to some participants as though the negotiations were actually moving backward.
+
+**Zoom in:** The talks took place on two tracks: a security track between military officers, and a political track between diplomats. Senior Pentagon and State Department officials mediated.
+The parties worked on three documents: a framework agreement, a security annex, and an agreement on an initial Israeli withdrawal from two "pilot zones," to be replaced by the Lebanese army.
+
+On Wednesday, the negotiations picked up steam. U.S. officials began to think an agreement could be signed the next day.
+But on Thursday, the tables turned again. As the day passed, the parties hardened their positions, and the U.S. couldn't bridge the gaps on all three documents to create a single package. The main dispute was over the terms and locations of the Israeli withdrawals.
+On Thursday evening, both Israeli Prime Minister Benjamin Netanyahu and Lebanese President Joseph Aoun hit the brakes. Negotiators on both sides asked for more time to consult with their capitals, and the U.S. mediators agreed to extend the talks by a day.
+
+**The intrigue:** Secretary of State Marco Rubio landed back in Washington on Thursday night after a trip to the Persian Gulf.
+Rubio had been speaking by phone with both Netanyahu and Aoun since Tuesday, holding around eight calls in total with the two leaders. Vice President Vance also spoke to each leader at least once.
+Rubio emphasized to Netanyahu and Aoun that it was important to President Trump for a deal to be wrapped up by the end of the week.
+The high-level attention from Washington "made it clear to both sides that there was a clear sense of urgency here," a source with knowledge said.
+
+**Inside the room:** On Friday morning, Rubio joined the talks to try to close the final gaps. Also involved in the final push were U.S. chief negotiator Dan Holler, U.S. Ambassador to Lebanon Michel Issa, CENTCOM Marines commander Lt. Gen. Joseph Clearfield, and Pentagon officials Daniel Zimmerman and Michael Dimino.
+
+The U.S. asked Israel for two changes to the text in order to secure the deal, including an Israeli withdrawal from a village in southern Lebanon currently under Israeli occupation and a clear statement that this would mark the beginning of a broader process of redeployment out of Lebanon.
+Leiter pressed Netanyahu and other senior Israeli officials to agree in a call that became heated when Netanyahu resisted the changes. Two sources said Leiter raised his voice as he made the case that the deal was an important achievement and Israel needed to sign.
+A source close to Leiter said he raised his voice because of the noise on the phone line. Leiter himself told Axios that calls to consult with officials back home are "customary" during negotiations and differences of opinion are "natural."
+
+"During one of the update calls, a professional, substantive, and at times sharp discussion took place, during which a range of views was heard regarding the best way to maximize the achievements of the negotiations while fully safeguarding Israel's vital interests," he said.
+
+**Between the lines:** "There wasn't a lot of trust between Israel and Lebanon, but eventually both parties understood they needed to get a deal in order to keep control of the process and not allow Iran in," a source with direct knowledge said.
+
+**The other side:** The agreement immediately increased internal tensions in Lebanon.
+Hezbollah tried to organize demonstrations in Beirut against the deal on Friday, but only managed to mobilize several hundred people who were quickly dispersed.
+On Saturday, Lebanese security forces took down dozens of posters placed by Hezbollah on the main road to Beirut's international airport, thanking Iran's supreme leader for the ceasefire.
+In their place, the Lebanese government hung its own posters with the slogan, "Lebanon first" — some of which were burned by Hezbollah supporters on Saturday night.
+
+**What they're saying:** Hezbollah leader Naim Qassem declared the agreement with Israel "null and void" and called it "a humiliation, disgrace, and a surrender of sovereignty."
+He stressed Hezbollah will continue its "resistance" to the Israeli occupation.
+
+**What's next:** Later on Saturday, Trump spoke with Aoun and congratulated him on the deal.
+Trump said the U.S. would provide everything necessary to implement the agreement and to support Lebanon's sovereignty and the extension of the Lebanese state's authority over the entire Lebanese territory, Aoun's office said.
+At the end of the call, Trump told Aoun he looked forward to meeting him soon at the White House. The visit is expected in mid-July.`,
+    contentAr: `تستند هذه القصة إلى محادثات مع ستة مصادر أمريكية وإسرائيلية ولبنانية على دراية مباشرة بمسار المفاوضات.
+
+وفقاً لمسؤولين أمريكيين وإسرائيليين ولبنانيين، فإن أربعة أيام من المفاوضات المتواصلة في واشنطن هذا الأسبوع بين الحكومتين الإسرائيلية واللبنانية كانت مدفوعة بمصلحة مشتركة واحدة واضحة: وهي إضعاف نفوذ حزب الله وإيران في لبنان.
+
+**لماذا يهم الأمر:** يُعد الاتفاق الإطاري الذي تم التوصل إليه بوساطة إدارة ترامب أهم اتفاق سياسي بين إسرائيل ولبنان منذ أربعة عقود - لكن جميع الأطراف المعنية تدرك أن رؤية السلام التي يرسمها قد لا تتحقق أبداً على أرض الواقع.
+
+ويختلط هذا التشكيك بقلق عميق من أن يؤدي الاتفاق إلى رد فعل عنيف ومسلح من قِبل حزب الله، مما قد يدخل البلاد مجدداً في أتون حرب أهلية مدمرة.
+كما يبدو أن هذا الاتفاق يتعارض مع بعض التفاهمات التي تم التوصل إليها بين الولايات المتحدة وإيران في سويسرا، مما قد يعقد تلك الهدنة الهشة.
+
+**خلفية الأحداث:** نجحت إيران في دمج الوضع في لبنان ضمن مفاوضاتها مع الولايات المتحدة في الأسابيع الأخيرة.
+وأسفر ذلك عن مذكرة تفاهم تدعو الأطراف إلى الالتزام بوقف إطلاق النار في لبنان وضمان سلامة أراضيه وسيادته - وهو ما تقوضه بنشاط استمرار العمليات العسكرية الإسرائيلية في جنوب لبنان.
+
+وخلال المحادثات التي جرت في سويسرا يوم الأحد الماضي، اتفقت الولايات المتحدة وإيران على إنشاء "خلية لفض النزاعات" جديدة، بالاشتراك مع لبنان والوسيطين الباكستاني والقطري، لضمان استمرار وقف إطلاق النار في لبنان.
+وقد صدم هذا الاتفاق المسؤولين الإسرائيليين واللبنانيين على حد سواء، حيث رأوا فيه تعزيزاً لموقف حزب الله وشرعنة لنفوذ إيران المتنامي في البلاد.
+وتزامنت هذه الأنباء مع استعداد الدبلوماسيين الإسرائيليين واللبنانيين لجولة حاسمة من المفاوضات في واشنطن.
+
+**كواليس اللقاءات:** عندما اجتمع المفاوضون في مقر وزارة الخارجية الأمريكية يوم الثلاثاء، افتتح السفير الإسرائيلي يحيئيل ليتر الجلسة الأولى بكلمة شديدة اللهجة وصف فيها التفاهمات الأمريكية الإيرانية الجديدة بشأن لبنان بأنها "كارثة محققة".
+وتساءل ليتر عما إذا كانت الولايات المتحدة لا تزال مهتمة بالفعل بإضعاف نفوذ إيران في لبنان، وهو الهدف الذي كانت تسعى إليه المحادثات الإسرائيلية اللبنانية.
+وتبع ذلك مطالبة ممثلي لبنان بإيضاحات مماثلة، حيث صرح مصدر مطلع بشكل مباشر: "كان اللبنانيون في حالة من التوجس والترقب الشديد".
+
+وعلى الرغم من تأكيد الوسطاء الأمريكيين أن الهدف هو التوصل إلى اتفاق إسرائيلي لبناني دون أي تدخل خارجي، إلا أن مسؤولاً أمريكياً اعترف بأن اليوم الأول من المحادثات كان "صعباً وبشعاً للغاية".
+وتمسك الطرفان بمواقفهما بشدة، لا سيما بشأن القضايا الأمنية والعسكرية، وبدا لبعض المشاركين أن المفاوضات تتراجع إلى الوراء بدلاً من التقدم.
+
+**عن قرب:** جرت المحادثات عبر مسارين متوازيين: مسار أمني بين ضباط عسكريين، ومسار سياسي بين دبلوماسيين، تولى إدارته والوساطة فيه مسؤولون كبار من وزارة الدفاع (البنتاغون) ووزارة الخارجية.
+وعملت الأطراف على إعداد وثائق ثلاث: اتفاق إطاري، ملحق أمني، واتفاق بشأن انسحاب إسرائيلي أولي من "منطقتين نموذجيتين" ليحل محلهما الجيش اللبناني.
+
+وفي يوم الأربعاء، تسارعت وتيرة المفاوضات بشكل كبير، وبدأ المسؤولون الأمريكيون يعتقدون بإمكانية توقيع الاتفاق في اليوم التالي.
+لكن في يوم الخميس، انقلبت الطاولة مجدداً؛ حيث شددت الأطراف مواقفها مع مرور الوقت، ولم تتمكن الولايات المتحدة من سد الفجوات في الوثائق الثلاث لتقديمها كحزمة واحدة. وكان الخلاف الرئيسي يدور حول شروط ومواقع الانسحابات الإسرائيلية.
+وفي مساء الخميس، ضغط كل من رئيس الوزراء الإسرائيلي بنيامين نتنياهو والرئيس اللبناني جوزيف عون على المكابح، وطلب المفاوضون من الجانبين مزيداً من الوقت للتشاور مع عواصمهم، ووافق الوسطاء الأمريكيون على تمديد المحادثات ليوم إضافي.
+
+**خيوط الإثارة:** هبط وزير الخارجية الأمريكي ماركو روبيو في واشنطن ليلة الخميس بعد جولة في منطقة الخليج العربي.
+وكان روبيو يتواصل هاتفياً مع نتنياهو وعون منذ يوم الثلاثاء، حيث أجرى نحو ثماني مكالمات مع الزعيمين. كما تحدث نائب الرئيس جيه دي فانس مع كل منهما مرة واحدة على الأقل.
+وشدد روبيو لنتنياهو وعون على مدى الأهمية الكبيرة التي يوليها الرئيس ترامب لإنجاز هذا الاتفاق وقفل الملف قبل نهاية الأسبوع.
+وقال مصدر مطلع إن هذا الاهتمام رفيع المستوى من واشنطن "أوضح للطرفين أن هناك شعوراً حقيقياً بالاستعجال والضغط لحسم الاتفاق".
+
+**داخل الغرفة:** صباح يوم الجمعة، انضم روبيو إلى المحادثات في محاولة لإغلاق الفجوات المتبقية. وشارك في هذا الدفع النهائي كبير المفاوضين الأمريكيين دان هولر، والسفير الأمريكي لدى لبنان ميشيل عيسى، وقائد قوات مشاة البحرية في القيادة المركزية الأمريكية (CENTCOM) الجنرال جوزيف كليرفيلد، بالإضافة إلى مسؤولي البنتاغون دانيال زيمرمان ومايكل ديمينو.
+
+وطلبت الولايات المتحدة من إسرائيل إجراء تعديلين على النص لضمان إتمام الصفقة، بما في ذلك الانسحاب الإسرائيلي من بلدة جنوبية تخضع حالياً للاحتلال الإسرائيلي، وتقديم بيان واضح بأن هذا الانسحاب سيمثل بداية لعملية إعادة انتشار أوسع للقوات خارج الأراضي اللبنانية.
+وضغط السفير ليتر بقوة على نتنياهو ومسؤولين إسرائيليين آخرين للموافقة خلال مكالمة هاتفية اتسمت بالتوتر والحدة نتيجة مقاومة نتنياهو لهذه التعديلات. وأفاد مصدران أن ليتر رفع صوته أثناء محاججته بأن الاتفاق يمثل إنجازاً أمنياً كبيراً لإسرائيل وعليها التوقيع فوراً.
+وأوضح مصدر مقرب من ليتر أنه اضطر لرفع صوته بسبب الضوضاء على خط الهاتف الدولي، بينما صرح ليتر نفسه لـ "أكسيوس" أن إجراء مكالمات للتشاور مع المسؤولين في الوطن أمر "معتاد ومألوف" أثناء المفاوضات وأن تباين الآراء شيء طبيعي.
+
+وأضاف ليتر: "خلال إحدى مكالمات المتابعة، جرى نقاش مهني وموضوعي وحاد في بعض الأوقات، حيث استمعنا لمجموعة من الآراء حول أفضل السبل لتعظيم مكاسب المفاوضات مع حماية مصالح إسرائيل الحيوية بالكامل".
+
+**ما بين السطور:** وصرح مصدر مطلع بشكل مباشر: "لم تكن هناك ثقة متبادلة تذكر بين إسرائيل ولبنان، لكن في نهاية المطاف أدرك الطرفان أنهما بحاجة إلى إبرام هذا الاتفاق للحفاظ على السيطرة على مسار الأمور ومنع التدخل الإيراني المباشر".
+
+**الجانب الآخر:** تسبب الاتفاق فور إعلانه في زيادة حدة التوترات الداخلية في لبنان.
+وحاول حزب الله تنظيم تظاهرات احتجاجية في بيروت يوم الجمعة ضد الاتفاق، لكنه لم ينجح سوى في حشد بضع مئات من الأشخاص الذين تفرقوا سريعاً بجهود القوى الأمنية.
+وفي يوم السبت، أزالت قوات الأمن اللبنانية عشرات الملصقات واللافتات التي رفعها حزب الله على الطريق الرئيسي المؤدي لمطار بيروت الدولي، والتي تشكر المرشد الأعلى الإيراني على وقف إطلاق النار.
+وعلقت الحكومة اللبنانية في مكانها لافتات خاصة بها تحمل شعار "لبنان أولاً" - والتي قام أنصار حزب الله بإحراق بعضها ليلة السبت.
+
+**ماذا يقولون:** أعلن الأمين العام لحزب الله الشيخ نعيم قاسم أن الاتفاق مع إسرائيل "باطل ولاغٍ"، واصفاً إياه بأنه "إهانة وعار واستسلام وتنازل عن السيادة الوطنية".
+وشدد على أن حزب الله سيواصل خيار "المقاومة" ضد الاحتلال الإسرائيلي.
+
+**ماذا بعد:** في وقت لاحق من يوم السبت، تحدث ترامب هاتفياً مع عون وهنأه بالاتفاق.
+وقال مكتب عون إن ترامب أكد أن الولايات المتحدة ستقدم كل الدعم اللازم لتنفيذ الاتفاق ودعم سيادة لبنان وبسط سلطة الدولة على كامل أراضيها.
+وفي نهاية المكالمة، أخبر ترامب عون بأنه يتطلع للقائه قريباً في البيت الأبيض، وهي الزيارة المتوقعة في منتصف شهر يوليو/تموز.`,
+    threatLevel: 'HIGH',
+    regionEn: 'Washington D.C. / Israel / Lebanon',
+    regionAr: 'واشنطن / إسرائيل / لبنان',
+    coordinates: '38.89° N, 77.03° W',
+    dateEn: 'June 29, 2026',
+    dateAr: '٢٩ يونيو ٢٠٢٦',
+    sourceEn: 'Al-Warraq Washington Bureau (Axios Exclusive)',
+    sourceAr: 'مكتب الوراق بواشنطن (تغطية حصرية - أكسيوس)'
   }
 ];
 

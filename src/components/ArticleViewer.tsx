@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { X, Volume2, Type, Sparkles, BookOpen, Languages, Shield, ChevronLeft, ChevronRight, Play, Square, Lock, CreditCard, Share2, Send, Check, Link, Facebook, Twitter, Linkedin, ArrowRight, Tag, BookMarked, ExternalLink, Globe, Award } from 'lucide-react';
+import { X, Volume2, Type, Sparkles, BookOpen, Languages, Shield, ChevronLeft, ChevronRight, Play, Square, Lock, CreditCard, Share2, Send, Check, Link, Facebook, Twitter, Linkedin, ArrowRight, Tag, BookMarked, ExternalLink, Globe, Award, Download } from 'lucide-react';
 import { Article, LayoutMode } from '../types';
 import { INITIAL_ARTICLES } from '../data';
 import SEOMetadataManager from './SEOMetadataManager';
@@ -1297,6 +1297,16 @@ export default function ArticleViewer({
                 >
                   {copiedLink ? <Check size={11} /> : <Link size={11} />}
                   <span>{copiedLink ? (isAr ? 'تم النسخ!' : 'COPIED!') : (isAr ? 'نسخ الرابط' : 'COPY LINK')}</span>
+                </button>
+
+                {/* PDF Download */}
+                <button
+                  onClick={() => window.print()}
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-red-900 hover:bg-red-950 text-white rounded-none text-xxs font-mono font-bold uppercase transition-colors cursor-pointer border border-red-950"
+                  title={isAr ? 'تحميل كملف PDF رسمي' : 'Download official PDF'}
+                >
+                  <Download size={11} />
+                  <span>{isAr ? 'تحميل كـ PDF' : 'DOWNLOAD PDF'}</span>
                 </button>
               </div>
             </div>
