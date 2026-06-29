@@ -294,7 +294,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'لبنان والمنطقة',
       labelEn: 'Lebanon & Region',
       icon: <Globe size={13} />,
-      tabIds: ['lebanon', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street', 'middle-east', 'exclusives', 'translations'],
+      tabIds: ['lebanon', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street', 'middle-east', 'exclusives'],
       descAr: 'المشهد السيادي والأمني والتحقيقات الجيوسياسية الخاصة بلبنان والمشرق العربي',
       descEn: 'Sovereign reports, threat command, and specialized investigative dossiers on Lebanon and the Levant.'
     },
@@ -340,6 +340,8 @@ export default function Navigation({ language, activeCategory, setActiveCategory
   const otherTabs = categories.filter(cat => 
     cat.id !== 'all' && 
     cat.id !== 'premium-pricing' && 
+    cat.id !== 'translations' &&
+    cat.id !== 'in-case-you-missed-it' &&
     !staticGroups.some(g => g.tabIds.includes(cat.id))
   );
 
@@ -553,6 +555,38 @@ export default function Navigation({ language, activeCategory, setActiveCategory
               </button>
             </li>
 
+            {/* Direct Standalone Link: Translations */}
+            <li>
+              <button
+                id="nav-tab-translations"
+                onClick={() => selectTab('translations')}
+                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
+                  activeCategory === 'translations'
+                    ? 'bg-zinc-800 text-white font-black border-b-2 border-white'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-900 border border-zinc-800/50'
+                }`}
+              >
+                <Globe size={13} className="text-emerald-400" />
+                <span>{isAr ? 'ترجمات' : 'Translations'}</span>
+              </button>
+            </li>
+
+            {/* Direct Standalone Link: In Case You Missed It */}
+            <li>
+              <button
+                id="nav-tab-in-case-you-missed-it"
+                onClick={() => selectTab('in-case-you-missed-it')}
+                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
+                  activeCategory === 'in-case-you-missed-it'
+                    ? 'bg-zinc-800 text-white font-black border-b-2 border-white'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-900 border border-zinc-800/50'
+                }`}
+              >
+                <Bookmark size={13} className="text-amber-400" />
+                <span>{isAr ? 'فاتك قراءته' : 'In case you missed it'}</span>
+              </button>
+            </li>
+
             {/* 3. Dropdown for Custom/Extra tabs if they exceed static categories */}
             {otherTabs.length > 0 && (
               <li 
@@ -733,6 +767,34 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                 >
                   <Megaphone size={13} className="text-sky-400" />
                   <span>{isAr ? 'البيانات الصحفية' : 'Press Releases'}</span>
+                </button>
+
+                {/* Standalone Translations Link */}
+                <button
+                  onClick={() => selectTab('translations')}
+                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
+                    activeCategory === 'translations'
+                      ? 'bg-zinc-800 text-white font-extrabold border-r-4 border-white'
+                      : 'text-zinc-400 hover:text-white bg-zinc-900/40'
+                  }`}
+                  style={{ textAlign: isAr ? 'right' : 'left' }}
+                >
+                  <Globe size={13} className="text-emerald-400" />
+                  <span>{isAr ? 'ترجمات' : 'Translations'}</span>
+                </button>
+
+                {/* Standalone In Case You Missed It Link */}
+                <button
+                  onClick={() => selectTab('in-case-you-missed-it')}
+                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
+                    activeCategory === 'in-case-you-missed-it'
+                      ? 'bg-zinc-800 text-white font-extrabold border-r-4 border-white'
+                      : 'text-zinc-400 hover:text-white bg-zinc-900/40'
+                  }`}
+                  style={{ textAlign: isAr ? 'right' : 'left' }}
+                >
+                  <Bookmark size={13} className="text-amber-400" />
+                  <span>{isAr ? 'فاتك قراءته' : 'In case you missed it'}</span>
                 </button>
 
                 {/* Submenu Accordions */}

@@ -2,6 +2,7 @@ import { Article, NavigationTab, CurrencyRate } from './types';
 
 export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'all', labelAr: 'الرئيسية', labelEn: 'Home' },
+  { id: 'in-case-you-missed-it', labelAr: 'في حال فاتك', labelEn: 'In Case You Missed It' },
   { id: 'alwarraq-investigations', labelAr: 'التحقيقات الاستقصائية للورّاق', labelEn: 'AlWarraq Investigative Reporting' },
   { id: 'war-room', labelAr: 'غرفة الحرب الجيوسياسية', labelEn: 'War Room Intel' },
   { id: 'pulse-of-the-street', labelAr: 'نبض الشارع', labelEn: 'Pulse of the Street' },

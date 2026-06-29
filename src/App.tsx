@@ -21,6 +21,7 @@ import LebanonAMLVisualizer from './components/LebanonAMLVisualizer';
 import { SolidereInfographic } from './components/SolidereInfographic';
 import AlWarraqInvestigations from './components/AlWarraqInvestigations';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
+import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
@@ -933,7 +934,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it';
 
   return (
     <div
@@ -1047,6 +1048,10 @@ export default function App() {
                 layoutMode={layoutMode}
                 subscribers={subscribers}
                 setSubscribers={setSubscribers}
+              />
+            ) : activeCategory === 'in-case-you-missed-it' ? (
+              <InCaseYouMissedIt
+                language={language}
               />
             ) : activeCategory === 'sentiment-analysis' ? (
               <SentimentAnalysis
@@ -1825,134 +1830,7 @@ export default function App() {
               </section>
             )}
 
-            {/* High-Impact "Golden Prime Research Engine" Section */}
-            {activeCategory === 'all' && !searchQuery && (
-              <section 
-                className="relative overflow-hidden border-4 border-black p-6 bg-zinc-950 text-white my-6 animate-fade-in"
-              >
-                {/* Visual Terminal / Grid Decoration */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,18,18,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(18,18,18,0.1)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-30"></div>
-                <div className="absolute top-0 right-0 w-48 h-full bg-amber-500/5 transform skew-x-12 pointer-events-none"></div>
-                
-                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-right rtl:text-right ltr:text-left">
-                  <div className="space-y-3 flex-1">
-                    <div className="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 text-[10px] font-mono tracking-widest uppercase">
-                      <Sparkles size={11} className="animate-pulse text-amber-400" />
-                      <span>{isAr ? 'منصة الأبحاث السيادية الذكية' : 'AI-NATIVE SOVEREIGN WORKSPACE'}</span>
-                    </div>
-                    
-                    <h3 className="font-sans font-black text-xl md:text-2xl text-white tracking-tight leading-tight uppercase">
-                      {isAr 
-                        ? 'نقدم لكم: محرك الأبحاث الذكي "غولدن برايم"' 
-                        : 'Introducing: The Golden Prime Research Engine'}
-                    </h3>
-                    
-                    <p className="text-zinc-400 text-xs md:text-[13px] max-w-3xl leading-relaxed font-sans">
-                      {isAr 
-                        ? 'هذا ليس مجرد منبر للأخبار—إنه مساحتك الخاصة والآمنة لرفع مستنداتك الخارجية، وتوليف البيانات الاستقصائية والسيادية الحية، وتشكيل تقاريرك الاستخباراتية بالتكامل مع نموذج ذكاء اصطناعي مخصص ومعزز بأدوات التحرير المتقدمة.'
-                        : 'This is not just news delivery—it’s a secure, private intelligence workspace. Upload external documents, synthesize real-time research against our live sovereign indexes, and draft complete briefs side-by-side with our tailored research models.'}
-                    </p>
 
-                    <div className="flex flex-wrap gap-4 text-[11px] font-mono text-zinc-500 font-bold uppercase pt-1">
-                      <div className="flex items-center gap-1">
-                        <span className="text-amber-500">✓</span>
-                        <span>{isAr ? 'خزانة المستندات المستقلة' : 'Independent Source Vault'}</span>
-                      </div>
-                      <span>•</span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-amber-500">✓</span>
-                        <span>{isAr ? 'توليف ومقاطعة البيانات الموجهة' : 'Source-Grounded AI Synthesis'}</span>
-                      </div>
-                      <span>•</span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-amber-500">✓</span>
-                        <span>{isAr ? 'محرر ومسودة صياغة التقارير' : 'Live Report Compiler Canvas'}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="shrink-0 w-full lg:w-auto flex flex-col sm:flex-row gap-3">
-                    <button
-                      onClick={() => {
-                        setActiveCategory('premium-pricing');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="bg-amber-600 hover:bg-amber-500 text-white font-sans font-black text-xs px-6 py-4 uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_#fff]"
-                    >
-                      <span>{isAr ? 'انضم إلى غولدن برايم الآن' : 'APPLY FOR GOLDEN PRIME'}</span>
-                      <ArrowRight size={14} className="rtl:rotate-180" />
-                    </button>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* MAGAZINE / NEWSLETTER BANNER SECTION */}
-            {activeCategory === 'all' && !searchQuery && (
-              <section 
-                onClick={() => {
-                  setActiveCategory('newsletter');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="relative overflow-hidden border-4 border-black p-6 bg-zinc-950 text-white my-6 cursor-pointer group hover:border-red-650 transition-colors"
-              >
-                {/* Visual Accent Lines */}
-                <div className="absolute top-0 right-0 w-32 h-full bg-red-600/10 transform skew-x-12 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-12 w-64 h-1/3 bg-zinc-800/10 transform -skew-x-12 pointer-events-none"></div>
-
-                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-                  {/* Left Column: Cover Preview Art */}
-                  <div className="flex items-center gap-5 w-full md:w-auto">
-                    {/* Compact CSS Magazine Mock */}
-                    <div className="relative w-16 h-22 bg-white border-2 border-black flex flex-col justify-between p-1.5 shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] shrink-0 transform -rotate-2 group-hover:rotate-0 transition-transform">
-                      <div className="border-b border-black pb-0.5 text-center">
-                        <span className="font-sans font-black text-[8px] uppercase tracking-tighter text-black">
-                          {isAr ? 'الورّاق' : 'AL-WARRAQ'}
-                        </span>
-                      </div>
-                      <div className="h-8 bg-zinc-105 border border-zinc-300 flex items-center justify-center text-zinc-500 text-[6px] font-mono">
-                        {isAr ? 'طبعة ٢٠٢٦' : 'ISSUE 18'}
-                      </div>
-                      <div className="flex justify-between items-center text-[5px] font-black text-red-600">
-                        <span>PRINT</span>
-                        <span>06/17</span>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <span className="bg-red-700 text-white text-[9px] font-sans font-bold px-2 py-0.5 uppercase tracking-wider font-mono">
-                        {isAr ? 'الصحيفة المطبوعة والملخص الفكري الأسبوعي' : 'QUARTERLY PRINT & TELEX DIRECT'}
-                      </span>
-                      <h3 className="font-sans font-black text-lg md:text-xl text-white mt-1.5 leading-tight group-hover:text-red-400 transition-colors">
-                        {isAr 
-                          ? 'ديوان ورثة المحبرة: تصفح ملخص التحقيقات المطبوع بالكامل' 
-                          : 'The Sovereign Intelligence Dispatch: Access June Quarterly Edition'}
-                      </h3>
-                      <p className="text-zinc-400 text-xs mt-1 max-w-xl font-medium">
-                        {isAr 
-                          ? 'استكشف طبعة الصحافة الحرة للتحقيقات الاستقصائية المستقلة ومقالات رئيس التحرير لعام ٢٠٢٦، متوفرة مجاناً لمشتركينا.' 
-                          : 'Explore deep structural breakdowns, sovereign asset updates, and monetary maps compiled by our editorial office.'}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Link / Action Call-To-Action */}
-                  <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-end shrink-0">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActiveCategory('newsletter');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="bg-red-700 hover:bg-red-600 text-white border border-red-600 font-mono font-black text-xs px-6 py-3.5 uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] group-hover:shadow-[3px_3px_0px_0px_rgba(239,68,68,1)]"
-                    >
-                      <span>{isAr ? 'طالعة الطبعة الكاملة' : 'OPEN WIRE DISPATCH'}</span>
-                      <ArrowRight size={14} className="rtl:rotate-180" />
-                    </button>
-                  </div>
-                </div>
-              </section>
-            )}
 
             {/* Pulse of the Street (ثمن الصراع) Custom Feature Section */}
             {activeCategory === 'all' && !searchQuery && (
@@ -2090,6 +1968,134 @@ export default function App() {
             )}
 
             {/* SECTION 2.5: TRANSLATIONS (ترجمات - مجلة فورين بوليسي والصحافة العالمية) */}
+            {/* High-Impact "Golden Prime Research Engine" & Magazine/Newsletter Promo Sections */}
+            {activeCategory === 'all' && !searchQuery && (
+              <section 
+                className="relative overflow-hidden border-4 border-black p-6 bg-zinc-950 text-white my-6 animate-fade-in"
+              >
+                {/* Visual Terminal / Grid Decoration */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,18,18,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(18,18,18,0.1)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-30"></div>
+                <div className="absolute top-0 right-0 w-48 h-full bg-amber-500/5 transform skew-x-12 pointer-events-none"></div>
+                
+                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-right rtl:text-right ltr:text-left">
+                  <div className="space-y-3 flex-1">
+                    <div className="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 text-[10px] font-mono tracking-widest uppercase">
+                      <Sparkles size={11} className="animate-pulse text-amber-400" />
+                      <span>{isAr ? 'منصة الأبحاث السيادية الذكية' : 'AI-NATIVE SOVEREIGN WORKSPACE'}</span>
+                    </div>
+                    
+                    <h3 className="font-sans font-black text-xl md:text-2xl text-white tracking-tight leading-tight uppercase">
+                      {isAr 
+                        ? 'نقدم لكم: محرك الأبحاث الذكي "غولدن برايم"' 
+                        : 'Introducing: The Golden Prime Research Engine'}
+                    </h3>
+                    
+                    <p className="text-zinc-400 text-xs md:text-[13px] max-w-3xl leading-relaxed font-sans">
+                      {isAr 
+                        ? 'هذا ليس مجرد منبر للأخبار—إنه مساحتك الخاصة والآمنة لرفع مستنداتك الخارجية، وتوليف البيانات الاستقصائية والسيادية الحية، وتشكيل تقاريرك الاستخباراتية بالتكامل مع نموذج ذكاء اصطناعي مخصص ومعزز بأدوات التحرير المتقدمة.'
+                        : 'This is not just news delivery—it’s a secure, private intelligence workspace. Upload external documents, synthesize real-time research against our live sovereign indexes, and draft complete briefs side-by-side with our tailored research models.'}
+                    </p>
+
+                    <div className="flex flex-wrap gap-4 text-[11px] font-mono text-zinc-500 font-bold uppercase pt-1">
+                      <div className="flex items-center gap-1">
+                        <span className="text-amber-500">✓</span>
+                        <span>{isAr ? 'خزانة المستندات المستقلة' : 'Independent Source Vault'}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <span className="text-amber-500">✓</span>
+                        <span>{isAr ? 'توليف ومقاطعة البيانات الموجهة' : 'Source-Grounded AI Synthesis'}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <span className="text-amber-500">✓</span>
+                        <span>{isAr ? 'محرر ومسودة صياغة التقارير' : 'Live Report Compiler Canvas'}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="shrink-0 w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => {
+                        setActiveCategory('premium-pricing');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="bg-amber-600 hover:bg-amber-500 text-white font-sans font-black text-xs px-6 py-4 uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_#fff]"
+                    >
+                      <span>{isAr ? 'انضم إلى غولدن برايم الآن' : 'APPLY FOR GOLDEN PRIME'}</span>
+                      <ArrowRight size={14} className="rtl:rotate-180" />
+                    </button>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {activeCategory === 'all' && !searchQuery && (
+              <section 
+                onClick={() => {
+                  setActiveCategory('newsletter');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="relative overflow-hidden border-4 border-black p-6 bg-zinc-950 text-white my-6 cursor-pointer group hover:border-red-650 transition-colors"
+              >
+                {/* Visual Accent Lines */}
+                <div className="absolute top-0 right-0 w-32 h-full bg-red-600/10 transform skew-x-12 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-12 w-64 h-1/3 bg-zinc-800/10 transform -skew-x-12 pointer-events-none"></div>
+
+                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                  {/* Left Column: Cover Preview Art */}
+                  <div className="flex items-center gap-5 w-full md:w-auto">
+                    {/* Compact CSS Magazine Mock */}
+                    <div className="relative w-16 h-22 bg-white border-2 border-black flex flex-col justify-between p-1.5 shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] shrink-0 transform -rotate-2 group-hover:rotate-0 transition-transform">
+                      <div className="border-b border-black pb-0.5 text-center">
+                        <span className="font-sans font-black text-[8px] uppercase tracking-tighter text-black">
+                          {isAr ? 'الورّاق' : 'AL-WARRAQ'}
+                        </span>
+                      </div>
+                      <div className="h-8 bg-zinc-105 border border-zinc-300 flex items-center justify-center text-zinc-500 text-[6px] font-mono">
+                        {isAr ? 'طبعة ٢٠٢٦' : 'ISSUE 18'}
+                      </div>
+                      <div className="flex justify-between items-center text-[5px] font-black text-red-600">
+                        <span>PRINT</span>
+                        <span>06/17</span>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <span className="bg-red-700 text-white text-[9px] font-sans font-bold px-2 py-0.5 uppercase tracking-wider font-mono">
+                        {isAr ? 'الصحيفة المطبوعة والملخص الفكري الأسبوعي' : 'QUARTERLY PRINT & TELEX DIRECT'}
+                      </span>
+                      <h3 className="font-sans font-black text-lg md:text-xl text-white mt-1.5 leading-tight group-hover:text-red-400 transition-colors">
+                        {isAr 
+                          ? 'ديوان ورثة المحبرة: تصفح ملخص التحقيقات المطبوع بالكامل' 
+                          : 'The Sovereign Intelligence Dispatch: Access June Quarterly Edition'}
+                      </h3>
+                      <p className="text-zinc-400 text-xs mt-1 max-w-xl font-medium">
+                        {isAr 
+                          ? 'استكشف طبعة الصحافة الحرة للتحقيقات الاستقصائية المستقلة ومقالات رئيس التحرير لعام ٢٠٢٦، متوفرة مجاناً لمشتركينا.' 
+                          : 'Explore deep structural breakdowns, sovereign asset updates, and monetary maps compiled by our editorial office.'}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Link / Action Call-To-Action */}
+                  <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-end shrink-0">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveCategory('newsletter');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="bg-red-700 hover:bg-red-600 text-white border border-red-600 font-mono font-black text-xs px-6 py-3.5 uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] group-hover:shadow-[3px_3px_0px_0px_rgba(239,68,68,1)]"
+                    >
+                      <span>{isAr ? 'طالعة الطبعة الكاملة' : 'OPEN WIRE DISPATCH'}</span>
+                      <ArrowRight size={14} className="rtl:rotate-180" />
+                    </button>
+                  </div>
+                </div>
+              </section>
+            )}
+
             {(activeCategory === 'all' || activeCategory === 'translations') && translationsArticles.length > 0 && (
               <section className="space-y-5">
                 <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
