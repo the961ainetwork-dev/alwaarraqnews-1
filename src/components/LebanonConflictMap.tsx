@@ -238,6 +238,39 @@ export default function LebanonConflictMap({
 
   return (
     <div id="lebanon-regional-conflict-map-widget" className="border-4 border-black bg-slate-50 p-4 md:p-6 space-y-6 select-none my-8">
+      <style dangerouslySetInnerHTML={{ __html: `
+        #lebanon-regional-conflict-map-widget, 
+        #lebanon-regional-conflict-map-widget * {
+          font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
+        #lebanon-regional-conflict-map-widget text {
+          font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-[8px] {
+          font-size: 11px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-[9px] {
+          font-size: 11.5px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-[10px] {
+          font-size: 12.5px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-[11px] {
+          font-size: 13.5px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-xxs {
+          font-size: 12.5px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-xs {
+          font-size: 14.5px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-sm {
+          font-size: 16px !important;
+        }
+        #lebanon-regional-conflict-map-widget .text-base {
+          font-size: 18px !important;
+        }
+      `}} />
       
       {/* Indicator Tag & Headers */}
       <div className="border-b-2 border-black pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">

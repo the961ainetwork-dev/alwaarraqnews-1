@@ -143,6 +143,39 @@ export default function AliAlTaherMap({ language }: AliAlTaherMapProps) {
 
   return (
     <div id="ali-al-taher-map-section" className="border-4 border-black bg-amber-50/15 p-4 md:p-6 space-y-6 select-none my-8">
+      <style dangerouslySetInnerHTML={{ __html: `
+        #ali-al-taher-map-section, 
+        #ali-al-taher-map-section * {
+          font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
+        #ali-al-taher-map-section text {
+          font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
+        #ali-al-taher-map-section .text-[8px] {
+          font-size: 11px !important;
+        }
+        #ali-al-taher-map-section .text-[9px] {
+          font-size: 11.5px !important;
+        }
+        #ali-al-taher-map-section .text-[10px] {
+          font-size: 12.5px !important;
+        }
+        #ali-al-taher-map-section .text-[11px] {
+          font-size: 13.5px !important;
+        }
+        #ali-al-taher-map-section .text-xxs {
+          font-size: 12.5px !important;
+        }
+        #ali-al-taher-map-section .text-xs {
+          font-size: 14.5px !important;
+        }
+        #ali-al-taher-map-section .text-sm {
+          font-size: 16px !important;
+        }
+        #ali-al-taher-map-section .text-base {
+          font-size: 18px !important;
+        }
+      `}} />
       
       {/* Title & Metadata row */}
       <div className="border-b-2 border-black pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">

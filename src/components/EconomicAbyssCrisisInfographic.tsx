@@ -60,6 +60,67 @@ export function EconomicAbyssCrisisInfographic({ language }: EconomicAbyssCrisis
 
   return (
     <div className="border-2 border-zinc-800 bg-zinc-950 p-4 md:p-6 text-white font-sans select-none" id="economic-abyss-crisis-infographic">
+      <style dangerouslySetInnerHTML={{ __html: `
+        #economic-abyss-crisis-infographic, 
+        #economic-abyss-crisis-infographic * {
+          font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-500 {
+          color: #f4f4f5 !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-400 {
+          color: #ffffff !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-300 {
+          color: #ffffff !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-650 {
+          color: #ffffff !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-600 {
+          color: #ffffff !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-700 {
+          color: #ffffff !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-850 {
+          color: #ffffff !important;
+        }
+        #economic-abyss-crisis-infographic .text-zinc-900 {
+          color: #ffffff !important;
+        }
+        /* Font-size adjustments to increase by 2px (2 points) */
+        #economic-abyss-crisis-infographic .text-[8px] {
+          font-size: 11px !important;
+        }
+        #economic-abyss-crisis-infographic .text-[9px] {
+          font-size: 11.5px !important;
+        }
+        #economic-abyss-crisis-infographic .text-[10px] {
+          font-size: 12.5px !important;
+        }
+        #economic-abyss-crisis-infographic .text-[11px] {
+          font-size: 13.5px !important;
+        }
+        #economic-abyss-crisis-infographic .text-xxs {
+          font-size: 12.5px !important;
+        }
+        #economic-abyss-crisis-infographic .text-xs {
+          font-size: 14.5px !important;
+        }
+        #economic-abyss-crisis-infographic .text-sm {
+          font-size: 16px !important;
+        }
+        #economic-abyss-crisis-infographic .text-base {
+          font-size: 18px !important;
+        }
+        #economic-abyss-crisis-infographic .text-lg {
+          font-size: 20px !important;
+        }
+        #economic-abyss-crisis-infographic .text-xl {
+          font-size: 22px !important;
+        }
+      `}} />
       
       {/* Top Banner & Tab Navigation */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-800 pb-4 mb-4 gap-2">

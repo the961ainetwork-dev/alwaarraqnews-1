@@ -43,6 +43,64 @@ export function CeasefireInternalConflictInfographic({ language }: CeasefireInte
 
   return (
     <div className="border-2 border-zinc-800 bg-zinc-950 p-4 md:p-6 text-white font-sans select-none" id="ceasefire-internal-conflict-infographic">
+      <style dangerouslySetInnerHTML={{ __html: `
+        #ceasefire-internal-conflict-infographic, 
+        #ceasefire-internal-conflict-infographic * {
+          font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-500 {
+          color: #f4f4f5 !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-400 {
+          color: #ffffff !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-300 {
+          color: #ffffff !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-600 {
+          color: #ffffff !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-700 {
+          color: #ffffff !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-850 {
+          color: #ffffff !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-zinc-900 {
+          color: #ffffff !important;
+        }
+        /* Font-size adjustments to increase by 2px (2 points) */
+        #ceasefire-internal-conflict-infographic .text-[8px] {
+          font-size: 11px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-[9px] {
+          font-size: 11.5px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-[10px] {
+          font-size: 12.5px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-[11px] {
+          font-size: 13.5px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-xxs {
+          font-size: 12.5px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-xs {
+          font-size: 14.5px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-sm {
+          font-size: 16px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-base {
+          font-size: 18px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-lg {
+          font-size: 20px !important;
+        }
+        #ceasefire-internal-conflict-infographic .text-xl {
+          font-size: 22px !important;
+        }
+      `}} />
       
       {/* Header Infographic Ticker */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-800 pb-4 mb-4 gap-2">
