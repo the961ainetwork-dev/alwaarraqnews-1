@@ -27,6 +27,153 @@ import {
   Megaphone
 } from 'lucide-react';
 
+const DESK_METADATA: Record<string, {
+  taglineAr: string;
+  taglineEn: string;
+  subAr: string;
+  subEn: string;
+  badge?: string;
+  badgeColor?: string;
+}> = {
+  // Sovereign Desk
+  'alwarraq-investigations': {
+    taglineAr: 'تحقيقات استقصائية',
+    taglineEn: 'Investigative Dossiers',
+    subAr: 'ملفات كاشفة للحقائق ووثائق سرية استثنائية',
+    subEn: 'Deep investigations and leaked diplomatic folders',
+    badge: 'INTEL',
+    badgeColor: 'bg-red-900/85 text-red-100 border-red-700'
+  },
+  'war-room': {
+    taglineAr: 'شؤون العمليات',
+    taglineEn: 'Tactical Command',
+    subAr: 'متابعة بؤر التوتر الإقليمية وخرائط النزاع الحية',
+    subEn: 'Dynamic threat monitoring and airspace/maritime telemetry',
+    badge: 'LIVE',
+    badgeColor: 'bg-amber-900/85 text-amber-100 border-amber-600'
+  },
+  'pulse-of-the-street': {
+    taglineAr: 'نبض المعيشة',
+    taglineEn: 'Grassroots Pulse',
+    subAr: 'رصد تداعيات النزاعات على معيشة المواطنين والغلاء',
+    subEn: 'Beirut inflation metrics, fuel rates, and localized struggles'
+  },
+  'lebanon': {
+    taglineAr: 'المشهد المحلي',
+    taglineEn: 'Lebanon News Desk',
+    subAr: 'تغطية سيادية شاملة للملفات السياسية والبلدية',
+    subEn: 'National socio-political dispatches and local features'
+  },
+  'middle-east': {
+    taglineAr: 'الجيوبوليتيك الإقليمي',
+    taglineEn: 'Regional Hegemony',
+    subAr: 'دراسات خطوط التجارة وسكك الحديد والمنافذ الدولية',
+    subEn: 'Regional transport links, water security, and cross-border pacts'
+  },
+  'exclusives': {
+    taglineAr: 'ملفات خاصة',
+    taglineEn: 'Exclusive Intel',
+    subAr: 'انفرادات إعلامية خاصة بالورّاق ومسربات موثقة',
+    subEn: 'Exclusive breakthroughs, leak analysis, and classified drafts',
+    badge: 'EXCLUSIVE',
+    badgeColor: 'bg-blue-900/85 text-blue-100 border-blue-700'
+  },
+  'translations': {
+    taglineAr: 'متابعات أجنبية',
+    taglineEn: 'Global Reports',
+    subAr: 'ترجمات معمقة لأبحاث مراكز الفكر العالمية الكبرى',
+    subEn: 'In-depth translated briefs from key international think-tanks'
+  },
+
+  // Geo-Finance Desk
+  'markets': {
+    taglineAr: 'سندات وسلع',
+    taglineEn: 'Sovereign Debt & Goods',
+    subAr: 'سندات الخزينة، سلاسل إمداد القمح والمعادن',
+    subEn: 'Sovereign yields, shipping grain supplies, and precious metal indexes'
+  },
+  'arab-markets': {
+    taglineAr: 'البورصات العربية',
+    taglineEn: 'Regional Exchanges',
+    subAr: 'مؤشرات أسواق الأسهم والسيولة في الخليج والمشرق',
+    subEn: 'Stock exchanges, GCC liquidity indexes, and development rates'
+  },
+  'instats': {
+    taglineAr: 'البيانات التفاعلية',
+    taglineEn: 'Socioeconomic Data',
+    subAr: 'تحليل صفقات العقارات، إنتاج الزراعة، والمصارف',
+    subEn: 'Interactive land transaction graphs and economic indicators'
+  },
+  'telecom-internet': {
+    taglineAr: 'البنية الرقمية',
+    taglineEn: 'Digital Infrastructure',
+    subAr: 'شبكات الألياف البصرية، الكابلات البحرية والساتل',
+    subEn: 'Submarine fiber optic networks and rural satellite internet'
+  },
+  'research-reports': {
+    taglineAr: 'دراسات أكاديمية',
+    taglineEn: 'Specialized Studies',
+    subAr: 'أبحاث مائية شاملة وخطط الأمن الغذائي المستقبلي',
+    subEn: 'Hydrological reports, agricultural audit, and demographics'
+  },
+
+  // Strategic Opinion & Simulation
+  'what-if-simulator': {
+    taglineAr: 'مختبر السيناريوهات',
+    taglineEn: 'Scenario Sandbox',
+    subAr: 'محاكاة رياضية لتقدير المواقف وأثر الحصار التجاري',
+    subEn: 'Interactive mathematical model for economic & border risk assessment',
+    badge: 'SANDBOX',
+    badgeColor: 'bg-emerald-900/85 text-emerald-100 border-emerald-600'
+  },
+  'sentiment-analysis': {
+    taglineAr: 'رصد الرأي العام',
+    taglineEn: 'Sentiment Tracker',
+    subAr: 'تحليل الذكاء الاصطناعي لكلمات ومؤشر مزاج الشارع',
+    subEn: 'Real-time media and public mood metric scraper'
+  },
+  'editor-desk': {
+    taglineAr: 'أعمدة الفكر',
+    taglineEn: 'Editorial Note',
+    subAr: 'افتتاحيات ومساهمات فكرية لكبار الكتاب برئاسة أديب',
+    subEn: 'Chief Editor columns, philosophy, and cultural heritage reviews'
+  },
+  'press-releases': {
+    taglineAr: 'شريط الوكالات',
+    taglineEn: 'Wire Dispatches',
+    subAr: 'نصوص البيانات الرسمية للشركات والجهات الدبلوماسية',
+    subEn: 'Direct diplomatic cables, PR wires, and company filings'
+  },
+  'newsletter': {
+    taglineAr: 'النشرة الدورية',
+    taglineEn: 'Classic Briefings',
+    subAr: 'تسجيل الاشتراكات واستعراض النشرات الاستراتيجية المؤرشفة',
+    subEn: 'Subscribe to classified reports and browse past archives'
+  },
+
+  // Sports & Wellness Desk
+  'fifa-2026': {
+    taglineAr: 'مونديال 2026',
+    taglineEn: 'World Cup 2026',
+    subAr: 'تغطية المنتخبات العربية، لوجستيات وملاعب الجمهور',
+    subEn: 'Arab team tactical previews, stadiums, and viewing zones',
+    badge: 'FIFA',
+    badgeColor: 'bg-indigo-900/85 text-indigo-100 border-indigo-700'
+  },
+  'sports': {
+    taglineAr: 'تاريخ الرياضة',
+    taglineEn: 'Athletic Heritage',
+    subAr: 'أندية بيروت التاريخية، الشطرنج وبطولات الشباب',
+    subEn: 'Archival Beirut athletic clubs, youth chess leagues, and profiles'
+  },
+  'wellness-lifestyle': {
+    taglineAr: 'العمران والعافية',
+    taglineEn: 'Longevity & Green Design',
+    subAr: 'نمط الحياة في الكورة، العمارة الصديقة للبيئة والتهوية',
+    subEn: 'Socio-cultural slow habits, traditional ventilation, and green bio-design'
+  }
+};
+
 interface NavigationProps {
   language: 'ar' | 'en';
   activeCategory: string;
@@ -147,28 +294,36 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'لبنان والمنطقة',
       labelEn: 'Lebanon & Region',
       icon: <Globe size={13} />,
-      tabIds: ['lebanon', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street', 'middle-east', 'exclusives', 'translations']
+      tabIds: ['lebanon', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street', 'middle-east', 'exclusives', 'translations'],
+      descAr: 'المشهد السيادي والأمني والتحقيقات الجيوسياسية الخاصة بلبنان والمشرق العربي',
+      descEn: 'Sovereign reports, threat command, and specialized investigative dossiers on Lebanon and the Levant.'
     },
     {
       id: 'markets-economy',
       labelAr: 'المال والاقتصاد',
-      labelEn: 'Markets & Economy',
+      labelEn: 'Geo-Finance & Data',
       icon: <TrendingUp size={13} />,
-      tabIds: ['markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports']
-    },
-    {
-      id: 'sports-wellness',
-      labelAr: 'رياضة وصحة',
-      labelEn: 'Sports & Wellness',
-      icon: <Trophy size={13} />,
-      tabIds: ['fifa-2026', 'sports', 'wellness-lifestyle']
+      tabIds: ['markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports'],
+      descAr: 'مؤشرات التداول العربي وسندات الخزينة وسلاسل الإمداد ومؤشرات البيانات العقارية',
+      descEn: 'Sovereign bond curves, GCC market indexes, subsea cables, and transactional land registries.'
     },
     {
       id: 'opinion-interactive',
       labelAr: 'الرأي والتفاعل',
       icon: <MessageSquare size={13} />,
-      labelEn: 'Opinion & Interactive',
-      tabIds: ['editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter']
+      labelEn: 'Opinion & Risk Sandboxes',
+      tabIds: ['editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter'],
+      descAr: 'أعمدة رئيس التحرير، سيناريوهات محاكاة المخاطر الرياضية ورصد المشاعر العامة',
+      descEn: 'Editorial columns, mathematical scenario simulations, and AI public mood tracking models.'
+    },
+    {
+      id: 'sports-wellness',
+      labelAr: 'رياضة وصحة',
+      labelEn: 'Society & Wellness',
+      icon: <Trophy size={13} />,
+      tabIds: ['fifa-2026', 'sports', 'wellness-lifestyle'],
+      descAr: 'ملفات المونديال، الرياضة البيروتية التراثية ومقالات جودة الحياة والعافية',
+      descEn: 'Tactical World Cup stats, local athletic histories, and traditional biophilic cooling design.'
     }
   ];
 
@@ -287,45 +442,77 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.98 }}
                         transition={{ duration: 0.15, ease: 'easeOut' }}
-                        className={`absolute top-full ${isAr ? 'right-0' : 'left-0'} mt-1 w-76 bg-zinc-950 border border-zinc-800 shadow-2xl rounded-none p-2 z-50 text-right`}
-                        style={{ textAlign: isAr ? 'right' : 'left' }}
+                        className={`absolute top-full ${isAr ? 'right-0' : 'left-0'} mt-1 w-[460px] md:w-[500px] bg-zinc-950 border border-zinc-850 shadow-2xl rounded-none p-0 z-50`}
                       >
-                        <div className="space-y-1">
-                          {group.tabs.map((tab) => {
-                            const isTabActive = activeCategory === tab.id;
-                            return (
-                              <div key={tab.id} className="group/item">
-                                <button
-                                  id={`nav-submenu-tab-${tab.id}`}
-                                  onClick={() => selectTab(tab.id)}
-                                  className={`w-full px-3 py-2 flex items-center justify-between rounded-none text-sm transition-colors cursor-pointer ${
-                                    isTabActive 
-                                      ? 'bg-zinc-800 text-white font-black border-l-2 border-white' 
-                                      : 'text-white hover:bg-zinc-900'
-                                  }`}
-                                >
-                                  <div className="flex items-center gap-2">
-                                    <span className="text-zinc-500 group-hover/item:text-white transition-colors">{getMenuIcon(tab.id)}</span>
-                                    <span>{isAr ? tab.labelAr : tab.labelEn}</span>
-                                  </div>
-                                </button>
+                        <div className={`flex flex-col sm:flex-row ${isAr ? 'sm:flex-row-reverse' : ''} h-full`}>
+                          
+                          {/* Left/Right Editorial Note Column */}
+                          <div className={`hidden sm:flex sm:w-44 bg-zinc-900/40 p-4 ${isAr ? 'border-l border-zinc-850 text-right' : 'border-r border-zinc-850 text-left'} flex-col justify-between shrink-0 select-none`}>
+                            <div>
+                              <span className="text-[8px] font-mono tracking-widest text-zinc-500 uppercase font-black block mb-2">
+                                {isAr ? 'ـ ديوان التغطية ـ' : '— COVERAGE DESK —'}
+                              </span>
+                              <h5 className="font-display font-black text-white text-xs mb-1.5">
+                                {isAr ? group.labelAr : group.labelEn}
+                              </h5>
+                              <p className="text-[10px] text-zinc-400 font-sans leading-relaxed">
+                                {isAr ? group.descAr : group.descEn}
+                              </p>
+                            </div>
+                            <div className={`pt-4 border-t border-zinc-900/60 font-mono text-[7px] text-zinc-600 space-y-0.5 ${isAr ? 'text-right' : 'text-left'}`}>
+                              <div>SECTOR_REF: ALW-{group.id.toUpperCase()}</div>
+                              <div>SYSTEM_LEVEL: SECURE_FEED</div>
+                            </div>
+                          </div>
 
-                                {/* Micro nested tags helper for quick orientation */}
-                                {SUB_MENUS[tab.id] && (
-                                  <div className="px-3 pb-2 pt-0.5 flex flex-wrap gap-1 border-b border-zinc-900/40">
-                                    {SUB_MENUS[tab.id].slice(0, 3).map((sub, sIdx) => (
-                                      <span 
-                                        key={sIdx} 
-                                        className="text-[9px] bg-zinc-900/60 text-zinc-500 hover:text-white hover:bg-zinc-850 px-1.5 py-0.5 rounded-none font-mono transition-colors border border-zinc-900"
-                                      >
-                                        {isAr ? sub.labelAr : sub.labelEn}
-                                      </span>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
+                          {/* Interactive Category list Column */}
+                          <div className={`flex-1 p-2 space-y-1 overflow-y-auto max-h-[420px] ${isAr ? 'text-right' : 'text-left'}`}>
+                            {group.tabs.map((tab) => {
+                              const isTabActive = activeCategory === tab.id;
+                              const meta = DESK_METADATA[tab.id];
+                              
+                              return (
+                                <div key={tab.id} className="group/item">
+                                  <button
+                                    id={`nav-submenu-tab-${tab.id}`}
+                                    onClick={() => selectTab(tab.id)}
+                                    className={`w-full p-2 flex items-start gap-2.5 rounded-none transition-all duration-150 border cursor-pointer ${
+                                      isTabActive 
+                                        ? 'bg-zinc-900 border-zinc-750 text-white' 
+                                        : 'bg-transparent border-transparent hover:bg-zinc-900 hover:border-zinc-800 text-zinc-100'
+                                    }`}
+                                  >
+                                    {/* Icon Accent */}
+                                    <div className={`p-1.5 rounded-none ${isTabActive ? 'bg-white text-black' : 'bg-zinc-900 text-zinc-400 group-hover/item:text-white'} shrink-0 mt-0.5`}>
+                                      {getMenuIcon(tab.id)}
+                                    </div>
+                                    
+                                    {/* Title & Subtitle */}
+                                    <div className="flex-1 min-w-0">
+                                      <div className={`flex items-center gap-1.5 flex-wrap ${isAr ? 'justify-start' : 'justify-start'}`}>
+                                        <span className="font-display font-black text-xs leading-none">
+                                          {isAr ? tab.labelAr : tab.labelEn}
+                                        </span>
+                                        
+                                        {/* Badges */}
+                                        {meta?.badge && (
+                                          <span className={`text-[7px] font-mono font-black tracking-wider px-1 py-0.2 border ${meta.badgeColor || 'bg-red-950 text-red-200 border-red-700'}`}>
+                                            {meta.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      
+                                      {/* Subheading */}
+                                      <p className="text-[9.5px] text-zinc-500 mt-1 leading-normal truncate group-hover/item:text-zinc-300">
+                                        {isAr ? (meta?.subAr || '') : (meta?.subEn || '')}
+                                      </p>
+                                    </div>
+                                  </button>
+                                </div>
+                              );
+                            })}
+                          </div>
+
                         </div>
                       </motion.div>
                     )}
@@ -569,20 +756,35 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                       </button>
 
                       {isSectionExpanded && (
-                        <div className="bg-zinc-950 px-2 py-1.5 space-y-1 border-t border-zinc-900/50">
+                        <div className="bg-zinc-950 px-2 py-2 border-t border-zinc-900/50 space-y-1.5">
                           {group.tabs.map((tab) => {
                             const isTabActive = activeCategory === tab.id;
+                            const meta = DESK_METADATA[tab.id];
                             return (
                               <button
                                 key={tab.id}
                                 onClick={() => selectTab(tab.id)}
-                                className={`w-full py-2 px-4 flex items-center gap-2 transition-all rounded-sm ${
-                                  isTabActive ? 'bg-zinc-850 text-white font-bold' : 'text-zinc-500 hover:text-white'
+                                className={`w-full p-2 flex items-start gap-3 transition-all rounded-sm border ${
+                                  isTabActive ? 'bg-zinc-900 border-zinc-800 text-white font-bold' : 'bg-transparent border-transparent text-zinc-400 hover:text-white'
                                 }`}
                                 style={{ textAlign: isAr ? 'right' : 'left' }}
                               >
-                                {getMenuIcon(tab.id)}
-                                <span>{isAr ? tab.labelAr : tab.labelEn}</span>
+                                <div className="p-1.5 bg-zinc-900 border border-zinc-800 text-zinc-400 shrink-0 mt-0.5">
+                                  {getMenuIcon(tab.id)}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center gap-1.5 flex-wrap">
+                                    <span className="text-xs font-bold font-display">{isAr ? tab.labelAr : tab.labelEn}</span>
+                                    {meta?.badge && (
+                                      <span className={`text-[7px] font-mono px-1 py-0.2 font-black border ${meta.badgeColor || 'bg-red-950 text-red-200 border-red-800'}`}>
+                                        {meta.badge}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <p className="text-[10px] text-zinc-500 mt-0.5 leading-normal">
+                                    {isAr ? (meta?.subAr || '') : (meta?.subEn || '')}
+                                  </p>
+                                </div>
                               </button>
                             );
                           })}
