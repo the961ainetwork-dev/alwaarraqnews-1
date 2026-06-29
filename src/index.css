@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Amiri', 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-primary: #000000; /* Pure black */
+  --color-primary-dark: #18181b; /* Zinc 900 charcoal black */
+  --color-accent: #000000; /* Rich contrast black text indicator */
+}
+
+/* Custom scrollbar matching black & white vintage aesthetic */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #71717a;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #27272a;
+}
+
+/* Elegant Grayscale image style for raw ink concept */
+.bw-image {
+  filter: grayscale(100%) contrast(105%);
+  transition: all 0.4s ease;
+}
+.bw-image:hover {
+  filter: grayscale(10%) contrast(100%);
+}
+
+/* Classic News Columns dividers */
+.border-double-editorial {
+  border-style: double;
+  border-width: 4px;
+  border-color: #000000;
+}
+
+.border-double-editorial-bottom {
+  border-bottom-style: double;
+  border-bottom-width: 4px;
+  border-bottom-color: #000000;
+}
+
+/* Vintage paper noise overlay when classic print is on */
+.vintage-paper {
+  background-color: #fcfbf7 !important;
+  color: #1c1917 !important;
+}

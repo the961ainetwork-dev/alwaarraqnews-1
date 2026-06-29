@@ -1,0 +1,6 @@
+{
+  "name": "الورّاق (Al-Warraq)",
+  "description": "A high-fidelity minimalist black & white editorial news platform. Inspired by classical print paper, lithography, and raw ink on newsprint (الوراق للأخبار) featuring dynamic bilingual news, responsive masonry layout, and automated editorial desk.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
