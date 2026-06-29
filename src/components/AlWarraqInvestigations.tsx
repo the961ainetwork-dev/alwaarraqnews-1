@@ -94,6 +94,14 @@ const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier IV: The Economic Abyss: Rubble, Refugees, and a Crippled Financial System',
     descAr: 'تشريح للأضرار الهيكلية، وأزمة النازحين الحادة بالبلاد، والعجز الصاعق المقدر بنحو ١١ مليار دولار.',
     descEn: 'A detailed examination of the material damages, severe displacement crisis, and the $11 Billion rebuild gap.'
+  },
+  'ch12-hebrew-jd-vance-criticism-2026': {
+    fileId: 'AW-FILE-05',
+    badge: 'TRANSLATED INTEL',
+    titleAr: 'الملف الخامس: "أمي مدمنة وفقر مدقع".. هجوم عبري على نائب الرئيس الأمريكي',
+    titleEn: 'Dossier V: "My Mother is an Addict" - Hebrew Critique of JD Vance',
+    descAr: 'شرح شامل لهجوم القناة 12 العبرية العنيف وتفاصيل النشأة المعقدة للرئيس المقبل والتحفظات الاستخباراتية الإسرائيلية.',
+    descEn: 'A full overview of the Hebrew Channel 12 attack, detailing the complex upbringing of the Vice President.'
   }
 };
 
@@ -133,7 +141,8 @@ export default function AlWarraqInvestigations({
       article.id === 'lebanon-framework-agreement-analysis-2026' ||
       article.id === 'solidere-extension-2069' ||
       article.id === 'lebanon-ceasefire-mirage-2026' ||
-      article.id === 'lebanon-economic-abyss-2026'
+      article.id === 'lebanon-economic-abyss-2026' ||
+      article.id === 'ch12-hebrew-jd-vance-criticism-2026'
     );
   });
 
