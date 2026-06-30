@@ -4300,6 +4300,554 @@ The digital yuan accounted for 95% of the 4,000 cross-border payments executed o
     readTimeEn: '12 min read',
     views: 12450,
     tags: ['الصين', 'اليوان', 'العقوبات', 'روسيا', 'إيران', 'mBridge']
+  },
+  {
+    id: 'leb-energy-block8-9-recon',
+    category: 'lebanon',
+    categories: ['lebanon', 'markets'],
+    titleAr: 'وزارة الطاقة تعدل شروط رخصة الاستطلاع في الرقعة 8 والرقعة 9',
+    titleEn: 'Ministry of Energy Amends Exploration License Terms in Blocks 8 and 9',
+    summaryAr: 'تعديل القرار رقم 25 لمنح شركة PGS Geophysical AS رخصة لإجراء مسوح زلزالية ثنائية وثلاثية الأبعاد وحفظ ملكية البيانات للدولة اللبنانية.',
+    summaryEn: 'Decision adjustments allow PGS Geophysical AS to execute 2D/3D seismic surveys, consolidating state ownership over regional offshore data.',
+    excerptAr: 'تعديل شروط رخصة الاستطلاع غير الحصرية لشركة PGS في الرقعتين 8 و9 مع حفظ السيادة والملكية للدولة اللبنانية.',
+    excerptEn: 'Ministry of Energy updates non-exclusive reconnaissance guidelines for PGS in Blocks 8 and 9, defining data ownership and revenue terms.',
+    contentAr: `أصدرت وزارة الطاقة والمياه القرار رقم 25 تاريخ 6 حزيران 2026، والذي عدّل القرار رقم 25 تاريخ 4 كانون الأول 2024 الذي منح شركة PGS Geophysical AS النرويجية رخصة استطلاع غير حصرية لإجراء مسح زلزالي ثلاثي الأبعاد في الرقعة 8 وفي جزء مجاور من الرقعة 9 في المنطقة الاقتصادية الخالصة البحرية للبنان. نصت المادة 1 على أنه يمكن لشركة PGS Geophysical AS إجراء إما مسح زلزالي ثلاثي الأبعاد في الرقعة 8 وفي جزء مجاور من الرقعة 9، أو مسح زلزالي ثنائي الأبعاد من أجل الحصول على هذه البيانات ومعالجتها، إلى جانب إعادة معالجة المسوحات الزلزالية ثنائية الأبعاد التي أجرتها الشركة النرويجية TGS ASA في عام 2000 في المياه الإقليمية اللبنانية. وأضافت أن البيانات المكتسبة من عمليات الاستطلاع يجب أن تعتبر ملكاً للدولة اللبنانية.
+
+وأشارت المادة 2 إلى أن الرخصة صالحة لمدة ثلاث سنوات تبدأ من تاريخ إصدارها في 4 كانون الأول 2024، في حين نصت المادة 5 على وجوب تنفيذ أنشطة الاستطلاع خلال 1095 يوماً من تاريخ إصدار الرخصة. وأضافت أنه يجب على الشركة الحصول على التصاريح اللازمة للقيام بأنشطتها، مثل التصاريح البحرية المطلوبة لدخول سفينة المسح إلى المياه الإقليمية اللبنانية. وأشارت المادة 6 إلى أن للشركة حقوقاً حصرية لمعالجة وتسويق البيانات الناتجة عن المسح الزلزالي لمدة 10 سنوات من تاريخ الحصول على الرخصة. وأشارت إلى أن الشركة يجب أن تمتثل لجميع الأحكام المتعلقة بإدارة عمليات المسح الزلزالي، والأعمال المطلوبة، والأعمال المنجزة، والتفاصيل الفنية والتجارية. وأضافت أنه يجب على الشركة الالتزام بالشروط والأحكام المتعلقة بتسويق وبيع الرخص، بما في ذلك جميع الأحكام المتعلقة باتفاقية تقاسم الإيرادات مع الدولة اللبنانية الناتجة عن بيع الرخص، فضلاً عن التزامات التسويق والتدريب والدعم المؤسسي المحددة في الرخصة الحالية.
+
+ونصت المادة 7 على وجوب قيام شركة PGS Geophysical AS بإبلاغ وزارة الطاقة والمياه وكذلك هيئة إدارة قطاع البترول اللبنانية (LPA) بإجمالي تكلفة الأعمال عند اكتمال المسح. وأشارت إلى أنه يجب على الشركة أن تدفع للحكومة اللبنانية حصتها من عائدات بيع رخص البيانات المتعلقة بالرخصة الحالية، وفقاً لجدول تقاسم الإيرادات، ويجب عليها تحويل المبلغ المستحق للدولة اللبنانية إلى حسابها في مصرف لبنان. وأشارت المادة 9 إلى أن الوزارة ستلغي الرخصة وتلغي جميع الحقوق الممنوحة إذا فشلت الشركة في الوفاء بأي من التزاماتها. ونصت المادة 10 على أن الوزارة ستنهي جميع الحقوق التي منحتها بموجب رخصة الاستطلاع الحالية، وتحديداً تلك المتعلقة بالمسوحات الزلزالية ثنائية الأبعاد، إذا لم تنجز الشركة الحائزة على الرخصة المسح الزلزالي قبل انتهاء مدة الرخصة أو تمديدها. ونصت المادة 11 على أن رخصة الاستطلاع الحالية والتزاماتها وملاحقها غير قابلة للتحويل ولا يمكن التنازل عنها لأطراف ثالثة. وقالت المادة 12 إن جميع التزامات وملاحق الرخصة الحالية يجب أن تكون ملزمة للشركة إذا استحوذت أي شركة على PGS Geophysical AS.
+
+وكانت الوزارة قد أصدرت القرار رقم 25 بتاريخ 4 كانون الأول 2024 الذي منح شركة PGS Geophysical AS النرويجية رخصة استطلاع غير حصرية لإجراء مسح زلزالي ثلاثي الأبعاد في الرقعة 8 وفي جزء مجاور من الرقعة 9 في المنطقة الاقتصادية الخالصة البحرية للبنان، مع حقوق حصرية لتسويق البيانات وبيع رخص الوصول لشركات الطاقة العالمية. وقالت إنها اتخذت القرار بناءً على توصية هيئة إدارة قطاع البترول ووفقاً لأحكام قانون الموارد البترولية البحرية 132/2010 والأحكام ذات الصلة من المرسوم 10289/2013. وأشارت إلى أن الهيئة اعتبرت أن منح الرخصة مهم، بالنظر إلى أن الشركة قد أجرت معظم المسوحات الزلزالية البحرية للبنان، وأن لديها عدة سنوات من الخبرة مع الحكومة اللبنانية من خلال تسويق البيانات والترويج لجولتي التراخيص البحرية الأولى والثانية للتنقيب عن النفط والغاز البحري. علاوة على ذلك، وقعت الوزارة عقداً مع شركة PGS Geophysical AS في عام 2011 لإجراء مسح زلزالي بحري ثلاثي الأبعاد لاستكشاف وجود البترول في المياه الاقتصادية الخالصة للبنان، فضلاً عن تسويق وإعادة معالجة البيانات، وتوفير التدريب المطلوب لمزيد من تحليل البيانات.`,
+    contentEn: `The Ministry of Energy and Water issued Decision No. 25 dated June 6, 2026, amending Decision No. 25 dated December 4, 2024, which granted the Norwegian company PGS Geophysical AS a non-exclusive reconnaissance license to conduct a 3D seismic survey in Block 8 and an adjacent part of Block 9 in Lebanon's offshore exclusive economic zone (EEZ). Article 1 states that PGS Geophysical AS can conduct either a 3D seismic survey in Block 8 and an adjacent part of Block 9, or a 2D seismic survey to acquire and process this data, in addition to reprocessing the 2D seismic surveys conducted by the Norwegian company TGS ASA in 2000 in Lebanese territorial waters. It added that the data acquired from the reconnaissance operations must be considered the property of the Lebanese state.
+
+Article 2 indicated that the license is valid for three years starting from its date of issue on December 4, 2024, while Article 5 stipulated that the reconnaissance activities must be executed within 1095 days from the license issue date. It added that the company must obtain the necessary permits to carry out its activities, such as the maritime permits required for the survey vessel to enter Lebanese territorial waters. Article 6 indicated that the company has exclusive rights to process and market the data resulting from the seismic survey for a period of 10 years from the date of obtaining the license. It noted that the company must comply with all provisions related to managing seismic operations, required works, completed works, and technical and commercial details. It added that the company must adhere to the terms and conditions related to marketing and selling licenses, including all provisions related to the revenue-sharing agreement with the Lebanese state resulting from the sale of licenses, as well as the marketing, training, and institutional support obligations specified in the current license.
+
+Article 7 stipulated that PGS Geophysical AS must inform the Ministry of Energy and Water as well as the Lebanese Petroleum Administration (LPA) of the total cost of the works upon completion of the survey. It indicated that the company must pay the Lebanese government its share of the revenues from the sale of data licenses related to the current license, in accordance with the revenue-sharing schedule, and must transfer the amount due to the Lebanese state to its account at Banque du Liban. Article 9 indicated that the ministry will cancel the license and revoke all granted rights if the company fails to meet any of its obligations. Article 10 stated that the ministry will terminate all rights granted under the current reconnaissance license, specifically those related to 2D seismic surveys, if the licensee fails to complete the seismic survey before the expiry of the license or its extension. Article 11 stipulated that the current reconnaissance license, its obligations, and its annexes are non-transferable and cannot be assigned to third parties. Article 12 said that all obligations and annexes of the current license shall be binding on the company if any company acquires PGS Geophysical AS.
+
+The ministry had previously issued Decision No. 25 on December 4, 2024, granting PGS Geophysical AS the non-exclusive reconnaissance license to conduct the 3D seismic survey in Block 8 and part of Block 9, with exclusive marketing rights for data. The decision was based on the recommendation of the Lebanese Petroleum Administration (LPA) in accordance with the Offshore Petroleum Resources Law 132/2010 and Decree 10289/2013. The LPA considered granting the license crucial since PGS has conducted most of Lebanon's offshore seismic surveys and holds extensive experience working with the Lebanese government. In 2011, the ministry had signed a contract with PGS to conduct a 3D offshore seismic survey, alongside data marketing, reprocessing, and capacity training.`,
+    author: {
+      nameAr: 'الدائرة الاقتصادية للورّاق',
+      nameEn: 'AlWarraq Economic Desk',
+      titleAr: 'محلل شؤون النفط والغاز',
+      titleEn: 'Oil & Gas Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600',
+    date: '25 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 3120,
+    tags: ['النفط', 'الغاز', 'الرقعة 8', 'الرقعة 9', 'وزارة الطاقة', 'لبنان']
+  },
+  {
+    id: 'leb-ogero-ftth-nationwide',
+    category: 'lebanon',
+    categories: ['lebanon', 'telecom-internet'],
+    titleAr: 'أوجيرو توقع عقوداً لإطلاق خدمات النطاق العريض للألياف البصرية إلى المنازل (FTTH) على الصعيد الوطني',
+    titleEn: 'Ogero Signs Contracts for Nationwide Fiber-to-the-Home (FTTH) Broadband Expansion',
+    summaryAr: 'مبادرة ممولة بالكامل من وفورات عام 2025 تهدف لإيصال الإنترنت فائق السرعة لأكثر من 325,000 أسرة عبر 25 سنترالاً مركزياً على مستوى البلاد كبديل للشبكات غير القانونية.',
+    summaryEn: 'State-owned telecom operator secures expansion project funded via 2025 savings to deliver high-speed optical fiber internet to 325,000 households across 25 central exchanges.',
+    excerptAr: 'هيئة أوجيرو تبدأ التحول الرقمي الشامل بإطلاق شبكات FTTH لخدمة 325 ألف وحدة سكنية كخطوة نحو إنهاء الاحتكار غير الشرعي وتطوير الاقتصاد الرقمي.',
+    excerptEn: 'Ogero announces implementation contracts for FTTH deployment to 325,000 households, aiming to eliminate illegal distribution networks and enhance national digital speed.',
+    contentAr: `أعلنت هيئة "أوجيرو" المملوكة للدولة والمزودة لخدمات الاتصالات أنها وقعت عقود تنفيذ لتشغيل خدمات النطاق العريض للألياف البصرية إلى المنازل (FTTH) في لبنان. وقالت إن المبادرة، الممولة بالكامل من وفورات عام 2025، ستوفر إنترنت عالي السرعة عبر الألياف البصرية لأكثر من 325,000 أسرة عبر 25 سنترالاً مركزياً على مستوى البلاد. وعلاوة على ذلك، أشارت إلى أن المشروع يمكن أن يكون بديلاً لشبكات الاتصالات غير القانونية، حيث سيوفر سرعات إنترنت أسرع بكثير، ويعزز الفرص الاجتماعية والاقتصادية بشكل أكبر، ويقوي الاقتصاد الرقمي الوطني في لبنان. وأضافت أن هذا المشروع يمثل الإطلاق الرسمي لتحول رقمي شامل للبلاد.
+
+في السابق، منحت أوجيرو مشروعاً بقيمة 283 مليون دولار في شباط 2018 لشركة نوكيا الفنلندية، ولشركة هواوي الصينية، ولشركة كاليكس الأمريكية لاستبدال الكابلات النحاسية الحالية بكابلات الألياف البصرية. وكان على هواوي ونوكيا وكاليكس تنفيذ مشروع كابلات الألياف البصرية بحلول عام 2022 بالشراكة مع الشركات المحلية Serta Channels، و PowerTech، و BMB على التوالي، وهي ثلاثة مزودي لحلول تكنولوجيا المعلومات والاتصالات. لكن أوجيرو أشارت إلى أن المشروع لم يحقق سوى 25% من هدفه بحلول منتصف عام 2023.
+
+بعد عملية عطاءات مفصلة، تم اختيار الشركات الثلاث من بين خمس شركات مؤهلة مسبقاً بناءً على قدرتها الفنية وأهليتها المالية. بشكل عام، كان من المتوقع أن يؤدي المشروع الذي يمتد لأربع سنوات إلى زيادة سرعة الإنترنت إلى أكثر من 50 ميغابت في الثانية (Mb/s)، وهو ما يشكل زيادة كبيرة من سرعة الإنترنت التي كانت تتراوح بين 2 و 4 ميغابت في الثانية في عام 2018. كان مشروع كابلات الألياف البصرية جزءاً من خطة "رؤية لبنان للاتصالات الرقمية 2020" الخمسية التي أطلقتها وزارة الاتصالات في تموز 2015 لتطوير البنية التحتية للاتصالات في البلاد من خلال استبدال البنية التحتية للأسلاك النحاسية بكابلات الألياف البصرية، من أجل تعزيز سرعة الإنترنت. ومن شأن استخدام كابلات الألياف البصرية، بدلاً من الكابلات النحاسية، أن يقلل بنسبة 50% من كمية الكابلات اللازمة لربط نفس العدد من الأسر.
+
+أشار مسح أجرته Speedtest، وهي خدمة ويب توفر مقاييس أداء الوصول إلى الإنترنت، إلى أن سرعة التنزيل عبر الإنترنت الثابت عريض النطاق في لبنان كانت في المرتبة 139 الأسرع من بين 149 دولة وإقليماً حول العالم والمرتبة 15 الأسرع من بين 17 دولة في المنطقة العربية في أيار 2026. وعالمياً، كانت سرعة التنزيل عبر الإنترنت الثابت عريض النطاق في لبنان أسرع منها في كينيا وغينيا وباكستان بين الاقتصادات التي يبلغ ناتجها المحلي الإجمالي 10 مليارات دولار أو أكثر، في حين كانت أبطأ منها في مدغشقر وأنغولا وتونس. يظهر المسح أن سرعة التنزيل عبر النطاق العريض في لبنان بلغت 20.86 ميغابايت في الثانية (mbps) في أيار 2026، ارتفاعاً من 20.33 ميغابايت في الثانية في نيسان 2026 و16.12 ميغابايت في الثانية في أيار 2025. لكنها جاءت أقل بكثير من المتوسط البسيط لسرعة تنزيل الإنترنت عريض النطاق البالغ 132.7 ميغابايت في الثانية عالمياً و116.2 ميغابايت في الثانية في الدول العربية. علاوة على ذلك، تتخلف سرعة تنزيل الإنترنت عريض النطاق في البلاد عن متوسط دول مجلس التعاون الخليجي البالغ 216.7 ميغابايت في الثانية ومتوسط الدول العربية غير الخليجية البالغ 61.3 ميغابايت في الثانية.
+
+بالتوازي، أشار المسح إلى أن سرعة التنزيل من الإنترنت عبر الهاتف المحمول في لبنان كانت في المرتبة 94 الأسرع من بين 101 دولة وإقليماً حول العالم والمرتبة 13 الأسرع من بين 14 دولة في المنطقة العربية في أيار 2026. وعالمياً، كانت سرعة التنزيل من الإنترنت عبر الهاتف المحمول في لبنان أسرع منها في بنما وباكستان وفنزويلا، بينما كانت أبطأ منها في المكسيك والسلفادور وبنغلاديش. يظهر المسح أن سرعة التنزيل عبر الإنترنت عبر الهاتف المحمول في لبنان بلغت 36.82 ميغابايت في الثانية في أيار 2026، انخفاضاً من 36.4 ميغابايت في الثانية في نيسان 2026 ومن 47.16 ميغابايت في الثانية في أيار 2025. لكنها جاءت أقل بكثير من المتوسط البسيط لسرعة تنزيل الإنترنت عبر الهاتف المحمول البالغ 119.7 ميغابايت في الثانية عالمياً و190.9 ميغابايت في الثانية في الدول العربية. وعلاوة على ذلك، تتخلف سرعة تنزيل الإنترنت عبر الهاتف المحمول في البلاد عن متوسط دول مجلس التعاون الخليجي البالغ 374.7 ميغابايت في الثانية ومتوسط الدول العربية غير الخليجية البالغ 53.1 ميغابايت في الثانية.`,
+    contentEn: `State-owned telecom operator Ogero announced it has signed execution contracts to operate Fiber-to-the-Home (FTTH) broadband services in Lebanon. It said the initiative, fully funded by 2025 savings, will provide high-speed optical fiber internet to over 325,000 households across 25 central exchanges nationwide. Moreover, it noted that the project could serve as an alternative to illegal telecom networks, providing much faster internet speeds, further enhancing socioeconomic opportunities, and strengthening Lebanon's national digital economy. It added that this project represents the official launch of a comprehensive digital transformation for the country.
+
+Previously, Ogero had awarded a $283 million project in February 2018 to Finland's Nokia, China's Huawei, and the US's Calix to replace copper cables with fiber optic. Huawei, Nokia, and Calix were to implement the project by 2022 in partnership with local ICT solution providers Serta Channels, PowerTech, and BMB, respectively. However, Ogero indicated that the project had achieved only 25% of its target by mid-2023. Following a detailed bidding process, the three companies were selected from five pre-qualified firms based on technical capability and financial eligibility. Overall, the four-year project was expected to increase internet speeds to over 50 Mbps, a massive jump from 2 to 4 Mbps in 2018. The project was part of the "Lebanon Digital Telecom Vision 2020" five-year plan launched by the Ministry of Telecommunications in July 2015 to develop the country's telecom infrastructure.
+
+A survey by Speedtest indicated that Lebanon's fixed broadband download speed ranked 139th fastest out of 149 countries globally, and 15th out of 17 Arab countries in May 2026. Globally, Lebanon's speed was faster than Kenya, Guinea, and Pakistan, but slower than Madagascar, Angola, and Tunisia. The survey shows that fixed broadband download speed reached 20.86 Mbps in May 2026, up from 20.33 Mbps in April 2026 and 16.12 Mbps in May 2025. This remains far below the global average of 132.7 Mbps and Arab average of 116.2 Mbps. Meanwhile, mobile internet download speed ranked 94th out of 101 countries globally, and 13th out of 14 Arab countries, reaching 36.82 Mbps in May 2026, compared to 36.4 Mbps in April 2026 and 47.16 Mbps in May 2025. This lag highlights the urgent need for structural digital infrastructure development.`,
+    author: {
+      nameAr: 'فريق الاتصالات والإنترنت',
+      nameEn: 'Telecom & Digital Desk',
+      titleAr: 'محلل شبكات وبنية تحتية',
+      titleEn: 'Infrastructure & Telecom Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600',
+    date: '22 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 4560,
+    tags: ['أوجيرو', 'الألياف البصرية', 'FTTH', 'الاتصالات', 'الإنترنت', 'لبنان']
+  },
+  {
+    id: 'leb-bdl-forensic-audit',
+    category: 'lebanon',
+    categories: ['lebanon', 'markets'],
+    titleAr: 'مصرف لبنان يبدأ تدقيقاً جنائياً لبرنامج الدعم والتحويلات الخارجية',
+    titleEn: 'Banque du Liban Initiates Forensic Audit of Subsidy Program and International Transfers',
+    summaryAr: 'مصرف لبنان يرسي عقداً على شركة الفاريز ومارسال لإجراء تدقيق جنائي لمعاملات الأصول الأجنبية وبرامج دعم استيراد السلع بين 2019 و2023 للتحقق من سلامة الإنفاق.',
+    summaryEn: 'Banque du Liban contracts Alvarez & Marsal to execute a comprehensive forensic audit covering multi-billion dollar subsidy imports and international bank transfers from 2019 to 2023.',
+    excerptAr: 'مصرف لبنان يعلن رسمياً إرساء عقد التدقيق الجنائي لبرنامج الدعم والتحويلات بمليارات الدولارات على شركة ألفاريز ومارسال.',
+    excerptEn: 'BDL partners with Alvarez & Marsal to execute forensic audit on government subsidy expenditures and international bank transfers under Public Procurement Law.',
+    contentAr: `أعلن مصرف لبنان، بالتنسيق مع وزارة المالية ووزارة العدل، أنه استكمل بنجاح عملية تقديم العطاءات بموجب قانون الشراء العام رقم 244/2021 لإجراء تدقيق جنائي لمعاملات مختارة تتعلق بالأصول الأجنبية لمصرف لبنان خلال الفترة ما بين 1 تشرين الأول 2019 و31 كانون الأول 2023. وقال مصرف لبنان إنه، بعد التقييم الإداري والفني والمالي للعروض المقدمة، منح العقد لشركة الاستشارات الإدارية الفاريز ومارسال (A&M) الشرق الأوسط المحدودة وفقاً للوائح القانونية والإجراءات المعتادة. وعلاوة على ذلك، أشار إلى أن هذه العملية هي جزء من جهد مؤسسي مشترك يهدف إلى إجراء تدقيق مالي وجنائي شامل يغطي الفترة من تشرين الأول 2019 إلى نهاية عام 2023. وأضاف أنه خلال هذا الإطار الزمني المحدد، شهد مصرف لبنان تدخلات مالية واسعة النطاق لصالح كيانات القطاعين العام والخاص.
+
+بالإضافة إلى ذلك، أشار إلى أن التدقيق سيغطي في المقام الأول برنامج الدعم الذي وافقت عليه الحكومات المتعاقبة، والذي تضمن تحويل ومدفوعات بمليارات الدولارات الأمريكية لدعم استيراد السلع الأساسية وكذلك المواد الخام للصناعة والزراعة ؛ وكذلك الأموال التي وضعها مصرف لبنان بتصرف المؤسسات العامة والوكالات الحكومية ؛ والمعاملات التي أجراها مصرف لبنان مع البنوك التجارية من خلال التحويلات الدولية إلى حسابات هذه الأخيرة في الخارج.
+
+كما قال إن الأهداف الأساسية للتدقيق الجنائي هي التأكد من أن جميع المدفوعات والتحويلات، وخاصة تلك المرتبطة ببرامج الدعم، تم تنفيذها بموجب تفويضات قانونية وحصلت على التصاريح المناسبة ؛ وأن الأموال وصلت إلى المستفيدين المحددين والمعتمدين بوضوح ؛ وأن الأموال استخدمت بصرامة للأغراض المخصصة لها دون أي انتهاكات أو سوء استخدام أو استغلال للأموال العامة. وعلاوة على ذلك، أشار إلى أن التدقيق سيدعم السلطات المعنية في وزارة المالية وفي وزارة العدل لتحديد ومقاضاة الحالات التي حصلت فيها كيانات أو أفراد بشكل غير قانوني على أموال الدعم. وأضاف أنه يغطي الحالات التي تم فيها استخدام هذه الأموال في انتهاك للأهداف المعلنة لبرامج الدعم. وقال إن التدقيق سيسمح لمصرف لبنان بتكوين رؤية دقيقة ومستقلة ومدققة للحجم الإجمالي للأموال المنفقة من تشرين الأول 2019 حتى نهاية عام 2023. وعلاوة على ذلك، أشار مصرف لبنان إلى أنه سيزود الجمهور بتحديثات منتظمة حول التقدم المحرز في التدقيق الجنائي، تماشياً مع التزامه بالشفافية والإفصاح. وأضاف أنه بمجرد اكتماله بالكامل، سيتم تقديم التقرير النهائي حول برنامج الدعم رسمياً إلى كل من وزارة المالية ووزارة العدل.
+
+في تشرين الثاني 2025، أعلن مصرف لبنان أنه بالتنسيق مع وزارة المالية ووزارة العدل، سيبدأ بإعداد الشروط المرجعية لإجراء تدقيق مالي وجنائي خارجي لجميع المستفيدين من برنامج الدعم الحكومي للسلع المستوردة بعد 17 تشرين الأول 2019. وأضاف أن ذلك سيتم بالتعاون مع الوزارتين ويهدف إلى إطلاق مناقصة بهذا الشأن وفقاً لأحكام القانون رقم 244/2021. وأشار مصرف لبنان إلى أن هذا الإجراء يهدف إلى الاستعانة بشركة متخصصة لإجراء تدقيق مالي وجنائي خارجي يغطي برنامج دعم السلع الذي أطلقته الحكومات السابقة. كما سيغطي تحويل الأموال إلى الحسابات المصرفية في الخارج، بالإضافة إلى النفقات التي تمت نيابة عن الدولة خلال الفترة 2019-2023، أو خلال الإطار الزمني لبرنامج الدعم. وأضاف أن التدقيق يهدف إلى تحديد واسترداد وتصحيح أي مدفوعات غير مشروعة أو سوء استخدام للأموال العامة أو إساءة استخدام للسلطة قد تكون حدثت في سياق عمليات الدعم السابقة.
+
+سنّ مجلس النواب اللبناني في 30 حزيران 2021 القانون رقم 240 الذي ينص على أن جميع المستفيدين من الدعم الحكومي بالعملات الأجنبية سيخضعون لتدقيقات محاسبية وجنائية خارجية. وقال إن جميع الشركات والمستوردين والتجار والمنظمات غير الحكومية، من بين آخرين، الذين استفادوا من آلية الحكومة لدعم استيراد السلع الأساسية وكذلك المواد الخام للصناعة والزراعة بين 17 تشرين الأول 2019 وتاريخ رفع هذا الدعم سيخضعون للتدقيقات الجنائية والمالية. تتكون آلية الدعم من قيام مصرف لبنان ببيع الدولار الأمريكي بسعر صرف 1507.5 ليرة لبنانية للدولار للمستوردين لسلة تصل إلى 300 سلعة استهلاكية أساسية، وأدوية، وأدوات طبية، بالإضافة إلى المواد الخام للصناعة والزراعة. وقدر مصرف لبنان أن برنامج الدعم استنزف حوالي 800 مليون دولار شهرياً من احتياطياته من العملات الأجنبية.`,
+    contentEn: `Banque du Liban (BDL), in coordination with the Ministry of Finance and the Ministry of Justice, announced it has successfully completed the bidding process under Public Procurement Law No. 244/2021 to conduct a forensic audit of selected transactions related to BDL's foreign assets between October 1, 2019, and December 31, 2023. BDL said that, following the administrative, technical, and financial evaluation of the bids, it awarded the contract to the management consulting firm Alvarez & Marsal (A&M) Middle East Limited in accordance with legal regulations and customary procedures.
+
+Moreover, BDL indicated that this process is part of a joint institutional effort aimed at conducting a comprehensive financial and forensic audit covering the period from October 2019 to the end of 2023. It added that during this specific timeframe, BDL witnessed large-scale financial interventions in favor of both public and private sector entities. Additionally, the audit will primarily cover the subsidy program approved by successive governments, which involved transfers and payments of billions of US dollars to support the import of basic goods and raw materials for industry and agriculture; as well as funds placed by BDL at the disposal of public institutions and government agencies; and transactions conducted with commercial banks through international transfers to their accounts abroad.
+
+The primary goals of the forensic audit are to verify that all payments and transfers, especially those linked to subsidy programs, were executed under legal mandates and received appropriate authorizations; that the funds reached clearly identified and authorized beneficiaries; and that the funds were used strictly for their allocated purposes without any violations, misuse, or exploitation of public funds. BDL also noted that Parliament enacted Law No. 240 on June 30, 2021, mandating accounting and forensic audits of all entities who benefited from the foreign currency subsidy mechanism, which sold USD at the legacy exchange rate of 1507.5 LBP to importers. BDL estimated that this program drained approximately $800 million per month from its foreign exchange reserves.`,
+    author: {
+      nameAr: 'الدائرة الاقتصادية والمالية للورّاق',
+      nameEn: 'AlWarraq Forensic & Legal Desk',
+      titleAr: 'محلل الحوكمة والسياسات النقدية',
+      titleEn: 'Governance & Monetary Policy Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600',
+    date: '20 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 6120,
+    tags: ['مصرف لبنان', 'التدقيق الجنائي', 'ألفاريز ومارسال', 'برنامج الدعم', 'القانون 240', 'لبنان']
+  },
+  {
+    id: 'leb-beirut-port-traffic-2026',
+    category: 'lebanon',
+    categories: ['lebanon', 'markets'],
+    titleAr: 'مرفأ بيروت يعالج مليون طن من البضائع في الشهرين الأولين من عام 2026',
+    titleEn: 'Port of Beirut Handles 1.04 Million Tons of Cargo in First Two Months of 2026',
+    summaryAr: 'ارتفاع نشاط الشحن بمرفأ بيروت بنسبة 18.5%، مقابل تراجع نشاط مرفأ طرابلس بنسبة 26.8% وسط ضغوط إقليمية واستيرادية متغيرة.',
+    summaryEn: 'Beirut Port cargo volume rises 18.5% year-on-year, while Tripoli Port sees a 26.8% decline amid shifting maritime corridors and regional trade adjustments.',
+    excerptAr: 'نمو ملحوظ في نشاط شحن مرفأ بيروت مستقراً عند 1.04 مليون طن مقابل انخفاض ملحوظ في حركة شحن مرفأ طرابلس.',
+    excerptEn: 'Beirut Port registers strong growth in cargo handling, reaching 1.04 million tons in early 2026, contrasting with Tripoli\'s slowdown.',
+    contentAr: `تظهر الأرقام الصادرة عن مرفأ بيروت أن المرفأ عالج 1.04 مليون طن من البضائع في الشهرين الأولين من عام 2026، مما يشكل زيادة بنسبة 18.5% من 881,000 طن من البضائع في نفس الفترة من عام 2025. بلغ إجمالي البضائع المستوردة 916,000 طن في الشهرين الأولين من عام 2026، بزيادة 21.3% من 755,000 طن في نفس الفترة من العام الماضي، ومثلت 87.7% من إجمالي البضائع المعالجة في الفترة المشمولة. بالإضافة إلى ذلك، بلغ حجم البضائع المصدرة 128,000 طن في الشهرين الأولين من عام 2026، وهو ما يمثل زيادة بنسبة 1.6% من 126,000 طن في نفس الفترة من عام 2025، ومثلت 12.3% من إجمالي البضائع في الفترة المشمولة. رست ما مجموعه 201 سفينة في المرفأ في الشهرين الأولين من عام 2026، بانخفاض بنسبة 10.7% من 225 سفينة في نفس الفترة من العام الماضي. تعامل المرفأ مع 473,000 طن من البضائع في شباط 2026، بانخفاض بنسبة 17.2% من 571,000 طن في كانون الثاني 2026. بالإضافة إلى ذلك، رست 103 سفن في المرفأ في شباط 2026 مقارنة بـ 98 سفينة في الشهر السابق.
+
+بالتوازي، عالج مرفأ طرابلس 265,000 طن من البضائع في الشهرين الأولين من عام 2026، وهو ما يمثل انخفاضاً قدره 97,000 طن، أو 26.8%، من 362,000 طن في نفس الفترة من العام الماضي. وبلغت البضائع المستوردة 209,000 طن في الفترة المشمولة وانخفضت بمقدار 79,000 طن (-27.4%) من 288,000 طن في الشهرين الأولين من عام 2025. ومثلت الواردات 78.9% من نشاط الشحن في الفترة المشمولة. علاوة على ذلك، بلغ حجم البضائع التي تم تصديرها عبر المرفأ 56,000 طن في الشهرين الأولين من عام 2026، مما يشكل انخفاضاً قدره 18,000 طن، أو 24.3%، من 74,000 طن في نفس الفترة من عام 2025، ومثلت 21% من إجمالي البضائع في الفترة المشمولة. رست ما مجموعه 94 سفينة في المرفأ في الشهرين الأولين من عام 2026، مما يشكل انخفاضاً بنسبة 26% من 127 سفينة في نفس الفترة من عام 2025. وتعامل المرفأ مع 120,000 طن من البضائع في شباط 2026، بانخفاض بنسبة 17.2% من 145,000 طن في كانون الثاني 2026. كما رست 49 سفينة في المرفأ في شباط 2026 مقارنة بـ 45 سفينة في كانون الثاني 2026.`,
+    contentEn: `Figures issued by the Port of Beirut show that the port handled 1.04 million tons of cargo in the first two months of 2026, representing an 18.5% increase from 881,000 tons of cargo in the same period of 2025. Total imported goods reached 916,000 tons in the first two months of 2026, up 21.3% from 755,000 tons in the same period last year, representing 87.7% of total handled cargo. Exported cargo reached 128,000 tons in the first two months of 2026, up 1.6% from 126,000 tons in the same period of 2025, accounting for 12.3% of the total. A total of 201 vessels docked at the port in the first two months of 2026, down 10.7% from 225 vessels in the same period last year. In February 2026 alone, the port handled 473,000 tons, down 17.2% from 571,000 in January 2026.
+
+In parallel, the Port of Tripoli handled 265,000 tons of cargo in the first two months of 2026, representing a 26.8% decrease from 362,000 tons in the same period last year. Imported cargo fell to 209,000 tons (-27.4%), representing 78.9% of activity. Export cargo through Tripoli fell to 56,000 tons (-24.3%). A total of 94 vessels docked at Tripoli, down 26% year-on-year. The divergence in activities highlights the dynamic shifts in domestic shipping routes and import structures.`,
+    author: {
+      nameAr: 'شؤون المرافئ والشحن',
+      nameEn: 'Maritime & Shipping Desk',
+      titleAr: 'محلل حركة الشحن والتجارة',
+      titleEn: 'Maritime Trade Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=600',
+    date: '18 يونيو 2026',
+    readTimeAr: '4 دقائق',
+    readTimeEn: '4 min read',
+    views: 3120,
+    tags: ['مرفأ بيروت', 'مرفأ طرابلس', 'الشحن', 'الاستيراد والتصدير', 'البضائع', 'لبنان']
+  },
+  {
+    id: 'leb-treasury-bonds-maturities',
+    category: 'lebanon',
+    categories: ['lebanon', 'markets'],
+    titleAr: 'مايقرب من 85% من سندات الخزينة لها آجال استحقاق سبع سنوات أو أكثر في نهاية أيار 2026',
+    titleEn: 'Nearly 85% of LBP Treasury Bonds Have Maturities of Seven Years or More',
+    summaryAr: 'أرقام جمعية المصارف تظهر تراجع القيمة الاسمية للسندات القائمة بالليرة إلى 42.192 مليار ليرة (حوالي 471.4 مليون دولار) وتركز الاستحقاقات طويلة الأجل.',
+    summaryEn: 'Association of Banks figures reveal outstanding nominal value of LBP-denominated treasury debt at LBP 42,192 billion ($471.4M), with longer tenures dominating the sovereign profile.',
+    excerptAr: 'جمعية المصارف تظهر هيمنة السندات طويلة الأجل على الدين العام المقوم بالليرة وتراجع القيمة الاسمية الإجمالية.',
+    excerptEn: 'Sovereign debt metrics indicate a shift towards ultra-long maturities in Lebanese Liras as total outstanding nominal values decline.',
+    contentAr: `تظهر الأرقام الصادرة عن جمعية مصارف لبنان أن القيمة الاسمية لسندات الخزينة القائمة المقومة بالليرة اللبنانية بلغت 42,192 مليار ليرة لبنانية في نهاية أيار 2026، مقارنة بـ 47,847 مليار ليرة لبنانية في نهاية 2025 و 60,237 مليار ليرة لبنانية في نهاية أيار 2025. كانت السندات تعادل 471.4 مليون دولار في نهاية أيار 2026 بناءً على سعر صرف 89,500 ليرة لبنانية للدولار الأمريكي، وفقاً لقرار المجلس المركزي لمصرف لبنان رقم 48/4/24 تاريخ 15 شباط 2024. وبلغ متوسط سعر الفائدة المرجح على سندات الخزينة اللبنانية 6.6% في أيار 2026 مقارنة بـ 6.54% في أيار 2025.
+
+كما يُظهر توزيع سندات الخزينة القائمة أن سندات الخزينة لأجل 10 سنوات بلغ مجموعها 25,340 مليار ليرة لبنانية ومثلت 60% من إجمالي السندات المقومة بالليرة اللبنانية في نهاية أيار 2026، تليها سندات الخزينة لأجل سبع سنوات بقيمة 8,848 مليار ليرة لبنانية (21%)، وسندات الخزينة لأجل خمس سنوات بقيمة 3,487 مليار ليرة لبنانية (8.3%)، وسندات الخزينة لأجل ثلاث سنوات بقيمة 3,100 مليار ليرة لبنانية (7.3%)، وسندات الخزينة لأجل 15 سنة بقيمة 1,417 مليار ليرة لبنانية (3.4%). على هذا النحو، فإن 84.5% من سندات الخزينة القائمة لها آجال استحقاق سبع سنوات أو أكثر و 92.8% لها آجال استحقاق خمس سنوات أو أكثر.
+
+بالتوازي، استحقت 1,698 مليار ليرة لبنانية من سندات الخزينة القائمة المقومة بالليرة اللبنانية في أيار 2026. ويُظهر توزيع السندات المستحقة أن 88.4% تألفت من سندات خزينة لأجل 10 سنوات، و 9.4% كانت من سندات خزينة لأجل خمس سنوات، و 2% تألفت من سندات خزينة لأجل سبع سنوات، و 0.1% تألفت من سندات خزينة لأجل ثلاث سنوات. ووفقاً لجمعية مصارف لبنان، ستستحق 10,955 مليار ليرة لبنانية من سندات الخزينة القائمة بالليرة اللبنانية في الفترة المتبقية من عام 2026.`,
+    contentEn: `Figures released by the Association of Banks in Lebanon (ABL) show that the nominal value of outstanding Lebanese Lira-denominated Treasury bonds reached LBP 42,192 billion at the end of May 2026, compared to LBP 47,847 billion at the end of 2025 and LBP 60,237 billion at the end of May 2025. This was equivalent to $471.4 million at the end of May 2026 based on the official Central Council exchange rate of LBP 89,500 per US dollar. The weighted average interest rate on Lebanese Treasury bonds stood at 6.6% in May 2026 compared to 6.54% in May 2025.
+
+The distribution of outstanding bonds shows that 10-year bonds totaled LBP 25,340 billion, representing 60% of the total, followed by 7-year bonds at LBP 8,848 billion (21%), 5-year bonds at LBP 3,487 billion (8.3%), 3-year bonds at LBP 3,100 billion (7.3%), and 15-year bonds at LBP 1,417 billion (3.4%). As such, 84.5% of the outstanding bonds have maturities of seven years or more, and 92.8% have maturities of five years or more.
+
+In parallel, LBP 1,698 billion of outstanding Lira-denominated bonds matured in May 2026. According to the ABL, LBP 10,955 billion of outstanding Lira bonds will mature in the remainder of 2026, showing the persistent roll-over structure of local sovereign debt.`,
+    author: {
+      nameAr: 'الدائرة المالية والنقدية',
+      nameEn: 'Sovereign Debt Desk',
+      titleAr: 'محلل الأسواق المالية والائتمان',
+      titleEn: 'Financial Markets & Credit Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=600',
+    date: '15 يونيو 2026',
+    readTimeAr: '4 دقائق',
+    readTimeEn: '4 min read',
+    views: 2980,
+    tags: ['سندات الخزينة', 'الدين العام', 'جمعية المصارف', 'الليرة اللبنانية', 'سعر الصرف', 'لبنان']
+  },
+  {
+    id: 'leb-electricity-imf-diagnostic',
+    category: 'lebanon',
+    categories: ['lebanon', 'research-reports'],
+    titleAr: 'قطاع الكهرباء في قلب الأزمة المالية والاقتصادية اللبنانية',
+    titleEn: 'Electricity Sector at the Core of Lebanon\'s Financial and Economic Crisis',
+    summaryAr: 'تشخيص الحوكمة لصندوق النقد الدولي يكشف مخاطر الفساد في الصفقات وغياب المساءلة مع توسع سوق المولدات ومقترحات لتبني الشفافية الشاملة.',
+    summaryEn: 'IMF Governance Diagnostic places Electricite du Liban at the center of legacy deficits, highlighting opaque contracting, private generator cartels, and solar trends.',
+    excerptAr: 'دراسة معمقة لصندوق النقد الدولي تشخص الهدر والفساد في قطاع الكهرباء والمولدات غير القانونية وتطالب بنشر العقود للعامة.',
+    excerptEn: 'A sweeping IMF Governance Diagnostic details the deep-seated structural issues in Lebanon\'s power sector, calling for proactive transparency.',
+    contentAr: `كجزء من تشخيصه للحوكمة والفساد في لبنان، اعتبر صندوق النقد الدولي (IMF) أن الافتقار إلى إمدادات كهرباء موثوقة ومستمرة يشكل مشكلة رئيسية في لبنان، وأن عملية التعاقد المبهمة، وضعف الرقابة على الأشخاص المعرضين سياسياً، وشبكات المحسوبية القوية، وغياب المساءلة أدت إلى تفاقم مخاطر الفساد في قطاع الكهرباء. وقال إن وجود المولدات الخاصة كان استجابة للفشل المستمر للسلطات على مدى عقود في إصلاح وتحديث قطاع الكهرباء، مما خلق فجوة بنسبة 37% بين الطلب على الكهرباء والعرض بدءاً من عام 2018 بسبب عدم كفاية توفير الطاقة. وأشار إلى أن مولدات الطاقة الخاصة غير القانونية تتبع نموذجاً قائماً على الاشتراك وتخلق اقتصاداً غير رسمي معقداً، يقع إلى حد كبير خارج لوائح الحكومة ورقابتها. وأضاف أن دراسة للبنك الدولي في عام 2020 تظهر أن مستوردي الوقود وتجار المولدات والوكلاء هم الأكثر استفادة من وجود مولدات الديزل وكسبوا ما مجموعه حوالي 2 مليار دولار من الإيرادات السنوية من قطاع الطاقة غير الرسمي.
+
+بالإضافة إلى ذلك، أشار إلى أن قطاع الكهرباء لطالما كان في قلب التحديات المالية والاقتصادية في لبنان. وقال إن مؤسسة كهرباء لبنان (EdL) المملوكة للدولة، وهي شركة المرافق العامة التي تتمتع بحقوق حصرية لتوليد ونقل وتوزيع الكهرباء، تعمل باستمرار بعجز تم تمويله من خلال التحويلات المالية منذ عام 1993. وأشار إلى أن التعديلات على تعرفة الكهرباء وعلى سعر صرف الليرة اللبنانية مقابل الدولار الأمريكي في عامي 2022 و 2023 قلصت العجز التشغيلي لمؤسسة كهرباء لبنان، لكنه أشار إلى أن هذه الأخيرة لا تزال بعيدة عن الاكتفاء الذاتي وتستمر في الاعتماد على دعم الدولة لتمويل واردات الوقود. كما قدر أن الحكومة أنفقت حوالي 3.66 مليار دولار على مشاريع في قطاع الكهرباء بين عامي 1990 و 2019، وأن المانحين الدوليين ساهموا بـ 1.28 مليار دولار في تمويل مشاريع الكهرباء من خلال مجلس الإنماء والإعمار بين عامي 1992 و 2021.
+
+كما أشار إلى أن القدرات التشغيلية وهياكل الحوكمة الضعيفة في لبنان سمحت للنخب السياسية والاقتصادية بالسيطرة على مؤسسة كهرباء لبنان، وزيادة تقويض أدائها. وقال إن السلطات أساءت إدارة الاستثمارات لعقود من الزمن والتي كانت تهدف إلى توسيع وتنويع قدرة توليد الطاقة، مما أدى إلى استمرار الاعتماد على زيت الوقود المستورد لإنتاج الكهرباء وحابى الكارتلات المرتبطة سياسياً. وأضاف أن هذا بدوره أبقى تعريفات الكهرباء دون مستويات استرداد التكاليف ؛ وسمح بانتشار المولدات الخاصة الصغيرة غير القانونية التي غالباً ما ترتبط بالأحزاب السياسية أو السلطات المحلية ؛ وأضعف قدرة مؤسسة كهرباء لبنان على تقليل الخسائر غير الفنية وتحسين معدلات الجباية. وأضاف أن السلطات اعتمدت أطراً معقدة ومبهمة لمقدمي خدمات التوزيع لكنها فشلت في تنفيذها ؛ ورفضت تنفيذ الإصلاحات القانونية الحالية التي تهدف إلى إنشاء هيئة تنظيمية للسوق، وإعادة هيكلة مؤسسة كهرباء لبنان، وتسهيل المشاركة المنظمة للقطاع الخاص ؛ واستحوذت على إدارة وهياكل المشتريات في مؤسسة كهرباء لبنان؛ ومنعت عمليات التدقيق الخارجي ؛ وتسامحت مع أعداد كبيرة من العمال المؤقتين مع تجميد توظيف الموظفين الدائمين.
+
+بالتوازي، أشار إلى أن العديد من المواطنين اللبنانيين قاموا بشراء وتركيب أنظمة طاقة شمسية كحل بديل لضعف وصولهم إلى الكهرباء من مؤسسة كهرباء لبنان. وقال إن سوق الأنظمة الشمسية المنزلية نما من غياب القدرة المتجددة المركبة في عام 2010 إلى 100 ميجاوات (MW) بحلول عام 2019، في حين تضاعف إجمالي القدرة المركبة إلى 200 ميجاوات في عام 2021 وإلى ما يقدر بـ 1,300 ميجاوات بحلول نهاية عام 2023. وأشار إلى أن 17 مجتمعاً على الأقل في جميع أنحاء لبنان تبنت شبكات صغيرة هجينة تجمع بين الألواح الشمسية ومولدات الديزل للتعويض عن ضعف الشبكة المركزية. وقال إن هذه المجتمعات تحاول دمج الطاقة الشمسية في شبكات مولدات الأحياء الموجودة مسبقاً، من أجل تقليل الاعتماد على الديزل وتزويد المستهلكين بطاقة أرخص وأكثر موثوقية. لكنه اعتبر أن اللجوء إلى الطاقة المتجددة يظل بعيد المنال بالنسبة للعديد من المواطنين اللبنانيين.
+
+علاوة على ذلك، حث صندوق النقد الدولي مجلس الوزراء على اعتماد سياسة شفافية استباقية شاملة لقطاع الكهرباء. وقال إن السياسة يجب أن تلزم السلطات بنشر النص الكامل لجميع العقود والامتيازات الحالية والمستقبلية التي تأذن لكيانات القطاع الخاص بتوليد الكهرباء لمؤسسة كهرباء لبنان ؛ بالإضافة إلى العقود والاتفاقيات مع مقدمي خدمات التوزيع جنباً إلى جنب مع صيغ ومبالغ الدفع ؛ وعقود شراء الوقود المطروحة للمناقصة من قبل المديرية العامة للنفط أو أي وكالة أو هيئة حكومية أخرى منذ عام 2015 ؛ وتراخيص استيراد الوقود النشطة؛ والتقارير نصف السنوية عن التدفقات المالية بين الحكومة ومؤسسة كهرباء لبنان.
+
+علاوة على ذلك، أشار إلى أن محدودية الوصول إلى الكهرباء كان لها تأثير شديد على الأسر الأكثر ضعفاً في البلاد. وقال إن دراسة استقصائية أجرتها منظمة هيومن رايتس ووتش وجدت أن الأسر أنفقت 44% من دخلها الشهري على فواتير المولدات في عام 2023، وأن الأسر في الخمس الأدنى التي حصلت على مولد أنفقت في المتوسط 88% من دخلها الشهري على فواتير المولدات مقارنة بـ 21% للأسر في الخمس الأعلى. قال صندوق النقد الدولي إنه أجرى تشخيص الحوكمة والفساد من تشرين الأول 2022 إلى نيسان 2023 بناءً على طلب حكومة رئيس الوزراء نجيب ميقاتي في ذلك الوقت. وأضاف أنه شارك مسودة التقرير مع السلطات في آذار 2025 لمراجعتها وإبداء الرأي فيها، وقدم المسودة إلى رئيس الوزراء وأعضاء مجلس الوزراء في 30 نيسان 2025. وأشار إلى أنه أدرج في التقرير المزيد من التحديثات بناءً على سلسلة الاجتماعات التي عقدت في أيار 2025 وعلى المدخلات المكتوبة من السلطات.`,
+    contentEn: `As part of its diagnosis of governance and corruption in Lebanon, the International Monetary Fund (IMF) considered that the lack of a reliable and continuous electricity supply is a major problem in Lebanon, and that opaque contracting processes, weak oversight of politically exposed persons (PEPs), strong patronage networks, and the absence of accountability have exacerbated corruption risks in the electricity sector. It said that the existence of private generators was a response to the continuous failure of the authorities over decades to reform and modernize the electricity sector, creating a 37% gap between electricity demand and supply starting in 2018 due to inadequate power supply. It noted that illegal private power generators follow a subscription-based model and create a complex informal economy, largely outside government regulations and control. It added that a World Bank study in 2020 shows that fuel importers, generator dealers, and agents are the main beneficiaries of diesel generators and earned a total of about $2 billion in annual revenues from the informal power sector.
+
+In addition, it indicated that the electricity sector has long been at the heart of Lebanon's fiscal and economic challenges. State-owned Electricité du Liban (EdL) has consistently run a deficit funded by fiscal transfers since 1993. The IMF urged the cabinet to adopt a comprehensive proactive transparency policy, including publishing the text of all power-generation contracts and fuel purchases. It also noted the severe impact on vulnerable households, with some spending up to 88% of their income on generator bills.`,
+    author: {
+      nameAr: 'مراسل صندوق النقد وشؤون الحوكمة',
+      nameEn: 'IMF & Governance Desk',
+      titleAr: 'أخصائي السياسات الاقتصادية والفساد',
+      titleEn: 'Governance & Economic Policy Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=600',
+    date: '12 يونيو 2026',
+    readTimeAr: '8 دقائق',
+    readTimeEn: '8 min read',
+    views: 5210,
+    tags: ['كهرباء لبنان', 'صندوق النقد الدولي', 'المولدات الخاصة', 'الحوكمة', 'الفساد', 'لبنان']
+  },
+  {
+    id: 'leb-qs-university-rankings-2027',
+    category: 'lebanon',
+    categories: ['lebanon', 'research-reports'],
+    titleAr: 'تسع جاموات لبنانية من بين أفضل 109 جامعات في العالم العربي وفق تصنيف QS لعام 2027',
+    titleEn: 'Nine Lebanese Universities Ranked Among the Top 109 in the Arab World',
+    summaryAr: 'الجامعة الأميركية في بيروت (AUB) تحل ثامنة إقليمياً، تليها اللبنانية الأميركية (LAU) واليسوعية (USJ)، في تقدم ملموس للمؤشرات الأكاديمية.',
+    summaryEn: 'Nine Lebanese universities feature in the latest QS World University Rankings, with AUB leading nationally and ranking 8th in the Arab region.',
+    excerptAr: 'الجامعات اللبنانية تحقق تقدماً لافتاً في تصنيف QS الإقليمي لعام 2027، وتتصدر الجامعة الأميركية في بيروت القائمة المحلية.',
+    excerptEn: 'Lebanon\'s higher education institutions demonstrate academic resilience, securing prominent spots in the 2027 QS Arab region lists.',
+    contentAr: `تضمنت تصنيفات QS للجامعات لعام 2027 تسع جامعات لبنانية من بين 1504 جامعة على مستوى العالم ومن بين 109 جامعات مصنفة في المنطقة العربية. كانت الجامعة الأميركية في بيروت (AUB) المؤسسة الأعلى تصنيفاً في لبنان وثامن أعلى تصنيف في العالم العربي، وجاءت في المركز 223 عالمياً. كما صنّف المسح الجامعة اللبنانية الأميركية (LAU) في المركز 477، وجامعة القديس يوسف في بيروت (USJ) في المركز 537، والجامعة اللبنانية (LU) في المركز 626، وجامعة بيروت العربية (BAU) في المركز 670، وجامعة الروح القدس - الكسليك (USEK) في نطاق 761-770. وجامعة البلمند (UOB) في نطاق 1001-1200، وكذلك الجامعة الإسلامية في لبنان (IUL) وجامعة سيدة اللويزة (NDU) في نطاق 1201-1400 لكل منهما.
+
+وعلاوة على ذلك، منحت QS الجامعة الأميركية في بيروت درجة إجمالية بلغت 53.7 نقطة من أصل 100 نقطة كحد أقصى، تليها الجامعة اللبنانية الأميركية بـ 33.4 نقطة، وجامعة القديس يوسف بـ 30.6 نقطة، والجامعة اللبنانية بـ 27.7 نقطة، وجامعة بيروت العربية بـ 26.3 نقطة ؛ بينما لم تقدم درجات لجامعة الروح القدس وجامعة البلمند والجامعة الإسلامية وجامعة سيدة اللويزة. تحسن تصنيف جامعة القديس يوسف بمقدار 81 مركزاً عن عام 2026، وزاد تصنيف الجامعة اللبنانية الأميركية بمقدار 58 درجة، وتحسن تصنيف الجامعة الأميركية بمقدار 14 مركزاً، وزاد تصنيف جامعة بيروت العربية بمقدار 6 درجات على أساس سنوي ؛ في حين تقدم تصنيف جامعة الروح القدس من نطاق 771-780. في مقابل ذلك، تدهور تصنيف الجامعة اللبنانية بمقدار 111 مركزاً في 2026، وتراجعت تصنيفات الجامعة الإسلامية وجامعة سيدة اللويزة من نطاق 1001-1200، ولم يتغير تصنيف جامعة البلمند على أساس سنوي.
+
+استحوذت كل من الإمارات العربية المتحدة والمملكة العربية السعودية على ست من أفضل 21 جامعة في العالم العربي من بين أفضل 500 جامعة في العالم، تليها قطر ولبنان والأردن ومصر بمؤسستين للتعليم العالي لكل منها، وعمان بجامعة واحدة من بين أفضل 500 جامعة. تعتمد التصنيفات على متوسط مرجح لـ 10 عوامل هي السمعة الأكاديمية بوزن 30%، يليها الاستشهادات لكل هيئة تدريس (20%)، وسمعة صاحب العمل (15%)، ونسبة أعضاء هيئة التدريس إلى الطلاب (10%)، بالإضافة إلى أداء الاستدامة، ونتائج التوظيف، وشبكة البحث الدولية، ونسبة أعضاء هيئة التدريس الدوليين إلى إجمالي عدد أعضاء هيئة التدريس، ونسبة الطلاب الدوليين إلى العدد الإجمالي للطلاب (5% لكل منها)، وتنوع الطلاب الدوليين. يتم تجميع تصنيفات QS للجامعات بواسطة شركة Quacquarelli Symonds Limited، وهي شركة متخصصة في التعليم والدراسة في الخارج.
+
+بالتوازي، احتلت الجامعة الأميركية في بيروت المرتبة الأولى بين الجامعات اللبنانية في عوامل الاستشهادات لكل هيئة تدريس، والسمعة الأكاديمية، وسمعة صاحب العمل، ونتائج التوظيف، والاستدامة. وعلاوة على ذلك، جاءت الجامعة الأميركية في المركز 12 بين الجامعات العربية وفي المركز 412 عالمياً في مؤشر الاستشهادات لكل هيئة تدريس، وفي المركز الثامن إقليمياً والمركز 282 عالمياً في عامل السمعة الأكاديمية. كما جاءت في المركز الرابع بين الجامعات العربية وفي المركز 172 عالمياً في مؤشر سمعة صاحب العمل، وفي المركز الثاني إقليمياً والمركز 18 عالمياً في عامل نتائج التوظيف، فضلاً عن المركز الأول بين الجامعات العربية والمركز 176 عالمياً في عامل الاستسدامة. علاوة على ذلك، جاءت الجامعة اللبنانية الأميركية في المركز الأول في لبنان، وفي المركز الثامن بين الجامعات العربية، وفي المركز 226 عالمياً من حيث شبكة أبحاثها الدولية، والتي تقيس مستوى التعاون مع المؤسسات والباحثين حول العالم. كما كانت الجامعة اللبنانية الأميركية ثاني أعلى جامعة تصنيفاً في لبنان في عوامل الاستشهادات لكل هيئة تدريس، وسمعة صاحب العمل، والاستسدامة ؛ وثالث أعلى جامعة في السمعة الأكاديمية؛ ورابع أعلى جامعة من حيث نتائج التوظيف. وعلاوة على ذلك، جاءت الجامعة اللبنانية الأميركية في المركز 25 بين الجامعات العربية في مؤشر الاستشهادات لكل هيئة تدريس، وفي المركز 28 إقليمياً في عامل السمعة الأكاديمية ؛ وفي المركز 12 في مؤشر سمعة صاحب العمل، وفي المركز 31 في العالم العربي في عامل نتائج التوظيف، وكذلك في المركز الخامس في عامل الاستسدامة. بالإضافة إلى ذلك، احتلت جامعة الروح القدس المرتبة الأولى في لبنان في مؤشر نسبة أعضاء هيئة التدريس إلى الطلاب ونسبة أعضاء هيئة التدريس الدوليين إلى إجمالي عدد أعضاء هيئة التدريس. وجاءت في المركز التاسع بين الجامعات العربية والمركز 240 عالمياً في مؤشر نسبة أعضاء هيئة التدريس إلى الطلاب، وكذلك في المركز 40 إقليمياً والمركز 136 عالمياً في نسبة أعضاء هيئة التدريس الدوليين إلى إجمالي عدد أعضاء هيئة التدريس. علاوة على ذلك، جاءت الجامعة الإسلامية في لبنان في المركز الأول في لبنان في نسبة الطلاب الدوليين إلى إجمالي عدد الطلاب. واحتلت المرتبة 13 بين الجامعات العربية والمرتبة 83 عالمياً في نسبة الطلاب الدوليين إلى إجمالي عدد الطلاب.`,
+    contentEn: `The 2027 QS World University Rankings included nine Lebanese universities out of 1,504 universities globally and 109 classified in the Arab region. The American University of Beirut (AUB) was the highest-ranked institution in Lebanon and eighth in the Arab world, ranking 223rd globally. The survey also ranked the Lebanese American University (LAU) at 477th, Saint Joseph University of Beirut (USJ) at 537th, the Lebanese University (LU) at 626th, Beirut Arab University (BAU) at 670th, and the Holy Spirit University of Kaslik (USEK) in the 761-770 range.
+
+AUB scored an overall 53.7 points out of 100, followed by LAU (33.4) and USJ (30.6). Academic resilience was widely demonstrated by higher citations, robust employer reputations, and deep international research collaboration across these top-tier institutions.`,
+    author: {
+      nameAr: 'القسم الأكاديمي والتعليمي',
+      nameEn: 'Academic & Education Desk',
+      titleAr: 'محلل شؤون التعليم العالي والبحث العلمي',
+      titleEn: 'Higher Education Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600',
+    date: '10 يونيو 2026',
+    readTimeAr: '5 دقائق',
+    readTimeEn: '5 min read',
+    views: 3120,
+    tags: ['تصنيف QS', 'الجامعة الأميركية', 'الجامعة اللبنانية الأميركية', 'جامعة القديس يوسف', 'التعليم العالي', 'لبنان']
+  },
+  {
+    id: 'leb-environmental-taxes-waste',
+    category: 'lebanon',
+    categories: ['lebanon', 'research-reports'],
+    titleAr: 'وزارة البيئة تعدّل الضرائب البيئية على المنتجات المولدة للنفايات',
+    titleEn: 'Ministry of Environment Overhauls Ecological Taxes on Waste-Generating Goods',
+    summaryAr: 'المرسوم رقم 3314 يدخل حيز التنفيذ بتوقيع رئاسي ويفرض ضرائب متدرجة من 1% إلى 3% بناءً على نسبة النفايات وسمية المنتجات.',
+    summaryEn: 'Decree 3314 enacts progressive environmental duties scaled from 1% to 3% relative to waste volumes and toxicity to fund national solid waste treatment.',
+    excerptAr: 'وزير البيئة يوقع مرسوماً لتعديل الرسوم البيئية استناداً إلى قانون حماية البيئة ومبدأ مسؤولية المنتج الملوث.',
+    excerptEn: 'Lebanon implements progressive green taxes on manufacturing and raw materials, adhering to the polluter-pays principle.',
+    contentAr: `أصدرت وزارة البيئة المرسوم رقم 3314 تاريخ 15 حزيران 2026 بشأن تعديل الضرائب البيئية على المنتجات المولدة للنفايات. دخل المرسوم حيز التنفيذ فور صدوره، بعد توقيعه من قبل الرئيس جوزيف عون في 15 حزيران 2026. تعدل المادة 1 معدلات الضرائب المطبقة على منتجات معينة، بناءً على كمية أو نوعية النفايات المنتجة أثناء تصنيعها أو استخدامها.
+
+يفرض المرسوم ضريبة بيئية بنسبة 1% على السلع الأساسية والمواد الأولية، بما في ذلك الحيوانات الحية واللحوم ومنتجات الألبان والحبوب والمنتجات الصيدلانية والمعادن الأساسية مثل الألومنيوم والحديد والنيكل والصلب. كما يفرض ضريبة بيئية بنسبة 1.5% على السلع الاستهلاكية الوسيطة وسلع المعالجة، مثل المشروبات والمشروبات الروحية والخل والورق والورق المقوى والزجاج والآلات الكهربائية. علاوة على ذلك، يفرض ضريبة بيئية بنسبة 2% على المواد الصناعية الثقيلة والملوثات البيئية المحتملة، بما في ذلك الأسمنت والوقود المعدني والزيوت المعدنية والمواد الكيميائية العضوية والمواد البلاستيكية المتنوعة والسجاد. علاوة على ذلك، يفرض ضريبة بيئية بنسبة 2.5% على السلع الكيميائية والصناعية ذات التأثير العالي، بما في ذلك الدهون الحيوانية أو النباتية، والمواد الكيميائية غير العضوية، والمطاط، والجلود الخام، والجلود، ومصنوعات الجلود، ولوازم السفر، ومصنوعات الحجر أو الأسمنت. وأخيراً، يفرض ضريبة بيئية بنسبة 3% على المواد الخطرة أو شديدة السمية أو الخاضعة لتنظيم شديد، وتحديداً مستخلصات الدباغة أو الصباغة، والمتفجرات، ومنتجات الألعاب النارية، وأعواد الثقاب، والأسلحة والذخائر.
+
+استندت الوزارة في قرارها إلى قانون حماية البيئة رقم 444 تاريخ 29 تموز 2002، والذي رسخ مبدأ "الملوث يدفع" ؛ وإلى القانون رقم 38 تاريخ 5 كانون الثاني 2026 الذي عدل إطار الإدارة المتكاملة للنفايات الصلبة، والذي ينص على فرض ضرائب على منتجات معينة نسبة إلى كمية أو نوعية النفايات المتولدة أثناء تصنيعها أو الناتجة عن استخدامها, تطبيقاً لمبدأ مسؤولية المنتج ووفقاً للجدول المرفق بالقانون الذي يحدد معدلات الضريبة كنسبة مئوية من قيمة المنتج ؛ وإلى التعديل التشريعي للقانون رقم 80 تاريخ 10 تشرين الأول 2018 حول الإطار القانوني للإدارة المتكاملة للنفايات الصلبة الذي أقره مجلس النواب والذي أعاد التأكيد على أن إدارة النفايات تظل مسؤولية الدولة، الأمر الذي يفرض نفقات إضافية على الخزينة يجب تمويلها.`,
+    contentEn: `The Ministry of Environment issued Decree No. 3314 regarding the modification of environmental taxes on waste-generating products. The decree entered into force immediately upon its signing on June 15, 2026. Article 1 modifies tax rates applied to certain products, based on the quantity or quality of waste produced during manufacturing or use.
+
+The decree imposes a 1% environmental tax on basic commodities, 1.5% on intermediate consumer goods, 2% on heavy industrial materials and potential pollutants, 2.5% on high-impact chemicals, and 3% on highly toxic or regulated substances like explosives and matches. The reform utilizes the "polluter pays" principle under Environmental Protection Law No. 444 to establish fiscal sustainability for national waste processing.`,
+    author: {
+      nameAr: 'شؤون البيئة والاستدامة',
+      nameEn: 'Environmental & Green Policy Desk',
+      titleAr: 'محلل السياسات البيئية والتنمية',
+      titleEn: 'Environmental Policy Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=600',
+    date: '15 يونيو 2026',
+    readTimeAr: '5 دقائق',
+    readTimeEn: '5 min read',
+    views: 2890,
+    tags: ['الضرائب البيئية', 'وزارة البيئة', 'الملوث يدفع', 'النفايات الصلبة', 'القانون 444', 'لبنان']
+  },
+  {
+    id: 'leb-imf-economic-forecast-2026',
+    category: 'lebanon',
+    categories: ['lebanon', 'markets'],
+    titleAr: 'صندوق النقد الدولي يتوقع انكماش الاقتصاد اللبناني في 2026 جراء النزاع المستمر',
+    titleEn: 'IMF Forecasts Economic Contraction in 2026 Amid Escalating Geopolitical Conflict',
+    summaryAr: 'صندوق النقد يشير إلى تداعيات الصراع العسكري على السياحة والزراعة، ويستمر في محادثات الإصلاح الهيكلي للمصارف رغم تعافي النمو بنسبة 4% في عام 2025.',
+    summaryEn: 'IMF warns that renewed hostility since March will induce real GDP contraction in 2026, following a 4% growth rebound recorded in 2025.',
+    excerptAr: 'تداعيات النزاع العسكري تضغط على الاقتصاد اللبناني في عام 2026 وتوقعات بانكماش ملحوظ بعد تعافٍ مؤقت في العام الماضي.',
+    excerptEn: 'Renewed military operations strain tourism and agriculture, leading the IMF to project a recession in 2026 despite previous macro improvements.',
+    contentAr: `أشار صندوق النقد الدولي (IMF) إلى أن لبنان يواجه ظروفاً اقتصادية واجتماعية وإنسانية صعبة للغاية بسبب استئناف الحرب بين إسرائيل وحزب الله في آذار من هذا العام. وقال إن الحرب أسفرت عن أضرار لحقت بالإسكان والبنية التحتية والنشاط الاقتصادي، فضلاً عن خسائر بشرية كبيرة. وقدر أن النشاط الاقتصادي سينكمش في عام 2026، نظراً لتأثير الحرب على القطاعات الرئيسية للاقتصاد اللبناني مثل السياحة والزراعة، وكذلك بسبب تأثيرها على الثقة وحالة عدم اليقين السائدة. لكنه أشار إلى أن التأثير الكامل للصراع لن يُعرف إلا بمرور الوقت، وسيعتمد على مدة الحرب وشدتها.
+
+بالتوازي، أشار صندوق النقد الدولي إلى أنه يواصل انخراطه الوثيق مع السلطات اللبنانية من خلال مسارين. وقال إن المسار الأول يتمثل في مساعدة الحكومة على تحديد تدابير السياسة الاقتصادية التي يمكنها معالجة الأزمة المباشرة وكيفية تنفيذ هذه التدابير للتخفيف من تأثير الصراع على الاقتصاد. وأشار إلى أن لبنان عزز وضعه المالي واحتياطياته الدولية قبل الصراع، مما يوفر بعض المجال لتقديم دعم في السياسات لتلبية الاحتياجات الإنسانية الأكثر إلحاحاً في البلاد. وأضاف أن المسار الثاني يتألف من مناقشاته مع السلطات اللبنانية حول خطة إصلاحات أكثر شمولاً يمكن أن يدعمها في نهاية المطاف برنامج لصندوق النقد الدولي. وأشار إلى أن هذه المداولات ركزت بشكل أساسي على استراتيجية السلطات لإعادة هيكلة القطاع المصرفي وعلى إطارها المالي متوسط الأجل.
+
+قدر صندوق النقد الدولي أن الناتج المحلي الإجمالي الحقيقي للبنان نما بنسبة 4% في عام 2025 مقارنة بانكماش بنسبة 7.5% في 2024 و 0.7% في 2023، وأن الناتج المحلي الإجمالي الاسمي للبلاد بلغ 34.5 مليار دولار في 2025 مقارنة بـ 29.3 مليار دولار في 2024 و 24.5 مليار دولار في 2023. على هذا النحو، قال إن نصيب الفرد من الناتج المحلي الإجمالي في لبنان بلغ 6,443.2 دولاراً في 2025 مقارنة بـ 5,480 دولاراً في 2024 و 4,574.4 دولاراً في 2023. وعلاوة على ذلك، قال إن متوسط معدل التضخم في البلاد كان 14.6% في عام 2025، مقارنة بمتوسط معدلات التضخم البالغة 12.9% في منطقة الشرق الأوسط وشمال أفريقيا العام الماضي. بالتوازي، أشار إلى أن الفائض المالي ارتفع من 0.4% من الناتج المحلي الإجمالي في 2024 إلى 3.25% من الناتج المحلي الإجمالي في 2025، مقارنة بعجز قدره 1.6% من الناتج المحلي الإجمالي في 2023، وأن مستوى الدين العام تراجع من 185.8% من الناتج المحلي الإجمالي في نهاية 2023 إلى 157.9% من الناتج المحلي الإجمالي في نهاية 2024 و 139.4% من الناتج المحلي الإجمالي في نهاية 2025. بالإضافة إلى ذلك، قدر أن صادرات السلع والخدمات من لبنان انخفضت بنسبة 2.1% في 2025 وأن واردات السلع والخدمات إلى البلاد زادت بنسبة 7.5% العام الماضي، مقارنة بانخفاض قدره 25% للصادرات و 10.3% للواردات في 2024.`,
+    contentEn: `The International Monetary Fund (IMF) indicated that Lebanon faces extremely difficult economic, social, and humanitarian conditions due to the resumption of the war in March of this year. It estimated that economic activity will contract in 2026, given the impact on key sectors such as tourism and agriculture, as well as its impact on confidence and uncertainty.
+
+The IMF estimated that Lebanon's real GDP grew by 4% in 2025 compared to a contraction of 7.5% in 2024 and 0.7% in 2023, while nominal GDP stood at $34.5 billion in 2025. Per capita GDP stood at $6,443.2 in 2025. Average inflation was 14.6% in 2025. Public debt declined from 185.8% of GDP in 2023 to 139.4% in 2025. Discussions with authorities focus on banking sector restructuring and a medium-term fiscal framework.`,
+    author: {
+      nameAr: 'الدائرة الاقتصادية لصندوق النقد',
+      nameEn: 'IMF & Macroeconomic Desk',
+      titleAr: 'مراسل شؤون التنمية الاقتصادية',
+      titleEn: 'Macroeconomic Policy Correspondent'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=600',
+    date: '05 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 4890,
+    tags: ['صندوق النقد الدولي', 'انكماش الاقتصاد', 'الناتج المحلي', 'النمو الاقتصادي', 'التضخم', 'لبنان']
+  },
+  {
+    id: 'leb-south-building-damage-undp',
+    category: 'lebanon',
+    categories: ['lebanon', 'research-reports'],
+    titleAr: 'الأضرار في المباني في جنوب لبنان بلغت 1.38 مليار دولار وفق تقييم سريع للأمم المتحدة',
+    titleEn: 'Direct Building Damage in South Lebanon Valued at $1.38 Billion',
+    summaryAr: 'تقييم سريع لبرنامج الأمم المتحدة الإنمائي يوثق دمار أكثر من 11,000 مبنى بالكامل في محافظتي الجنوب والنبطية بمساهمة تقنيات الذكاء الاصطناعي الجيومكاني.',
+    summaryEn: 'Rapid UNDP geospatial assessment reveals extensive physical destruction across Nabatieh and South Governorates, tracking 3.1 million cubic meters of debris.',
+    excerptAr: 'برنامج الأمم المتحدة الإنمائي يصدر تقريراً يوثق حجم الدمار في الوحدات السكنية والأنقاض بالمحافظات الجنوبية.',
+    excerptEn: 'UNDP rapid structural monitoring maps heavy losses in Bint Jbeil, Marjayoun, and Tyre, calling for systemic recovery planning.',
+    contentAr: `أعلن برنامج الأمم المتحدة الإنمائي (UNDP)، بالتنسيق مع المجلس الوطني اللبناني للبحوث العلمية (CNRS-L) وبالتعاون مع القوات المسلحة اللبنانية (LAF) وإدارة شؤون السلامة والأمن التابعة للأمم المتحدة (UNDSS)، عن نتائج تقييم سريع للمباني المتضررة من الحرب الإسرائيلية في جنوب لبنان. وقال إن التقييم يهدف إلى توفير تقديرات أولية لحجم الأضرار ودعم جهود التخطيط للتعافي وإعادة الإعمار في المناطق المتضررة. وأشار إلى أن التقييم اعتمد على تقنيات الذكاء الاصطناعي الجيومكاني (GeoAI)، وتحليل صور الأقمار الصناعية، وعمليات التحقق الميداني لضمان دقة وموثوقية البيانات.
+
+وقدر الأضرار المباشرة، باستثناء الأضرار الطفيفة، للمباني في محافظتي الجنوب والنبطية بـ 1.38 مليار دولار، حيث بلغت الأضرار في قضاء بنت جبيل 668.1 مليون دولار، أو 49.7% من الإجمالي، يليه قضاء مرجعيون بأضرار بلغت 333 مليون دولار (24.1%)، وقضاء صور بـ 315 مليون دولار (22.8%)، وقضاء النبطية بـ 32.2 مليون دولار (2.3%)، وقضاء صيدا بـ 16.1 مليون دولار (1.2%).
+
+كما قدر أن 11,095 مبنى يتكون من 17,891 وحدة سكنية قد دُمرت بالكامل ؛ وتعرض 2,242 مبنى، بما في ذلك 5,219 وحدة سكنية، لأضرار جزئية؛ وأن 9,311 مبنى يتكون من 18,282 وحدة سكنية تعرضت لأضرار طفيفة في محافظتي الجنوب والنبطية اعتباراً من 29 نيسان 2026. وقال إن الضربات الإسرائيلية دمرت 14,357 وحدة في 8,989 مبنى، بينما ألحقت أضراراً جزئية بـ 1,190 مبنى يحتوي على 2,476 وحدة، وتسببت بأضرار طفيفة لـ 8,384 وحدة في 5,247 مبنى في محافظة النبطية. كما دمرت الضربات 2,106 مبان تتكون من 3,534 وحدة، وألحقت أضراراً جزئية بـ 1,052 مبنى تتكون من 2,743 وحدة، وتسببت في أضرار طفيفة لـ 9,898 وحدة في 4,064 مبنى في محافظة الجنوب. علاوة على ذلك، أشار إلى أن العقارات الأكثر تضرراً في قضاء بنت جبيل تشمل عيترون بـ 1,658 مبنى مدمراً، وبلدة بنت جبيل بـ 1,076 مبنى ؛ في حين أن العقارات الأكثر تضرراً في قضاء مرجعيون تشمل ميس الجبل بـ 969 مبنى متضرراً وطيبة مرجعيون بـ 824 مبنى مدمراً ؛ والعقارات الأكثر تضرراً في قضاء النبطية تشمل يحمر الشقيف بـ 71 مبنى متضرراً وزوطر الشرقية بـ 69 مبنى. كما قال إن المناطق التي عانت من أكبر قدر من الأضرار في قضاء صور تشمل برج الشمالي بـ 370 مبنى مدمراً وبرج الناقورة بـ 216 مبنى مدمراً ؛ بينما تشمل العقارات الأكثر تضرراً في قضاء صيدا زرارية بـ 65 مبنى متضرراً وأرزي بـ 62 مبنى متضرراً.
+
+وعلاوة على ذلك، قدر برنامج الأمم المتحدة الإنمائي أن الأضرار أنتجت ما يقرب من 3.1 مليون متر مكعب (m3) من الأنقاض في محافظتي الجنوب والنبطية، حيث يمثل قضاء بنت جبيل 1.51 مليون متر مكعب، أو 48.7% من الإجمالي، يليه قضاء مرجعيون بـ 787,940 متراً مكعباً (25.4%)، وقضاء صور بـ 689,603 متراً مكعباً (22.2%)، وقضاء النبطية بـ 77,538 متراً مكعباً (2.5%)، وقضاء صيدا بـ 39,263 متراً مكعباً (1.3%). كما أشار إلى أن هذه النتائج توفر قاعدة أدلة أولية لدعم السلطات الوطنية والشركاء في تحديد الأولويات وتوجيه جهود التعافي وإعادة الإعمار بشكل أكثر فعالية وبطريقة مستدامة.
+
+بالتوازي، قدر برنامج الأمم المتحدة الإنمائي في وقت سابق الأضرار المباشرة التي لحقت بالمباني في بيروت وجبل لبنان بـ 365 مليون دولار مع أضرار في جبل لبنان بلغت 349.7 مليون دولار، أو 95.8% من الإجمالي، وأضرار في بيروت بلغت 15.4 مليون دولار، وتمثل الرصيد البالغ 4.2%. كما قدر أن 146 مبنى، يتكون من 3,168 وحدة سكنية، قد دُمرت بالكامل ؛ وتعرض 264 مبنى، بما في ذلك 4,437 وحدة سكنية، لأضرار جزئية؛ واستهدفت الضربات الإسرائيلية 54 شقة بشكل مباشر. بالإضافة إلى ذلك، قدر أن الأضرار أنتجت ما يقرب من 648,942 متراً مكعباً (m3) من الأنقاض، حيث يمثل قضاء بعبدا 601,384 متراً مكعباً، أو 92.7% من الإجمالي، تليه بيروت بـ 27,337 متراً مكعباً (4.2%)، وقضاء عاليه بـ 20,221 متراً مكعباً (3.1%).`,
+    contentEn: `The United Nations Development Programme (UNDP), in coordination with the Lebanese National Council for Scientific Research (CNRS-L) and in cooperation with the Lebanese Armed Forces (LAF) and the United Nations Department of Safety and Security (UNDSS), announced the results of a rapid assessment of buildings damaged by the war in South Lebanon. It aims to support recovery planning in affected areas, relying on Geospatial AI (GeoAI), satellite imagery analysis, and field validation.
+
+The assessment estimated direct damages, excluding minor damage, to buildings in South and Nabatieh governorates at $1.38 billion. Bint Jbeil district suffered $668.1 million (49.7% of total), followed by Marjayoun ($333 million, 24.1%), Tyre ($315 million, 22.8%), Nabatieh ($32.2 million, 2.3%), and Saida ($16.1 million, 1.2%).
+
+It estimated that 11,095 buildings consisting of 17,891 housing units were completely destroyed; 2,242 buildings (5,219 housing units) suffered partial damage; and 9,311 buildings (18,282 housing units) suffered minor damage as of April 29, 2026. The damages produced approximately 3.1 million cubic meters of rubble. This structural inventory provides crucial baseline figures for international post-war recovery efforts.`,
+    author: {
+      nameAr: 'الدائرة الحضرية وتقييم الكوارث',
+      nameEn: 'Urban Assessment & Post-Disaster Desk',
+      titleAr: 'أخصائي التقييم الجغرافي والتعافي',
+      titleEn: 'Geospatial Assessment & Recovery Specialist'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600',
+    date: '01 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 8120,
+    tags: ['برنامج الأمم المتحدة الإنمائي', 'أضرار الحرب', 'جنوب لبنان', 'الأنقاض والركام', 'النبطية', 'لبنان']
+  },
+  {
+    id: 'excl-leb-isr-secret-annex',
+    category: 'exclusives',
+    categories: ['exclusives', 'editor-desk', 'lebanon'],
+    titleAr: 'الإطار اللبناني-الإسرائيلي بوساطة أمريكية: الملاحق السرية وسؤال الاستسلام القانوني',
+    titleEn: 'US-Mediated Lebanon-Israel Security Framework: The Secret Annexes and the Legal Surrender Question',
+    summaryAr: 'على الرغم من نشر الاتفاق الإطاري الأساسي المكون من 14 نقطة بين لبنان وإسرائيل، إلا أن التنفيذ الفعلي يعتمد بشكل كبير على "ملحق أمني" منفصل وشديد الحساسية طلبت الحكومة اللبنانية حظره عن النشر لحجب تنازلاته الميدانية والقانونية الصادمة.',
+    summaryEn: 'While the 14-point framework is public, its actual execution relies on a highly sensitive, unreleased "Security Annex" that Beirut requested to keep secret, raising deep concerns over Israeli operational freedom and the Article 13 legal waiver.',
+    excerptAr: 'تحقيق استقصائي يكشف خفايا الملحق الأمني السري والتبعات القانونية للمادة 13 من الاتفاق الإطاري اللبناني الإسرائيلي.',
+    excerptEn: 'An exclusive investigation into the unreleased security annex of the US-brokered deal, exposing Israeli operational freedom, reconstruction conditions, and Article 13\'s legal retreat.',
+    contentAr: `بقلم معن برازي - رئيس تحرير "الورّاق نيوز"
+
+على الرغم من نشر الاتفاق الإطاري الأساسي المكون من 14 نقطة بين لبنان وإسرائيل، إلا أن التنفيذ الفعلي للاتفاق يعتمد بشكل كبير على "ملحق أمني" منفصل وشديد الحساسية. ورغم أنه ليس ملحقاً "مخفياً" بالمعنى الحرفي، إلا أن تفاصيله تظل محجوبة تماماً عن الرأي العام.
+والأهم من ذلك، أن الحكومة اللبنانية طلبت رسمياً من الولايات المتحدة حجب هذا المستند عن النشر. وهذا يطرح تساؤلاً ملحاً: لماذا طلب لبنان بحزم من الولايات المتحدة إبقاء الملحق الأمني سرياً؟ يُعد هذا الافتقار إلى الشفافية مثيراً للجدل إلى حد كبير لأن الملحق غير المنشور، مقترناً بالنص المعلن، يفرض عدة عناصر حاسمة ومثيرة للقلق العميق في هذا الاتفاق.
+
+ما هو هذا الملحق الأمني السري؟
+على الرغم من أن النص الأساسي للاتفاق (المكون من 14 نقطة) قد نُشر علناً، إلا أن هذا الملحق السري يمثل "العمود الفقري التنفيذي" للاتفاق. بناءً على التسريبات والمراجع الواردة في النص الأساسي، يتضمن الملحق الشروط الميدانية القاسية التي تضمنتها التسوية، وأبرزها:
+• حرية العمل العسكري الإسرائيلي: (تحديداً المادة 4 من الملحق) تنص على احتفاظ الجيش الإسرائيلي بـ "حرية التحرك" والعمل العسكري ضد أي تهديدات ناشئة أو فورية داخل المنطقة الأمنية في جنوب لبنان.
+• انسحاب إسرائيلي مشروط (لا توجد جداول زمنية): يؤكد الملحق أنه لن يكون هناك أي انسحاب إسرائيلي تلقائي أو وفق جدول زمني محدد. بل يرتبط انسحاب الجيش الإسرائيلي بالكامل بتنفيذ شروط ميدانية مسبقة، وعلى رأسها التحقق من نزع سلاح الجماعات المسلحة (حزب الله) وتفكيك بنيتها التحتية.
+• المناطق التجريبية (Pilot Zones): يفصل الملحق خطة إنشاء مناطق تجريبية محددة. في هذه المناطق فقط، سيُسمح للجيش اللبناني بالدخول وتولي المسؤولية الأمنية بعد خضوعه لعمليات تدريب وتدقيق، وبشرط التأكد من خلو المنطقة من السلاح غير الشرعي. ولن يتم توسيع هذه المناطق إلا بموافقة إسرائيلية مبنية على التقييم الميداني.
+• قيود صارمة على إعادة الإعمار: يتضمن تفاصيل آليات الرقابة الأمريكية والدولية لضمان عدم تدفق أموال إعادة الإعمار إلى أي أفراد أو مؤسسات أو كيانات تابعة للجماعات المسلحة غير التابعة للدولة.
+
+لماذا طلب لبنان إخفاءه؟
+يُعتقد أن الحكومة اللبنانية سعت لإخفاء هذا الملحق لأنه يتضمن شروطاً وتنازلات بالغة الحساسية (مثل تشريع حرية التدخل العسكري الإسرائيلي وربط الانسحاب بنزع سلاح حزب الله). فنشر مثل هذه التفاصيل الدقيقة يضع الحكومة في موقف محرج للغاية داخلياً، ويزيد من حدة الانقسام والرفض للاتفاق، خاصة في ظل تلويح أطراف داخلية بإسقاطه.
+
+1. المخاوف الأساسية بشأن الملحق الأمني غير المنشور
+• معايير الانسحاب المشروط: إن التزام الجيش الإسرائيلي بإعادة التموضع والانسحاب التدريجي من الأراضي اللبنانية ليس مطلقاً؛ بل هو مشروط كلياً بالمعايير والضوابط الأمنية المحددة حصرياً داخل هذا الملحق غير المنشور.
+• قيود إعادة الإعمار: يفرض الإطار قيوداً تمنع وصول أموال إعادة الإعمار الدولية إلى الأفراد أو المناطق المرتبطة بالجماعات المسلحة غير التابعة للدولة. ونظراً للدمار الواسع النطاق في جميع أنحاء جنوب لبنان، فإن هذا البند يثير مخاوف لوجستية وإنسانية خطيرة حول كيفية تنفيذ جهود إعادة البناء فعلياً للسكان المدنيين النازحين.
+
+2. هل تخلى لبنان عن حقه في مقاضاة إسرائيل؟
+بعيداً عن الملحق السري، اندلعت عاصفة قانونية كبرى حول المادة 13 من الإطار المعلن الموقع في واشنطن. ويحذر خبراء قانونيون صراحة من أن بيروت ربما تكون قد قيدت بشدة، أو حتى تخلت تماماً، عن سيادتها في محاسبة إسرائيل قانونياً على جرائم الحرب المرتكبة على الأراضي اللبنانية.
+
+ماذا تفرض المادة 13؟
+ينص البند على أنه من أجل "إرساء علاقات مستقرة وسلمية"، يجب على كل من لبنان وإسرائيل الالتزام بـ "وقف جميع الإجراءات العدائية أو السلبية في المحافل السياسية أو القانونية الدولية".
+
+لماذا يقرع الخبراء القانونيون ناقوس الخطر؟
+يحذر المحامون الحقوقيون والباحثون القانونيون من أن الصياغة فضفاضة بشكل خطير ويمكن أن تكون لها تداعيات كارثية على العدالة الدولية:
+• عرقلة المحاكم الدولية: يمكن تفسير البند على أنه يلزم لبنان بوقف جميع الشكاوى الحالية والمستقبلية ضد إسرائيل في مجلس الأمن التابع للأمم المتحدة، والمحكمة الجنائية الدولية، ومحكمة العدل الدولية، وغيرها من لجان تقصي الحقائق التابعة للأمم المتحدة.
+• إسكات المحافل السياسية: نظراً لأن النص يتضمن صراحة "المحافل السياسية"، فإنه يمكن أن يمنع الدولة اللبنانية من استخدام المؤسسات الدبلوماسية والدولية للتنديد بالانتهاكات وتوثيقها.
+• التخلي عن ضحايا جرائم الحرب: يشير الخبراء القانونيون إلى أن هذا الاتفاق يأتي في وقت تواجه فيه إسرائيل تدقيقاً قانونياً دولياً غير مسبوق بسبب الهجمات العشوائية، وتدمير البنية التحتية المدنية، والتهجير القسري في لبنان. وتجبر المادة 13 فعلياً الدولة اللبنانية على التراجع عن السعي لتحقيق المساءلة أو الحصول على تعويضات عن هذه الأفعال.
+
+3. مفارقة القيادة والمسارات القانونية البديلة
+تبدو هذه التناقضات صارخة بشكل خاص بالنظر إلى خلفية رئيس الوزراء اللبناني نواف سلام. فقبل توليه منصبه، شغل سلام منصب رئيس محكمة العدل الدولية، وترأس الرأي الاستشاري التاريخي لعام 2024 الذي أعلن عدم قانونية احتلال إسرائيل للأراضي الفلسطينية. ويرى المنتقدون أنه من التناقض الشديد أن يتراجع لبنان عن المساءلة القانونية الدولية في ظل قيادته.
+
+هل لا يزال من الممكن اتخاذ إجراءات قانونية؟
+في حين أن الاتفاق يقيد الدولة اللبنانية بشدة، فإن مسار العدالة قد تغير ولكنه لم يُغلق تماماً:
+• الشكاوى الحالية: يشير المحللون القانونيون إلى أن الشكاوى والمراسلات الحالية المقدمة بالفعل إلى الأمم المتحدة أو المحكمة الجنائية الدولية لا تختفي تلقائياً، رغم أن الحكومة اللبنانية قد تتعرض لضغوط سياسية تمنعها من دعمها ومتابعتها.
+• الولاية القضائية العالمية للأفراد: يُلزم الاتفاق الدولة وليس المواطنين. وبالتالي، لا يزال بإمكان الضحايا الأفراد، من الناحية النظرية، محاولة رفع قضايا ضد المسؤولين الإسرائيليين أمام المحاكم الوطنية الأجنبية التي تعمل بمبدأ الولاية القضائية العالمية. ومع ذلك، يحذر المحامون من أن هذا المسار طويل ومعقد ومقيد للغاية مقارنة بالدعاوى الدولية التي تدعمها الدول.`,
+    contentEn: `US-Mediated Lebanon-Israel Security Framework: The Secret Annexes and the Legal Surrender Question
+By Maan Barazy - Editor-in-Chief of Al-Warraq News
+
+Although the basic 14-point framework agreement between Lebanon and Israel has been published, its operational execution relies heavily on a separate and highly sensitive "security annex." While not "hidden" in the literal sense, its details remain entirely shielded from the public.
+Most importantly, the Lebanese government has officially requested that the United States withhold this document from publication. This raises a pressing question: Why did Lebanon insist so firmly on keeping the security annex confidential? This lack of transparency is highly controversial, as the unpublished annex, coupled with the declared text, imposes several critical and deeply concerning elements on the agreement.
+
+What is this Top-Secret Security Annex?
+While the core 14-point text of the agreement is public, the secret annex represents its "operational backbone." Based on leaks and references in the main text, the annex outlines harsh field conditions, most notably:
+• Israeli Military Freedom of Action: (Specifically, Article 4 of the annex) states that the IDF retains "freedom of action" and military movement to act against any emerging or immediate threats within the security zone of southern Lebanon.
+• Conditional Israeli Withdrawal (No Timelines): The annex emphasizes that there will be no automatic or scheduled Israeli withdrawal. Instead, any IDF withdrawal is strictly tied to the verification of disarming armed groups (Hezbollah) and dismantling their military infrastructure.
+• Pilot Zones: The annex details a plan to establish pilot security zones. Only in these zones will the Lebanese Army be permitted to enter and assume security responsibilities, and only after training, vetting, and ensuring the zone is free of non-state weapons. These zones will expand only upon Israeli approval based on field assessments.
+• Strict Reconstruction Controls: It details American and international oversight mechanisms to guarantee that international reconstruction funds do not reach any individuals, organizations, or entities affiliated with non-state armed groups.
+
+Why Did Lebanon Request Secrecy?
+The Lebanese government reportedly sought to hide this annex because it contains highly sensitive concessions—such as codifying Israeli military intervention rights and tying withdrawal to disarming Hezbollah. Publishing these details would place the cabinet in an extremely embarrassing domestic position, deepening internal division and opposition to the agreement, especially with domestic factions threatening to bring it down.
+
+1. Key Concerns Regarding the Unpublished Security Annex
+• Conditional Withdrawal Criteria: The IDF's commitment to redeploy and gradually withdraw from Lebanese territory is not absolute; it is entirely dependent on the security parameters and controls specified exclusively inside this unpublished annex.
+• Reconstruction Restrictions: The framework prevents international reconstruction funds from reaching individuals or areas connected to non-state armed groups. Given the widespread devastation across southern Lebanon, this clause raises critical logistical and humanitarian questions about how rebuilding can actually occur for displaced civilian populations.
+
+2. Did Lebanon Surrender its Right to Prosecute Israel?
+Beyond the secret annex, a major legal storm has erupted over Article 13 of the Washington-signed public framework. Legal experts warn that Beirut may have severely restricted, or completely surrendered, its sovereignty to hold Israel legally accountable for war crimes committed on Lebanese soil.
+
+What Does Article 13 Impose?
+The clause states that in order to "establish stable and peaceful relations," both Lebanon and Israel must commit to "ceasing all hostile or negative actions in international political or legal forums."
+
+Why Are Legal Experts Sounding the Alarm?
+Human rights lawyers and international legal scholars warn that the wording is dangerously broad and could have catastrophic implications for international justice:
+• Obstructing International Courts: The clause could be interpreted as binding Lebanon to drop all current and future complaints against Israel in the UN Security Council, the International Criminal Court (ICC), the International Court of Justice (ICJ), and other UN fact-finding committees.
+• Silencing Political Forums: Since the text explicitly includes "political forums," it could prevent the Lebanese state from using diplomatic and international institutions to denounce and document violations.
+• Abandoning Victims of War Crimes: Experts point out that this agreement comes at a time when Israel faces unprecedented international legal scrutiny over indiscriminate attacks, destruction of civilian infrastructure, and forced displacement in Lebanon. Article 13 effectively forces the Lebanese state to back down from seeking accountability or reparations.
+
+3. The Leadership Paradox and Alternative Legal Paths
+These contradictions appear particularly stark given the background of Lebanese Prime Minister Nawaf Salam. Before taking office, Salam served as President of the International Court of Justice (ICJ) and presided over the historic 2024 advisory opinion declaring Israel's occupation of Palestinian territories illegal. Critics see it as highly ironic that Lebanon would retreat from international legal accountability under his leadership.
+
+Can Legal Action Still Be Taken?
+While the agreement heavily restricts the Lebanese state, the path to justice is altered but not entirely closed:
+• Existing Complaints: Analysts point out that current complaints and communications already submitted to the UN or ICC do not automatically disappear, though the Lebanese government may face political pressure to withhold active support and follow-up.
+• Universal Jurisdiction for Individuals: The agreement binds the state, not individual citizens. Therefore, individual victims could still theoretically attempt to file cases against Israeli officials in foreign national courts operating under the principle of universal jurisdiction. However, lawyers warn that this path is long, complex, and highly restricted compared to state-sponsored international litigation.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس تحرير صحيفة الورّاق',
+      titleEn: 'Editor-in-Chief, Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=120'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    date: '29 يونيو 2026',
+    readTimeAr: '7 دقائق',
+    readTimeEn: '7 min read',
+    views: 12500,
+    isPremium: true,
+    isFeatured: true,
+    tags: ['الملحق الأمني', 'الاتفاق الإطاري', 'السيادة اللبنانية', 'جرائم الحرب', 'نواف سلام', 'المحاكم الدولية', 'أمريكا']
+  },
+  {
+    id: 'leb-industrial-exports-2025',
+    category: 'instats',
+    categories: ['instats', 'lebanon', 'markets'],
+    titleAr: 'الصادرات الصناعية ترتفع بنسبة 15.3% إلى 2.9 مليار دولار في 2025',
+    titleEn: 'Lebanese Industrial Exports Surge by 15.3% to $2.9 Billion in 2025',
+    summaryAr: 'تظهر أرقام وزارة الصناعة اللبنانية أن الصادرات الصناعية بلغت 2.9 مليار دولار في 2025، مما يشكل زيادة قدرها 386 مليون دولار (+15.3%) مقارنة بعام 2024. وتصدرت صادرات المعادن الأساسية القائمة بقيمة 600.7 مليون دولار تمثل 20.7% من الإجمالي.',
+    summaryEn: 'Ministry of Industry figures reveal that Lebanese industrial exports reached $2.9 billion in 2025, recording a 15.3% ($386M) expansion from 2024. Base metals topped the list at $600.7 million, accounting for 20.7% of total exports.',
+    excerptAr: 'الصادرات الصناعية تسجل قفزة ملحوظة بزيادة 386 مليون دولار لتصل إلى 2.9 مليار دولار مدفوعة بنمو صادرات المعادن الأساسية والمنتجات الكيماوية.',
+    excerptEn: 'Lebanese industrial shipments grew 15.3% in 2025 to $2.9bn, led by robust gains in base metals and chemicals, despite macroeconomic hurdles.',
+    contentAr: `تظهر الأرقام الصادرة عن وزارة الصناعة أن الصادرات الصناعية بلغت 2.9 مليار دولار في 2025، مما يشكل زيادة قدرها 386 مليون دولار، أو 15.3%، من 2.5 مليار دولار في 2024. وبالمقارنة، بلغت الصادرات الصناعية 2.5 مليار دولار في 2019، و 2.2 مليار دولار في 2020، و 2.55 مليار دولار في 2023. بلغت صادرات المعادن الأساسية 600.7 مليون دولار في 2025 ومثلت 20.7% من إجمالي الصادرات الصناعية في العام الماضي. وتلتها صادرات الآلات والأجهزة الإلكترونية بـ 560.1 مليون دولار (19.3%)، والمنتجات الكيماوية بـ 509.4 مليون دولار (17.6%)، والمواد الغذائية المحضرة والتبغ بـ 455.2 مليون دولار (15.7%)، واللؤلؤ والأحجار الكريمة والمعادن بـ 229.1 مليون دولار (8%)، والبلاستيك والمطاط بـ 99.2 مليون دولار (3.4%)، والمنتجات النباتية بـ 94 مليون دولار (3.2%)، والورق والورق المقوى بـ 78.8 مليون دولار (2.7%).
+
+علاوة على ذلك، ارتفعت صادرات المعادن الأساسية بمقدار 163.7 مليون دولار، أو بنسبة 37.5%، في عام 2025 ؛ تليها صادرات اللؤلؤ والأحجار الكريمة والمعادن بزيادة 71.8 مليون دولار (+45.6%)؛ والمنتجات الكيماوية بزيادة 69.3 مليون دولار (+15.8%) ؛ والمواد الغذائية المحضرة والتبغ بزيادة 35.7 مليون دولار (+8.5%)؛ والآلات والأجهزة الإلكترونية بزيادة 30.9 مليون دولار (+5.8%) ؛ في حين انخفضت صادرات الدهون والشحوم والزيوت بمقدار 22.1 مليون دولار (-24.7%) ؛ تليها صادرات منتجات الورق والورق المقوى التي انخفضت بمقدار 4.7 مليون دولار (-5.7%)؛ والمصنوعات الجلدية والفراء التي انخفضت بمقدار 1.8 مليون دولار (-23%) ؛ ومصنوعات الحجر والجص والأسمنت والزجاج التي انخفضت بمقدار 1.3 مليون دولار (-4.7%).
+
+كما كانت الدول العربية الوجهة لـ 40.4% من الصادرات الصناعية اللبنانية في عام 2025، تليها الاقتصادات الأوروبية بـ 19%، والأسواق الأفريقية غير العربية بـ 15.6%، والاقتصادات الآسيوية غير العربية بـ 12.4%، والأمريكيتان بـ 11%، والأسواق في أوقيانوسيا بـ 0.8%. وبالمقارنة، كانت الدول العربية الوجهة لـ 39.3% من الصادرات الصناعية اللبنانية في عام 2024، تليها الاقتصادات الأوروبية بـ 21%، والأسواق الأفريقية غير العربية بـ 16.3%، والأمريكيتان بـ 11%، والاقتصادات الآسيوية غير العربية بـ 10%، والأسواق في أوقيانوسيا بـ 1%. على صعيد الدول، كانت الإمارات العربية المتحدة الوجهة الرئيسية للصادرات الصناعية اللبنانية بقيمة 306.3 مليون دولار ومثلت 10.6% من الإجمالي في عام 2025، تليها العراق بـ 209.5 مليون دولار (7.2%)، والولايات المتحدة بـ 197.3 مليون دولار (6.8%)، ومصر بـ 166.6 مليون دولار (5.7%)، وتركيا بـ 157.1 مليون دولار (5.4%)، وسوريا بـ 141 مليون دولار (4.9%)، والأردن بـ 94.7 مليون دولار (3.3%)، وإيطاليا بـ 87.6 مليون دولار (3%)، وإسبانيا بـ 79.9 مليون دولار (2.8%). كما استوردت 26 دولة أفريقية غير عربية، و 23 اقتصاداً أوروبياً، و 16 دولة عربية، و 14 اقتصاداً آسيوياً غير عربي، وست دول في الأمريكيتين، واقتصادان في أوقيانوسيا، منتجات صناعية لبنانية بقيمة مليون دولار أو أكثر لكل منها في عام 2025.
+
+بالتوازي، بلغت واردات المعدات والآلات الصناعية 164 مليون دولار في 2025، مما يشكل زيادة بنسبة 24.2% من 132 مليون دولار في 2024. كانت الصين المصدر الرئيسي لهذه الواردات ومثلت 34.3% من الإجمالي في العام الماضي، تليها إيطاليا بـ 19.5%، وألمانيا بـ 11.7%. وعلاوة على ذلك، بلغت واردات المعدات والآلات الصناعية 15.9 مليون دولار في كانون الأول 2025، وهو ما يمثل زيادة كبيرة بنسبة 46.8% من 10.8 مليون دولار في تشرين الثاني 2025. كانت الصين المصدر الرئيسي لهذه الواردات بقيمة 5.6 مليون دولار ومثلت 35.3% من الإجمالي في كانون الأول 2025، تليها تركيا بـ 2.6 مليون دولار (16.3%)، وإيطاليا بـ 2 مليون دولار (12.4%).`,
+    contentEn: `Figures released by the Ministry of Industry show that Lebanese industrial exports reached $2.9 billion in 2025, representing an increase of $386 million, or 15.3%, from $2.5 billion in 2024. In comparison, industrial exports stood at $2.5 billion in 2019, $2.2 billion in 2020, and $2.55 billion in 2023.
+
+Exports of base metals reached $600.7 million in 2025, representing 20.7% of total industrial exports last year. This was followed by machinery and electrical appliances at $560.1 million (19.3%), chemical products at $509.4 million (17.6%), prepared foodstuffs and tobacco at $455.2 million (15.7%), pearls, precious stones, and metals at $229.1 million (8%), plastics and rubber at $99.2 million (3.4%), vegetable products at $94 million (3.2%), and paper and paperboard at $78.8 million (2.7%).
+
+Furthermore, exports of base metals rose by $163.7 million, or 37.5%, in 2025; followed by exports of pearls, precious stones, and metals, which increased by $71.8 million (+45.6%); chemical products, up $69.3 million (+15.8%); prepared foodstuffs and tobacco, up $35.7 million (+8.5%); and machinery and electrical appliances, up $30.9 million (+5.8%). Conversely, exports of fats, oils, and greases decreased by $22.1 million (-24.7%); followed by paper and paperboard products, which fell by $4.7 million (-5.7%); leather goods and furs, down $1.8 million (-23%); and stone, plaster, cement, and glass products, which decreased by $1.3 million (-4.7%).
+
+In terms of destinations, Arab countries were the destination for 40.4% of Lebanese industrial exports in 2025, followed by European economies at 19%, non-Arab African markets at 15.6%, non-Arab Asian economies at 12.4%, the Americas at 11%, and Oceania at 0.8%. In comparison, Arab countries took 39.3% of Lebanese industrial exports in 2024, followed by European economies at 21%, non-Arab African markets at 16.3%, the Americas at 11%, non-Arab Asian economies at 10%, and Oceania at 1%.
+
+At the country level, the United Arab Emirates was the primary destination for Lebanese industrial exports, valued at $306.3 million, representing 10.6% of the total in 2025. It was followed by Iraq at $209.5 million (7.2%), the United States at $197.3 million (6.8%), Egypt at $166.6 million (5.7%), Turkey at $157.1 million (5.4%), Syria at $141 million (4.9%), Jordan at $94.7 million (3.3%), Italy at $87.6 million (3%), and Spain at $79.9 million (2.8%). Additionally, 26 non-Arab African countries, 23 European economies, 16 Arab nations, 14 non-Arab Asian economies, 6 American countries, and 2 Oceania economies imported Lebanese industrial products valued at $1 million or more each in 2025.
+
+In parallel, imports of industrial machinery and equipment reached $164 million in 2025, representing a 24.2% increase from $132 million in 2024. China was the primary source of these imports, accounting for 34.3% of last year's total, followed by Italy at 19.5% and Germany at 11.7%. Furthermore, imports of industrial machinery and equipment reached $15.9 million in December 2025, representing a significant 46.8% increase from $10.8 million in November 2025. China was the primary source of these imports, valued at $5.6 million, representing 35.3% of the total in December 2025, followed by Turkey at $2.6 million (16.3%) and Italy at $2 million (12.4%).`,
+    author: {
+      nameAr: 'مكتب الإحصاء والتحليل التجاري',
+      nameEn: 'Trade & Commercial Statistics Desk',
+      titleAr: 'محلل الأسواق السلعية والتبادل',
+      titleEn: 'Trade Flow & Commodities Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&q=80&w=600',
+    date: '28 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 5410,
+    tags: ['الصادرات الصناعية', 'وزارة الصناعة', 'المعادن الأساسية', 'التبادل التجاري', 'لبنان']
+  },
+  {
+    id: 'leb-investment-banks-sheet-2026',
+    category: 'instats',
+    categories: ['instats', 'lebanon', 'markets'],
+    titleAr: 'الميزانية العمومية لبنوك الاستثمار عند 91.2 تريليون ليرة لبنانية في نهاية آذار 2026',
+    titleEn: 'Investment Banks Consolidated Balance Sheet Reaches LBP 91.2 Trillion in Q1 2026',
+    summaryAr: 'تظهر الأرقام الصادرة عن مصرف لبنان (BdL) أن الميزانية العمومية الموحدة لبنوك الاستثمار في لبنان بلغت 91.2 تريليون ليرة لبنانية (1.02 مليار دولار) في نهاية آذار 2026، متراجعة بنسبة 1.1% مقارنة بنهاية عام 2025 ومبنية على سعر صرف التعميم 167 (89,500 ليرة لكل دولار).',
+    summaryEn: 'Central Bank of Lebanon (BdL) figures show that the consolidated balance sheet of investment banks in Lebanon reached LBP 91.2 trillion ($1.02B) at the end of March 2026, dropping 1.1% in the first quarter of the year.',
+    excerptAr: 'الميزانية العمومية الموحدة لبنوك الاستثمار تسجل 91.2 تريليون ليرة لبنانية متأثرة بآلية التقييم الجديدة لمصرف لبنان وفق سعر الصرف الرسمي.',
+    excerptEn: 'Combined investment bank assets in Lebanon stood at LBP 91.2 trillion in Q1 2026, dropping 1.1% from year-end 2025 but expanding 9.8% YoY.',
+    contentAr: `تظهر الأرقام الصادرة عن مصرف لبنان (BdL) أن الميزانية العمومية الموحدة لبنوك الاستثمار في لبنان بلغت 91.2 تريليون (tn) ليرة لبنانية في نهاية آذار 2026، أو ما يعادل 1.02 مليار دولار، مما يشكل انخفاضاً بنسبة 1.1% من 92.2 تريليون ليرة لبنانية (1.03 مليار دولار) في نهاية 2025 وزيادة بنسبة 9.8% من 83.1 تريليون ليرة لبنانية (928 مليون دولار) في نهاية آذار 2025. تعكس الأرقام التعميم الأساسي لمصرف لبنان رقم 167/13612 تاريخ 2 شباط 2024 الذي طلب من البنوك والمؤسسات المالية تحويل أصولها وخصومها بالعملات الأجنبية إلى الليرة اللبنانية بسعر صرف 89,500 ليرة لبنانية لكل دولار أمريكي عند إعداد ميزانياتها المالية ومراكزها بدءاً من 31 كانون الثاني 2024.
+
+على جانب الأصول، بلغت المطالبات على العملاء المقيمين 8.7 تريليون ليرة لبنانية (97.7 million دولار) في نهاية آذار 2026 وزادت بنسبة 12.7% من 7.76 تريليون ليرة لبنانية (86.7 million دولار) في نهاية 2025 وبنسبة 50% من 5.8 تريليون ليرة لبنانية (65.1 million دولار) في العام السابق. وعلاوة على ذلك، بلغ إجمالي المطالبات على العملاء المقيمين بالليرة اللبنانية 403.3 مليار ليرة لبنانية في نهاية آذار 2026، مما يشكل انخفاضات بنسبة 7.2% من 434.6 مليار ليرة لبنانية في نهاية 2025 وبنسبة 30.8% من 582.4 مليار ليرة لبنانية في نهاية آذار 2025، في حين بلغت المطالبات على العملاء المقيمين بالعملة الأجنبية 8.3 تريليون ليرة لبنانية (93.2 million دولار) في نهاية آذار 2026 وارتفعت بنسبة 14% في الربع الأول من 2026 وبنسبة 59% في العام السابق. كما بلغت المطالبات على العملاء غير المقيمين 841.8 مليار ليرة لبنانية (9.4 million دولار) في نهاية آذار 2026 وزادت بنسبة 4.3% عن نهاية 2025 وبنسبة 7.8% عن نهاية آذار 2025.
+
+علاوة على ذلك، بلغت المطالبات على القطاع المالي المقيم 7.7 تريليون ليرة لبنانية (86 million دولار) في نهاية آذار 2026، حيث نمت بنسبة 11.2% من 6.92 تريليون ليرة لبنانية (77.3 million دولار) في نهاية 2025 وانخفضت بنسبة 15.4% من 9.1 تريليون ليرة لبنانية (101.6 million دولار) في العام السابق. وبلغت المطالبات على القطاع المالي المقيم بالليرة اللبنانية 3.7 تريليون ليرة لبنانية في نهاية آذار 2026 وارتفعت بشكل كبير بنسبة 78.8% من 2.07 تريليون ليرة لبنانية في نهاية 2025 وبنسبة 11.4% من 3.3 تريليون ليرة لبنانية في نهاية آذار 2025، في حين بلغ إجمالي المطالبات على القطاع المالي المقيم بالعملة الأجنبية 4 تريليون ليرة لبنانية (44.6 million دولار) في نهاية آذار 2026 وانخفضت بنسبة 17.7% من 4.85 تريليون ليرة لبنانية (54.2 million دولار) في نهاية العام السابق وبنسبة 31% من 5.77 تريليون ليرة لبنانية (64.5 million دولار). بالإضافة إلى ذلك، بلغت المطالبات على القطاع المالي غير المقيم 6.2 تريليون ليرة لبنانية (69.4 million دولار) في نهاية آذار 2026 وانخفضت بنسبة 24.7% من 8.25 تريليون ليرة لبنانية (92.1 million دولار) في نهاية 2025 وبنسبة 24.4% من 8.2 تريليون ليرة لبنانية (91.7 million دولار) في نهاية آذار 2025. كما بلغت المطالبات على القطاع العام 3.2 مليار ليرة لبنانية في نهاية آذار 2026 مقارنة بـ 3.2 مليار ليرة لبنانية في نهاية 2025 و 1.9 مليار ليرة لبنانية في العام السابق ؛ في حين أن محفظة الأوراق المالية، والتي تشمل سندات الخزينة اللبنانية وسندات اليوروبوندز، بلغت 10 تريليون ليرة لبنانية وتراجعت بنسبة 4.5% من 10.5 تريليون ليرة لبنانية في نهاية 2025 وبنسبة 18.6% من 12.3 تريليون ليرة لبنانية في نهاية آذار 2025. بالتوازي، بلغت العملات والودائع لدى البنوك المركزية المحلية والأجنبية 35.6 تريليون ليرة لبنانية (397.6 million دولار) في نهاية آذار 2026 مقارنة بـ 36 تريليون ليرة لبنانية (402.7 million دولار) في نهاية 2025 و 31.4 تريليون ليرة لبنانية (351 million دولار) في نهاية آذار 2025.
+
+على جانب الخصوم، بلغت ودائع العملاء المقيمين 29.1 تريليون ليرة لبنانية (325 million دولار) في نهاية آذار 2026، مما يشكل انخفاضاً بنسبة 1.2% من 29.4 تريليون ليرة لبنانية (328.8 million دولار) في نهاية 2025 و 3% من 30 تريليون ليرة لبنانية (335 million دولار) في نهاية آذار 2025. وبلغت ودائع العملاء المقيمين بالليرة اللبنانية 2,622 مليار ليرة لبنانية في نهاية آذار 2026 حيث نمت بنسبة 8.4% في الربع الأول من العام وانخفضت بنسبة 11.5% مقارنة بالعام السابق، في حين بلغت ودائع العملاء المقيمين بالعملة الأجنبية 26.5 تريليون ليرة لبنانية (295.7 million دولار) في نهاية آذار 2026 وتراجعت بنسبة 2% من نهاية 2025 وبنسبة 2% من نهاية آذار 2025. كما بلغ إجمالي ودائع العملاء غير المقيمين 8.7 تريليون ليرة لبنانية (96.9 million دولار) في نهاية آذار 2026، حيث انخفضت بنسبة 2.3% من 8.88 تريليون ليرة لبنانية (99.2 million دولار) في نهاية 2025 وزادت بنسبة 8.8% من 7.97 تريليون ليرة لبنانية (89 million دولار) في العام السابق.
+
+علاوة على ذلك، بلغت الخصوم للقطاع المالي المقيم 5.2 تريليون ليرة لبنانية (57.7 million دولار) في نهاية آذار 2026 وارتفعت بنسبة 9.1% من 4.7 تريليون ليرة لبنانية (52.9 million دولار) في نهاية 2025 وبنسبة 3.4% من 5 تريليون ليرة لبنانية (55.8 million دولار) في نهاية آذار 2025. بلغ إجمالي الخصوم للقطاع المالي المقيم بالليرة اللبنانية 2,950.1 مليار ليرة لبنانية في نهاية آذار 2026، حيث زادت بنسبة 6.2% في الربع الأول من 2026 وتراجعت بنسبة 2.4% مقارنة بالعام السابق، في حين بلغت الخصوم للقطاع المالي المقيم بالعملة الأجنبية 2,213.1 مليار ليرة لبنانية (24.7 million دولار) في نهاية آذار 2026 ونمت بنسبة 13.1% من 1,956.1 مليار ليرة لبنانية (22 million دولار) في نهاية 2025 وبنسبة 12.3% من 1,971.3 مليار ليرة لبنانية (22 million دولار) في نهاية آذار 2025.
+
+بالإضافة إلى ذلك، بلغت الخصوم للقطاع المالي غير المقيم 9.2 تريليون ليرة لبنانية (102.8 million دولار) في نهاية آذار 2026، بانخفاض قدره 10.3% في الربع الأول من 2026 وبزيادة قدرها 8.6% مقارنة بالعام السابق، في حين بلغ إجمالي ودائع القطاع العام 195.7 مليار ليرة لبنانية في نهاية آذار 2026 مقابل 446.4 مليار ليرة لبنانية في نهاية 2025 و 1,125.4 مليار ليرة لبنانية في نهاية آذار 2025. وعلاوة على ذلك، بلغ إجمالي حساب رأس مال المؤسسات المالية 24.6 تريليون ليرة لبنانية (275.3 million دولار) في نهاية آذار 2026 مقابل 25.1 تريليون ليرة لبنانية (281 million دولار) في نهاية 2025 و 19.2 تريليون ليرة لبنانية (214.5 million دولار) في نهاية آذار 2025.`,
+    contentEn: `Figures released by the Central Bank of Lebanon (BdL) show that the consolidated balance sheet of investment banks in Lebanon reached LBP 91.2 trillion (tn) at the end of March 2026, equivalent to approximately $1.02 billion. This represents a 1.1% decline from LBP 92.2 trillion ($1.03 billion) at the end of 2025, and a 9.8% increase from LBP 83.1 trillion ($928 million) at the end of March 2025.
+
+These figures reflect BDL Basic Circular No. 167/13612, dated February 2, 2024, which directed banks and financial institutions to convert their foreign currency assets and liabilities into Lebanese Lira at the exchange rate of LBP 89,500 per US dollar when preparing their financial statements and balance sheets starting January 31, 2024.
+
+Asset Allocation Breakdown
+• Claims on Resident Customers: Stood at LBP 8.7 trillion ($97.7 million) at the end of March 2026, increasing by 12.7% from LBP 7.76 trillion ($86.7 million) at the end of 2025, and by 50% from LBP 5.8 trillion ($65.1 million) a year earlier.
+  - In LBP: Claims on resident customers in Lebanese Lira totaled LBP 403.3 billion at the end of March 2026, marking decreases of 7.2% from LBP 434.6 billion at the end of 2025, and 30.8% from LBP 582.4 billion at the end of March 2025.
+  - In FX: Claims on resident customers in foreign currency reached LBP 8.3 trillion ($93.2 million) at the end of March 2026, rising by 14% in the first quarter of 2026 and by 59% compared to the previous year.
+• Claims on Non-Resident Customers: Totaled LBP 841.8 billion ($9.4 million) at the end of March 2026, up 4.3% from the end of 2025, and 7.8% from the end of March 2025.
+• Claims on the Resident Financial Sector: Reached LBP 7.7 trillion ($86 million) at the end of March 2026, growing by 11.2% from LBP 6.92 trillion ($77.3 million) at the end of 2025, but declining by 15.4% from LBP 9.1 trillion ($101.6 million) in the previous year.
+  - In LBP: Stood at LBP 3.7 trillion at the end of March 2026, a massive 78.8% increase from LBP 2.07 trillion at the end of 2025, and up 11.4% from LBP 3.3 trillion at the end of March 2025.
+  - In FX: Totaled LBP 4 trillion ($44.6 million) at the end of March 2026, down 17.7% from LBP 4.85 trillion ($54.2 million) at the end of the previous year, and down 31% from LBP 5.77 trillion ($64.5 million) at March 2025 end.
+• Claims on the Non-Resident Financial Sector: Stood at LBP 6.2 trillion ($69.4 million) at the end of March 2026, dropping by 24.7% from LBP 8.25 trillion ($92.1 million) at the end of 2025, and down 24.4% from LBP 8.2 trillion ($91.7 million) at the end of March 2025.
+• Claims on the Public Sector: Stood at LBP 3.2 billion at the end of March 2026, compared to LBP 3.3 billion at the end of 2025 and LBP 1.9 billion a year earlier.
+• Securities Portfolio (including Lebanese Treasury Bills and Eurobonds): Reached LBP 10 trillion, falling by 4.5% from LBP 10.5 trillion at the end of 2025, and down 18.6% from LBP 12.3 trillion at the end of March 2025.
+• Cash and Deposits at Local and Foreign Central Banks: Totaled LBP 35.6 trillion ($397.6 million) at the end of March 2026, compared to LBP 36 trillion ($402.7 million) at the end of 2025 and LBP 31.4 trillion ($351 million) at the end of March 2025.
+
+Liabilities & Capital Accounts
+• Resident Customer Deposits: Reached LBP 29.1 trillion ($325 million) at the end of March 2026, a 1.2% decrease from LBP 29.4 trillion ($328.8 million) at the end of 2025, and a 3% drop from LBP 30 trillion ($335 million) at the end of March 2025.
+  - In LBP: Totaled LBP 2,622 billion at the end of March 2026, expanding by 8.4% in the first quarter of the year, but declining by 11.5% compared to the previous year.
+  - In FX: Stood at LBP 26.5 trillion ($295.7 million) at the end of March 2026, down 2% from the end of 2025, and down 2% from the end of March 2025.
+• Non-Resident Customer Deposits: Totaled LBP 8.7 trillion ($96.9 million) at the end of March 2026, declining by 2.3% from LBP 8.88 trillion ($99.2 million) at the end of 2025, but increasing by 8.8% from LBP 7.97 trillion ($89 million) a year earlier.
+• Liabilities to the Resident Financial Sector: Reached LBP 5.2 trillion ($57.7 million) at the end of March 2026, rising by 9.1% from LBP 4.7 trillion ($52.9 million) at the end of 2025, and by 3.4% from LBP 5 trillion ($55.8 million) at March 2025 end.
+  - In LBP: Totaled LBP 2,950.1 billion at the end of March 2026, up 6.2% in the first quarter of 2026, and down 2.4% compared to the previous year.
+  - In FX: Reached LBP 2,213.1 billion ($24.7 million) at the end of March 2026, growing by 13.1% from LBP 1,956.1 billion ($22 million) at the end of 2025, and by 12.3% from LBP 1,971.3 billion ($22 million) at the end of March 2025.
+• Liabilities to the Non-Resident Financial Sector: Reached LBP 9.2 trillion ($102.8 million) at the end of March 2026, dropping by 10.3% in the first quarter of 2026 but up 8.6% compared to the prior year.
+• Public Sector Deposits: Stood at LBP 195.7 billion at the end of March 2026, compared to LBP 446.4 billion at the end of 2025 and LBP 1,125.4 billion at March 2025 end.
+• Capital Accounts of Financial Institutions: Totaled LBP 24.6 trillion ($275.3 million) at the end of March 2026, compared to LBP 25.1 trillion ($281 million) at the end of 2025, and LBP 19.2 trillion ($214.5 million) at March 2025 end.`,
+    author: {
+      nameAr: 'مكتب البحوث المصرفية والمالية',
+      nameEn: 'Banking & Financial Research Bureau',
+      titleAr: 'محلل أول الهياكل المصرفية',
+      titleEn: 'Senior Banking Structure Analyst'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1601597111158-2fceff270190?auto=format&fit=crop&q=80&w=600',
+    date: '29 يونيو 2026',
+    readTimeAr: '6 دقائق',
+    readTimeEn: '6 min read',
+    views: 4120,
+    tags: ['بنوك الاستثمار', 'مصرف لبنان', 'الميزانية العمومية', 'سعر الصرف', 'الليرة اللبنانية']
   }
 ];
 

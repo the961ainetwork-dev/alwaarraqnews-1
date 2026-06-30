@@ -152,9 +152,10 @@ const NEWSWIRES: NewswireItem[] = [
 
 interface InCaseYouMissedItProps {
   language: 'ar' | 'en';
+  onNavigateToSection?: (sectionId: string) => void;
 }
 
-export default function InCaseYouMissedIt({ language }: InCaseYouMissedItProps) {
+export default function InCaseYouMissedIt({ language, onNavigateToSection }: InCaseYouMissedItProps) {
   const isAr = language === 'ar';
   
   const [searchTerm, setSearchTerm] = useState('');
@@ -321,7 +322,16 @@ export default function InCaseYouMissedIt({ language }: InCaseYouMissedItProps) 
                     ? (isAr ? categoryNameMap[item.category].ar : categoryNameMap[item.category].en) 
                     : item.category.toUpperCase();
 
-                  const urlDisplay = item.url.replace('https://', '').replace('www.', '').split('/')[0];
+                  const sectionId = item.url.split('/').pop() || 'all';
+                  const realUrl = `${window.location.origin}/section/${sectionId}`;
+                  const relativeUrlPath = `/section/${sectionId}`;
+
+                  const handleNavigation = (e: React.MouseEvent) => {
+                    e.preventDefault();
+                    if (onNavigateToSection) {
+                      onNavigateToSection(sectionId);
+                    }
+                  };
 
                   return (
                     <tr 
@@ -344,7 +354,10 @@ export default function InCaseYouMissedIt({ language }: InCaseYouMissedItProps) 
 
                       {/* Column 2: Headline & Synopsis (Under it) */}
                       <td className="py-5 px-5 space-y-2">
-                        <h4 className="font-sans font-black text-sm md:text-base text-zinc-900 group-hover:text-red-700 transition-colors leading-snug">
+                        <h4 
+                          onClick={handleNavigation}
+                          className="font-sans font-black text-sm md:text-base text-zinc-900 group-hover:text-red-700 transition-colors leading-snug cursor-pointer hover:underline"
+                        >
                           {isAr ? item.headlineAr : item.headlineEn}
                         </h4>
                         <p className="text-xs md:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
@@ -363,12 +376,11 @@ export default function InCaseYouMissedIt({ language }: InCaseYouMissedItProps) 
                       {/* Column 4: URL */}
                       <td className="py-5 px-4 text-center border-l border-zinc-200 bg-zinc-50/50">
                         <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noreferrer"
+                          href={realUrl}
+                          onClick={handleNavigation}
                           className="inline-flex items-center gap-1.5 font-mono text-xxs font-black text-red-700 hover:text-black hover:underline transition-colors uppercase border border-red-200 hover:border-black bg-white px-2.5 py-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
                         >
-                          <span>{urlDisplay}</span>
+                          <span>{relativeUrlPath}</span>
                           <ExternalLink size={10} className="shrink-0" />
                         </a>
                       </td>

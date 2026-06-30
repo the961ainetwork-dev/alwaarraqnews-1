@@ -1052,6 +1052,10 @@ export default function App() {
             ) : activeCategory === 'in-case-you-missed-it' ? (
               <InCaseYouMissedIt
                 language={language}
+                onNavigateToSection={(sectionId) => {
+                  setActiveCategory(sectionId);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               />
             ) : activeCategory === 'sentiment-analysis' ? (
               <SentimentAnalysis

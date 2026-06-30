@@ -12,7 +12,7 @@ interface InStatsProps {
 export default function InStats({ language, layoutMode, onSelectArticle }: InStatsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
-  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget'>('bdl-budget');
+  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks'>('bdl-budget');
   const [activeInsight, setActiveInsight] = useState<number | null>(1);
   const [isArticleExpanded, setIsArticleExpanded] = useState<boolean>(false);
 
@@ -120,11 +120,27 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
           </button>
           <button
             onClick={() => setActiveTab('inflation')}
-            className={`px-3 py-1 cursor-pointer transition-colors ${
+            className={`px-3 py-1 cursor-pointer transition-colors border-r border-black ${
               activeTab === 'inflation' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
             }`}
           >
             {isAr ? 'مؤشر الأسعار والتضخم' : 'Inflation Bureau'}
+          </button>
+          <button
+            onClick={() => setActiveTab('industrial-exports')}
+            className={`px-3 py-1 cursor-pointer transition-colors border-r border-black ${
+              activeTab === 'industrial-exports' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
+            }`}
+          >
+            {isAr ? 'الصادرات الصناعية' : 'Industrial Exports'}
+          </button>
+          <button
+            onClick={() => setActiveTab('investment-banks')}
+            className={`px-3 py-1 cursor-pointer transition-colors ${
+              activeTab === 'investment-banks' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
+            }`}
+          >
+            {isAr ? 'بنوك الاستثمار' : 'Investment Banks'}
           </button>
         </div>
       </div>
@@ -909,6 +925,287 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Tab Panel 5: INDUSTRIAL EXPORTS */}
+      {activeTab === 'industrial-exports' && (
+        <div className="space-y-8 animate-fade-in text-right rtl:text-right ltr:text-left select-text">
+          {/* Top Panel Grid: Metrics & Breakdown */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Column: Key Industrial Metrics */}
+            <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
+              <div className="border border-black p-4 bg-emerald-50/40 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'إجمالي الصادرات الصناعية لعام ٢٠٢٥' : 'TOTAL INDUSTRIAL EXPORTS (2025)'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-emerald-700">$2.90B</span>
+                  <span className="text-xs text-emerald-650 font-bold flex items-center gap-0.5">
+                    <TrendingUp size={14} /> +15.3%
+                  </span>
+                </div>
+                <p className="text-[12.5px] text-zinc-650 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'سجلت الصادرات الصناعية اللبنانية نمواً ملحوظاً بقيمة ٣٨٦ مليون دولار لتصل إلى ٢.٩ مليار دولار مقارنة بـ ٢.٥ مليار دولار في ٢٠٢٤، متجاوزة مستويات ما قبل الأزمة لعام ٢٠١٩ (٢.٥ مليار دولار).'
+                    : 'Lebanese industrial exports recorded a solid expansion of $386 million to touch $2.9 billion compared to $2.5 billion in 2024, surpassing pre-crisis levels of 2019 ($2.5B).'}
+                </p>
+              </div>
+
+              <div className="border border-black p-4 bg-zinc-50 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'القطاع القيادي: المعادن الأساسية ومصنوعاتها' : 'LEADING SECTOR: BASE METALS'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-zinc-800">$600.7M</span>
+                  <span className="text-xs text-zinc-600 font-bold flex items-center gap-0.5">
+                    20.7% of Total
+                  </span>
+                </div>
+                <p className="text-[12.5px] text-zinc-650 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'تصدرت المعادن الأساسية ومصنوعاتها قائمة الصادرات الصناعية بقيمة ٦٠٠.٧ مليون دولار وبنمو قياسي قدره ٣٧.٥٪ مقارنة بـ ٢٠٢٤، مدفوعة بزيادة الطلب الخارجي.'
+                    : 'Base metals and metal products topped the industrial exports ranking at $600.7 million, printing a stellar 37.5% growth rate vs 2024, driven by elevated external demand.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-3 text-[10px] font-mono font-bold flex justify-between bg-black text-white items-center">
+                <span>{isAr ? 'البلد الأكثر استيراداً (الإمارات):' : 'Top Export Country (UAE):'}</span>
+                <span>$306.3M (10.6%)</span>
+              </div>
+            </div>
+
+            {/* Center Column: Sector Breakdown Bar Chart */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200 font-sans">
+                  {isAr ? 'ترتيب القطاعات الصناعية المصدرة • ٢٠٢٥' : 'Top Industrial Export Categories • 2025'}
+                </span>
+
+                <div className="space-y-3.5 mt-4">
+                  {[
+                    { nameAr: 'المعادن الأساسية', nameEn: 'Base Metals', val: 600.7, pct: 'w-[100%]', color: 'bg-zinc-800' },
+                    { nameAr: 'الآلات والأجهزة الكهربائية', nameEn: 'Machinery & Electronics', val: 560.1, pct: 'w-[93%]', color: 'bg-emerald-600' },
+                    { nameAr: 'المنتجات الكيماوية', nameEn: 'Chemical Products', val: 509.4, pct: 'w-[85%]', color: 'bg-zinc-500' },
+                    { nameAr: 'المواد الغذائية والتبغ', nameEn: 'Prepared Foods & Tobacco', val: 455.2, pct: 'w-[76%]', color: 'bg-emerald-500' },
+                    { nameAr: 'اللؤلؤ والأحجار الكريمة', nameEn: 'Pearls & Precious Stones', val: 229.1, pct: 'w-[38%]', color: 'bg-amber-500' }
+                  ].map((s, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                        <span className="font-sans text-zinc-700">{isAr ? s.nameAr : s.nameEn}</span>
+                        <span>${s.val}M</span>
+                      </div>
+                      <div className="w-full h-2.5 bg-zinc-100 border border-zinc-200">
+                        <div className={`h-full ${s.color} ${s.pct}`}></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-[11px] text-zinc-400 text-center font-mono font-medium pt-3 border-t border-zinc-100 mt-4">
+                {isAr ? 'المصدر: التقرير السنوي لوزارة الصناعة اللبنانية' : 'Source: Ministry of Industry Annual Report'}
+              </div>
+            </div>
+
+            {/* Right Column: Destination Share Index */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 font-sans">
+              <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200">
+                {isAr ? 'وجهات الصادرات الصناعية اللبنانية' : 'Lebanese Export Destination Shares'}
+              </span>
+
+              <div className="space-y-2 mt-4">
+                {[
+                  { nameAr: 'الدول العربية', nameEn: 'Arab Countries', pct: '40.4%', trend: '+1.1%' },
+                  { nameAr: 'الدول الأوروبية', nameEn: 'European Markets', pct: '19.0%', trend: '-2.0%' },
+                  { nameAr: 'أفريقيا غير العربية', nameEn: 'Non-Arab Africa', pct: '15.6%', trend: '-0.7%' },
+                  { nameAr: 'آسيا غير العربية', nameEn: 'Non-Arab Asia', pct: '12.4%', trend: '+2.4%' },
+                  { nameAr: 'الأمريكيتان', nameEn: 'The Americas', pct: '11.0%', trend: '0.0%' },
+                  { nameAr: 'أوقيانوسيا والشرق الأقصى', nameEn: 'Oceania & Far East', pct: '0.8%', trend: '-0.2%' }
+                ].map((d, idx) => (
+                  <div key={idx} className="text-[11px] flex justify-between items-center text-zinc-800 font-bold border-b border-zinc-100 pb-1.5 font-mono">
+                    <span className="font-sans text-left truncate max-w-[190px]">
+                      {isAr ? d.nameAr : d.nameEn}
+                    </span>
+                    <div className="flex items-center gap-1.5 text-right font-mono">
+                      <span className="text-black font-black">{d.pct}</span>
+                      <span className={`text-[9px] ${d.trend.startsWith('+') ? 'text-emerald-650' : d.trend.startsWith('-') ? 'text-red-500' : 'text-zinc-400'}`}>
+                        ({d.trend})
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Callout & Click-Through Report Trigger */}
+          <div className="max-w-5xl mx-auto border-2 border-black p-5 bg-emerald-50/30 flex flex-col md:flex-row justify-between items-center gap-6 rounded-lg mt-6">
+            <div className="space-y-1.5 flex-1">
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-850 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                {isAr ? 'تقرير تحليلي معمق' : 'IN-DEPTH MARKET INTELLIGENCE REPORT'}
+              </span>
+              <h4 className="font-sans font-black text-base text-zinc-900 leading-snug">
+                {isAr ? 'الصادرات الصناعية ترتفع بنسبة 15.3% إلى 2.9 مليار دولار في 2025' : 'Lebanese Industrial Exports Surge by 15.3% to $2.9 Billion in 2025'}
+              </h4>
+              <p className="text-xs text-zinc-600 font-sans leading-relaxed">
+                {isAr 
+                  ? 'يتناول هذا التقرير تفاصيل مبيعات الآلات الصناعية، ومصادر الاستيراد (مثل الصين بنسبة ٣٤.٣٪)، وهيكل الصفقات وحركة المبادلات التجارية بالتفصيل.'
+                  : 'This report details industrial machinery purchases, primary import origins (led by China at 34.3%), trading partners, and structural flows.'}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                if (onSelectArticle) {
+                  const art = INITIAL_ARTICLES.find(a => a.id === 'leb-industrial-exports-2025');
+                  if (art) onSelectArticle(art);
+                }
+              }}
+              className="w-full md:w-auto px-5 py-3 bg-black text-white hover:bg-zinc-800 transition-colors font-sans font-black text-xs uppercase tracking-wider border-2 border-black hover:shadow-[4px_4px_0_0_rgba(16,185,129,1)] flex items-center justify-center gap-2 rounded cursor-pointer"
+            >
+              <BookMarked size={16} />
+              <span>{isAr ? 'اقرأ التقرير الكامل والتحليل' : 'Read Full Investigation'}</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Tab Panel 6: INVESTMENT BANKS */}
+      {activeTab === 'investment-banks' && (
+        <div className="space-y-8 animate-fade-in text-right rtl:text-right ltr:text-left select-text">
+          {/* Top Panel Grid: Metrics & Breakdown */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Column: Key Banking Metrics */}
+            <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
+              <div className="border border-black p-4 bg-amber-50/30 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'الميزانية العمومية الموحدة لبنوك الاستثمار' : 'COMBINED BALANCE SHEET (Q1 2026)'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-zinc-900">LBP 91.2T</span>
+                  <span className="text-xs text-red-600 font-bold flex items-center gap-0.5">
+                    <TrendingDown size={14} /> -1.1%
+                  </span>
+                </div>
+                <p className="text-[12.5px] text-zinc-650 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'بلغت الميزانية الموحدة لبنوك الاستثمار في لبنان ٩١.٢ تريليون ليرة (حوالي ١.٠٢ مليار دولار)، مسجلة تراجعاً طفيفاً بنسبة ١.١٪ مقارنة بنهاية ٢٠٢٥، لكن بنمو قدره ٩.٨٪ سنوياً.'
+                    : 'The consolidated balance sheet of investment banks stood at LBP 91.2 trillion (~$1.02 Billion), contracting slightly by 1.1% compared to year-end 2025, but expanding 9.8% YoY.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-4 bg-zinc-50 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'أثر تعميم مصرف لبنان رقم ١٦٧' : 'IMPACT OF BDL CIRCULAR NO. 167'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-blue-800">89,500</span>
+                  <span className="text-xs text-zinc-600 font-bold flex items-center gap-0.5">
+                    LBP / USD Rate
+                  </span>
+                </div>
+                <p className="text-[12.5px] text-zinc-650 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'أعيد تقييم جميع أصول وخصوم العملات الأجنبية لدى بنوك الاستثمار وفق آلية التعميم ١٦٧ بسعر الصرف الرسمي البالغ ٨٩,٥٠٠ ليرة للدولار، مما انعكس بوضوح على هيكل الميزانيات.'
+                    : 'All foreign currency assets and liabilities were converted at the official platform exchange rate of LBP 89,500 per USD as directed by Circular 167, shifting balance sheet aggregates.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-3 text-[10px] font-mono font-bold flex justify-between bg-black text-white items-center">
+                <span>{isAr ? 'النقد والودائع لدى المصارف المركزية:' : 'Cash & Central Bank Deposits:'}</span>
+                <span>LBP 35.6T (39%)</span>
+              </div>
+            </div>
+
+            {/* Center Column: Assets Distribution Chart */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200 font-sans">
+                  {isAr ? 'توزيع الأصول لبنوك الاستثمار • الربع الأول ٢٠٢٦' : 'Investment Banks Assets Share • Q1 2026'}
+                </span>
+
+                <div className="space-y-3.5 mt-4">
+                  {[
+                    { nameAr: 'النقد والودائع لدى البنوك المركزية', nameEn: 'Cash & CB Deposits', val: '35.6T', pct: 'w-[39%]', color: 'bg-zinc-800' },
+                    { nameAr: 'محفظة الأوراق المالية (سندات الخزينة)', nameEn: 'Securities Portfolio', val: '10.0T', pct: 'w-[11%]', color: 'bg-zinc-600' },
+                    { nameAr: 'مطالبات على العملاء المقيمين', nameEn: 'Resident Customers Claims', val: '8.7T', pct: 'w-[9.5%]', color: 'bg-emerald-600' },
+                    { nameAr: 'مطالبات على القطاع المالي المقيم', nameEn: 'Resident Financial Claims', val: '7.7T', pct: 'w-[8.4%]', color: 'bg-amber-500' },
+                    { nameAr: 'مطالبات على القطاع المالي غير المقيم', nameEn: 'Non-Res Financial Claims', val: '6.2T', pct: 'w-[6.8%]', color: 'bg-zinc-400' }
+                  ].map((s, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                        <span className="font-sans text-zinc-700 truncate max-w-[180px]">{isAr ? s.nameAr : s.nameEn}</span>
+                        <span>LBP {s.val}</span>
+                      </div>
+                      <div className="w-full h-2.5 bg-zinc-100 border border-zinc-200">
+                        <div className={`h-full ${s.color} ${s.pct}`}></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-[11px] text-zinc-400 text-center font-mono font-medium pt-3 border-t border-zinc-100 mt-4">
+                {isAr ? 'المصدر: الإحصاءات النقدية والمصرفية لمصرف لبنان' : 'Source: BDL Monetary & Banking Statistics'}
+              </div>
+            </div>
+
+            {/* Right Column: Liabilities Breakdown Index */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 font-sans">
+              <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200">
+                {isAr ? 'هيكل الودائع والالتزامات للقطاع' : 'Combined Deposits & Liabilities Share'}
+              </span>
+
+              <div className="space-y-3 mt-4">
+                {[
+                  { nameAr: 'ودائع العملاء المقيمين', nameEn: 'Resident Customer Deposits', val: 'LBP 29.1T', pct: '31.9%' },
+                  { nameAr: 'حسابات رأس المال والمخصصات', nameEn: 'Capital Accounts & Reserves', val: 'LBP 24.6T', pct: '27.0%' },
+                  { nameAr: 'التزامات للقطاع المالي غير المقيم', nameEn: 'Non-Res Financial Liab.', val: 'LBP 9.2T', pct: '10.1%' },
+                  { nameAr: 'ودائع العملاء غير المقيمين', nameEn: 'Non-Res Customer Deposits', val: 'LBP 8.7T', pct: '9.5%' },
+                  { nameAr: 'التزامات للقطاع المالي المقيم', nameEn: 'Resident Financial Liab.', val: 'LBP 5.2T', pct: '5.7%' }
+                ].map((d, idx) => (
+                  <div key={idx} className="text-[11px] flex justify-between items-center text-zinc-800 font-bold border-b border-zinc-100 pb-1.5 font-mono">
+                    <span className="font-sans text-left truncate max-w-[170px]" title={isAr ? d.nameAr : d.nameEn}>
+                      {isAr ? d.nameAr : d.nameEn}
+                    </span>
+                    <div className="flex flex-col items-end text-right font-mono">
+                      <span className="text-black font-black">{d.val}</span>
+                      <span className="text-[9px] text-zinc-450 font-normal">({d.pct})</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Callout & Click-Through Report Trigger */}
+          <div className="max-w-5xl mx-auto border-2 border-black p-5 bg-amber-50/20 flex flex-col md:flex-row justify-between items-center gap-6 rounded-lg mt-6">
+            <div className="space-y-1.5 flex-1">
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-200 px-2.5 py-0.5 rounded-full">
+                {isAr ? 'دراسة إحصائية وتحليل مالي' : 'CONSOLIDATED BANKING SYSTEM METRICS'}
+              </span>
+              <h4 className="font-sans font-black text-base text-zinc-900 leading-snug">
+                {isAr ? 'الميزانية العمومية لبنوك الاستثمار عند 91.2 تريليون ليرة لبنانية بنهاية آذار 2026' : 'Investment Banks Combined Balance Sheet Reaches LBP 91.2 Trillion in Q1 2026'}
+              </h4>
+              <p className="text-xs text-zinc-650 font-sans leading-relaxed">
+                {isAr 
+                  ? 'تفاصيل دقيقة لمطالبات العملاء المقيمين بالعملات المحلية والأجنبية، وتوزع الودائع، وهيكل حساب رأس المال والخصوم للبنوك الاستثمارية العاملة في لبنان.'
+                  : 'Granular breakdown of customer claims in local and foreign currencies, resident/non-resident deposits, and equity structure of investment banks operating in Lebanon.'}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                if (onSelectArticle) {
+                  const art = INITIAL_ARTICLES.find(a => a.id === 'leb-investment-banks-sheet-2026');
+                  if (art) onSelectArticle(art);
+                }
+              }}
+              className="w-full md:w-auto px-5 py-3 bg-black text-white hover:bg-zinc-800 transition-colors font-sans font-black text-xs uppercase tracking-wider border-2 border-black hover:shadow-[4px_4px_0_0_rgba(217,119,6,1)] flex items-center justify-center gap-2 rounded cursor-pointer"
+            >
+              <BookMarked size={16} />
+              <span>{isAr ? 'اقرأ التقرير الكامل والتحليل' : 'Read Full Investigation'}</span>
+            </button>
           </div>
         </div>
       )}
