@@ -28,6 +28,109 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 
 export const INITIAL_ARTICLES: Article[] = [
   {
+    id: 'excl-leb-isr-secret-annex',
+    category: 'exclusives',
+    categories: ['exclusives', 'editor-desk', 'lebanon'],
+    titleAr: 'الإطار اللبناني-الإسرائيلي بوساطة أمريكية: الملاحق السرية وسؤال الاستسلام القانوني',
+    titleEn: 'US-Mediated Lebanon-Israel Security Framework: The Secret Annexes and the Legal Surrender Question',
+    summaryAr: 'على الرغم من نشر الاتفاق الإطاري الأساسي المكون من 14 نقطة بين لبنان وإسرائيل، إلا أن التنفيذ الفعلي يعتمد بشكل كبير على "ملحق أمني" منفصل وشديد الحساسية طلبت الحكومة اللبنانية حظره عن النشر لحجب تنازلاته الميدانية والقانونية الصادمة.',
+    summaryEn: 'While the 14-point framework is public, its actual execution relies on a highly sensitive, unreleased "Security Annex" that Beirut requested to keep secret, raising deep concerns over Israeli operational freedom and the Article 13 legal waiver.',
+    excerptAr: 'تحقيق استقصائي يكشف خفايا الملحق الأمني السري والتبعات القانونية للمادة 13 من الاتفاق الإطاري اللبناني الإسرائيلي.',
+    excerptEn: 'An exclusive investigation into the unreleased security annex of the US-brokered deal, exposing Israeli operational freedom, reconstruction conditions, and Article 13\'s legal retreat.',
+    contentAr: `بقلم معن برازي - رئيس تحرير "الورّاق نيوز"
+
+على الرغم من نشر الاتفاق الإطاري الأساسي المكون من 14 نقطة بين لبنان وإسرائيل، إلا أن التنفيذ الفعلي للاتفاق يعتمد بشكل كبير على "ملحق أمني" منفصل وشديد الحساسية. ورغم أنه ليس ملحقاً "مخفياً" بالمعنى الحرفي، إلا أن تفاصيله تظل محجوبة تماماً عن الرأي العام.
+والأهم من ذلك، أن الحكومة اللبنانية طلبت رسمياً من الولايات المتحدة حجب هذا المستند عن النشر. وهذا يطرح تساؤلاً ملحاً: لماذا طلب لبنان بحزم من الولايات المتحدة إبقاء الملحق الأمني سرياً؟ يُعد هذا الافتقار إلى الشفافية مثيراً للجدل إلى حد كبير لأن الملحق غير المنشور، مقترناً بالنص المعلن، يفرض عدة عناصر حاسمة ومثيرة للقلق العميق في هذا الاتفاق.
+
+ما هو هذا الملحق الأمني السري؟
+على الرغم من أن النص الأساسي للاتفاق (المكون من 14 نقطة) قد نُشر علناً، إلا أن هذا الملحق السري يمثل "العمود الفقري التنفيذي" للاتفاق. بناءً على التسريبات والمراجع الواردة في النص الأساسي، يتضمن الملحق الشروط الميدانية القاسية التي تضمنتها التسوية، وأبرزها:
+• حرية العمل العسكري الإسرائيلي: (تحديداً المادة 4 من الملحق) تنص على احتفاظ الجيش الإسرائيلي بـ "حرية التحرك" والعمل العسكري ضد أي تهديدات ناشئة أو فورية داخل المنطقة الأمنية في جنوب لبنان.
+• انسحاب إسرائيلي مشروط (لا توجد جداول زمنية): يؤكد الملحق أنه لن يكون هناك أي انسحاب إسرائيلي تلقائي أو وفق جدول زمني محدد. بل يرتبط انسحاب الجيش الإسرائيلي بالكامل بتنفيذ شروط ميدانية مسبقة، وعلى رأسها التحقق من نزع سلاح الجماعات المسلحة (حزب الله) وتفكيك بنيتها التحتية.
+• المناطق التجريبية (Pilot Zones): يفصل الملحق خطة إنشاء مناطق تجريبية محددة. في هذه المناطق فقط، سيُسمح للجيش اللبناني بالدخول وتولي المسؤولية الأمنية بعد خضوعه لعمليات تدريب وتدقيق، وبشرط التأكد من خلو المنطقة من السلاح غير الشرعي. ولن يتم توسيع هذه المناطق إلا بموافقة إسرائيلية مبنية على التقييم الميداني.
+• قيود صارمة على إعادة الإعمار: يتضمن تفاصيل آليات الرقابة الأمريكية والدولية لضمان عدم تدفق أموال إعادة الإعمار إلى أي أفراد أو مؤسسات أو كيانات تابعة للجماعات المسلحة غير التابعة للدولة.
+
+لماذا طلب لبنان إخفاءه؟
+يُعتقد أن الحكومة اللبنانية سعت لإخفاء هذا الملحق لأنه يتضمن شروطاً وتنازلات بالغة الحساسية (مثل تشريع حرية التدخل العسكري الإسرائيلي وربط الانسحاب بنزع سلاح حزب الله). فنشر مثل هذه التفاصيل الدقيقة يضع الحكومة في موقف محرج للغاية داخلياً، ويزيد من حدة الانقسام والرفض للاتفاق، خاصة في ظل تلويح أطراف داخلية بإسقاطه.
+
+1. المخاوف الأساسية بشأن الملحق الأمني غير المنشور
+• معايير الانسحاب المشروط: إن التزام الجيش الإسرائيلي بإعادة التموضع والانسحاب التدريجي من الأراضي اللبنانية ليس مطلقاً؛ بل هو مشروط كلياً بالمعايير والضوابط الأمنية المحددة حصرياً داخل هذا الملحق غير المنشور.
+• قيود إعادة الإعمار: يفرض الإطار قيوداً تمنع وصول أموال إعادة الإعمار الدولية إلى الأفراد أو المناطق المرتبطة بالجماعات المسلحة غير التابعة للدولة. ونظراً للدمار الواسع النطاق في جميع أنحاء جنوب لبنان، فإن هذا البند يثير مخاوف لوجستية وإنسانية خطيرة حول كيفية تنفيذ جهود إعادة البناء فعلياً للسكان المدنيين النازحين.
+
+2. هل تخلى لبنان عن حقه في مقاضاة إسرائيل؟
+بعيداً عن الملحق السري، اندلعت عاصفة قانونية كبرى حول المادة 13 من الإطار المعلن الموقع في واشنطن. ويحذر خبراء قانونيون صراحة من أن بيروت ربما تكون قد قيدت بشدة، أو حتى تخلت تماماً، عن سيادتها في محاسبة إسرائيل قانونياً على جرائم الحرب المرتكبة على الأراضي اللبنانية.
+
+ماذا تفرض المادة 13؟
+ينص البند على أنه من أجل "إرساء علاقات مستقرة وسلمية"، يجب على كل من لبنان وإسرائيل الالتزام بـ "وقف جميع الإجراءات العدائية أو السلبية في المحافل السياسية أو القانونية الدولية".
+
+لماذا يقرع الخبراء القانونيون ناقوس الخطر؟
+يحذر المحامون الحقوقيون والباحثون القانونيون من أن الصياغة فضفاضة بشكل خطير ويمكن أن تكون لها تداعيات كارثية على العدالة الدولية:
+• عرقلة المحاكم الدولية: يمكن تفسير البند على أنه يلزم لبنان بوقف جميع الشكاوى الحالية والمستقبلية ضد إسرائيل في مجلس الأمن التابع للأمم المتحدة، والمحكمة الجنائية الدولية، ومحكمة العدل الدولية، وغيرها من لجان تقصي الحقائق التابعة للأمم المتحدة.
+• إسكات المحافل السياسية: نظراً لأن النص يتضمن صراحة "المحافل السياسية"، فإنه يمكن أن يمنع الدولة اللبنانية من استخدام المؤسسات الدبلوماسية والدولية للتنديد بالانتهاكات وتوثيقها.
+• التخلي عن ضحايا جرائم الحرب: يشير الخبراء القانونيون إلى أن هذا الاتفاق يأتي في وقت تواجه فيه إسرائيل تدقيقاً قانونياً دولياً غير مسبوق بسبب الهجمات العشوائية، وتدمير البنية التحتية المدنية، والتهجير القسري في لبنان. وتجبر المادة 13 فعلياً الدولة اللبنانية على التراجع عن السعي لتحقيق المساءلة أو الحصول على تعويضات عن هذه الأفعال.
+
+3. مفارقة القيادة والمسارات القانونية البديلة
+تبدو هذه التناقضات صارخة بشكل خاص بالنظر إلى خلفية رئيس الوزراء اللبناني نواف سلام. فقبل توليه منصبه، شغل سلام منصب رئيس محكمة العدل الدولية، وترأس الرأي الاستشاري التاريخي لعام 2024 الذي أعلن عدم قانونية احتلال إسرائيل للأراضي الفلسطينية. ويرى المنتقدون أنه من التناقض الشديد أن يتراجع لبنان عن المساءلة القانونية الدولية في ظل قيادته.
+
+هل لا يزال من الممكن اتخاذ إجراءات قانونية؟
+في حين أن الاتفاق يقيد الدولة اللبنانية بشدة، فإن مسار العدالة قد تغير ولكنه لم يُغلق تماماً:
+• الشكاوى الحالية: يشير المحللون القانونيون إلى أن الشكاوى والمراسلات الحالية المقدمة بالفعل إلى الأمم المتحدة أو المحكمة الجنائية الدولية لا تختفي تلقائياً، رغم أن الحكومة اللبنانية قد تتعرض لضغوط سياسية تمنعها من دعمها ومتابعتها.
+• الولاية القضائية العالمية للأفراد: يُلزم الاتفاق الدولة وليس المواطنين. وبالتالي، لا يزال بإمكان الضحايا الأفراد، من الناحية النظرية، محاولة رفع قضايا ضد المسؤولين الإسرائيليين أمام المحاكم الوطنية الأجنبية التي تعمل بمبدأ الولاية القضائية العالمية. ومع ذلك، يحذر المحامون من أن هذا المسار طويل ومعقد ومقيد للغاية مقارنة بالدعاوى الدولية التي تدعمها الدول.`,
+    contentEn: `US-Mediated Lebanon-Israel Security Framework: The Secret Annexes and the Legal Surrender Question
+By Maan Barazy - Editor-in-Chief of Al-Warraq News
+
+Although the basic 14-point framework agreement between Lebanon and Israel has been published, its operational execution relies heavily on a separate and highly sensitive "security annex." While not "hidden" in the literal sense, its details remain entirely shielded from the public.
+Most importantly, the Lebanese government has officially requested that the United States withhold this document from publication. This raises a pressing question: Why did Lebanon insist so firmly on keeping the security annex confidential? This lack of transparency is highly controversial, as the unpublished annex, coupled with the declared text, imposes several critical and deeply concerning elements on the agreement.
+
+What is this Top-Secret Security Annex?
+While the core 14-point text of the agreement is public, the secret annex represents its "operational backbone." Based on leaks and references in the main text, the annex outlines harsh field conditions, most notably:
+• Israeli Military Freedom of Action: (Specifically, Article 4 of the annex) states that the IDF retains "freedom of action" and military movement to act against any emerging or immediate threats within the security zone of southern Lebanon.
+• Conditional Israeli Withdrawal (No Timelines): The annex emphasizes that there will be no automatic or scheduled Israeli withdrawal. Instead, any IDF withdrawal is strictly tied to the verification of disarming armed groups (Hezbollah) and dismantling their military infrastructure.
+• Pilot Zones: The annex details a plan to establish pilot security zones. Only in these zones will the Lebanese Army be permitted to enter and assume security responsibilities, and only after training, vetting, and ensuring the zone is free of non-state weapons. These zones will expand only upon Israeli approval based on field assessments.
+• Strict Reconstruction Controls: It details American and international oversight mechanisms to guarantee that international reconstruction funds do not reach any individuals, organizations, or entities affiliated with non-state armed groups.
+
+Why Did Lebanon Request Secrecy?
+The Lebanese government reportedly sought to hide this annex because it contains highly sensitive concessions—such as codifying Israeli military intervention rights and tying withdrawal to disarming Hezbollah. Publishing these details would place the cabinet in an extremely embarrassing domestic position, deepening internal division and opposition to the agreement, especially with domestic factions threatening to bring it down.
+
+1. Key Concerns Regarding the Unpublished Security Annex
+• Conditional Withdrawal Criteria: The IDF's commitment to redeploy and gradually withdraw from Lebanese territory is not absolute; it is entirely dependent on the security parameters and controls specified exclusively inside this unpublished annex.
+• Reconstruction Restrictions: The framework prevents international reconstruction funds from reaching individuals or areas connected to non-state armed groups. Given the widespread devastation across southern Lebanon, this clause raises critical logistical and humanitarian questions about how rebuilding can actually occur for displaced civilian populations.
+
+2. Did Lebanon Surrender its Right to Prosecute Israel?
+Beyond the secret annex, a major legal storm has erupted over Article 13 of the Washington-signed public framework. Legal experts warn that Beirut may have severely restricted, or completely surrendered, its sovereignty to hold Israel legally accountable for war crimes committed on Lebanese soil.
+
+What Does Article 13 Impose?
+The clause states that in order to "establish stable and peaceful relations," both Lebanon and Israel must commit to "ceasing all hostile or negative actions in international political or legal forums."
+
+Why Are Legal Experts Sounding the Alarm?
+Human rights lawyers and international legal scholars warn that the wording is dangerously broad and could have catastrophic implications for international justice:
+• Obstructing International Courts: The clause could be interpreted as binding Lebanon to drop all current and future complaints against Israel in the UN Security Council, the International Court of Justice (ICJ), and the International Court of Justice (ICJ), and other UN fact-finding committees.
+• Silencing Political Forums: Since the text explicitly includes "political forums," it could prevent the Lebanese state from using diplomatic and international institutions to denounce and document violations.
+• Abandoning Victims of War Crimes: Experts point out that this agreement comes at a time when Israel faces unprecedented international legal scrutiny over indiscriminate attacks, destruction of civilian infrastructure, and forced displacement in Lebanon. Article 13 effectively forces the Lebanese state to back down from seeking accountability or reparations.
+
+3. The Leadership Paradox and Alternative Legal Paths
+These contradictions appear particularly stark given the background of Lebanese Prime Minister Nawaf Salam. Before taking office, Salam served as President of the International Court of Justice (ICJ) and presided over the historic 2024 advisory opinion declaring Israel's occupation of Palestinian territories illegal. Critics see it as highly ironic that Lebanon would retreat from international legal accountability under his leadership.
+
+Can Legal Action Still Be Taken?
+While the agreement heavily restricts the Lebanese state, the path to justice is altered but not entirely closed:
+• Existing Complaints: Analysts point out that current complaints and communications already submitted to the UN or ICC do not automatically disappear, though the Lebanese government may face political pressure to withhold active support and follow-up.
+• Universal Jurisdiction for Individuals: The agreement binds the state, not individual citizens. Therefore, individual victims could still theoretically attempt to file cases against Israeli officials in foreign national courts operating under the principle of universal jurisdiction. However, lawyers warn that this path is long, complex, and highly restricted compared to state-sponsored international litigation.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس تحرير صحيفة الورّاق',
+      titleEn: 'Editor-in-Chief, Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=120'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    date: '29 يونيو 2026',
+    readTimeAr: '7 دقائق',
+    readTimeEn: '7 min read',
+    views: 12500,
+    isPremium: true,
+    isFeatured: true,
+    tags: ['الملحق الأمني', 'الاتفاق الإطاري', 'السيادة اللبنانية', 'جرائم الحرب', 'نواف سلام', 'المحاكم الدولية', 'أمريكا']
+  },
+  {
     id: 'ch12-hebrew-jd-vance-criticism-2026',
     category: 'translations',
     categories: ['translations', 'middle-east', 'us-politics'],
@@ -4643,109 +4746,7 @@ It estimated that 11,095 buildings consisting of 17,891 housing units were compl
     views: 8120,
     tags: ['برنامج الأمم المتحدة الإنمائي', 'أضرار الحرب', 'جنوب لبنان', 'الأنقاض والركام', 'النبطية', 'لبنان']
   },
-  {
-    id: 'excl-leb-isr-secret-annex',
-    category: 'exclusives',
-    categories: ['exclusives', 'editor-desk', 'lebanon'],
-    titleAr: 'الإطار اللبناني-الإسرائيلي بوساطة أمريكية: الملاحق السرية وسؤال الاستسلام القانوني',
-    titleEn: 'US-Mediated Lebanon-Israel Security Framework: The Secret Annexes and the Legal Surrender Question',
-    summaryAr: 'على الرغم من نشر الاتفاق الإطاري الأساسي المكون من 14 نقطة بين لبنان وإسرائيل، إلا أن التنفيذ الفعلي يعتمد بشكل كبير على "ملحق أمني" منفصل وشديد الحساسية طلبت الحكومة اللبنانية حظره عن النشر لحجب تنازلاته الميدانية والقانونية الصادمة.',
-    summaryEn: 'While the 14-point framework is public, its actual execution relies on a highly sensitive, unreleased "Security Annex" that Beirut requested to keep secret, raising deep concerns over Israeli operational freedom and the Article 13 legal waiver.',
-    excerptAr: 'تحقيق استقصائي يكشف خفايا الملحق الأمني السري والتبعات القانونية للمادة 13 من الاتفاق الإطاري اللبناني الإسرائيلي.',
-    excerptEn: 'An exclusive investigation into the unreleased security annex of the US-brokered deal, exposing Israeli operational freedom, reconstruction conditions, and Article 13\'s legal retreat.',
-    contentAr: `بقلم معن برازي - رئيس تحرير "الورّاق نيوز"
-
-على الرغم من نشر الاتفاق الإطاري الأساسي المكون من 14 نقطة بين لبنان وإسرائيل، إلا أن التنفيذ الفعلي للاتفاق يعتمد بشكل كبير على "ملحق أمني" منفصل وشديد الحساسية. ورغم أنه ليس ملحقاً "مخفياً" بالمعنى الحرفي، إلا أن تفاصيله تظل محجوبة تماماً عن الرأي العام.
-والأهم من ذلك، أن الحكومة اللبنانية طلبت رسمياً من الولايات المتحدة حجب هذا المستند عن النشر. وهذا يطرح تساؤلاً ملحاً: لماذا طلب لبنان بحزم من الولايات المتحدة إبقاء الملحق الأمني سرياً؟ يُعد هذا الافتقار إلى الشفافية مثيراً للجدل إلى حد كبير لأن الملحق غير المنشور، مقترناً بالنص المعلن، يفرض عدة عناصر حاسمة ومثيرة للقلق العميق في هذا الاتفاق.
-
-ما هو هذا الملحق الأمني السري؟
-على الرغم من أن النص الأساسي للاتفاق (المكون من 14 نقطة) قد نُشر علناً، إلا أن هذا الملحق السري يمثل "العمود الفقري التنفيذي" للاتفاق. بناءً على التسريبات والمراجع الواردة في النص الأساسي، يتضمن الملحق الشروط الميدانية القاسية التي تضمنتها التسوية، وأبرزها:
-• حرية العمل العسكري الإسرائيلي: (تحديداً المادة 4 من الملحق) تنص على احتفاظ الجيش الإسرائيلي بـ "حرية التحرك" والعمل العسكري ضد أي تهديدات ناشئة أو فورية داخل المنطقة الأمنية في جنوب لبنان.
-• انسحاب إسرائيلي مشروط (لا توجد جداول زمنية): يؤكد الملحق أنه لن يكون هناك أي انسحاب إسرائيلي تلقائي أو وفق جدول زمني محدد. بل يرتبط انسحاب الجيش الإسرائيلي بالكامل بتنفيذ شروط ميدانية مسبقة، وعلى رأسها التحقق من نزع سلاح الجماعات المسلحة (حزب الله) وتفكيك بنيتها التحتية.
-• المناطق التجريبية (Pilot Zones): يفصل الملحق خطة إنشاء مناطق تجريبية محددة. في هذه المناطق فقط، سيُسمح للجيش اللبناني بالدخول وتولي المسؤولية الأمنية بعد خضوعه لعمليات تدريب وتدقيق، وبشرط التأكد من خلو المنطقة من السلاح غير الشرعي. ولن يتم توسيع هذه المناطق إلا بموافقة إسرائيلية مبنية على التقييم الميداني.
-• قيود صارمة على إعادة الإعمار: يتضمن تفاصيل آليات الرقابة الأمريكية والدولية لضمان عدم تدفق أموال إعادة الإعمار إلى أي أفراد أو مؤسسات أو كيانات تابعة للجماعات المسلحة غير التابعة للدولة.
-
-لماذا طلب لبنان إخفاءه؟
-يُعتقد أن الحكومة اللبنانية سعت لإخفاء هذا الملحق لأنه يتضمن شروطاً وتنازلات بالغة الحساسية (مثل تشريع حرية التدخل العسكري الإسرائيلي وربط الانسحاب بنزع سلاح حزب الله). فنشر مثل هذه التفاصيل الدقيقة يضع الحكومة في موقف محرج للغاية داخلياً، ويزيد من حدة الانقسام والرفض للاتفاق، خاصة في ظل تلويح أطراف داخلية بإسقاطه.
-
-1. المخاوف الأساسية بشأن الملحق الأمني غير المنشور
-• معايير الانسحاب المشروط: إن التزام الجيش الإسرائيلي بإعادة التموضع والانسحاب التدريجي من الأراضي اللبنانية ليس مطلقاً؛ بل هو مشروط كلياً بالمعايير والضوابط الأمنية المحددة حصرياً داخل هذا الملحق غير المنشور.
-• قيود إعادة الإعمار: يفرض الإطار قيوداً تمنع وصول أموال إعادة الإعمار الدولية إلى الأفراد أو المناطق المرتبطة بالجماعات المسلحة غير التابعة للدولة. ونظراً للدمار الواسع النطاق في جميع أنحاء جنوب لبنان، فإن هذا البند يثير مخاوف لوجستية وإنسانية خطيرة حول كيفية تنفيذ جهود إعادة البناء فعلياً للسكان المدنيين النازحين.
-
-2. هل تخلى لبنان عن حقه في مقاضاة إسرائيل؟
-بعيداً عن الملحق السري، اندلعت عاصفة قانونية كبرى حول المادة 13 من الإطار المعلن الموقع في واشنطن. ويحذر خبراء قانونيون صراحة من أن بيروت ربما تكون قد قيدت بشدة، أو حتى تخلت تماماً، عن سيادتها في محاسبة إسرائيل قانونياً على جرائم الحرب المرتكبة على الأراضي اللبنانية.
-
-ماذا تفرض المادة 13؟
-ينص البند على أنه من أجل "إرساء علاقات مستقرة وسلمية"، يجب على كل من لبنان وإسرائيل الالتزام بـ "وقف جميع الإجراءات العدائية أو السلبية في المحافل السياسية أو القانونية الدولية".
-
-لماذا يقرع الخبراء القانونيون ناقوس الخطر؟
-يحذر المحامون الحقوقيون والباحثون القانونيون من أن الصياغة فضفاضة بشكل خطير ويمكن أن تكون لها تداعيات كارثية على العدالة الدولية:
-• عرقلة المحاكم الدولية: يمكن تفسير البند على أنه يلزم لبنان بوقف جميع الشكاوى الحالية والمستقبلية ضد إسرائيل في مجلس الأمن التابع للأمم المتحدة، والمحكمة الجنائية الدولية، ومحكمة العدل الدولية، وغيرها من لجان تقصي الحقائق التابعة للأمم المتحدة.
-• إسكات المحافل السياسية: نظراً لأن النص يتضمن صراحة "المحافل السياسية"، فإنه يمكن أن يمنع الدولة اللبنانية من استخدام المؤسسات الدبلوماسية والدولية للتنديد بالانتهاكات وتوثيقها.
-• التخلي عن ضحايا جرائم الحرب: يشير الخبراء القانونيون إلى أن هذا الاتفاق يأتي في وقت تواجه فيه إسرائيل تدقيقاً قانونياً دولياً غير مسبوق بسبب الهجمات العشوائية، وتدمير البنية التحتية المدنية، والتهجير القسري في لبنان. وتجبر المادة 13 فعلياً الدولة اللبنانية على التراجع عن السعي لتحقيق المساءلة أو الحصول على تعويضات عن هذه الأفعال.
-
-3. مفارقة القيادة والمسارات القانونية البديلة
-تبدو هذه التناقضات صارخة بشكل خاص بالنظر إلى خلفية رئيس الوزراء اللبناني نواف سلام. فقبل توليه منصبه، شغل سلام منصب رئيس محكمة العدل الدولية، وترأس الرأي الاستشاري التاريخي لعام 2024 الذي أعلن عدم قانونية احتلال إسرائيل للأراضي الفلسطينية. ويرى المنتقدون أنه من التناقض الشديد أن يتراجع لبنان عن المساءلة القانونية الدولية في ظل قيادته.
-
-هل لا يزال من الممكن اتخاذ إجراءات قانونية؟
-في حين أن الاتفاق يقيد الدولة اللبنانية بشدة، فإن مسار العدالة قد تغير ولكنه لم يُغلق تماماً:
-• الشكاوى الحالية: يشير المحللون القانونيون إلى أن الشكاوى والمراسلات الحالية المقدمة بالفعل إلى الأمم المتحدة أو المحكمة الجنائية الدولية لا تختفي تلقائياً، رغم أن الحكومة اللبنانية قد تتعرض لضغوط سياسية تمنعها من دعمها ومتابعتها.
-• الولاية القضائية العالمية للأفراد: يُلزم الاتفاق الدولة وليس المواطنين. وبالتالي، لا يزال بإمكان الضحايا الأفراد، من الناحية النظرية، محاولة رفع قضايا ضد المسؤولين الإسرائيليين أمام المحاكم الوطنية الأجنبية التي تعمل بمبدأ الولاية القضائية العالمية. ومع ذلك، يحذر المحامون من أن هذا المسار طويل ومعقد ومقيد للغاية مقارنة بالدعاوى الدولية التي تدعمها الدول.`,
-    contentEn: `US-Mediated Lebanon-Israel Security Framework: The Secret Annexes and the Legal Surrender Question
-By Maan Barazy - Editor-in-Chief of Al-Warraq News
-
-Although the basic 14-point framework agreement between Lebanon and Israel has been published, its operational execution relies heavily on a separate and highly sensitive "security annex." While not "hidden" in the literal sense, its details remain entirely shielded from the public.
-Most importantly, the Lebanese government has officially requested that the United States withhold this document from publication. This raises a pressing question: Why did Lebanon insist so firmly on keeping the security annex confidential? This lack of transparency is highly controversial, as the unpublished annex, coupled with the declared text, imposes several critical and deeply concerning elements on the agreement.
-
-What is this Top-Secret Security Annex?
-While the core 14-point text of the agreement is public, the secret annex represents its "operational backbone." Based on leaks and references in the main text, the annex outlines harsh field conditions, most notably:
-• Israeli Military Freedom of Action: (Specifically, Article 4 of the annex) states that the IDF retains "freedom of action" and military movement to act against any emerging or immediate threats within the security zone of southern Lebanon.
-• Conditional Israeli Withdrawal (No Timelines): The annex emphasizes that there will be no automatic or scheduled Israeli withdrawal. Instead, any IDF withdrawal is strictly tied to the verification of disarming armed groups (Hezbollah) and dismantling their military infrastructure.
-• Pilot Zones: The annex details a plan to establish pilot security zones. Only in these zones will the Lebanese Army be permitted to enter and assume security responsibilities, and only after training, vetting, and ensuring the zone is free of non-state weapons. These zones will expand only upon Israeli approval based on field assessments.
-• Strict Reconstruction Controls: It details American and international oversight mechanisms to guarantee that international reconstruction funds do not reach any individuals, organizations, or entities affiliated with non-state armed groups.
-
-Why Did Lebanon Request Secrecy?
-The Lebanese government reportedly sought to hide this annex because it contains highly sensitive concessions—such as codifying Israeli military intervention rights and tying withdrawal to disarming Hezbollah. Publishing these details would place the cabinet in an extremely embarrassing domestic position, deepening internal division and opposition to the agreement, especially with domestic factions threatening to bring it down.
-
-1. Key Concerns Regarding the Unpublished Security Annex
-• Conditional Withdrawal Criteria: The IDF's commitment to redeploy and gradually withdraw from Lebanese territory is not absolute; it is entirely dependent on the security parameters and controls specified exclusively inside this unpublished annex.
-• Reconstruction Restrictions: The framework prevents international reconstruction funds from reaching individuals or areas connected to non-state armed groups. Given the widespread devastation across southern Lebanon, this clause raises critical logistical and humanitarian questions about how rebuilding can actually occur for displaced civilian populations.
-
-2. Did Lebanon Surrender its Right to Prosecute Israel?
-Beyond the secret annex, a major legal storm has erupted over Article 13 of the Washington-signed public framework. Legal experts warn that Beirut may have severely restricted, or completely surrendered, its sovereignty to hold Israel legally accountable for war crimes committed on Lebanese soil.
-
-What Does Article 13 Impose?
-The clause states that in order to "establish stable and peaceful relations," both Lebanon and Israel must commit to "ceasing all hostile or negative actions in international political or legal forums."
-
-Why Are Legal Experts Sounding the Alarm?
-Human rights lawyers and international legal scholars warn that the wording is dangerously broad and could have catastrophic implications for international justice:
-• Obstructing International Courts: The clause could be interpreted as binding Lebanon to drop all current and future complaints against Israel in the UN Security Council, the International Criminal Court (ICC), the International Court of Justice (ICJ), and other UN fact-finding committees.
-• Silencing Political Forums: Since the text explicitly includes "political forums," it could prevent the Lebanese state from using diplomatic and international institutions to denounce and document violations.
-• Abandoning Victims of War Crimes: Experts point out that this agreement comes at a time when Israel faces unprecedented international legal scrutiny over indiscriminate attacks, destruction of civilian infrastructure, and forced displacement in Lebanon. Article 13 effectively forces the Lebanese state to back down from seeking accountability or reparations.
-
-3. The Leadership Paradox and Alternative Legal Paths
-These contradictions appear particularly stark given the background of Lebanese Prime Minister Nawaf Salam. Before taking office, Salam served as President of the International Court of Justice (ICJ) and presided over the historic 2024 advisory opinion declaring Israel's occupation of Palestinian territories illegal. Critics see it as highly ironic that Lebanon would retreat from international legal accountability under his leadership.
-
-Can Legal Action Still Be Taken?
-While the agreement heavily restricts the Lebanese state, the path to justice is altered but not entirely closed:
-• Existing Complaints: Analysts point out that current complaints and communications already submitted to the UN or ICC do not automatically disappear, though the Lebanese government may face political pressure to withhold active support and follow-up.
-• Universal Jurisdiction for Individuals: The agreement binds the state, not individual citizens. Therefore, individual victims could still theoretically attempt to file cases against Israeli officials in foreign national courts operating under the principle of universal jurisdiction. However, lawyers warn that this path is long, complex, and highly restricted compared to state-sponsored international litigation.`,
-    author: {
-      nameAr: 'معن برازي',
-      nameEn: 'Maan Barazy',
-      titleAr: 'رئيس تحرير صحيفة الورّاق',
-      titleEn: 'Editor-in-Chief, Al-Warraq News',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=120'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
-    date: '29 يونيو 2026',
-    readTimeAr: '7 دقائق',
-    readTimeEn: '7 min read',
-    views: 12500,
-    isPremium: true,
-    isFeatured: true,
-    tags: ['الملحق الأمني', 'الاتفاق الإطاري', 'السيادة اللبنانية', 'جرائم الحرب', 'نواف سلام', 'المحاكم الدولية', 'أمريكا']
-  },
+  
   {
     id: 'leb-industrial-exports-2025',
     category: 'instats',

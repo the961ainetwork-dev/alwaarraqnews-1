@@ -145,6 +145,7 @@ export default function App() {
   // Persistent States
   const [allArticles, setAllArticles] = useState<Article[]>(() => {
     const raw = localStorage.getItem('alwarraq_all_articles');
+    let articles = INITIAL_ARTICLES;
     if (raw) {
       try {
         const parsed = JSON.parse(raw);
@@ -153,15 +154,25 @@ export default function App() {
           const existingIds = new Set(parsed.filter(a => a && typeof a === 'object' && a.id).map((a: any) => a.id));
           const missing = INITIAL_ARTICLES.filter(a => a && a.id && !existingIds.has(a.id));
           if (missing.length > 0) {
-            const merged = [...parsed, ...missing];
-            localStorage.setItem('alwarraq_all_articles', JSON.stringify(merged));
-            return merged;
+            articles = [...missing, ...parsed];
+          } else {
+            articles = parsed;
           }
-          return parsed;
         }
       } catch (e) {}
     }
-    return INITIAL_ARTICLES;
+
+    // Explicitly find and prepend 'excl-leb-isr-secret-annex' so it is at the very top of allArticles state as requested
+    const targetArticleIndex = articles.findIndex(a => a && a.id === 'excl-leb-isr-secret-annex');
+    if (targetArticleIndex > -1) {
+      const targetArticle = articles[targetArticleIndex];
+      const rest = articles.filter(a => a && a.id !== 'excl-leb-isr-secret-annex');
+      articles = [targetArticle, ...rest];
+    }
+
+    // Update local storage to persist the prepended order
+    localStorage.setItem('alwarraq_all_articles', JSON.stringify(articles));
+    return articles;
   });
 
   const [categories, setCategories] = useState<NavigationTab[]>(() => {
@@ -808,14 +819,32 @@ export default function App() {
   const sliderSlides = useMemo(() => {
     // Choose featured or highly viewed articles for the slide gallery
     const filtered = allArticles.filter(story => story.isFeatured || story.id.includes('excl') || story.views > 6000);
-    // Ensure the new GDP contraction article 'desk-gdp' is the first slide
-    const gdpIndex = filtered.findIndex(s => s.id === 'desk-gdp');
-    if (gdpIndex > -1) {
-      const gdpArticle = filtered[gdpIndex];
-      const rest = filtered.filter(s => s.id !== 'desk-gdp');
-      return [gdpArticle, ...rest];
+    
+    // Ensure 'excl-leb-isr-secret-annex' is the absolute first slide in the slider
+    const secretAnnexIndex = filtered.findIndex(s => s.id === 'excl-leb-isr-secret-annex');
+    let ordered = [...filtered];
+    
+    if (secretAnnexIndex > -1) {
+      const secretAnnexArticle = filtered[secretAnnexIndex];
+      const rest = filtered.filter(s => s.id !== 'excl-leb-isr-secret-annex');
+      
+      const gdpIndex = rest.findIndex(s => s.id === 'desk-gdp');
+      if (gdpIndex > -1) {
+        const gdpArticle = rest[gdpIndex];
+        const restOfArticles = rest.filter(s => s.id !== 'desk-gdp');
+        ordered = [secretAnnexArticle, gdpArticle, ...restOfArticles];
+      } else {
+        ordered = [secretAnnexArticle, ...rest];
+      }
+    } else {
+      const gdpIndex = filtered.findIndex(s => s.id === 'desk-gdp');
+      if (gdpIndex > -1) {
+        const gdpArticle = filtered[gdpIndex];
+        const rest = filtered.filter(s => s.id !== 'desk-gdp');
+        ordered = [gdpArticle, ...rest];
+      }
     }
-    return filtered;
+    return ordered;
   }, [allArticles]);
 
   const activeSlide = useMemo(() => {
