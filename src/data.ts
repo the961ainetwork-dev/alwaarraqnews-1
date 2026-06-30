@@ -131,6 +131,97 @@ While the agreement heavily restricts the Lebanese state, the path to justice is
     tags: ['الملحق الأمني', 'الاتفاق الإطاري', 'السيادة اللبنانية', 'جرائم الحرب', 'نواف سلام', 'المحاكم الدولية', 'أمريكا']
   },
   {
+    id: 'cbs-iran-war-cost-americans-2026',
+    category: 'translations',
+    categories: ['translations', 'middle-east', 'us-politics'],
+    titleAr: 'تقديرات اقتصاديين: حرب إيران كلفت الأسر الأمريكية 1000 دولار لكل عائلة',
+    titleEn: 'Iran war has cost Americans $1,000 per household, economist estimates',
+    summaryAr: 'تقديرات جديدة لمؤسسة موديز أناليتكس تكشف التكلفة الخفية الباهظة للحرب مع إيران على دافعي الضرائب والمستهلكين الأمريكيين من أسعار الوقود إلى الفائدة المرتفعة وفاتورة العمليات العسكرية.',
+    summaryEn: "Moody's Analytics reveals the severe impact of the Iran war on average US households, documenting surging gasoline prices, food transportation costs, stalled interest rate cuts, and defense expenditures.",
+    excerptAr: 'كشف كبير الاقتصاديين في موديز أناليتكس مارك زاندي أن الحرب كلفت الأسر الأمريكية نحو 1000 دولار في المتوسط جراء ارتفاع أسعار الوقود والغذاء والفائدة.',
+    excerptEn: "Moody's Analytics chief economist Mark Zandi estimates the typical American household has paid $1,000 so far due to fuel spikes, food inflation, and stalled rate cuts.",
+    contentAr: `*تقرير مترجم حصرياً لصالح منصة الورّاق عن شبكة سي بي إس نيوز (CBS News)*
+*تاريخ النشر الأصلي: ٢٩ يونيو ٢٠٢٦*
+*المصدر الأصلي للتقرير: https://www.cbsnews.com/news/iran-war-cost-american-households/*
+
+كلّفت الحرب مع إيران الأمريكيين حوالي 1,000 دولار لكل أسرة في شكل ارتفاع تكبيد تكاليف الوقود والغذاء والنفقات الأخرى منذ بدء الصراع في فبراير، وفقًا لتقديرات شاركها الأسبوع الماضي مارك زاندي، كبير الاقتصاديين في مؤسسة موديز أناليتكس (Moody's Analytics).
+
+يأتي تحليل زاندي في الوقت الذي تظهر فيه البيانات الحكومية أن التضخم في مايو سجل أعلى مستوى له في ثلاث سنوات، ومع عدم توصل الولايات المتحدة وإيران بعد إلى اتفاق سلام دائم. وتبادل البلدان الضربات العسكرية خلال عطلة نهاية الأسبوع، مما هدد بانهيار وقف إطلاق النار الهش. وقال الرئيس ترامب يوم الاثنين إن الجانبين سيواصلان المحادثات لإنهاء الصراع في قطر يوم الثلاثاء.
+
+### ما الذي يدفعه الأمريكيون؟
+وفقًا لزاندي، فإن أكبر النفقات المرتبطة بالحرب بالنسبة للأمريكيين كانت البنزين، والذي بلغ ذروته عند 4.56 دولار للغالون في 21 مايو قبل أن يتراجع إلى ما دون 4 دولارات للغالون في وقت سابق من هذا الشهر. ووجد أنه منذ بدء الحرب في 28 فبراير، دفع الأمريكيون ما متوسطه 300 دولار إضافية لملء خزانات وقود سياراتهم، وهو تقدير يأخذ في الاعتبار فقط التكلفة المرتفعة للبنزين العادي.
+
+وقال زاندي إن ارتفاع تكاليف الديزل أدى أيضًا إلى زيادة تكلفة نقل المنتجات من المزارع والمصانع والموانئ البحرية، مما أدى إلى ارتفاع تكاليف البيع بالتجزئة. ويقدر أن الأسرة الأمريكية العادية أنفقت 200 دولار إضافية على البقالة بسبب ارتفاع تكاليف الوقود منذ بداية الحرب.
+
+### أسعار الغاز والوقود بمرور الوقت
+في 29 يونيو 2026، بلغ متوسط تكلفة البنزين على مستوى البلاد 3.86 دولار للغالون الواحد. وهذا أقل بـ 0.01 دولار عن اليوم السابق، وأقل بـ 0.01 دولار عن الشهر الماضي، وأعلى بـ 0.01 دولار عن العام الماضي.
+
+تكاليف أخرى مرتبطة بالحرب تواجه الأسر الأمريكية منذ بدء الصراع في فبراير، وفقًا لزاندي:
+
+• **ارتفاع أسعار الفائدة** — ما يقدر بـ 150 دولارًا في المتوسط في التكاليف المضافة. اعتبارًا من يناير، توقع العديد من المستثمرين أن يقوم مجلس الاحتياطي الفيدرالي بخفض سعر الفائدة القياسي. لكن الارتفاع المفاجئ في التضخم الناجم عن الحرب أحبط أي خطط من قبل البنك المركزي لخفض تكاليف الاقتراض، وفقًا للاقتصاديين، بل إن بعض المتنبئين توقعوا زيادة في أسعار الفائدة في وقت لاحق من هذا العام. وقال زاندي إن هذا يمثل فرصة ضائعة للمستهلكين والشركات.
+
+• **ارتفاع تذاكر الطيران** — ما يقدر بـ 100 دولار في المتوسط كأعباء مضافة بسبب ارتفاع تكاليف وقود الطائرات. وأشار زاندي إلى أن شركات الطيران حملت المسافرين جزئيًا تكاليف الوقود المرتفعة.
+
+• **تكاليف دافعي الضرائب لدعم العمليات العسكرية الأمريكية** — ما يقدر بـ 250 دولارًا في المتوسط في تكاليف مضافة. وفقًا لزاندي، تنفق الولايات المتحدة 50 مليون دولار إضافية يوميًا لإدارة الحرب ضد إيران. وقدر مسؤولون أمريكيون تحدثوا لشبكة CBS News في أبريل إجمالي الفاتورة الأمريكية للصراع بـ 50 مليار دولار. وقدر مسؤول في البنتاغون في أبريل تكلفة عملية "الغضب الملحمي" (Operation Epic Fury) التابعة لوزارة الدفاع بنحو 25 مليار دولار، على الرغم من أن هذا الرقم لم يأخذ في الاعتبار بالكامل المعدات المتضررة أو المدمرة أو المنشآت العسكرية الأمريكية.
+
+وكتب زاندي: "إن تقديري بأن حرب إيران قد كلفت الأسرة الأمريكية العادية 1,000 دولار وآخذة في الارتفاع هو تقدير متحفظ في أفضل الأحوال. من المرجح أن تكون التكلفة الحقيقية أعلى — وأعلى بكثير".
+
+كما حاول باحثون آخرون حساب تكلفة الحرب على الأسر الأمريكية. ويقدر باحثون في جامعة براون (Brown University) أن المستهلكين الأمريكيين أنفقوا ما مجموعه 64 مليار دولار إضافية، أو 486.41 دولار لكل أسرة، على البنزين والديزل وحدهما منذ بداية الحرب. ويقدر معهد الضرائب والسياسة الاقتصادية (ITEP)، وهو مركز أبحاث غير حزبي، تكاليف الوقود المرتفعة بـ 427.50 دولار لكل أسرة.
+
+وفي الأسابيع الأخيرة، شهد السائقون بعض الانفراجة. ومن المتوقع أن تستمر أسعار الوقود في الانخفاض، على الرغم من أن ذلك يتوقف على وقف الأعمال العدائية بين الولايات المتحدة وإيران. ويوم الاثنين، بلغ المعدل الوطني لغالون البنزين 3.86 دولار، انخفاضًا من 4.39 دولار قبل شهر ولكن ارتفاعًا من 2.98 دولار قبل بدء الحرب، وفقًا لبيانات جمعية السيارات الأمريكية (AAA).
+
+ويعتقد باتريك دي هان، خبير البترول في GasBuddy، أن أسعار البنزين قد تنخفض إلى ما دون 3 دولارات بحلول نهاية العام أو أوائل العام المقبل، بافتراض إنهاء الحرب بين الولايات المتحدة وإيران.
+
+وفقًا لاستطلاع رأي أجرته مؤسسة غالوب (Gallup) في يونيو، أبلغ ثلثا الأمريكيين عن تعرضهم لصعوبات مالية بسبب الزيادات الأخيرة في أسعار الوقود.`,
+    contentEn: `US translation of CBS News investigative coverage on the financial toll of the Iran conflict.
+Original publication: June 29, 2026 / 2:27 PM EDT / CBS News
+Original Link: https://www.cbsnews.com/news/iran-war-cost-american-households/
+
+The Iran war has cost Americans roughly $1,000 per household in higher fuel, food and other expenses since the start of the conflict in February, according to an estimate shared last week by Moody's Analytics chief economist Mark Zandi.
+
+Zandi's analysis comes as government data shows inflation in May hit its highest level in three years, and with the U.S. and Iran yet to broker a lasting peace deal. The two countries exchanged military strikes over the weekend, threatening a fragile ceasefire. The sides will continue talks to end the conflict in Qatar on Tuesday, President Trump said on Monday. 
+
+### What are Americans paying for?
+According to Zandi, the biggest war-related expense for Americans has been gasoline, which peaked at $4.56 a gallon on May 21 before dipping back below $4 a gallon earlier this month. Since the war began on Feb. 28, Americans have shelled out an additional $300 on average to fill up their tanks, he found, an estimate that only factors in the higher cost of regular gas. 
+
+Higher diesel costs have also increased the cost of transporting products from farms, factories and seaports, leading to higher retail costs, Zandi said. He estimates the typical U.S. household has spent an extra $200 on groceries due to higher fuel costs since the start of the war.
+
+### Gas prices over time
+On Jun 29, 2026, the average cost of gas nationwide was $3.86 per gallon. That is $0.01 lower than the day before, $0.01 lower than a month ago and $0.01 higher than a year ago.
+
+Other war-related costs facing American households since the conflict started in February, according to Zandi:
+
+• **Higher interest rates** — an estimated $150 on average in added costs. As of January, many investors expected the Federal Reserve to cut its benchmark interest rate. But the surge in inflation stemming from the war has thwarted any plans by the central bank to lower borrowing costs, according to economists, with some forecasters even penciling in a rate hike later this year. That amounts to a missed opportunity for consumers and businesses, Zandi said.
+
+• **Higher airfare** — due to surging jet fuel costs — an estimated $100 on average in added costs. Airlines have partially passed their higher fuel costs onto travelers, Zandi noted.
+
+• **Taxpayer costs to support U.S. military operations** — an estimated $250 on average in added costs. According to Zandi, the U.S. is spending an additional $50 million per day to conduct the war against Iran. A separate estimate from U.S. officials who spoke to CBS News in April placed the total U.S. price tag for the conflict at $50 billion. A Pentagon official in April put the cost of the Defense Department's Operation Epic Fury at about $25 billion, although that figure did not fully account for damaged or destroyed equipment or U.S. military installations. 
+
+"My estimate that the Iran war has cost the typical American household $1,000 and counting is, if anything, conservative," Zandi wrote. "The true cost is likely higher — meaningfully higher."
+
+Other researchers have also tried to tabulate how much the war has cost American households. Brown University researchers estimate that U.S. consumers have spent an additional $64 billion in total, or $486.41 per household, on gas and diesel alone since the start of the war. The Institute on Tax and Economic Policy, a nonpartisan think tank, puts the higher fuel costs at $427.50 per household.
+
+In recent weeks, motorists have seen some relief. Gas prices are expected to continue to decline, though that hinges on the U.S. and Iran ceasing hostilities. On Monday, the national average for a gallon of gas was $3.86, down from $4.39 a month ago but up from $2.98 before the war started, AAA data shows. 
+
+Patrick De Haan, a petroleum expert at GasBuddy, thinks gas prices could fall below $3 by year-end or early next year, assuming the U.S. and Iran end the war. 
+
+According to a June Gallup poll, two-thirds of Americans reported experiencing financial hardship due to recent fuel price increases.`,
+    author: {
+      nameAr: 'ماري كانينغهام',
+      nameEn: 'Mary Cunningham',
+      titleAr: 'محررة لدى CBS News',
+      titleEn: 'Writer at CBS News',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=120'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=600',
+    date: '29 يونيو 2026',
+    readTimeAr: '5 دقائق',
+    readTimeEn: '5 min read',
+    views: 8950,
+    isPremium: false,
+    tags: ['حرب إيران', 'التضخم الأمريكي', 'أسعار الوقود', 'الاحتياطي الفيدرالي', 'CBS News', 'موديز', 'Mark Zandi']
+  },
+  {
     id: 'ch12-hebrew-jd-vance-criticism-2026',
     category: 'translations',
     categories: ['translations', 'middle-east', 'us-politics'],

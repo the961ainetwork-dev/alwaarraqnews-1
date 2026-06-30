@@ -26,7 +26,7 @@ interface FrameworkAgreementInfographicProps {
 
 export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfographicProps> = ({ language }) => {
   const isAr = language === 'ar';
-  const [activeSubTab, setActiveSubTab] = useState<'timeline' | 'gains-losses' | 'bilingual-text'>('timeline');
+  const [activeSubTab, setActiveSubTab] = useState<'timeline' | 'gains-losses' | 'bilingual-text' | 'secret-annex'>('timeline');
   const [selectedArticleIdx, setSelectedArticleIdx] = useState<number>(0);
   const [showFullTextSideBySide, setShowFullTextSideBySide] = useState<boolean>(false);
 
@@ -304,6 +304,16 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
         >
           📜 {isAr ? 'تصفح بنود الاتفاق الـ ١٤ حرفياً' : 'Examine the 14 Treaty Clauses Literally'}
         </button>
+        <button
+          onClick={() => setActiveSubTab('secret-annex')}
+          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+            activeSubTab === 'secret-annex'
+              ? 'border-red-600 text-red-600 bg-red-50/30'
+              : 'border-transparent text-zinc-500 hover:text-red-600 hover:bg-red-50/10'
+          }`}
+        >
+          🔥 {isAr ? 'الملحق الأمني السري المسرّب' : 'Leaked Secret Security Annex'}
+        </button>
       </div>
 
       {/* Tab 1: Chronological Path */}
@@ -571,6 +581,206 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Tab 4: Leaked Secret Security Annex */}
+      {activeSubTab === 'secret-annex' && (
+        <div className="space-y-6">
+          {/* Alert Header */}
+          <div className="bg-red-950 text-red-100 border-2 border-red-800 p-4 rounded-none space-y-2">
+            <div className="flex items-center gap-2">
+              <ShieldAlert className="text-red-500 animate-pulse" size={20} />
+              <span className="font-mono text-xs font-black tracking-widest text-red-500 uppercase">
+                {isAr ? 'وثيقة استخباراتية مسربة - سرية للغاية' : 'CLASSIFIED LEAKED INTELLIGENCE BRIEF // EXTREMELY SENSITIVE'}
+              </span>
+            </div>
+            <h4 className="text-lg font-black font-sans leading-tight">
+              {isAr ? 'أسرار الملحق الأمني الإسرائيلي مع قائد الجيش جوزيف عون' : 'What the Israeli-Joseph Aoun Secret Security Annex Reveals'}
+            </h4>
+            <p className="text-xs text-red-200 font-serif leading-relaxed">
+              {isAr 
+                ? 'إن الملحق الأمني السري بين إسرائيل ولبنان، في حال الكشف عنه، سيهز الأوساط السياسية لأنه يرفع الغطاء عن الهيكل الحقيقي المخفي وراء الاتفاق العلني. بينما يتحدث الاتفاق المعلن عن السيادة والانسحاب، يقلب الملحق المفاهيم رأساً على عقب ليعيد تصميم منظومة القرار الأمني اللبناني.'
+                : 'The secret Israel-Lebanon security annex, if revealed as expected, will shake Lebanon because it exposes the real architecture hidden behind the public framework. The public agreement speaks of sovereignty, withdrawal and reconstruction. The annex, however, appears to turn these words upside down.'}
+            </p>
+          </div>
+
+          {/* Interactive Bento Breakdown of the 6 Key Structural Shocks */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Shock 1 */}
+            <div className="border border-red-900 bg-[#140b0b] text-zinc-100 p-4 space-y-2 hover:border-red-600 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-red-500 font-bold uppercase tracking-wider bg-red-950 px-2 py-0.5 border border-red-900">
+                  {isAr ? 'بند 1: مناطق تجريبية مشروطة' : 'Clause 1: Pilot Zones'}
+                </span>
+                <span className="text-zinc-600 font-mono text-xs">#01</span>
+              </div>
+              <h5 className="font-sans font-black text-sm text-white">
+                {isAr ? 'انعدام الجدول الزمني والانسحاب كـ"مكافأة"' : 'No Timetable: Withdrawal as a Reward'}
+              </h5>
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr 
+                  ? 'إسرائيل وحدها تحدد نطاق "المناطق التجريبية". لا توجد أي جداول زمنية محددة أو انسحاب تلقائي. كل خطوة معلقة حتى ينفذ لبنان جميع المطالب المفروضة؛ ليصبح الانسحاب الإسرائيلي مجرد مكافأة تُمنح بناءً على الرضا الفردي لتل أبيب.'
+                  : 'Israel alone determines the scope of the so-called "pilot zones." It accepts no fixed timetable and no automatic withdrawal. Israeli redeployment becomes a reward granted only when Israel decides that Lebanon has performed satisfactorily.'}
+              </p>
+            </div>
+
+            {/* Shock 2 */}
+            <div className="border border-red-900 bg-[#140b0b] text-zinc-100 p-4 space-y-2 hover:border-red-600 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-red-500 font-bold uppercase tracking-wider bg-red-950 px-2 py-0.5 border border-red-900">
+                  {isAr ? 'بند 2: حرية الحركة والتدخل' : 'Clause 2: Movement Freedom'}
+                </span>
+                <span className="text-zinc-600 font-mono text-xs">#02</span>
+              </div>
+              <h5 className="font-sans font-black text-sm text-white">
+                {isAr ? 'المنطقة الأمنية وصلاحية تدمير القرى' : 'Security Zones & IDF Access'}
+              </h5>
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr 
+                  ? 'إسرائيل تحدد المنطقة الأمنية وما يجب على الجيش اللبناني فعله داخلها. ويحتفظ جيش الاحتلال بحرية الحركة والتوغل العسكري الكامل في جميع أنحاء المنطقة تحت ذريعة مواجهة التهديدات، وهي صيغة تبرر الاستمرار في تدمير القرى بذريعة الأمن.'
+                  : 'Israel defines the security zone, decide which areas are included, and what the Lebanese army must do inside them. The Israeli army keeps complete freedom of movement throughout the area under the pretext of confronting threat vectors.'}
+              </p>
+            </div>
+
+            {/* Shock 3 */}
+            <div className="border border-red-900 bg-[#140b0b] text-zinc-100 p-4 space-y-2 hover:border-red-600 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-red-500 font-bold uppercase tracking-wider bg-red-950 px-2 py-0.5 border border-red-900">
+                  {isAr ? 'بند 3: إملاء الإحداثيات والخرائط' : 'Clause 3: Supervised Maps'}
+                </span>
+                <span className="text-zinc-600 font-mono text-xs">#03</span>
+              </div>
+              <h5 className="font-sans font-black text-sm text-white">
+                {isAr ? 'قوائم أهداف إسرائيلية والتحقق الميداني' : 'Israeli Target Lists & Verification'}
+              </h5>
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr 
+                  ? 'يتلقى الجيش اللبناني خرائط وإحداثيات وقوائم أهداف أعدتها إسرائيل وتمررها الولايات المتحدة. ويشرف فريق عسكري أمريكي على الأرض على التنفيذ، بل وترافق قوة عسكرية إسرائيلية الفريق الأمريكي في تفتيش الأراضي اللبنانية للتحقق ميدانياً.'
+                  : 'The Lebanese army is expected to act on maps, coordinates, and target lists prepared by Israel and transmitted by the US. A US military team on soil supervises the process, potentially accompanied by Israeli military inspectors.'}
+              </p>
+            </div>
+
+            {/* Shock 4 */}
+            <div className="border border-red-900 bg-[#140b0b] text-zinc-100 p-4 space-y-2 hover:border-red-600 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-red-500 font-bold uppercase tracking-wider bg-red-950 px-2 py-0.5 border border-red-900">
+                  {isAr ? 'بند 4: الإعمار كأداة للضغط' : 'Clause 4: Aid Pressure'}
+                </span>
+                <span className="text-zinc-600 font-mono text-xs">#04</span>
+              </div>
+              <h5 className="font-sans font-black text-sm text-white">
+                {isAr ? 'ربط عودة السكان المدنيين بالرضا الأمني' : 'No Civil Return Without Approval'}
+              </h5>
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr 
+                  ? 'عودة المدنيين اللبنانيين وقرار بدء إعادة الإعمار ليسا حقوقاً سيادية تلقائية، بل هما مشروطان بمصادقة إسرائيل ورضاها عن التطبيق الفعلي للمطالب عبر الآلية الأمريكية المشتركة. تحول الإعمار إلى أداة ضغط سياسي واقتصادي باهظ.'
+                  : 'The return of Lebanese civilians and the beginning of reconstruction are made conditional on this process. Residents cannot return before Israel is satisfied with the implementation, turning reconstruction into a tool of political pressure.'}
+              </p>
+            </div>
+
+            {/* Shock 5 */}
+            <div className="border border-red-900 bg-[#140b0b] text-zinc-100 p-4 space-y-2 hover:border-red-600 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-red-500 font-bold uppercase tracking-wider bg-red-950 px-2 py-0.5 border border-red-900">
+                  {isAr ? 'بند 5: تطهير صفوف الجيش' : 'Clause 5: LAF Purging'}
+                </span>
+                <span className="text-zinc-600 font-mono text-xs">#05</span>
+              </div>
+              <h5 className="font-sans font-black text-sm text-white">
+                {isAr ? 'غربلة واستبعاد الضباط بناء على ملفات استخباراتية' : 'Purging LAF Ranks Under Intel Lists'}
+              </h5>
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr 
+                  ? 'تقوم آلية بإشراف أمريكي بفحص الجيش اللبناني من الداخل لتحديد الضباط والجنود المتهمين إسرائيلياً بالوقوع تحت تأثير حزب الله. الدولة اللبنانية ملزمة قانوناً بفصل أي ضابط يرفض التعاون، مع إمكانية عزل قيادة الجيش بالكامل عند مخالفتها التوجيهات.'
+                  : 'A US-supervised mechanism will examine the Lebanese army from within, using Israeli intelligence files to list and dismiss officers and soldiers suspected of Hezbollah links or refusal to comply with full-scale target audits.'}
+              </p>
+            </div>
+
+            {/* Shock 6 */}
+            <div className="border border-red-900 bg-[#140b0b] text-zinc-100 p-4 space-y-2 hover:border-red-600 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-red-500 font-bold uppercase tracking-wider bg-red-950 px-2 py-0.5 border border-red-900">
+                  {isAr ? 'بند 6: الحصار والرقابة المالية' : 'Clause 6: Financial Control'}
+                </span>
+                <span className="text-zinc-600 font-mono text-xs">#06</span>
+              </div>
+              <h5 className="font-sans font-black text-sm text-white">
+                {isAr ? 'صندوق رقابة أمريكي وفتح ملفات التحويلات' : 'Sovereign Financial Auditing Registry'}
+              </h5>
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr 
+                  ? 'يلتزم لبنان بملاحقة التحويلات المالية لحزب الله وحظر أموال الإعمار والتعافي إذا شابتها أي شكوك. يوصى الملحق بإنشاء صندوق مالي تحت سلطة لبنانية لكن بإشراف ورقابة أمريكية تامة لتدقيق تدفقات الأموال وضمان حرمان الشبكات الشيعية منها.'
+                  : 'Lebanon is required to block money transfers and block funds justified as reconstruction support if suspected of benefiting Hezbollah. A financial fund under Lebanese authority but American supervision is established to audit flows.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Bilingual Full Text Stage for the leaked article */}
+          <div className="border-2 border-black bg-white p-5 space-y-6">
+            <div className="border-b border-zinc-200 pb-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+              <h4 className="text-base font-black font-sans text-zinc-950">
+                {isAr ? 'التقرير الاستقصائي الكامل للملحق الأمني المسرّب' : 'Complete Investigative Report of the Leaked Security Annex'}
+              </h4>
+              <span className="text-xxs font-mono text-zinc-500">
+                {isAr ? 'مستند استراتيجي للورّاق' : 'AL-WARRAQ EXCLUSIVE ANALYSIS DOSSIER'}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Arabic translation */}
+              <div className="space-y-4 text-right" dir="rtl">
+                <h5 className="font-sans font-black text-lg text-[#b91c1c] border-r-4 border-red-700 pr-3">
+                  مضمون الملحق الأمني السري بين إسرائيل ولبنان
+                </h5>
+                <div className="text-xs md:text-sm text-zinc-800 font-serif leading-relaxed space-y-4 whitespace-pre-line bg-red-50/10 p-4 border border-red-100">
+                  {`إن الملحق الأمني السري بين إسرائيل ولبنان، في حال الكشف عنه كما هو متوقع، سيهز لبنان لأنه يرفع الغطاء عن الهيكل الحقيقي المخفي وراء الاتفاق العلني. الاتفاق المعلن يتحدث عن السيادة والانسحاب وإعادة الإعمار، لكن الملحق يقلب هذه المفاهيم رأساً على عقب.
+
+إسرائيل وحدها هي من يحدد نطاق ما يسمى "المناطق التجريبية" (Pilot Zones)، وهي لا تقبل بجدول زمني محدد أو انسحاب تلقائي. كل شيء يبقى معلقاً حتى ينفذ لبنان جميع المطالب المفروضة عليه. بالتالي، فإن إعادة انتشار القوات الإسرائيلية ليس التزاماً قانونياً، بل مكافأة تُمنح فقط عندما تقرر إسرائيل أن الأداء اللبناني كان مرضياً.
+
+كما تحدد إسرائيل المنطقة الأمنية؛ فتقرر ما هي المناطق المدرجة، وتلك المستبعدة، وما يجب على الجيش اللبناني فعله داخلها. لا يُمنح الجيش اللبناني مهمة سيادية، بل يُسلّم أجندة إسرائيلية عبر القناة الأمريكية. وفي غضون ذلك، يحتفظ جيش الاحتلال الإسرائيلي بحرية الحركة في جميع أنحاء المنطقة المحتلة تحت ذريعة مواجهة التهديدات - وهي صيغة يمكن أن تبرر الاستمرار في تدمير القرى والمنازل.
+
+وداخل المناطق التجريبية، يُتوقع من الجيش اللبناني التصرف بناءً على خرائط وإحداثيات وقوائم أهداف تعدها إسرائيل وتمررها الولايات المتحدة. ويشرف فريق عسكري أمريكي على الأراضي اللبنانية مباشرة على هذه العملية، وتحتفظ إسرائيل بحق التحقق من النتائج. والأخطر من ذلك، قد ترافق قوة عسكرية إسرائيلية الفريق الأمريكي لتفتيش الأراضي اللبنانية. وفقط إذا أعلنت إسرائيل رضاها التام، فإنها تنظر في اتخاذ خطوة انسحاب.
+
+كما أن عودة المدنيين اللبنانيين إلى قراهم وبدء إعادة الإعمار مشروطان بهذه العملية. لا يمكن للسكان العودة قبل أن تبدي إسرائيل، عبر الآلية الأمريكية، رضاها عن التنفيذ. لم يعد إعمار الجنوب حقاً، بل تحول إلى أداة ضغط سياسي واقتصادي.
+
+ويذهب الملحق إلى أبعد من ذلك من خلال إخضاع الجيش اللبناني نفسه للرقابة الخارجية؛ حيث تقوم آلية بإشراف أمريكي بفحص الجيش من الداخل بناءً على ملفات استخباراتية إسرائيلية تدرج أسماء ضباط وجنود تتهمهم إسرائيل بالوقوع تحت تأثير حزب الله أو العمل بتوجيه منه. وستكون الدولة اللبنانية مطالبة بفصل أي شخص يرفض التعاون مع هذه الآلية، وهو ما قد يصل إلى إقالة قيادة الجيش نفسها إذا رفضت تنفيذ الاتفاق بالكامل.
+
+أخيراً، يضع الملحق نظام رقابة مالية يستهدف شبكات تمويل حزب الله وداعميه والمنتسبين إليه. وتحت غطاء قانوني عربي ودولي، سيُطلب من لبنان ملاحقة التحويلات المالية لحزب الله عبر المؤسسات والأفراد، وفتح ملف التحويلات المالية بالكامل، وحظر الأموال المبررة كدعم لإعادة الإعمار إذا شابتها شكوك في أنها تفيد حزب الله. كما يُقترح إنشاء صندوق مالي تحت سلطة لبنانية وبإشراف أمريكي لتدقيق تدفقات الأموال وضمان عدم وصول أي أموال إلى أي جهة مرتبطة بحزب الله.
+
+هذا ليس ملحقاً أمنياً، بل هو آلية لوضع السيادة اللبنانية تحت الحكم الإسرائيلي والإشراف الأمريكي. إسرائيل تقرر المناطق، والتهديدات، والتحقق، وتوقيت الانسحاب، وشروط العودة. والولايات المتحدة تشرف على الجيش والخرائط والنظام المالي والتنفيذ. بينما لا يملك لبنان سوى التنفيذ والامتثال.
+
+إذا تم الإعلان عن هذه الوثيقة، فإن الزلزال في لبنان لن يأتِ من المفاجأة، بل من الإدراك التام بأن الإطار المعلن لم يكن سوى غطاء دبلوماسي، في حين دُفنت التنازلات الحقيقية والجوهرية في الملحق الأمني السري.`}
+                </div>
+              </div>
+
+              {/* English original */}
+              <div className="space-y-4 text-left" dir="ltr">
+                <h5 className="font-sans font-black text-lg text-zinc-900 border-l-4 border-zinc-800 pl-3">
+                  What the Israel-Lebanon Secret Security Annex Reveals
+                </h5>
+                <div className="text-xs md:text-sm text-zinc-700 font-serif leading-relaxed space-y-4 whitespace-pre-line bg-zinc-50 p-4 border border-zinc-200">
+                  {`The secret Israel-Lebanon security annex, if revealed as expected, will shake Lebanon because it exposes the real architecture hidden behind the public framework. The public agreement speaks of sovereignty, withdrawal and reconstruction. The annex, however, appears to turn these words upside down.
+
+Israel alone determines the scope of the so-called “pilot zones.” It accepts no fixed timetable and no automatic withdrawal. Everything remains open until Lebanon carries out all the demands imposed on it. Israeli redeployment is therefore not a legal obligation. It becomes a reward granted only when Israel decides that Lebanon has performed satisfactorily.
+
+Israel also defines the security zone. It decides which areas are included, which are excluded, and what the Lebanese army must do inside them. The Lebanese army is not given a sovereign mission; it is handed an Israeli agenda through the American channel. Meanwhile, the Israeli occupation army keeps freedom of movement throughout the occupied area under the pretext of confronting threats — a formula that can justify the continued destruction of villages and homes.
+
+Inside the pilot zones, the Lebanese army is expected to act on maps, coordinates, and target lists prepared by Israel and transmitted by the United States. A US military team on Lebanese soil supervises the process directly. Israel then retains the right to verify the results. Even more dangerously, an Israeli military force may accompany the American team to inspect Lebanese territory. Only if Israel declares itself satisfied does it consider taking a withdrawal step.
+
+The return of Lebanese civilians to their villages, and the beginning of reconstruction are also made conditional on this process. Residents cannot return before Israel, through the American mechanism, is satisfied with the implementation. Reconstruction is no longer a right. It becomes a tool of pressure.
+
+The annex goes further by opening the Lebanese army itself to external scrutiny. A US-supervised mechanism is to examine the army from within, based on Israeli intelligence files listing officers and soldiers accused by Israel of being under Hezbollah’s influence or acting under its direction. The Lebanese state would be required to dismiss anyone who refuses to cooperate with this mechanism, potentially reaching the removal of the army command itself if it refuses to implement the agreement fully.
+
+Finally, the annex creates a financial control system targeting Hezbollah’s networks, supporters and alleged affiliates. Under an Arab and international legal cover, Lebanon would be required to pursue money transfers to Hezbollah through institutions and individuals, open the entire financial-transfers file, and block funds justified as reconstruction support if they are suspected of benefiting Hezbollah. A financial fund under Lebanese authority but American supervision is also proposed, to audit money flows and ensure that no funds reach any entity connected to Hezbollah.
+
+This is not a security annex. It is a mechanism for placing Lebanese sovereignty under Israeli judgment and American supervision. Israel decides the zones, the threats, the verification, the timing of withdrawal and the conditions for return. The United States supervises the army, the maps, the financial system and the implementation. Lebanon is left to execute.
+
+If this document is made public, the earthquake in Lebanon will not come from surprise. It will come from recognition: the public framework was only the diplomatic cover. The real concessions were buried in the secret security annex.`}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
