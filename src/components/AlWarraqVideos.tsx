@@ -115,6 +115,30 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
   const [narrationSpeed, setNarrationSpeed] = useState<number>(1.1); // default slightly faster for energetic news vibe
   const [videoStyleMode, setVideoStyleMode] = useState<'cinematic' | 'terminal' | 'broadcast'>('broadcast'); // default to broadcast for TV news style
   const [layoutMode, setLayoutMode] = useState<'split' | 'anchor' | 'dossier'>('split'); // new layout view controls
+  const [feedSource, setFeedSource] = useState<'synthetic' | 'live-tv'>('synthetic'); // synthetic HTML5 loops vs Live TV iframe
+
+  // Video source mappings
+  const SCENE_VIDEO_SOURCES: Record<string, string> = {
+    radar: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-futuristic-hud-element-41591-large.mp4',
+    map: 'https://assets.mixkit.co/videos/preview/mixkit-world-map-with-glowing-connections-41609-large.mp4',
+    documents: 'https://assets.mixkit.co/videos/preview/mixkit-digital-grid-of-numbers-background-41615-large.mp4',
+    courtroom: 'https://assets.mixkit.co/videos/preview/mixkit-gavel-resting-on-a-sound-block-41719-large.mp4',
+    diplomacy: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-business-partners-shaking-41712-large.mp4'
+  };
+
+  // Synchronize HTML5 video element play/pause state with user actions
+  useEffect(() => {
+    const videoElements = document.querySelectorAll('video');
+    videoElements.forEach((vid) => {
+      if (isPlaying) {
+        vid.play().catch((err) => {
+          console.log("Auto-playback starting...", err);
+        });
+      } else {
+        vid.pause();
+      }
+    });
+  }, [isPlaying, selectedVideoId, currentSceneIndex, layoutMode, feedSource]);
 
   // Subtitles / Voiceover Text Speech API Ref
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -386,29 +410,67 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
           </p>
         </div>
 
-        {/* Video Screen Layout Mode Switcher */}
-        <div className="flex bg-white border-2 border-black p-0.5 rounded shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-[9px] font-mono font-bold uppercase shrink-0">
-          <button
-            type="button"
-            onClick={() => setLayoutMode('split')}
-            className={`px-2 py-1 rounded transition-colors ${layoutMode === 'split' ? 'bg-[#b91c1c] text-white' : 'text-zinc-600'}`}
-          >
-            {isAr ? 'شاشة منقسمة' : 'Split Feed'}
-          </button>
-          <button
-            type="button"
-            onClick={() => setLayoutMode('anchor')}
-            className={`px-2 py-1 rounded transition-colors ${layoutMode === 'anchor' ? 'bg-[#b91c1c] text-white' : 'text-zinc-600'}`}
-          >
-            {isAr ? 'استوديو الأخبار' : 'Anchor Studio'}
-          </button>
-          <button
-            type="button"
-            onClick={() => setLayoutMode('dossier')}
-            className={`px-2 py-1 rounded transition-colors ${layoutMode === 'dossier' ? 'bg-[#b91c1c] text-white' : 'text-zinc-600'}`}
-          >
-            {isAr ? 'الخرائط والوثائق' : 'Full Satellite Map'}
-          </button>
+        {/* Switchers Container */}
+        <div className="flex flex-col sm:flex-row gap-2 shrink-0">
+          {/* Feed Source Input Switcher */}
+          <div className="flex bg-white border-2 border-black p-0.5 rounded shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-[9px] font-mono font-bold uppercase">
+            <button
+              type="button"
+              onClick={() => {
+                setFeedSource('synthetic');
+                playNewsBeep();
+              }}
+              className={`px-2 py-1 rounded transition-colors ${feedSource === 'synthetic' ? 'bg-emerald-700 text-white' : 'text-zinc-600'}`}
+              title="AI synthesized interactive visual loops"
+            >
+              {isAr ? '🎥 بث ذكي تفاعلي' : '🎥 Synthesized Feed'}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setFeedSource('live-tv');
+                playNewsBeep();
+              }}
+              className={`px-2 py-1 rounded transition-colors ${feedSource === 'live-tv' ? 'bg-blue-700 text-white' : 'text-zinc-600'}`}
+              title="Live global news stream"
+            >
+              {isAr ? '📺 بث مباشر حي' : '📺 Live Iframe TV'}
+            </button>
+          </div>
+
+          {/* Video Screen Layout Mode Switcher */}
+          <div className="flex bg-white border-2 border-black p-0.5 rounded shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-[9px] font-mono font-bold uppercase">
+            <button
+              type="button"
+              onClick={() => {
+                setLayoutMode('split');
+                playNewsBeep();
+              }}
+              className={`px-2 py-1 rounded transition-colors ${layoutMode === 'split' ? 'bg-[#b91c1c] text-white' : 'text-zinc-600'}`}
+            >
+              {isAr ? 'شاشة منقسمة' : 'Split Feed'}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setLayoutMode('anchor');
+                playNewsBeep();
+              }}
+              className={`px-2 py-1 rounded transition-colors ${layoutMode === 'anchor' ? 'bg-[#b91c1c] text-white' : 'text-zinc-600'}`}
+            >
+              {isAr ? 'استوديو الأخبار' : 'Anchor Studio'}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setLayoutMode('dossier');
+                playNewsBeep();
+              }}
+              className={`px-2 py-1 rounded transition-colors ${layoutMode === 'dossier' ? 'bg-[#b91c1c] text-white' : 'text-zinc-600'}`}
+            >
+              {isAr ? 'الخرائط والوثائق' : 'Full Satellite Map'}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -421,7 +483,6 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
           <div className="border-4 border-black relative overflow-hidden h-[450px] sm:h-[480px] rounded-lg flex flex-col justify-between bg-zinc-950 text-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-all">
             
             {/* SCREEN GLOW & CRT SCANLINE EFFECTS */}
-            <div className="absolute inset-0 bg-radial-gradient from-transparent to-zinc-950/40 pointer-events-none z-30" />
             <div className="absolute inset-0 bg-scanlines pointer-events-none opacity-[0.03] z-30" />
 
             {/* TOP BAR / LIVE BROADCAST HEAD-UP DISPLAY */}
@@ -453,85 +514,100 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
               {layoutMode === 'split' && (
                 <div className="w-full grid grid-cols-1 md:grid-cols-12 h-full">
                   
-                  {/* LEFT: SATELLITE INTEL STREAM */}
-                  <div className="md:col-span-7 bg-zinc-900 border-r border-zinc-800 relative flex items-center justify-center p-4">
-                    {/* Animated visual overlay based on active scene */}
-                    {activeScene.visualType === 'radar' && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                        <div className="w-[280px] h-[280px] rounded-full border border-red-600/30 animate-pulse flex items-center justify-center">
-                          <div className="w-[180px] h-[180px] rounded-full border border-red-600/50 animate-ping flex items-center justify-center">
-                            <div className="w-3 h-3 bg-red-600 rounded-full"></div>
+                  {/* LEFT: SATELLITE INTEL STREAM WITH HTML5 VIDEO / IFRAME */}
+                  <div className="md:col-span-7 bg-zinc-950 border-r border-zinc-800 relative flex items-center justify-center overflow-hidden">
+                    
+                    {feedSource === 'live-tv' ? (
+                      <div className="absolute inset-0 w-full h-full bg-black">
+                        <iframe 
+                          src={isAr ? "https://www.youtube.com/embed/bNyUqyRAnu8?autoplay=1&mute=1" : "https://www.youtube.com/embed/gCNeDWCI0To?autoplay=1&mute=1"} 
+                          className="w-full h-full border-0 absolute inset-0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowFullScreen
+                          title="Live Geopolitical News stream"
+                        ></iframe>
+                        <div className="absolute top-2 left-2 bg-red-650 text-white font-mono font-bold text-[8px] px-1.5 py-0.5 rounded shadow z-10 animate-pulse">
+                          LIVE TV RELAY
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 w-full h-full bg-black flex items-center justify-center">
+                        <video
+                          src={SCENE_VIDEO_SOURCES[activeScene.visualType] || SCENE_VIDEO_SOURCES.radar}
+                          className="w-full h-full object-cover opacity-100"
+                          loop
+                          muted
+                          playsInline
+                          autoPlay={isPlaying}
+                        />
+                        
+                        {/* Animated visual overlays based on active scene */}
+                        {activeScene.visualType === 'radar' && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+                            <div className="w-[280px] h-[280px] rounded-full border border-red-650/30 animate-pulse flex items-center justify-center">
+                              <div className="w-[180px] h-[180px] rounded-full border border-red-650/50 animate-ping flex items-center justify-center">
+                                <div className="w-3 h-3 bg-red-650 rounded-full"></div>
+                              </div>
+                            </div>
+                            <div className="absolute w-[140px] h-0.5 bg-red-500/80 origin-left left-1/2 top-1/2 rotate-sweep animate-spin"></div>
+                            <span className="absolute bottom-2 left-2 text-[8px] font-mono text-zinc-400">SCAN SYSTEM: MULTI-FREQ COG-8</span>
                           </div>
-                        </div>
-                        {/* Radar sweep */}
-                        <div className="absolute w-[140px] h-0.5 bg-red-500/80 origin-left left-1/2 top-1/2 rotate-sweep animate-spin"></div>
-                        <span className="absolute bottom-2 left-2 text-[8px] font-mono text-zinc-400">SCAN SYSTEM: MULTI-FREQ COG-8</span>
-                      </div>
-                    )}
+                        )}
 
-                    {activeScene.visualType === 'map' && (
-                      <div className="absolute inset-0 bg-cover bg-center transition-all duration-700" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800')" }}>
-                        <div className="absolute inset-0 bg-blue-950/25 mix-blend-color"></div>
-                        <div className="absolute inset-0 bg-zinc-950/40"></div>
-                        {/* Crosshairs & Coordinates */}
-                        <div className="absolute inset-4 border border-white/10 flex items-center justify-center">
-                          <div className="w-6 h-6 border-l border-t border-red-500 absolute top-0 left-0"></div>
-                          <div className="w-6 h-6 border-r border-t border-red-500 absolute top-0 right-0"></div>
-                          <div className="w-6 h-6 border-l border-b border-red-500 absolute bottom-0 left-0"></div>
-                          <div className="w-6 h-6 border-r border-b border-red-500 absolute bottom-0 right-0"></div>
-                          <div className="text-[9px] font-mono bg-black/60 px-2 py-0.5 rounded text-red-500 animate-pulse">
-                            TARGET AREA: LEBANON SOUTHERN MARGIN
+                        {activeScene.visualType === 'map' && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-blue-950/15 mix-blend-color"></div>
+                            <div className="absolute inset-4 border border-white/10 flex items-center justify-center">
+                              <div className="w-6 h-6 border-l border-t border-red-500 absolute top-0 left-0"></div>
+                              <div className="w-6 h-6 border-r border-t border-red-500 absolute top-0 right-0"></div>
+                              <div className="w-6 h-6 border-l border-b border-red-500 absolute bottom-0 left-0"></div>
+                              <div className="w-6 h-6 border-r border-b border-red-500 absolute bottom-0 right-0"></div>
+                              <div className="text-[9px] font-mono bg-black/60 px-2 py-0.5 rounded text-red-500 animate-pulse">
+                                TARGET AREA: LEBANON SOUTHERN MARGIN
+                              </div>
+                            </div>
                           </div>
+                        )}
+
+                        {activeScene.visualType === 'documents' && (
+                          <div className="absolute inset-0 bg-black/35 p-6 flex flex-col justify-center space-y-3">
+                            <div className="text-[10px] font-mono text-amber-500 font-bold border-b border-amber-500/30 pb-1 uppercase">
+                              CONFIDENTIAL INTEL SUMMARY DEEP-DIVE
+                            </div>
+                            <span className="text-[8px] font-mono text-red-650 animate-pulse font-black uppercase">
+                              CLASSIFIED ANNEX - RESTRICTED LEAKED SOURCE
+                            </span>
+                          </div>
+                        )}
+
+                        {activeScene.visualType === 'courtroom' && (
+                          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div className="absolute top-2 left-2 bg-black/60 px-1.5 py-0.5 rounded text-[8px] font-mono text-zinc-300">
+                              INTERNATIONAL COURT (THE HAGUE)
+                            </div>
+                          </div>
+                        )}
+
+                        {activeScene.visualType === 'diplomacy' && (
+                          <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
+                            <div className="absolute top-2 left-2 bg-black/60 px-1.5 py-0.5 rounded text-[8px] font-mono text-zinc-300">
+                              WASHINGTON CEASEFIRE MEETING PROTOCOLS
+                            </div>
+                          </div>
+                        )}
+
+                        {/* HUD graphic data overlay */}
+                        <div className="absolute top-3 left-3 bg-black/70 border border-zinc-800 p-1.5 rounded text-[8px] font-mono space-y-0.5 z-10 text-left">
+                          <div className="text-red-500 font-bold">● FEED ACTIVE</div>
+                          <div className="text-zinc-400">AZIMUTH: 184° / SPEED: COMPIL</div>
+                          <div className="text-zinc-500">DECODER: GEN-SPEECH V3.1</div>
                         </div>
                       </div>
                     )}
-
-                    {activeScene.visualType === 'documents' && (
-                      <div className="absolute inset-0 bg-zinc-950 p-6 flex flex-col justify-center space-y-3">
-                        <div className="text-[10px] font-mono text-amber-500 font-bold border-b border-amber-500/30 pb-1 uppercase">
-                          CONFIDENTIAL INTEL SUMMARY DEEP-DIVE
-                        </div>
-                        <div className="space-y-2 opacity-80">
-                          <div className="h-2 bg-zinc-700 rounded w-full"></div>
-                          <div className="h-2 bg-zinc-700 rounded w-5/6"></div>
-                          <div className="h-2 bg-zinc-700 rounded w-4/5"></div>
-                          <div className="h-2 bg-zinc-600 rounded w-3/4"></div>
-                        </div>
-                        <span className="text-[8px] font-mono text-red-600 animate-pulse font-black uppercase">
-                          CLASSIFIED ANNEX - RESTRICTED LEAKED SOURCE
-                        </span>
-                      </div>
-                    )}
-
-                    {activeScene.visualType === 'courtroom' && (
-                      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800')" }}>
-                        <div className="absolute inset-0 bg-zinc-950/50"></div>
-                        <div className="absolute top-2 left-2 bg-black/60 px-1.5 py-0.5 rounded text-[8px] font-mono text-zinc-300">
-                          INTERNATIONAL COURT (THE HAGUE)
-                        </div>
-                      </div>
-                    )}
-
-                    {activeScene.visualType === 'diplomacy' && (
-                      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800')" }}>
-                        <div className="absolute inset-0 bg-red-950/20 mix-blend-multiply"></div>
-                        <div className="absolute inset-0 bg-zinc-950/40"></div>
-                        <div className="absolute top-2 left-2 bg-black/60 px-1.5 py-0.5 rounded text-[8px] font-mono text-zinc-300">
-                          WASHINGTON CEASEFIRE MEETING PROTOCOLS
-                        </div>
-                      </div>
-                    )}
-
-                    {/* HUD graphic data overlay */}
-                    <div className="absolute top-3 left-3 bg-black/70 border border-zinc-800 p-1.5 rounded text-[8px] font-mono space-y-0.5 z-10 text-left">
-                      <div className="text-red-500 font-bold">● FEED ACTIVE</div>
-                      <div className="text-zinc-400">AZIMUTH: 184° / SPEED: COMPIL</div>
-                      <div className="text-zinc-500">DECODER: GEN-SPEECH V3.1</div>
-                    </div>
                   </div>
 
                   {/* RIGHT: LIVE ANCHOR STUDIO SCENE */}
-                  <div className="md:col-span-5 bg-gradient-to-b from-zinc-900 to-black p-4 flex flex-col justify-between relative">
+                  <div className="md:col-span-5 bg-zinc-900 p-4 flex flex-col justify-between relative">
                     
                     {/* Anchor Visual Portrait & Name Tag */}
                     <div className="flex-1 flex flex-col items-center justify-center relative">
@@ -539,9 +615,9 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
                       {/* Television desk virtual portrait */}
                       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-zinc-700 overflow-hidden bg-zinc-800 relative shadow-inner group">
                         <img 
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" 
+                          src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=400" 
                           alt="Anchor Profile"
-                          className="w-full h-full object-cover grayscale opacity-90 transition-all duration-300 group-hover:grayscale-0"
+                          className="w-full h-full object-cover opacity-100 transition-all duration-300"
                           referrerPolicy="no-referrer"
                         />
                         {/* Audio equalizer overlaid on anchor view */}
@@ -573,7 +649,7 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
 
                     {/* LIVE ON AIR SIGNAL SIGN */}
                     <div className="flex justify-center items-center gap-1.5 border-t border-zinc-800 pt-2">
-                      <span className={`inline-block w-2.5 h-2.5 rounded-full ${isPlaying ? 'bg-red-600 animate-ping' : 'bg-zinc-600'}`}></span>
+                      <span className={`inline-block w-2.5 h-2.5 rounded-full ${isPlaying ? 'bg-red-650 animate-ping' : 'bg-zinc-600'}`}></span>
                       <span className="text-[8px] font-mono tracking-widest uppercase font-black text-zinc-400">
                         {isPlaying ? 'ON AIR' : 'STUDIO STANDBY'}
                       </span>
@@ -586,18 +662,42 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
 
               {/* ANCHOR STUDIO FULL VIEW */}
               {layoutMode === 'anchor' && (
-                <div className="w-full h-full bg-cover bg-center relative flex items-center justify-center p-6" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=1200')" }}>
-                  <div className="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm"></div>
+                <div className="w-full h-full relative flex items-center justify-center p-6 overflow-hidden">
+                  
+                  {/* Backdrop Video/Iframe Layer */}
+                  {feedSource === 'live-tv' ? (
+                    <div className="absolute inset-0 bg-black">
+                      <iframe 
+                        src={isAr ? "https://www.youtube.com/embed/bNyUqyRAnu8?autoplay=1&mute=1" : "https://www.youtube.com/embed/gCNeDWCI0To?autoplay=1&mute=1"} 
+                        className="w-full h-full border-0 absolute inset-0 opacity-100"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowFullScreen
+                        title="Live Geopolitical News stream"
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 bg-black">
+                      <video
+                        src={SCENE_VIDEO_SOURCES[activeScene.visualType] || SCENE_VIDEO_SOURCES.radar}
+                        className="w-full h-full object-cover opacity-100"
+                        loop
+                        muted
+                        playsInline
+                        autoPlay={isPlaying}
+                      />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-zinc-950/20 backdrop-blur-[1px]"></div>
                   
                   <div className="z-10 bg-black/80 border-2 border-red-600 p-4 rounded-lg max-w-md w-full text-center relative shadow-[0_0_15px_rgba(239,68,68,0.25)]">
-                    <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-red-600 text-white font-mono font-bold uppercase text-[8px] px-2 py-0.5 rounded shadow">
+                    <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-red-650 text-white font-mono font-bold uppercase text-[8px] px-2 py-0.5 rounded shadow">
                       {isAr ? 'البث المباشر للأخبار' : 'AL-WARRAQ SPECIAL BROADCAST'}
                     </span>
 
                     <div className="flex items-center justify-center gap-4 mb-3">
-                      <div className="w-12 h-12 rounded-full border-2 border-red-600 overflow-hidden bg-zinc-800">
+                      <div className="w-12 h-12 rounded-full border-2 border-red-650 overflow-hidden bg-zinc-800">
                         <img 
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" 
+                          src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200" 
                           alt="Anchor Thumbnail"
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
@@ -638,12 +738,32 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
 
               {/* FULL MAP AND SATELLITE HUD VIEW */}
               {layoutMode === 'dossier' && (
-                <div className="w-full h-full bg-cover bg-center relative transition-all duration-500" style={{ 
-                  backgroundImage: activeScene.visualType === 'map' 
-                    ? "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800')"
-                    : "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800')"
-                }}>
-                  <div className="absolute inset-0 bg-zinc-950/45"></div>
+                <div className="w-full h-full relative transition-all duration-500 overflow-hidden bg-black">
+                  
+                  {/* Backdrop Video/Iframe Layer */}
+                  {feedSource === 'live-tv' ? (
+                    <div className="absolute inset-0 bg-black">
+                      <iframe 
+                        src={isAr ? "https://www.youtube.com/embed/bNyUqyRAnu8?autoplay=1&mute=1" : "https://www.youtube.com/embed/gCNeDWCI0To?autoplay=1&mute=1"} 
+                        className="w-full h-full border-0 absolute inset-0 opacity-100"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowFullScreen
+                        title="Live Geopolitical News stream"
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 bg-black">
+                      <video
+                        src={SCENE_VIDEO_SOURCES[activeScene.visualType] || SCENE_VIDEO_SOURCES.radar}
+                        className="w-full h-full object-cover opacity-100 animate-fade-in"
+                        loop
+                        muted
+                        playsInline
+                        autoPlay={isPlaying}
+                      />
+                    </div>
+                  )}
+                  {/* No dark overlay */}
                   
                   {/* Digital high-tech HUD overlay frames */}
                   <div className="absolute inset-3 border border-red-500/20 rounded flex flex-col justify-between p-3">

@@ -154,7 +154,7 @@ At the end of the call, Trump told Aoun he looked forward to meeting him soon at
       nameEn: 'Maan Barazy',
       titleAr: 'رئيس تحرير صحيفة الورّاق',
       titleEn: 'Editor-in-Chief, Al-Warraq News',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=120'
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
     },
     imageUrl: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&q=80&w=1200',
     date: '29 يونيو 2026',
@@ -255,7 +255,7 @@ While the agreement heavily restricts the Lebanese state, the path to justice is
       nameEn: 'Maan Barazy',
       titleAr: 'رئيس تحرير صحيفة الورّاق',
       titleEn: 'Editor-in-Chief, Al-Warraq News',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=120'
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
     },
     imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
     date: '29 يونيو 2026',
@@ -847,7 +847,7 @@ The path to extracting undersea wealth requires a stable, reliable security envi
       nameEn: 'Maan Barazy',
       titleAr: 'مؤسس ورئيس تحرير الوراق | alwarraqnews.com',
       titleEn: 'Founder & Editor-in-Chief of Al-Warraq | alwarraqnews.com',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
     },
     imageUrl: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80',
     date: '2026-06-26',
@@ -946,7 +946,7 @@ By integrating AI-driven analytics and comprehensive risk assessments into their
       nameEn: 'Editor-in-Chief & Al-Warraq Wire',
       titleAr: 'تحليل استراتيجي',
       titleEn: 'Strategic Analysis',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
     },
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     date: '2026-06-25',
@@ -1017,7 +1017,7 @@ BDL's balance sheet as of June 15 does not indicate any capacity to rescue; rath
       nameEn: 'Maan Barazy',
       titleAr: 'محرر الشؤون الخاصة والرئيسية',
       titleEn: 'Special Correspondent & Chief Editor',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
     },
     imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80',
     date: '٢٠٢٦/٠٦/٢٥',
@@ -2085,7 +2085,7 @@ On the other hand, the Hebrew Channel 14 revealed yesterday that the rules of en
       nameEn: 'Maan Barazy',
       titleAr: 'رئيس التحرير والمدير العام',
       titleEn: 'Editor-in-Chief & General Manager',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150'
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
     },
     imageUrl: 'https://images.unsplash.com/photo-1590086782957-93c06ef21604?auto=format&fit=crop&q=80&w=1200',
     date: '23 يونيو 2026',
