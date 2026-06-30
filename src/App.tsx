@@ -19,6 +19,7 @@ import WhatIfSimulator from './components/WhatIfSimulator';
 import TrendingWidget from './components/TrendingWidget';
 import LebanonAMLVisualizer from './components/LebanonAMLVisualizer';
 import { SolidereInfographic } from './components/SolidereInfographic';
+import { NarrativeLebanonCrisisInfographics } from './components/NarrativeLebanonCrisisInfographics';
 import AlWarraqInvestigations from './components/AlWarraqInvestigations';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
@@ -1488,9 +1489,9 @@ export default function App() {
                   </div>
                 )}
 
-                {/* INTERACTIVE SOLIDERE HERO INFOGRAPHIC */}
+                {/* NARRATIVE LEBANON CRISIS INFOGRAPHICS DASHBOARD */}
                 {activeCategory === 'all' && !searchQuery && (
-                  <SolidereInfographic
+                  <NarrativeLebanonCrisisInfographics
                     language={language}
                     articles={allArticles}
                     onSelectArticle={(article) => setSelectedArticle(article)}
@@ -1934,6 +1935,36 @@ export default function App() {
                       </div>
                     ))}
                 </div>
+
+                {/* SOLIDERE DEEP-DIVE ARCHIVES FOR EXCLUSIVES TAB ONLY */}
+                {activeCategory === 'exclusives' && !searchQuery && (
+                  <div className="mt-10 pt-10 border-t-4 border-double border-zinc-900">
+                    <div className="bg-zinc-900 text-white p-5 border border-zinc-800 mb-6">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 bg-amber-500 rounded-none inline-block"></span>
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-amber-500 font-bold">
+                          {isAr ? 'قسم أرشيف تحقيقات سوليدير ٢٠٦٩ الحصرية' : 'EXCLUSIVE SOLIDERE 2069 DEEP-DIVE DOSSIER'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-black font-sans mt-2">
+                        {isAr ? 'الجدول الزمني والتحقيق التفاعلي لشركة سوليدير ومستندات الأراضي' : 'Interactive Solidere Extension Timeline & Beirut Bourse Stock Tracker'}
+                      </h4>
+                      <p className="text-xs text-zinc-400 mt-2 max-w-4xl leading-relaxed">
+                        {isAr 
+                          ? 'تفاصيل تمديد مرسوم سوليدير التفاعلي لعام ٢٠٦٩ وتأثيره على قلب العاصمة وحرب الاستحواذ الدائرة بين أنطون صحناوي والحرس القديم، مع وثائق المحاضر القضائية.'
+                          : 'A chronological interactive outline of Solidere’s legal mandates and the corporate takeover battle on the Beirut Stock Exchange between Antoun Sehnaoui and the old guard.'}
+                      </p>
+                    </div>
+                    
+                    <div className="border-4 border-black bg-white text-black p-4 md:p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                      <SolidereInfographic
+                        language={language}
+                        articles={allArticles}
+                        onSelectArticle={(article) => setSelectedArticle(article)}
+                      />
+                    </div>
+                  </div>
+                )}
 
                 {/* REDIRECT READ MORE */}
                 {activeCategory === 'all' && exclusivesArticles.length > 0 && (
