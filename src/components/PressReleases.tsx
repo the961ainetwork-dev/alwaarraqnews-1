@@ -42,6 +42,83 @@ export interface PressReleaseItem {
 
 export const PRESS_RELEASES: PressReleaseItem[] = [
   {
+    id: 'investigations-and-timeline-update-2026',
+    titleEn: 'Al-Warraq Gazette Publishes Comprehensive Investigations Suite on Lebanon Ceasefire & Launches Interactive Chronological Timeline',
+    titleAr: 'صحيفة الوراق تنشر حزمة تحقيقات شاملة حول وقف إطلاق النار وتطلق جدولاً زمنياً تتبعياً للمفاوضات',
+    categoryEn: 'PLATFORM UPDATE & SPECIAL REPORT',
+    categoryAr: 'تحديث المنصة والبيان الصحفي',
+    dateEn: 'June 30, 2026',
+    dateAr: '٣٠ يونيو ٢٠٢٦',
+    locationEn: 'Beirut, Lebanon',
+    locationAr: 'بيروت، لبنان',
+    excerptEn: 'Al-Warraq Gazette completes the deployment of its comprehensive Sovereign Investigations section, publishing all online stories surrounding the trilateral ceasefire deal, its military & legal implications, and the leaked secret security annex, alongside a customized Chronological Scroll-to-View Timeline tracking negotiations from October 2023 to today.',
+    excerptAr: 'أكملت صحيفة الوراق نشر حزمة تحقيقاتها السيادية الشاملة المتعلقة باتفاق وقف إطلاق النار، وتداعياته العسكرية والقانونية، والملحق الأمني السري المسرّب، بالتزامن مع إطلاق جدول زمني تتبعي تفاعلي يرصد محطات المفاوضات والاتفاقيات منذ أكتوبر ٢٠٢٣ حتى اليوم.',
+    contentEn: `**BEIRUT, LEBANON — June 30, 2026** — Al-Warraq Gazette, the Levant's premium publication of political economy and sovereign intelligence, today announced a massive deployment of its advanced investigative archive and the official launch of an interactive, scroll-linked chronological visualization system.
+
+The editorial team has fully integrated and updated the **Sovereign Investigations Hub** with a series of high-stakes investigative dossiers that trace the full architecture of the recent trilateral ceasefire agreements, its long-term strategic projections, and the classified concessions that lie in the dark.
+
+### 1. Published Investigative Stories & Context Dossiers
+
+The following exclusive stories are now accessible online across all platform terminals:
+*   **The Leaked Secret Security Annex (Exclusive Dossier)**
+    *   **Description:** Reveals the 6 critical structural shocks regarding Israeli target-purges, IDF freedom of access inside pilot zones, and American military supervision.
+    *   **Direct Access Point:** [View Secret Security Annex Dossier](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/#negotiation-ceasefire-timeline) (ID: \`excl-leb-isr-secret-annex\`)
+*   **The 14-point Trilateral Framework Agreement (Complete Bilingual Treaty Clause Matrix)**
+    *   **Description:** Examines the complete Arabic translation and the original literal English text of the 14 Treaty Clauses signed in Washington D.C.
+    *   **Direct Access Point:** [Examine Trilateral Framework Clauses](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/) (ID: \`excl-1\`)
+*   **The Mirage of Ceasefire & Domestic Conflict Analysis**
+    *   **Description:** Evaluates the risks of internal instability, arms control disputes, and factional friction under the shadow of the ceasefire.
+    *   **Direct Access Point:** [Examine Internal Conflict Matrix](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/) (ID: \`lebanon-ceasefire-mirage-2026\`)
+*   **The Global Toll: Regional U.S.-Iran War Cost Breakdown**
+    *   **Description:** Full investigative breakdown on the $50 Billion American military expenditure and the global energy supply shock.
+    *   **Direct Access Point:** [Read War Cost Investigations](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/) (ID: \`cbs-iran-war-cost-americans-2026\`)
+
+---
+
+### 2. Introduction of the Chronological Scroll-to-View Timeline
+
+In parallel with these text-based deep dives, the engineering team has introduced a **Chronological Scroll-to-View Timeline Component** to track the critical milestones of the Lebanon-Israel ceasefire negotiations.
+
+#### Core Implementations & Features:
+*   **Interactive Chronological Stream:** Created a highly customized timeline that maps key milestones from the outbreak of the southern front in October 2023 up to the June 30, 2026 leak of the secret security annex.
+*   **Scroll-to-View Quick Navigator:** Added a sticky navigation sidebar panel allowing users to instantly jump to specific dates or milestones. The active state dynamically synchronizes with an intersection observer as the user scrolls.
+*   **Direct Context Node Linking:** Every milestone includes an integrated link context card connecting back to its respective full journalistic investigation, allowing seamless navigation from chronological dates to extensive archives.
+*   **Geopolitical Tension Indexing:** Real-time intensity metrics (0 to 100) are assigned to each historical marker, paired with an implementation progress gauge to visually communicate treaty friction factors.
+
+"A simple timeline tracks dates; a sovereign chronological registry maps systemic truth," commented Al-Warraq's chief of engineering. "By marrying scroll-linked choreography with granular intelligence articles, readers can now move seamlessly between chronological milestones and the literal text of secret treaties."`,
+    contentAr: `**بيروت، لبنان — ٣٠ يونيو ٢٠٢٦** — أعلنت صحيفة الورّاق، الصحيفة السيادية الرائدة في شؤون الاقتصاد السياسي والاستخبارات الجيوسياسية في المشرق العربي، اليوم عن تحديث استراتيجي كبير شمل ترقية قسم "التحقيقات الكبرى" ونشر كافة الملفات الاستقصائية الحصرية حيال اتفاق وقف إطلاق النار التاريخي، وتداعياته الأمنية والعسكرية، والملحق الأمني السري المسرّب، بالتوازي مع تدشين نظام جدول زمني تتبعي تفاعلي جديد بالكامل.
+
+قامت هيئة تحرير المنصة بدمج وتحديث **مركز التحقيقات السيادية** بمجموعة من التقارير الاستقصائية التي تكشف الهيكل الخفي للاتفاق المثير للجدل والتنازلات السيادية الكبرى المدفونة تحت عبارات الدبلوماسية.
+
+### ١. الملفات الاستقصائية المنشورة والروابط المباشرة
+
+تم إدراج جميع هذه التحقيقات الحصرية على المنصة الرقمية مع إمكانية الوصول المباشر عبر الروابط المخصصة:
+*   **الملحق الأمني السري المسرّب (تحقيق خاص)**
+    *   **الشرح:** يكشف الصدمات الهيكلية الست الكبرى المتعلقة بغربلة وتطهير صفوف الجيش اللبناني، وصلاحية تحرك جيش الاحتلال الإسرائيلي، وبنود الإشراف الميداني الأمريكي.
+    *   **رابط الوصول:** [استعراض الملحق الأمني السري المسرب](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/#negotiation-ceasefire-timeline) (معرف الملف: \`excl-leb-isr-secret-annex\`)
+*   **بنود "اتفاق الإطار الثلاثي" الـ ١٤ (الترجمة المقابلة والمقارنة النصية)**
+    *   **الشرح:** مصفوفة مقارنة نصية ثنائية اللغة للبند الـ ١٤ الموقع رسمياً في العاصمة واشنطن.
+    *   **رابط الوصول:** [فحص نصوص اتفاق الإطار](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/) (معرف الملف: \`excl-1\`)
+*   **سراب وقف إطلاق النار وتحليل مخاطر الصراع الداخلي**
+    *   **الشرح:** تحقيق شامل يبحث مخاطر الفتنة وسلاح المقاومة وقدرة الجيش اللبناني على الحسم والسيطرة الاستراتيجية.
+    *   **رابط الوصول:** [دراسة مصفوفة النزاع الداخلي](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/) (معرف الملف: \`lebanon-ceasefire-mirage-2026\`)
+*   **الفاتورة الجيوسياسية: التكلفة الشاملة لحرب إيران والولايات المتحدة**
+    *   **الشرح:** تفاصيل التكلفة العسكرية الباهظة على الخزانة الأمريكية وعملية "الغضب الملحمي" وصدمة أسعار الطاقة العالمية.
+    *   **رابط الوصول:** [مطالعة تقرير التكلفة الجيوسياسية](https://ais-pre-c34opvjs2u2527o42d47ff-276616341447.europe-west3.run.app/) (معرف الملف: \`cbs-iran-war-cost-americans-2026\`)
+
+---
+
+### ٢. إطلاق الجدول الزمني التتبعي التفاعلي (Chronological Scroll-to-View Timeline)
+
+بالتزامن مع هذه التحقيقات المتكاملة، أطلقت المنصة أداة **الجدول الزمني التتبعي التفاعلي** لمتابعة مسار المفاوضات الإقليمية وسلسلة القرارات الدولية المعقدة.
+
+#### الميزات والخصائص الأساسية للتحديث:
+*   **المخطط الزمني التفاعلي المتزامن:** تتبع دقيق يرصد كافة المحطات من اندلاع مواجهات جبهة الإسناد الجنوبية في أكتوبر ٢٠٢٣ وصولاً إلى تسريبات الملحق الأمني السري في ٣٠ يونيو ٢٠٢٦.
+*   **مؤشر التصفح والتنقل السريع الثابت (Scroll-to-View Quick Navigator):** لوحة تصفح ذكية تتيح الانتقال الفوري والمباشر لأي تاريخ أو محطة معينة، مدعومة بميزة المراقبة الديناميكية للتكامل بين حركة التمرير وتسليط الضوء التلقائي.
+*   **عقد السياق والربط بالملفات الكاملة:** ميزة فريدة تدرج بطاقات مرجعية لكل محطة تتيح للقارئ الانتقال مباشرة من التاريخ الزمني إلى التحقيق والتحليل الكامل المنشور بالأرشيف.
+*   **مؤشر قياس التوتر ومستوى النفاذ الجيوسياسي:** رسم بياني توضيحي لمستويات التوتر السياسي ومؤشر تفاعلي لحساب معدل تطبيق البنود لحالات الاتفاقيات المعلقة.`
+  },
+  {
     id: 'launch-geopolitical-suites-2026',
     titleEn: 'Al-Warraq Gazette Unveils Integrated Geopolitical Decision Suites, Immersive "War Room," & Golden Prime Sovereign Subscriptions',
     titleAr: 'جريدة الوراق تكشف النقاب عن باقة أدوات القرار الجيوسياسي المتكاملة، "غرفة الحرب" التفاعلية، واشتراكات "العصر الذهبي" السيادية',
@@ -125,7 +202,7 @@ This press release serves as an official notice for financial markets and bankin
 
 export default function PressReleases({ language }: PressReleasesProps) {
   const isAr = language === 'ar';
-  const [selectedReleaseId, setSelectedReleaseId] = useState<string>('launch-geopolitical-suites-2026');
+  const [selectedReleaseId, setSelectedReleaseId] = useState<string>('investigations-and-timeline-update-2026');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const activeRelease = PRESS_RELEASES.find(r => r.id === selectedReleaseId) || PRESS_RELEASES[0];

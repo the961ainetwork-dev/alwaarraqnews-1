@@ -7,12 +7,14 @@ import {
   Scale, 
   ChevronRight, 
   Sparkles,
-  DollarSign
+  DollarSign,
+  Calendar
 } from 'lucide-react';
 import { Article } from '../types';
 import { FrameworkAgreementInfographic } from './FrameworkAgreementInfographic';
 import { CeasefireInternalConflictInfographic } from './CeasefireInternalConflictInfographic';
 import { EconomicAbyssCrisisInfographic } from './EconomicAbyssCrisisInfographic';
+import { NegotiationTimeline } from './NegotiationTimeline';
 
 interface NarrativeLebanonCrisisInfographicsProps {
   language: 'ar' | 'en';
@@ -20,7 +22,7 @@ interface NarrativeLebanonCrisisInfographicsProps {
   onSelectArticle: (article: Article) => void;
 }
 
-type DossierKey = 'annex' | 'ceasefire' | 'economy';
+type DossierKey = 'annex' | 'ceasefire' | 'economy' | 'timeline';
 
 export function NarrativeLebanonCrisisInfographics({
   language,
@@ -64,6 +66,20 @@ export function NarrativeLebanonCrisisInfographics({
       icon: ShieldAlert,
       component: <CeasefireInternalConflictInfographic language={language} />
     },
+    timeline: {
+      id: 'excl-leb-isr-secret-annex',
+      titleAr: 'سجل تتبع المفاوضات الإطارية والهدنة',
+      titleEn: 'Ceasefire Negotiations Registry',
+      subtitleAr: 'مخطط تفاعلي متزامن مع أحداث جبهات القتال، والاتفاقيات، والتسريبات الأمنية',
+      subtitleEn: 'Scroll-linked interactive timeline tracking milestones and secret leaked dossiers',
+      article: annexArticle,
+      badgeAr: 'جدول زمني',
+      badgeEn: 'TIMELINE TRACK',
+      color: 'border-blue-600 text-blue-600 bg-blue-50/50',
+      activeColor: 'bg-blue-800 text-white border-blue-850',
+      icon: Calendar,
+      component: <NegotiationTimeline language={language} articles={articles} onSelectArticle={onSelectArticle} />
+    },
     economy: {
       id: 'lebanon-economic-abyss-2026',
       titleAr: 'الهاوية الاقتصادية وحساب فجوة الإعمار',
@@ -106,12 +122,12 @@ export function NarrativeLebanonCrisisInfographics({
             </span>
           </div>
           <h2 className="text-2xl md:text-3xl font-black font-sans tracking-tight leading-tight">
-            {isAr ? 'ثلاثية الأزمة السيادية اللبنانية' : 'The Triad of Lebanon\'s Sovereign Crisis'}
+            {isAr ? 'أبعاد الأزمة السيادية اللبنانية' : 'The Pillars of Lebanon\'s Sovereign Crisis'}
           </h2>
           <p className="text-xs md:text-sm text-zinc-600 font-serif mt-1 max-w-2xl leading-relaxed">
             {isAr 
-              ? 'دراسات استقصائية عميقة معززة بنماذج بيانات حية ورسوم بيانية تفاعلية لحساب التكلفة الاقتصادية، والمساءلة القانونية، ومخاطر الصراع الداخلي.'
-              : 'Interactive deep-dives powered by simulation calculators, bilingual frameworks, and geostrategic models of Lebanon’s survival factors.'}
+              ? 'دراسات استقصائية عميقة معززة بنماذج تفاعلية لحساب التكلفة الاقتصادية والمساءلة القانونية وجداول تتبع المفاوضات ومخاطر الصراع.'
+              : 'Interactive deep-dives powered by simulation calculators, bilingual frameworks, chronological registries, and geostrategic models of Lebanon’s survival factors.'}
           </p>
         </div>
         
@@ -122,7 +138,7 @@ export function NarrativeLebanonCrisisInfographics({
       </div>
 
       {/* STORY SELECTOR TABS (Swiss/Modern bento layout) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
         {(Object.keys(dossierConfig) as DossierKey[]).map((key) => {
           const cfg = dossierConfig[key];
           const isSelected = activeDossier === key;
