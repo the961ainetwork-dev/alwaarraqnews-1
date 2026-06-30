@@ -29,6 +29,83 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 
 export const INITIAL_ARTICLES: Article[] = [
   {
+    id: 'nabih-berri-options-framework-agreement',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'lebanon', 'opinion'],
+    titleAr: 'ماذا بعد التوقيع؟ خيارات نبيه بري المفتوحة لإسقاط "مؤامرة" اتفاق الإطار',
+    titleEn: 'What is Next After the Signing? Nabih Berri’s Open Options to Topple the Framework Agreement "Conspiracy"',
+    summaryAr: 'منذ اللحظة التي أُعلن فيها عن توقيع "اتفاق الإطار" بين لبنان وإسرائيل، بدا واضحاً أن الساحة السياسية اللبنانية مقبلة على زلزال من نوع آخر. بالنسبة لرئيس مجلس النواب نبيه بري، لم يكن هذا التوقيع مجرد خطوة سياسية عابرة، بل "مؤامرة" حِيكت في الغرف المغلقة، وطعنة تجاوزت كل الأصول الدستورية.',
+    summaryEn: 'Since the announcement of the framework agreement between Lebanon and Israel, Nabih Berri has viewed it as a constitutional breach and a backdoor conspiracy. We outline his primary options and political scenarios to challenge the agreement.',
+    excerptAr: 'اليوم، يقف "عرّاب" السياسة اللبنانية أمام مفترق طرق حاسم. وبعد أن استنفر فريقه لدراسة سبل المواجهة، يطرح المراقبون سؤالاً جوهرياً: ما هي خطوة بري التالية؟',
+    excerptEn: 'Today, Nabih Berri, the "godfather" of Lebanese politics, stands at a crucial crossroads as he marshals his political front against the newly signed maritime agreement.',
+    contentAr: `منذ اللحظة التي أُعلن فيها عن توقيع "اتفاق الإطار" بين لبنان وإسرائيل، بدا واضحاً أن الساحة السياسية اللبنانية مقبلة على زلزال من نوع آخر. بالنسبة لرئيس مجلس النواب نبيه بري، لم يكن هذا التوقيع مجرد خطوة سياسية عابرة، بل "مؤامرة" حِيكت في الغرف المغلقة، وطعنة تجاوزت كل الأصول الدستورية.
+
+اليوم، يقف "عرّاب" السياسة اللبنانية أمام مفترق طرق حاسم. وبعد أن استنفر فريقه لدراسة سبل المواجهة، يطرح المراقبون سؤالاً جوهرياً: ما هي خطوة بري التالية؟ وإلى أي حد سيذهب في معركته لإسقاط هذا الاتفاق الذي يراه "أخطر من 17 أيار"؟
+
+أمام رئيس المجلس خيارات متعددة، وربما سيلعبها بالتوازي. إليكم السيناريوهات والخيارات المطروحة على طاولته في المرحلة المقبلة:
+
+### 1. الخيار الأول: حرب الإلغاء السياسي وعزل "بعبدا"
+هل يذهب بري نحو قطيعة نهائية وشاملة مع رئيس الجمهورية جوزيف عون؟ شعر بري بالتهميش والتآمر لتغييبه عن تفاصيل التوقيع، وهو ما دفعه لـ "كسر الجرة" مع بعبدا. الخيار المطروح هنا هو قيادة جبهة معارضة شرسة وتشكيل اصطفاف سياسي جديد—يبدو أن النائب السابق وليد جنبلاط سيكون عاموده الفقري—لشل حركة الرئاسة الأولى ومحاصرة مسارها الذي يعتبره بري مناهضاً لمصالح الدولة.
+
+### 2. الخيار الثاني: الفخ الدستوري و"الفيتو" البرلماني
+هل يستخدم بري ملعبه المفضل، مجلس النواب، لإطلاق رصاصة الرحمة على الاتفاق؟ في الشق القانوني، يدرس بري الإطاحة بالاتفاق من بوابة المؤسسات. هو يعتبر أن رئيس الجمهورية تخطى "اتفاق الطائف". الخيار الأقوى هنا هو الدعوة لجلسة نيابية وطرح الاتفاق على التصويت، مستنداً إلى تأمين أكثرية نيابية معارضة تسقط الاتفاق دستورياً قبل إسقاطه سياسياً، مما يضع عون أمام مسؤولية المساس بالطائف محلياً وعربياً.
+
+### 3. الخيار الثالث: "حصان طروادة" داخل الحكومة
+كيف سيتعامل مع حكومة الرئيس نواف سلام؟ بدلاً من إسقاط الحكومة وإدخال البلاد في المجهول، قد يختار بري تكتيك "الاحتواء السلبي". الخيار هو تحييد السراي الحكومي عن الصراع الرئاسي للحفاظ على الاستقرار الحد الأدنى، والإيعاز لوزراء "حركة أمل" و"حزب الله" بالبقاء داخل الحكومة كـ"حراس" يراقبون كل شاردة وواردة، لضمان عدم تمرير أي قرارات مفاجئة مستقبلاً كما حدث في قرار تكليف وفد واشنطن الأخير.
+
+### 4. الخيار الرابع: اللعب على وتر التوازنات الإقليمية
+هل ينجح بري في استبدال المظلة المحلية بأخرى عربية ودولية؟ سياسياً، قد يوسّع بري رقعة المواجهة لتشمل العواصم الفاعلة. الخيار هنا مزدوج:
+* **عربياً:** تأمين غطاء من مصر، قطر، والسعودية لتفادي الفتنة الداخلية وإيجاد مخرج لائق للأزمة.
+* **إيرانياً:** تنسيق موقف يربط مسار التفاوض اللبناني بمسار الاتفاق "الأميركي - الإيراني"، بحيث لا تبرم طهران اتفاقها النهائي دون ضمان انسحاب إسرائيلي كامل من لبنان، مغلّباً بذلك كفة التفاهمات الإقليمية الكبرى على الاتفاق المحلي.
+
+### 5. الخيار الخامس والأخير: "الكي" بورقة الشارع
+ماذا لو سُدت كل المنافذ الدستورية والسياسية؟ حتى اللحظة، يتفق بري مع "حزب الله" على تجميد "ورقة الشارع" وتجنب المظاهرات خوفاً من الانزلاق نحو فتنة طائفية لطالما اعتبرها هدفاً إسرائيلياً بامتياز. ولكن، إذا استنفدت كل الحلول، فإن خيار قلب الطاولة والنزول إلى الشارع يبقى "الرصاصة الأخيرة" في جيب بري، رغم تكلفتها الباهظة على السلم الأهلي.
+
+### الخلاصة
+لا يبدو أن نبيه بري في وارد الاستسلام للأمر الواقع. الأيام المقبلة ستكشف أيّاً من هذه الأوراق سيحركها أولاً، أم أنه كعادته، سيعزف على كل الأوتار في آنٍ واحد لإسقاط ما يعتبره التهديد الأكبر في مسيرته السياسية. الكرة الآن في ملعبه، والأنظار كلها تتجه نحو عين التينة.`,
+    contentEn: `Since the announcement of the signing of the "Framework Agreement" between Lebanon and Israel, it has been clear that the Lebanese political arena is headed for an earthquake of a different kind. For Speaker of Parliament Nabih Berri, this signing was not a passing political gesture, but a "conspiracy" hatched in closed rooms and a constitutional stab in the back.
+
+Today, the "godfather" of Lebanese politics stands at a critical crossroads. As he marshals his team to study strategies for opposition, observers ask: What is Berri's next move? How far will he go in his battle to dismantle this agreement, which he views as "more dangerous than the May 17 accord"?
+
+The Speaker holds several options on his table and may play them in parallel:
+
+### Option 1: Political Invalidation & Baabda Isolation
+Will Berri initiate a complete and final rupture with President Joseph Aoun? Feeling marginalized and bypassed during the signing details, Berri has effectively broken ties with Baabda. The immediate strategy is to lead a fierce opposition front—partnering with former MP Walid Jumblatt as a cornerstone—to paralyze the presidency and block its path, which Berri deems counter to state interests.
+
+### Option 2: The Constitutional Trap and Parliamentary Veto
+Will Berri use his favorite arena, the Parliament, to deliver a fatal blow to the agreement? Legally, Berri is studying ways to challenge the accord through institutional pathways. He contends that the President has overstepped the "Taif Agreement." The strongest option here is convening a parliamentary session to put the agreement to a vote, relying on a secure opposition majority to sink it constitutionally and politically.
+
+### Option 3: "Trojan Horse" Inside the Cabinet
+How will he deal with Prime Minister Nawaf Salam's government? Instead of bringing down the cabinet and entering the unknown, Berri might choose "passive containment." This means shielding the Grand Serail from the presidential conflict to maintain minimum stability, while directing ministers from the "Amal Movement" and "Hezbollah" to remain inside the government as guardians, ensuring no sudden decisions bypass them in the future.
+
+### Option 4: Leveraging Regional Balances
+Can Berri secure regional Arab and international support to offset local containment? Strategically, he might expand the front to active capital cities:
+* **Arab Dimension:** Securing a diplomatic umbrella from Egypt, Qatar, and Saudi Arabia to avoid internal strife and find a viable exit from the crisis.
+* **Iranian Dimension:** Coordinating a position that links the Lebanese negotiations to the US-Iran diplomatic track, ensuring Tehran does not finalize any broader agreement without securing full Israeli withdrawal from Lebanon.
+
+### Option 5: The "Street Protest" Card
+What if all constitutional and political avenues are blocked? Until this moment, Berri and Hezbollah agree on freezing street mobilizations to prevent sectarian escalation. However, if all solutions are exhausted, mobilizing the street remains Berri’s "last bullet," despite its heavy cost to civil peace.
+
+### Conclusion
+Nabih Berri does not seem intent on surrendering to the status quo. The coming days will reveal which of these cards he plays first—or whether, as is his custom, he will play them all in unison to dismantle what he perceives as the greatest threat to his political career. The ball is in his court, and all eyes are on Ain el-Tineh.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس التحرير والمدير العام',
+      titleEn: 'Editor-in-Chief & General Manager',
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    date: '2026-06-30',
+    readTimeAr: 'دقائق 5',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['نبيه_برّي', 'اتفاق_الإطار', 'جوزيف_عون', 'عين_التينة', 'السياسة_اللبنانية', 'Nabih_Berri', 'Framework_Agreement', 'Lebanese_Politics'],
+    views: 1420
+  },
+  {
     id: 'israel-lebanon-deal-behind-scenes',
     category: 'exclusives',
     categories: ['exclusives', 'editor-desk', 'lebanon'],
