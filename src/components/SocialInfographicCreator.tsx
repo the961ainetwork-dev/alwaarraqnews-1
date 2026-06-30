@@ -62,7 +62,7 @@ export default function SocialInfographicCreator({ language, articles }: SocialI
         setHeadline(story.titleEn || '');
         setSynopsis(story.summaryEn || '');
       }
-      setShortLink(`alwarraq.news/st/${story.id.substring(0, 8)}`);
+      setShortLink(`alwarraqnews.com/st/${story.id.substring(0, 8)}`);
     }
   }, [selectedStoryId, infoLanguage, articles]);
 
