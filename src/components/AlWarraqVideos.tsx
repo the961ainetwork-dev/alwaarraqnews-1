@@ -615,7 +615,7 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
                       {/* Television desk virtual portrait */}
                       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-zinc-700 overflow-hidden bg-zinc-800 relative shadow-inner group">
                         <img 
-                          src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=400" 
+                          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" 
                           alt="Anchor Profile"
                           className="w-full h-full object-cover opacity-100 transition-all duration-300"
                           referrerPolicy="no-referrer"
@@ -697,7 +697,7 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
                     <div className="flex items-center justify-center gap-4 mb-3">
                       <div className="w-12 h-12 rounded-full border-2 border-red-650 overflow-hidden bg-zinc-800">
                         <img 
-                          src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=200" 
+                          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200" 
                           alt="Anchor Thumbnail"
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
