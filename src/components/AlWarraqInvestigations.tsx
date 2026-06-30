@@ -102,6 +102,14 @@ const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier V: "My Mother is an Addict" - Hebrew Critique of JD Vance',
     descAr: 'شرح شامل لهجوم القناة 12 العبرية العنيف وتفاصيل النشأة المعقدة للرئيس المقبل والتحفظات الاستخباراتية الإسرائيلية.',
     descEn: 'A full overview of the Hebrew Channel 12 attack, detailing the complex upbringing of the Vice President.'
+  },
+  'israel-lebanon-deal-behind-scenes': {
+    fileId: 'AW-FILE-06',
+    badge: 'SECRET INTEL',
+    titleAr: 'كواليس المفاوضات: كيف أدى الخوف المشترك من نفوذ إيران إلى اتفاق لبناني-إسرائيلي',
+    titleEn: 'Dossier VI: Behind the Scenes - How Shared Fear of Iran Led to an Israel-Lebanon Deal',
+    descAr: 'مستند استخباري خاص يكشف تفاصيل الدبلوماسية السرية والضغوط المكثفة من إدارة ترامب لإبرام اتفاقية لبنان والالتفاف على النفوذ الإيراني.',
+    descEn: 'Four days of nonstop negotiations in Washington between the Israeli and Lebanese governments were propelled by one clear shared interest: weakening the influence of Hezbollah and Iran in Lebanon.'
   }
 };
 
@@ -142,7 +150,8 @@ export default function AlWarraqInvestigations({
       article.id === 'solidere-extension-2069' ||
       article.id === 'lebanon-ceasefire-mirage-2026' ||
       article.id === 'lebanon-economic-abyss-2026' ||
-      article.id === 'ch12-hebrew-jd-vance-criticism-2026'
+      article.id === 'ch12-hebrew-jd-vance-criticism-2026' ||
+      article.id === 'israel-lebanon-deal-behind-scenes'
     );
   });
 
