@@ -13,6 +13,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'translations', labelAr: 'ترجمات', labelEn: 'Translations' },
   { id: 'lebanon', labelAr: 'أخبار لبنان', labelEn: 'Lebanon News' },
   { id: 'instats', labelAr: 'إحصاءات الورّاق', labelEn: 'In Stats' },
+  { id: 'videos', labelAr: 'فيديو الورّاق', labelEn: 'Al-Warraq Videos' },
   { id: 'middle-east', labelAr: 'شؤون الشرق الأوسط', labelEn: 'Middle East Core' },
   { id: 'markets', labelAr: 'أسواق المال', labelEn: 'Sovereign Markets' },
   { id: 'arab-markets', labelAr: 'الأسواق العربية', labelEn: 'Arab Markets Indicators' },

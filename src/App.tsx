@@ -21,6 +21,7 @@ import LebanonAMLVisualizer from './components/LebanonAMLVisualizer';
 import { SolidereInfographic } from './components/SolidereInfographic';
 import { NarrativeLebanonCrisisInfographics } from './components/NarrativeLebanonCrisisInfographics';
 import AlWarraqInvestigations from './components/AlWarraqInvestigations';
+import AlWarraqVideos from './components/AlWarraqVideos';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
@@ -1105,6 +1106,12 @@ export default function App() {
                   setSelectedArticle(article);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
+              />
+            ) : activeCategory === 'videos' ? (
+              <AlWarraqVideos
+                language={language}
+                allArticles={allArticles}
+                currentUser={currentUser}
               />
             ) : activeCategory === 'war-room' ? (
               <WarRoom
