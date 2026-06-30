@@ -12,7 +12,7 @@ interface InStatsProps {
 export default function InStats({ language, layoutMode, onSelectArticle }: InStatsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
-  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks'>('bdl-budget');
+  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost'>('bdl-budget');
   const [activeInsight, setActiveInsight] = useState<number | null>(1);
   const [isArticleExpanded, setIsArticleExpanded] = useState<boolean>(false);
 
@@ -136,11 +136,19 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
           </button>
           <button
             onClick={() => setActiveTab('investment-banks')}
-            className={`px-3 py-1 cursor-pointer transition-colors ${
+            className={`px-3 py-1 cursor-pointer transition-colors border-r border-black ${
               activeTab === 'investment-banks' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
             }`}
           >
             {isAr ? 'بنوك الاستثمار' : 'Investment Banks'}
+          </button>
+          <button
+            onClick={() => setActiveTab('us-iran-war-cost')}
+            className={`px-3 py-1 cursor-pointer transition-colors ${
+              activeTab === 'us-iran-war-cost' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
+            }`}
+          >
+            {isAr ? 'تكلفة حرب إيران' : 'Iran War Cost'}
           </button>
         </div>
       </div>
@@ -1205,6 +1213,166 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
             >
               <BookMarked size={16} />
               <span>{isAr ? 'اقرأ التقرير الكامل والتحليل' : 'Read Full Investigation'}</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Tab Panel 7: US-IRAN WAR COST */}
+      {activeTab === 'us-iran-war-cost' && (
+        <div className="space-y-8 animate-fade-in text-right rtl:text-right ltr:text-left select-text">
+          {/* Top Panel Grid: Metrics & Infographic */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Column: Key War Cost Metrics */}
+            <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
+              <div className="border border-black p-4 bg-red-50/50 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'متوسط تكلفة الحرب لكل أسرة أمريكية' : 'AVERAGE HOUSEHOLD WAR TOLL (2026)'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-red-700">~$1,000</span>
+                  <span className="text-xs text-red-650 font-bold flex items-center gap-0.5">
+                    <TrendingUp size={14} /> Cost/Family
+                  </span>
+                </div>
+                <p className="text-[12.5px] text-zinc-655 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'تكبدت كل عائلة أمريكية متوسطة حوالي 1000 دولار نتيجة الارتفاع الحاد في أسعار المحروقات والأغذية والضغوط التضخمية وتجميد قرارات خفض الفائدة.'
+                    : 'The typical American household has paid an estimated $1,000 due to fuel spikes, food transportation costs, jet fuel premiums, and stalled interest rate cuts.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-4 bg-zinc-50 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'الفاتورة اليومية للعمليات العسكرية' : 'DAILY U.S. MILITARY RUNNING OVERHEAD'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-zinc-800">$50M</span>
+                  <span className="text-xs text-zinc-655 font-bold flex items-center gap-0.5">
+                    Per Day Extra
+                  </span>
+                </div>
+                <p className="text-[12.5px] text-zinc-655 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'تنفق الولايات المتحدة حوالي 50 مليون دولار إضافية يومياً لإدارة العمليات العسكرية البحرية والجوية وتأمين الممرات الملاحية في ظل اتساع الحرب الإقليمية.'
+                    : 'The United States is spending an additional $50 million per day to conduct, fuel, and maintain military operations associated with the active conflict.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-3 text-[10px] font-mono font-bold flex justify-between bg-black text-white items-center">
+                <span>{isAr ? 'الإنفاق الإجمالي لوزارة الدفاع:' : 'Pentagon Total Conflict Cost:'}</span>
+                <span>$50.0B {isAr ? '(تشمل ٢٥ مليار لعملية الغضب الملحمي)' : '(Inc. $25B Operation Epic Fury)'}</span>
+              </div>
+            </div>
+
+            {/* Center Column: Cost Category Breakdown Bar Chart */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200 font-sans">
+                  {isAr ? 'توزيع فاتورة الحرب البالغة ١٠٠٠$ لكل عائلة' : 'Household Cost Category Distribution ($1,000 Total)'}
+                </span>
+
+                <div className="space-y-3.5 mt-4 font-mono">
+                  {[
+                    { nameAr: 'وقود السيارات والغاز المرتفع', nameEn: 'Gasoline & Fuel Surcharge', val: 300, pct: 'w-[100%]', color: 'bg-red-700' },
+                    { nameAr: 'أعباء تمويل العمليات العسكرية (دافعي الضرائب)', nameEn: 'Military Ops Taxpayer Cost', val: 250, pct: 'w-[83.3%]', color: 'bg-zinc-800' },
+                    { nameAr: 'ارتفاع أسعار الأغذية والبقالة والسلع', nameEn: 'Food & Groceries Inflation', val: 200, pct: 'w-[66.7%]', color: 'bg-amber-500' },
+                    { nameAr: 'فروقات الفوائد العالية (تأجيل خفض الفائدة)', nameEn: 'Stalled Federal Rate Cuts', val: 150, pct: 'w-[50%]', color: 'bg-zinc-500' },
+                    { nameAr: 'ارتفاع تذاكر الطيران (وقود النفاثات)', nameEn: 'Higher Airfare (Jet Fuel)', val: 100, pct: 'w-[33.3%]', color: 'bg-zinc-400' }
+                  ].map((s, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                        <span className="font-sans text-zinc-700 truncate max-w-[190px]">{isAr ? s.nameAr : s.nameEn}</span>
+                        <span>${s.val}</span>
+                      </div>
+                      <div className="w-full h-2.5 bg-zinc-100 border border-zinc-200">
+                        <div className={`h-full ${s.color} ${s.pct}`}></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-[10px] text-zinc-500 text-center font-mono font-medium pt-3 border-t border-zinc-100 mt-4 leading-relaxed">
+                <span>{isAr ? 'المصدر والتقديرات: موديز أناليتكس • كبير الاقتصاديين مارك زاندي' : 'Source & estimates: Moody\'s Analytics • Chief Economist Mark Zandi'}</span>
+                <br />
+                <a 
+                  href="https://www.cbsnews.com/news/iran-war-cost-american-households/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-red-700 hover:underline font-black text-[9.5px] mt-1 inline-block"
+                >
+                  https://www.cbsnews.com/news/iran-war-cost-american-households/
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Destructive Macro Indicators & Other Estimates */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 font-sans">
+              <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200">
+                {isAr ? 'مؤشرات اقتصادية ودراسات موازية' : 'Comparative Institutional Studies'}
+              </span>
+
+              <div className="space-y-4 mt-4 text-[12px] font-sans">
+                <div className="border-b border-zinc-100 pb-2.5">
+                  <h5 className="font-bold text-zinc-900 mb-0.5">{isAr ? 'دراسة جامعة براون (Brown University):' : 'Brown University Study:'}</h5>
+                  <p className="text-zinc-655 text-[11px] leading-snug">
+                    {isAr 
+                      ? 'قدر الباحثون إجمالي ما أنفقه المستهلكون الأمريكيون بـ 64 مليار دولار إضافية (أو 486.41 دولار لكل أسرة) على البنزين والديزل وحدهما منذ اندلاع القتال.'
+                      : 'Researchers estimate US consumers spent an additional $64 Billion in total ($486.41 per household) on gasoline and diesel alone since start of hostilities.'}
+                  </p>
+                </div>
+
+                <div className="border-b border-zinc-100 pb-2.5">
+                  <h5 className="font-bold text-zinc-900 mb-0.5">{isAr ? 'معهد الضرائب والسياسة الاقتصادية (ITEP):' : 'ITEP Non-Partisan Think Tank:'}</h5>
+                  <p className="text-zinc-655 text-[11px] leading-snug">
+                    {isAr 
+                      ? 'يقدر المركز المستقل كلفة الوقود الإضافية لكل عائلة بحوالي 427.50 دولار نتيجة لقفزات أسعار الديزل والتكرير البحرية.'
+                      : 'The think tank estimates the added average fuel expenditure alone at $427.50 per household due to shipping disruptions and refining premiums.'}
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="font-bold text-zinc-900 mb-0.5">{isAr ? 'استطلاع رأي غالوب (Gallup June 2026):' : 'Gallup June 2026 Public Opinion:'}</h5>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="text-2xl font-black font-mono text-red-600">66.7%</span>
+                    <p className="text-zinc-655 text-[11px] leading-tight font-sans">
+                      {isAr 
+                        ? 'أفاد ثلثا الشعب الأمريكي (2 من كل 3) بتعرضهم لصعوبات مالية بالغة ومباشرة جراء ارتفاع أسعار الوقود ونقل السلع.'
+                        : 'Two-thirds of American respondents report directly experiencing tangible financial hardship due to soaring domestic fuel costs.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Callout & Click-Through Report Trigger */}
+          <div className="max-w-5xl mx-auto border-2 border-black p-5 bg-red-50/20 flex flex-col md:flex-row justify-between items-center gap-6 rounded-lg mt-6">
+            <div className="space-y-1.5 flex-1">
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-100 border border-red-200 px-2.5 py-0.5 rounded-full">
+                {isAr ? 'التقرير الاستقصائي الكامل والمترجم' : 'FULL TRANSLATED SPECIAL DOSSIER'}
+              </span>
+              <h4 className="font-sans font-black text-base text-zinc-900 leading-snug">
+                {isAr ? 'تقديرات اقتصاديين: حرب إيران كلفت الأسر الأمريكية 1000 دولار لكل عائلة' : 'Iran war has cost Americans $1,000 per household, economist estimates'}
+              </h4>
+              <p className="text-xs text-zinc-655 font-sans leading-relaxed">
+                {isAr 
+                  ? 'دراسة تفصيلية مترجمة من صحيفة سي بي إس نيوز تغطي تداعيات عملية "الغضب الملحمي" وقرارات الفيدرالي الأمريكي وتأثيرات الصراع الإقليمي الممتد على المستهلك الغربي.'
+                  : 'A detailed investigative dossier translated from CBS News covering the aftermath of Operation Epic Fury, Federal Reserve decisions, and the far-reaching impact on US taxpayers.'}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                if (onSelectArticle) {
+                  const art = INITIAL_ARTICLES.find(a => a.id === 'cbs-iran-war-cost-americans-2026');
+                  if (art) onSelectArticle(art);
+                }
+              }}
+              className="w-full md:w-auto px-5 py-3 bg-black text-white hover:bg-zinc-800 transition-colors font-sans font-black text-xs uppercase tracking-wider border-2 border-black hover:shadow-[4px_4px_0_0_rgba(185,28,28,1)] flex items-center justify-center gap-2 rounded cursor-pointer"
+            >
+              <BookMarked size={16} />
+              <span>{isAr ? 'مطالعة التقرير والمصدر' : 'Read Full Investigation'}</span>
             </button>
           </div>
         </div>
