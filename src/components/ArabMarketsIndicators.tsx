@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity } from 'lucide-react';
+import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity, Coins, Cpu } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, CartesianGrid } from 'recharts';
 
 interface ArabMarketsIndicatorsProps {
@@ -408,6 +408,183 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
             <span>{isAr ? 'بث فوري عبر الأقمار: رويترز / بلومبرغ' : 'Live Feeds via Satellite: Reuters / Bloomberg'}</span>
             <span>2026-06-18</span>
           </div>
+        </div>
+      </div>
+
+      {/* MARKET TRIAD: STRATEGIC EDITORIAL ANGLES INFOGRAPHIC */}
+      <div className="mt-8 border-4 border-black p-4 md:p-6 bg-zinc-50 relative shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        {/* Top Accent Ribbon */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#b91c1c]"></div>
+        
+        {/* Section Title */}
+        <div className="border-b border-black pb-4 mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-3">
+          <div>
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <span className="w-2.5 h-2.5 bg-[#b91c1c] inline-block animate-pulse"></span>
+              <span className="font-mono text-[9px] font-black tracking-widest text-red-700 uppercase">
+                {isAr ? 'زاوية التحليل الجيواقتصادي والمقالات الافتتاحية' : 'GEO-ECONOMIC INTELLIGENCE & EDITORIAL RADAR'}
+              </span>
+            </div>
+            <h4 className="font-sans font-black text-lg md:text-xl text-zinc-950 leading-tight">
+              {isAr ? 'ثلاثية زوايا السوق: الافتتاحيات الاستراتيجية والموقف الهيكلي' : 'The Market Triad: Strategic Editorials & Structural Angles'}
+            </h4>
+            <p className="text-[11px] text-zinc-500 font-serif leading-relaxed mt-1 max-w-2xl">
+              {isAr 
+                ? 'تحليل تفاعلي متزامن لثلاث جبهات رئيسية تحرك عصب المال العالمي: أسواق السلع وتحدي مضيق هرمز، طفرة الرقائق الآسيوية مقابل وهن العملات، ومستويات مناعة وول ستريت.' 
+                : 'A cross-linked visual analysis of three core vectors defining global capital markets: gold and maritime corridors, Asia’s chip frenzy versus fiat fragility, and central banking Sintra limits.'}
+            </p>
+          </div>
+          
+          <span className="text-[9px] font-mono font-bold bg-black text-white px-2 py-0.5 rounded uppercase">
+            {isAr ? '٣ جبهات تحليلية' : '3 Strategic Vertices'}
+          </span>
+        </div>
+
+        {/* 3-Column Interactive Bento Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          {/* Column 1: Gold & Strait of Hormuz Paradox */}
+          <div className="border-2 border-black bg-white p-4 flex flex-col justify-between relative overflow-hidden group hover:shadow-[3px_3px_0px_0px_rgba(185,28,28,1)] transition-all">
+            <div>
+              <div className="flex justify-between items-start gap-2 mb-3">
+                <div className="bg-amber-50 text-amber-700 border border-amber-200 p-2">
+                  <Coins size={18} />
+                </div>
+                <div className="text-right rtl:text-right ltr:text-left">
+                  <span className="font-mono text-[8.5px] font-bold text-red-700 uppercase tracking-wider block">
+                    {isAr ? 'الملاذات الآمنة مقابل الفائدة' : 'SAFE-HAVENS VS MONETARY CURVE'}
+                  </span>
+                  <span className="inline-block bg-amber-150 text-amber-900 font-mono text-[9.5px] font-black border border-amber-300 px-1.5 py-0.2 mt-0.5" dir="ltr">
+                    GOLD &lt; $4,000 / -25%
+                  </span>
+                </div>
+              </div>
+
+              <h5 className="font-sans font-black text-xs md:text-sm text-zinc-900 leading-snug mb-2">
+                {isAr ? 'الذهب ومفارقة هرمز.. تسعير الفائدة يغلب دوي المدافع' : 'Gold & The Hormuz Paradox: Interest Rates Drown Out War Drums'}
+              </h5>
+
+              <p className="text-[11.5px] text-zinc-650 leading-relaxed font-serif mb-4 line-clamp-6">
+                {isAr 
+                  ? 'بين مطرقة الفيدرالي وسندان التوترات الجيوسياسية، يفقد المعدن الأصفر بريقه كأصل آمن، لتكشف الأسواق عن أولوياتها الحقيقية في النظام العالمي الراهن. لم يكن كسر الذهب لحاجز 4000 دولار هبوطاً مجرد تراجع فني، بل هو انعكاس عميق لتحول في سيكولوجية المستثمرين؛ فرأس المال يفضل العائد المرتفع على التحوط العقيم أمام أسعار الفائدة الأميركية المرتفعة لفترة أطول.' 
+                  : 'Caught between the Federal Reserve\'s hammer and the anvil of geopolitical tensions, the yellow metal loses its luster as a safe-haven asset. Gold breaking below $4,000 was not a technical retracement; it reflects a shift in investor psychology where high interest rate yields dominate over non-yielding safe-haven hedging, even as U.S. and Iran trade mixed signals over the Strait of Hormuz.'}
+              </p>
+            </div>
+
+            {/* Column 1 Mini Chart Tool */}
+            <div className="border-t border-dashed border-zinc-200 pt-3.5 mt-2">
+              <div className="flex justify-between items-center text-[10px] font-mono font-bold text-zinc-500 mb-1">
+                <span>{isAr ? 'قوة الدولار وعائدات الفائدة الأميركية' : 'US Dollar & High Interest Yield Pressure'}</span>
+                <span className="text-emerald-700">85%</span>
+              </div>
+              <div className="w-full h-1.5 bg-zinc-100 border border-zinc-200">
+                <div className="h-full bg-[#b91c1c] w-[85%]"></div>
+              </div>
+              <p className="text-[8.5px] text-zinc-400 font-mono mt-1 leading-tight">
+                {isAr ? 'تفوق الفرصة البديلة لـ "العائد المرتفع" يجهض موجة صعود المعادن الثمينة.' : 'High opportunity cost of cash suppresses precious metals momentum.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Column 2: Asia Between AI Frenzy & Currency Fragility */}
+          <div className="border-2 border-black bg-white p-4 flex flex-col justify-between relative overflow-hidden group hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all">
+            <div>
+              <div className="flex justify-between items-start gap-2 mb-3">
+                <div className="bg-blue-50 text-blue-700 border border-blue-200 p-2">
+                  <Cpu size={18} />
+                </div>
+                <div className="text-right rtl:text-right ltr:text-left">
+                  <span className="font-mono text-[8.5px] font-bold text-blue-700 uppercase tracking-wider block">
+                    {isAr ? 'طفرة الرقائق والعملة الوطنية' : 'CHIP BOOM VS FIAT DEVALUATION'}
+                  </span>
+                  <span className="inline-block bg-blue-150 text-blue-900 font-mono text-[9.5px] font-black border border-blue-300 px-1.5 py-0.2 mt-0.5" dir="ltr">
+                    YEN @ 1986 LOW / $1.3T
+                  </span>
+                </div>
+              </div>
+
+              <h5 className="font-sans font-black text-xs md:text-sm text-zinc-900 leading-snug mb-2">
+                {isAr ? 'آسيا بين نشوة "الذكاء الاصطناعي" وهشاشة العملات الحقيقية' : 'Asia Between "AI" Ecstasy & Real Currency Fragility'}
+              </h5>
+
+              <p className="text-[11.5px] text-zinc-650 leading-relaxed font-serif mb-4 line-clamp-6">
+                {isAr 
+                  ? 'أسواق المال الآسيوية تعيش انفصاماً تاريخياً؛ فبينما تقود أسهم الرقائق مؤشرات الأسهم إلى مستويات قياسية مدفوعة بطلب البنية التحتية وحاجة الذكاء الاصطناعي، تدفع الاقتصادات الحقيقية ثمن انهيار العملات المحلية والتضخم المستورد مثل انهيار الين الياباني إلى أدنى مستوياته منذ 1986. الأسواق تعاقب الاقتصادات التي تتباطأ في مجاراة الفائدة المتشددة.' 
+                  : 'Asian financial markets are experiencing a historic disconnect. While chip makers drive stock benchmarks to record heights—fueled by global AI infrastructure spending—real economies are bearing the heavy tax of local currency depreciation, illustrated by the Japanese Yen collapsing to its lowest levels since 1986 as central banks delay hawkish pivots.'}
+              </p>
+            </div>
+
+            {/* Column 2 Mini Chart Tool */}
+            <div className="border-t border-dashed border-zinc-200 pt-3.5 mt-2">
+              <div className="flex justify-between items-center text-[10px] font-mono font-bold text-zinc-500 mb-1">
+                <span>{isAr ? 'الفجوة بين القيمة السوقية والتضخم الحقيقي' : 'Semiconductor Market Cap vs. Real Inflation'}</span>
+                <span className="text-blue-700">92%</span>
+              </div>
+              <div className="w-full h-1.5 bg-zinc-100 border border-zinc-200">
+                <div className="h-full bg-blue-700 w-[92%]"></div>
+              </div>
+              <p className="text-[8.5px] text-zinc-400 font-mono mt-1 leading-tight">
+                {isAr ? 'أكبر مكاسب ربع سنوية للأسهم التقنية الآسيوية منذ ١٧ عاماً.' : 'Largest quarterly gains in tech-index benchmarks in over 17 years.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Column 3: Global Markets & US Exceptionalism */}
+          <div className="border-2 border-black bg-white p-4 flex flex-col justify-between relative overflow-hidden group hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all">
+            <div>
+              <div className="flex justify-between items-start gap-2 mb-3">
+                <div className="bg-zinc-900 text-white p-2">
+                  <Globe size={18} />
+                </div>
+                <div className="text-right rtl:text-right ltr:text-left">
+                  <span className="font-mono text-[8.5px] font-bold text-zinc-500 uppercase tracking-wider block">
+                    {isAr ? 'الاستثناء الأميركي ومجلس الاستقرار' : 'U.S. EXCEPTIONALISM & BIS WARNS'}
+                  </span>
+                  <span className="inline-block bg-zinc-200 text-zinc-900 font-mono text-[9.5px] font-black border border-zinc-300 px-1.5 py-0.2 mt-0.5" dir="ltr">
+                    BIS WARNING / SINTRA DIALOGUE
+                  </span>
+                </div>
+              </div>
+
+              <h5 className="font-sans font-black text-xs md:text-sm text-zinc-900 leading-snug mb-2">
+                {isAr ? 'الأسواق العالمية تسير على حبل مشدود بين الجيوسياسة والاستثناء' : 'Global Markets Walk a Tightrope: Geopolitics vs US Exceptionalism'}
+              </h5>
+
+              <p className="text-[11.5px] text-zinc-650 leading-relaxed font-serif mb-4 line-clamp-6">
+                {isAr 
+                  ? 'تبدو الأسواق المالية العالمية وكأنها تمتلك مناعة استثنائية ضد الصدمات والمنوشات؛ فهي تواصل شراء الانخفاضات مراهنة على متانة الاقتصاد الأميركي ووعود التكنولوجيا. لكن الخطر الحقيقي لا يكمن في المضائق البحرية وحدها، بل في قاعات البنوك المركزية وفي أروقة مدينة سينترا البرتغالية، حيث تبرز تحذيرات بنك التسويات الدولية من فقاعة الائتمان والفائدة المرتفعة.' 
+                  : 'Global markets appear to have developed an almost supernatural immunity, continuing to buy the dips despite regional conflict flare-ups. However, the true risk brews inside central banking halls and Sintra corridors. The Bank for International Settlements (BIS) warns that excessive reliance on the "US Exceptionalism" narrative is a double-edged sword that masks tight credit stress.'}
+              </p>
+            </div>
+
+            {/* Column 3 Mini Chart Tool */}
+            <div className="border-t border-dashed border-zinc-200 pt-3.5 mt-2">
+              <div className="flex justify-between items-center text-[10px] font-mono font-bold text-zinc-500 mb-1">
+                <span>{isAr ? 'احتمالية تصحيح الأسواق العنيف' : 'Asset Bubble Correction Exposure'}</span>
+                <span className="text-red-600">76%</span>
+              </div>
+              <div className="w-full h-1.5 bg-zinc-100 border border-zinc-200">
+                <div className="h-full bg-zinc-800 w-[76%]"></div>
+              </div>
+              <p className="text-[8.5px] text-zinc-400 font-mono mt-1 leading-tight">
+                {isAr ? 'تأجيل الفيدرالي لقرارات خفض الفائدة يخنق الائتمان ويزيد خدمة الدين.' : 'Federal Reserve delays on rate cuts persist, clamping commercial credit lines.'}
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Footer Notes */}
+        <div className="mt-5 pt-3.5 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-start sm:items-center text-[9px] font-mono text-zinc-500 gap-2">
+          <span className="flex items-center gap-1">
+            <ShieldAlert size={11} className="text-[#b91c1c]" />
+            {isAr 
+              ? 'تخضع قراءات هذه اللوحة للتدقيق المستمر من قبل خبراء ملحق الورّاق للأسواق والتحوط المركزي.' 
+              : 'All panel readings are periodically balanced against Al-Warraq Markets Desk geopolitical risk models.'}
+          </span>
+          <span className="font-bold">
+            {isAr ? 'لجنة البحوث الاقتصادية الكلية • سينترا ٢٠٢٦' : 'Macro Research Division • Sintra / Basel 2026'}
+          </span>
         </div>
       </div>
     </div>
