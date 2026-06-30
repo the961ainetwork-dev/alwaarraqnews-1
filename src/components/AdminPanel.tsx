@@ -4,12 +4,13 @@ import {
   Lock, KeyRound, Check, Plus, Trash2, Edit3, Save, RotateCcw, 
   Send, Layers, Newspaper, Users, Mail, UserCheck, AlertCircle, FileEdit, Network,
   Palette, LayoutGrid, ShieldCheck, SlidersHorizontal, RefreshCw, UploadCloud, FileUp, Tag, Sparkles,
-  Instagram
+  Instagram, BarChart3
 } from 'lucide-react';
 import { SEO_SILOS } from '../seoData';
 import ArticleCurator from './ArticleCurator';
 import DeploymentManager from './DeploymentManager';
 import SocialInfographicCreator from './SocialInfographicCreator';
+import AnalyticsDashboard from './AnalyticsDashboard';
 
 interface AdminPanelProps {
   language: 'ar' | 'en';
@@ -46,7 +47,7 @@ export default function AdminPanel({
   const [passError, setPassError] = useState('');
 
   // Primary active tab inside authorized Admin Panel
-  type SubTabType = 'stories-list' | 'add-story' | 'manage-sections' | 'newsletter' | 'design-preset' | 'widgets-components' | 'data-validator' | 'article-curator' | 'slider-editor' | 'subscribers-mgmt' | 'live-deploy' | 'social-infographics';
+  type SubTabType = 'stories-list' | 'add-story' | 'manage-sections' | 'newsletter' | 'design-preset' | 'widgets-components' | 'data-validator' | 'article-curator' | 'slider-editor' | 'subscribers-mgmt' | 'live-deploy' | 'social-infographics' | 'analytics-stats';
   const [activeSubTab, setActiveSubTab] = useState<SubTabType>('stories-list');
 
   // Live production deployment states
@@ -1115,6 +1116,19 @@ export default function AdminPanel({
           </button>
 
           <button
+            onClick={() => setActiveSubTab('analytics-stats')}
+            className={`w-full text-left rtl:text-right px-4 py-2.5 text-xs font-black uppercase flex items-center gap-2.5 border-2 ${
+              activeSubTab === 'analytics-stats' 
+                ? 'bg-black text-white border-black' 
+                : 'bg-neutral-50 hover:bg-neutral-100 text-[#b91c1c] border-transparent'
+            }`}
+          >
+            <BarChart3 size={14} className="text-[#b91c1c]" />
+            <span className="font-extrabold">{isAr ? 'مرصد القراءات والمقروئية' : 'Readability & Traffic'}</span>
+            <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-red-100 px-1 text-[#b91c1c] font-black">STATS</span>
+          </button>
+
+          <button
             onClick={() => setActiveSubTab('live-deploy')}
             className={`w-full text-left rtl:text-right px-4 py-2.5 text-xs font-black uppercase flex items-center gap-2.5 border-2 ${
               activeSubTab === 'live-deploy' 
@@ -1130,6 +1144,15 @@ export default function AdminPanel({
 
         {/* Right Column: Actual functional workspaces (9/12 width) */}
         <div className="lg:col-span-9 space-y-6">
+
+          {/* TAB: ANALYTICS & READABILITY STATISTICS DASHBOARD */}
+          {activeSubTab === 'analytics-stats' && (
+            <AnalyticsDashboard
+              language={language}
+              articles={articles}
+              categories={categories}
+            />
+          )}
 
           {/* TAB: ARTICLE CURATOR PANEL */}
           {activeSubTab === 'article-curator' && (
