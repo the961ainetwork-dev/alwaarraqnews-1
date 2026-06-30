@@ -155,7 +155,7 @@ At the end of the call, Trump told Aoun he looked forward to meeting him soon at
       titleEn: 'Editor-in-Chief, Al-Warraq News',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=120'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&q=80&w=1200',
     date: '29 يونيو 2026',
     readTimeAr: '8 دقائق',
     readTimeEn: '8 min read',
@@ -4355,7 +4355,7 @@ The world wants an unhindered, fee-free Strait of Hormuz. Free maritime flow ser
       titleEn: 'Senior Fellow, Atlantic Council & Former NSC Iran Director',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1200',
     date: '18 يونيو 2026',
     readTimeAr: '11 دقيقة',
     readTimeEn: '11 min read',

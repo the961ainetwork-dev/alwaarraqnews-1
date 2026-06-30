@@ -10,7 +10,7 @@ import { SEO_SILOS } from '../seoData';
 import ArticleCurator from './ArticleCurator';
 import DeploymentManager from './DeploymentManager';
 import SocialInfographicCreator from './SocialInfographicCreator';
-import AnalyticsDashboard from './AnalyticsDashboard';
+import AdminDashboardStats from './AdminDashboardStats';
 
 interface AdminPanelProps {
   language: 'ar' | 'en';
@@ -1147,7 +1147,7 @@ export default function AdminPanel({
 
           {/* TAB: ANALYTICS & READABILITY STATISTICS DASHBOARD */}
           {activeSubTab === 'analytics-stats' && (
-            <AnalyticsDashboard
+            <AdminDashboardStats
               language={language}
               articles={articles}
               categories={categories}
