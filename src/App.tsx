@@ -28,7 +28,7 @@ import WarRoom from './components/WarRoom';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check } from 'lucide-react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
   if (!dateStr) return 0;
@@ -226,6 +226,29 @@ export default function App() {
 
   // Load saved article IDs based on current authenticated user
   const [savedArticleIds, setSavedArticleIds] = useState<string[]>([]);
+
+  // Persistent Read Status for AlWarraq Dossiers
+  const [readDossiers, setReadDossiers] = useState<Record<string, boolean>>(() => {
+    const raw = localStorage.getItem('alwarraq_read_dossiers');
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+          return parsed;
+        }
+      } catch (e) {}
+    }
+    return {};
+  });
+
+  const toggleReadDossier = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setReadDossiers(prev => {
+      const updated = { ...prev, [id]: !prev[id] };
+      localStorage.setItem('alwarraq_read_dossiers', JSON.stringify(updated));
+      return updated;
+    });
+  };
 
   useEffect(() => {
     if (currentUser) {
@@ -1273,42 +1296,67 @@ export default function App() {
                           {isAr ? 'فهرس التحقيقات الاستقصائية المتاحة (٧ تحقيقات نشطة):' : 'CATALOGUE OF ALL AVAILABLE INVESTIGATIONS (7 ACTIVE DOSSIERS):'}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {Object.entries(DOSSIER_DESKTOP_META).map(([id, meta], index) => (
-                            <div
-                              key={id}
-                              onClick={() => {
-                                setSelectedDossierId(id);
-                                setActiveCategory('alwarraq-investigations');
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                              }}
-                              className="group border border-zinc-300 bg-white/70 hover:bg-amber-100/40 hover:border-black cursor-pointer p-4 flex flex-col justify-between space-y-3 relative shadow-[3px_3px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all text-right rtl:text-right ltr:text-left dossier-card-animate"
-                              style={{ animationDelay: `${index * 100}ms` }}
-                            >
-                              <div>
-                                {/* Badge & ID */}
-                                <div className="flex items-center justify-between gap-2 mb-2">
-                                  <span className="font-mono text-[9px] font-black text-amber-900 bg-amber-100 px-1.5 py-0.5 border border-amber-900/10">
-                                    {meta.fileId}
-                                  </span>
-                                  <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase tracking-wider">
-                                    {meta.badge}
-                                  </span>
+                          {Object.entries(DOSSIER_DESKTOP_META).map(([id, meta], index) => {
+                            const isRead = !!readDossiers[id];
+                            return (
+                              <div
+                                key={id}
+                                onClick={() => {
+                                  setSelectedDossierId(id);
+                                  setActiveCategory('alwarraq-investigations');
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className={`group border cursor-pointer p-4 flex flex-col justify-between space-y-3 relative shadow-[3px_3px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all text-right rtl:text-right ltr:text-left dossier-card-animate ${
+                                  isRead 
+                                    ? 'border-emerald-455 bg-emerald-50/10 hover:bg-emerald-50/20 shadow-[3px_3px_0px_0px_rgba(16,185,129,0.1)]' 
+                                    : 'border-zinc-300 bg-white/70 hover:bg-amber-100/40 hover:border-black'
+                                }`}
+                                style={{ animationDelay: `${index * 100}ms` }}
+                              >
+                                <div>
+                                  {/* Badge & ID */}
+                                  <div className="flex items-center justify-between gap-2 mb-2">
+                                    <div className="flex items-center gap-1.5">
+                                      <span className="font-mono text-[9px] font-black text-amber-900 bg-amber-100 px-1.5 py-0.5 border border-amber-900/10">
+                                        {meta.fileId}
+                                      </span>
+                                      {isRead && (
+                                        <span className="flex items-center gap-0.5 text-[9px] font-mono font-black text-emerald-700 bg-emerald-100/60 px-1.5 py-0.5 border border-emerald-300/40 animate-pulse rounded-xs">
+                                          <Check size={10} className="stroke-[3.5]" />
+                                          <span>{isAr ? 'تم الاطّلاع' : 'SEEN'}</span>
+                                        </span>
+                                      )}
+                                    </div>
+                                    <button
+                                      onClick={(e) => toggleReadDossier(id, e)}
+                                      className={`font-mono text-[9px] font-black px-1.5 py-0.5 border transition-all cursor-pointer ${
+                                        isRead
+                                          ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-700'
+                                          : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700 border-zinc-300 hover:border-zinc-400'
+                                      }`}
+                                      title={isRead ? (isAr ? 'تعليم كغير مقروء' : 'Mark as Unread') : (isAr ? 'تعليم كمقروء' : 'Mark as Read')}
+                                    >
+                                      {isRead ? (isAr ? '✓ مقروء' : '✓ SEEN') : (isAr ? 'تحديد كمقروء' : 'MARK READ')}
+                                    </button>
+                                  </div>
+                                  {/* Title */}
+                                  <h4 className={`font-sans font-black text-sm leading-snug group-hover:text-amber-900 transition-colors line-clamp-2 ${
+                                    isRead ? 'text-zinc-600 line-through opacity-85' : 'text-zinc-950'
+                                  }`}>
+                                    {isAr ? meta.titleAr : meta.titleEn}
+                                  </h4>
+                                  {/* Description */}
+                                  <p className="font-serif text-xxs md:text-xs text-zinc-650 leading-relaxed mt-2 line-clamp-3">
+                                    {isAr ? meta.descAr : meta.descEn}
+                                  </p>
                                 </div>
-                                {/* Title */}
-                                <h4 className="font-sans font-black text-sm text-zinc-950 leading-snug group-hover:text-amber-900 transition-colors line-clamp-2">
-                                  {isAr ? meta.titleAr : meta.titleEn}
-                                </h4>
-                                {/* Description */}
-                                <p className="font-serif text-xxs md:text-xs text-zinc-650 leading-relaxed mt-2 line-clamp-3">
-                                  {isAr ? meta.descAr : meta.descEn}
-                                </p>
+                                {/* Footer Action */}
+                                <div className="font-mono text-[10px] font-black text-zinc-900 flex items-center gap-1 pt-1 border-t border-zinc-100 group-hover:text-amber-900 transition-colors">
+                                  <span>{isAr ? 'افتح مستند التقرير والخرائط ➜' : 'OPEN DOSSIER & MAPS ➜'}</span>
+                                </div>
                               </div>
-                              {/* Footer Action */}
-                              <div className="font-mono text-[10px] font-black text-zinc-900 flex items-center gap-1 pt-1 border-t border-zinc-100 group-hover:text-amber-900 transition-colors">
-                                <span>{isAr ? 'افتح مستند التقرير والخرائط ➜' : 'OPEN DOSSIER & MAPS ➜'}</span>
-                              </div>
-                            </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       </div>
                     </div>

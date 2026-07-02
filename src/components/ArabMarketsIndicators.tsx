@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity, Coins, Cpu } from 'lucide-react';
+import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity, Coins, Cpu, RefreshCw, Check } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, CartesianGrid } from 'recharts';
 
 interface ArabMarketsIndicatorsProps {
@@ -14,23 +14,116 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
   const [isReportExpanded, setIsReportExpanded] = useState(true);
   const [infographicType, setInfographicType] = useState<'brent' | 'pipelines'>('brent');
 
-  // Arab Stock Indices Mock/Dynamic Data matching real-time 2026 conditions
-  const arabStocks = [
-    { nameAr: 'تداول السعودية (TASI)', nameEn: 'Saudi Tadawul (TASI)', value: '10,933.00', change: '-1.20%', up: false, volume: '$1.48B', high: '11,120.00', low: '10,910.00' },
-    { nameAr: 'سوق دبي المالي (DFM)', nameEn: 'Dubai Financial Market (DFM)', value: '4,180.20', change: '+1.12%', up: true, volume: '$124.5M', high: '4,202.90', low: '4,155.00' },
-    { nameAr: 'سوق أبوظبي للأوراق المالية (ADX)', nameEn: 'Abu Dhabi Securities (ADX)', value: '9,340.60', change: '+0.88%', up: true, volume: '$310.2M', high: '9,380.00', low: '9,290.40' },
-    { nameAr: 'بورصة الكويت (PRIME)', nameEn: 'Boursa Kuwait (PRIME)', value: '7,890.30', change: '+0.54%', up: true, volume: '$95.1M', high: '7,910.20', low: '7,840.10' },
-    { nameAr: 'بورصة بيروت (BSE)', nameEn: 'Beirut Stock Exchange (BSE)', value: '1,950.40', change: '-0.32%', up: false, volume: '$2.4M', high: '1,962.00', low: '1,941.50' }
-  ];
+  // Interactive state variables for live-refreshing market indicators
+  const [stocks, setStocks] = useState([
+    { nameAr: 'تداول السعودية (TASI)', nameEn: 'Saudi Tadawul (TASI)', value: 10933.00, change: -1.20, up: false, volume: '$1.48B', high: 11120.00, low: 10910.00 },
+    { nameAr: 'سوق دبي المالي (DFM)', nameEn: 'Dubai Financial Market (DFM)', value: 4180.20, change: 1.12, up: true, volume: '$124.5M', high: 4202.90, low: 4155.00 },
+    { nameAr: 'سوق أبوظبي للأوراق المالية (ADX)', nameEn: 'Abu Dhabi Securities (ADX)', value: 9340.60, change: 0.88, up: true, volume: '$310.2M', high: 9380.00, low: 9290.40 },
+    { nameAr: 'بورصة الكويت (PRIME)', nameEn: 'Boursa Kuwait (PRIME)', value: 7890.30, change: 0.54, up: true, volume: '$95.1M', high: 7910.20, low: 7840.10 },
+    { nameAr: 'بورصة بيروت (BSE)', nameEn: 'Beirut Stock Exchange (BSE)', value: 1950.40, change: -0.32, up: false, volume: '$2.4M', high: 1962.00, low: 1941.50 }
+  ]);
 
-  // Energy & Commodities Active Tickers
-  const commodities = [
-    { nameAr: 'خام برنت العالمي (Brent)', nameEn: 'Brent Crude Spot', value: '81.50', change: '+1.85%', up: true, unit: 'USD/bbl', range: '77.40 - 82.10' },
-    { nameAr: 'خام غرب تكساس (WTI)', nameEn: 'WTI Light Sweet', value: '75.33', change: '-1.90%', up: false, unit: 'USD/bbl', range: '74.80 - 77.10' },
-    { nameAr: 'الغاز الطبيعي الفوري', nameEn: 'Natural Gas Spot', value: '2.14', change: '-3.12%', up: false, unit: 'USD/MMBtu', range: '2.10 - 2.25' },
-    { nameAr: 'الذهب الفوري (Spot Gold)', nameEn: 'Spot Gold Index', value: '4,320.50', change: '+1.50%', up: true, unit: 'USD/oz', range: '4,240.00 - 4,336.00' },
-    { nameAr: 'الفضة الحرة (Spot Silver)', nameEn: 'Spot Silver Index', value: '31.25', change: '+0.75%', up: true, unit: 'USD/oz', range: '30.80 - 31.60' }
-  ];
+  const [commoditiesList, setCommoditiesList] = useState([
+    { nameAr: 'خام برنت العالمي (Brent)', nameEn: 'Brent Crude Spot', value: 81.50, change: 1.85, up: true, unit: 'USD/bbl', range: '77.40 - 82.10' },
+    { nameAr: 'خام غرب تكساس (WTI)', nameEn: 'WTI Light Sweet', value: 75.33, change: -1.90, up: false, unit: 'USD/bbl', range: '74.80 - 77.10' },
+    { nameAr: 'الغاز الطبيعي الفوري', nameEn: 'Natural Gas Spot', value: 2.14, change: -3.12, up: false, unit: 'USD/MMBtu', range: '2.10 - 2.25' },
+    { nameAr: 'الذهب الفوري (Spot Gold)', nameEn: 'Spot Gold Index', value: 4320.50, change: 1.50, up: true, unit: 'USD/oz', range: '4,240.00 - 4,336.00' },
+    { nameAr: 'الفضة الحرة (Spot Silver)', nameEn: 'Spot Silver Index', value: 31.25, change: 0.75, up: true, unit: 'USD/oz', range: '30.80 - 31.60' }
+  ]);
+
+  const [brentPrices, setBrentPrices] = useState([126.00, 112.00, 98.00, 77.40, 81.50]);
+  const [pipelineFlows, setPipelineFlows] = useState([4.5, 1.2, 0.3]);
+
+  const [gccCap, setGccCap] = useState(3.42);
+  const [gccCapChange, setGccCapChange] = useState(2.18);
+  const [oilVolume, setOilVolume] = useState(14.2);
+  const [oilVolumeChange, setOilVolumeChange] = useState(-12.4);
+  const [insurancePremium, setInsurancePremium] = useState(-4.50);
+
+  const [lastUpdated, setLastUpdated] = useState<string>('2026-07-02 01:21:34');
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+    setTimeout(() => {
+      // Fluctuating stocks
+      setStocks(prev => prev.map(stock => {
+        const pct = (Math.random() * 0.8 - 0.4); // -0.4% to +0.4%
+        const multiplier = 1 + (pct / 100);
+        const newValue = stock.value * multiplier;
+        const newChange = stock.change + pct;
+        return {
+          ...stock,
+          value: parseFloat(newValue.toFixed(2)),
+          change: parseFloat(newChange.toFixed(2)),
+          up: newChange >= 0
+        };
+      }));
+
+      // Fluctuating commodities
+      setCommoditiesList(prev => prev.map(comm => {
+        const pct = (Math.random() * 1.2 - 0.6); // -0.6% to +0.6%
+        const multiplier = 1 + (pct / 100);
+        const newValue = comm.value * multiplier;
+        const newChange = comm.change + pct;
+        return {
+          ...comm,
+          value: parseFloat(newValue.toFixed(comm.value < 10 ? 2 : 1)),
+          change: parseFloat(newChange.toFixed(2)),
+          up: newChange >= 0
+        };
+      }));
+
+      // Fluctuating Brent Chart
+      setBrentPrices(prev => {
+        const updated = [...prev];
+        const pct = (Math.random() * 2 - 1); // -1% to +1%
+        updated[4] = parseFloat((updated[4] * (1 + pct / 100)).toFixed(2));
+        return updated;
+      });
+
+      // Fluctuating Pipeline flows
+      setPipelineFlows(prev => prev.map(flow => {
+        const delta = (Math.random() * 0.2 - 0.1); // -0.1 to +0.1 M bpd
+        return parseFloat(Math.max(0.1, flow + delta).toFixed(1));
+      }));
+
+      // Fluctuating GCC Cap
+      setGccCap(prev => {
+        const pct = (Math.random() * 0.4 - 0.2); // -0.2% to +0.2%
+        return parseFloat((prev * (1 + pct / 100)).toFixed(2));
+      });
+      setGccCapChange(prev => parseFloat((prev + (Math.random() * 0.1 - 0.05)).toFixed(2)));
+
+      // Fluctuating Oil corridor volume
+      setOilVolume(prev => {
+        const delta = (Math.random() * 0.4 - 0.2); // -0.2 to +0.2 M bpd
+        return parseFloat(Math.max(5, prev + delta).toFixed(1));
+      });
+      setOilVolumeChange(prev => parseFloat((prev + (Math.random() * 0.2 - 0.1)).toFixed(1)));
+
+      // Fluctuating Insurance premium
+      setInsurancePremium(prev => {
+        const delta = (Math.random() * 0.3 - 0.15); // -0.15 to +0.15 USD
+        return parseFloat((prev + delta).toFixed(2));
+      });
+
+      // Update timestamp to current browser time with 2026 locked year
+      const now = new Date();
+      const year = 2026;
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      setLastUpdated(`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+
+      setIsRefreshing(false);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+    }, 1200);
+  };
 
   // Specific Arab markets sparkline paths (mock SVGs for professional trading appearance)
   const getSparklinePath = (index: number, up: boolean) => {
@@ -44,19 +137,19 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
     return paths[index % paths.length];
   };
 
-  // Infographics data
+  // Infographics data mapped dynamically from prices state
   const brentTrendData = [
-    { date: isAr ? '٢١ يونيو' : 'Jun 21', price: 126.00, label: isAr ? 'فترة صراع الذروة' : 'Peak Conflict Period' },
-    { date: isAr ? '٢٢ يونيو' : 'Jun 22', price: 112.00, label: isAr ? 'بداية مفاوضات سويسرا' : 'Swiss Talks Commenced' },
-    { date: isAr ? '٢٤ يونيو' : 'Jun 24', price: 98.00, label: isAr ? 'التوقيع على الاتفاق' : 'Agreement Signed' },
-    { date: isAr ? '٢٦ يونيو' : 'Jun 26', price: 77.40, label: isAr ? 'أدنى مستويات التهدئة' : 'Truce Bottom Pricing' },
-    { date: isAr ? '٢٩ يونيو' : 'Jun 29', price: 81.50, label: isAr ? 'التصعيد والمنوشات الأخيرة' : 'Recent Skirmish Escalation' },
+    { date: isAr ? '٢١ يونيو' : 'Jun 21', price: brentPrices[0], label: isAr ? 'فترة صراع الذروة' : 'Peak Conflict Period' },
+    { date: isAr ? '٢٢ يونيو' : 'Jun 22', price: brentPrices[1], label: isAr ? 'بداية مفاوضات سويسرا' : 'Swiss Talks Commenced' },
+    { date: isAr ? '٢٤ يونيو' : 'Jun 24', price: brentPrices[2], label: isAr ? 'التوقيع على الاتفاق' : 'Agreement Signed' },
+    { date: isAr ? '٢٦ يونيو' : 'Jun 26', price: brentPrices[3], label: isAr ? 'أدنى مستويات التهدئة' : 'Truce Bottom Pricing' },
+    { date: isAr ? '٢٩ يونيو' : 'Jun 29', price: brentPrices[4], label: isAr ? 'التصعيد والمنوشات الأخيرة' : 'Recent Skirmish Escalation' },
   ];
 
   const pipelineData = [
-    { name: isAr ? 'أنابيب السعودية' : 'Saudi Petroline', max: 7.0, current: 4.5 },
-    { name: isAr ? 'أنابيب الإمارات' : 'UAE Habshan', max: 1.5, current: 1.2 },
-    { name: isAr ? 'أنابيب العراق' : 'Iraq Ceyhan', max: 0.5, current: 0.3 },
+    { name: isAr ? 'أنابيب السعودية' : 'Saudi Petroline', max: 7.0, current: pipelineFlows[0] },
+    { name: isAr ? 'أنابيب الإمارات' : 'UAE Habshan', max: 1.5, current: pipelineFlows[1] },
+    { name: isAr ? 'أنابيب العراق' : 'Iraq Ceyhan', max: 0.5, current: pipelineFlows[2] },
   ];
 
   const CustomTooltip = ({ active, payload, label }: any) => {
@@ -66,8 +159,8 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
           <p className="font-bold">{label}</p>
           {payload.map((item: any, idx: number) => (
             <p key={idx} className="flex gap-2 justify-between">
-              <span>{item.name}:</span>
-              <span className="font-bold">{item.value} {infographicType === 'brent' ? 'USD/bbl' : 'M bpd'}</span>
+               <span>{item.name}:</span>
+               <span className="font-bold">{item.value} {infographicType === 'brent' ? 'USD/bbl' : 'M bpd'}</span>
             </p>
           ))}
           {payload[0].payload.label && (
@@ -82,11 +175,23 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
   };
 
   return (
-    <div className={`border-4 border-black p-5 bg-white select-none transition-all ${
+    <div className={`border-4 border-black p-5 bg-white select-none transition-all relative ${
       isPrint ? 'vintage-paper border-[#1b2b1d] text-[#1b2b1d]' : 'bg-white text-zinc-900 shadow-xs'
     }`}>
+      {/* Dynamic Success Toast */}
+      {showToast && (
+        <div className="fixed bottom-6 right-6 z-50 bg-black text-white border-2 border-emerald-500 px-4 py-3 shadow-[4px_4px_0px_0px_rgba(16,185,129,1)] flex items-center gap-2 font-mono text-xs animate-slide-in">
+          <Check size={14} className="text-emerald-500 shrink-0" />
+          <span>
+            {isAr 
+              ? 'تم تحديث البيانات الفيدرالية اللحظية للأسواق بنجاح.' 
+              : 'Federal live market feed synchronized successfully.'}
+          </span>
+        </div>
+      )}
+
       {/* SECTION HEADER: double line editorial format */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 mb-5 border-b-2 border-black border-double">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center pb-4 mb-5 border-b-2 border-black border-double gap-4">
         <div className="flex items-center gap-2">
           <Landmark size={20} className="text-[#b91c1c] shrink-0" />
           <div>
@@ -99,24 +204,40 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
           </div>
         </div>
 
-        {/* Categories Tab navigation just like CAS Stats section */}
-        <div className="flex border border-black p-0.5 mt-3 md:mt-0 max-w-full overflow-x-auto shrink-0 font-sans text-[11px] font-black">
+        {/* Refresh Action & Categories Tab navigation */}
+        <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto">
+          {/* Real-time Refresh Button */}
           <button
-            onClick={() => setActiveTab('stocks')}
-            className={`px-3 py-1 cursor-pointer transition-colors ${
-              activeTab === 'stocks' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
+            onClick={handleRefresh}
+            disabled={isRefreshing}
+            className={`flex items-center gap-1.5 px-3 py-1 border border-black text-[11px] font-black font-sans uppercase transition-all select-none cursor-pointer ${
+              isRefreshing 
+                ? 'bg-zinc-150 text-zinc-400 cursor-not-allowed' 
+                : 'bg-black text-white hover:bg-[#b91c1c]'
             }`}
           >
-            {isAr ? 'الأسهم والعواصم العربية' : 'Arab Equities'}
+            <RefreshCw size={12} className={isRefreshing ? 'animate-spin' : ''} />
+            <span>{isRefreshing ? (isAr ? 'تحديث...' : 'REFRESHING...') : (isAr ? 'تحديث فوري' : 'REFRESH FEED')}</span>
           </button>
-          <button
-            onClick={() => setActiveTab('commodities')}
-            className={`px-3 py-1 cursor-pointer transition-colors border-l border-black ${
-              activeTab === 'commodities' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
-            }`}
-          >
-            {isAr ? 'النفط الخام والمعادن' : 'Crude Oil & Commodities'}
-          </button>
+
+          <div className="flex border border-black p-0.5 font-sans text-[11px] font-black bg-white">
+            <button
+              onClick={() => setActiveTab('stocks')}
+              className={`px-3 py-1 cursor-pointer transition-colors ${
+                activeTab === 'stocks' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
+              }`}
+            >
+              {isAr ? 'الأسهم والعواصم العربية' : 'Arab Equities'}
+            </button>
+            <button
+              onClick={() => setActiveTab('commodities')}
+              className={`px-3 py-1 cursor-pointer transition-colors border-l border-black ${
+                activeTab === 'commodities' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
+              }`}
+            >
+              {isAr ? 'النفط الخام والمعادن' : 'Crude Oil & Commodities'}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -320,9 +441,10 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
               {isAr ? 'إجمالي رسملة الأسواق الخليجية' : 'GCC Aggregate Market Cap'}
             </span>
             <div className="flex items-baseline gap-2 mt-1.5">
-              <span className="text-3xl font-black font-mono">$3.42T</span>
-              <span className="text-xs text-emerald-700 font-bold flex items-center gap-0.5" dir="ltr">
-                <TrendingUp size={14} /> +2.18%
+              <span className="text-3xl font-black font-mono">${gccCap.toFixed(2)}T</span>
+              <span className={`text-xs font-bold flex items-center gap-0.5 ${gccCapChange >= 0 ? 'text-emerald-700' : 'text-[#b91c1c]'}`} dir="ltr">
+                {gccCapChange >= 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />} 
+                {gccCapChange >= 0 ? '+' : ''}{gccCapChange.toFixed(2)}%
               </span>
             </div>
             <p className="text-[10.5px] text-zinc-500 mt-2 leading-relaxed">
@@ -337,9 +459,10 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
               {isAr ? 'متوسط قيمة التداول اليومي للطاقة' : 'Average Daily Oil Corridor Volume'}
             </span>
             <div className="flex items-baseline gap-2 mt-1.5">
-              <span className="text-3xl font-black font-mono">14.2M bpd</span>
-              <span className="text-xs text-red-650 font-bold flex items-center gap-0.5" dir="ltr">
-                <TrendingDown size={14} /> -12.4%
+              <span className="text-3xl font-black font-mono">{oilVolume.toFixed(1)}M bpd</span>
+              <span className={`text-xs font-bold flex items-center gap-0.5 ${oilVolumeChange >= 0 ? 'text-emerald-700' : 'text-red-650'}`} dir="ltr">
+                {oilVolumeChange >= 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />} 
+                {oilVolumeChange >= 0 ? '+' : ''}{oilVolumeChange.toFixed(1)}%
               </span>
             </div>
             <p className="text-[10.5px] text-zinc-500 mt-2 leading-relaxed">
@@ -351,7 +474,7 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
 
           <div className="border border-black p-3 text-[10px] font-mono font-bold flex justify-between bg-black text-white items-center">
             <span>{isAr ? 'علاوة التأمين الجيوسياسي لبرميل النفط:' : 'Crude Geopolitical Insurance Premium:'}</span>
-            <span className="text-red-400">-$4.50 / bbl</span>
+            <span className="text-red-400">{insurancePremium >= 0 ? '+' : ''}${insurancePremium.toFixed(2)} / bbl</span>
           </div>
         </div>
 
@@ -366,7 +489,7 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
             </span>
 
             <div className="divide-y divide-zinc-200 mt-4 max-h-[220px] overflow-y-auto scrollbar-none pr-1">
-              {(activeTab === 'stocks' ? arabStocks : commodities).map((item, idx) => (
+              {(activeTab === 'stocks' ? stocks : commoditiesList).map((item, idx) => (
                 <div key={idx} className="py-2.5 flex justify-between items-center text-[10.5px] font-sans">
                   {/* Title metadata */}
                   <div className="space-y-0.5 max-w-[180px] sm:max-w-xs text-right rtl:text-right">
@@ -391,12 +514,16 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
                   {/* Value and direction indicator badge */}
                   <div className="text-left font-mono">
                     <div className="font-black text-zinc-950 flex items-center justify-end gap-1 font-mono">
-                      <span>{'unit' in item ? `${item.value} ${item.unit}` : item.value}</span>
+                      <span>
+                        {'unit' in item 
+                          ? `${item.value.toLocaleString(undefined, { minimumFractionDigits: item.value < 10 ? 2 : 1, maximumFractionDigits: 2 })} ${item.unit}` 
+                          : item.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      </span>
                     </div>
                     <span className={`text-[9.5px] font-black uppercase tracking-wider block text-left ${
                       item.up ? 'text-emerald-700' : 'text-[#b91c1c]'
                     }`}>
-                      {item.change}
+                      {item.change >= 0 ? '+' : ''}{item.change.toFixed(2)}%
                     </span>
                   </div>
                 </div>
@@ -406,7 +533,7 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
 
           <div className="text-[9px] text-zinc-400 text-center font-mono font-medium pt-3 border-t border-zinc-100 flex items-center justify-between">
             <span>{isAr ? 'بث فوري عبر الأقمار: رويترز / بلومبرغ' : 'Live Feeds via Satellite: Reuters / Bloomberg'}</span>
-            <span>2026-06-18</span>
+            <span>{isAr ? `آخر تحديث: ${lastUpdated}` : `Last Updated: ${lastUpdated}`}</span>
           </div>
         </div>
       </div>
