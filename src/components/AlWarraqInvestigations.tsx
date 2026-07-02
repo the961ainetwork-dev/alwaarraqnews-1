@@ -110,6 +110,14 @@ const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier VI: Behind the Scenes - How Shared Fear of Iran Led to an Israel-Lebanon Deal',
     descAr: 'مستند استخباري خاص يكشف تفاصيل الدبلوماسية السرية والضغوط المكثفة من إدارة ترامب لإبرام اتفاقية لبنان والالتفاف على النفوذ الإيراني.',
     descEn: 'Four days of nonstop negotiations in Washington between the Israeli and Lebanese governments were propelled by one clear shared interest: weakening the influence of Hezbollah and Iran in Lebanon.'
+  },
+  'south-lebanon-secret-annex-investigation': {
+    fileId: 'AW-FILE-07',
+    badge: 'MILITARY INTEL',
+    titleAr: 'الملف السابع: خفايا الترتيبات الأمنية في جنوب لبنان وما وراء "الملحق السري"',
+    titleEn: 'Dossier VII: Secret Security Arrangements & The South Lebanon Annex',
+    descAr: 'من خلال آلية الإشراف والمراقبة ومجموعة التنسيق (MCG4L)، واشنطن الحاضر الأكبر في كل قرار ميداني.',
+    descEn: 'Through the MCG4L coordination group, Washington acts as the core supervisor of every field decision.'
   }
 };
 
@@ -151,7 +159,8 @@ export default function AlWarraqInvestigations({
       article.id === 'lebanon-ceasefire-mirage-2026' ||
       article.id === 'lebanon-economic-abyss-2026' ||
       article.id === 'ch12-hebrew-jd-vance-criticism-2026' ||
-      article.id === 'israel-lebanon-deal-behind-scenes'
+      article.id === 'israel-lebanon-deal-behind-scenes' ||
+      article.id === 'south-lebanon-secret-annex-investigation'
     );
   });
 

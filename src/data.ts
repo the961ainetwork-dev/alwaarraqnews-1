@@ -29,6 +29,93 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 
 export const INITIAL_ARTICLES: Article[] = [
   {
+    id: 'south-lebanon-secret-annex-investigation',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'lebanon', 'research-reports', 'exclusives'],
+    titleAr: 'خفايا الترتيبات الأمنية في جنوب لبنان وما وراء "الملحق السري"',
+    titleEn: 'Behind the Scenes of Security Arrangements in South Lebanon & The "Secret Annex"',
+    summaryAr: 'في أواخر يونيو/حزيران 2026، وقع لبنان وإسرائيل في واشنطن على "اتفاق إطار" من 14 بنداً برعاية أميركية، في خطوة تهدف إلى إعادة صياغة المشهد الأمني في جنوب لبنان بعد أشهر طويلة من الصراع المدمر. ورغم الإعلان الرسمي عن الخطوط العريضة للاتفاق، التي تؤكد على استعادة سيادة الدولة اللبنانية، تركزت الأنظار على الوثيقة التي بقيت خارج التداول العلني: الملحق الأمني السري.',
+    summaryEn: 'In late June 2026, Lebanon and Israel signed a US-brokered 14-point framework agreement in Washington to reshape South Lebanon’s security landscape. While public statements assert Lebanese state sovereignty, attention has focused on the unreleased security annex.',
+    excerptAr: 'يعكس الملحق السري للاتفاق تحولاً من منطق "وقف إطلاق النار" التقليدي إلى منطق "إعادة هندسة أمنية" شاملة. واشنطن لن ترسل جنودها لتسيير دوريات في قرى الجنوب، لكنها من خلال آلية الإشراف والمراقبة ومجموعة التنسيق (MCG4L)، ستكون الحاضر الأكبر في كل قرار ميداني.',
+    excerptEn: 'The unreleased security annex shifts the paradigm from a traditional ceasefire to a comprehensive security engineering. While Washington won’t patrol southern villages directly, it remains heavily present through the MCG4L.',
+    contentAr: `في أواخر يونيو/حزيران 2026، وقع لبنان وإسرائيل في واشنطن على "اتفاق إطار" من 14 بنداً برعاية أميركية، في خطوة تهدف إلى إعادة صياغة المشهد الأمني في جنوب لبنان بعد أشهر طويلة من الصراع المدمر. ورغم الإعلان الرسمي عن الخطوط العريضة للاتفاق، التي تؤكد على استعادة سيادة الدولة اللبنانية، تركزت الأنظار على الوثيقة التي بقيت خارج التداول العلني: الملحق الأمني السري. 
+
+يعكس الملحق السري للاتفاق تحولاً من منطق "وقف إطلاق النار" التقليدي إلى منطق "إعادة هندسة أمنية" شاملة. واشنطن لن ترسل جنودها لتسيير دوريات في قرى الجنوب، لكنها من خلال آلية الإشراف والمراقبة ومجموعة التنسيق (MCG4L)، ستكون الحاضر الأكبر في كل قرار ميداني.
+
+في المحصلة، يضع هذا الملحق الدولة اللبنانية ومؤسستها العسكرية أمام اختبار تاريخي: إما النجاح في فرض سيادة أحادية وإدارة المناطق التجريبية بدعم أميركي ودولي، أو مواجهة آليات "الدفاع الاستباقي" التي احتفظت بها إسرائيل ضمن نصوص الملحق غير المعلنة.
+
+فما هي هندسة الترتيبات الأمنية الجديدة المفروضة في الجنوب؟ وكيف تعامل هذا الملحق مع الدور الأميركي؟ وهل تتجه واشنطن فعلياً لنشر قوات برية على الأراضي اللبنانية؟
+
+### هندسة الجنوب: ماذا يتضمن "الملحق السري"؟
+
+تُشير التسريبات المتقاطعة للوثائق والمصادر الدبلوماسية إلى أن الملحق الأمني السري — الذي أُبقي طي الكتمان بطلب من الحكومة اللبنانية لتجنب التداعيات السياسية الداخلية — يعيد رسم قواعد الاشتباك بشكل جذري. ولا يعتمد الملحق على الجداول الزمنية الكلاسيكية، بل يربط التطورات الميدانية بـ "الإنجازات الأمنية". إن "مجموعة التنسيق العسكري للبنان" المقترحة (MCG4L) هي آلية رسمية بين دولتين تُسهّل التنسيق المباشر بين الجيش اللبناني والجيش الإسرائيلي تحت إشراف أميركي.  الترتيب اللبناني هو في جوهره نسخة عُدّلت بشكل صارم، وجرى تعزيز آليات تنفيذها بقوة، لقرار مجلس الأمن الدولي رقم 1701.
+
+تتركز الترتيبات الأمنية في الملحق حول النقاط التالية:
+
+* **الانسحاب المشروط (Conditions-Based Withdrawal):** لا يتضمن الاتفاق جدولاً زمنياً ثابتاً لانسحاب القوات الإسرائيلية. بدلاً من ذلك، يرتبط الانسحاب بمدى قدرة الجيش اللبناني على تنفيذ عمليات تجريد الفصائل المسلحة (وتحديداً حزب الله) من سلاحها في مناطق محددة. 
+* **المناطق التجريبية (Pilot Zones):** يتم إدخال الجيش اللبناني تدريجياً إلى ما يُعرف بـ "المناطق التجريبية" جنوب نهر الليطاني. ولا يُسمح بالانتقال إلى مناطق جديدة إلا بعد تحقق إسرائيل والأطراف الراعية من إخلاء هذه المناطق من البنى التحتية العسكرية غير الرسمية. 
+* **الخط الأصفر وحرية الحركة:** يُقر الملحق للإسرائيليين بهامش من "الحرية العملياتية" للتدخل ضد ما يُصنف كـ "تهديدات فورية ومباشرة" داخل منطقة الشريط الأمني (الخط الأصفر)، إلى حين استكمال نقل المسؤولية الكاملة للجيش اللبناني. 
+
+### حقيقة الدور الأميركي: إشراف مباشر أم قوات برية؟
+
+يطرح التداخل الأميركي العميق في هذا الاتفاق تساؤلات جوهرية حول طبيعة التواجد العسكري لواشنطن في جنوب لبنان. بالعودة إلى بنود الاتفاق الإطاري وتسريبات الملحق السري، يمكن تفكيك الدور الأميركي على النحو التالي:
+
+#### 1. قوة إشراف وتحقق (Supervising & Verification Force):
+نعم، طلبت الولايات المتحدة — ووافق الطرفان — على أن تلعب دور "المشرف المباشر" على تنفيذ الاتفاق. ينص الملحق السري على تأسيس مجموعة التنسيق العسكري للبنان (MCG4L)، وهي غرفة عمليات مشتركة تعمل على مدار الساعة وتضم ممثلين عن الجيشين اللبناني والإسرائيلي، وتخضع لتسهيل وإشراف أميركي مباشر. تتولى هذه المجموعة فض النزاعات، ومراقبة الالتزام بنزع السلاح، وإدارة التحركات الميدانية لمنع الاحتكاك. 
+
+#### 2. حقيقة نشر القوات البرية (Ground Troops):
+رغم الدور الإشرافي الصارم، لم تطلب الولايات المتحدة نشر "قوات برية قتالية" (Combat Ground Troops) على الأراضي اللبنانية، ولا ينص الملحق السري على إقامة قواعد عسكرية أميركية في الجنوب. المقاربة الأميركية تعتمد على استراتيجية "القيادة من الخلف" وتفويض المهام:
+* الاعتماد الحصري على الجيش اللبناني كقوة التدخل البرية الوحيدة المخولة بفرض الأمن واستلام الأرض. 
+* توفير غطاء جوي واستخباري (عبر التحقق من طرف ثالث).
+* دعم مالي وعسكري أميركي مكثف (رُصد له مبدئياً نحو 100 مليون دولار) لتمكين الجيش اللبناني لوجستياً وعملياتياً لتنفيذ بنود الملحق.`,
+    contentEn: `In late June 2026, Lebanon and Israel signed a US-brokered 14-point framework agreement in Washington, aiming to reshape the security landscape in South Lebanon after long months of devastating conflict. While public declarations stressed the restoration of Lebanese state sovereignty, close scrutiny focused on the document that remained outside public circulation: the Secret Security Annex.
+
+The Secret Annex of the agreement reflects a major paradigm shift from a traditional "ceasefire" to a comprehensive "security engineering." Washington will not send boots on the ground to patrol southern villages; instead, through the oversight and verification mechanism of the Military Coordination Group for Lebanon (MCG4L), it will be the most significant presence in every tactical field decision.
+
+Ultimately, this annex puts the Lebanese state and its military institution to a historic test: either succeed in imposing unilateral sovereignty and managing the pilot zones with US and international support, or face the "preemptive defense" mechanisms that Israel preserved within the unrevealed texts of the annex.
+
+What is the design of this new security arrangement imposed on the South? How does the annex handle the US role? And is Washington actually moving toward deploying ground troops on Lebanese territory?
+
+### Engineering the South: What is in the "Secret Annex"?
+
+Cross-referenced leaks of documents and diplomatic sources indicate that the secret security annex—kept under wraps at the request of the Lebanese government to avoid internal political domestic fallout—radically redraws the rules of engagement. Rather than relying on classical timelines, the annex links field developments directly to "security milestones." The proposed "Military Coordination Group for Lebanon" (MCG4L) is a formal mechanism between the two nations, facilitating direct coordination between the Lebanese Armed Forces (LAF) and the Israel Defense Forces (IDF) under American supervision. The Lebanese arrangement is, at its core, a strictly modified and heavily enforced execution version of UN Security Council Resolution 1701.
+
+The security arrangements in the annex focus on the following key points:
+
+* **Conditions-Based Withdrawal:** The agreement does not include a fixed timeline for the withdrawal of Israeli forces. Instead, the withdrawal is tied to the ability of the Lebanese Army to conduct disarmament operations targeting armed factions (specifically Hezbollah) in designated sectors.
+* **Pilot Zones:** The Lebanese Army is being gradually introduced into what are known as "pilot zones" south of the Litani River. Advancing to new zones is prohibited until Israel and the sponsoring parties verify that these areas have been cleared of unofficial military infrastructure.
+* **The Yellow Line and Freedom of Movement:** The annex grants the Israelis a margin of "operational freedom" to intervene against what are classified as "imminent and direct threats" within the security belt zone (the Yellow Line) until full responsibility is transferred to the Lebanese Army.
+
+### The Truth Behind the US Role: Direct Oversight or Ground Troops?
+
+The deep American involvement in this agreement raises fundamental questions about the nature of Washington's military presence in South Lebanon. Looking at the terms of the framework agreement and the leaked details of the Secret Annex, the US role can be deconstructed as follows:
+
+#### 1. Supervising & Verification Force
+Yes, the United States requested—and both parties agreed—to play the role of "direct supervisor" of the agreement's implementation. The Secret Annex provides for the establishment of the Military Coordination Group for Lebanon (MCG4L), a joint operations room operating 24/7 that includes representatives from both the Lebanese and Israeli militaries under direct American facilitation and oversight. This group handles dispute resolution, monitors compliance with disarmament, and manages field movements to prevent friction.
+
+#### 2. The Truth About Deploying Ground Troops
+Despite the rigorous oversight role, the United States has not requested the deployment of "combat ground troops" on Lebanese territory, nor does the Secret Annex provide for the establishment of US military bases in the South. The American approach relies on a "leading from behind" strategy and delegation of tasks:
+* Exclusive reliance on the Lebanese Armed Forces as the sole ground intervention force authorized to enforce security and secure the territory.
+* Providing aerial and intelligence coverage (via third-party verification).
+* Intensive US financial and military support (initially estimated at $100 million) to logistically and operationally empower the Lebanese Army to execute the annex.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس التحرير والمدير العام',
+      titleEn: 'Editor-in-Chief & General Manager',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-01',
+    readTimeAr: 'دقائق 7',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['جنوب_لبنان', 'الترتيبات_الأمنية', 'الملحق_السري', 'MCG4L', 'اتفاق_الإطار', 'الجيش_اللبناني', 'South_Lebanon', 'Security_Arrangements', 'Secret_Annex'],
+    views: 1850
+  },
+  {
     id: 'nabih-berri-options-framework-agreement',
     category: 'editor-desk',
     categories: ['editor-desk', 'lebanon', 'opinion'],
