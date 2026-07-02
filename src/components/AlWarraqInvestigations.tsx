@@ -54,6 +54,7 @@ import LebanonConflictMap from './LebanonConflictMap';
 import LebanonAMLVisualizer from './LebanonAMLVisualizer';
 import { CeasefireInternalConflictInfographic } from './CeasefireInternalConflictInfographic';
 import { EconomicAbyssCrisisInfographic } from './EconomicAbyssCrisisInfographic';
+import { FrozenAssetsInfographic } from './FrozenAssetsInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -118,6 +119,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier VII: Secret Security Arrangements & The South Lebanon Annex',
     descAr: 'من خلال آلية الإشراف والمراقبة ومجموعة التنسيق (MCG4L)، واشنطن الحاضر الأكبر في كل قرار ميداني.',
     descEn: 'Through the MCG4L coordination group, Washington acts as the core supervisor of every field decision.'
+  },
+  'iran-frozen-assets-2026': {
+    fileId: 'AW-FILE-08',
+    badge: 'GEOPOLITICAL INTEL',
+    titleAr: 'الملف الثامن: الأصول الإيرانية المجمدة في الخارج',
+    titleEn: 'Dossier VIII: Iranian Frozen Assets Abroad',
+    descAr: 'تحليل دقيق للأبعاد الكمية، التوزيع الجغرافي، الأطر القانونية والتداعيات الجيوسياسية للأموال المحتجزة.',
+    descEn: 'Comprehensive study of quantitative dimensions, legal structures, and geopolitical impacts.'
   }
 };
 
@@ -167,7 +176,8 @@ export default function AlWarraqInvestigations({
       article.id === 'lebanon-economic-abyss-2026' ||
       article.id === 'ch12-hebrew-jd-vance-criticism-2026' ||
       article.id === 'israel-lebanon-deal-behind-scenes' ||
-      article.id === 'south-lebanon-secret-annex-investigation'
+      article.id === 'south-lebanon-secret-annex-investigation' ||
+      article.id === 'iran-frozen-assets-2026'
     );
   });
 
@@ -662,6 +672,18 @@ export default function AlWarraqInvestigations({
                         </h4>
                       </div>
                       <EconomicAbyssCrisisInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'iran-frozen-assets-2026' ? (
+                    <div className="p-4 bg-[#fdfbf7] relative overflow-hidden rounded-md shadow-sm border border-zinc-200">
+                      <span className="bg-red-800 text-white text-[8px] font-mono font-black px-2 py-0.5 absolute top-0 right-0 uppercase tracking-widest">
+                        {isAr ? 'مستند تحليلي مدمج' : 'ATTACHED ANALYSIS RECORD'}
+                      </span>
+                      <div className="pt-2 mb-3 text-right rtl:text-right ltr:text-left">
+                        <h4 className="text-xs font-mono font-bold text-zinc-500 uppercase">
+                          {isAr ? '✦ تقديرات الأصول المجمدة والتوزيع الجغرافي والنزاعات القانونية' : '✦ Frozen Assets Estimates, Geographic Distribution & Litigation Analysis'}
+                        </h4>
+                      </div>
+                      <FrozenAssetsInfographic language={language} />
                     </div>
                   ) : (
                     <div className="relative overflow-hidden rounded-md">

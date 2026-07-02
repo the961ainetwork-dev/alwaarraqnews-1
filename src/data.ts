@@ -5666,6 +5666,131 @@ Liabilities & Capital Accounts
     readTimeEn: '6 min read',
     views: 4120,
     tags: ['بنوك الاستثمار', 'مصرف لبنان', 'الميزانية العمومية', 'سعر الصرف', 'الليرة اللبنانية']
+  },
+  {
+    id: 'iran-frozen-assets-2026',
+    category: 'investigations',
+    categories: ['investigations', 'editor-desk'],
+    titleAr: 'الأصول الإيرانية المجمدة في الخارج: الأبعاد الكمية، التوزيع الجغرافي، والأطر القانونية',
+    titleEn: 'Iranian Frozen Assets Abroad: Quantitative Dimensions, Geographical Distribution, and Legal Frameworks',
+    summaryAr: 'تمثل قضية الأصول الإيرانية المجمدة في الخارج واحدة من أعقد الملفات القانونية والمالية في تاريخ العلاقات الدولية الحديثة. ترصد هذه الورقة الاستقصائية تفاصيل توزيع الأرصدة والنزاعات القانونية العابرة للقارات.',
+    summaryEn: 'The issue of Iranian frozen assets abroad represents one of the most complex legal and financial files in modern international relations. This investigative paper tracks the distribution of balances and cross-continental legal disputes.',
+    excerptAr: 'تفكيك شامل لملف الأصول الإيرانية المحتجزة جغرافياً وقانونياً والتداعيات الجيوسياسية لتجميدها تاريخياً.',
+    excerptEn: 'A comprehensive deconstruction of the geographical and legal distribution of frozen Iranian assets and their geopolitical implications.',
+    contentAr: `### مقدمة تمهيدية
+
+تمثل قضية الأصول الإيرانية المجمدة في الخارج واحدة من أعقد الملفات القانونية والمالية في تاريخ العلاقات الدولية الحديثة. لا يقتصر هذا الملف على كونه نزاعاً مالياً حول أرصدة نقدية، بل هو أداة رئيسية في استراتيجية "العقوبات الذكية" وضغوط القوى العظمى (وعلى رأسها الولايات المتحدة) تجاه النظام الإيراني منذ ثورة عام 1979. تهدف هذه الورقة البحثية —المصممة وفق أسلوب الأطروحات الأكاديمية— إلى تفكيك هذا الملف عبر رصد دقيق لتوزيع تلك الأصول، والتكييف القانوني لاحتجازها، ومصائرها التاريخية والسياسية.
+
+---
+
+### أولاً: الأبعاد الكمية والتقديرات الإجمالية
+
+تتسم التقديرات المتعلقة بالحجم الإجمالي للأصول الإيرانية المجمدة بالتباين الشديد نتيجة للسرية المصرفية، وتغير أسعار الصرف، واختلاف تصنيف الأصول (بين أرصدة نقدية سائلة، وسندات حكومية، وعقارات، وأصول عسكرية). ومع ذلك، تُشير تقديرات صندوق النقد الدولي والجهات البحثية المستقلة إلى أن الرقم الإجمالي للأموال المحتجزة يتراوح بين **100 إلى 120 مليار دولار أمريكي** عالمياً.
+
+يتوزع هذا الرقم بين مستويين رئيسيين:
+1. **أصول البنك المركزي الإيراني:** وتمثل الكتلة الكبرى (حوالي 60-70% من الإجمالي) وتخلف حمايتها حصانة سيادية خاصة بموجب القانون الدولي.
+2. **أصول تجارية ومستحقات تجارة الطاقة:** وهي أموال محتجزة في حسابات مقيدة (Escrow Accounts) لصالح إيران في دول مستوردة للنفط أو الغاز الإيراني (مثل الصين، والعراق، والهند، كوريا الجنوبية قبل نقلها).
+
+---
+
+### ثانياً: التوزيع الجغرافي والنوعي للأصول
+
+تتوزع الأصول الإيرانية المجمدة جغرافياً عبر شبكة معقدة من الدول والبنوك الدولية الخاضعة لضغوط الخزانة الأمريكية ونظام المقاصة بالدولار (Fedwire):
+
+* **الصين ($20B - $25B):** تحتجز بكين الكتلة الكبرى من عوائد النفط الإيراني. بموجب نظام "حساب المقاصة المقيد"، لا تُصرف هذه الأموال نقداً، بل تُستخدم كائتمانات لتمويل الصادرات الصينية والسلع غير الخاضعة للعقوبات إلى إيران (نظام المقايضة والتبادل التجاري المقيد).
+* **العراق ($10B - $12B):** تراكمت هذه الأصول كمستحقات لتصدير الكهرباء والغاز الإيراني لجمهورية العراق. تُحتجز الأموال في "المصرف العراقي للتجارة" (TBI)، وتخضع لتحويلات دورية مشروطة وبتفويضات خاصة من وزارة الخزانة الأمريكية لتسوية واردات إيران الإنسانية فقط (أدوية وأغذية).
+* **الاتحاد الأوروبي وبنوك دولية ($5B - $10B):** تتوزع في مصارف بريطانية، وألمانية، وإيطالية، فضلاً عن حسابات تابعة لشركات فرنسية وأوروبية علقت تعاملاتها مع طهران، وتخضع لضوابط حظر الانتشار النووي.
+* **كوريا الجنوبية ($6B):** كانت محتجزة في بنكين كوريين كعوائد نفطية، حتى أواخر عام 2023 عندما نُقلت إلى حسابات سويسرية ومن ثم إلى حسابات مقيدة تابعة لمصارف قطرية كجزء من صفقة تبادل السجناء الكبرى بوساطة الدوحة.
+* **الولايات المتحدة ($2B - $4B):** تشمل أصولاً وعقارات بعثات دبلوماسية سابقة، وأموال صفقة الأسلحة الملغاة ما قبل الثورة، وأرصدة مصرفية مجمدة خاضعة لأحكام قضائية لصالح ضحايا الهجمات الإرهابية المنسوبة لإيران.
+* **لوكسمبورغ (مؤسسة Clearstream - $1.6B - $2B):** خضعت لنزاعات قضائية طويلة في المحاكم الأوروبية والأمريكية لتسييلها لصالح عائلات ضحايا تفجير بيروت 1983.
+
+---
+
+### ثالثاً: الأطر القانونية وآليات الاحتجاز
+
+يستند التكييف القانوني لاحتجاز الأصول الإيرانية إلى ركيزتين أساسيتين:
+
+1. **القانون المحلي الأمريكي والولاية القضائية العابرة للحدود:**
+   تعتمد واشنطن على "قانون الصلاحيات الاقتصادية الطارئة الدولية" (IEEPA)، الذي يمنح الرئيس الأمريكي سلطة تجميد أصول الدول الأجنبية في حالات الطوارئ الوطنية. ينفذ ذلك "مكتب مراقبة الأصول الأجنبية" (OFAC) عبر فرض عقوبات ثانوية على أي مؤسسة مالية تتعامل مع البنك المركزي الإيراني، مما يجبر البنوك العالمية على الامتثال لمنع العزل من شبكة التبادل المالي العالمي (SWIFT) ونظام المقاصة بالدولار.
+
+2. **معضلة الحصانة السيادية للدول ومقاضاتها:**
+   بموجب القانون الدولي العام، تتمتع الدول وبنوكها المركزية بالحصانة من الولاية القضائية للدول الأخرى. غير أن القضاء الأمريكي تجاوز هذه الحصانة بإدخال تعديلات على قانون حصانات الدول الأجنبية (FSIA) وقانون حماية ضحايا الإرهاب (TRIA)، مما سمح للمواطنين الأمريكيين برفع دعاوى ضد إيران ومصادرة أموال البنك المركزي الإيراني المجمدة كتعويضات (مثل قضية بترسون ضد البنك المركزي الإيراني التي قضت بموجبها المحكمة العليا الأمريكية بمصادرة حوالي 2 مليار دولار).
+
+3. **موقف محكمة العدل الدولية:**
+   في حكمها الصادر في مارس 2023 في قضية "المنشآت الإيرانية"، قضت محكمة لاهاي بأن الولايات المتحدة انتهكت التزاماتها بموجب "معاهدة الصداقة 1955" المنحلة بمصادرتها غير القانونية لأصول شركات إيرانية، لكنها قضت في الوقت نفسه بعدم اختصاصها القضائي للحكم في مسألة تجميد أصول البنك المركزي الإيراني نظراً لعدم شمول المعاهدة للحصانات السيادية للبنوك المركزية ككيانات سيادية مستقلة.
+
+---
+
+### رابعاً: التداعيات الجيوسياسية ومصائر الأصول
+
+تمثل الأصول المجمدة أداة استراتيجية وصراع نفوذ محوري في مفاوضات الملف النووي الإيراني:
+* **صمام أمان وأداة مقايضة:** تستخدم الولايات المتحدة التسييل المشروط والتدريجي للأصول كحافز (Carrot) لدفع طهران للعودة إلى قيود البرنامج النووي أو لضبط وكلائها الإقليميين.
+* **البدائل الاقتصادية وتكريس "اقتصاد المقاومة":** دفعت هذه القيود طهران لبناء منظومات مصرفية وسيطة وخطوط تجارة بديلة تعتمد على العملات المحلية والتكامل الاقتصادي مع قوى أوراسيا (روسيا والصين)، مما يقلل من الفعالية الجيوسياسية للعقوبات بمرور الزمن.
+
+*خلاصة القول:* إن قضية الأصول الإيرانية المجمدة تجسد الصدام التاريخي والمستمر بين مبدأ "السيادة الوطنية والقانون الدولي" الذي يتمسك بحصانة أموال الدول المركزية، وبين "قوة الأمر الواقع المالي" التي تفرضها الهيمنة الأمريكية وحصار شبكة المقاصة المصرفية العالمية.`,
+    contentEn: `### Introduction
+
+The issue of Iranian frozen assets abroad is one of the most complex legal and financial files in the history of modern international relations. This matter is not merely a financial dispute over cash balances; it is a primary tool in the strategy of "smart sanctions" and geopolitical leverage deployed by major powers (most notably the United States) against the Iranian regime since the 1979 revolution. This research paper—modeled after academic theses—aims to deconstruct this file through a rigorous mapping of the geographic distribution of these assets, the legal frameworks governing their detention, and their historical and political destinies.
+
+---
+
+### I. Quantitative Dimensions & Overall Estimates
+
+Estimates of the total volume of frozen Iranian assets vary widely due to banking secrecy, fluctuating exchange rates, and differing classifications of assets (including liquid cash balances, government bonds, real estate, and pre-1979 military equipment). Nonetheless, independent institutions and the IMF estimate the total value of these restricted funds to range between **$100 billion and $120 billion** globally.
+
+This total is divided into two primary tiers:
+1. **Central Bank of Iran (CBI) Assets:** Representing the vast majority (about 60-70% of the total), these assets traditionally enjoy special sovereign immunity protections under international law.
+2. **Commercial & Energy Trade Receivables:** Funds held in restricted Escrow Accounts in countries importing Iranian oil or gas (such as China, Iraq, India, and South Korea before recent transfers).
+
+---
+
+### II. Geographical & Typological Distribution of Assets
+
+Frozen Iranian assets are distributed across a complex global network of countries and financial institutions subject to US Treasury pressure and the US dollar clearing network (Fedwire):
+
+* **China ($20B - $25B):** Beijing holds the largest share of Iranian oil revenues. Under a restricted clearing account system, these funds are not paid out in cash; instead, they serve as trade credits to fund Chinese exports and non-sanctioned goods to Iran (a barter system).
+* **Iraq ($10B - $12B):** These funds accumulated as payments for Iranian electricity and gas exports to Iraq. They are held at the Trade Bank of Iraq (TBI) and are subject to periodic, conditional US Treasury waivers allowing their transfer strictly for humanitarian purchases (food and medicine).
+* **European Union & International Banks ($5B - $10B):** These assets are scattered across British, German, and Italian banks, as well as accounts belonging to European corporations that suspended operations in Tehran under non-proliferation sanctions.
+* **South Korea ($6B):** These oil revenues were held in two South Korean banks until late 2023, when they were transferred to Swiss banks and subsequently to restricted accounts in Qatari banks as part of a major prisoner-swap agreement mediated by Doha.
+* **United States ($2B - $4B):** Includes assets and real estate of former diplomatic missions, funds from canceled pre-revolution military contracts, and frozen bank balances subject to US court judgments awarded to victims of terrorist attacks blamed on Iran.
+* **Luxembourg (Clearstream - $1.6B - $2B):** Subject to prolonged legal disputes in European and US courts aimed at liquidating these bonds for the families of victims of the 1983 Beirut barracks bombing.
+
+---
+
+### III. Legal Frameworks & Detention Mechanisms
+
+The legal basis for freezing and retaining Iranian assets rests on two main pillars:
+
+1. **US Domestic Legislation & Extraterritorial Jurisdiction:**
+   Washington relies primarily on the International Emergency Economic Powers Act (IEEPA), which authorizes the US President to freeze foreign assets during national emergencies. The Office of Foreign Assets Control (OFAC) enforces this by imposing secondary sanctions on any foreign financial institution that conducts transactions with the Central Bank of Iran, forcing global banks to comply to avoid being cut off from SWIFT and the USD clearing system.
+
+2. **The Sovereign Immunity Dilemma:**
+   Under general international law, states and their central banks enjoy sovereign immunity from the jurisdiction of other states. However, US courts bypassed this immunity by introducing amendments to the Foreign Sovereign Immunities Act (FSIA) and the Terrorism Risk Insurance Act (TRIA). This allowed US citizens to sue Iran and seize frozen CBI assets as compensation (such as in Peterson v. CBI, where the US Supreme Court approved the seizure of approximately $2B in frozen assets).
+
+3. **International Court of Justice (ICJ) Position:**
+   In its March 2023 ruling in the "Certain Iranian Assets" case, the ICJ held that the US violated its obligations under the now-terminated 1955 Treaty of Amity by allowing the unlawful confiscation of assets belonging to Iranian state-owned companies. However, the court ruled that it lacked jurisdiction over the freezing of Central Bank of Iran assets, as the Treaty of Amity did not cover the sovereign immunities of central banks.
+
+---
+
+### IV. Geopolitical Implications & Asset Destinies
+
+Frozen assets remain a vital strategic lever and chip in negotiations over Iran's nuclear program:
+* **The Carrot-and-Stick Negotiation Leverage:** The US uses the conditional, phased release of assets as an incentive to bring Tehran back to compliance with nuclear limits or to de-escalate regional tensions.
+* **The "Resistance Economy" Pivot:** These financial restrictions have driven Tehran to construct intermediary banking networks and alternative trade routes relying on local currencies and integration with Eurasian powers (Russia and China), reducing the long-term efficacy of sanctions.
+
+*Conclusion:* The issue of frozen Iranian assets perfectly captures the ongoing clash between "sovereign immunity and international law" on one hand, and the "financial realpolitik" of US dominance over the global banking clearing system on the other.`,
+    author: {
+      nameAr: 'قسم البحوث الاستقصائية والدراسات السيادية',
+      nameEn: 'Investigative Research & Sovereign Studies Desk',
+      titleAr: 'محلل جيوسياسي واقتصادي أول بالورّاق',
+      titleEn: 'Senior Geopolitical & Economic Analyst at Al-Warraq'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1543185377-b75371a29437?auto=format&fit=crop&q=80&w=600',
+    date: '1 يوليو 2026',
+    readTimeAr: '7 دقائق',
+    readTimeEn: '7 min read',
+    views: 7420,
+    tags: ['الأصول المجمدة', 'إيران', 'العقوبات الأمريكية', 'السياسة النقدية', 'الجيوسياسية']
   }
 ];
 
