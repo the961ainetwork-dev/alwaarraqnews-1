@@ -29,6 +29,125 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 
 export const INITIAL_ARTICLES: Article[] = [
   {
+    id: 'gcc-ma-surge-investment-banking-2026',
+    category: 'middle-east',
+    categories: ['middle-east', 'arab-markets', 'markets'],
+    titleAr: 'طفرة الاندماج والاستحواذ في الخليج: بنوك الاستثمار العالمية توسع فرقها مراهنةً على نمو طويل الأجل',
+    titleEn: 'GCC M&A Surge: Global Investment Banks Expand Teams Betting on Long-Term Growth',
+    summaryAr: 'على خلاف التوقعات المتشائمة التي واكبت اندلاع التوترات الجيوسياسية الأخيرة في منطقة الشرق الأوسط مطلع هذا العام، أظهر قطاع الصفقات والاندماجات في دول مجلس التعاون الخليجي مرونة استثنائية. وبدلاً من التباطؤ، شهد نشاط إبرام الصفقات قفزة نوعية، مما دفع كبرى بنوك "وول ستريت" والمؤسسات المالية العالمية إلى تغيير استراتيجياتها التحفظية والاتجاه نحو تكثيف التوظيف وتوسيع فرق عملها الإقليمية، مدفوعة برؤية متفائلة ومراهنة جادة على نمو اقتصادي مستدام طويل الأجل.',
+    summaryEn: 'Contrary to the pessimistic forecasts that accompanied the recent geopolitical tensions in the Middle East at the beginning of this year, the mergers and acquisitions (M&A) sector in the GCC has demonstrated exceptional resilience. Instead of a slowdown, deal-making activity experienced a qualitative leap, prompting Wall Street giants and global financial institutions to pivot from conservative strategies toward intensive hiring and expanding regional teams, driven by an optimistic outlook and a serious bet on sustainable, long-term economic growth.',
+    excerptAr: 'طفرة استثنائية في قطاع الاندماجات والصفقات بالخليج مطلع 2026 تدفع بنوك وول ستريت لتكثيف التوظيف وتوسيع فرق عملها الإقليمية مراهنة على نمو اقتصادي مستدام.',
+    excerptEn: 'An exceptional surge in Gulf M&A deals in early 2026 prompts Wall Street banks to expand regional teams and accelerate hiring, betting on sustainable long-term economic growth.',
+    contentAr: `على خلاف التوقعات المتشائمة التي واكبت اندلاع التوترات الجيوسياسية الأخيرة في منطقة الشرق الأوسط مطلع هذا العام، أظهر قطاع الصفقات والاندماجات في دول مجلس التعاون الخليجي مرونة استثنائية. وبدلاً من التباطؤ، شهد نشاط إبرام الصفقات قفزة نوعية، مما دفع كبرى بنوك "وول ستريت" والمؤسسات المالية العالمية إلى تغيير استراتيجياتها التحفظية والاتجاه نحو تكثيف التوظيف وتوسيع فرق عملها الإقليمية، مدفوعة برؤية متفائلة ومراهنة جادة على نمو اقتصادي مستدام طويل الأجل.
+
+### أرقام قياسية: الذكاء الاصطناعي والبنية التحتية يقودان الصفقات
+وفقاً للبياتها الصادرة عن "بلومبرغ"، سجلت قيمة الصفقات التي شاركت فيها جهات خليجية ارتفاعاً قياسياً بنسبة 200% خلال النصف الأول من العام الحالي، لتصل إلى نحو 300 مليار دولار.
+
+وقد جاء هذا الانتعاش القوي مدفوعاً بعدة ركائز أساسية:
+* **طفرة الذكاء الاصطناعي:** ضخ استثمارات ضخمة في شركات عالمية رائدة تقود هذا القطاع مثل "أوبن إيه آي" (OpenAI) و"أنثروبيك" (Anthropic).
+* **الإنفاق الدفاعي والأمني:** دفعت التوترات المتصاعدة في المنطقة الحكومات إلى تسريع خطط الإنفاق على البنية التحتية الدفاعية والأمن السيبراني واللوجستيات.
+* **الأمن الغذائي والطاقة:** تزايد الزخم في القطاعات الاستراتيجية التي تتطلب صفقات تمويلية ضخمة عابرة للحدود وهياكل مالية معقدة.
+
+وعلى صعيد الإيرادات، كشفت بيانات "ديلوجيك" (Dealogic) عن ارتفاع إيرادات بنوك الاستثمار من أعمالها في الشرق الأوسط بنسبة 5% لتصل إلى 619 مليون دولار، مدعومة بقفزة بلغت 55% في رسوم صفقات الاندماج والاستحواذ، وهو ما عوض التراجع الملحوظ في إيرادات أسواق إصدار الأسهم والاكتتابات العامة التي تأجل بعضها بسبب تقلبات الأسواق.
+
+### وول ستريت تكثف حضورها: موجة توظيف واسعة في دبي والمنطقة
+أدى هذا الحراك المالي غير المتوقع إلى تعديل بنوك استثمارية عالمية لتوقعاتها السنوية؛ فالعديد من المؤسسات التي كانت تخشى عدم تحقيق أهدافها باتت الآن على المسار الصحيح، بل وتعمل على صفقات استثمارية كبرى داخل وخارج المنطقة.
+
+وقد انعكس ذلك في حركة توظيف واسعة النطاق لتعزيز المكاتب الإقليمية، لا سيما في مركز دبي المالي العالمي وأبوظبي:
+* **باركليز:** نقل مصرفي الطاقة البارز "جورج تانر" من لندن إلى دبي لتوسيع الحضور الإقليمي للبنك.
+* **بنوك عالمية كبرى:** تعمل مؤسسات مثل "جيه بي مورغان"، "دويتشه بنك"، "ستاندرد تشارترد"، "روتشايلد آند كو" على استقطاب كفاءات قيادية جديدة.
+* **سيتي غروب ولازارد:** واصلت المؤسستان الإعلان المستمر عن وظائف شاغرة عبر المنصات المهنية لتعزيز فرق عملهما.
+* **التوسع الآسيوي والقانوني:** يسعى أحد البنوك الصينية الكبرى لتوظيف مصرفيين في دبي لدعم الإدراجات المزدوجة بين بورصة هونغ كونغ والأسواق الإماراتية. كما وسعت مكاتب محاماة دولية مثل "سكادام" وجودها في أبوظبي.
+
+> "تتمتع المنطقة بأسس اقتصادية قوية وآفاق نمو طويلة الأجل."
+> — ماجد جلفار، المسؤول التنفيذي لدى "دويتشه بنك" في الإمارات
+
+> "يؤدي الشرق الأوسط دوراً متزايد الأهمية في تدفقات رؤوس الأموال العالمية."
+> — راجيش سينغي، ستاندرد تشارترد
+
+### صناديق الثروة الخليجية.. قاطرة الاستثمار العالمي
+لم تتأثر صناديق الثروة السيادية في الخليج بالأجواء الجيوسياسية، بل واصلت اقتناص الفرص عالمياً مستندة إلى أصول تقترب قيمتها الإجمالية من 5 تريليونات دولار.
+التزمت الصناديق الخليجية باستثمارات قياسية بلغت 53.9 مليار دولار منذ بداية العام الحالي. وتوزعت هذه الاستثمارات جغرافياً وقطاعياً على النحو التالي:
+* **الولايات المتحدة:** حظيت بنصف الاستثمارات وركزت على التكنولوجيا والذكاء الاصطناعي.
+* **الصين وبريطانيا:** استقطبتا اهتماماً متزايداً في قطاعات البنية التحتية والطاقة المتجددة.
+* **صندوق مبادلة السيادي:** تصدر القائمة بحجم استثمارات بلغ 15.2 مليار دولار، تلاه نشاط قوي ومكثف لـ 7 صناديق سيادية خليجية أخرى.
+
+### مشاريع استراتيجية كبرى في السعودية والإمارات والكويت
+بالتوازي مع الاستثمارات الخارجية، تقود الحكومات الخليجية مشاريع داخلية عملاقة لإعادة صياغة المشهد الاقتصادي:
+* **دولة الإمارات:** تعمل على خطة استراتيجية لتوسيع موانئها الشرقية الواقعة على ساحل خليج عُمان لتقليل الاعتماد على مضيق هرمز. كما تقود شركة "لِعماد" في أبوظبي مع شركاء محليين ودوليين مشروعاً يستهدف بنية تحتية بقيمة 30 بيان دولار.
+* **المملكة العربية السعودية:** يمضي مسؤولو "أرامكو" قُدماً في واحدة من أكثر خطط الخصخصة طموحاً في تاريخ الشركة لتعزيز الميزانية العمومية، وسط توقعات بأن تجمع هذه الصفقات ما يصل إلى 35 مليار دولار.
+* **دولة الكويت:** تشهد منافسة محتدمة بين كبار المستثمرين العالميين (مثل "بلاك روك" عبر ذراعها "GIP" ومجموعة "بروكفيلد") للفوز بحصة قيمتها 7.5 مليار دولار في شبكة خطوط الأنابيب التابعة لشركة النفط الحكومية.
+
+### مرونة مصرفية مستدامة وتحديات قائمة
+على الرغم من الطفرة الحالية، تشير التقارير التحليلية، ومنها تقرير شركة "بي إم آي" (BMI) التابعة لـ"فيتش سوليوشنز"، إلى أن المخاطر لم تختفِ تماماً بل أصبحت أكثر تركيزاً:
+* **صلابة الودائع:** أظهر القطاع المصرفي في دول مجلس التعاون مرونة أعلى من المتوقع؛ حيث ساعدت التدفقات الحكومية والدعم السيادي وحزم السيولة في استقرار الأوضاع ومنع أي هروب جماعي للرساميل.
+* **تركيز المخاطر:** باتت المخاطر تتركز في مصادر التمويل الحساسة لثقة المستثمرين، مثل ودائع القطاع الخاص وغير المقيمين، لا سيما في الأسواق الأكثر اعتماداً على التمويل الأجنبي مثل البحرين وقطر.
+* **تحدي استقطاب الكفاءات:** أصبح المرشحون للوظائف القيادية أكثر انتقائية؛ حيث باتت اعتبارات السلامة الشخصية والرؤية طويلة الأجل وحزم التعويضات التنافسية تلعب دوراً حاسماً في اتخاذ القرار.
+* **توقعات نمو الائتمان:** يُتوقع أن يتباطأ نمو القروض في دول الخليج خلال الفترة المقبلة بحدود عام 2026، وهو تباطؤ يأخذ طابعاً هيكلياً (كما في السوق السعودية نتيجة تشديد معايير الإقراض وتأخر بعض القرارات الاستثمارية غير النفطية)، في حين يواصل القطاع المصرفي الإماراتي تفوقه بدعم من التنوع الاقتصادي القوي.`,
+    contentEn: `Contrary to the pessimistic forecasts that accompanied the recent geopolitical tensions in the Middle East at the beginning of this year, the mergers and acquisitions (M&A) sector in the GCC has demonstrated exceptional resilience. Instead of a slowdown, deal-making activity experienced a qualitative leap, prompting Wall Street giants and global financial institutions to pivot from conservative strategies toward intensive hiring and expanding regional teams, driven by an optimistic outlook and a serious bet on sustainable, long-term economic growth.
+
+### Record Numbers: AI and Infrastructure Driving Deals
+According to data released by Bloomberg, the value of deals involving Gulf entities recorded a record increase of 200% during the first half of this year, reaching approximately $300 billion.
+
+This strong recovery was driven by several key pillars:
+- **AI Boom:** Injecting massive investments into leading global companies in this sector, such as OpenAI and Anthropic.
+- **Defense and Security Spending:** Rising tensions in the region prompted governments to accelerate spending plans on defense infrastructure, cybersecurity, and logistics.
+- **Food Security and Energy:** Growing momentum in strategic sectors requiring large, cross-border financing deals and complex financial structures.
+
+On the revenue front, Dealogic data revealed that investment banks' revenues from their Middle East operations rose by 5% to $619 million, supported by a 55% jump in M&A advisory fees, offsetting a notable decline in equity capital markets and IPO revenues, some of which were delayed due to market volatility.
+
+### Wall Street Steps Up Presence: Extensive Hiring Wave in Dubai and the Region
+This unexpected financial momentum led global investment banks to adjust their annual forecasts; many institutions that feared missing their targets are now on track and working on major transactions inside and outside the region.
+
+This was reflected in a broad hiring drive to strengthen regional offices, particularly in the Dubai International Financial Centre (DIFC) and Abu Dhabi:
+- **Barclays:** Relocated prominent energy banker George Tanner from London to Dubai to expand the bank's regional presence.
+- **Major Global Banks:** Institutions like JPMorgan, Deutsche Bank, Standard Chartered, and Rothschild & Co are attracting new leadership talent.
+- **Citigroup and Lazard:** Both institutions continued to advertise vacancies across professional platforms to bolster their teams.
+- **Asian and Legal Expansion:** A major Chinese bank is seeking to hire bankers in Dubai to support dual listings between the Hong Kong Stock Exchange and UAE markets. International law firms like Skadden have also expanded their presence in Abu Dhabi.
+
+> "The region enjoys strong economic fundamentals and long-term growth prospects."
+> — Majid Jalfar, Executive at Deutsche Bank in the UAE
+
+> "The Middle East is playing an increasingly important role in global capital flows."
+> — Rajesh Singhi, Standard Chartered
+
+### Gulf Wealth Funds: The Engine of Global Investment
+Gulf sovereign wealth funds were unaffected by the geopolitical climate, continuing to seize opportunities globally, backed by assets approaching a total value of $5 trillion.
+Gulf funds committed record investments of $53.9 billion since the beginning of this year, distributed geographically and sectorally as follows:
+- **United States:** Received half of the investments, focusing on technology and artificial intelligence.
+- **China and the UK:** Attracted growing interest in infrastructure and renewable energy sectors.
+- **Mubadala Sovereign Fund:** Led the list with an investment volume of $15.2 billion, followed by strong and intensive activity from 7 other Gulf sovereign funds.
+
+### Mega Strategic Projects in Saudi Arabia, UAE, and Kuwait
+In parallel with foreign investments, Gulf governments are leading giant domestic projects to reshape the economic landscape:
+- **UAE:** Working on a strategic plan to expand its eastern ports on the Gulf of Oman coast to reduce dependence on the Strait of Hormuz. In Abu Dhabi, L'Imad is leading a $30 billion infrastructure project with local and international partners.
+- **Saudi Arabia:** Aramco officials are moving ahead with one of the most ambitious privatization plans in the company's history to strengthen the balance sheet, with expectations that these deals will raise up to $35 billion.
+- **Kuwait:** Fierce competition among major global investors (such as BlackRock via its GIP arm and Brookfield Group) to acquire a $7.5 billion stake in the state oil company's pipeline network.
+
+### Sustained Banking Resilience and Existing Challenges
+Despite the current boom, analytical reports, including one by BMI (a Fitch Solutions company), indicate that risks have not completely vanished but have become more concentrated:
+- **Deposit Solidity:** The GCC banking sector showed higher-than-expected resilience; government inflows, sovereign support, and liquidity packages helped stabilize conditions and prevent any mass capital flight.
+- **Risk Concentration:** Risks are now concentrated in confidence-sensitive funding sources, such as private sector and non-resident deposits, especially in markets more reliant on foreign funding like Bahrain and Qatar.
+- **Talent Attraction Challenge:** Candidates for leadership positions have become more selective; personal safety considerations, long-term vision, and competitive compensation packages play a crucial role in decision-making.
+- **Credit Growth Forecast:** Loan growth in Gulf countries is expected to slow down in the coming period toward 2026, a structural slowdown (as in the Saudi market due to tighter lending standards and delays in some non-oil investment decisions), while the UAE banking sector continues to outperform, supported by strong economic diversification.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس التحرير والمدير العام',
+      titleEn: 'Editor-in-Chief & General Manager',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-02',
+    readTimeAr: 'دقائق 6',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['الخليج', 'بنوك_الاستثمار', 'الاندماج_والاستحواذ', 'التوظيف_المالي', 'GCC_M&A', 'Investment_Banks', 'Gulf_Economies'],
+    views: 2940
+  },
+  {
     id: 'south-lebanon-secret-annex-investigation',
     category: 'editor-desk',
     categories: ['editor-desk', 'lebanon', 'research-reports', 'exclusives'],
