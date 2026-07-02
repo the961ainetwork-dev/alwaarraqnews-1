@@ -1273,7 +1273,7 @@ export default function App() {
                           {isAr ? 'فهرس التحقيقات الاستقصائية المتاحة (٧ تحقيقات نشطة):' : 'CATALOGUE OF ALL AVAILABLE INVESTIGATIONS (7 ACTIVE DOSSIERS):'}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {Object.entries(DOSSIER_DESKTOP_META).map(([id, meta]) => (
+                          {Object.entries(DOSSIER_DESKTOP_META).map(([id, meta], index) => (
                             <div
                               key={id}
                               onClick={() => {
@@ -1281,7 +1281,8 @@ export default function App() {
                                 setActiveCategory('alwarraq-investigations');
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                               }}
-                              className="group border border-zinc-300 bg-white/70 hover:bg-amber-100/40 hover:border-black cursor-pointer p-4 flex flex-col justify-between space-y-3 relative shadow-[3px_3px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all text-right rtl:text-right ltr:text-left"
+                              className="group border border-zinc-300 bg-white/70 hover:bg-amber-100/40 hover:border-black cursor-pointer p-4 flex flex-col justify-between space-y-3 relative shadow-[3px_3px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all text-right rtl:text-right ltr:text-left dossier-card-animate"
+                              style={{ animationDelay: `${index * 100}ms` }}
                             >
                               <div>
                                 {/* Badge & ID */}

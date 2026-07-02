@@ -60,6 +60,10 @@
   animation: fade-in-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.dossier-card-animate {
+  animation: fade-in-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @keyframes fade-in-slide-up {
   0% {
     opacity: 0;
