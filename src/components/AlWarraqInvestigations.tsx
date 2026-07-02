@@ -55,7 +55,7 @@ import LebanonAMLVisualizer from './LebanonAMLVisualizer';
 import { CeasefireInternalConflictInfographic } from './CeasefireInternalConflictInfographic';
 import { EconomicAbyssCrisisInfographic } from './EconomicAbyssCrisisInfographic';
 
-const DOSSIER_DESKTOP_META: Record<string, {
+export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
   badge: string;
   titleAr: string;
@@ -106,7 +106,7 @@ const DOSSIER_DESKTOP_META: Record<string, {
   'israel-lebanon-deal-behind-scenes': {
     fileId: 'AW-FILE-06',
     badge: 'SECRET INTEL',
-    titleAr: 'كواليس المفاوضات: كيف أدى الخوف المشترك من نفوذ إيران إلى اتفاق لبناني-إسرائيلي',
+    titleAr: 'الملف السادس: كواليس المفاوضات: كيف أدى الخوف المشترك من نفوذ إيران إلى اتفاق لبناني-إسرائيلي',
     titleEn: 'Dossier VI: Behind the Scenes - How Shared Fear of Iran Led to an Israel-Lebanon Deal',
     descAr: 'مستند استخباري خاص يكشف تفاصيل الدبلوماسية السرية والضغوط المكثفة من إدارة ترامب لإبرام اتفاقية لبنان والالتفاف على النفوذ الإيراني.',
     descEn: 'Four days of nonstop negotiations in Washington between the Israeli and Lebanese governments were propelled by one clear shared interest: weakening the influence of Hezbollah and Iran in Lebanon.'
@@ -125,17 +125,24 @@ interface AlWarraqInvestigationsProps {
   language: 'ar' | 'en';
   allArticles: Article[];
   onSelectArticle: (article: Article) => void;
+  selectedDossierId?: string;
+  onSelectDossier?: (id: string) => void;
 }
 
 export default function AlWarraqInvestigations({
   language,
   allArticles,
-  onSelectArticle
+  onSelectArticle,
+  selectedDossierId: propSelectedDossierId,
+  onSelectDossier
 }: AlWarraqInvestigationsProps) {
   const isAr = language === 'ar';
   
   // Track selected dossier for our new immersive reader layout
-  const [selectedDossierId, setSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
+  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
+  
+  const selectedDossierId = propSelectedDossierId !== undefined ? propSelectedDossierId : localSelectedDossierId;
+  const setSelectedDossierId = onSelectDossier !== undefined ? onSelectDossier : setLocalSelectedDossierId;
   
   // Text-To-Speech Narration States
   const [isPlayingContent, setIsPlayingContent] = useState(false);
