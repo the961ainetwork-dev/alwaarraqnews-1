@@ -148,6 +148,79 @@ Despite the current boom, analytical reports, including one by BMI (a Fitch Solu
     views: 2940
   },
   {
+    id: 'lebanon-cement-quarries-scandal-2026',
+    category: 'lebanon',
+    categories: ['lebanon', 'exclusives'],
+    titleAr: 'ملاحظات على فضائح ملف مقالع شركات الترابة: حبيب معلوف',
+    titleEn: 'Notes on the Cement Quarries Dossier Scandal: Habib Maalouf',
+    summaryAr: 'لم تحسن وزارة البيئة ادارة ملف استراتيجي وحساس مثل المقالع والكسارات وشركات الترابة. وقد تسبب ضعف (وربما تواطؤ) الإدارة في وزارة البيئة في إطالة فترة الفراغ والفوضى وعدم اتخاذ قرارات سليمة في ارتفاع أسعار الترابة من 90 الى 400 دولار للطن الواحد! كما ورطت مجلس الوزراء بقرارات غير قانونية ولا استراتيجية وغير مسبوقة في إدارة هذا الملف، لاسيما القرار الصادر بتاريخ 23/4/2026. فما الذي حصل وكيف وصلنا الى هنا؟ ومن يتحمل المسؤولية الأكبر فيما حصل من فوضى ومخالفات وارتكابات؟',
+    summaryEn: 'The Ministry of Environment has failed to properly manage the highly strategic and sensitive file of quarries, crushers, and cement companies. The weakness (and perhaps complicity) of the administration prolonged the vacuum and chaos, leading to a surge in cement prices from $90 to $400 per ton! It also entangled the Cabinet in illegal, unstrategic, and unprecedented decisions, particularly the decision issued on April 23, 2026. What happened, and how did we get here? Who bears the greatest responsibility for this chaos, violations, and wrongdoings?',
+    excerptAr: 'حبيب معلوف يكتب بالتفصيل عن فضائح وكواليس ملف مقالع شركات الترابة والكسارات في لبنان وكيف ارتفعت الأسعار بشكل فاحش مع تغييب الرقابة والتهرب من الرسوم الكبيرة.',
+    excerptEn: 'Habib Maalouf exposes the backroom deals of Lebanon’s cement quarries, highlighting massive price hikes, absent environmental regulations, and tax evasion.',
+    contentAr: `لم تحسن وزارة البيئة ادارة ملف استراتيجي وحساس مثل المقالع والكسارات وشركات الترابة. وقد تسبب ضعف (وربما تواطؤ) الإدارة في وزارة البيئة في إطالة فترة الفراغ والفوضى وعدم اتخاذ قرارات سليمة في ارتفاع أسعار الترابة من 90 الى 400 دولار للطن الواحد! كما ورطت مجلس الوزراء بقرارات غير قانونية ولا استراتيجية وغير مسبوقة في إدارة هذا الملف، لاسيما القرار الصادر بتاريخ 23/4/2026. فما الذي حصل وكيف وصلنا الى هنا؟ ومن يتحمل المسؤولية الأكبر فيما حصل من فوضى ومخالفات وارتكابات؟
+
+* **كانت وزيرة البيئة بالتعاون مع مدير عام البيئة قد أعلنت** في اجتماعها الأول مع لجنة البيئة النيابية منذ أكثر من عام انها طلبت الغاء قرار مجلس الوزراء السابق (الذي لم ينفذه وزير البيئة السابق لعدم اقتناعه به) وانها تريد الترخيص للشركات بالطريقة التي حصلت مؤخرا. فلماذا حصل هذا التأخير حتى تضاعفت الأسعار في السوق السوداء (معروف من الذي استفاد منها)؟!
+
+* **تتحمل وزيرة البيئة بصفتها رئيسة المجلس الوطني للمقالع** المسؤولية الاولى عن ادارة هذا الملف بوصفها المؤتمنة على ديمومة الموارد وحماية البيئة قبل اي شيء آخر.
+
+* **لماذا اقترحت، حسب مطلب الشركات التاريخي، بالترخيص عشر سنوات لها،** وهو خيار استراتيجي بعيد المدى، من دون أن تستند إلى أي رؤية استراتيجية ومن دون طلب تقييم بيئي استراتيجي لهذا الملف، تقيّم فيه الجدوى الاقتصادية والبيئية الوطنية لعمله بالمقارنة مع الكلفة الصحية والبيئية ورفض السكان المحيطين وبالمقارنة مع خيارات أخرى كالسماح بالاستيراد؟!
+
+* **تم الاحتيال على القوانين في الترخيص** والاستناد الى قرار لمجلس الوزراء العام 1997 منتهي الصلاحية … للترخيص لشركات الترابة، وتجاوز المرسوم التنظيمي النافذ والنافي لغيره رقم 8803 الصادر بتاريخ 4/10/2002 والمرفق به مخطط توجيهي ليست مقالع شركات الترابة داخله!
+
+* **في قرار المجلس الوطني الموقع من وزيرة البيئة والمدير العام معا؛** تم اقتراح تشكيل لجنة وزارية تتعلق بتصدير مادة الترابة! وهي سابقة خطيرة لوزارة البيئة تشجع فيها على المدى البعيد على اقتلاع المزيد من جبال لبنان، وقد تحفظ على هذه المادة ممثل وزارة الصناعة نفسها!
+
+* **لم تشترط الوزارة ولا المجلس الوطني ولا الحكومة في قرارها (في أقل تقدير)** على الشركات طالبة الترخيص أن يسددوا أوامر التحصيل ودفع الكفالات المصرفية اللازمة والتي تقدر بمئات ملايين الدولارات! علما أن دراسة برنامج الأمم المتحدة الانمائي، بناء على مسح الجيش بين عامي 2007 و 2020 ، كانت قد قدرت كلفة التدهور البيئي والاضرار واعادة التأهيل لمقالع شركات الترابة الثلاثة العاملة في لبنان بمساحة ما يقارب الثلاثة ملايين متر مربع و 30 مليون متر مكعب، لتحصيل ما يقارب 370 مليون دولار اميركي، من دون تقدير كلفة اختفاء الينابيع وتلوث المياه في مناطق المقالع والتي طالما تحفظت وزارة الطاقة والمياه على إعطاء الترخيص فيها! فلماذا لم تشترط تحصيلها قبل الترخيص؟!
+
+* **بالرغم من الفورة الإعلامية شبه اليومية للاعلان عن اي حركة،** لم يكن هناك أي شفافية في التعامل مع ملف حساس ومركزي في وزارة البيئة كالمقالع والكسارات وحجم مخالفاتها والاعلان عن أرقام أوامر التحصيل وحجم الأضرار والقرارات ذات الصلة، ولا حصل الإعلان عن المقالع التي لا تزال تعمل دون تراخيص والمطالبة باقفالها والتحصيل منها عائدات بمليارات الدولارات!
+
+* **تعمل شركات الترابة في لبنان ضمن سوق محلي محمي** بقرار منذ العام 1993 يمنع استيراد الترابة دون اجازة مسبقة من وزارة الصناعة. لذا تتحمل وزارة الصناعة ايضا مسؤولية تقييم هذا الخيار مع العلم انه قبل الأزمة الأخيرة المفتعلة كان طن الترابة يباع بما يقارب 90 دولار في السوق المحلي، في حين كانت الشركات تصدّر الترابة بنصف سعر السوق المحلي هذا تقريبا! وبغض النظر عن ضريبة الtva المعروفة على سعر البيع، تستوفي المالية ثلاثة دولارات فقط على الطن! فاين يذهب نصف فرق سعر الطن؟! فلو وضعت المالية عشرة أضعاف الضريبة على الطن المستورد لبقي سعر السوق ارخص على المواطن والمستهلك واستفادة الطبيعة والخزينة والصحة العامة أكثر بكثير. مع العلم أن الدولة السورية بعد الحرب تستورد الترابة بنصف السعر المحلي عندنا تقريبا!
+
+* **الشروط البيئية التي وضعتها وزارة البيئة و الملحقة بقرار مجلس الوزراء المذكور مضحكة** لاسيما "الحزام الاخضر" و"كاسر الرياح" و"التعويض البيئي" … أمام عمليات اقتلاع الجبال والتسبب بأمراض قاتلة لسكان المحيط! وكذلك قضية "الاستثمار التأهيلي" المخادعة! فمن يضمن حسن التنفيذ؟!
+
+* **حسب التجربة التاريخية، الرقابة البيئية معدومة على عمل هذا القطاع،** لا بل أن المدير العام للبيئة (ممثل الدولة العميقة في وزارة البيئة) الذي يعتبر المساهم الأكبر في صياغة مخرجات قرارات المجلس الوطني ومجلس الوزراء الاخيرة، هو نفسه من كان يخالف القرارات وشروط ومعايير المراقبة تاريخيا، اذ يسمح للشركات باستيراد البتروكوك بنسبة كبريت 6% ؛ بينما القرارات الوزارية ذات الصلة لا تسمح بنسبة تتجاوز ال 3%، مع ما لهذا الأمر من مكاسب مادية للشركات واضرار خطيرة على صحة المجتمعات والطبيعة. لا بل اثبت تحقيق التفتيش المركزي العام 2008 (رقم 166) التجاوزات الكثيرة والكبيرة التي قام بها مدير عام البيئة ومنها تغيير قرار وزير البيئة المتعلق بتحديد المواصفات والنسب الخاصة للحد من تلوث الهواء والمياه والتربة، وأصدر قرارا آخر الذي سمح بموجبه بزيادة الحدود المسموحة للملوثات في معامل الترابة! فكيف يسلم من جديد وضع الشروط والمراقبة؟!
+
+* **انطلاقا من كل ذلك على الحكومة أن تعيد النظر بقراراتها الأخيرة** بغض النظر عن نتيجة الطعن (المحق) بها أمام مجلس شورى الدولة. وعلى اللجان النيابية المعنية أن تدقق أكثر في الأرقام والمعطيات لكي تعرف كيف تراقب وتحاسب وان تعين لجان تحقيق في كل ما تقدم.`,
+    contentEn: `The Ministry of Environment has failed to properly manage a strategic and sensitive file such as quarries, crushers, and cement companies. The weakness (and perhaps complicity) of the administration within the Ministry of Environment prolonged the vacuum and chaos, leading to a surge in cement prices from $90 to $400 per ton! It also entangled the Cabinet in illegal, unstrategic, and unprecedented decisions, particularly the decision issued on April 23, 2026. What happened, and how did we get here? Who bears the greatest responsibility for this chaos, violations, and wrongdoings?
+
+* **The Minister of Environment, in cooperation with the Director General of Environment, had announced** in her first meeting with the Parliamentary Environment Committee over a year ago that she had requested the cancellation of the previous Cabinet decision (which the former minister had refused to implement due to lack of conviction) and that she wanted to license the companies in the manner recently adopted. Why then did this delay occur, allowing prices to double on the black market (it is well known who benefited)?!
+
+* **The Minister of Environment, in her capacity as President of the National Council for Quarries, bears the primary responsibility** for managing this file as the trustee for resource sustainability and environmental protection above all else.
+
+* **Why did she propose a ten-year licensing period—a long-term strategic choice** aligned with the companies' historic demands—without basing it on any strategic vision and without requesting a Strategic Environmental Assessment (SEA)? Such an assessment would evaluate the national economic and environmental feasibility of operations compared to health and environmental costs, local residents' rejection, and alternative options such as permitting imports.
+
+* **Regulations were bypassed by relying on an expired 1997 Cabinet decision** to license cement companies, completely disregarding the active and exclusive Regulatory Decree No. 8803 (dated October 4, 2002) and its attached master plan, which does not include the quarries of these cement companies!
+
+* **In the National Council decision signed by both the Minister of Environment and the Director General,** a proposal was made to form a ministerial committee regarding the export of cement! This is a dangerous precedent for the Ministry of Environment, encouraging the long-term quarrying of more Lebanese mountains—a clause to which even the Ministry of Industry representative objected!
+
+* **The Ministry, the National Council, and the Government did not mandate that applicant companies** pay outstanding collection orders and bank guarantees, estimated at hundreds of millions of dollars! A UNDP study, based on a Lebanese Army survey between 2007 and 2020, estimated the environmental degradation, damage, and rehabilitation costs for the three operating cement companies in Lebanon (spanning ~3 million square meters and 30 million cubic meters) at approximately $370 million. This excludes the cost of disappearing water springs and water pollution in quarry areas, which the Ministry of Energy and Water has long cited to withhold licensing. Why were these dues not collected before licensing?
+
+* **Despite almost daily media campaigns for every minor activity,** there has been a total lack of transparency in handling this central file. The ministry failed to announce collection order figures, damage assessments, or relevant decisions. It also failed to disclose operating unlicensed quarries, demand their closure, and collect billions of dollars in dues from them!
+
+* **Cement companies in Lebanon operate in a protected local market** by a 1993 decision banning cement imports without prior approval from the Ministry of Industry. Therefore, the Ministry of Industry also bears the responsibility of evaluating this option. Before the artificial crisis, a ton of cement sold for $90 locally, while companies exported it at nearly half that price! Apart from the standard VAT, the Ministry of Finance collects only $3 per ton! Where does the other half of the price difference go? If the Ministry of Finance placed a tenfold tax on imported cement, the market price would remain cheaper for the consumer, benefiting nature, the treasury, and public health. In comparison, post-war Syria imports cement at nearly half our local price!
+
+* **The environmental conditions set by the Ministry of Environment and appended to the Cabinet decision**—specifically "green belts," "windbreaks," and "environmental compensation"—are laughable when compared to the active leveling of mountains and lethal diseases inflicted on neighboring communities. The concept of "rehabilitative investment" is highly deceptive, and who guarantees proper implementation?
+
+* **Historically, environmental inspection is non-existent.** The Director General of Environment (a representative of the deep state in the ministry), who was a major contributor to drafting the recent National Council and Cabinet decisions, has historically violated regulations. He has allowed companies to import petcoke with a 6% sulfur content, despite ministerial decisions capping it at 3%, generating massive financial gains for corporations at the cost of public health. A Central Inspection report from 2008 (No. 166) confirmed extensive violations by the Director General, including altering a ministerial decision on pollution limits to allow higher emissions from cement factories. How can they be trusted with setting conditions and monitoring again?
+
+* **Consequently, the government must reconsider its latest decisions,** regardless of the outcome of the rightful appeal before the State Council. Relevant parliamentary committees must scrutinize the figures and data to properly monitor, hold actors accountable, and establish investigative committees into these matters.`,
+    author: {
+      nameAr: 'حبيب معلوف',
+      nameEn: 'Habib Maalouf',
+      titleAr: 'محلل شؤون البيئة',
+      titleEn: 'Environmental Affairs Analyst',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518173946687-a4c8a383392c?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-02',
+    readTimeAr: 'دقائق 8',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: false,
+    isPremium: true,
+    tags: ['البيئة', 'الكسارات', 'مقالع_الترابة', 'الفسااد', 'لبنان', 'Cement_Quarries', 'Lebanon_Environment'],
+    views: 1845
+  },
+  {
     id: 'south-lebanon-secret-annex-investigation',
     category: 'editor-desk',
     categories: ['editor-desk', 'lebanon', 'research-reports', 'exclusives'],
