@@ -2019,6 +2019,145 @@ Yang confirmed that the platform will not accept any new Iranian users and is cu
     views: 1284
   },
   {
+    id: 'trump-crypto-deals-fans-loss-2026',
+    category: 'translations',
+    categories: ['translations', 'us-politics', 'markets'],
+    titleAr: 'ترامب يجني مليار دولار من صفقات العملات المشفرة بينما خسر معجبوه ثرواتهم',
+    titleEn: 'Trump Made $1 Billion on Crypto Deals While His Fans Lost a Fortune',
+    summaryAr: 'نحو ثلثي المستثمرين في "عملة الميم" الخاصة بالرئيس يتكبدون خسائر حالياً وسط فجوة شاسعة بين أرباح ترامب الهائلة وخسائر مؤيديه.',
+    summaryEn: 'About two-thirds of investors in the President’s meme coin are currently losing money, highlighting a stark contrast between Trump’s massive profits and his fans’ financial losses.',
+    excerptAr: 'ترجم عن موقع وول ستريت جورنال (wsj.com) حول أرباح ترامب الخيالية وخسائر معجبيه من العملات المشفرة.',
+    excerptEn: 'Translated from The Wall Street Journal (wsj.com) on Trump’s crypto windfalls and his followers’ losses.',
+    contentAr: `على الرغم من إعلان الولايات المتحدة رفع الحصار البحري عن طهران منتصف يونيو الماضي في إطار اتفاق سلام مؤقت، تواجه إيران أزمة حقيقية في تصريف شحناتها النفطية. وتتراكم ملايين البراميل في عرض البحر وسط عزوف كبار المشترين الآسيويين وترقبهم لنتائج المفاوضات غير المباشرة بين واشنطن وطهران في قطر، وهو ما يتزامن مع ضغوط هبوطية واضحة على أسعار النفط العالمية نتيجة لتدفق الإمدادات عبر مضيق هرمز.
+
+### ترامب يجني مليار دولار من صفقات العملات المشفرة بينما خسر معجبوه ثرواتهم
+نحو ثلثي المستثمرين في "عملة الميم" الخاصة بالرئيس يتكبدون خسائر حالياً
+بقلم: فيكي غي هوانغ، وأمريث رامكومار، وديفيد أوبيرتي
+
+نُشر في: 1 يوليو 2026
+
+راهن مورتن كريستنسن العام الماضي بمبالغ كبيرة على الرموز الرقمية (Tokens) التي باعتها شركة "وورلد ليبرتي فاينانشال" (World Liberty Financial) المملوكة لعائلة ترامب، حاملاً أملاً في أن يكون الارتفاع المتوقع في قيمتها كافياً لمساعدته على التقاعد.
+
+وبدلاً من ذلك، تهاوت قيمة تلك الرموز. وبينما تكبد كريستنسن والعديد من أمثاله خسائر فادحة، حقق الرئيس ثروة طائلة، حيث جنى 800 مليون دولار صافية من هذا المشروع المشفر وحده، وفقاً لإفصاح مالي قدمه هذا الأسبوع.
+
+> **تصريح:** قال رائد الأعمال في مجال الأصول الرقمية كريستنسن: "في سوق العملات المشفرة، يقول الناس إن اللعبة هي اللعبة.. لقد لعب ترامب لعبة أفضل مما فعلت".
+
+لقد كان واضحاً منذ فترة أن اقتحام الرئيس ترامب لعالم العملات المشفرة كان مربحاً للغاية، لكن الإفصاح المذهل عن أن تلك المشاريع درّت عليه نحو 1.4 مليار دولار العام الماضي يؤكد الفجوة الشاسعة والواقع المختلف تماماً الذي يعيشه الرئيس مقارنة بالعديد من المستثمرين الذين أقبلوا على الأصول الرقمية مدفوعين باسمه.
+
+### صيف رقمي للرئيس وشتاء قارس للمستثمرين
+حصد الرئيس الأموال السائلة عبر إصدار أصول رقمية جديدة — تمثلت في رموز "وورلد ليبرتي" وعملات الميم (memecoins). لكن أولئك الذين اشتروها بأسعار مرتفعة عانوا الأمرين بعد أن تهاوت قيمتها لاحقاً، كجزء من انهيار أوسع في سوق المشفرات. وهكذا، تُرك الأتباع السياسيون والمؤمنون الحقيقيون بالعملات المشفرة، الذين وثقوا بعلامة ترامب التجارية، يتحملون عبء الخسائر وحدهم.
+
+* **خسائر عملة الميم:** وفقاً لمزود بيانات العملات المشفرة "نانسين" (Nansen)، الذي يتتبع 1.48 مليون محفظة رقمية اشترت العملة منذ إطلاقها في يناير 2025، فإن نحو ثلثي المستثمرين في عملة الميم الخاصة بترامب يتكبدون خسائر حالياً.
+* **حجم الإنفاق:** أنفق العديد من المعجبين بضعة آلاف من الدولارات على عملات ترامب، بينما دفع كبار المنفقين ملايين الدولارات للحصول عليها.
+* **السوق الثانوية:** يظهر تحليل "نانسين" لـ 26,663 محفظة أن 85% من مشتري رمز "WLFI$" الخاص بشركة "وورلد ليبرتي" في السوق الثانوية غارقون في الخسائر حالياً.
+
+وكان ترامب قد وصف عملة البيتكوين في عام 2021 بأنها "عملية احتيال" تهدد الدولار الأمريكي، لكنه يقود الآن بيتاً أبيض تعهد بجعل أمريكا "عاصمة العملات المشفرة في العالم". وفي حين خففت إدارته القيود التنظيمية على هذا القطاع المعروف بتقلباته الحادة، تغلغلت أعمال عائلة ترامب الواسعة في مجال التشبيه في كل ركن من أركان هذه الصناعة تقريباً، مما أثار مخاوف جدية بشأن تضارب المصالح من جانب مراقبي الأخلاقيات، بالتزامن مع تراجع أسعار البيتكوين أيضاً.
+
+### إحباط في "تروث سوشيال" واستسلام للأمر الواقع
+أثار هذا التباين إحباط بعض أشد مؤيدي الرئيس وحلفائه في صناعة العملات المشفرة على حد سواء. فإلى جانب الرموز التعبيرية لـ "صواريخ الفضاء" التي اعتاد مستخدمو منصة "تروث سوشيال" (Truth Social) —المملوكة لشركة ترامب ميديا— استخدامها لمناقشة الاستثمارات المرتبطة بترامب، تحول حديث بعض الأفراد يوم الأربعاء إلى السخرية والتهكم؛ حيث قال أحد المستخدمين عن رموز "WLF": "استثماري أصبح بلا قيمة الآن".
+
+ولكن في سوق العملات المشفرة، حيث يمكن لعملات الميم أن تتبخر قيمتها سريعاً، وحيث تشكل عمليات "سحب البساط" (rug pulls) والاحتيال تهديداً مستمراً، استسلم مستثمرون آخرون لخسائرهم باعتبارها جزءاً من مخاطر اللعبة.
+
+وقال فنسنت ديريو، وهو مستشار يبلغ من العمر 28 عاماً ومتحمس للعملات المشفرة في نيويورك، إنه اشترى في البداية رمز "TRUMP$" عند إطلاقه وجمع المزيد لضمان مقعد في "عشاء عملات الميم الافتتاحي". وبعد بيع نصفها تقريباً في أواخر عام 2025، لا يزال يمتلك أكثر من 8,000 عملة.
+
+وأضاف ديريو: "لم يجبر أحد أي شخص على الذهاب والاستثمار في أي من هذه الرموز. لقد اشتراها الناس على مسؤوليتهم الخاصة. يجب على المزيد من السياسيين الانتباه، وأن يكونوا أكثر شفافية بشأن كيفية جني الأموال في مشاريعهم التجارية".
+
+### قفزة قبل التنصيب وقوانين تثير التساؤلات
+قبل أيام من تنصيبه، أطلق ترامب عملة الميم الخاصة به "TRUMP$"، والتي قفزت قيمتها السوقية الإجمالية في ذروتها لتصل إلى نحو 15 مليار دولار قبل أن تهبط بنسبة 97% لتسجل حوالي 400 مليون دولار اليوم. وفي سبتمبر 2024، ساعد ترامب وأبناؤه في إطلاق "وورلد ليبرتي فاينانشال"، المشروع الرئيسي للعائلة في مجال التشفير.
+
+وأطلق هذا المشروع لاحقاً عملة مستقرة (stablecoin) مرتبطة بالدولار قبل وقت قصير من توقيع ترامب على "قانون جينيوس" (Genius Act) ليصبح قانوناً نافذاً، والذي يضع إطاراً تنظيمياً لمثل هذه العملات المرتبطة بالدولار.
+
+من جانبهم، ينفي مسؤولو البيت الأبيض وجود أي تضارب في المصالح. وصرحت المتحدثة باسم البيت الأبيض، آنا كيلي، قائلة:
+
+> "لم يشارك الرئيس ولا عائلته قط —ولن يشاركوا أبداً— في أي تضارب للمصالح. إن جميع الإجراءات التي يتخذها الرئيس ترامب وإدارته تأتي لمصلحة الشعب الأمريكي".
+
+وتُظهر الإفصاحات أن الطفرة في أرباح ترامب من العملات المشفرة العام الماضي جاءت بالإضافة إلى الدخل المزدهر من أعمال الفنادق وملاعب الغولف التقليدية التابعة لعائلته، فضلاً عن تضخم حيازاته من الأسهم في شركات تكنولوجية كبرى مثل نيفيديا (Nvidia) وميتا (Meta).
+
+وقد قلل ترامب من أهمية هذه الأرباح غير المتوقعة، وعزا مكاسبه إلى الانتعاش العام للأسواق، حيث قال للصحفيين يوم الأربعاء: "هل تعرفون لماذا أربح؟ لأن سوق الأسهم يرتفع. نحن جميعاً نربح. أنا أربح لأنني أملك الكثير من المال والكثير من السيولة النقدية".
+
+### تعقيدات تشريعية في الكونغرس
+يمكن أن يؤدي هذا الإفصاح إلى تعقيد المفاوضات المضطربة في الكونغرس بشأن التشريع الذي من شأنه وضع قواعد تنظم العملات المشفرة، وهو مشروع قانون يمثل أولوية قصوى للعديد من شركات التشفير التي أنفقت ملايين الدولارات على جهود الضغط (Lobbying).
+
+ويصر العديد من الديمقراطيين وبعض الجمهوريين على أن يتضمن مشروع القانون بنوداً صارمة تمنع الرئيس والمسؤولين المنتخبين من التربح من أنشطة التشفير التي قد تستفيد بشكل مباشر من اللوائح التي يشرفون عليها — وهي نقطة خلاف قد تصبح أكثر استعصاءً على الحل بعد هذا الإفصاح الأخير.
+
+وقالت السناتورة سينثيا لوميس (جمهورية عن ولاية وايومنغ)، وهي راعية لمشروع القانون وتتفاوض مع البيت الأبيض والديمقراطيين بشأن صياغة البنود الأخلاقية، إن التشريع سيتضمن بنوداً قوية وهو أفضل طريقة لمعالجة هذه المخاوف. وسيحتاج مشروع القانون إلى بعض الدعم الديمقراطي للحصول على الأصوات الستين اللازمة لتمريره في مجلس الشيوخ، بعد أن مر بالفعل عبر مجلس النواب.
+
+وعقّب السناتور روبن غاليغو (ديمقراطي عن ولاية أريزونا)، وهو أحد الديمقراطيين الذين اشترطوا إدراج بند الأخلاقيات لدعم القانون، قائلاً بعد موافقة لجنة الخدمات المصرفية بمجلس الشيوخ على التشريع في منتصف مايو: "يجب حل هذا الأمر، وإلا فلا أعتقد أنهم سيحصلون على الأصوات اللازمة". وجد غاليغو هجومه يوم الثلاثاء عبر منصة "إكس" (X) مؤكداً أن ترامب يجني المليارات مستغلاً منصبه الرئاسي بينما يرفع التكاليف على الطبقة العاملة.
+
+وفي نهاية المطاف، يبدو أن بعض المستثمرين مثل كريستنسن، مؤسس موقع "airdropalert.com" ومالك كمية كبيرة من رموز "WLFI"، والذين اشتروا أيضاً عملة "TRUMP$" لتأمين دعوات لحضور فعاليات ترامب، لا يحملون ضغينة شخصية رغم المفاجأة؛ إذ ختم كريستنسن حديثه بالقول: "يبدو أنها كانت أداة رائعة لتحقيق الدخل له ولعائلته، وهو في النهاية يهتم بمصلحة عائلته ومقربيه".`,
+    contentEn: `*Translated from The Wall Street Journal (wsj.com) - [Original Article](https://www.wsj.com/finance/currencies/trump-made-1-billion-on-crypto-deals-while-his-fans-lost-a-fortune-408754c9?mod=hp_lead_pos1)*
+
+### Trump Made $1 Billion on Crypto Deals While His Fans Lost a Fortune
+About two-thirds of investors in the President's meme coin are currently losing money.
+By: Vicky Ge Huang, Amrith Ramkumar, and David Uberti
+
+Published: July 1, 2026
+
+Last year, Morten Christensen placed substantial bets on the digital tokens sold by World Liberty Financial, a crypto enterprise backed by the Trump family, hoping that their anticipated rise in value would be enough to help him retire.
+
+Instead, the value of those tokens crashed. While Christensen and many others like him suffered heavy losses, the president made a fortune, clearing $800 million net from this crypto project alone, according to a financial disclosure filed this week.
+
+> **Statement:** "In crypto, people say the game is the game," said Christensen, a digital-asset entrepreneur. "Trump just played a better game than I did."
+
+It has been clear for some time that President Trump’s foray into cryptocurrencies was highly lucrative, but the stunning disclosure that his crypto ventures brought him about $1.4 billion last year underscores the wide gap and completely different realities between the president and many everyday investors who bought into digital assets driven by his brand.
+
+### A Golden Summer for the President, a Bitter Winter for Investors
+The president harvested cash by issuing new digital assets—represented by World Liberty tokens and memecoins. But those who bought them at peak prices suffered as their values subsequently collapsed, part of a wider crash in the crypto markets. Thus, political followers and true believers in crypto who trusted the Trump brand were left to bear the burden of the losses.
+
+* **Memecoin Losses:** According to crypto data provider Nansen, which tracks 1.48 million digital wallets that have bought the coin since its launch in January 2025, about two-thirds of investors in Trump’s memecoin are currently in the red.
+* **Spending Scale:** Many fans spent a few thousand dollars on Trump's coins, while some high-rollers spent millions.
+* **Secondary Market:** Nansen’s analysis of 26,663 wallets shows that 85% of buyers of the World Liberty $WLFI token on the secondary market are currently underwater.
+
+Trump had described Bitcoin in 2021 as a "scam" threatening the US dollar, but he now leads a White House that has pledged to make America the "crypto capital of the planet." While his administration has rolled back regulations on the highly volatile sector, the Trump family's sprawling crypto business has reached into nearly every corner of the industry, raising serious conflict-of-interest concerns from ethics watchdogs, even as Bitcoin prices have also declined.
+
+### Frustration on Truth Social and Resignation to the Game
+The contrast has frustrated some of the president's most ardent supporters and allies in the crypto industry alike. Alongside the "rocket ship" emojis that Truth Social users once used to discuss Trump-associated investments, conversation on Wednesday turned to frustration and sarcasm, with one user noting of the WLF tokens: "My investment is now worth nothing."
+
+Yet in the crypto market, where memecoins can evaporate in minutes and "rug pulls" and scams are constant threats, other investors resigned themselves to their losses as part of the game's risk.
+
+Vincent Deriu, a 28-year-old consultant and crypto enthusiast in New York, said he initially bought the $TRUMP token at launch and accumulated more to secure a ticket to the "inaugural memecoin dinner." After selling about half of his holdings in late 2025, he still holds more than 8,000 tokens.
+
+"Nobody forced anyone to go and buy any of these tokens," Deriu said. "People bought them at their own risk. More politicians should pay attention and be more transparent about how they make money in their business ventures."
+
+### A Pre-Inaugural Surge and Questionable Laws
+Days before his inauguration, Trump launched his memecoin, $TRUMP, which surged to a total market cap of about $15 billion at its peak before plunging 97% to register around $400 million today. In September 2024, Trump and his sons helped launch World Liberty Financial, the family’s signature crypto project.
+
+The project later launched a US dollar-pegged stablecoin shortly before Trump signed the "Genius Act" into law, establishing a regulatory framework for such dollar-backed tokens.
+
+White House officials deny any conflicts of interest. White House spokesperson Anna Kelly stated:
+
+"Neither the President nor his family has ever participated—nor will they ever participate—in any conflicts of interest. All actions taken by President Trump and his administration are in the best interest of the American people."
+
+Disclosures show that Trump’s surge in crypto profits last year came in addition to flourishing income from his traditional hotel and golf businesses, as well as ballooning stock holdings in tech giants like Nvidia and Meta.
+
+Trump downplayed the windfalls, attributing his gains to the general market upswing, telling reporters on Wednesday: "Do you know why I'm winning? Because the stock market is going up. We are all winning. I'm winning because I have a lot of money and a lot of cash."
+
+### Legislative Complications in Congress
+This disclosure could complicate fractious negotiations in Congress over legislation to establish rules for cryptocurrencies, a bill that is a top priority for many crypto firms that spent millions on lobbying.
+
+Many Democrats and some Republicans insist the bill include strict provisions to prevent the president and elected officials from profiting from crypto activities that could directly benefit from regulations they oversee—a point of contention that could become even harder to resolve following this latest disclosure.
+
+Senator Cynthia Lummis (R., Wyo.), a sponsor of the bill who has been negotiating with the White House and Democrats on ethics language, said the legislation would include robust provisions and is the best way to address these concerns. The bill will need some Democratic support to get the 60 votes required to pass the Senate, having already cleared the House.
+
+Senator Ruben Gallego (D., Ariz.), one of the Democrats who conditioned their support on the ethics clause, said after the Senate Banking Committee approved the legislation in mid-May: "This has to be solved, or I don't think they'll have the votes." Gallego renewed his attack on Tuesday on X, asserting that Trump is reaping billions by exploiting his presidency while raising costs for working-class families.
+
+Ultimately, some investors like Christensen, founder of airdropalert.com and a major WLFI token holder who also bought the $TRUMP coin to secure invitations to Trump events, bear no personal grudge despite the surprise. "It seems like it was a great monetization tool for him and his family, and at the end of the day, he cares about his family and those close to him," Christensen concluded.`,
+    author: {
+      nameAr: 'فيكي غي هوانغ، أمريث رامكومار، ديفيد أوبيرتي',
+      nameEn: 'Vicky Ge Huang, Amrith Ramkumar, and David Uberti',
+      titleAr: 'مراسلون لصحيفة وول ستريت جورنال (ترجمة عن wsj.com)',
+      titleEn: 'Wall Street Journal Correspondents (Translated from wsj.com)',
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&w=1200&q=80',
+    date: '2026-07-01',
+    readTimeAr: '6 دقائق قراءة',
+    readTimeEn: '6 min read',
+    isFeatured: true,
+    isPremium: false,
+    tags: ['العملات المشفرة', 'ترامب', 'وول ستريت جورنال', 'الكونغرس', 'مشاريع ترامب', 'Cryptocurrency', 'Trump', 'WSJ', 'Congress', 'Trump Deals'],
+    views: 1845
+  },
+  {
     id: 'exclusives-china-yuan-sanctions-2026',
     category: 'exclusives',
     categories: ['exclusives', 'middle-east'],
@@ -2282,6 +2421,101 @@ The digital yuan accounted for 95% of the 4,000 cross-border payment transaction
     isPremium: false,
     tags: ['الصين', 'اليوان', 'العقوبات', 'إيران', 'روسيا', 'النفط', 'China', 'Yuan', 'Sanctions', 'Iran', 'Russia', 'Oil'],
     views: 345
+  },
+  {
+    id: 'iranian-oil-sea-accumulation-2026',
+    category: 'arab-markets',
+    categories: ['arab-markets', 'markets'],
+    titleAr: 'مفاوضات هشة وعزوف آسيوي: نفط إيران يتراكم في البحر والأسعار تتراجع مع تدفقات "هرمز"',
+    titleEn: 'Fragile Talks and Asian Reluctance: Iranian Oil Accumulates at Sea as Prices Drop with Strait of Hormuz Flows',
+    summaryAr: 'على الرغم من إعلان الولايات المتحدة رفع الحصار البحري عن طهران منتصف يونيو الماضي في إطار اتفاق سلام مؤقت، تواجه إيران أزمة حقيقية في تصريف شحناتها النفطية وتتراكم ملايين البراميل في عرض البحر وسط عزوف كبار المشترين الآسيويين وترقبهم لنتائج المفاوضات غير المباشرة في قطر.',
+    summaryEn: 'Despite the U.S. lifting the naval blockade on Tehran in mid-June as part of a temporary peace deal, Iran faces a real crisis in marketing its oil shipments. Millions of barrels are accumulating at sea amid reluctance from major Asian buyers awaiting the results of indirect talks in Qatar.',
+    excerptAr: 'أزمة المخزن العائم الإيراني تتفاقم مع تراكم 58 مليون برميل بالبحر وعزوف الصين والهند وسط ترقب لمفاوضات الدوحة.',
+    excerptEn: 'The Iranian floating storage crisis deepens with 58 million barrels stranded at sea, as China and India hold back awaiting Doha talks.',
+    contentAr: `على الرغم من إعلان الولايات المتحدة رفع الحصار البحري عن طهران منتصف يونيو الماضي في إطار اتفاق سلام مؤقت، تواجه إيران أزمة حقيقية في تصريف شحناتها النفطية. وتتراكم ملايين البراميل في عرض البحر وسط عزوف كبار المشترين الآسيويين وترقبهم لنتائج المفاوضات غير المباشرة بين واشنطن وطهران في قطر، وهو ما يتزامن مع ضغوط هبوطية واضحة على أسعار النفط العالمية نتيجة لتدفق الإمدادات عبر مضيق هرمز.
+
+### أزمة المخزون العائم: 58 مليون برميل بانتظار وجهة
+تُشير بيانات شركة "فورتكسا" وحسابات "بلومبرغ" إلى أن كميات النفط الخام والمكثفات الإيرانية المخزنة على متن الناقلات في عرض البحر تجاوزت 58 مليون برميل حتى الأول من يوليو.
+
+وتكمن الأزمة الحقيقية في التفاصيل التالية:
+
+* **غياب الوجهة:** أكثر من 90% من هذه الشحنات تفتقر إلى وجهة محددة، حيث تُدرج الناقلات عبارات مثل "بانتظار التعليمات" أو تكتفي بتحديد "سنغافورة" كميناء تالٍ، مما يرجح اللجوء إلى عمليات نقل الشحنات من سفينة إلى أخرى في مضيق ملقا.
+* **سباق مع الزمن:** تملك طهران مهلة تنتهي في منتصف أغسطس المقبل (ضمن نافذة وقف إطلاق النار الممتدة لـ 60 يوماً) للعثور على مشترين، وتأخر المبيعات يحرمها من إيرادات حيوية ويضعف موقفها التفاوضي.
+* **مفارقة الشحن:** أعلنت إيران أنها شحنت أكثر من 40 مليون برميل منذ رفع الحصار الأمريكي، إلا أن بيانات شركة "كبلر" تؤكد أن أكثر من 20 مليون برميل من هذا الخام ظلت عالقة في المياه الآسيوية لمدة سبعة أيام أو أكثر، بزيادة 18% عن الأسبوع السابق.
+
+### موقف كبار المشترين: حذر صيني وترقب هندي
+يرجع تراكم الشحنات بشكل أساسي إلى إحجام القوى الاقتصادية الكبرى في آسيا عن الشراء، مدفوعاً بمخاوف جيوسياسية وتقنية:
+
+1. **الصين (المشتري التاريخي)**
+انخفضت واردات الصين من النفط الإيراني بأكثر من النصف خلال شهر يونيو على أساس شهري لتصل إلى نحو 654 ألف برميل يومياً. وتعود الأسباب إلى تراجع معدلات تشغيل المصافي الصينية المستقلة (المشتري الرئيسي سابقاً) إلى أدنى مستوى لها في 9 سنوات، بجانب امتناع المصافي الحكومية خوفاً من تعقيدات تمويل الصفقات عبر البنوك، فضلاً عن استمرار العقوبات الأوروبية والبريطانية التي تعرقل إجراءات التأمين.
+
+2. **الهند (البحث عن ضمانات)**
+رغم اللقاء الذي جمع وزيري النفط الهندي والإيراني في نيودلهي، رفضت الهند تقديم أي التزام رسمي باستئناف الاستيراد. وتفضل شركات التكرير الحكومية الهندية الانتظار لسببين:
+* تأمين إمداداتها بالكامل حتى نهاية أغسطس من مصادر أخرى.
+* رغبتها في الحصول على توضيحات رسمية من واشنطن بشأن آلية تنفيذ المدفوعات المقومة بالدولار الأمريكي لتجنب أي غرامات مستقبلاً.
+
+> **تصريح:** أوضح وزير الخزانة الأمريكي، سكوت بيسنت، أن المشترين يتخوفون من إعادة فرض العقوبات سرياعاً في حال انهيار المفاوضات، مؤكداً: "لم يشترِ هذا النفط أي طرف آخر غير الصين، التي كانت تشتريه حتى عندما كان خاضعاً للعقوبات، ولذلك لا يزال يُتداول بخصم سعري".
+
+### أسواق النفط تتراجع: تدفقات هرمز تعوض النقص
+بالتوازي مع أزمة التسويق الإيرانية، شهدت أسعار النفط العالمية تراجعاً لليوم الثالث على التوالي، متأثرة بزيادة المعروض وعودة استقرار خطوط الملاحة الحيوية:
+
+* **الأسعار الحالية:** جرى تداول خام "برنت" (تسليم سبتمبر) قرب 71 دولاراً للبرميل بعد هبوطه بأكثر من 3% في جلستين، في حين استقر خام "غرب تكساس الوسيط" قرب 68 دولاراً.
+* **تدفقات مضيق هرمز:** أكد مسؤول أمريكي أن إمدادات النفط عبر المضيق تجاوزت 10 ملايين برميل يومياً، مما يثبت عدم قدرة طهران حالياً على عرقلة الشحن، ويقلص من أوراق الضغط السياسية التي تملكها.
+* **البدائل والاحتياطيات:** استعادت دولة الإمارات وتيرة صادراتها لما قبل الحرب عبر مسارات بديلة وخطوط أنابيب تخفف الاعتماد على هرمز. وفي الوقت نفسه، أسهمت السحوبات المتتالية من الاحتياطيات البترولية الاستراتيجية للدول المستهلكة في كبح جماح الأسعار، على الرغم من انخفاض المخزونات الأمريكية التجارية إلى أدنى مستوياتها منذ مارس 2025 لتصل إلى 1.2 مليار برميل.
+
+### المشهد السياسي: محادثات قطر وخطوط واشنطن الحمراء
+تتجه الأنظار حالياً إلى العاصمة القطرية الدوحة، التي تحتضن جولات المفاوضات غير المباشرة بين واشنطن وطهران. ورغم إشادة الرئيس الأمريكي دونالد ترمب بالتقدم المحرز قائلاً "إننا نتفاهم جيداً"، إلا أنه جدد تأكيده الصارم على عدم السماح لإيران بامتلاك سلاح نووي كشرط أساسي لأي اتفاق دائم.
+
+ومن المتوقع أن يتحدد موعد الاجتماع المقبل في قطر فور الانتهاء من مراسم تشييع المرشد السابق لإيران علي خامنئي (والذي قُتل في ضربة جوية مع بداية الصراع)، والمقرر أن تبدأ في 4 يوليو وتستمر لعدة أيام، لتظل الأسواق النفطية والسياسية في حالة ترقب شديد لما ستسفر عنه هذه النافذة الزمنية الحرجة.`,
+    contentEn: `Despite the United States announcing the lifting of the naval blockade on Tehran in mid-June as part of a temporary peace agreement, Iran faces a real crisis in unloading and selling its oil shipments. Millions of barrels are accumulating at sea amid reluctance from major Asian buyers who are waiting for the results of the indirect talks between Washington and Tehran in Qatar. This situation coincides with clear downward pressure on global oil prices due to the continuous flow of supplies through the Strait of Hormuz.
+
+### Floating Inventory Crisis: 58 Million Barrels Awaiting Destination
+Data from Vortexa and Bloomberg calculations indicate that the volumes of Iranian crude oil and condensates stored on tankers in the open sea exceeded 58 million barrels as of July 1st.
+
+The real crisis lies in the following details:
+
+* **No Destination:** More than 90% of these shipments lack a designated destination. Tankers list terms like "awaiting instructions" or simply specify "Singapore" as the next port of call, making it highly likely they will resort to ship-to-ship (STS) transfers in the Malacca Strait.
+* **Race Against Time:** Tehran has a deadline ending in mid-August (within the 60-day ceasefire window) to find buyers. Delayed sales deprive it of vital revenues and weaken its negotiating stance.
+* **Shipping Paradox:** Although Iran announced it shipped over 40 million barrels since the lifting of the US blockade, Kepler data confirms that more than 20 million barrels of this crude remained stranded in Asian waters for seven days or more—an 18% increase from the previous week.
+
+### Major Buyers: Chinese Caution and Indian Anticipation
+The accumulation of shipments is primarily driven by major Asian economic powers refraining from purchasing, due to geopolitical and technical concerns:
+
+1. **China (The Historical Buyer)**
+China's imports of Iranian oil dropped by more than half in June on a monthly basis to around 654,000 barrels per day. The reasons include independent Chinese refineries (the primary buyers previously) dropping operating rates to their lowest in 9 years, state-owned refineries refraining due to complex banking transaction complications, and ongoing European and British sanctions hampering insurance procedures.
+
+2. **India (Seeking Guarantees)**
+Despite a meeting between Indian and Iranian oil ministers in New Delhi, India refused to provide any official commitment to resume imports. Indian state refiners prefer to wait for two main reasons:
+* Securing all their supply needs through the end of August from alternative sources.
+* Seeking official clarifications from Washington regarding the payment mechanism denominated in US dollars to avoid any future penalties.
+
+> **Statement:** US Treasury Secretary Scott Bessent pointed out that buyers fear rapid snapback of sanctions if talks collapse, stating: "No party other than China has bought this oil, which bought it even when under sanctions, which is why it continues to trade at a discount."
+
+### Oil Markets Decline: Hormuz Flows Offset the Shortage
+In parallel with the Iranian marketing crisis, global oil prices experienced a decline for the third consecutive day, influenced by rising supply and stabilized navigation lines:
+
+* **Current Prices:** Brent crude (September delivery) was traded near $71 per barrel after dropping by more than 3% in two sessions, while WTI settled near $68.
+* **Strait of Hormuz Flows:** A US official confirmed that oil supplies through the Strait exceeded 10 million barrels per day, demonstrating Tehran's current inability to disrupt shipping and diminishing its political leverage.
+* **Alternatives and Reserves:** The UAE restored its pre-war export pace through alternative routes and pipelines, bypassing reliance on Hormuz. At the same time, successive releases from strategic petroleum reserves of consuming countries helped curb price spikes, even as US commercial inventories fell to their lowest since March 2025 at 1.2 billion barrels.
+
+### Political Scene: Qatar Talks and Washington's Red Lines
+All eyes are currently on Doha, Qatar, which hosts indirect negotiations between Washington and Tehran. Although US President Donald Trump praised the progress, saying "we are getting along well," he reiterated that Iran will never be allowed to acquire a nuclear weapon as a core condition for any permanent agreement.
+
+The next meeting in Qatar is expected to be scheduled immediately after the funeral of former Iranian Supreme Leader Ali Khamenei (who was killed in an airstrike at the onset of the conflict), which starts on July 4th and will last for several days, leaving oil and political markets in deep anticipation.`,
+    author: {
+      nameAr: 'إدارة التحرير الاستقصائي',
+      nameEn: 'Investigative Editorial Desk',
+      titleAr: 'موفد الشؤون الاقتصادية والنفط',
+      titleEn: 'Economic & Oil Correspondent',
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-02',
+    readTimeAr: 'دقائق 5',
+    readTimeEn: '5 min read',
+    isFeatured: true,
+    isPremium: false,
+    tags: ['إيران', 'النفط', 'الصين', 'الهند', 'مضيق هرمز', 'برنت', 'مفاوضات قطر', 'Iran', 'Oil', 'China', 'India', 'Strait of Hormuz', 'Brent', 'Qatar Talks'],
+    views: 412
   },
   {
     id: 'arab-markets-macro-risk-map-2026',
