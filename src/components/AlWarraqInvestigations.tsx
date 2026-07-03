@@ -55,6 +55,8 @@ import LebanonAMLVisualizer from './LebanonAMLVisualizer';
 import { CeasefireInternalConflictInfographic } from './CeasefireInternalConflictInfographic';
 import { EconomicAbyssCrisisInfographic } from './EconomicAbyssCrisisInfographic';
 import { FrozenAssetsInfographic } from './FrozenAssetsInfographic';
+import { DepositsInfographic } from './DepositsInfographic';
+import { SubseaCablesInfographic } from './SubseaCablesInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -127,6 +129,22 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier VIII: Iranian Frozen Assets Abroad',
     descAr: 'تحليل دقيق للأبعاد الكمية، التوزيع الجغرافي، الأطر القانونية والتداعيات الجيوسياسية للأموال المحتجزة.',
     descEn: 'Comprehensive study of quantitative dimensions, legal structures, and geopolitical impacts.'
+  },
+  'lebanon-deposits-crisis-2026': {
+    fileId: 'AW-FILE-09',
+    badge: 'DEPOSITS REPORT',
+    titleAr: 'الملف التاسع: أرقام المودعين الفجوة الكبرى ومستقبل الودائع لعام ٢٠٢٦',
+    titleEn: 'Dossier IX: The Deposits Dilemma - Balance Sheet Gaps & Future Scenarios',
+    descAr: 'تحليل استقصائي لودائع العملاء، وتوزيعها بالعملة الصعبة، والتحول السلوكي التاريخي للمودع اللبناني.',
+    descEn: 'A deep-dive data autopsy of LBP vs. USD bank deposits, liquid reserves deficit, and gold allocation.'
+  },
+  'submarine-cables-geopolitics-2026': {
+    fileId: 'AW-FILE-10',
+    badge: 'DIGITAL INFRASTRUCTURE',
+    titleAr: 'الملف العاشر: جيوبوليتيك الكابلات البحرية ومراكز البيانات تحت التهديد',
+    titleEn: 'Dossier X: Subsea Cables Geopolitics & Digital Infrastructure Under Threat',
+    descAr: 'ترجمة خاصة لتقريري الإيكونوميست وتساتام هاوس حول الصراع الصيني الأمريكي وحرب الظل الإيرانية على شبكات الإنترنت العالمية.',
+    descEn: 'Chatham House and The Economist investigative translations regarding the US-China race and Iranian threat matrix.'
   }
 };
 
@@ -177,7 +195,9 @@ export default function AlWarraqInvestigations({
       article.id === 'ch12-hebrew-jd-vance-criticism-2026' ||
       article.id === 'israel-lebanon-deal-behind-scenes' ||
       article.id === 'south-lebanon-secret-annex-investigation' ||
-      article.id === 'iran-frozen-assets-2026'
+      article.id === 'iran-frozen-assets-2026' ||
+      article.id === 'lebanon-deposits-crisis-2026' ||
+      article.id === 'submarine-cables-geopolitics-2026'
     );
   });
 
@@ -684,6 +704,14 @@ export default function AlWarraqInvestigations({
                         </h4>
                       </div>
                       <FrozenAssetsInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'lebanon-deposits-crisis-2026' ? (
+                    <div className="p-1 bg-white relative overflow-hidden rounded-md">
+                      <DepositsInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'submarine-cables-geopolitics-2026' ? (
+                    <div className="p-1 bg-[#0D0E12] relative overflow-hidden rounded-md">
+                      <SubseaCablesInfographic language={language} />
                     </div>
                   ) : null}
                 </div>

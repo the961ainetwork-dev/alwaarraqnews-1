@@ -1,4 +1,5 @@
 import { Article, NavigationTab, CurrencyRate } from './types';
+import { NEW_ARTICLES } from './newArticles';
 
 export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'all', labelAr: 'الرئيسية', labelEn: 'Home' },
@@ -28,6 +29,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 ];
 
 export const INITIAL_ARTICLES: Article[] = [
+  ...NEW_ARTICLES,
   {
     id: 'lebanon-syria-relations-2026',
     category: 'exclusives',
