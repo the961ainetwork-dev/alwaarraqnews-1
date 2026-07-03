@@ -685,19 +685,7 @@ export default function AlWarraqInvestigations({
                       </div>
                       <FrozenAssetsInfographic language={language} />
                     </div>
-                  ) : (
-                    <div className="relative overflow-hidden rounded-md">
-                      <img 
-                        src={activeDossier.imageUrl || "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=400&q=80"} 
-                        alt={activeDossier.titleEn} 
-                        referrerPolicy="no-referrer"
-                        className="w-full h-64 object-cover grayscale contrast-125"
-                      />
-                      <div className="absolute bottom-0 inset-x-0 bg-black/85 text-white font-mono text-[9px] p-2 text-center uppercase tracking-widest">
-                        {isAr ? 'صورة أرشيفية رسمية مدرجة بالملف' : 'OFFICIAL CASE FILE ARCHIVE PHOTO ATTACHMENT'}
-                      </div>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* THE COMPLETE DETAILED FULL TEXT OF THE DOSSIER FILE */}

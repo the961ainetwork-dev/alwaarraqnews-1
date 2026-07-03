@@ -73,6 +73,28 @@ export default function ArticleViewer({
 
   const isPremiumLocked = article.isPremium && (!currentUser || (currentUser.role !== 'admin' && !currentUser.isPremiumSubscriber));
 
+  const isInvestigativeArticle = (art: any) => {
+    if (!art) return false;
+    return (
+      art.category === 'investigations' || 
+      art.categories?.includes('investigations') ||
+      art.category === 'alwarraq-investigations' ||
+      art.categories?.includes('alwarraq-investigations') ||
+      [
+        'lebanon-framework-agreement-analysis-2026',
+        'solidere-extension-2069',
+        'lebanon-ceasefire-mirage-2026',
+        'lebanon-economic-abyss-2026',
+        'ch12-hebrew-jd-vance-criticism-2026',
+        'israel-lebanon-deal-behind-scenes',
+        'south-lebanon-secret-annex-investigation',
+        'iran-frozen-assets-2026'
+      ].includes(art.id)
+    );
+  };
+
+  const isInvestigative = isInvestigativeArticle(article);
+
   // Content bindings
   const title = activeLang === 'ar' ? article.titleAr : article.titleEn;
   const summary = activeLang === 'ar' ? article.summaryAr : article.summaryEn;
@@ -903,7 +925,7 @@ export default function ArticleViewer({
                   onSelectArticle={onSelectArticle || (() => {})} 
                 />
               </div>
-            ) : (
+            ) : isInvestigative ? null : (
               <div className="relative overflow-hidden rounded-lg shadow-sm">
                 <img 
                   src={article.imageUrl} 
@@ -1413,22 +1435,24 @@ export default function ArticleViewer({
                         className="group flex flex-col border border-zinc-200 hover:border-[#b91c1c] bg-white p-3 transition-all cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5 duration-150"
                       >
                         {/* Compact thumbnail image */}
-                        <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
-                          <img
-                            src={recArt.imageUrl}
-                            alt={recTitle}
-                            loading="lazy"
-                            decoding="async"
-                            referrerPolicy="no-referrer"
-                            onError={(e) => {
-                              e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=850&q=80";
-                            }}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute top-1 left-1 bg-black text-white text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold">
-                            {recCategoryLabel}
+                        {!isInvestigativeArticle(recArt) && (
+                          <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
+                            <img
+                              src={recArt.imageUrl}
+                              alt={recTitle}
+                              loading="lazy"
+                              decoding="async"
+                              referrerPolicy="no-referrer"
+                              onError={(e) => {
+                                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=850&q=80";
+                              }}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute top-1 left-1 bg-black text-white text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold">
+                              {recCategoryLabel}
+                            </div>
                           </div>
-                        </div>
+                        )}
 
                         {/* Title text */}
                         <h5 className="font-sans font-black text-xs text-zinc-900 group-hover:text-red-700 transition-colors line-clamp-2 mt-0.5 leading-snug">
@@ -1486,22 +1510,24 @@ export default function ArticleViewer({
                         className="group flex flex-col border border-zinc-200 bg-white hover:border-[#b91c1c] active:border-black p-3 transition-all cursor-pointer shadow-sm hover:shadow-md"
                       >
                         {/* Compact thumbnail image */}
-                        <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
-                          <img
-                            src={relArt.imageUrl}
-                            alt={relTitle}
-                            loading="lazy"
-                            decoding="async"
-                            referrerPolicy="no-referrer"
-                            onError={(e) => {
-                              e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=850&q=80";
-                            }}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute top-1 left-1 bg-black text-white text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold">
-                            {relCategoryLabel}
+                        {!isInvestigativeArticle(relArt) && (
+                          <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
+                            <img
+                              src={relArt.imageUrl}
+                              alt={relTitle}
+                              loading="lazy"
+                              decoding="async"
+                              referrerPolicy="no-referrer"
+                              onError={(e) => {
+                                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=850&q=80";
+                              }}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute top-1 left-1 bg-black text-white text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold">
+                              {relCategoryLabel}
+                            </div>
                           </div>
-                        </div>
+                        )}
 
                         {/* Title text */}
                         <h5 className="font-sans font-black text-xs text-zinc-900 group-hover:text-red-700 transition-colors line-clamp-2 mt-0.5 leading-snug">

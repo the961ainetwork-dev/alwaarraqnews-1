@@ -30,6 +30,22 @@ export default function ArticleCard({
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
 
+  const isInvestigative = 
+    article.category === 'investigations' || 
+    article.categories?.includes('investigations') ||
+    article.category === 'alwarraq-investigations' ||
+    article.categories?.includes('alwarraq-investigations') ||
+    [
+      'lebanon-framework-agreement-analysis-2026',
+      'solidere-extension-2069',
+      'lebanon-ceasefire-mirage-2026',
+      'lebanon-economic-abyss-2026',
+      'ch12-hebrew-jd-vance-criticism-2026',
+      'israel-lebanon-deal-behind-scenes',
+      'south-lebanon-secret-annex-investigation',
+      'iran-frozen-assets-2026'
+    ].includes(article.id);
+
   const [copied, setCopied] = React.useState(false);
 
   const getShareUrl = () => `https://www.alwarraqnews.com/?article=${article.id}`;
@@ -296,35 +312,37 @@ export default function ArticleCard({
         }`}
       >
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className="lg:w-7/12 relative overflow-hidden">
-            <img
-              src={article.imageUrl}
-              alt={title}
-              referrerPolicy="no-referrer"
-              loading="lazy"
-              decoding="async"
-              onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
-              }}
-              className="w-full h-[280px] md:h-[350px] object-cover bw-image border border-black transition-opacity duration-300"
-            />
-            {article.isBreaking && (
-              <span className="absolute top-4 right-4 bg-black text-white text-[10px] font-black uppercase px-2 py-1 tracking-wider border border-white font-sans">
-                {isAr ? 'عاجل عاجل' : 'Breaking Cable'}
-              </span>
-            )}
-            <div className="absolute bottom-4 left-4 flex items-center gap-1.5 select-none font-sans">
-              <span className="bg-black text-white text-[9px] font-bold uppercase px-2.5 py-0.5 border border-white">
-                {getCategoryLabel(article.category)}
-              </span>
-              <span className="bg-black text-white text-[9px] font-mono font-bold px-2 py-0.5 border border-white flex items-center gap-1">
-                <Clock size={9} />
-                {dynamicReadTime}
-              </span>
+          {!isInvestigative && (
+            <div className="lg:w-7/12 relative overflow-hidden">
+              <img
+                src={article.imageUrl}
+                alt={title}
+                referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
+                }}
+                className="w-full h-[280px] md:h-[350px] object-cover bw-image border border-black transition-opacity duration-300"
+              />
+              {article.isBreaking && (
+                <span className="absolute top-4 right-4 bg-black text-white text-[10px] font-black uppercase px-2 py-1 tracking-wider border border-white font-sans">
+                  {isAr ? 'عاجل عاجل' : 'Breaking Cable'}
+                </span>
+              )}
+              <div className="absolute bottom-4 left-4 flex items-center gap-1.5 select-none font-sans">
+                <span className="bg-black text-white text-[9px] font-bold uppercase px-2.5 py-0.5 border border-white">
+                  {getCategoryLabel(article.category)}
+                </span>
+                <span className="bg-black text-white text-[9px] font-mono font-bold px-2 py-0.5 border border-white flex items-center gap-1">
+                  <Clock size={9} />
+                  {dynamicReadTime}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="lg:w-5/12 flex flex-col justify-center px-2 lg:px-0">
+          <div className={`${isInvestigative ? 'lg:w-full' : 'lg:w-5/12'} flex flex-col justify-center px-2 lg:px-0`}>
             <div className="flex items-center gap-2 text-[10px] text-zinc-500 mb-3 font-sans font-bold uppercase">
               {article.category !== 'editor-desk' && (
                 <>
@@ -410,26 +428,28 @@ export default function ArticleCard({
             : 'bg-white rounded-md border-2 border-black h-full hover:bg-zinc-50'
         }`}
       >
-        <div className="relative overflow-hidden aspect-video border-b border-black">
-          <img
-            src={article.imageUrl}
-            alt={title}
-            referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
-            onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
-            }}
-            className="w-full h-full object-cover bw-image transition-opacity duration-300"
-          />
-          <span className="absolute bottom-2 right-2 bg-black text-white text-[9px] font-black px-2 py-0.5 font-sans border-t border-l border-white">
-            {getCategoryLabel(article.category)}
-          </span>
-          <span className="absolute bottom-2 left-2 bg-black text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-white flex items-center gap-1">
-            <Clock size={8} />
-            {dynamicReadTime}
-          </span>
-        </div>
+        {!isInvestigative && (
+          <div className="relative overflow-hidden aspect-video border-b border-black">
+            <img
+              src={article.imageUrl}
+              alt={title}
+              referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
+              }}
+              className="w-full h-full object-cover bw-image transition-opacity duration-300"
+            />
+            <span className="absolute bottom-2 right-2 bg-black text-white text-[9px] font-black px-2 py-0.5 font-sans border-t border-l border-white">
+              {getCategoryLabel(article.category)}
+            </span>
+            <span className="absolute bottom-2 left-2 bg-black text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-white flex items-center gap-1">
+              <Clock size={8} />
+              {dynamicReadTime}
+            </span>
+          </div>
+        )}
 
         <div className="flex-1 flex flex-col pt-3">
           <div className="flex items-center gap-2 text-[9px] text-zinc-500 mb-2 font-sans font-extrabold uppercase">

@@ -29,6 +29,120 @@ export const NAVIGATION_TABS: NavigationTab[] = [
 
 export const INITIAL_ARTICLES: Article[] = [
   {
+    id: 'lebanon-syria-relations-2026',
+    category: 'exclusives',
+    categories: ['exclusives', 'lebanon'],
+    titleAr: 'العلاقات اللبنانية السورية: من المحاور الإيديولوجية أو الهيمنة السياسية نحو الواقعية السياسية',
+    titleEn: 'Lebanese-Syrian Relations: From Ideological Axes or Political Dominance to Realpolitik',
+    summaryAr: `تثبت القراءة الاستقصائية لزيارة وزير الخارجية السوري لبيروت في تموز 2026 أن "العلاقات اللبنانية السورية" لم تعد أسيرة لإرث الماضي المعقد. نحن أمام إدارتين براغماتيتين:
+• في دمشق: سلطة انتقالية تركز على البناء الداخلي، وترى في استقرار لبنان واقتصاده المصلح بوابة للمجتمع الدولي.
+• في بيروت: سلطة دستورية مكتملة تسعى لاستعادة سيادتها وتصفير عجزها المالي (موازنة 2026) وحل معضلة اللجوء عبر قنوات شرعية.
+• إن التحول الجذري في السياسة المالية اللبنانية عام 2025 — والذي شمل رفع السرية المصرفية لمكافحة غسيل الأموال وتأمين قروض البنك الدولي — جعل من بيروت شريكاً مالياً "نظيفاً" وموثوقاً لإدارة أحمد الشرع، التي تسعى بدورها لكسر العزلة المالية الدولية وجذب الاستثمارات.
+المنفعة الاقتصادية هي المحرك الأساسي لهذه المرحلة، وسيكون لنجاح الاتفاقيات التجارية والأمنية الموقعة خلال هذه الزيارة الأثر الأكبر في رسم ملامح علاقة ندية ومستقرة قائمة على توازن المصالح.`,
+    summaryEn: `An investigative analysis of the Syrian Foreign Minister’s landmark visit to Beirut in July 2026 reveals that Lebanese-Syrian relations are no longer hostage to the complex legacy of the past. We are witnessing two highly pragmatic administrations: a transitional authority in Damascus focused on internal reconstruction and viewing Lebanon's stability as a gateway to the international community, and a constitutionally complete authority in Beirut striving to reclaim sovereignty, eliminate its financial deficit (2026 budget), and resolve the refugee dilemma through formal channels. Powered by economic interests, this new phase marks a turning point toward mutual benefits and sovereign parity.`,
+    excerptAr: 'تثبت القراءة الاستقصائية لزيارة وزير الخارجية السوري لبيروت في تموز 2026 أن العلاقات اللبنانية السورية انتقلت نحو واقعية سياسية وندية قائمة على توازن المصالح والمنفعة الاقتصادية المتبادلة.',
+    excerptEn: 'An investigative reading of the Syrian Foreign Minister\'s July 2026 visit to Beirut reveals a pragmatic shift in relations, driven by mutual economic interest and sovereign balance.',
+    contentAr: `تثبت القراءة الاستقصائية لزيارة وزير الخارجية السوري لبيروت في تموز 2026 أن "العلاقات اللبنانية السورية" لم تعد أسيرة لإرث الماضي المعقد. نحن أمام إدارتين براغماتيتين:
+• **في دمشق:** سلطة انتقالية تركز على البناء الداخلي، وترى في استقرار لبنان واقتصاده المصلح بوابة للمجتمع الدولي.
+• **في بيروت:** سلطة دستورية مكتملة تسعى لاستعادة سيادتها وتصفير عجزها المالي (موازنة 2026) وحل معضلة اللجوء عبر قنوات شرعية.
+• إن التحول الجذري في السياسة المالية اللبنانية عام 2025 — والذي شمل رفع السرية المصرفية لمكافحة غسيل الأموال وتأمين قروض البنك الدولي — جعل من بيروت شريكاً مالياً "نظيفاً" وموثوقاً لإدارة أحمد الشرع، التي تسعى بدورها لكسر العزلة المالية الدولية وجذب الاستثمارات.
+
+المنفعة الاقتصادية هي المحرك الأساسي لهذه المرحلة، وسيكون لنجاح الاتفاقيات التجارية والأمنية الموقعة خلال هذه الزيارة الأثر الأكبر في رسم ملامح علاقة ندية ومستقرة قائمة على توازن المصالح.
+
+---
+
+### مقدمة: مشهد سياسي جديد في عاصمة القرار المشترك
+
+تأتي زيارة وزير الخارجية السوري، أسعد الشيباني، إلى بيروت اليوم (2 تموز 2026) ولقاءاته المكثفة مع المسؤولين اللبنانيين — بدءاً من رئيس الجمهورية جوزاف عون ورئيس الحكومة نواف سلام، وصولاً إلى رئيس مجلس النواب نبيه بري — لتدشن فصلاً جديداً ومختلفاً كلياً في مسار العلاقات الثنائية بين البلدين. هذا الحراك الدبلوماسي الرفيع هو الأول من نوعه منذ تسلم حكومة الرئيس السوري أحمد الشرع (الذي تولى الرئاسة مطلع عام 2025 عقب سقوط النظام السابق)، ومجيء الإدارة الإصلاحية الجديدة في لبنان بقيادة عون وسلام.
+
+لم تعد العلاقة تُدار بمنطق "المحاور الإيديولوجية" أو الهيمنة السياسية، بل انتقلت بوضوح نحو الواقعية السياسية (Pragmatism) القائمة على لغة الأرقام، التوقيت الحرج، والمنفعة الاقتصادية المتبادلة.
+
+---
+
+### أولاً: عامل التوقيت والسياق الإقليمي (لماذا الآن؟)
+
+يتزامن هذا الحراك مع تحولات كبرى على جانبي الحدود، مما يجعل توقيت الزيارة حرجاً وإستراتيجياً:
+
+* **اتفاق الإطار اللبناني-الإسرائيلي (أواخر حزيران 2026):** وقع لبنان مؤخراً على اتفاق إطار برعاية أمريكية يهدف إلى تأمين انسحاب إسرائيلي كامل، وهو ما يدفع الدولة اللبنانية إلى بسط سيادتها الكاملة وتفعيل خطة "درع الوطن" لضبط السلاح.
+* **التموضع السوري الجديد:** تبدي إدارة الرئيس أحمد الشرع رغبة واضحة في النأي بنفسها عن الصراعات العسكرية الإقليمية، معلنة عدم التدخل عسكرياً في الساحة اللبنانية، والتركيز بدلاً من ذلك على شرعنتها الدولية وإعادة الإعمار داخلياً.
+
+---
+
+### ثانياً: الأهداف الرئيسية للمرحلة الجديدة
+
+تتركز المباحثات الحالية على ثلاثة ملفات رئيسية تشكل الركيزة الأساسية لإعادة صياغة العلاقات:
+
+1. **ترسيخ السيادة المشتركة وضبط الحدود:** تسعى بيروت ودمشق إلى تفعيل اللجان المشتركة لترسيم الحدود وضبط عمليات التهريب التي أرهقت اقتصاد البلدين لسنوات.
+2. **تنظيم ملف النازحين السوريين:** يمثل هذا الملف الأولوية القصوى للحكومة اللبنانية برئاسة نواف سلام. في المقابل، تضع إدارة الشرع ملف "عودة المواطنين" كهدف وطني لإعادة تحريك العجلة الاقتصادية السورية وتأمين اليد العاملة لورش الإعمار، مما يفتح الباب لتنسيق لوجستي مدعوم دولياً.
+3. **العلاقة مع القوى المحلية (ملف حزب الله):** في المنعطف الحالي، يبدو أن دمشق تتبع خطاً مرناً؛ حيث صرح الشيباني من بيروت بأن "المصلحة المتبادلة هي التي تحكم الانفتاح على كافة الأطراف"، دون السماح لهذا الملف بتعطيل العلاقات الرسمية مع مؤسسات الدولة اللبنانية.
+
+---
+
+### ثالثاً: خريطة المنفعة الاقتصادية المتبادلة
+
+الركيزة الحقيقية للتقارب الحالي هي المصلحة الاقتصادية الصرفة. يحتاج كلا البلدين، اللذين يمران بمراحل تعافٍ وهيكلة مالية، إلى رئة اقتصادية مشتركة.
+
+| المحور الاقتصادي | المكاسب اللبنانية المتوقعة | المكاسب السورية المتوقعة |
+| :--- | :--- | :--- |
+| **حركة الترانزيت والتجارة البينية** | فتح الأسواق البرية للصادرات اللبنانية نحو الخليج والعراق عبر الأراضي السورية بجمارك مخفضة. | استعادة العائدات الجمركية وتنشيط حركة الشحن الداخلي عبر المعابر الحيوية (المصنع، العبودية). |
+| **إعادة الإعمار والخدمات** | مشاركة القطاع المصرفي والشركات الإنشائية اللبنانية (بعد إصلاحات السرية المصرفية 2025) في مشاريع الإعمار السورية. | جذب رؤوس الأموال والخبرات اللبنانية لتسريع وتيرة تأهيل المدن والمناطق الصناعية المتضررة. |
+| **قطاع الطاقة والـ infrastructure** | الاستفادة من مشاريع الربط الإقليمي لنقل الطاقة عبر شبكات مشتركة مدعومة بقروض دولية. | تفعيل التنسيق لتأمين إمدادات مشتركة من الوقود والطاقة بأسعار تفضيلية وضمن أطر شرعية. |`,
+    contentEn: `### Introduction: A New Political Landscape in the Capital of Shared Decisions
+
+The visit of Syrian Foreign Minister Asaad Al-Shaibani to Beirut today (July 2, 2026) and his intensive meetings with Lebanese officials—from President Joseph Aoun and Prime Minister Nawaf Salam to Speaker of Parliament Nabih Berri—mark the dawn of a fundamentally different chapter in bilateral relations. This high-level diplomatic movement is the first of its kind since the administration of Syrian President Ahmad Al-Sharaa took office in early 2025 following the transition of the previous regime, coinciding with the reformist Lebanese administration led by Aoun and Salam.
+
+The relationship is no longer managed through the lens of "ideological axes" or political dominance. Instead, it has clearly transitioned toward Realpolitik (Pragmatism) driven by economic interest, strategic timing, and sovereign parity.
+
+---
+
+### I. Timing and the Regional Context (Why Now?)
+
+This diplomatic shift coincides with massive transitions on both sides of the border, rendering the timing highly critical and strategic:
+
+*   **The Lebanese-Israeli Framework Agreement (Late June 2026):** Lebanon recently signed a US-brokered framework agreement aimed at securing a full Israeli withdrawal, pushing the Lebanese state to assert complete sovereignty and activate its "Shield of the Nation" security plan to control arms.
+*   **Syria's New Geopolitical Stance:** The administration of President Ahmad Al-Sharaa demonstrates a clear desire to distance itself from regional military conflicts, declaring military non-intervention in Lebanon and focusing entirely on securing international legitimacy and domestic reconstruction.
+
+---
+
+### II. Main Objectives of the New Era
+
+The current talks center on three primary pillars restructuring bilateral ties:
+
+1.  **Consolidating Shared Sovereignty & Border Control:** Beirut and Damascus are activating joint committees to demarcate borders and crack down on smuggling operations that have drained both economies for years.
+2.  **Organizing the Syrian Refugee File:** This file remains the highest priority for the Lebanese government under Nawaf Salam. Concurrently, Al-Sharaa's administration treats the "return of citizens" as a national objective to revitalize Syria's economy and secure labor for reconstruction, opening the door for internationally supported logistical coordination.
+3.  **Relations with Local Entities (The Hezbollah File):** Damascus is maintaining a flexible approach. Al-Shaibani stated in Beirut that "mutual interest governs openness to all parties," refusing to let this file disrupt official relations with Lebanese state institutions.
+
+---
+
+### III. The Matrix of Mutual Economic Benefit
+
+The true anchor of this rapprochement is pure economic interest. Both nations, currently undergoing financial restructuring and recovery, require a shared economic lung.
+
+| Economic Pillar | Expected Lebanese Gains | Expected Syrian Gains |
+| :--- | :--- | :--- |
+| **Transit & Bilateral Trade** | Reopening overland routes for Lebanese exports to the Gulf and Iraq through Syria with reduced customs tariffs. | Reclaiming customs revenues and revitalizing internal shipping through vital border crossings (Masnaa, Abboudieh). |
+| **Reconstruction & Services** | Engagement of the Lebanese banking sector and construction firms (following the 2025 banking secrecy reforms) in Syrian reconstruction. | Attracting Lebanese capital and expertise to accelerate the rehabilitation of damaged cities and industrial zones. |
+| **Energy & Infrastructure** | Benefiting from regional grid-link projects to transfer energy through joint networks backed by international loans. | Activating coordination to secure mutual fuel and energy supplies at preferential rates within formal, legal frameworks. |`,
+    author: {
+      nameAr: 'مكتب التحقيقات الاستقصائية',
+      nameEn: 'Investigative Bureau',
+      titleAr: 'تغطية استقصائية خاصة',
+      titleEn: 'Special Investigative Dispatch',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80',
+    date: '2026-07-02',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['العلاقات_اللبنانية_السورية', 'الواقعية_السياسية', 'أحمد_الشرع', 'نواف_سلام', 'Lebanon_Syria_2026', 'Realpolitik', 'Border_Control'],
+    excerpt: 'Lebanese-Syrian Relations: From Ideological Axes or Political Dominance to Realpolitik.',
+    hashtags: ['Lebanon_Syria_2026', 'Realpolitik', 'Border_Control'],
+    views: 4890
+  },
+  {
     id: 'gcc-ma-surge-investment-banking-2026',
     category: 'middle-east',
     categories: ['middle-east', 'arab-markets', 'markets'],

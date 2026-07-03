@@ -21,6 +21,7 @@ import LebanonAMLVisualizer from './components/LebanonAMLVisualizer';
 import { SolidereInfographic } from './components/SolidereInfographic';
 import { NarrativeLebanonCrisisInfographics } from './components/NarrativeLebanonCrisisInfographics';
 import AlWarraqInvestigations, { DOSSIER_DESKTOP_META } from './components/AlWarraqInvestigations';
+import { PrintableDossier } from './components/PrintableDossier';
 import AlWarraqVideos from './components/AlWarraqVideos';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
@@ -28,7 +29,7 @@ import WarRoom from './components/WarRoom';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download } from 'lucide-react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
   if (!dateStr) return 0;
@@ -144,6 +145,8 @@ export default function App() {
   };
   const [isGeneratorOpen, setIsGeneratorOpen] = useState(false);
   const [selectedDossierId, setSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
+  const [isPrintingDossier, setIsPrintingDossier] = useState(false);
+  const [previewDossierId, setPreviewDossierId] = useState<string | null>(null);
   
   // Persistent States
   const [allArticles, setAllArticles] = useState<Article[]>(() => {
@@ -177,6 +180,10 @@ export default function App() {
     localStorage.setItem('alwarraq_all_articles', JSON.stringify(articles));
     return articles;
   });
+
+  const activeDossierArticle = useMemo(() => {
+    return allArticles.find(a => a.id === selectedDossierId) || null;
+  }, [allArticles, selectedDossierId]);
 
   const [categories, setCategories] = useState<NavigationTab[]>(() => {
     const raw = localStorage.getItem('alwarraq_categories');
@@ -249,6 +256,23 @@ export default function App() {
       return updated;
     });
   };
+
+  useEffect(() => {
+    if (isPrintingDossier) {
+      const timer = setTimeout(() => {
+        window.print();
+      }, 450);
+      return () => clearTimeout(timer);
+    }
+  }, [isPrintingDossier]);
+
+  useEffect(() => {
+    const handleAfterPrint = () => {
+      setIsPrintingDossier(false);
+    };
+    window.addEventListener('afterprint', handleAfterPrint);
+    return () => window.removeEventListener('afterprint', handleAfterPrint);
+  }, []);
 
   useEffect(() => {
     if (currentUser) {
@@ -1281,6 +1305,19 @@ export default function App() {
                             <Compass size={15} className="animate-spin-slow text-amber-400" />
                             <span>
                               {isAr ? 'تصفح التحقيقات والرسوم ➜' : 'VIEW SPECIAL REPORTS ➜'}
+                            </span>
+                          </button>
+
+                          <button
+                            onClick={() => setIsPrintingDossier(true)}
+                            className="w-full mt-2.5 bg-red-900 hover:bg-red-950 text-white font-mono text-xs font-black py-2.5 px-4 uppercase border-2 border-black tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:translate-x-1 active:translate-y-1 animate-pulse"
+                            title={isAr ? `تصدير ملف التحقيق المختار (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) كـ PDF` : `Export selected dossier (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) as formatted PDF`}
+                          >
+                            <Download size={14} className="text-amber-300" />
+                            <span>
+                              {isAr 
+                                ? `تحميل ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'الملف'} PDF ⤓` 
+                                : `DOWNLOAD ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'DOSSIER'} PDF ⤓`}
                             </span>
                           </button>
                           
@@ -2960,6 +2997,43 @@ export default function App() {
           }
         }}
       />
+
+      {/* Printable Dossier PDF export overlay */}
+      {isPrintingDossier && (
+        <div className="fixed inset-0 bg-white z-[99999] overflow-y-auto print:absolute print:inset-0" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
+          {/* Action bar hidden during print */}
+          <div className="sticky top-0 bg-zinc-900 text-white p-4 flex justify-between items-center print:hidden shadow-md z-[100000]">
+            <div className="font-mono text-xs flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>
+                {isAr 
+                  ? 'المستند جاهز للمعاينة والطباعة أو الحفظ كـ PDF' 
+                  : 'Sovereign document ready for print or Save as PDF'}
+              </span>
+            </div>
+            <div className="flex gap-2.5">
+              <button
+                onClick={() => window.print()}
+                className="bg-red-800 hover:bg-red-900 text-white font-mono text-xs px-4 py-2 font-black uppercase tracking-wider cursor-pointer border border-red-700 shadow-sm"
+              >
+                {isAr ? 'طباعة المستند ⎙' : 'Trigger Print ⎙'}
+              </button>
+              <button
+                onClick={() => setIsPrintingDossier(false)}
+                className="bg-zinc-700 hover:bg-zinc-650 text-white font-mono text-xs px-4 py-2 font-black uppercase tracking-wider cursor-pointer border border-zinc-600"
+              >
+                {isAr ? 'إغلاق ✕' : 'Close ✕'}
+              </button>
+            </div>
+          </div>
+          <div className="p-4 md:p-8 bg-zinc-100 min-h-screen print:bg-white print:p-0">
+            <PrintableDossier 
+              article={activeDossierArticle} 
+              language={language} 
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
