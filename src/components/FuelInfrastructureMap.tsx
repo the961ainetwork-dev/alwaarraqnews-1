@@ -275,6 +275,82 @@ export const FuelInfrastructureMap: React.FC<FuelInfrastructureMapProps> = ({ la
     }
   ];
 
+  const handleExportData = (format: 'json' | 'csv') => {
+    const dataToExport = activeNodes.map(node => ({
+      id: node.id,
+      nameAr: node.nameAr,
+      nameEn: node.nameEn,
+      typeAr: node.typeAr,
+      typeEn: node.typeEn,
+      latitude: node.lat,
+      longitude: node.lon,
+      roleAr: node.roleAr,
+      roleEn: node.roleEn,
+      operatorAr: node.operatorAr,
+      operatorEn: node.operatorEn,
+      capacityAr: node.capacityAr,
+      capacityEn: node.capacityEn,
+      hawkRelationAr: node.hawkRelationAr,
+      hawkRelationEn: node.hawkRelationEn,
+      riskAr: node.riskAr,
+      riskEn: node.riskEn,
+    }));
+
+    let blob: Blob;
+    let filename = `alwarraq_fuel_infrastructure_${mapMode}_${new Date().toISOString().split('T')[0]}`;
+
+    if (format === 'json') {
+      const jsonString = JSON.stringify(dataToExport, null, 2);
+      blob = new Blob([jsonString], { type: 'application/json' });
+      filename += '.json';
+    } else {
+      // CSV Export with BOM support for Excel Arabic compatibility
+      const headers = [
+        'ID',
+        'Name (AR)', 'Name (EN)',
+        'Type (AR)', 'Type (EN)',
+        'Latitude', 'Longitude',
+        'Role (AR)', 'Role (EN)',
+        'Operator (AR)', 'Operator (EN)',
+        'Capacity (AR)', 'Capacity (EN)',
+        'Hawk Relation (AR)', 'Hawk Relation (EN)',
+        'Risk (AR)', 'Risk (EN)'
+      ];
+      
+      const csvHeaders = headers.join(',');
+      const rows = dataToExport.map(row => {
+        const values = [
+          row.id,
+          row.nameAr, row.nameEn,
+          row.typeAr, row.typeEn,
+          row.latitude, row.longitude,
+          row.roleAr, row.roleEn,
+          row.operatorAr, row.operatorEn,
+          row.capacityAr, row.capacityEn,
+          row.hawkRelationAr, row.hawkRelationEn,
+          row.riskAr, row.riskEn
+        ];
+        return values.map(value => {
+          const str = String(value || '').replace(/"/g, '""');
+          return `"${str}"`;
+        }).join(',');
+      });
+
+      const csvContent = [csvHeaders, ...rows].join('\n');
+      blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csvContent], { type: 'text/csv;charset=utf-8;' });
+      filename += '.csv';
+    }
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   const activeNodes = mapMode === 'global' ? globalNodes : localNodes;
   const selectedNode = activeNodes.find(n => n.id === selectedNodeId) || activeNodes[0];
 
@@ -295,34 +371,61 @@ export const FuelInfrastructureMap: React.FC<FuelInfrastructureMapProps> = ({ la
           </h4>
         </div>
 
-        {/* View Toggles */}
-        <div className="flex items-center bg-zinc-900 border border-zinc-800 p-0.5 rounded text-xs">
-          <button
-            onClick={() => {
-              setMapMode('local');
-              setSelectedNodeId('dora');
-            }}
-            className={`px-3 py-1.5 transition-colors cursor-pointer font-bold ${
-              mapMode === 'local' 
-                ? 'bg-[#d97706] text-zinc-950 font-black' 
-                : 'text-zinc-400 hover:text-white'
-            }`}
-          >
-            {isAr ? 'المنشآت الساحلية للبنان' : 'Lebanon Coast'}
-          </button>
-          <button
-            onClick={() => {
-              setMapMode('global');
-              setSelectedNodeId('russia');
-            }}
-            className={`px-3 py-1.5 transition-colors cursor-pointer font-bold ${
-              mapMode === 'global' 
-                ? 'bg-[#d97706] text-zinc-950 font-black' 
-                : 'text-zinc-400 hover:text-white'
-            }`}
-          >
-            {isAr ? 'مسارات الملاحة الدولية' : 'Global Evasion Routes'}
-          </button>
+        {/* Actions Container */}
+        <div className="flex flex-wrap items-center gap-3">
+          {/* View Toggles */}
+          <div className="flex items-center bg-zinc-900 border border-zinc-800 p-0.5 rounded text-xs">
+            <button
+              onClick={() => {
+                setMapMode('local');
+                setSelectedNodeId('dora');
+              }}
+              className={`px-3 py-1.5 transition-colors cursor-pointer font-bold ${
+                mapMode === 'local' 
+                  ? 'bg-[#d97706] text-zinc-950 font-black' 
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              {isAr ? 'المنشآت الساحلية للبنان' : 'Lebanon Coast'}
+            </button>
+            <button
+              onClick={() => {
+                setMapMode('global');
+                setSelectedNodeId('russia');
+              }}
+              className={`px-3 py-1.5 transition-colors cursor-pointer font-bold ${
+                mapMode === 'global' 
+                  ? 'bg-[#d97706] text-zinc-950 font-black' 
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              {isAr ? 'مسارات الملاحة الدولية' : 'Global Evasion Routes'}
+            </button>
+          </div>
+
+          {/* Export Control */}
+          <div className="flex items-center bg-zinc-900 border border-zinc-800 p-0.5 rounded text-xs">
+            <span className="px-2 text-[10px] text-zinc-500 font-bold uppercase font-mono">
+              {isAr ? 'تصدير البيانات:' : 'EXPORT DATA:'}
+            </span>
+            <button
+              onClick={() => handleExportData('json')}
+              className="px-2 py-1.5 hover:bg-zinc-800 hover:text-white text-zinc-400 transition-colors cursor-pointer font-bold flex items-center gap-1"
+              title={isAr ? 'تحميل ملف JSON للبحث' : 'Download JSON for research'}
+            >
+              <FileText size={11} className="text-[#d97706]" />
+              <span>JSON</span>
+            </button>
+            <span className="text-zinc-800 select-none">|</span>
+            <button
+              onClick={() => handleExportData('csv')}
+              className="px-2 py-1.5 hover:bg-zinc-800 hover:text-white text-zinc-400 transition-colors cursor-pointer font-bold flex items-center gap-1"
+              title={isAr ? 'تحميل ملف CSV للبحث' : 'Download CSV for research'}
+            >
+              <Zap size={11} className="text-red-500" />
+              <span>CSV</span>
+            </button>
+          </div>
         </div>
       </div>
 
