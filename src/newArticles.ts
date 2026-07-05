@@ -2,6 +2,185 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'fuel-profiteering-cartel-2026',
+    category: 'exclusives',
+    categories: ['exclusives', 'lebanon', 'markets', 'economy'],
+    titleAr: 'الملف الحادي عشر: لغز صفيحة الـ 2,220,000 ليرة ومتاهة كارتل النفط في لبنان',
+    titleEn: 'Dossier XI: The 2.22M LBP Fuel Riddle - Inside Lebanon’s Profiteering Cartel',
+    summaryAr: `تشريح مالي مستند إلى الجداول الرسمية لوزارة الطاقة والمياه يفكك هيكلية صفيحة البنزين والمازوت البالغة ٢,٢٢٠,٠٠٠ ليرة. يستكشف التقرير تضخم الضرائب وانفصالها عن خام برنت، مع تشريح فضيحة الوقود الروسي المغشوش Hawk III لعامي ٢٠٢٥-٢٠٢٦.`,
+    summaryEn: `A deep financial autopsy of Lebanon's 2,220,000 LBP fuel canister. Investigates how government tax hikes detached local fuel from global Brent oil ($71/bbl), coupled with a breakdown of the 2025-2026 Hawk III Russian sanctioned-oil evasion scandal.`,
+    excerptAr: 'تحقيق مالي استقصائي يفكك هوامش كارتل النفط والأوليغارشية ويحلل مسار التسعير الممتد من البلاتس والضرائب المتراكمة.',
+    excerptEn: 'Autopsy of the $22.70 fuel canister: breakdown of G7 Russian price cap evasions, state taxes, and the corporate importing cartel.',
+    contentAr: `### تشريح صفيحة بقيمة 2,220,000 ليرة لبنانية
+في صميم الأزمات الاقتصادية المتتالية في لبنان، يكمن قطاع يعمل كاحتكار (أوليغارشية) مدعوم من الدولة بدلاً من كونه سوقاً حرة: كارتل استيراد النفط والمازوت. فبينما يتحمل المواطن اللبناني الزيادات الضريبية القاسية والتضخم المفرط على محطات الوقود، تستمر شبكة مركزية من الشركات المستوردة — محمية بجدول تسعير هندسته وزارة الطاقة والمياه (MoEW) — في تأمين هوامش ربح مضمونة ومُدولرة.
+
+إن فهم مشهد المحروقات اللبناني يتطلب تجاوز التقلبات اليومية لأسعار النفط الخام العالمي والنظر مباشرة إلى المهندسين الفعليين لسلسلة التوريد المحلية. هذا هو النظام الذي تعمل فيه الدولة وحفنة من العائلات التقليدية الخاصة في علاقة تكافلية ومربحة للغاية، غالباً على حساب المستهلك وخزينة الدولة بشكل مباشر.
+
+---
+
+### من هو من: احتكار (أوليغارشية) الـ APIC
+يخضع استيراد المنتجات البترولية المكررة إلى لبنان لسيطرة شبه حصرية من قبل تجمع الشركات المستوردة للنفط (APIC). تعمل هذه الجمعية ككتلة موحدة، تملي وتتحكم في معروض السوق، وتتفاوض مباشرة مع وزارة الطاقة والمياه، وتدافع بشراسة عن عمولاتها الثابتة. يهيمن على هذا الكارتل عدد قليل من العائلات والكيانات التجارية القوية:
+
+* **عائلة شماس (ميدكو Medco):** يمثلها بشكل بارز مارون شماس، الذي غالباً ما يعمل كمتحدث فعلي باسم APIC. وغالباً ما يدير شماس العلاقات العامة خلال فترات شح الوقود واضطرابات سلسلة التوريد.
+* **عائلة يمين (ليكويغاز Liquigas وكورال Coral):** يشرف أوسكار يمين على حصة ضخمة من سوق المازوت والبنزين، ويسيطر على بنية تحتية كبيرة للتخزين على طول الساحل.
+* **عائلة عيسى (IPT):** لاعب رئيسي يدير شبكات واسعة من المحطات والتوزيع في جميع أنحاء البلاد.
+* **لاعبون تقليديون آخرون:** يشمل ذلك شركات مثل وردية (Wardieh) وإيبيك (APEC) ويونايتد (United) وبقايا الشركات متعددة الجنسيات مثل توتال إنرجيز (TotalEnergies)، والتي تكمل هذا التحالف الوثيق.
+
+هذه الشركات لا تتنافس على السعر. ونظراً لأن جدول تسعير وزارة الطاقة يحدد قانوناً هامش الربح الدقيق للمستوردين والموزعين ومحطات الوقود وصولاً إلى الليرة، فإن أعضاء APIC يعملون دون أي تهديد بحروب الأسعار. وعندما ترفع الدولة الضرائب على المستهلك (مثل الزيادة الضريبية المقطوعة الأخيرة البالغة 361,000 ليرة في أوائل عام 2026)، تظل الحصة المدولرة والمضمونة للمستوردين معزولة تماماً ولا تتأثر.
+
+---
+
+### أحدث التطورات: فضائح الوقود الروسي لعامي 2025-2026
+لا تقتصر الطبيعة المربحة لقطاع الوقود في لبنان على تحديد الأسعار محلياً؛ بل تمتد لتشمل التجارة البحرية الدولية الغامضة. وقد بلغ الافتقار إلى الشفافية والرقابة التنظيمية ذروته مؤخراً في واحدة من أهم فضائح الطاقة في هذا العقد.
+
+في أكتوبر 2025، وجهت النيابة العامة المالية اللبنانية اتهامات جنائية غير مسبوقة — تضمنت مذكرات توقيف بتهم الإثراء غير المشروع والتزوير — ضد العديد من شركات النفط الدولية والمحلية. تركزت الفضيحة حول سفينة تدعى Hawk III، والتي سلمت حوالي 36,000 طن من الفيول أويل لمؤسسة كهرباء لبنان (EDL) في أواخر صيف 2025.
+
+#### المخطط المالي والالتفافي:
+اكتشف المحققون أن تجاراً دوليين (بما في ذلك شركات مثل Sahara Energy Resources DMCC وGalileo Trading) زُعم أنهم كانوا يشترون نفطاً روسياً خاضعاً للعقوبات ومخفضاً بشكل كبير. ومن خلال تزوير بيانات الشحن وشهادات المنشأ لإخفاء هوية الوقود على أنه تركي أو مصري، تجاوزوا سقف الأسعار الذي فرضته الولايات المتحدة والاتحاد الأوروبي.
+
+بعد ذلك، باعوا هذا الوقود الخاضع للعقوبات للدولة اللبنانية التي تعاني من ضائقة مالية بعلاوة (هامش ربح) ضخمة. في حالة سفينة Hawk III وحدها، تمت فوترة لبنان بحوالي 18 مليون دولار — أي أعلى بحوالي 7 ملايين دولار من القيمة الفعلية للشحنة. ويقدر المحللون أن هذا المخطط الأوسع للتهرب من العقوبات ربما كلف الخزينة اللبنانية عشرات الملايين من الدولارات في شكل علاوات احتيالية منذ عام 2023.
+
+---
+
+### واقع عام 2026: التربح وسط الحرب
+بالانتقال إلى عام 2026، تنامى نفوذ الكارتل بشكل أكبر. مع الصراع الإقليمي المستمر الذي يشمل إسرائيل وإيران والاضطرابات في الشحن عبر مضيق هرمز، تتعرض سلاسل التوريد العالمية لضغوط هائلة.
+
+ومع ذلك، استغلت جمعية APIC هذه التقلبات لصالحها. فبينما تطمئن شخصيات مثل مارون شماس الجمهور علناً بأن "الوضع تحت السيطرة"، تحتفظ الشركات بنفوذ مطلق على الدولة. لقد نجحوا في صد محاولات استرداد الإعفاءات الجمركية التاريخية ويستمرون في تأمين هوامشهم الثابتة بالدولار الفريش، حتى في الوقت الذي تستنزف فيه الحكومة الطبقة الوسطى بضرائب الاستهلاك والقيمة المضافة التراكمية لتمويل القطاع العام.
+
+في لبنان، لا يكتفي كارتل المحروقات بتوفير الطاقة لتشغيل البلاد فحسب؛ بل إنه، ومن خلال قبضته على وزارة الطاقة والمياه وحصانته من ضرائب الدولة ومنافسة السوق الحرة، يُملي فعلياً "تكلفة البقاء على قيد الحياة".
+
+---
+
+### جدول تركيب الأسعار وجدلية الـ 2,220,000 ليرة
+تُصدر وزارة الطاقة والمياه (MoEW) جدول تركيب الأسعار الخاص بها عادةً مرتين في الأسبوع لمراعاة تقلبات العملة والتحولات في المؤشرات العالمية. ومع ذلك، فإن السعر النهائي على المضخة ليس انعكاساً بسيطاً للعرض والطلب؛ بل هو أداة مالية تمت هندستها بشكل مكثف.
+
+اعتباراً من يوليو 2026، تبلغ التكلفة الرسمية لصفيحة البنزين عيار 95 أوكتان (20 لتراً) 2,220,000 ليرة لبنانية (حوالي 22.70 دولاراً). يتم بناء هذا السعر من خلال أربعة مكونات تصاعدية:
+
+1. **التكلفة الأساسية (بلاتس البحر الأبيض المتوسط):** هذه هي التكلفة الفعلية للوقود المكرر، وليس النفط الخام. وهي تتبع إنتاج المصافي الإقليمية بدلاً من استخراج الخام العالمي.
+2. **العلاوة (الشحن والتأمين):** التكلفة اللوجستية لشحن المنتج المكرر عبر البحر الأبيض المتوسط إلى الموانئ اللبنانية والتأمين على الشحنة.
+3. **رسوم وضرائب الدولة:** هذا هو المحرك الأساسي لتضخم الأسعار الحالي. في فبراير 2026، أقر مجلس الوزراء حزمة قاسية لتمويل رواتب القطاع العام. حيث رفعوا ضريبة القيمة المضافة (VAT) من 11% إلى 12% وفرضوا زيادة ضريبية فورية ومقطوعة بقيمة 361,000 ليرة لبنانية على كل 20 لتراً من البنزين. والأهم من ذلك، أن ضريبة القيمة المضافة تراكمية — فهي لا تُطبق فقط على التكلفة الأساسية للوقود، بل تُضاف أيضاً فوق ضرائب الاستهلاك الثابتة وهوامش المحطات. (ملاحظة: تم استثناء المازوت من هذه الضريبة المقطوعة البالغة 361,000 ليرة لأن الدولة أدركت اعتماد السكان الكامل عليه لتشغيل المولدات الخاصة).
+4. **هوامش التوزيع:** عمولات ثابتة توزع بين تحالفات الشركات المستوردة، ومشغلي شاحنات النقل، وأصحاب محطات الوقود الأفراد.
+
+---
+
+### الانفصال التاريخي: الضرائب مقابل النفط
+بسبب هذه السياسات الضريبية الشرسة، انفصلت تكلفة صفيحة البنزين في لبنان تماماً عن السعر العالمي للنفط الخام.
+
+في يوليو 2026، يحوم سعر خام برنت حول مستوى معتدل نسبياً يبلغ 71 دولاراً للبرميل. ومع ذلك، يدفع المواطنون اللبنانيون اليوم مقابل البنزين أكثر بكثير مما كانوا يدفعونه تاريخياً عندما كان النفط العالمي في مستويات قياسية.
+
+| الحقبة / السيناريو | سعر النفط الخام العالمي | سعر المضخة في لبنان (20 لتر) |
+| :--- | :--- | :--- |
+| متوسط 1994 – 2004 | ~20$ – 40$ / برميل | 13.00$ – 14.00$ |
+| الارتفاعات التاريخية (مثل 2008 و2014) | +100$ / برميل | 15.00$ – 17.00$ |
+| واقع يوليو 2026 | ~71$ / برميل | ~22.70$ |
+
+* **رؤية رئيسية:** في الماضي، كان برميل النفط بقيمة 100 دولار يُترجم إلى صفيحة بنزين بحد أقصى 17 دولاراً في بيروت. اليوم، وحتى مع اقتراب النفط العالمي من 70 دولاراً، تقترب صفيحة البنزين اللبنانية من 23 دولاراً. هذا الفارق الذي يتجاوز 6 دولارات هو استخراج صافٍ من قبل الدولة، تمت هندسته لتمويل موازنة وطنية لعام 2026 تُخصص فيها أكثر من 50% من النفقات لرواتب القطاع العام والتقديمات الاجتماعية.
+
+---
+
+### التأثير المتتالي: تكاليف النقل والتضخم
+إن استخدام الوقود كمولد أساسي للإيرادات يخلق حلقة تضخمية مفرغة. تفرض الحكومة ضرائب على البنزين لدفع رواتب القطاع العام، مما يؤدي فوراً إلى ارتفاع تكاليف النقل والسلع، ويقضي على القوة الشرائية لتلك الرواتب نفسها.
+
+أصبح هذا واضحاً بشكل صريح في الأشهر التي تلت الزيادات الضريبية في فبراير 2026، وتفاقم بسبب عدم الاستقرار الجيوسياسي وضغوط الحرب التي شملت إسرائيل وإيران والولايات المتحدة، والتي ضغطت بشكل مؤقت على سلاسل التوريد العالمية.
+
+* **الزيادة الضريبية (17 فبراير 2026):** وافق مجلس الوزراء اللبناني على زيادة ضريبة القيمة المضافة إلى 12% وأضاف علاوة بقيمة 361,000 ليرة لبنانية على البنزين لتأمين أموال للقطاع العام. قفز سعر البنزين عيار 95 أوكتان فوراً إلى 1,785,000 ليرة لبنانية.
+* **قفزة تكاليف النقل (مارس 2026):** بسبب عدم القدرة على استيعاب ضرائب الوقود الجديدة، ارتفعت تعريفات النقل العام. وصلت تعريفة سيارة الأجرة المشتركة القياسية (السرفيس) إلى 400,000 ليرة لبنانية للراكب الواحد. وحذرت نقابات النقل من انهيار القطاع بدون تدخل الدولة.
+* **أزمة الدعم (ربيع/صيف 2026):** ضغط السائقون على الحكومة للحصول على دعم شهري بقيمة 12 مليون ليرة لبنانية لتعويض العبء الضريبي. تأخرت الحكومة، التي تعاني من نقص السيولة وتدير نزوح الحرب، في التنفيذ، تاركة المواطنين يتحملون التضخم المحلي الدائم.
+* **مستويات مرتفعة مستدامة (يوليو 2026):** على الرغم من انخفاض خام برنت بأكثر من 2%، استقر السعر المحلي للبنزين 95 أوكتان عند 2,220,000 ليرة لبنانية، مما رسخ العبء الضريبي في التكلفة الأساسية للمعيشة وفي جميع سلاسل التوريد المحلية.`,
+    contentEn: `### The Anatomy of a 2,220,000 LBP Canister
+At the heart of Lebanon's cascading economic crises lies a sector operating as a state-sanctioned oligarchy rather than a free market: the petroleum importing cartel. While Lebanese citizens bear the brunt of severe tax hikes and hyperinflation, a centralized network of importing firms—shielded by a pricing matrix engineered by the Ministry of Energy and Water (MoEW)—continues to secure guaranteed, fresh-dollar profit margins.
+
+To understand Lebanon's fuel sector, one must look past daily fluctuations in global crude oil and examine the architects of the local supply chain. In this ecosystem, the state and a handful of traditional private dynasties operate in a lucrative, symbiotic relationship at the direct expense of the consumer.
+
+---
+
+### Who is Who: The APIC Oligarchy
+Refined petroleum imports to Lebanon are controlled almost exclusively by the Association of Petroleum Importing Companies (APIC). Operating as a unified lobby, this association regulates market supply, negotiates directly with the Ministry, and fiercely guards its fixed dollarized commissions. The cartel is dominated by a few powerful families and corporate entities:
+
+* **The Shammas Family (Medco):** Represented prominently by Maron Shammas, who often acts as the de facto spokesperson for APIC, managing public relations during fuel shortages and shipping crises.
+* **The Yamin Family (Liquigas & Coral):** Under Oscar Yamin, supervising a massive share of the diesel and gasoline wholesale market, controlling key terminal infrastructure along the Lebanese coastline.
+* **The Issa Family (IPT):** A major player managing expansive retail distribution networks and service stations across all governates.
+* **Other Traditional Stakeholders:** Including firms like Wardieh, APEC, United, and the remnant franchises of multinationals like TotalEnergies.
+
+These companies do not engage in price competition. Because the Ministry's weekly tariff sheet legally dictates exact profit margins down to the Lebanese Pound, APIC members are insulated from price wars. When the state spikes consumer excise taxes, importers' dollar-hedged payouts remain untouched.
+
+---
+
+### Recent Revelations: The 2025-2026 Russian Evasion Scandals
+The profitability of Lebanon's energy trade extends into opaque international maritime channels. A flagrant deficit in transparency and regulatory oversight culminated in one of the decade's largest energy scandals.
+
+In October 2025, Lebanon's Financial Public Prosecution issued unprecedented criminal indictments—including arrest warrants for illicit enrichment and forgery—against international and domestic oil traders. The scandal centered on a vessel named *Hawk III*, which discharged roughly 36,000 metric tons of fuel oil to Electricité du Liban (EDL) in late summer 2025.
+
+#### The Sanctions-Loophole Scheme:
+Investigators discovered that global brokers (including Sahara Energy Resources DMCC and Galileo Trading) purchased heavily discounted Russian fuel oil under Western sanctions. By forging maritime logs and shipping bills of lading to misrepresent the origin as Turkish or Egyptian, they bypassed G7/EU price caps.
+
+They subsequently invoiced the cash-strapped Lebanese Treasury at a premium. For the *Hawk III* cargo alone, Lebanon was billed approximately $18 million—exceeding its true cargo value by roughly $7 million. Analysts estimate this sanctions-evasion pipeline has drained tens of millions from public funds since 2023.
+
+---
+
+### 2026 Reality: Profiteering Amidst Regional Hostilities
+By 2026, the cartel's leverage expanded. Ongoing regional conflicts involving Israel, Iran, and the United States, along with shipping threats in the Strait of Hormuz, placed extreme pressure on global supply chains.
+
+Yet APIC leveraged this volatility. While figures like Maron Shammas reassure the public that "supplies are secure," importing groups retain an absolute veto over state actions. They successfully repelled initiatives to recoup historical customs exemptions and maintained their fresh-dollar margins, even as the government squeezed the middle class with regressive VAT and consumer taxes.
+
+---
+
+### The Pricing Sheet & The 2,220,000 LBP Canister
+The Ministry of Energy (MoEW) releases its tariff structure twice a week to reflect global indexes and currency dynamics. However, the retail pump price is an extensively engineered state instrument.
+
+As of July 2026, the official price of a 95-octane gasoline canister (20 liters) stands at 2,220,000 LBP (~$22.70 USD). This price is constructed from four compounding components:
+
+1. **Plat's Mediterranean Base Cost:** The actual cost of refined product, which tracks regional refinery output rather than global crude extraction.
+2. **Premium (Shipping & Insurance):** The logistics overhead for maritime freight across the Mediterranean to Lebanese ports, highly inflated by war-risk insurance premiums.
+3. **State Excise Duties & Taxes:** The primary driver of recent retail inflation. In February 2026, the Cabinet approved a fiscal package to fund public sector wages. Value Added Tax (VAT) was hiked from 11% to 12%, and an immediate flat excise of 361,000 LBP was levied per 20 liters of gasoline. Crucially, VAT is cumulative—it is applied not just to the fuel's cost but also on top of fixed state excises and station margins. (Note: Diesel was exempted from the 361,000 LBP flat tax because the state recognized absolute civilian dependence on diesel to run private neighborhood generators).
+4. **Distribution Margins:** Fixed commissions divided between APIC importers, local tanker transport syndicates, and retail service station owners.
+
+---
+
+### The Structural Detachment: Taxes vs. Crude
+Due to aggressive domestic taxation, local retail fuel prices have completely detached from global crude benchmarks.
+
+In July 2026, global Brent crude hovers at a moderate $71 per barrel. Yet, Lebanese consumers pay significantly more than they did historically when global oil was at historic peaks.
+
+| Era / Geopolitical Scenario | Global Crude Price | Beirut Retail Pump Price (20L) |
+| :--- | :--- | :--- |
+| 1994 – 2004 Average | ~$20 – $40 / bbl | $13.00 – $14.00 |
+| Historic Spikes (e.g., 2008 & 2014) | +$100 / bbl | $15.00 – $17.00 |
+| July 2026 Reality | ~$71 / bbl | ~$22.70 |
+
+* **Key Insight:** In previous decades, a $100 barrel of oil translated to a maximum pump price of $17 in Beirut. Today, with global crude near $71, a 20L canister climbs close to $23. This $6+ premium is a net extraction by the state to fund a 2026 national budget where over 50% of outlays are devoted to civil service compensation and social stipends.
+
+---
+
+### The Cascade Effect: Transit Hikes & Structural Inflation
+Taxing gasoline as a primary sovereign revenue source ignites a severe inflationary spiral. The state levies fuel taxes to pay public salaries, which immediately spikes transit and food distribution overheads, erasing the purchasing power of those very wages.
+
+This was vividly illustrated in the months following the February 2026 tax increases, exacerbated by war disruption:
+
+* **The Tax Hike (Feb 17, 2026):** Lebanon's Cabinet raises VAT to 12% and imposes a 361,000 LBP flat surcharge on gasoline. 95-octane fuel immediately jumped to 1,785,000 LBP.
+* **Transport Tariff Surges (March 2026):** Unable to absorb fuel tax overheads, transit fares skyrocketed. A standard shared taxi ride (Servees) reached 400,000 LBP per passenger, prompting warning strikes by transit unions.
+* **The Subsidy Showdown (Spring/Summer 2026):** Syndicates lobbied for a 12 million LBP monthly fuel subsidy to offset taxes. The cash-strapped government, preoccupied with war-displacement logistics, delayed execution, locking in higher structural costs.
+* **Sustained Highs (July 2026):** Despite a 2% drop in global Brent crude, local gasoline stabilized at 2,220,000 LBP, embedding the tax burden permanently into the daily cost of living.`,
+    author: {
+      nameAr: 'معن البرازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'كبير الباحثين الماليين',
+      titleEn: 'Chief Financial Analyst',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+    date: '2026-07-05',
+    readTimeAr: '٩ دقائق قراءة',
+    readTimeEn: '9 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    tags: ['كارتل_النفط', 'جدول_الأسعار', 'الوقود_الروسي', 'أزمة_المحروقات', 'Fuel_Cartel', 'Hawk_III', 'Energy_Crisis', 'Lebanon_Taxes'],
+    excerpt: 'A complete investigative breakdown of Lebanon’s fuel importing cartel, the Hawk III scandal, and the 2.22M LBP canister.',
+    hashtags: ['Fuel_Cartel', 'Hawk_III', 'Lebanon_Taxes'],
+    views: 8450
+  },
+  {
     id: 'lebanon-deposits-crisis-2026',
     category: 'exclusives',
     categories: ['exclusives', 'lebanon', 'markets'],

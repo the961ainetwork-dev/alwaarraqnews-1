@@ -57,6 +57,7 @@ import { EconomicAbyssCrisisInfographic } from './EconomicAbyssCrisisInfographic
 import { FrozenAssetsInfographic } from './FrozenAssetsInfographic';
 import { DepositsInfographic } from './DepositsInfographic';
 import { SubseaCablesInfographic } from './SubseaCablesInfographic';
+import { FuelProfiteeringInfographic } from './FuelProfiteeringInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -145,6 +146,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier X: Subsea Cables Geopolitics & Digital Infrastructure Under Threat',
     descAr: 'ترجمة خاصة لتقريري الإيكونوميست وتساتام هاوس حول الصراع الصيني الأمريكي وحرب الظل الإيرانية على شبكات الإنترنت العالمية.',
     descEn: 'Chatham House and The Economist investigative translations regarding the US-China race and Iranian threat matrix.'
+  },
+  'fuel-profiteering-cartel-2026': {
+    fileId: 'AW-FILE-11',
+    badge: 'FUEL PROFITEERING',
+    titleAr: 'الملف الحادي عشر: لغز صفيحة الـ 2,220,000 ليرة ومتاهة كارتل النفط في لبنان',
+    titleEn: 'Dossier XI: The 2.22M LBP Fuel Riddle - Inside Lebanon’s Profiteering Cartel',
+    descAr: 'تشريح استقصائي لهيكل أسعار صفيحة البنزين والمازوت وفضائح استيراد الوقود الروسي Hawk III لعامي ٢٠٢٥-٢٠٢٦.',
+    descEn: 'A detailed look at the 20-liter canister price structure, the corporate cartel oligarchy, and Russian oil evasion scams.'
   }
 };
 
@@ -712,6 +721,10 @@ export default function AlWarraqInvestigations({
                   ) : activeDossier.id === 'submarine-cables-geopolitics-2026' ? (
                     <div className="p-1 bg-[#0D0E12] relative overflow-hidden rounded-md">
                       <SubseaCablesInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'fuel-profiteering-cartel-2026' ? (
+                    <div className="p-1 bg-[#FAF8F5] relative overflow-hidden rounded-md">
+                      <FuelProfiteeringInfographic language={language} />
                     </div>
                   ) : null}
                 </div>
