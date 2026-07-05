@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Shield, AlertTriangle, Database, DollarSign, Award, Layers, Globe, Zap, Compass, HelpCircle } from 'lucide-react';
+import { SubseaCablesMapOverlay } from './SubseaCablesMapOverlay';
 
 interface SubseaCablesInfographicProps {
   language: 'ar' | 'en';
@@ -158,12 +159,20 @@ export const SubseaCablesInfographic: React.FC<SubseaCablesInfographicProps> = (
         
         {/* TAB 1: INTERACTIVE 8-NODE INFOGRAPHIC */}
         {activeTab === 'infographic' && (
-          <div className="space-y-6">
-            <p className="text-xxs text-zinc-400 max-w-4xl leading-relaxed italic">
-              {isAr 
-                ? '✦ محاكاة تفاعلية للوحات الإنفوجرافيك المرفقة بتقرير تشاتام هاوس. اضغط على أي نقطة أدناه لولوج التفاصيل والتحليلات العميقة:' 
-                : '✦ Interactive translation dashboard mapped exactly from Chatham House intelligence. Click any item below to render granular data segments:'}
-            </p>
+          <div className="space-y-6 animate-fade-in">
+            {/* Interactive SVG Heatmap Map Overlay */}
+            <SubseaCablesMapOverlay language={language} />
+
+            <div className="border-t border-zinc-800 my-6 pt-6">
+              <h5 className="font-sans font-black text-white text-xs uppercase tracking-wider mb-2">
+                {isAr ? '✦ لوحات التهديد الثمانية من تشاتام هاوس' : '✦ CHATHAM HOUSE TRIPLE-PILLAR THREAT MATRIX'}
+              </h5>
+              <p className="text-xxs text-zinc-400 max-w-4xl leading-relaxed italic mb-4">
+                {isAr 
+                  ? 'محاكاة تفاعلية للوحات الإنفوجرافيك المرفقة بتقرير تشاتام هاوس. اضغط على أي نقطة أدناه لولوج التفاصيل والتحليلات العميقة:' 
+                  : 'Interactive translation dashboard mapped exactly from Chatham House intelligence. Click any item below to render granular data segments:'}
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {infographicNodes.map((node) => (
