@@ -206,7 +206,8 @@ export default function AlWarraqInvestigations({
       article.id === 'south-lebanon-secret-annex-investigation' ||
       article.id === 'iran-frozen-assets-2026' ||
       article.id === 'lebanon-deposits-crisis-2026' ||
-      article.id === 'submarine-cables-geopolitics-2026'
+      article.id === 'submarine-cables-geopolitics-2026' ||
+      article.id === 'fuel-profiteering-cartel-2026'
     );
   });
 
@@ -424,7 +425,7 @@ export default function AlWarraqInvestigations({
           if (!meta) return null;
           
           return (
-            <button
+            <div
               key={article.id}
               onClick={() => {
                 setSelectedDossierId(article.id);
@@ -432,35 +433,84 @@ export default function AlWarraqInvestigations({
                   scrollContainerRef.current.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className={`p-5 text-right rtl:text-right ltr:text-left transition-all duration-200 cursor-pointer select-none rounded ${
+              className={`p-5 text-right rtl:text-right ltr:text-left transition-all duration-200 cursor-pointer select-none rounded flex flex-col justify-between ${
                 isSelected
-                  ? 'bg-amber-50/70 text-red-950 font-bold shadow-sm ring-1 ring-amber-200'
-                  : 'bg-stone-50 hover:bg-stone-100 text-zinc-850'
+                  ? 'bg-amber-50/70 text-red-950 font-bold shadow-sm ring-1 ring-amber-200 border-l-4 border-l-red-900 rtl:border-l-0 rtl:border-r-4 rtl:border-r-red-900'
+                  : 'bg-stone-50 hover:bg-stone-100 text-zinc-850 border border-zinc-200'
               }`}
             >
-              <div className="flex items-center gap-2 mb-2 justify-between border-b border-zinc-200 pb-2">
-                <span className={`px-2 py-0.5 text-[9px] font-mono font-black uppercase ${
-                  isSelected ? 'text-red-800 bg-red-100/40 font-bold' : 'text-zinc-500 bg-zinc-200/50'
-                }`}>
-                  📁 {meta.fileId}
-                </span>
-                <span className="font-mono text-[9px] text-red-800 font-bold tracking-widest uppercase">{meta.badge}</span>
-              </div>
-              <h3 className={`text-sm md:text-base font-black font-sans leading-tight transition-colors ${
-                isSelected ? 'text-red-900 font-extrabold' : 'text-zinc-950'
-              }`}>
-                {isAr ? meta.titleAr : meta.titleEn}
-              </h3>
-              <p className="font-serif text-xs text-zinc-600 mt-2 line-clamp-2 leading-relaxed">
-                {isAr ? meta.descAr : meta.descEn}
-              </p>
-              {estimate && (
-                <div className="flex items-center gap-1.5 mt-3 text-[11px] font-mono font-bold text-[#b91c1c] border-t border-dashed border-zinc-200 pt-2.5">
-                  <Clock size={11} className="shrink-0 animate-pulse text-[#b91c1c]" />
-                  <span>{isAr ? estimate.displayAr : estimate.displayEn}</span>
+              <div>
+                <div className="flex items-center gap-2 mb-2 justify-between border-b border-zinc-200 pb-2">
+                  <span className={`px-2 py-0.5 text-[9px] font-mono font-black uppercase ${
+                    isSelected ? 'text-red-800 bg-red-100/40 font-bold' : 'text-zinc-500 bg-zinc-200/50'
+                  }`}>
+                    📁 {meta.fileId}
+                  </span>
+                  <span className="font-mono text-[9px] text-red-800 font-bold tracking-widest uppercase">{meta.badge}</span>
                 </div>
-              )}
-            </button>
+                <h3 className={`text-sm md:text-base font-black font-sans leading-tight transition-colors ${
+                  isSelected ? 'text-red-900 font-extrabold' : 'text-zinc-950'
+                }`}>
+                  {isAr ? meta.titleAr : meta.titleEn}
+                </h3>
+                <p className="font-serif text-xs text-zinc-600 mt-2 line-clamp-2 leading-relaxed">
+                  {isAr ? meta.descAr : meta.descEn}
+                </p>
+                {estimate && (
+                  <div className="flex items-center gap-1.5 mt-3 text-[11px] font-mono font-bold text-[#b91c1c] border-t border-dashed border-zinc-200 pt-2.5 mb-3">
+                    <Clock size={11} className="shrink-0 animate-pulse text-[#b91c1c]" />
+                    <span>{isAr ? estimate.displayAr : estimate.displayEn}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Share, WhatsApp, and PDF buttons */}
+              <div 
+                className="mt-2 pt-2 border-t border-zinc-200 flex items-center justify-between gap-2 text-xxs font-mono"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <span className="text-[10px] text-zinc-400 font-bold">{isAr ? 'روابط بث سريعة:' : 'QUICK TRANSMIT:'}</span>
+                <div className="flex items-center gap-1.5">
+                  {/* WhatsApp */}
+                  <a
+                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تقرير استقصائي من ديوان تحريات الورّاق:\n\n' : 'Classified investigation dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2 py-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold transition-colors uppercase rounded-none cursor-pointer"
+                    title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
+                  >
+                    WA
+                  </a>
+
+                  {/* Copy Link */}
+                  <button
+                    onClick={() => {
+                      const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`;
+                      navigator.clipboard.writeText(shareUrl).then(() => {
+                        alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
+                      });
+                    }}
+                    className="px-2 py-1 bg-zinc-800 hover:bg-black text-white font-bold transition-colors border border-black cursor-pointer rounded-none"
+                  >
+                    LINK
+                  </button>
+
+                  {/* PDF Download */}
+                  <button
+                    onClick={() => {
+                      setSelectedDossierId(article.id);
+                      setTimeout(() => {
+                        window.print();
+                      }, 300);
+                    }}
+                    className="px-2 py-1 bg-red-900 hover:bg-red-950 text-white font-bold transition-colors border border-red-950 cursor-pointer rounded-none"
+                    title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
+                  >
+                    PDF
+                  </button>
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>

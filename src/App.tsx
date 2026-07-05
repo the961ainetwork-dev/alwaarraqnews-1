@@ -29,7 +29,7 @@ import WarRoom from './components/WarRoom';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link } from 'lucide-react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
   if (!dateStr) return 0;
@@ -1127,6 +1127,13 @@ export default function App() {
                 layoutMode={layoutMode}
                 subscribers={subscribers}
                 setSubscribers={setSubscribers}
+                onNavigateToSection={(sectionId) => {
+                  setActiveCategory(sectionId);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onSelectDossier={(id) => {
+                  setSelectedDossierId(id);
+                }}
               />
             ) : activeCategory === 'in-case-you-missed-it' ? (
               <InCaseYouMissedIt
@@ -1134,6 +1141,9 @@ export default function App() {
                 onNavigateToSection={(sectionId) => {
                   setActiveCategory(sectionId);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onSelectDossier={(id) => {
+                  setSelectedDossierId(id);
                 }}
               />
             ) : activeCategory === 'sentiment-analysis' ? (
@@ -1387,9 +1397,59 @@ export default function App() {
                                     {isAr ? meta.descAr : meta.descEn}
                                   </p>
                                 </div>
-                                {/* Footer Action */}
-                                <div className="font-mono text-[10px] font-black text-zinc-900 flex items-center gap-1 pt-1 border-t border-zinc-100 group-hover:text-amber-900 transition-colors">
-                                  <span>{isAr ? 'افتح مستند التقرير والخرائط ➜' : 'OPEN DOSSIER & MAPS ➜'}</span>
+                                {/* Footer Action with Quick-Share Buttons */}
+                                <div className="pt-2.5 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-2 text-xxs font-mono" onClick={(e) => e.stopPropagation()}>
+                                  <button
+                                    onClick={() => {
+                                      setSelectedDossierId(id);
+                                      setActiveCategory('alwarraq-investigations');
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    className="font-mono text-[10px] font-black text-zinc-900 hover:text-red-900 transition-colors uppercase cursor-pointer"
+                                  >
+                                    {isAr ? 'افتح التقرير ➜' : 'OPEN DOSSIER ➜'}
+                                  </button>
+
+                                  <div className="flex items-center gap-1 text-[8px] font-bold">
+                                    {/* WhatsApp */}
+                                    <a
+                                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تحقيق سيادي من الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${id}`)}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="px-1.5 py-0.5 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors"
+                                      title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
+                                    >
+                                      {isAr ? 'واتساب' : 'WA'}
+                                    </a>
+
+                                    {/* Copy Link */}
+                                    <button
+                                      onClick={() => {
+                                        const link = `${window.location.origin}/?category=alwarraq-investigations&dossier=${id}`;
+                                        navigator.clipboard.writeText(link).then(() => {
+                                          alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
+                                        });
+                                      }}
+                                      className="px-1.5 py-0.5 bg-zinc-800 hover:bg-black text-white transition-colors border border-black cursor-pointer"
+                                    >
+                                      {isAr ? 'نسخ' : 'LINK'}
+                                    </button>
+
+                                    {/* PDF / Print */}
+                                    <button
+                                      onClick={() => {
+                                        setSelectedDossierId(id);
+                                        setActiveCategory('alwarraq-investigations');
+                                        setTimeout(() => {
+                                          window.print();
+                                        }, 300);
+                                      }}
+                                      className="px-1.5 py-0.5 bg-red-900 hover:bg-red-950 text-white transition-colors border border-red-950 cursor-pointer"
+                                      title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
+                                    >
+                                      PDF
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             );
@@ -1623,98 +1683,187 @@ export default function App() {
                   />
                 )}
 
-                {/* HERO SLIDER AND TRENDING SIDEBAR SECTION (Replaces static hero layout) */}
+                {/* HERO SLIDER AND TRENDING SIDEBAR SECTION - REDESIGNED AS VERTICAL NEWS MENU */}
                 {activeCategory === 'all' && !searchQuery && sliderSlides.length > 0 && activeSlide && (
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    {/* Left Column (8/12) - Slider */}
+                    {/* Left Column (8/12) - Vertical News Menu Layout */}
                     <div className="lg:col-span-8 w-full">
-                      <section className="relative overflow-hidden border-4 border-double border-black p-4 bg-white">
+                      <section className="relative overflow-hidden border-4 border-double border-black p-4 bg-white" id="home-vertical-news-hero">
                         {/* Section header indicator */}
                         <div className="flex justify-between items-center pb-2.5 mb-4 border-b border-zinc-200">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 bg-black rounded-none inline-block"></span>
+                            <span className="w-2.5 h-2.5 bg-red-950 rounded-none inline-block animate-pulse"></span>
                             <span className="font-mono text-xxs tracking-widest font-black uppercase">
-                              {isAr ? 'شريط العناوين البارزة وسلسلة التحقيقات' : 'Al-Warraq Premium Slider Gallery'}
+                              {isAr ? 'منصة التحقيقات الكبرى والأخبار السيادية' : 'AL-WARRAQ CENTRAL INVESTIGATIVE WIRE'}
                             </span>
                           </div>
-                          <span className="font-mono text-xxs font-black text-zinc-400">
-                            {String(currentSlide + 1).padStart(2, '0')} / {String(sliderSlides.length).padStart(2, '0')}
-                          </span>
                         </div>
 
-                        {/* Main Slider Panel */}
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                          {/* Slider Copy */}
-                          <div className="md:col-span-5 flex flex-col justify-between h-full py-2">
-                            <div>
-                              {/* Meta info info */}
-                              <span className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest block mb-2 font-mono">
-                                {activeSlide.category === 'editor-desk'
-                                  ? (isAr ? 'هيئة تحرير صحيفة الوارّاق' : 'Al-Warraq Editorial Board')
-                                  : (isAr ? `تغطية برئاسة: ${activeSlide.author?.nameAr || ''}` : `Filed by: ${activeSlide.author?.nameEn || ''}`)}
-                              </span>
+                        {/* Split Menu & Excerpt Layout */}
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                          {/* Column 1: Vertical News Menu Index (5/12) */}
+                          <div className="md:col-span-5 border-l border-zinc-200 pl-3 space-y-2 max-h-[480px] overflow-y-auto pr-1 rtl:border-l-0 rtl:pl-0 rtl:border-r rtl:pr-3 rtl:pl-1">
+                            {sliderSlides.map((story, idx) => {
+                              const isSelected = currentSlide === idx;
+                              const isDossier = !!DOSSIER_DESKTOP_META[story.id];
+                              return (
+                                <button
+                                  key={story.id}
+                                  onClick={() => setCurrentSlide(idx)}
+                                  className={`w-full text-right rtl:text-right ltr:text-left p-2.5 border transition-all duration-150 cursor-pointer flex gap-2 items-start select-none rounded-none ${
+                                    isSelected
+                                      ? 'bg-amber-50/70 text-red-950 font-bold border-black border-l-4 rtl:border-r-4 rtl:border-l'
+                                      : 'bg-stone-50 hover:bg-stone-100 text-zinc-800 border-zinc-200 hover:border-zinc-400'
+                                  }`}
+                                >
+                                  <span className={`font-mono text-[11px] font-black shrink-0 mt-0.5 ${isSelected ? 'text-red-900' : 'text-zinc-400'}`}>
+                                    {String(idx + 1).padStart(2, '0')}.
+                                  </span>
+                                  <div className="space-y-1 min-w-0">
+                                    <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-red-900' : 'text-zinc-950'}`}>
+                                      {isAr ? story.titleAr : story.titleEn}
+                                    </h4>
+                                    <div className="flex flex-wrap gap-1.5 items-center">
+                                      <span className="text-[9px] font-mono uppercase bg-zinc-200/60 px-1.5 py-0.2 text-zinc-500 font-bold">
+                                        {isAr ? story.categoryAr || 'عام' : story.category.toUpperCase()}
+                                      </span>
+                                      {isDossier && (
+                                        <span className="text-[9px] font-mono font-black text-red-800 bg-red-100/50 px-1.5 py-0.2 uppercase border border-red-200/20">
+                                          {isAr ? 'تحقيق سيادي' : 'DOSSIER'}
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                </button>
+                              );
+                            })}
+                          </div>
 
-                              {/* Heading title */}
-                              <h2 className="text-xl md:text-2xl lg:text-3.5xl font-black text-black leading-tight tracking-tight hover:underline cursor-pointer mb-4 font-sans"
-                                  onClick={() => setSelectedArticle(activeSlide)}>
+                          {/* Column 2: Selected Excerpt & Actions Pane (7/12) */}
+                          <div className="md:col-span-7 flex flex-col justify-between h-full space-y-4">
+                            <div className="space-y-3">
+                              {/* Meta Info */}
+                              <div className="flex justify-between items-center text-xxs font-mono">
+                                <span className="text-zinc-500 font-extrabold uppercase tracking-widest block">
+                                  {activeSlide.category === 'editor-desk'
+                                    ? (isAr ? 'هيئة تحرير صحيفة الوارّاق' : 'Al-Warraq Editorial Board')
+                                    : (isAr ? `تغطية برئاسة: ${activeSlide.author?.nameAr || ''}` : `Filed by: ${activeSlide.author?.nameEn || ''}`)}
+                                </span>
+                                <span className="font-mono font-black text-red-850 animate-pulse uppercase">
+                                  ● {isAr ? 'خلاصة مفرج عنها' : 'DECLASSIFIED EXCERPT'}
+                                </span>
+                              </div>
+
+                              {/* Clickable Image Preview */}
+                              <div 
+                                onClick={() => {
+                                  if (DOSSIER_DESKTOP_META[activeSlide.id]) {
+                                    setSelectedDossierId(activeSlide.id);
+                                    setActiveCategory('alwarraq-investigations');
+                                  } else {
+                                    setSelectedArticle(activeSlide);
+                                  }
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className="relative h-[160px] md:h-[210px] overflow-hidden border border-black cursor-pointer group/img shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                              >
+                                <img 
+                                  src={activeSlide.imageUrl} 
+                                  alt="dossier preview" 
+                                  referrerPolicy="no-referrer"
+                                  loading="lazy"
+                                  onError={(e) => {
+                                    e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
+                                  }}
+                                  className="w-full h-full object-cover bw-image transition-transform duration-500 group-hover/img:scale-102"
+                                />
+                                {activeSlide.isBreaking && (
+                                  <span className="absolute top-3 right-3 bg-red-950 text-white text-[8px] font-black tracking-widest px-2 py-0.5 uppercase border border-white font-mono animate-pulse">
+                                    {isAr ? 'عاجل وحصري' : 'EXCLUSIVE WIRE'}
+                                  </span>
+                                )}
+                              </div>
+
+                              {/* Title */}
+                              <h3 
+                                onClick={() => {
+                                  if (DOSSIER_DESKTOP_META[activeSlide.id]) {
+                                    setSelectedDossierId(activeSlide.id);
+                                    setActiveCategory('alwarraq-investigations');
+                                  } else {
+                                    setSelectedArticle(activeSlide);
+                                  }
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className="text-base md:text-lg font-black text-black leading-snug tracking-tight hover:underline cursor-pointer font-sans"
+                              >
                                 {isAr ? activeSlide.titleAr : activeSlide.titleEn}
-                              </h2>
+                              </h3>
 
-                              {/* Brief line */}
-                              <p className="text-zinc-650 text-xs md:text-sm leading-relaxed mb-6 font-medium line-clamp-4">
+                              {/* Excerpt Summary */}
+                              <p className="text-zinc-700 font-serif text-xs leading-relaxed line-clamp-3 bg-stone-50 border-r-2 border-red-900 p-2.5 rtl:border-r-2 rtl:border-l-0 ltr:border-l-2 ltr:border-r-0 rounded-none shadow-[1px_1px_0px_0px_rgba(0,0,0,0.05)]">
                                 {isAr ? activeSlide.summaryAr : activeSlide.summaryEn}
                               </p>
                             </div>
 
-                            {/* Navigation Actions and Trigger */}
-                            <div className="flex flex-wrap items-center justify-between gap-4 border-t border-zinc-200 pt-4">
+                            {/* Actions and Socials Panel */}
+                            <div className="border-t border-zinc-200 pt-3.5 flex flex-wrap items-center justify-between gap-3 select-none">
+                              {/* Read Button */}
                               <button 
-                                onClick={() => setSelectedArticle(activeSlide)}
-                                className="bg-black hover:bg-zinc-800 text-white font-black text-xs px-5 py-2.5 rounded-none cursor-pointer transition-colors"
+                                onClick={() => {
+                                  if (DOSSIER_DESKTOP_META[activeSlide.id]) {
+                                    setSelectedDossierId(activeSlide.id);
+                                    setActiveCategory('alwarraq-investigations');
+                                  } else {
+                                    setSelectedArticle(activeSlide);
+                                  }
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className="bg-black hover:bg-zinc-800 text-white font-black text-[11px] px-4 py-2 uppercase cursor-pointer transition-colors flex items-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]"
                               >
-                                {isAr ? 'مطالعة الفكر والتحرير الكامل' : 'Read Full Editorial'}
+                                <span>{isAr ? 'طالع التحقيق بالكامل ➜' : 'Read Full Investigation ➜'}</span>
                               </button>
 
-                              {/* Slide controllers */}
-                              <div className="flex items-center gap-1.5">
-                                <button 
-                                  onClick={handlePrevSlide}
-                                  className="w-8 h-8 rounded-none border border-black flex items-center justify-center hover:bg-zinc-100 cursor-pointer transition-colors text-black"
+                              {/* Social share icons requested by user */}
+                              <div className="flex items-center gap-1.5 text-[9px] font-mono">
+                                {/* WhatsApp */}
+                                <a
+                                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تحقيق سيادي مفرج عنه من جريدة الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? activeSlide.titleAr : activeSlide.titleEn}*\n\n👉 ${window.location.origin}/?article=${activeSlide.id}`)}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="px-2 py-1 bg-emerald-700 hover:bg-emerald-800 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer"
+                                  title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
                                 >
-                                  {isAr ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+                                  <Send size={9} />
+                                  <span>WHATSAPP</span>
+                                </a>
+
+                                {/* Link Copy */}
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    const shareUrl = `${window.location.origin}/?article=${activeSlide.id}`;
+                                    navigator.clipboard.writeText(shareUrl).then(() => {
+                                      alert(isAr ? 'تم نسخ الرابط المباشر للمادة!' : 'Direct article link copied!');
+                                    });
+                                  }}
+                                  className="px-2 py-1 bg-zinc-800 hover:bg-black text-white flex items-center gap-1 transition-colors font-bold uppercase border border-zinc-900 rounded-none cursor-pointer"
+                                >
+                                  <Link size={9} />
+                                  <span>{isAr ? 'نسخ الرابط' : 'COPY'}</span>
                                 </button>
-                                <button 
-                                  onClick={handleNextSlide}
-                                  className="w-8 h-8 rounded-none border border-black flex items-center justify-center hover:bg-zinc-100 cursor-pointer transition-colors text-black"
+
+                                {/* PDF Download / Print */}
+                                <button
+                                  onClick={() => window.print()}
+                                  className="px-2 py-1 bg-red-900 hover:bg-red-950 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer border border-red-950"
+                                  title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
                                 >
-                                  {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+                                  <Download size={9} />
+                                  <span>PDF</span>
                                 </button>
                               </div>
                             </div>
-                          </div>
-
-                          {/* Slider Image (Strictly Grayscaled B&W) */}
-                          <div 
-                            onClick={() => setSelectedArticle(activeSlide)}
-                            className="md:col-span-7 relative h-[250px] md:h-[380px] overflow-hidden border border-black cursor-pointer group/img transition-all"
-                            title={isAr ? "انقر لقراءة التغطية والمخطوطة كاملة" : "Click to read the complete investigation & draft"}
-                          >
-                            <img 
-                              src={activeSlide.imageUrl} 
-                              alt="featured slider" 
-                              referrerPolicy="no-referrer"
-                              loading="lazy"
-                              decoding="async"
-                              onError={(e) => {
-                                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
-                              }}
-                              className="w-full h-full object-cover bw-image transition-transform duration-700 group-hover/img:scale-103"
-                            />
-                            {activeSlide.isBreaking && (
-                              <span className="absolute top-4 right-4 bg-black text-white text-[9px] font-black tracking-widest px-2.5 py-1 uppercase border border-white font-mono">
-                                {isAr ? 'تقرير عاجل' : 'EXCL REPORT'}
-                              </span>
-                            )}
                           </div>
                         </div>
                       </section>

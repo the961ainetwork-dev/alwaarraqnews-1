@@ -12,6 +12,7 @@ import {
   ArrowUpDown,
   BookOpen
 } from 'lucide-react';
+import { DOSSIER_DESKTOP_META } from './AlWarraqInvestigations';
 
 interface NewswireItem {
   id: string;
@@ -24,6 +25,7 @@ interface NewswireItem {
   synopsisEn: string;
   synopsisAr: string;
   url: string;
+  isInvestigation?: boolean;
 }
 
 // Pre-seeded list of daily newswires, ordered newest to oldest
@@ -153,24 +155,46 @@ const NEWSWIRES: NewswireItem[] = [
 interface InCaseYouMissedItProps {
   language: 'ar' | 'en';
   onNavigateToSection?: (sectionId: string) => void;
+  onSelectDossier?: (id: string) => void;
 }
 
-export default function InCaseYouMissedIt({ language, onNavigateToSection }: InCaseYouMissedItProps) {
+export default function InCaseYouMissedIt({ language, onNavigateToSection, onSelectDossier }: InCaseYouMissedItProps) {
   const isAr = language === 'ar';
   
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
 
-  // Compute unique categories
-  const categoriesList = useMemo(() => {
-    const cats = new Set(NEWSWIRES.map(item => item.category));
-    return ['all', ...Array.from(cats)];
+  // Dynamically merge the 11 dossiers into the newswire list
+  const combinedNewswires = useMemo(() => {
+    const list = [...NEWSWIRES];
+    Object.entries(DOSSIER_DESKTOP_META).forEach(([id, meta]) => {
+      list.push({
+        id: id,
+        date: "2026-06-20", // Grouped in June 2026
+        dateAr: "٢٠ يونيو ٢٠٢٦",
+        category: "investigations",
+        categoryAr: "تحقيقات استقصائية",
+        headlineEn: `INVESTIGATION: ${meta.titleEn}`,
+        headlineAr: `تحقيق استقصائي: ${meta.titleAr}`,
+        synopsisEn: meta.descEn,
+        synopsisAr: meta.descAr,
+        url: `https://alwarraqnews.com/section/alwarraq-investigations?dossier=${id}`,
+        isInvestigation: true
+      });
+    });
+    return list;
   }, []);
 
-  // Filter & Sort
+  // Compute unique categories
+  const categoriesList = useMemo(() => {
+    const cats = new Set(combinedNewswires.map(item => item.category));
+    return ['all', ...Array.from(cats)];
+  }, [combinedNewswires]);
+
+  // Filter & Sort using combined feed
   const filteredNewswires = useMemo(() => {
-    let result = NEWSWIRES.filter(item => {
+    let result = combinedNewswires.filter(item => {
       const matchSearch = 
         item.headlineEn.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.headlineAr.includes(searchTerm) ||
@@ -187,7 +211,7 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection }: InC
       const dateB = new Date(b.date).getTime();
       return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
     });
-  }, [searchTerm, selectedCategory, sortOrder]);
+  }, [combinedNewswires, searchTerm, selectedCategory, sortOrder]);
 
   const categoryNameMap: Record<string, { en: string, ar: string }> = {
     'all': { en: 'All Categories', ar: 'جميع الأقسام' },
@@ -196,7 +220,8 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection }: InC
     'resource-friction': { en: 'Resource Friction', ar: 'نزاع الموارد' },
     'sovereign-intel': { en: 'Sovereign Intel', ar: 'استخبارات سيادية' },
     'supply-chains': { en: 'Supply Chains', ar: 'سلاسل الإمداد' },
-    'telecom-internet': { en: 'Telecom & Internet', ar: 'الاتصالات والإنترنت' }
+    'telecom-internet': { en: 'Telecom & Internet', ar: 'الاتصالات والإنترنت' },
+    'investigations': { en: 'Special Investigations', ar: 'تحقيقات استقصائية' }
   };
 
   return (
@@ -322,14 +347,27 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection }: InC
                     ? (isAr ? categoryNameMap[item.category].ar : categoryNameMap[item.category].en) 
                     : item.category.toUpperCase();
 
-                  const sectionId = item.url.split('/').pop() || 'all';
-                  const realUrl = `${window.location.origin}/section/${sectionId}`;
-                  const relativeUrlPath = `/section/${sectionId}`;
+                  const sectionId = item.isInvestigation ? 'alwarraq-investigations' : (item.url.split('/').pop() || 'all');
+                  const realUrl = item.isInvestigation 
+                    ? `${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`
+                    : `${window.location.origin}/section/${sectionId}`;
+                  const relativeUrlPath = item.isInvestigation
+                    ? `/section/alwarraq-investigations?dossier=${item.id}`
+                    : `/section/${sectionId}`;
 
                   const handleNavigation = (e: React.MouseEvent) => {
                     e.preventDefault();
-                    if (onNavigateToSection) {
-                      onNavigateToSection(sectionId);
+                    if (item.isInvestigation) {
+                      if (onSelectDossier) {
+                        onSelectDossier(item.id);
+                      }
+                      if (onNavigateToSection) {
+                        onNavigateToSection('alwarraq-investigations');
+                      }
+                    } else {
+                      if (onNavigateToSection) {
+                        onNavigateToSection(sectionId);
+                      }
                     }
                   };
 
@@ -363,6 +401,56 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection }: InC
                         <p className="text-xs md:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
                           {isAr ? item.synopsisAr : item.synopsisEn}
                         </p>
+
+                        {/* Quick Action Share Row for Investigations */}
+                        {item.isInvestigation && (
+                          <div className="pt-2.5 flex flex-wrap items-center gap-1.5 text-[9px] font-mono select-none" onClick={(e) => e.stopPropagation()}>
+                            <span className="text-zinc-400 font-black uppercase tracking-wider">{isAr ? 'بث سريع:' : 'TRANSMIT:'}</span>
+                            
+                            {/* WhatsApp */}
+                            <a
+                              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تقرير استقصائي سيادي من الورّاق:\n\n' : 'Classified investigation dossier from Al-Warraq:\n\n'}*${isAr ? item.headlineAr : item.headlineEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-2 py-0.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold transition-colors uppercase rounded-none cursor-pointer"
+                              title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
+                            >
+                              WA
+                            </a>
+
+                            {/* Copy Link */}
+                            <button
+                              onClick={() => {
+                                const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`;
+                                navigator.clipboard.writeText(shareUrl).then(() => {
+                                  alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
+                                });
+                              }}
+                              className="px-2 py-0.5 bg-zinc-800 hover:bg-black text-white font-bold transition-colors border border-black cursor-pointer rounded-none"
+                            >
+                              LINK
+                            </button>
+
+                            {/* PDF Download */}
+                            <button
+                              onClick={() => {
+                                if (onSelectDossier) {
+                                  onSelectDossier(item.id);
+                                }
+                                if (onNavigateToSection) {
+                                  onNavigateToSection('alwarraq-investigations');
+                                }
+                                setTimeout(() => {
+                                  window.print();
+                                }, 300);
+                              }}
+                              className="px-2 py-0.5 bg-red-900 hover:bg-red-950 text-white font-bold transition-colors border border-red-950 cursor-pointer rounded-none"
+                              title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
+                            >
+                              PDF
+                            </button>
+                          </div>
+                        )}
                       </td>
 
                       {/* Column 3: Category */}

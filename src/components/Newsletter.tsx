@@ -18,6 +18,7 @@ import {
   Archive
 } from 'lucide-react';
 import NewsletterArchive from './NewsletterArchive';
+import { DOSSIER_DESKTOP_META } from './AlWarraqInvestigations';
 
 interface NewsletterStory {
   id: string;
@@ -30,6 +31,7 @@ interface NewsletterStory {
   ctaAr: string;
   url: string;
   unsplashTerm: string;
+  isInvestigation?: boolean;
 }
 
 interface NewsletterProps {
@@ -37,9 +39,11 @@ interface NewsletterProps {
   layoutMode: 'classic-print' | 'modern-white';
   subscribers?: string[];
   setSubscribers?: React.Dispatch<React.SetStateAction<string[]>>;
+  onNavigateToSection?: (sectionId: string) => void;
+  onSelectDossier?: (id: string) => void;
 }
 
-export default function Newsletter({ language, layoutMode, subscribers, setSubscribers }: NewsletterProps) {
+export default function Newsletter({ language, layoutMode, subscribers, setSubscribers, onNavigateToSection, onSelectDossier }: NewsletterProps) {
   const isAr = language === 'ar';
   
   const [emailText, setEmailText] = useState('');
@@ -184,24 +188,41 @@ export default function Newsletter({ language, layoutMode, subscribers, setSubsc
   const fetchCuration = async (silent = false) => {
     if (!silent) setLoading(true);
     setErrorStatus(null);
+
+    // Map investigations to NewsletterStory schema
+    const dossierStories: NewsletterStory[] = Object.entries(DOSSIER_DESKTOP_META).map(([id, meta]) => ({
+      id: id,
+      category: "investigations",
+      headlineEn: `INVESTIGATION: ${meta.titleEn}`,
+      headlineAr: `تحقيق استقصائي: ${meta.titleAr}`,
+      synopsisEn: meta.descEn,
+      synopsisAr: meta.descAr,
+      ctaEn: "READ DOSSIER",
+      ctaAr: "قراءة الملف كاملاً",
+      url: `https://www.alwarraqnews.com/?category=alwarraq-investigations&dossier=${id}`,
+      unsplashTerm: "oil infrastructure harbor refinery ship",
+      isInvestigation: true
+    }));
+
     try {
       const res = await fetch('/api/newsletter/generate');
       if (res.ok) {
         const data = await res.json();
         if (data && data.curation) {
+          const merged = [...data.curation, ...dossierStories];
           if (silent) {
             // Compare & calculate new stories count
-            const newStories = data.curation.filter((newS: NewsletterStory) => 
+            const newStories = merged.filter((newS: NewsletterStory) => 
               !stories.some(existingS => existingS.id === newS.id)
             );
             if (newStories.length > 0) {
-              setPendingStories(data.curation);
+              setPendingStories(merged);
               setNewStoriesCount(newStories.length);
             }
           } else {
-            setStories(data.curation);
-            if (data.curation.length > 0 && !selectedStoryId) {
-              setSelectedStoryId(data.curation[0].id);
+            setStories(merged);
+            if (merged.length > 0 && !selectedStoryId) {
+              setSelectedStoryId(merged[0].id);
             }
             setPendingStories([]);
             setNewStoriesCount(0);
@@ -243,7 +264,7 @@ export default function Newsletter({ language, layoutMode, subscribers, setSubsc
         {
           id: "trans-2",
           category: "techno-politics",
-          headlineEn: "SUBSEA MONOPOLY: THE COLD WAR ALONG SILICON TELECOM SHORES",
+          headlineEn: "SUBSEA MONOPOLY: THE CO WAR ALONG SILICON TELECOM SHORES",
           headlineAr: "احتكار القاع: حياكة أسلاك الحرب الباردة فوق كوابل الاتصالات البحرية",
           synopsisEn: "Sovereign superpowers are silently rerouting optical fiber highways along deep marine shelves. The ambition is not merely connectivity—it is absolute territorial surveillance under the guise of cloud infrastructure.",
           synopsisAr: "قوى سيادية تعيد مد الطرق البحرية للألياف البصرية عبر الجروف القارية العميقة بنشاط هائل. طموح الاندفاع الجديد لا يقتصر على ربط القارات بالمقومات الرقمية، بل يهدف إلى إرساء مراقبة كلية شاملة تحت غطاء السحاب.",
@@ -277,8 +298,9 @@ export default function Newsletter({ language, layoutMode, subscribers, setSubsc
           unsplashTerm: "vintage dark newspaper block print"
         }
       ];
-      setStories(fallbackPayload);
-      setSelectedStoryId(fallbackPayload[0].id);
+      const merged = [...fallbackPayload, ...dossierStories];
+      setStories(merged);
+      setSelectedStoryId(merged[0].id);
     } finally {
       if (!silent) setLoading(false);
     }
@@ -855,8 +877,13 @@ join our whatsapp group on https://chat.whatsapp.com/Fgh6uYQegGKKjs3DL6hy6A -  r
                               <h5 
                                 className="font-sans font-black text-xs md:text-sm uppercase text-black hover:text-[#b91c1c] cursor-pointer"
                                 onClick={() => {
-                                  setSelectedStoryId(wireS.id);
-                                  setTargetStoryId(wireS.id);
+                                  if (wireS.isInvestigation) {
+                                    if (onSelectDossier) onSelectDossier(wireS.id);
+                                    if (onNavigateToSection) onNavigateToSection('alwarraq-investigations');
+                                  } else {
+                                    setSelectedStoryId(wireS.id);
+                                    setTargetStoryId(wireS.id);
+                                  }
                                 }}
                               >
                                 {isAr ? wireS.headlineAr : wireS.headlineEn}
@@ -870,31 +897,59 @@ join our whatsapp group on https://chat.whatsapp.com/Fgh6uYQegGKKjs3DL6hy6A -  r
                               {/* Destination Pill (URL Name and Source Domain) */}
                               <div className="pt-0.5 flex items-center gap-1.5">
                                 <span className="text-[10px] font-mono text-zinc-400">{isAr ? 'كابل المصدر:' : 'Source link:'}</span>
-                                <a 
-                                  href={wireS.url} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-500 hover:text-red-700 hover:underline bg-zinc-100 p-1 font-semibold border-b border-black"
-                                >
-                                  <span>{cleanUrlName}</span>
-                                  <ExternalLink size={8} />
-                                </a>
+                                {wireS.isInvestigation ? (
+                                  <button 
+                                    onClick={() => {
+                                      if (onSelectDossier) onSelectDossier(wireS.id);
+                                      if (onNavigateToSection) onNavigateToSection('alwarraq-investigations');
+                                    }}
+                                    className="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-500 hover:text-red-700 hover:underline bg-zinc-100 p-1 font-semibold border-b border-black cursor-pointer"
+                                  >
+                                    <span>/alwarraq-investigations?dossier={wireS.id}</span>
+                                    <ExternalLink size={8} />
+                                  </button>
+                                ) : (
+                                  <a 
+                                    href={wireS.url} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-500 hover:text-red-700 hover:underline bg-zinc-100 p-1 font-semibold border-b border-black"
+                                  >
+                                    <span>{cleanUrlName}</span>
+                                    <ExternalLink size={8} />
+                                  </a>
+                                )}
                               </div>
                             </div>
 
                             {/* Right sharing shortcuts column */}
                             <div className="flex items-center gap-1.5 justify-end w-full md:w-auto shrink-0 border-t border-dashed border-zinc-100 md:border-t-0 pt-2.5 md:pt-0">
-                              {/* Quick Stage inside Slicer */}
-                              <button 
-                                onClick={() => {
-                                  setSelectedStoryId(wireS.id);
-                                  setTargetStoryId(wireS.id);
-                                }}
-                                className="bg-zinc-100 hover:bg-black hover:text-white border border-black text-neutral-800 font-mono text-[9px] font-bold py-1 px-2.5 uppercase transition-colors"
-                                title="Show inside interactive mobile simulator"
-                              >
-                                {isAr ? 'مستعرض' : 'ACTIVATE'}
-                              </button>
+                              {wireS.isInvestigation ? (
+                                <button 
+                                  onClick={() => {
+                                    if (onSelectDossier) onSelectDossier(wireS.id);
+                                    if (onNavigateToSection) onNavigateToSection('alwarraq-investigations');
+                                    setTimeout(() => {
+                                      window.print();
+                                    }, 300);
+                                  }}
+                                  className="bg-red-900 hover:bg-red-950 text-white font-mono text-[9px] font-bold py-1 px-2.5 uppercase transition-colors cursor-pointer"
+                                  title="Download dossier as PDF"
+                                >
+                                  {isAr ? 'تحميل PDF' : 'PDF DOWNLOAD'}
+                                </button>
+                              ) : (
+                                <button 
+                                  onClick={() => {
+                                    setSelectedStoryId(wireS.id);
+                                    setTargetStoryId(wireS.id);
+                                  }}
+                                  className="bg-zinc-100 hover:bg-black hover:text-white border border-black text-neutral-800 font-mono text-[9px] font-bold py-1 px-2.5 uppercase transition-colors cursor-pointer"
+                                  title="Show inside interactive mobile simulator"
+                                >
+                                  {isAr ? 'مستعرض' : 'ACTIVATE'}
+                                </button>
+                              )}
 
                               {/* Copy and WhatsApp direct actions */}
                               <button

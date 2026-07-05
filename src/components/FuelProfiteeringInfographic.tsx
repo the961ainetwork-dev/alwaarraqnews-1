@@ -15,6 +15,7 @@ import {
   Clock, 
   Shield 
 } from 'lucide-react';
+import { FuelInfrastructureMap } from './FuelInfrastructureMap';
 
 interface FuelProfiteeringInfographicProps {
   language: 'ar' | 'en';
@@ -22,7 +23,7 @@ interface FuelProfiteeringInfographicProps {
 
 export const FuelProfiteeringInfographic: React.FC<FuelProfiteeringInfographicProps> = ({ language }) => {
   const isAr = language === 'ar';
-  const [activeTab, setActiveTab] = useState<'breakdown' | 'detachment' | 'hawk' | 'cascade'>('breakdown');
+  const [activeTab, setActiveTab] = useState<'map' | 'breakdown' | 'detachment' | 'hawk' | 'cascade'>('map');
   const [selectedCostComponent, setSelectedCostComponent] = useState<number | null>(null);
   const [hoveredCostComponent, setHoveredCostComponent] = useState<number | null>(null);
   const [activeHawkStep, setActiveHawkStep] = useState<number>(0);
@@ -221,6 +222,16 @@ export const FuelProfiteeringInfographic: React.FC<FuelProfiteeringInfographicPr
       {/* TABS SELECTOR */}
       <div className="flex flex-wrap gap-1 border-b border-zinc-300 pb-2 mb-6 text-xs font-mono font-bold select-none">
         <button
+          onClick={() => setActiveTab('map')}
+          className={`px-3 py-2 border cursor-pointer transition-colors ${
+            activeTab === 'map'
+              ? 'bg-zinc-900 text-white border-zinc-900'
+              : 'bg-white hover:bg-stone-100 text-zinc-600 border-zinc-300'
+          }`}
+        >
+          {isAr ? '❖ خارطة المنشآت وسلاسل التوريد' : '❖ Supply & Infrastructure Map'}
+        </button>
+        <button
           onClick={() => setActiveTab('breakdown')}
           className={`px-3 py-2 border cursor-pointer transition-colors ${
             activeTab === 'breakdown'
@@ -261,6 +272,13 @@ export const FuelProfiteeringInfographic: React.FC<FuelProfiteeringInfographicPr
           {isAr ? '٤. تضخم النقل التراكمي' : '4. 2026 Price Cascade'}
         </button>
       </div>
+
+      {/* TAB CONTENT: MAP */}
+      {activeTab === 'map' && (
+        <div className="space-y-4 animate-fadeIn">
+          <FuelInfrastructureMap language={language} />
+        </div>
+      )}
 
       {/* TAB CONTENT: BREAKDOWN */}
       {activeTab === 'breakdown' && (
