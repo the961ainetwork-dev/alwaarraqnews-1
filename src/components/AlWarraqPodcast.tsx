@@ -279,15 +279,59 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     return () => stopHum();
   }, [isPlaying, isSynthesizedHumOn, isMuted, volume]);
 
+  // Real-time voice settings synchronizers to adjust pitch, speed, and volume without cutting/restarting
+  useEffect(() => {
+    if (utteranceRef.current) {
+      try {
+        utteranceRef.current.rate = playbackSpeed;
+      } catch (e) {}
+    }
+  }, [playbackSpeed]);
+
+  useEffect(() => {
+    if (utteranceRef.current) {
+      try {
+        utteranceRef.current.pitch = pitch;
+      } catch (e) {}
+    }
+  }, [pitch]);
+
+  useEffect(() => {
+    if (utteranceRef.current) {
+      try {
+        utteranceRef.current.volume = isMuted ? 0 : volume;
+      } catch (e) {}
+    }
+  }, [volume, isMuted]);
+
   // Handle Playback State
   const playCurrentSegment = (idx: number) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
 
+    // Clear event handlers of previous utterance to prevent race conditions during cancel()
+    if (utteranceRef.current) {
+      utteranceRef.current.onend = null;
+      utteranceRef.current.onerror = null;
+      utteranceRef.current.onboundary = null;
+    }
     window.speechSynthesis.cancel();
 
-    const segmentText = script[idx].text;
-    const utterance = new SpeechSynthesisUtterance(segmentText);
+    // To prevent cutting and mobile gesture restrictions, we join the remaining segments 
+    // into a single utterance. An ellipsis "..." gives a brief natural pause between segments.
+    const remainingSegments = script.slice(idx);
+    const joinedText = remainingSegments.map(s => s.text).join(" ... ");
+
+    const utterance = new SpeechSynthesisUtterance(joinedText);
     utteranceRef.current = utterance;
+
+    // Prevent GC (Garbage Collection) cutoff in Chrome/Safari by holding global strong reference
+    if (!(window as any)._activeUtterances) {
+      (window as any)._activeUtterances = [];
+    }
+    (window as any)._activeUtterances.push(utterance);
+    if ((window as any)._activeUtterances.length > 50) {
+      (window as any)._activeUtterances.shift();
+    }
 
     // Pick chosen voice
     if (selectedVoiceName) {
@@ -305,32 +349,40 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     utterance.pitch = pitch; // 0.85 gives an elegant mature baritone news voice
     utterance.volume = isMuted ? 0 : volume;
 
-    utterance.onend = () => {
-      if (idx + 1 < script.length) {
-        setCurrentIdx(idx + 1);
-        playCurrentSegment(idx + 1);
-      } else {
-        setIsPlaying(false);
-        setCurrentIdx(0);
-        stopHum();
+    // Precalculate character boundaries to highlight script items in real-time
+    let cumulativeLength = 0;
+    const boundaries = remainingSegments.map((seg, i) => {
+      const start = cumulativeLength;
+      const end = start + seg.text.length + 5; // " ... " length is 5
+      cumulativeLength = end;
+      return {
+        start,
+        end,
+        originalIdx: idx + i
+      };
+    });
+
+    utterance.onboundary = (e) => {
+      const charIdx = e.charIndex;
+      const matchingBoundary = boundaries.find(b => charIdx >= b.start && charIdx <= b.end);
+      if (matchingBoundary) {
+        setCurrentIdx(matchingBoundary.originalIdx);
       }
     };
 
+    utterance.onend = () => {
+      setIsPlaying(false);
+      setCurrentIdx(0);
+      stopHum();
+    };
+
     utterance.onerror = (e) => {
-      console.warn("Speech synthesis error", e);
-      // Simulate progress fallback if Speech API is blocked or errored
-      if (isPlaying) {
-        const timer = setTimeout(() => {
-          if (idx + 1 < script.length) {
-            setCurrentIdx(idx + 1);
-            playCurrentSegment(idx + 1);
-          } else {
-            setIsPlaying(false);
-            setCurrentIdx(0);
-          }
-        }, 12000 / playbackSpeed); // approximate segment duration
-        return () => clearTimeout(timer);
+      if (e.error === 'interrupted' || e.error === 'canceled') {
+        return; // Normal cancellation, do not trigger error states
       }
+      console.warn("Speech synthesis error", e);
+      setIsPlaying(false);
+      stopHum();
     };
 
     window.speechSynthesis.speak(utterance);
@@ -373,6 +425,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
   const handleReset = () => {
     if (typeof window !== 'undefined' && window.speechSynthesis) {
+      if (utteranceRef.current) {
+        utteranceRef.current.onend = null;
+        utteranceRef.current.onerror = null;
+        utteranceRef.current.onboundary = null;
+      }
       window.speechSynthesis.cancel();
     }
     setIsPlaying(false);
@@ -412,8 +469,6 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       }
     } catch (e) {}
 
-    // Cancel current and play from 0
-    window.speechSynthesis.cancel();
     playCurrentSegment(0);
   };
 
@@ -421,6 +476,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   useEffect(() => {
     return () => {
       if (typeof window !== 'undefined' && window.speechSynthesis) {
+        if (utteranceRef.current) {
+          utteranceRef.current.onend = null;
+          utteranceRef.current.onerror = null;
+          utteranceRef.current.onboundary = null;
+        }
         window.speechSynthesis.cancel();
       }
     };
