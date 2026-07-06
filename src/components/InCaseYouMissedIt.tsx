@@ -152,39 +152,142 @@ const NEWSWIRES: NewswireItem[] = [
   }
 ];
 
+import { Article } from '../types';
+
 interface InCaseYouMissedItProps {
   language: 'ar' | 'en';
+  allArticles?: Article[];
   onNavigateToSection?: (sectionId: string) => void;
   onSelectDossier?: (id: string) => void;
+  onSelectArticle?: (article: Article) => void;
 }
 
-export default function InCaseYouMissedIt({ language, onNavigateToSection, onSelectDossier }: InCaseYouMissedItProps) {
+export default function InCaseYouMissedIt({ 
+  language, 
+  allArticles, 
+  onNavigateToSection, 
+  onSelectDossier,
+  onSelectArticle
+}: InCaseYouMissedItProps) {
   const isAr = language === 'ar';
   
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
 
-  // Dynamically merge the 11 dossiers into the newswire list
+  const categoryNameMap: Record<string, { en: string, ar: string }> = {
+    'all': { en: 'All Categories', ar: 'جميع الأقسام' },
+    'techno-politics': { en: 'Techno-Politics', ar: 'سياسة تكنولوجية' },
+    'cyber-finance': { en: 'Cyber-Finance', ar: 'تمويل سيبراني' },
+    'resource-friction': { en: 'Resource Friction', ar: 'نزاع الموارد' },
+    'sovereign-intel': { en: 'Sovereign Intel', ar: 'استخبارات سيادية' },
+    'supply-chains': { en: 'Supply Chains', ar: 'سلاسل الإمداد' },
+    'telecom-internet': { en: 'Telecom & Internet', ar: 'الاتصالات والإنترنت' },
+    'investigations': { en: 'Special Investigations', ar: 'تحقيقات استقصائية' },
+    'lebanon': { en: 'Lebanon News', ar: 'أخبار لبنان' },
+    'middle-east': { en: 'Middle East Core', ar: 'شؤون الشرق الأوسط' },
+    'markets': { en: 'Sovereign Markets', ar: 'أسواق المال' },
+    'arab-markets': { en: 'Arab Markets Indicators', ar: 'الأسواق العربية' },
+    'exclusives': { en: 'Investigations', ar: 'التحقيقات الصحفية' },
+    'economy': { en: 'Economy', ar: 'الاقتصاد' }
+  };
+
+  // Dynamically merge the 11 dossiers and all other articles into the newswire list
   const combinedNewswires = useMemo(() => {
-    const list = [...NEWSWIRES];
+    const list = [...NEWSWIRES].map(item => ({
+      ...item,
+      isInvestigation: false,
+      isArticleObject: false,
+      articleObject: undefined as Article | undefined
+    }));
+    
+    // Track added IDs to avoid duplicates
+    const addedIds = new Set(list.map(item => item.id));
+
+    // Helper to format date in Arabic
+    const formatDateAr = (dateStr: string) => {
+      if (!dateStr) return '';
+      const parts = dateStr.split('-');
+      if (parts.length !== 3) return dateStr;
+      const year = parts[0];
+      const month = parts[1];
+      const day = parts[2];
+      
+      const monthsAr: Record<string, string> = {
+        '01': 'يناير', '02': 'فبراير', '03': 'مارس', '04': 'أبريل',
+        '05': 'مايو', '06': 'يونيو', '07': 'يوليو', '08': 'أغسطس',
+        '09': 'سبتمبر', '10': 'أكتوبر', '11': 'نوفمبر', '12': 'ديسمبر'
+      };
+
+      const toArDigits = (numStr: string) => {
+        const arDigits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+        return numStr.split('').map(char => {
+          const val = parseInt(char, 10);
+          return isNaN(val) ? char : arDigits[val];
+        }).join('');
+      };
+
+      const monthName = monthsAr[month] || month;
+      return `${toArDigits(parseInt(day, 10).toString())} ${monthName} ${toArDigits(year)}`;
+    };
+
+    // First merge dossiers from DOSSIER_DESKTOP_META
     Object.entries(DOSSIER_DESKTOP_META).forEach(([id, meta]) => {
+      if (addedIds.has(id)) return;
+
+      // Find matching article in allArticles to get its actual date if available
+      const matchedArticle = allArticles?.find(a => a.id === id);
+      const itemDate = matchedArticle?.date || "2026-06-20";
+      const itemDateAr = matchedArticle?.date ? formatDateAr(matchedArticle.date) : "٢٠ يونيو ٢٠٢٦";
+
       list.push({
         id: id,
-        date: "2026-06-20", // Grouped in June 2026
-        dateAr: "٢٠ يونيو ٢٠٢٦",
+        date: itemDate,
+        dateAr: itemDateAr,
         category: "investigations",
         categoryAr: "تحقيقات استقصائية",
         headlineEn: `INVESTIGATION: ${meta.titleEn}`,
         headlineAr: `تحقيق استقصائي: ${meta.titleAr}`,
-        synopsisEn: meta.descEn,
-        synopsisAr: meta.descAr,
+        synopsisEn: matchedArticle?.summaryEn || meta.descEn,
+        synopsisAr: matchedArticle?.summaryAr || meta.descAr,
         url: `https://alwarraqnews.com/section/alwarraq-investigations?dossier=${id}`,
-        isInvestigation: true
+        isInvestigation: true,
+        isArticleObject: true,
+        articleObject: matchedArticle
       });
+      addedIds.add(id);
     });
+
+    // Also merge other general articles from allArticles to keep the list completely fresh!
+    if (allArticles) {
+      allArticles.forEach(article => {
+        if (addedIds.has(article.id)) return;
+
+        // Skip categories that do not fit the news-wire layout
+        const skipCategories = ['instats', 'videos', 'podcast', 'what-if-simulator', 'premium-pricing', 'newsletter'];
+        if (skipCategories.includes(article.category)) return;
+
+        list.push({
+          id: article.id,
+          date: article.date,
+          dateAr: formatDateAr(article.date),
+          category: article.category,
+          categoryAr: categoryNameMap[article.category]?.ar || article.category,
+          headlineEn: article.titleEn,
+          headlineAr: article.titleAr,
+          synopsisEn: article.summaryEn || article.excerptEn || '',
+          synopsisAr: article.summaryAr || article.excerptAr || '',
+          url: `https://alwarraqnews.com/section/${article.category}?article=${article.id}`,
+          isInvestigation: article.category === 'exclusives' || article.category === 'alwarraq-investigations',
+          isArticleObject: true,
+          articleObject: article
+        });
+        addedIds.add(article.id);
+      });
+    }
+
     return list;
-  }, []);
+  }, [allArticles]);
 
   // Compute unique categories
   const categoriesList = useMemo(() => {
@@ -212,17 +315,6 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection, onSel
       return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
     });
   }, [combinedNewswires, searchTerm, selectedCategory, sortOrder]);
-
-  const categoryNameMap: Record<string, { en: string, ar: string }> = {
-    'all': { en: 'All Categories', ar: 'جميع الأقسام' },
-    'techno-politics': { en: 'Techno-Politics', ar: 'سياسة تكنولوجية' },
-    'cyber-finance': { en: 'Cyber-Finance', ar: 'تمويل سيبراني' },
-    'resource-friction': { en: 'Resource Friction', ar: 'نزاع الموارد' },
-    'sovereign-intel': { en: 'Sovereign Intel', ar: 'استخبارات سيادية' },
-    'supply-chains': { en: 'Supply Chains', ar: 'سلاسل الإمداد' },
-    'telecom-internet': { en: 'Telecom & Internet', ar: 'الاتصالات والإنترنت' },
-    'investigations': { en: 'Special Investigations', ar: 'تحقيقات استقصائية' }
-  };
 
   return (
     <div 
@@ -347,13 +439,19 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection, onSel
                     ? (isAr ? categoryNameMap[item.category].ar : categoryNameMap[item.category].en) 
                     : item.category.toUpperCase();
 
-                  const sectionId = item.isInvestigation ? 'alwarraq-investigations' : (item.url.split('/').pop() || 'all');
+                  const sectionId = item.isInvestigation ? 'alwarraq-investigations' : (item.url?.split('/').pop()?.split('?')[0] || 'all');
+                  
                   const realUrl = item.isInvestigation 
                     ? `${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`
-                    : `${window.location.origin}/section/${sectionId}`;
+                    : item.isArticleObject
+                      ? `${window.location.origin}/?article=${item.id}`
+                      : `${window.location.origin}/section/${sectionId}`;
+                      
                   const relativeUrlPath = item.isInvestigation
                     ? `/section/alwarraq-investigations?dossier=${item.id}`
-                    : `/section/${sectionId}`;
+                    : item.isArticleObject
+                      ? `/?article=${item.id}`
+                      : `/section/${sectionId}`;
 
                   const handleNavigation = (e: React.MouseEvent) => {
                     e.preventDefault();
@@ -363,6 +461,10 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection, onSel
                       }
                       if (onNavigateToSection) {
                         onNavigateToSection('alwarraq-investigations');
+                      }
+                    } else if (item.isArticleObject && item.articleObject) {
+                      if (onSelectArticle) {
+                        onSelectArticle(item.articleObject);
                       }
                     } else {
                       if (onNavigateToSection) {
@@ -390,15 +492,19 @@ export default function InCaseYouMissedIt({ language, onNavigateToSection, onSel
                         </div>
                       </td>
 
-                      {/* Column 2: Headline & Synopsis (Under it) */}
+                      {/* Column 2: Headline & Synopsis */}
                       <td className="py-5 px-5 space-y-2">
                         <h4 
                           onClick={handleNavigation}
                           className="font-sans font-black text-sm md:text-base text-zinc-900 group-hover:text-red-700 transition-colors leading-snug cursor-pointer hover:underline"
+                          style={{ textAlign: isAr ? 'right' : 'left' }}
                         >
                           {isAr ? item.headlineAr : item.headlineEn}
                         </h4>
-                        <p className="text-xs md:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                        <p 
+                          className="text-xs md:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium"
+                          style={{ textAlign: isAr ? 'right' : 'left' }}
+                        >
                           {isAr ? item.synopsisAr : item.synopsisEn}
                         </p>
 
