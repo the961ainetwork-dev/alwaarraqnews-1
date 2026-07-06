@@ -23,6 +23,7 @@ import { NarrativeLebanonCrisisInfographics } from './components/NarrativeLebano
 import AlWarraqInvestigations, { DOSSIER_DESKTOP_META } from './components/AlWarraqInvestigations';
 import { PrintableDossier } from './components/PrintableDossier';
 import AlWarraqVideos from './components/AlWarraqVideos';
+import { AlWarraqPodcast } from './components/AlWarraqPodcast';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
@@ -1015,7 +1016,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast';
 
   return (
     <div
@@ -1174,6 +1175,10 @@ export default function App() {
                 language={language}
                 allArticles={allArticles}
                 currentUser={currentUser}
+              />
+            ) : activeCategory === 'podcast' ? (
+              <AlWarraqPodcast
+                language={language}
               />
             ) : activeCategory === 'war-room' ? (
               <WarRoom
@@ -1347,6 +1352,7 @@ export default function App() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           {Object.entries(DOSSIER_DESKTOP_META).map(([id, meta], index) => {
                             const isRead = !!readDossiers[id];
+                            const isBookmarked = savedArticleIds.includes(id);
                             return (
                               <div
                                 key={id}
@@ -1450,6 +1456,24 @@ export default function App() {
                                       title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
                                     >
                                       PDF
+                                    </button>
+
+                                    {/* Quick Save Heart Button */}
+                                    <button
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        const dossierArticle = allArticles.find(a => a.id === id);
+                                        handleToggleSaveArticle(dossierArticle || ({ id, titleAr: meta.titleAr, titleEn: meta.titleEn } as any), e);
+                                      }}
+                                      className={`px-1.5 py-0.5 transition-colors border cursor-pointer flex items-center gap-1 ${
+                                        isBookmarked
+                                          ? 'bg-rose-600 hover:bg-rose-700 text-white border-rose-700'
+                                          : 'bg-white hover:bg-rose-50 text-rose-600 border-zinc-300 hover:border-rose-400'
+                                      }`}
+                                      title={isBookmarked ? (isAr ? 'إلغاء الحفظ الفوري' : 'Remove Quick Save') : (isAr ? 'حفظ سريع في المفضلة' : 'Quick Save Bookmark')}
+                                    >
+                                      <Heart size={10} className={isBookmarked ? 'fill-current text-white' : 'text-rose-600'} />
+                                      <span>{isBookmarked ? (isAr ? 'محفوظ' : 'SAVED') : (isAr ? 'حفظ' : 'SAVE')}</span>
                                     </button>
                                   </div>
                                 </div>
