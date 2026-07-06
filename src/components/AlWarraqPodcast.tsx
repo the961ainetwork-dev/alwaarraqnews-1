@@ -304,6 +304,22 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     }
   }, [volume, isMuted]);
 
+  // Keep-alive interval for Chrome Speech Synthesis 15-second bug
+  useEffect(() => {
+    let interval: any = null;
+    if (isPlaying) {
+      interval = setInterval(() => {
+        if (typeof window !== 'undefined' && window.speechSynthesis && window.speechSynthesis.speaking) {
+          window.speechSynthesis.pause();
+          window.speechSynthesis.resume();
+        }
+      }, 10000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isPlaying]);
+
   // Handle Playback State
   const playCurrentSegment = (idx: number) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
@@ -312,87 +328,70 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     if (utteranceRef.current) {
       utteranceRef.current.onend = null;
       utteranceRef.current.onerror = null;
-      utteranceRef.current.onboundary = null;
+      utteranceRef.current.onstart = null;
     }
     window.speechSynthesis.cancel();
 
-    // To prevent cutting and mobile gesture restrictions, we join the remaining segments 
-    // into a single utterance. An ellipsis "..." gives a brief natural pause between segments.
-    const remainingSegments = script.slice(idx);
-    const joinedText = remainingSegments.map(s => s.text).join(" ... ");
-
-    const utterance = new SpeechSynthesisUtterance(joinedText);
-    utteranceRef.current = utterance;
-
-    // Prevent GC (Garbage Collection) cutoff in Chrome/Safari by holding global strong reference
-    if (!(window as any)._activeUtterances) {
+    // Tiny delay to let the speech engine clear its queue before we re-queue
+    setTimeout(() => {
+      // Clear active utterances array to prevent GC and leaks
       (window as any)._activeUtterances = [];
-    }
-    (window as any)._activeUtterances.push(utterance);
-    if ((window as any)._activeUtterances.length > 50) {
-      (window as any)._activeUtterances.shift();
-    }
 
-    // Pick chosen voice
-    if (selectedVoiceName) {
-      const voiceObj = voices.find(v => v.name === selectedVoiceName);
-      if (voiceObj) utterance.voice = voiceObj;
-    } else {
-      // Automatic fallback search
-      const targetLang = isAr ? 'ar' : 'en';
-      const fallbackVoice = voices.find(v => v.lang.startsWith(targetLang));
-      if (fallbackVoice) utterance.voice = fallbackVoice;
-    }
+      const remainingSegments = script.slice(idx);
+      remainingSegments.forEach((seg, relativeIdx) => {
+        const segmentGlobalIdx = idx + relativeIdx;
+        const utterance = new SpeechSynthesisUtterance(seg.text);
 
-    // Anchor Voice properties
-    utterance.rate = playbackSpeed;
-    utterance.pitch = pitch; // 0.85 gives an elegant mature baritone news voice
-    utterance.volume = isMuted ? 0 : volume;
+        // Pick chosen voice
+        if (selectedVoiceName) {
+          const voiceObj = voices.find(v => v.name === selectedVoiceName);
+          if (voiceObj) utterance.voice = voiceObj;
+        } else {
+          // Automatic fallback search
+          const targetLang = isAr ? 'ar' : 'en';
+          const fallbackVoice = voices.find(v => v.lang.startsWith(targetLang));
+          if (fallbackVoice) utterance.voice = fallbackVoice;
+        }
 
-    // Precalculate character boundaries to highlight script items in real-time
-    let cumulativeLength = 0;
-    const boundaries = remainingSegments.map((seg, i) => {
-      const start = cumulativeLength;
-      const end = start + seg.text.length + 5; // " ... " length is 5
-      cumulativeLength = end;
-      return {
-        start,
-        end,
-        originalIdx: idx + i
-      };
-    });
+        // Anchor Voice properties
+        utterance.rate = playbackSpeed;
+        utterance.pitch = pitch; // 0.85 gives an elegant mature baritone news voice
+        utterance.volume = isMuted ? 0 : volume;
 
-    utterance.onboundary = (e) => {
-      const charIdx = e.charIndex;
-      const matchingBoundary = boundaries.find(b => charIdx >= b.start && charIdx <= b.end);
-      if (matchingBoundary) {
-        setCurrentIdx(matchingBoundary.originalIdx);
-      }
-    };
+        // Prevent GC (Garbage Collection) cutoff in Chrome/Safari by holding global strong reference
+        (window as any)._activeUtterances.push(utterance);
 
-    utterance.onend = () => {
-      setIsPlaying(false);
-      setCurrentIdx(0);
-      stopHum();
-    };
+        utterance.onstart = () => {
+          setCurrentIdx(segmentGlobalIdx);
+          setIsPlaying(true);
+          utteranceRef.current = utterance;
+        };
 
-    utterance.onerror = (e) => {
-      if (e.error === 'interrupted' || e.error === 'canceled') {
-        return; // Normal cancellation, do not trigger error states
-      }
-      console.warn("Speech synthesis error", e);
-      setIsPlaying(false);
-      stopHum();
-    };
+        if (segmentGlobalIdx === script.length - 1) {
+          utterance.onend = () => {
+            setIsPlaying(false);
+            setCurrentIdx(0);
+            stopHum();
+          };
+        }
 
-    window.speechSynthesis.speak(utterance);
+        utterance.onerror = (e) => {
+          if (e.error === 'interrupted' || e.error === 'canceled') {
+            return; // Normal cancellation, do not trigger error states
+          }
+          console.warn("Speech synthesis error", e);
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    }, 60);
   };
 
   const handleTogglePlay = () => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
 
     if (isPlaying) {
-      window.speechSynthesis.pause();
+      window.speechSynthesis.cancel();
       setIsPlaying(false);
       stopHum();
     } else {
@@ -415,11 +414,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
         }
       } catch (e) {}
 
-      if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-      } else {
-        playCurrentSegment(currentIdx);
-      }
+      playCurrentSegment(currentIdx);
     }
   };
 
@@ -428,7 +423,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       if (utteranceRef.current) {
         utteranceRef.current.onend = null;
         utteranceRef.current.onerror = null;
-        utteranceRef.current.onboundary = null;
+        utteranceRef.current.onstart = null;
       }
       window.speechSynthesis.cancel();
     }
@@ -513,30 +508,30 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   return (
-    <div className="bg-zinc-950 border-2 border-amber-800 p-6 md:p-10 shadow-2xl relative text-right rtl:text-right ltr:text-left font-sans text-white" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
+    <div className="bg-zinc-950 border-2 border-amber-800 p-6 md:p-10 shadow-2xl relative text-right rtl:text-right ltr:text-left font-['Cairo'] text-white" style={{ direction: isAr ? 'rtl' : 'ltr', fontFamily: "'Cairo', 'Inter', sans-serif" }}>
       
       {/* Absolute FM Broadcast / Studio Indicators */}
-      <div className={`absolute top-4 ${isAr ? 'left-6' : 'right-6'} flex items-center gap-4 font-sans text-xs font-black tracking-wider text-zinc-100`}>
-        <span className="flex items-center gap-2 bg-zinc-900 border border-zinc-700 px-3 py-1 rounded text-amber-400">
-          <Radio size={12} className="animate-pulse" />
+      <div className={`absolute top-4 ${isAr ? 'left-6' : 'right-6'} flex items-center gap-4 font-['Cairo'] text-base font-black tracking-wider text-white`}>
+        <span className="flex items-center gap-2 bg-zinc-900 border border-zinc-700 px-3.5 py-1.5 rounded text-amber-400 text-base">
+          <Radio size={14} className="animate-pulse" />
           <span>96.5 FM BROADCAST</span>
         </span>
-        <span className={`flex items-center gap-1.5 border px-3 py-1 rounded ${isPlaying ? 'border-red-600 bg-red-950 text-red-200' : 'border-zinc-700 bg-zinc-900 text-zinc-300'}`}>
-          <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-red-500 animate-ping' : 'bg-zinc-500'}`}></span>
+        <span className={`flex items-center gap-1.5 border px-3.5 py-1.5 rounded text-base ${isPlaying ? 'border-red-600 bg-red-950 text-red-100' : 'border-zinc-700 bg-zinc-900 text-white'}`}>
+          <span className={`w-2.5 h-2.5 rounded-full ${isPlaying ? 'bg-red-500 animate-ping' : 'bg-white'}`}></span>
           <span>{isPlaying ? (isAr ? 'مباشر على الهواء' : 'ON AIR') : (isAr ? 'تأهب الاستوديو' : 'STANDBY')}</span>
         </span>
       </div>
 
       {/* Main Studio Title Block */}
-      <div className="space-y-2 mb-8 border-b border-zinc-800 pb-5 pr-1.5 mt-4">
-        <div className="flex items-center gap-2 text-amber-400 font-sans text-xs md:text-sm font-bold uppercase">
-          <Mic size={16} className="text-amber-400" />
+      <div className="space-y-4 mb-8 border-b border-zinc-800 pb-5 pr-1.5 mt-4">
+        <div className="flex items-center gap-2 text-amber-400 font-['Cairo'] text-base md:text-lg font-bold uppercase">
+          <Mic size={20} className="text-amber-400" />
           <span>{isAr ? 'منصة الاستوديو والبودكاست الاستقصائي' : 'AL-WARRAQ PODCAST STUDIO // BEIRUT BROADCAST'}</span>
         </div>
-        <h2 className="text-2xl md:text-3xl font-sans font-black text-white">
+        <h2 className="text-4xl md:text-5xl font-['Cairo'] font-black text-white">
           {isAr ? 'ديوان تحريات الورّاق الإذاعي' : 'Al-Warraq Audio Investigation Unit'}
         </h2>
-        <p className="text-xs md:text-sm text-zinc-100 max-w-xl font-sans">
+        <p className="text-base md:text-lg text-white max-w-xl font-['Cairo'] leading-relaxed">
           {isAr 
             ? 'بث صوتي مباشر يقرأ تفاصيل التقرير الاستقصائي لجنوب لبنان والمناطق التجريبية بنبرة إذاعية ذكورية وقورة.'
             : 'Audio news anchor reciting the investigative report on Southern Lebanon "Pilot Zones" in a structured, solemn male news voice.'}
@@ -551,7 +546,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           
           {/* Audio Visualizer Waveform Panel */}
           <div className="bg-zinc-950 border-2 border-zinc-800 rounded p-5 flex flex-col justify-between h-40 relative overflow-hidden">
-            <div className="flex justify-between items-center font-sans text-xs text-zinc-200 border-b border-zinc-900 pb-2">
+            <div className="flex justify-between items-center font-['Cairo'] text-base text-white border-b border-zinc-900 pb-2">
               <span>{isAr ? 'التردد الصوتي / محلل المدى' : 'AUDIO SPECTRUM // BROADCAST MASTER'}</span>
               <span className="text-amber-400 font-bold">{isPlaying ? 'TRANSMITTING' : 'IDLE'}</span>
             </div>
@@ -570,11 +565,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             </div>
 
             {/* Simulated Tape Counter / Track Progress */}
-            <div className="flex justify-between items-center font-sans text-xs text-zinc-200 mt-2 pt-2 border-t border-zinc-900">
+            <div className="flex justify-between items-center font-['Cairo'] text-base text-white mt-2 pt-2 border-t border-zinc-900">
               <span className="text-amber-400 font-bold">
                 {String(currentIdx + 1).padStart(2, '0')} / {String(script.length).padStart(2, '0')}
               </span>
-              <span className="text-zinc-100 text-[10px] tracking-widest uppercase">
+              <span className="text-white text-sm tracking-widest uppercase">
                 {isAr ? 'مدرج البث' : 'SEGMENT FEED'}
               </span>
               <span>
@@ -587,9 +582,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           <button
             id="play-all-podcast-btn"
             onClick={handlePlayAll}
-            className="w-full py-3.5 px-4 flex items-center justify-center gap-3 cursor-pointer bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans font-black text-xs md:text-sm uppercase tracking-wider rounded transition-all hover:translate-y-[-2px] shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-y-[0px] active:shadow-none border border-white"
+            className="w-full py-4 px-4 flex items-center justify-center gap-3 cursor-pointer bg-amber-500 hover:bg-amber-400 text-zinc-950 font-['Cairo'] font-black text-base md:text-lg uppercase tracking-wider rounded transition-all hover:translate-y-[-2px] shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-y-[0px] active:shadow-none border border-white"
           >
-            <Radio size={16} className="animate-bounce text-zinc-950" />
+            <Radio size={20} className="animate-bounce text-zinc-950" />
             <span>{isAr ? '🎙️ بث كامل التحقيق متواصلاً (بكبسة واحدة)' : '🎙️ PLAY FULL BROADCAST CONTINUOUS (1-CLICK)'}</span>
           </button>
 
@@ -600,12 +595,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
               className="p-2.5 border border-zinc-700 hover:border-amber-500 bg-zinc-900 text-white hover:text-amber-400 cursor-pointer rounded transition-all hover:translate-y-[-1px]"
               title={isAr ? 'إعادة التشغيل والبدء من الأول' : 'Reset to Beginning'}
             >
-              <RotateCcw size={16} />
+              <RotateCcw size={18} />
             </button>
 
             <button
               onClick={handleTogglePlay}
-              className={`flex-1 py-2.5 px-4 flex items-center justify-center gap-2 cursor-pointer font-sans font-black text-xs md:text-sm uppercase tracking-wider transition-all hover:translate-y-[-1px] shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none border ${
+              className={`flex-1 py-3 px-4 flex items-center justify-center gap-2 cursor-pointer font-['Cairo'] font-black text-base md:text-lg uppercase tracking-wider transition-all hover:translate-y-[-1px] shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none border ${
                 isPlaying 
                   ? 'bg-amber-500 border-amber-400 text-zinc-950' 
                   : 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
@@ -613,12 +608,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             >
               {isPlaying ? (
                 <>
-                  <Pause size={14} className="fill-current text-zinc-950" />
+                  <Pause size={16} className="fill-current text-zinc-950" />
                   <span>{isAr ? 'إيقاف البث' : 'PAUSE BROADCAST'}</span>
                 </>
               ) : (
                 <>
-                  <Play size={14} className="fill-current text-amber-400 animate-pulse" />
+                  <Play size={16} className="fill-current text-amber-400 animate-pulse" />
                   <span>{isAr ? 'بدء البث الإخباري' : 'START NEWSREEL'}</span>
                 </>
               )}
@@ -629,24 +624,24 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
               className="p-2.5 border border-zinc-700 hover:border-amber-500 bg-zinc-900 text-white hover:text-amber-400 cursor-pointer rounded transition-all hover:translate-y-[-1px]"
               title={isAr ? 'كتم الصوت' : 'Mute/Unmute'}
             >
-              {isMuted ? <VolumeX size={16} className="text-red-500" /> : <Volume2 size={16} />}
+              {isMuted ? <VolumeX size={18} className="text-red-500" /> : <Volume2 size={18} />}
             </button>
           </div>
 
           {/* Advanced Audio Synthesizer Toggles */}
-          <div className="space-y-3 border border-zinc-700 bg-zinc-950 p-4 rounded font-sans text-xs text-white">
-            <div className="flex justify-between items-center text-zinc-100 font-bold uppercase border-b border-zinc-800 pb-2">
+          <div className="space-y-3.5 border border-zinc-700 bg-zinc-950 p-4 rounded font-['Cairo'] text-base text-white">
+            <div className="flex justify-between items-center text-white font-bold uppercase border-b border-zinc-800 pb-2">
               <span className="flex items-center gap-1.5 text-amber-400">
-                <Sliders size={14} />
+                <Sliders size={18} />
                 <span>{isAr ? 'معالج الصوت اللاسلكي' : 'RADIO TRANSMITTER CONFIG'}</span>
               </span>
-              <span className="font-mono">STUDIO B</span>
+              <span className="font-mono text-base">STUDIO B</span>
             </div>
 
             {/* Custom Voice Selection if multiple available */}
             {voices.length > 0 && (
-              <div className="space-y-1.5">
-                <label className="text-zinc-200 block text-xs font-bold">{isAr ? 'صوت المذيع المتاح:' : 'Available Narrator Voice:'}</label>
+              <div className="space-y-2">
+                <label className="text-white block text-base font-bold">{isAr ? 'صوت المذيع المتاح:' : 'Available Narrator Voice:'}</label>
                 <select
                   value={selectedVoiceName}
                   onChange={(e) => {
@@ -656,7 +651,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                       setTimeout(() => playCurrentSegment(currentIdx), 50);
                     }
                   }}
-                  className="w-full bg-zinc-900 border border-zinc-700 text-white p-2 text-xs outline-none rounded cursor-pointer font-sans"
+                  className="w-full bg-zinc-900 border border-zinc-700 text-white p-2 text-base outline-none rounded cursor-pointer font-['Cairo']"
                 >
                   {voices
                     .filter(v => v.lang.startsWith(isAr ? 'ar' : 'en'))
@@ -670,12 +665,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             )}
 
             {/* Ambient Noise / shortwave Hum switch */}
-            <div className="flex justify-between items-center pt-1 border-t border-zinc-900">
-              <span className="text-zinc-200">{isAr ? 'محاكاة همس التردد اللاسلكي السلبي:' : 'Simulated Shortwave Carrier Hum:'}</span>
+            <div className="flex justify-between items-center pt-2 border-t border-zinc-900">
+              <span className="text-white">{isAr ? 'محاكاة همس التردد اللاسلكي السلبي:' : 'Simulated Shortwave Carrier Hum:'}</span>
               <button
                 onClick={() => setIsSynthesizedHumOn(!isSynthesizedHumOn)}
-                className={`px-3 py-1 border text-[10px] font-bold cursor-pointer rounded transition-all ${
-                  isSynthesizedHumOn ? 'bg-amber-950 text-amber-400 border-amber-600' : 'bg-zinc-900 text-zinc-300 border-zinc-700'
+                className={`px-3.5 py-2 border text-sm font-bold cursor-pointer rounded transition-all ${
+                  isSynthesizedHumOn ? 'bg-amber-950 text-amber-400 border-amber-600' : 'bg-zinc-900 text-white border-zinc-700'
                 }`}
               >
                 {isSynthesizedHumOn ? (isAr ? 'نشط' : 'ON') : (isAr ? 'معطل' : 'OFF')}
@@ -683,9 +678,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             </div>
 
             {/* Pitch & Speed sliders */}
-            <div className="grid grid-cols-2 gap-4 pt-1">
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[11px] text-zinc-200">
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm text-white">
                   <span>{isAr ? 'طبقة الصوت (وقار)' : 'Pitch'}</span>
                   <span className="text-amber-400 font-bold">{pitch}</span>
                 </div>
@@ -700,8 +695,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                 />
               </div>
 
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-[11px] text-zinc-200">
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm text-white">
                   <span>{isAr ? 'سرعة الإلقاء' : 'Speed'}</span>
                   <span className="text-amber-400 font-bold">{playbackSpeed}x</span>
                 </div>
@@ -726,10 +721,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           {/* Script Scroll Container */}
           <div className="bg-zinc-950 border border-zinc-800 p-5 rounded h-[420px] overflow-y-auto space-y-4 custom-scrollbar">
             
-            <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-3 font-sans text-xs text-zinc-100 font-bold uppercase">
+            <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-3 font-['Cairo'] text-base text-white font-bold uppercase">
               <span>{isAr ? 'المخطط الإخباري للنشرة الإذاعية (اضغط لتجاوز القراءة)' : 'INTELLIGENCE BROADCAST TELEPROMPTER'}</span>
               <span className="flex items-center gap-1.5 text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
                 <span>{isAr ? 'مزامنة حية' : 'LIVE SYNCED'}</span>
               </span>
             </div>
@@ -740,7 +735,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                 <div
                   key={idx}
                   onClick={() => handleSelectSegment(idx)}
-                  className={`p-4 border-r-4 text-right rtl:text-right ltr:text-left transition-all duration-300 cursor-pointer rounded-l ${
+                  className={`p-5 border-r-4 text-right rtl:text-right ltr:text-left transition-all duration-300 cursor-pointer rounded-l ${
                     isActive 
                       ? 'bg-amber-950/50 border-amber-400 scale-[1.01] shadow-lg shadow-amber-950/40' 
                       : 'border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/70 hover:border-zinc-600'
@@ -748,33 +743,66 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                   style={{ direction: isAr ? 'rtl' : 'ltr' }}
                 >
                   <div className="flex items-center gap-2.5 justify-start mb-2">
-                    <span className={`font-sans text-xs px-2.5 py-0.5 rounded font-black ${
+                    <span className={`font-['Cairo'] text-base px-2.5 py-0.5 rounded font-black ${
                       isActive ? 'bg-amber-400 text-zinc-950' : 'bg-zinc-700 text-white'
                     }`}>
                       {idx + 1}
                     </span>
-                    <h4 className={`text-sm md:text-base font-black font-sans ${isActive ? 'text-amber-400' : 'text-white'}`}>
+                    <h4 className={`text-lg md:text-xl font-black font-['Cairo'] ${isActive ? 'text-amber-400' : 'text-white'}`}>
                       {seg.title}
                     </h4>
                   </div>
-                  <p className={`text-sm md:text-base font-sans leading-relaxed transition-all ${isActive ? 'text-white font-medium' : 'text-zinc-100'}`}>
+                  <p className={`text-lg md:text-xl font-['Cairo'] leading-relaxed transition-all ${isActive ? 'text-white font-medium' : 'text-white'}`}>
                     {seg.text}
                   </p>
+
+                  {/* Integrated Story-Specific Actions (WhatsApp Share + Call to Action Buttons) */}
+                  <div className="mt-4 pt-3.5 border-t border-zinc-800 flex flex-wrap items-center gap-3" onClick={(e) => e.stopPropagation()}>
+                    {/* Integrated WhatsApp Share Button for this story */}
+                    <a
+                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                        isAr 
+                          ? `تحريات الورّاق - ${seg.title}:\n${seg.text}\n\nتابع التقرير الصوتي الكامل من هنا: ` + (typeof window !== 'undefined' ? window.location.href : '')
+                          : `Al-Warraq Briefing - ${seg.title}:\n${seg.text}\n\nListen to the full audio investigation: ` + (typeof window !== 'undefined' ? window.location.href : '')
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3.5 py-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-['Cairo'] text-sm font-bold rounded transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+                    >
+                      <WhatsAppIcon size={16} className="text-[#25D366]" />
+                      <span>{isAr ? 'مشاركة الخبر' : 'Share Story'}</span>
+                    </a>
+
+                    {/* Integrated Call to Action Button for this story */}
+                    <a
+                      href={`https://wa.me/96181776263?text=${encodeURIComponent(
+                        isAr 
+                          ? `أرغب في الحصول على الوثائق والمستندات الخاصة ببند: "${seg.title}" الوارد في تقرير جنوب لبنان التجريبي لمزيد من المتابعة والتدقيق الدستوري والأمني.`
+                          : `I would like to request official documentation and files regarding the story: "${seg.title}" under the Southern Lebanon pilot zones report for review.`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3.5 py-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-['Cairo'] text-sm font-black rounded transition-all cursor-pointer shadow-md hover:translate-y-[-1px]"
+                    >
+                      <FileText size={16} className="text-zinc-950" />
+                      <span>{isAr ? 'طلب وثائق البند' : 'Request Documents'}</span>
+                    </a>
+                  </div>
                 </div>
               );
             })}
           </div>
 
           {/* Quick Actions Footer */}
-          <div className="flex items-center justify-between gap-3 bg-zinc-950 p-4 border border-zinc-800 rounded font-sans text-xs text-white">
+          <div className="flex items-center justify-between gap-3 bg-zinc-950 p-4 border border-zinc-800 rounded font-['Cairo'] text-base text-white">
             <span>
               {isAr ? 'وثيقة مفرج عنها للجمهور العام.' : 'Classified document cleared for public distribution.'}
             </span>
             <button
               onClick={handleDownloadTranscript}
-              className="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-400 text-amber-400 hover:text-white cursor-pointer transition-all flex items-center gap-2 rounded uppercase font-bold text-xs"
+              className="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-400 text-amber-400 hover:text-white cursor-pointer transition-all flex items-center gap-2 rounded uppercase font-bold text-base"
             >
-              <Download size={14} />
+              <Download size={18} />
               <span>{isAr ? 'تحميل النص الكامل' : 'DOWNLOAD SCRIPT'}</span>
             </button>
           </div>
@@ -787,11 +815,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       <div className="bg-zinc-900/80 border border-[#25D366]/40 p-5 md:p-6 rounded-lg my-6 text-center md:text-right rtl:text-right ltr:text-left space-y-4 shadow-lg">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="space-y-1.5 text-center md:text-right rtl:text-right ltr:text-left">
-            <h3 className="text-base md:text-lg font-black text-white flex items-center gap-2 justify-center md:justify-start">
-              <span className="text-[#25D366]"><WhatsAppIcon size={22} /></span>
+            <h3 className="text-xl md:text-2xl font-black text-white flex items-center gap-2 justify-center md:justify-start">
+              <span className="text-[#25D366]"><WhatsAppIcon size={26} /></span>
               <span>{isAr ? 'انضم إلى منصة الورّاق على واتساب' : 'Join Al-Warraq on WhatsApp'}</span>
             </h3>
-            <p className="text-xs md:text-sm text-zinc-100 font-sans">
+            <p className="text-base md:text-lg text-white font-['Cairo']">
               {isAr 
                 ? 'تابع آخر تسريبات وتحقيقات اتفاق واشنطن، الخرائط العسكرية، والملاحق السرية فور صدورها مباشرة على هاتفك.'
                 : 'Get the latest leaked documents, trilateral agreement maps, and secret military reports delivered directly to your phone.'}
@@ -807,9 +835,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 hover:border-zinc-500 font-sans font-bold text-xs md:text-sm rounded-lg transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 hover:border-zinc-500 font-['Cairo'] font-bold text-base md:text-lg rounded-lg transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
             >
-              <WhatsAppIcon size={16} />
+              <WhatsAppIcon size={20} />
               <span>{isAr ? 'مشاركة عبر واتساب' : 'Share via WhatsApp'}</span>
             </a>
             
@@ -818,9 +846,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
               href="https://wa.me/96181776263"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-zinc-950 font-sans font-black text-xs md:text-sm rounded-lg transition-all cursor-pointer shadow-md hover:translate-y-[-1px]"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-zinc-950 font-['Cairo'] font-black text-base md:text-lg rounded-lg transition-all cursor-pointer shadow-md hover:translate-y-[-1px]"
             >
-              <WhatsAppIcon size={16} className="text-zinc-950" />
+              <WhatsAppIcon size={20} className="text-zinc-950" />
               <span>{isAr ? 'تواصل معنا في واتساب' : 'Chat on WhatsApp'}</span>
             </a>
           </div>
@@ -828,12 +856,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       </div>
 
       {/* Broadcast Context and Informational Notes */}
-      <div className="bg-amber-50/5 border border-amber-900/40 p-5 md:p-6 font-sans text-xs md:text-sm text-zinc-100 space-y-3 leading-relaxed rounded">
-        <h4 className="text-white font-bold font-sans flex items-center gap-2">
-          <HelpCircle size={16} className="text-amber-400" />
+      <div className="bg-amber-50/5 border border-amber-900/40 p-5 md:p-6 font-['Cairo'] text-base md:text-lg text-white space-y-3 leading-relaxed rounded">
+        <h4 className="text-white font-bold font-['Cairo'] flex items-center gap-2">
+          <HelpCircle size={20} className="text-amber-400" />
           <span>{isAr ? 'إرشادات الاستماع والبث الفني:' : 'Listening and Technical Broadcast Guide:'}</span>
         </h4>
-        <ul className="list-disc list-inside space-y-2 pl-1 pr-1 text-right rtl:text-right ltr:text-left text-zinc-200" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
+        <ul className="list-disc list-inside space-y-2 pl-1 pr-1 text-right rtl:text-right ltr:text-left text-white" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
           <li>
             <strong>{isAr ? 'نبرة المذيع الإخبارية (وقار):' : 'Deep Anchor Pitch Tuning:'}</strong> 
             {isAr 
