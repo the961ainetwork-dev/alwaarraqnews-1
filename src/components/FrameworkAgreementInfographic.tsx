@@ -26,7 +26,7 @@ interface FrameworkAgreementInfographicProps {
 
 export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfographicProps> = ({ language }) => {
   const isAr = language === 'ar';
-  const [activeSubTab, setActiveSubTab] = useState<'timeline' | 'gains-losses' | 'bilingual-text' | 'secret-annex'>('timeline');
+  const [activeSubTab, setActiveSubTab] = useState<'timeline' | 'gains-losses' | 'bilingual-text' | 'secret-annex' | 'investigative-report'>('timeline');
   const [selectedArticleIdx, setSelectedArticleIdx] = useState<number>(0);
   const [showFullTextSideBySide, setShowFullTextSideBySide] = useState<boolean>(false);
 
@@ -313,6 +313,16 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
           }`}
         >
           🔥 {isAr ? 'الملحق الأمني السري المسرّب' : 'Leaked Secret Security Annex'}
+        </button>
+        <button
+          onClick={() => setActiveSubTab('investigative-report')}
+          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+            activeSubTab === 'investigative-report'
+              ? 'border-amber-700 text-amber-800 bg-amber-50/40'
+              : 'border-transparent text-zinc-500 hover:text-amber-800 hover:bg-amber-50/10'
+          }`}
+        >
+          📰 {isAr ? '«المناطق التجريبية» في مهب الشروط' : 'Investigation: "Pilot Zones" Standoff'}
         </button>
       </div>
 
@@ -780,6 +790,205 @@ If this document is made public, the earthquake in Lebanon will not come from su
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 5: Investigative Special Report */}
+      {activeSubTab === 'investigative-report' && (
+        <div className="space-y-6 animate-fadeIn">
+          {/* Header Card */}
+          <div className="bg-amber-950 text-white p-6 border-l-4 border-amber-500 space-y-3">
+            <div className="flex items-center gap-2 text-amber-400 font-mono text-xs uppercase tracking-wider font-bold">
+              <span>{isAr ? 'الحدث الوطني الرئيسي // تقرير استقصائي خاص' : 'NATIONAL MAJOR HEADLINE // SPECIAL INVESTIGATIVE REPORT'}</span>
+              <span>•</span>
+              <span>{isAr ? 'وثيقة ثنائية اللغة' : 'BILINGUAL DOCUMENT'}</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-black font-sans leading-tight text-white">
+              {isAr 
+                ? '«المناطق التجريبية» في مهب الشروط المتبادلة: هل يشهد الجنوب انسحاباً إسرائيلياً هذا الأسبوع أم نكسة مبكرة لـ«اتفاق واشنطن»؟' 
+                : '"Pilot Zones" in the Grip of Mutual Conditions: Will the South Witness an Israeli Withdrawal This Week, or an Early Setback for the "Washington Agreement"?'}
+            </h3>
+            <div className="text-sm font-mono text-amber-300 font-medium">
+              {isAr ? 'تقرير استقصائي خاص — بيروت (تموز ٢٠٢٦)' : 'Special Investigative Report — Beirut (July 2026)'}
+            </div>
+          </div>
+
+          {/* Side-by-Side Dual Column View */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            
+            {/* Arabic Column */}
+            <div className="space-y-6 text-right" dir="rtl">
+              <div className="bg-amber-50/50 p-5 border border-amber-100 font-serif text-sm text-zinc-800 leading-relaxed space-y-4">
+                <p className="font-bold text-zinc-950 text-base leading-relaxed">
+                  بعد مرور أيام قليلة على توقيع "الاتفاق الإطاري الثلاثي" في واشنطن (26 حزيران 2026) بين لبنان وإسرائيل برعاية أمريكية، يترقب الشارع اللبناني والأوساط العسكرية ما إذا كان هذا الأسبوع سيحمل أولى علامات الترجمة الميدانية للاتفاق عبر انسحاب القوات الإسرائيلية من نقاط محددة. إلا أن المؤشرات الميدانية والتسريبات الدبلوماسية المرافقة لاجتماعات "آلية التنسيق" تكشف عن عقبات حَرِجة قد تحوّل "الاختبار الأول" إلى مواجهة سياسية وعسكرية معقدة.
+                </p>
+
+                <div className="border-t-2 border-amber-800/20 pt-4 space-y-3">
+                  <h4 className="text-base font-black font-sans text-amber-900 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-amber-700"></span>
+                    خلفية المشهد: معادلة "الأمن مقابل الانسحاب"
+                  </h4>
+                  <p>
+                    تأسس اتفاق 26 حزيران الإطاري على بند جوهري يربط الانسحاب التدريجي لجيش الاحتلال الإسرائيلي من الأراضي التي توغل فيها خلال العمليات الأخيرة، ببسط الجيش اللبناني سيادته الكاملة وتفكيك البنية التحتية العسكرية للمجموعات المسلحة غير النظامية.
+                  </p>
+                  <p>
+                    وفقاً للملحق الأمني السري للاتفاق، جرى التوافق على إطلاق ما يُعرف بـ <strong>"المناطق التجريبية" (Pilot Zones)</strong> كآلية اختبار أولى لتقييم جدية الترتيبات الأمنية قبل الانتقال إلى مراحل الانسحاب الشامل نحو الحدود الدولية.
+                  </p>
+                  <p className="bg-red-50 p-3 border-r-4 border-red-600 text-red-950 text-xs font-sans">
+                    <strong>العقبة الراهنة:</strong> أعلنت هيئة البث الإسرائيلية الرسمية أن تل أبيب قررت تأجيل البدء في إخلاء هذه القرى هذا الأسبوع، مشترطةً التوصل أولاً إلى آلية رقابة مشتركة صارمة (تشمل غرفة عمليات افتراضية بإشراف أمريكي) تضمن خلو هذه المناطق مسبقاً من أي وجود مسلح، في حين يرفض الجيش اللبناني أي تنسيق عسكري مباشر مع تل أبيب ويشترش وقفاً كاملاً وشاملاً للغارات الجوية لبدء انتشاره.
+                  </p>
+                </div>
+
+                <div className="border-t-2 border-amber-800/20 pt-4 space-y-4">
+                  <h4 className="text-base font-black font-sans text-amber-900 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-amber-700"></span>
+                    جغرافية "الاختبار": النقاط المستهدفة بالانسحاب ومواقعها الحاكمة
+                  </h4>
+                  <p>
+                    حددت المباحثات العسكرية الأولية منطقتين أساسيتين لبدء المرحلة التجريبية، تقعان خارج نطاق ما يسمى "الخط الأصفر" الذي تحاول إسرائيل تكريسه كحزام أمني مؤقت:
+                  </p>
+
+                  {/* Zone 1 Card */}
+                  <div className="bg-white p-4 border border-zinc-200 shadow-xs space-y-2">
+                    <div className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                      <span className="font-sans font-black text-sm text-amber-900">١. زوطر الغربية (قضاء النبطية)</span>
+                      <span className="bg-amber-100 text-amber-900 font-mono text-[9px] px-2 py-0.5 font-bold">شمال الليطاني</span>
+                    </div>
+                    <p className="text-xs">
+                      <strong>الموقع الجغرافي والاستراتيجي:</strong> تقع البلدة شمال نهر الليطاني، وتتميز بموقع حاكم يشرف مباشرة على المجرى الشمالي للنهر وعلى "وادي الحجير" الاستراتيجي.
+                    </p>
+                    <p className="text-xs">
+                      <strong>الأهمية العسكرية:</strong> تصنف التقارير الاستخبارية الإسرائيلية زوطر الغربية كواحدة من أهم خطوط الإمداد اللوجستي والعملياتي تاريخياً نحو عمق القطاع الأوسط. وتتواجد في هذه البلدة حالياً وحدات ومدرعات إسرائيلية يتعين عليها الانسحاب وإخلاء مواقعها بموجب الترتيبات المقترحة.
+                    </p>
+                  </div>
+
+                  {/* Zone 2 Card */}
+                  <div className="bg-white p-4 border border-zinc-200 shadow-xs space-y-2">
+                    <div className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                      <span className="font-sans font-black text-sm text-amber-900">٢. فرون (قضاء بنت جبيل)</span>
+                      <span className="bg-amber-100 text-amber-900 font-mono text-[9px] px-2 py-0.5 font-bold">جنوب الليطاني</span>
+                    </div>
+                    <p className="text-xs">
+                      <strong>الموقع الجغرافي والاستراتيجي:</strong> تقع بلدة فرون جنوب نهر الليطاني، وتتمتع بتموضع جغرافي يشرف على محاور قتالية ونقاط تّماس متعددة بين القطاعين الأوسط والغربي.
+                    </p>
+                    <p className="text-xs">
+                      <strong>الأهمية العسكرية:</strong> تخلو فرون حالياً من أي وجود عسكري إسرائيلي مباشر على الأرض، وهو ما يفسر سبب اختيارها من قِبل تل أبيب؛ إذ ترغب في تحويلها إلى "مختبر ميداني مكشوف" لمراقبة مدى قدرة وصلاحية وحدات الجيش اللبناني في منع أي مظاهر مسلحة وحظر وجود عناصر حزب الله فيها بشكل مسبق وفوري.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t-2 border-amber-800/20 pt-4 space-y-3">
+                  <h4 className="text-base font-black font-sans text-amber-900 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-amber-700"></span>
+                    سيناريوهات الأسبوع الحالي: مراوغة أم مأزق تطبيقي؟
+                  </h4>
+                  <p>
+                    التحقيقات الميدانية تشير إلى أن فرع المعطيات السياسية ينقسم إلى اتجاهين يعرقلان حدوث الانسحاب الفعلي خلال الأيام القليلة القادمة:
+                  </p>
+                  <p className="text-xs">
+                    <strong>الشروط الإسرائيلية المسبقة:</strong> جولة رئيس الوزراء الإسرائيلي بنيامين نتنياهو الأخيرة في المنطقة الحدودية حملت رسائل حاسمة بأن تل أبيب "لن تنسحب دون التحقق الملموس من نزع السلاح". هذا الربط يحوّل الانسحاب من خطوة بناء ثقة إلى أداة ضغط مسبقة.
+                  </p>
+                  <p className="text-xs">
+                    <strong>الانقسام الداخلي اللبناني:</strong> يواجه الاتفاق معارضة شرسة من حزب الله وحلفائه، حيث وصفه نواب الحزب بأنه "صك استسلام" وتجاوز للخطوط الحمراء، بالتزامن مع إشارات إيرانية تفيد بأن طهران ترفض إبرام تسوية نهائية تفصل مسار لبنان عن المفاوضات الإقليمية الأوسع مع واشنطن في جنيف.
+                  </p>
+                </div>
+
+                <div className="border-t-4 border-amber-800 pt-4 bg-amber-50 p-4 border border-amber-200">
+                  <h4 className="text-base font-black font-sans text-amber-950">الخلاصة الاستقصائية:</h4>
+                  <p className="text-xs font-serif text-zinc-900 font-medium">
+                    عملياً، يقع "اتفاق واشنطن" هذا الأسبوع في المنطقة الرمادية؛ فالخرائط جاهزة والنقاط محددة بدقة (زوطر وفرون)، لكن قرار الانسحاب الإسرائيلي بات رهينة صراع الإرادات حول "من يبدأ أولاً": انتشار الجيش اللبناني وتفكيك البنية التحتية المسلحة، أم وقف العمليات الحربية الإسرائيلية والانسحاب العسكري الشامل. وبناءً على المعطيات الحالية، فإن التراجع الإسرائيلي عن التنفيذ الفوري يرجّح بقاء التعبئة الميدانية على حالها طيلة الأيام المقبلة بانتظار بلورة آلية الرقابة الثلاثية.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* English Column */}
+            <div className="space-y-6 text-left" dir="ltr">
+              <div className="bg-zinc-50 p-5 border border-zinc-200 font-serif text-sm text-zinc-800 leading-relaxed space-y-4">
+                <p className="font-bold text-zinc-950 text-base leading-relaxed">
+                  A few days after the signing of the trilateral "Framework Agreement" in Washington (June 26, 2026) between Lebanon and Israel under US mediation, the Lebanese street and military circles are closely watching whether this week will carry the first signs of practical translation of the agreement through the withdrawal of Israeli forces from specific points. However, field indicators and diplomatic leaks accompanying the meetings of the "coordination mechanism" reveal critical obstacles that may turn the "first test" into a complex political and military confrontation.
+                </p>
+
+                <div className="border-t-2 border-zinc-200 pt-4 space-y-3">
+                  <h4 className="text-base font-black font-sans text-zinc-900 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-zinc-700"></span>
+                    Background: The "Security for Withdrawal" Equation
+                  </h4>
+                  <p>
+                    The June 26 framework agreement was established on a fundamental clause linking the gradual withdrawal of the Israeli occupation army from the lands it encroached upon during recent operations, to the Lebanese Armed Forces (LAF) asserting full sovereign authority and disarming non-state armed groups.
+                  </p>
+                  <p>
+                    According to the secret security annex of the agreement, it was agreed to launch what is known as <strong>"Pilot Zones"</strong> as a first testing mechanism to evaluate the seriousness of security arrangements before moving to the phases of full-scale withdrawal towards international borders.
+                  </p>
+                  <p className="bg-red-50/50 p-3 border-l-4 border-red-600 text-red-950 text-xs font-sans">
+                    <strong>The Current Obstacle:</strong> The official Israeli Broadcasting Corporation announced that Tel Aviv decided to postpone the start of evacuating these villages this week, conditioning it on first reaching a strict joint monitoring mechanism (including a virtual operations room supervised by the US) that ensures these areas are pre-cleared of any armed presence. Meanwhile, the Lebanese Army rejects any direct military coordination with Tel Aviv and conditions a complete cessation of air raids to begin its deployment.
+                  </p>
+                </div>
+
+                <div className="border-t-2 border-zinc-200 pt-4 space-y-4">
+                  <h4 className="text-base font-black font-sans text-zinc-900 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-zinc-700"></span>
+                    Test Geography: Targeted Withdrawal Points & Strategic Coordinates
+                  </h4>
+                  <p>
+                    Initial military talks identified two primary areas to launch the pilot phase, located outside the scope of the so-called "Yellow Line" that Israel is trying to establish as a temporary security belt:
+                  </p>
+
+                  {/* Zone 1 Card */}
+                  <div className="bg-white p-4 border border-zinc-200 shadow-xs space-y-2">
+                    <div className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                      <span className="font-sans font-black text-sm text-zinc-900">1. Zoutar al-Gharbiyyeh (Nabatiyeh District)</span>
+                      <span className="bg-zinc-200 text-zinc-800 font-mono text-[9px] px-2 py-0.5 font-bold">North of Litani</span>
+                    </div>
+                    <p className="text-xs">
+                      <strong>Geographic & Strategic Location:</strong> The town is located north of the Litani River, commanding a panoramic view directly overlooking the northern course of the river and the strategic "Wadi al-Hujair".
+                    </p>
+                    <p className="text-xs">
+                      <strong>Military Significance:</strong> Israeli intelligence reports classify Zoutar al-Gharbiyyeh as historically one of the most important logistical and operational supply lines towards the depth of the central sector. Currently, Israeli units and armor are located in this town and are slated to withdraw under the proposed arrangements.
+                    </p>
+                  </div>
+
+                  {/* Zone 2 Card */}
+                  <div className="bg-white p-4 border border-zinc-200 shadow-xs space-y-2">
+                    <div className="flex justify-between items-center border-b border-zinc-100 pb-2">
+                      <span className="font-sans font-black text-sm text-zinc-900">2. Froun (Bint Jbeil District)</span>
+                      <span className="bg-zinc-200 text-zinc-800 font-mono text-[9px] px-2 py-0.5 font-bold">South of Litani</span>
+                    </div>
+                    <p className="text-xs">
+                      <strong>Geographic & Strategic Location:</strong> Located south of the Litani River, enjoying a geographic elevation that oversees multiple combat axes and contact lines between the central and western sectors.
+                    </p>
+                    <p className="text-xs">
+                      <strong>Military Significance:</strong> Froun is currently free of any direct Israeli military presence on the ground, which explains its selection by Tel Aviv. They wish to turn it into an "exposed field laboratory" to monitor the ability of the Lebanese Army to prevent any armed manifestations and block Hezbollah elements proactively and immediately.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t-2 border-zinc-200 pt-4 space-y-3">
+                  <h4 className="text-base font-black font-sans text-zinc-900 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-zinc-700"></span>
+                    Current Week Scenarios: Tactical Maneuver or Implementation Deadlock?
+                  </h4>
+                  <p>
+                    Field intelligence indicates that the political spectrum is split into two obstructing paths delaying the actual physical withdrawal in the coming days:
+                  </p>
+                  <p className="text-xs">
+                    <strong>Preemptive Israeli Conditions:</strong> Prime Minister Benjamin Netanyahu's recent tour in the border region carried decisive messages that Tel Aviv "will not withdraw without tangible verification of disarmament." This linkage converts withdrawal from a confidence-building step into a coercive leverage tool.
+                  </p>
+                  <p className="text-xs">
+                    <strong>Internal Lebanese Fracture:</strong> The agreement faces fierce opposition from Hezbollah and its allies, whose lawmakers described it as an "act of surrender" violating red lines, synchronized with Iranian indications that Tehran rejects any final settlement that decouples Lebanon from broader regional talks with Washington in Geneva.
+                  </p>
+                </div>
+
+                <div className="border-t-4 border-zinc-800 pt-4 bg-zinc-100 p-4 border border-zinc-200">
+                  <h4 className="text-base font-black font-sans text-zinc-950">Investigative Summary:</h4>
+                  <p className="text-xs font-serif text-zinc-900 font-medium">
+                    Practically, the "Washington Agreement" is suspended in a gray zone this week; the maps are drawn and coordinates (Zoutar and Froun) are highly precise, but the Israeli withdrawal remains hostage to a battle of wills over "who begins first": the LAF's deployment and disarmament of armed structures, or the complete cessation of Israeli military operations and full-scale withdrawal. Based on current parameters, Tel Aviv's immediate implementation delays suggest that military mobilization is likely to persist in the coming days pending the final formulation of the trilateral monitoring body.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       )}

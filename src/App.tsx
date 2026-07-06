@@ -29,7 +29,8 @@ import WarRoom from './components/WarRoom';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
   if (!dateStr) return 0;
@@ -147,6 +148,7 @@ export default function App() {
   const [selectedDossierId, setSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
   const [isPrintingDossier, setIsPrintingDossier] = useState(false);
   const [previewDossierId, setPreviewDossierId] = useState<string | null>(null);
+  const [showQrOverlay, setShowQrOverlay] = useState(false);
   
   // Persistent States
   const [allArticles, setAllArticles] = useState<Article[]>(() => {
@@ -1580,6 +1582,69 @@ export default function App() {
                           >
                             <Menu size={12} />
                             <span>{isAr ? 'دليل المزايا ☰' : 'FEATURE MENU ☰'}</span>
+                          </button>
+                        </div>
+
+                        {/* Download as PDF for Premium Users */}
+                        <button
+                          onClick={() => {
+                            const isPremium = isHomeDemoUser || (currentUser && currentUser.isPremiumSubscriber);
+                            if (isPremium) {
+                              setIsPrintingDossier(true);
+                            } else {
+                              alert(isAr 
+                                ? 'هذه الميزة الحصرية متاحة فقط لمشتركي جولدن برايم. يمكنك تفعيل الحساب التجريبي المجاني لمدة ٢٤ ساعة بالأعلى للوصول الفوري!' 
+                                : 'This exclusive feature is only available to Golden Prime subscribers. You can activate the free 24-hour demo above for instant access!');
+                            }
+                          }}
+                          className="w-full mt-2 bg-emerald-700 hover:bg-emerald-600 text-white font-mono text-xxs font-black py-2 px-3 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                          title={isAr ? 'تحميل ملخص مساحة العمل كملف PDF' : 'Download workspace summary as PDF'}
+                        >
+                          <Download size={12} className="text-amber-400" />
+                          <span>{isAr ? 'تحميل كملف PDF ⬇' : 'DOWNLOAD AS PDF ⬇'}</span>
+                        </button>
+
+                        {/* Share section */}
+                        <div className="grid grid-cols-3 gap-1.5 mt-2">
+                          {/* WhatsApp Share Link */}
+                          <a
+                            href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                              isAr 
+                                ? `ديوان تحريات الورّاق - بوابة التحليلات ومساحة العمل السيادية للجولدن برايم:\n\n👉 ${window.location.origin}`
+                                : `Al-Warraq - Golden Prime Analytics & Sovereign Telemetry Workspace:\n\n👉 ${window.location.origin}`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-zinc-800 hover:bg-zinc-700 text-emerald-400 font-mono text-[9px] sm:text-[10px] font-black py-2 px-1.5 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
+                            title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
+                          >
+                            <span>{isAr ? 'واتساب' : 'WHATSAPP'}</span>
+                          </a>
+
+                          {/* Share on Twitter/X Button */}
+                          <a
+                            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                              isAr
+                                ? `تابعوا البث الفوري لتدفقات الأموال والتحليلات الجيوسياسية على ديوان تحريات الورّاق #الورّاق #تحقيقات_استقصائية`
+                                : `Explore the sovereign flow-of-funds telemetry & geopolitical simulators on Al-Warraq #AlWarraq #InvestigativeReporting`
+                            )}&url=${encodeURIComponent(window.location.origin)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[9px] sm:text-[10px] font-black py-2 px-1.5 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
+                            title={isAr ? 'مشاركة عبر تويتر/X' : 'Share on Twitter/X'}
+                          >
+                            <Twitter size={10} className="text-sky-400" />
+                            <span>{isAr ? 'تويتر/X' : 'TWITTER/X'}</span>
+                          </a>
+
+                          {/* Share via QR Code Button */}
+                          <button
+                            onClick={() => setShowQrOverlay(true)}
+                            className="bg-zinc-800 hover:bg-zinc-700 text-amber-400 font-mono text-[9px] sm:text-[10px] font-black py-2 px-1.5 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
+                            title={isAr ? 'عرض رمز الاستجابة السريعة (QR) للمشاركة' : 'Show QR Code for sharing'}
+                          >
+                            <QrCode size={10} className="text-amber-400" />
+                            <span>{isAr ? 'رمز QR' : 'QR CODE'}</span>
                           </button>
                         </div>
 
@@ -3180,6 +3245,58 @@ export default function App() {
               article={activeDossierArticle} 
               language={language} 
             />
+          </div>
+        </div>
+      )}
+
+      {/* Share via QR Code Modal Overlay */}
+      {showQrOverlay && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-xs z-[100000] flex items-center justify-center p-4">
+          <div className="bg-zinc-950 border-2 border-amber-500 max-w-xs w-full p-6 relative shadow-[6px_6px_0px_0px_#d97706] text-right rtl:text-right ltr:text-left" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
+            {/* Close Button */}
+            <button
+              onClick={() => setShowQrOverlay(false)}
+              className="absolute top-3 right-3 text-zinc-400 hover:text-white font-black font-mono text-xs cursor-pointer bg-zinc-900 w-6 h-6 border border-zinc-800 flex items-center justify-center rounded"
+            >
+              ✕
+            </button>
+            
+            <div className="text-center space-y-4">
+              <div className="flex justify-center text-amber-500 pt-2">
+                <QrCode size={36} />
+              </div>
+              <h3 className="text-xs font-black font-mono text-white uppercase tracking-wider">
+                {isAr ? 'مشاركة عبر رمز الاستجابة السريعة' : 'Share via QR Code'}
+              </h3>
+              <p className="text-[10px] text-zinc-400 font-mono">
+                {isAr 
+                  ? 'امسح الرمز أدناه بكاميرا الهاتف للوصول السريع ومشاركة ديوان تحريات الوراق.' 
+                  : 'Scan the code below with your camera to instantly view and share Al-Warraq.'}
+              </p>
+              
+              {/* QR Code Container */}
+              <div className="bg-white p-3 inline-block rounded border-2 border-zinc-800 shadow-md">
+                <QRCodeSVG 
+                  value={window.location.origin} 
+                  size={160}
+                  level="M"
+                  includeMargin={true}
+                />
+              </div>
+
+              {/* URL Display */}
+              <div className="bg-zinc-900 p-2 border border-zinc-800 rounded font-mono text-[9px] text-zinc-300 break-all select-all flex items-center justify-between gap-1">
+                <span>{window.location.origin}</span>
+                <span className="text-[8px] text-amber-500 font-bold uppercase">{isAr ? 'رابط' : 'LINK'}</span>
+              </div>
+
+              <button
+                onClick={() => setShowQrOverlay(false)}
+                className="w-full bg-[#d97706] hover:bg-[#b45309] text-zinc-950 font-black font-mono text-xs py-2 uppercase transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-1px]"
+              >
+                {isAr ? 'إغلاق النافذة' : 'CLOSE WINDOW'}
+              </button>
+            </div>
           </div>
         </div>
       )}
