@@ -1,6 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw, Volume2, VolumeX, Mic, Radio, Sliders, ChevronRight, ChevronLeft, Globe, HelpCircle, FileText, Download } from 'lucide-react';
 
+const WhatsAppIcon = ({ size = 18, className }: { size?: number; className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    width={size} 
+    height={size} 
+    fill="currentColor"
+    className={`inline-block ${className || ''}`}
+  >
+    <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.458 3.479 1.329 4.99L2 22l5.177-1.358c1.453.791 3.087 1.208 4.835 1.208 5.506 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm5.792 13.918c-.244.685-1.22 1.251-1.688 1.323-.46.071-.94.13-2.956-.669-2.585-1.026-4.223-3.66-4.354-3.834-.131-.174-1.06-1.408-1.06-2.687 0-1.28.675-1.912.915-2.152.24-.24.523-.305.698-.305.174 0 .348.001.499.009.16.008.371-.06.581.444.218.523.743 1.808.808 1.939.066.131.11.284.022.46-.088.176-.132.285-.262.437-.131.153-.275.34-.393.456-.131.123-.269.256-.115.52.153.263.682 1.121 1.462 1.815.998.889 1.838 1.164 2.1 1.295.262.131.415.11.568-.066.153-.175.655-.764.83-1.026.175-.262.349-.219.589-.131.24.088 1.528.72 1.79.851.262.131.437.197.502.306.066.11.066.63-.178 1.315z" />
+  </svg>
+);
+
 interface AlWarraqPodcastProps {
   language: 'ar' | 'en';
 }
@@ -374,6 +387,36 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     }
   };
 
+  const handlePlayAll = () => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) return;
+    
+    // Reset to index 0
+    setCurrentIdx(0);
+    setIsPlaying(true);
+
+    // Play brief studio cue tone beep
+    try {
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContextClass) {
+        const ctx = new AudioContextClass();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, ctx.currentTime);
+        gain.gain.setValueAtTime(0.1 * volume, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.4);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.5);
+      }
+    } catch (e) {}
+
+    // Cancel current and play from 0
+    window.speechSynthesis.cancel();
+    playCurrentSegment(0);
+  };
+
   // Clean speech synthesis on unmount
   useEffect(() => {
     return () => {
@@ -410,30 +453,30 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   return (
-    <div className="bg-zinc-950 border-2 border-amber-800 p-4 md:p-6 shadow-xl relative text-right rtl:text-right ltr:text-left" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
+    <div className="bg-zinc-950 border-2 border-amber-800 p-6 md:p-10 shadow-2xl relative text-right rtl:text-right ltr:text-left font-sans text-white" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
       
       {/* Absolute FM Broadcast / Studio Indicators */}
-      <div className={`absolute top-4 ${isAr ? 'left-4' : 'right-4'} flex items-center gap-3 font-mono text-[9px] font-black tracking-wider text-zinc-500`}>
-        <span className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-800 px-2 py-0.5 rounded text-amber-500">
-          <Radio size={10} className="animate-pulse" />
+      <div className={`absolute top-4 ${isAr ? 'left-6' : 'right-6'} flex items-center gap-4 font-sans text-xs font-black tracking-wider text-zinc-100`}>
+        <span className="flex items-center gap-2 bg-zinc-900 border border-zinc-700 px-3 py-1 rounded text-amber-400">
+          <Radio size={12} className="animate-pulse" />
           <span>96.5 FM BROADCAST</span>
         </span>
-        <span className={`flex items-center gap-1 border px-2 py-0.5 rounded ${isPlaying ? 'border-red-600 bg-red-950 text-red-400' : 'border-zinc-800 bg-zinc-900 text-zinc-500'}`}>
-          <span className={`w-1.5 h-1.5 rounded-full ${isPlaying ? 'bg-red-500 animate-ping' : 'bg-zinc-600'}`}></span>
+        <span className={`flex items-center gap-1.5 border px-3 py-1 rounded ${isPlaying ? 'border-red-600 bg-red-950 text-red-200' : 'border-zinc-700 bg-zinc-900 text-zinc-300'}`}>
+          <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-red-500 animate-ping' : 'bg-zinc-500'}`}></span>
           <span>{isPlaying ? (isAr ? 'مباشر على الهواء' : 'ON AIR') : (isAr ? 'تأهب الاستوديو' : 'STANDBY')}</span>
         </span>
       </div>
 
       {/* Main Studio Title Block */}
-      <div className="space-y-1 mb-6 border-b border-zinc-900 pb-4 pr-1.5">
-        <div className="flex items-center gap-2 text-amber-500 font-mono text-[10px] font-bold uppercase">
-          <Mic size={14} className="text-amber-500" />
+      <div className="space-y-2 mb-8 border-b border-zinc-800 pb-5 pr-1.5 mt-4">
+        <div className="flex items-center gap-2 text-amber-400 font-sans text-xs md:text-sm font-bold uppercase">
+          <Mic size={16} className="text-amber-400" />
           <span>{isAr ? 'منصة الاستوديو والبودكاست الاستقصائي' : 'AL-WARRAQ PODCAST STUDIO // BEIRUT BROADCAST'}</span>
         </div>
-        <h2 className="text-lg md:text-xl font-sans font-black text-white">
+        <h2 className="text-2xl md:text-3xl font-sans font-black text-white">
           {isAr ? 'ديوان تحريات الورّاق الإذاعي' : 'Al-Warraq Audio Investigation Unit'}
         </h2>
-        <p className="text-[10px] md:text-xs text-zinc-400 max-w-xl font-mono">
+        <p className="text-xs md:text-sm text-zinc-100 max-w-xl font-sans">
           {isAr 
             ? 'بث صوتي مباشر يقرأ تفاصيل التقرير الاستقصائي لجنوب لبنان والمناطق التجريبية بنبرة إذاعية ذكورية وقورة.'
             : 'Audio news anchor reciting the investigative report on Southern Lebanon "Pilot Zones" in a structured, solemn male news voice.'}
@@ -441,37 +484,37 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       </div>
 
       {/* Retro Transmitter Deck / Player */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-zinc-900/60 border border-zinc-850 p-4 md:p-6 shadow-inner rounded mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-zinc-900/60 border border-zinc-800 p-6 shadow-inner rounded mb-6">
         
         {/* Left Column: Visual Tape & Waveform controls (Lg: 5 columns) */}
-        <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
+        <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
           
           {/* Audio Visualizer Waveform Panel */}
-          <div className="bg-zinc-950 border-2 border-zinc-800 rounded p-4 flex flex-col justify-between h-36 relative overflow-hidden">
-            <div className="flex justify-between items-center font-mono text-[8px] text-zinc-600 border-b border-zinc-900 pb-1.5">
+          <div className="bg-zinc-950 border-2 border-zinc-800 rounded p-5 flex flex-col justify-between h-40 relative overflow-hidden">
+            <div className="flex justify-between items-center font-sans text-xs text-zinc-200 border-b border-zinc-900 pb-2">
               <span>{isAr ? 'التردد الصوتي / محلل المدى' : 'AUDIO SPECTRUM // BROADCAST MASTER'}</span>
-              <span className="text-amber-500 font-bold">{isPlaying ? 'TRANSMITTING' : 'IDLE'}</span>
+              <span className="text-amber-400 font-bold">{isPlaying ? 'TRANSMITTING' : 'IDLE'}</span>
             </div>
 
             {/* Vertical Bar Visualizer */}
-            <div className="flex items-end justify-between h-14 px-2">
+            <div className="flex items-end justify-between h-16 px-2">
               {waveHeights.map((h, idx) => (
                 <div 
                   key={idx}
                   style={{ height: `${h}%` }}
                   className={`w-1 rounded-t transition-all duration-75 ${
-                    isPlaying ? 'bg-amber-500' : 'bg-zinc-800'
+                    isPlaying ? 'bg-amber-400' : 'bg-zinc-700'
                   }`}
                 />
               ))}
             </div>
 
             {/* Simulated Tape Counter / Track Progress */}
-            <div className="flex justify-between items-center font-mono text-[10px] text-zinc-400 mt-2 pt-1.5 border-t border-zinc-900">
+            <div className="flex justify-between items-center font-sans text-xs text-zinc-200 mt-2 pt-2 border-t border-zinc-900">
               <span className="text-amber-400 font-bold">
                 {String(currentIdx + 1).padStart(2, '0')} / {String(script.length).padStart(2, '0')}
               </span>
-              <span className="text-zinc-600 text-[8px] tracking-widest uppercase">
+              <span className="text-zinc-100 text-[10px] tracking-widest uppercase">
                 {isAr ? 'مدرج البث' : 'SEGMENT FEED'}
               </span>
               <span>
@@ -480,32 +523,42 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             </div>
           </div>
 
+          {/* New 1-Click Play All Together button */}
+          <button
+            id="play-all-podcast-btn"
+            onClick={handlePlayAll}
+            className="w-full py-3.5 px-4 flex items-center justify-center gap-3 cursor-pointer bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans font-black text-xs md:text-sm uppercase tracking-wider rounded transition-all hover:translate-y-[-2px] shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-y-[0px] active:shadow-none border border-white"
+          >
+            <Radio size={16} className="animate-bounce text-zinc-950" />
+            <span>{isAr ? '🎙️ بث كامل التحقيق متواصلاً (بكبسة واحدة)' : '🎙️ PLAY FULL BROADCAST CONTINUOUS (1-CLICK)'}</span>
+          </button>
+
           {/* Core Player Controls Row */}
-          <div className="flex items-center justify-between gap-2 border border-zinc-800 bg-zinc-950 p-2.5 rounded shadow-sm">
+          <div className="flex items-center justify-between gap-2 border border-zinc-700 bg-zinc-950 p-3 rounded shadow-md">
             <button
               onClick={handleReset}
-              className="p-2 border border-zinc-800 hover:border-amber-700 bg-zinc-900 text-zinc-400 hover:text-white cursor-pointer rounded transition-all hover:translate-y-[-1px]"
+              className="p-2.5 border border-zinc-700 hover:border-amber-500 bg-zinc-900 text-white hover:text-amber-400 cursor-pointer rounded transition-all hover:translate-y-[-1px]"
               title={isAr ? 'إعادة التشغيل والبدء من الأول' : 'Reset to Beginning'}
             >
-              <RotateCcw size={14} />
+              <RotateCcw size={16} />
             </button>
 
             <button
               onClick={handleTogglePlay}
-              className={`flex-1 py-2 px-4 flex items-center justify-center gap-2 cursor-pointer font-sans font-black text-xs uppercase tracking-wider transition-all hover:translate-y-[-1px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none border ${
+              className={`flex-1 py-2.5 px-4 flex items-center justify-center gap-2 cursor-pointer font-sans font-black text-xs md:text-sm uppercase tracking-wider transition-all hover:translate-y-[-1px] shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none border ${
                 isPlaying 
-                  ? 'bg-amber-600 border-amber-700 hover:bg-amber-700 text-zinc-950' 
-                  : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 text-amber-400'
+                  ? 'bg-amber-500 border-amber-400 text-zinc-950' 
+                  : 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
               }`}
             >
               {isPlaying ? (
                 <>
-                  <Pause size={12} className="fill-current text-zinc-950" />
+                  <Pause size={14} className="fill-current text-zinc-950" />
                   <span>{isAr ? 'إيقاف البث' : 'PAUSE BROADCAST'}</span>
                 </>
               ) : (
                 <>
-                  <Play size={12} className="fill-current text-amber-400 animate-pulse" />
+                  <Play size={14} className="fill-current text-amber-400 animate-pulse" />
                   <span>{isAr ? 'بدء البث الإخباري' : 'START NEWSREEL'}</span>
                 </>
               )}
@@ -513,27 +566,27 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
             <button
               onClick={() => setIsMuted(!isMuted)}
-              className="p-2 border border-zinc-800 hover:border-amber-700 bg-zinc-900 text-zinc-400 hover:text-white cursor-pointer rounded transition-all hover:translate-y-[-1px]"
+              className="p-2.5 border border-zinc-700 hover:border-amber-500 bg-zinc-900 text-white hover:text-amber-400 cursor-pointer rounded transition-all hover:translate-y-[-1px]"
               title={isAr ? 'كتم الصوت' : 'Mute/Unmute'}
             >
-              {isMuted ? <VolumeX size={14} className="text-red-500" /> : <Volume2 size={14} />}
+              {isMuted ? <VolumeX size={16} className="text-red-500" /> : <Volume2 size={16} />}
             </button>
           </div>
 
           {/* Advanced Audio Synthesizer Toggles */}
-          <div className="space-y-2 border border-zinc-800 bg-zinc-950 p-3 rounded font-mono text-[9px] text-zinc-400">
-            <div className="flex justify-between items-center text-zinc-300 font-bold uppercase border-b border-zinc-900 pb-1.5">
-              <span className="flex items-center gap-1 text-amber-500">
-                <Sliders size={11} />
+          <div className="space-y-3 border border-zinc-700 bg-zinc-950 p-4 rounded font-sans text-xs text-white">
+            <div className="flex justify-between items-center text-zinc-100 font-bold uppercase border-b border-zinc-800 pb-2">
+              <span className="flex items-center gap-1.5 text-amber-400">
+                <Sliders size={14} />
                 <span>{isAr ? 'معالج الصوت اللاسلكي' : 'RADIO TRANSMITTER CONFIG'}</span>
               </span>
-              <span>STUDIO B</span>
+              <span className="font-mono">STUDIO B</span>
             </div>
 
             {/* Custom Voice Selection if multiple available */}
             {voices.length > 0 && (
-              <div className="space-y-1">
-                <label className="text-zinc-500 block">{isAr ? 'صوت المذيع المتاح:' : 'Available Narrator Voice:'}</label>
+              <div className="space-y-1.5">
+                <label className="text-zinc-200 block text-xs font-bold">{isAr ? 'صوت المذيع المتاح:' : 'Available Narrator Voice:'}</label>
                 <select
                   value={selectedVoiceName}
                   onChange={(e) => {
@@ -543,12 +596,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                       setTimeout(() => playCurrentSegment(currentIdx), 50);
                     }
                   }}
-                  className="w-full bg-zinc-900 border border-zinc-800 text-zinc-300 p-1 text-[9px] outline-none rounded"
+                  className="w-full bg-zinc-900 border border-zinc-700 text-white p-2 text-xs outline-none rounded cursor-pointer font-sans"
                 >
                   {voices
                     .filter(v => v.lang.startsWith(isAr ? 'ar' : 'en'))
                     .map(v => (
-                      <option key={v.name} value={v.name}>
+                      <option key={v.name} value={v.name} className="bg-zinc-950 text-white">
                         {v.name} ({v.lang})
                       </option>
                     ))}
@@ -557,12 +610,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             )}
 
             {/* Ambient Noise / shortwave Hum switch */}
-            <div className="flex justify-between items-center pt-1.5">
-              <span>{isAr ? 'محاكاة همس التردد اللاسلكي السلبي:' : 'Simulated Shortwave Carrier Hum:'}</span>
+            <div className="flex justify-between items-center pt-1 border-t border-zinc-900">
+              <span className="text-zinc-200">{isAr ? 'محاكاة همس التردد اللاسلكي السلبي:' : 'Simulated Shortwave Carrier Hum:'}</span>
               <button
                 onClick={() => setIsSynthesizedHumOn(!isSynthesizedHumOn)}
-                className={`px-2 py-0.5 border text-[8px] font-bold cursor-pointer rounded ${
-                  isSynthesizedHumOn ? 'bg-amber-950 text-amber-400 border-amber-800' : 'bg-zinc-900 text-zinc-600 border-zinc-800'
+                className={`px-3 py-1 border text-[10px] font-bold cursor-pointer rounded transition-all ${
+                  isSynthesizedHumOn ? 'bg-amber-950 text-amber-400 border-amber-600' : 'bg-zinc-900 text-zinc-300 border-zinc-700'
                 }`}
               >
                 {isSynthesizedHumOn ? (isAr ? 'نشط' : 'ON') : (isAr ? 'معطل' : 'OFF')}
@@ -570,11 +623,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             </div>
 
             {/* Pitch & Speed sliders */}
-            <div className="grid grid-cols-2 gap-3 pt-1">
-              <div className="space-y-1">
-                <div className="flex justify-between">
+            <div className="grid grid-cols-2 gap-4 pt-1">
+              <div className="space-y-1.5">
+                <div className="flex justify-between text-[11px] text-zinc-200">
                   <span>{isAr ? 'طبقة الصوت (وقار)' : 'Pitch'}</span>
-                  <span className="text-amber-500 font-bold">{pitch}</span>
+                  <span className="text-amber-400 font-bold">{pitch}</span>
                 </div>
                 <input 
                   type="range" 
@@ -587,10 +640,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                 />
               </div>
 
-              <div className="space-y-1">
-                <div className="flex justify-between">
+              <div className="space-y-1.5">
+                <div className="flex justify-between text-[11px] text-zinc-200">
                   <span>{isAr ? 'سرعة الإلقاء' : 'Speed'}</span>
-                  <span className="text-amber-500 font-bold">{playbackSpeed}x</span>
+                  <span className="text-amber-400 font-bold">{playbackSpeed}x</span>
                 </div>
                 <input 
                   type="range" 
@@ -611,11 +664,14 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
         <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
           
           {/* Script Scroll Container */}
-          <div className="bg-zinc-950 border border-zinc-850 p-4 rounded h-96 overflow-y-auto space-y-4 custom-scrollbar">
+          <div className="bg-zinc-950 border border-zinc-800 p-5 rounded h-[420px] overflow-y-auto space-y-4 custom-scrollbar">
             
-            <div className="flex justify-between items-center border-b border-zinc-900 pb-2 mb-2 font-mono text-[9px] text-zinc-500">
-              <span className="uppercase">{isAr ? 'المخطط الإخباري للنشرة الإذاعية' : 'INTELLIGENCE BROADCAST TELEPROMPTER'}</span>
-              <span>{isAr ? 'مزامنة حية' : 'LIVE SYNCED'}</span>
+            <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-3 font-sans text-xs text-zinc-100 font-bold uppercase">
+              <span>{isAr ? 'المخطط الإخباري للنشرة الإذاعية (اضغط لتجاوز القراءة)' : 'INTELLIGENCE BROADCAST TELEPROMPTER'}</span>
+              <span className="flex items-center gap-1.5 text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>{isAr ? 'مزامنة حية' : 'LIVE SYNCED'}</span>
+              </span>
             </div>
 
             {script.map((seg, idx) => {
@@ -624,24 +680,24 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                 <div
                   key={idx}
                   onClick={() => handleSelectSegment(idx)}
-                  className={`p-3 border-r-2 text-right rtl:text-right ltr:text-left transition-all duration-300 cursor-pointer ${
+                  className={`p-4 border-r-4 text-right rtl:text-right ltr:text-left transition-all duration-300 cursor-pointer rounded-l ${
                     isActive 
-                      ? 'bg-amber-950/40 border-amber-500 scale-[1.01] shadow-md shadow-amber-950/20' 
-                      : 'border-transparent bg-zinc-900/30 hover:bg-zinc-900/50 hover:border-zinc-700'
+                      ? 'bg-amber-950/50 border-amber-400 scale-[1.01] shadow-lg shadow-amber-950/40' 
+                      : 'border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/70 hover:border-zinc-600'
                   }`}
                   style={{ direction: isAr ? 'rtl' : 'ltr' }}
                 >
-                  <div className="flex items-center gap-2 justify-start mb-1">
-                    <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded font-black ${
-                      isActive ? 'bg-amber-500 text-zinc-950' : 'bg-zinc-800 text-zinc-400'
+                  <div className="flex items-center gap-2.5 justify-start mb-2">
+                    <span className={`font-sans text-xs px-2.5 py-0.5 rounded font-black ${
+                      isActive ? 'bg-amber-400 text-zinc-950' : 'bg-zinc-700 text-white'
                     }`}>
                       {idx + 1}
                     </span>
-                    <h4 className={`text-xs font-black font-sans ${isActive ? 'text-amber-400' : 'text-zinc-300'}`}>
+                    <h4 className={`text-sm md:text-base font-black font-sans ${isActive ? 'text-amber-400' : 'text-white'}`}>
                       {seg.title}
                     </h4>
                   </div>
-                  <p className={`text-xs font-serif leading-relaxed ${isActive ? 'text-white' : 'text-zinc-500'}`}>
+                  <p className={`text-sm md:text-base font-sans leading-relaxed transition-all ${isActive ? 'text-white font-medium' : 'text-zinc-100'}`}>
                     {seg.text}
                   </p>
                 </div>
@@ -650,15 +706,15 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           </div>
 
           {/* Quick Actions Footer */}
-          <div className="flex items-center justify-between gap-3 bg-zinc-950 p-3 border border-zinc-800 rounded font-mono text-[10px] text-zinc-400">
+          <div className="flex items-center justify-between gap-3 bg-zinc-950 p-4 border border-zinc-800 rounded font-sans text-xs text-white">
             <span>
               {isAr ? 'وثيقة مفرج عنها للجمهور العام.' : 'Classified document cleared for public distribution.'}
             </span>
             <button
               onClick={handleDownloadTranscript}
-              className="px-3 py-1 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-amber-500 text-amber-500 hover:text-white cursor-pointer transition-all flex items-center gap-1.5 rounded uppercase font-bold"
+              className="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-400 text-amber-400 hover:text-white cursor-pointer transition-all flex items-center gap-2 rounded uppercase font-bold text-xs"
             >
-              <Download size={11} />
+              <Download size={14} />
               <span>{isAr ? 'تحميل النص الكامل' : 'DOWNLOAD SCRIPT'}</span>
             </button>
           </div>
@@ -667,13 +723,57 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
       </div>
 
+      {/* WhatsApp Call To Action Block */}
+      <div className="bg-zinc-900/80 border border-[#25D366]/40 p-5 md:p-6 rounded-lg my-6 text-center md:text-right rtl:text-right ltr:text-left space-y-4 shadow-lg">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="space-y-1.5 text-center md:text-right rtl:text-right ltr:text-left">
+            <h3 className="text-base md:text-lg font-black text-white flex items-center gap-2 justify-center md:justify-start">
+              <span className="text-[#25D366]"><WhatsAppIcon size={22} /></span>
+              <span>{isAr ? 'انضم إلى منصة الورّاق على واتساب' : 'Join Al-Warraq on WhatsApp'}</span>
+            </h3>
+            <p className="text-xs md:text-sm text-zinc-100 font-sans">
+              {isAr 
+                ? 'تابع آخر تسريبات وتحقيقات اتفاق واشنطن، الخرائط العسكرية، والملاحق السرية فور صدورها مباشرة على هاتفك.'
+                : 'Get the latest leaked documents, trilateral agreement maps, and secret military reports delivered directly to your phone.'}
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            {/* Share via WhatsApp */}
+            <a
+              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                isAr 
+                  ? 'شاهد استوديو تحريات الوراق وبث البودكاست الاستقصائي لجنوب لبنان والاتفاق الإطاري والانسحاب التجريبي: ' + (typeof window !== 'undefined' ? window.location.href : '')
+                  : 'Check out the Al-Warraq investigative podcast on Southern Lebanon "Pilot Zones" under the Washington agreement: ' + (typeof window !== 'undefined' ? window.location.href : '')
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 hover:border-zinc-500 font-sans font-bold text-xs md:text-sm rounded-lg transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+            >
+              <WhatsAppIcon size={16} />
+              <span>{isAr ? 'مشاركة عبر واتساب' : 'Share via WhatsApp'}</span>
+            </a>
+            
+            {/* Direct Channel Access */}
+            <a
+              href="https://wa.me/96181776263"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-zinc-950 font-sans font-black text-xs md:text-sm rounded-lg transition-all cursor-pointer shadow-md hover:translate-y-[-1px]"
+            >
+              <WhatsAppIcon size={16} className="text-zinc-950" />
+              <span>{isAr ? 'تواصل معنا في واتساب' : 'Chat on WhatsApp'}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Broadcast Context and Informational Notes */}
-      <div className="bg-amber-50/5 border border-amber-900/40 p-4 font-mono text-[10px] md:text-xs text-zinc-400 space-y-3 leading-relaxed">
-        <h4 className="text-zinc-200 font-bold font-sans flex items-center gap-2">
-          <HelpCircle size={14} className="text-amber-500" />
+      <div className="bg-amber-50/5 border border-amber-900/40 p-5 md:p-6 font-sans text-xs md:text-sm text-zinc-100 space-y-3 leading-relaxed rounded">
+        <h4 className="text-white font-bold font-sans flex items-center gap-2">
+          <HelpCircle size={16} className="text-amber-400" />
           <span>{isAr ? 'إرشادات الاستماع والبث الفني:' : 'Listening and Technical Broadcast Guide:'}</span>
         </h4>
-        <ul className="list-disc list-inside space-y-1.5 pl-1 pr-1 text-right rtl:text-right ltr:text-left" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
+        <ul className="list-disc list-inside space-y-2 pl-1 pr-1 text-right rtl:text-right ltr:text-left text-zinc-200" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
           <li>
             <strong>{isAr ? 'نبرة المذيع الإخبارية (وقار):' : 'Deep Anchor Pitch Tuning:'}</strong> 
             {isAr 
