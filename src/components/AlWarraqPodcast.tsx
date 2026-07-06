@@ -130,6 +130,27 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   // Speech Synth Utterance Ref
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
+  // Robust refs to prevent state stale closures inside SpeechSynthesis callbacks
+  const isPlayingRef = useRef(isPlaying);
+  const currentIdxRef = useRef(currentIdx);
+  const playbackSpeedRef = useRef(playbackSpeed);
+  const pitchRef = useRef(pitch);
+  const volumeRef = useRef(volume);
+  const isMutedRef = useRef(isMuted);
+  const selectedVoiceNameRef = useRef(selectedVoiceName);
+  const voicesRef = useRef(voices);
+  const scriptRef = useRef(script);
+
+  useEffect(() => { isPlayingRef.current = isPlaying; }, [isPlaying]);
+  useEffect(() => { currentIdxRef.current = currentIdx; }, [currentIdx]);
+  useEffect(() => { playbackSpeedRef.current = playbackSpeed; }, [playbackSpeed]);
+  useEffect(() => { pitchRef.current = pitch; }, [pitch]);
+  useEffect(() => { volumeRef.current = volume; }, [volume]);
+  useEffect(() => { isMutedRef.current = isMuted; }, [isMuted]);
+  useEffect(() => { selectedVoiceNameRef.current = selectedVoiceName; }, [selectedVoiceName]);
+  useEffect(() => { voicesRef.current = voices; }, [voices]);
+  useEffect(() => { scriptRef.current = script; }, [script]);
+
   // Fetch available speech synthesis voices
   useEffect(() => {
     if (typeof window !== 'undefined' && window.speechSynthesis) {
@@ -320,7 +341,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     };
   }, [isPlaying]);
 
-  // Handle Playback State
+  // Handle Playback State (robust single-segment sequential sequencer)
   const playCurrentSegment = (idx: number) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
 
@@ -332,58 +353,90 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     }
     window.speechSynthesis.cancel();
 
-    // Tiny delay to let the speech engine clear its queue before we re-queue
+    // Out of bounds check
+    if (idx < 0 || idx >= scriptRef.current.length) {
+      setIsPlaying(false);
+      isPlayingRef.current = false;
+      stopHum();
+      return;
+    }
+
+    // Tiny delay to let the speech engine clear its queue before we speak
     setTimeout(() => {
-      // Clear active utterances array to prevent GC and leaks
-      (window as any)._activeUtterances = [];
+      // If user stopped playing during this tiny timeout, do nothing
+      if (!isPlayingRef.current) return;
 
-      const remainingSegments = script.slice(idx);
-      remainingSegments.forEach((seg, relativeIdx) => {
-        const segmentGlobalIdx = idx + relativeIdx;
-        const utterance = new SpeechSynthesisUtterance(seg.text);
+      const seg = scriptRef.current[idx];
+      if (!seg) return;
 
-        // Pick chosen voice
-        if (selectedVoiceName) {
-          const voiceObj = voices.find(v => v.name === selectedVoiceName);
-          if (voiceObj) utterance.voice = voiceObj;
-        } else {
-          // Automatic fallback search
-          const targetLang = isAr ? 'ar' : 'en';
-          const fallbackVoice = voices.find(v => v.lang.startsWith(targetLang));
-          if (fallbackVoice) utterance.voice = fallbackVoice;
-        }
+      const utterance = new SpeechSynthesisUtterance(seg.text);
 
-        // Anchor Voice properties
-        utterance.rate = playbackSpeed;
-        utterance.pitch = pitch; // 0.85 gives an elegant mature baritone news voice
-        utterance.volume = isMuted ? 0 : volume;
+      // Prevent GC (Garbage Collection) cutoff in Chrome/Safari by holding global strong reference
+      (window as any)._activeUtterance = utterance;
 
-        // Prevent GC (Garbage Collection) cutoff in Chrome/Safari by holding global strong reference
-        (window as any)._activeUtterances.push(utterance);
+      // Pick chosen voice
+      if (selectedVoiceNameRef.current) {
+        const voiceObj = voicesRef.current.find(v => v.name === selectedVoiceNameRef.current);
+        if (voiceObj) utterance.voice = voiceObj;
+      } else {
+        // Automatic fallback search
+        const targetLang = isAr ? 'ar' : 'en';
+        const fallbackVoice = voicesRef.current.find(v => v.lang.startsWith(targetLang));
+        if (fallbackVoice) utterance.voice = fallbackVoice;
+      }
 
-        utterance.onstart = () => {
-          setCurrentIdx(segmentGlobalIdx);
-          setIsPlaying(true);
-          utteranceRef.current = utterance;
-        };
+      // Anchor Voice properties
+      utterance.rate = playbackSpeedRef.current;
+      utterance.pitch = pitchRef.current; // 0.85 gives an elegant mature baritone news voice
+      utterance.volume = isMutedRef.current ? 0 : volumeRef.current;
 
-        if (segmentGlobalIdx === script.length - 1) {
-          utterance.onend = () => {
+      utterance.onstart = () => {
+        setCurrentIdx(idx);
+        setIsPlaying(true);
+        isPlayingRef.current = true;
+        utteranceRef.current = utterance;
+      };
+
+      utterance.onend = () => {
+        (window as any)._activeUtterance = null;
+        
+        // Playlist sequencing: if we are still marked as playing, transition to the next segment
+        if (isPlayingRef.current) {
+          const nextIdx = idx + 1;
+          if (nextIdx < scriptRef.current.length) {
+            playCurrentSegment(nextIdx);
+          } else {
+            // End of playlist reached
             setIsPlaying(false);
+            isPlayingRef.current = false;
             setCurrentIdx(0);
             stopHum();
-          };
-        }
-
-        utterance.onerror = (e) => {
-          if (e.error === 'interrupted' || e.error === 'canceled') {
-            return; // Normal cancellation, do not trigger error states
           }
-          console.warn("Speech synthesis error", e);
-        };
+        }
+      };
 
-        window.speechSynthesis.speak(utterance);
-      });
+      utterance.onerror = (e) => {
+        if (e.error === 'interrupted' || e.error === 'canceled') {
+          return; // Normal cancellation or track switching, do not trigger error states
+        }
+        console.warn("Speech synthesis error", e);
+        
+        // If there was a physical error with a segment, attempt to auto-advance to next after a brief pause
+        if (isPlayingRef.current) {
+          setTimeout(() => {
+            const nextIdx = idx + 1;
+            if (nextIdx < scriptRef.current.length) {
+              playCurrentSegment(nextIdx);
+            } else {
+              setIsPlaying(false);
+              isPlayingRef.current = false;
+              stopHum();
+            }
+          }, 200);
+        }
+      };
+
+      window.speechSynthesis.speak(utterance);
     }, 60);
   };
 
@@ -391,10 +444,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
 
     if (isPlaying) {
-      window.speechSynthesis.cancel();
+      isPlayingRef.current = false;
       setIsPlaying(false);
+      window.speechSynthesis.cancel();
       stopHum();
     } else {
+      isPlayingRef.current = true;
       setIsPlaying(true);
       // Play brief studio cue tone beep (330Hz, 150ms)
       try {
@@ -419,6 +474,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   const handleReset = () => {
+    isPlayingRef.current = false;
+    setIsPlaying(false);
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       if (utteranceRef.current) {
         utteranceRef.current.onend = null;
@@ -427,23 +484,24 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       }
       window.speechSynthesis.cancel();
     }
-    setIsPlaying(false);
     setCurrentIdx(0);
     stopHum();
   };
 
   const handleSelectSegment = (idx: number) => {
+    // Switching to a different story: prevents playback interruption and plays seamlessly!
     setCurrentIdx(idx);
-    if (isPlaying) {
-      playCurrentSegment(idx);
-    }
+    isPlayingRef.current = true;
+    setIsPlaying(true);
+    playCurrentSegment(idx);
   };
 
   const handlePlayAll = () => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
     
-    // Reset to index 0
+    // Reset to index 0 and start sequence playing
     setCurrentIdx(0);
+    isPlayingRef.current = true;
     setIsPlaying(true);
 
     // Play brief studio cue tone beep
