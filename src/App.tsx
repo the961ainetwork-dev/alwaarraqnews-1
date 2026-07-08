@@ -1169,6 +1169,12 @@ export default function App() {
                 }}
                 selectedDossierId={selectedDossierId}
                 onSelectDossier={setSelectedDossierId}
+                currentUser={currentUser}
+                isHomeDemoUser={isHomeDemoUser}
+                onNavigateToPremium={() => {
+                  setActiveCategory('premium-pricing');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               />
             ) : activeCategory === 'videos' ? (
               <AlWarraqVideos

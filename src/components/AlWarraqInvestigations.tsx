@@ -172,6 +172,9 @@ interface AlWarraqInvestigationsProps {
   onSelectArticle: (article: Article) => void;
   selectedDossierId?: string;
   onSelectDossier?: (id: string) => void;
+  currentUser?: any;
+  isHomeDemoUser?: boolean;
+  onNavigateToPremium?: () => void;
 }
 
 export default function AlWarraqInvestigations({
@@ -179,9 +182,18 @@ export default function AlWarraqInvestigations({
   allArticles,
   onSelectArticle,
   selectedDossierId: propSelectedDossierId,
-  onSelectDossier
+  onSelectDossier,
+  currentUser,
+  isHomeDemoUser,
+  onNavigateToPremium
 }: AlWarraqInvestigationsProps) {
   const isAr = language === 'ar';
+  
+  const isPremiumForInvestigations = !!(
+    isHomeDemoUser || 
+    (currentUser && currentUser.isPremiumSubscriber && currentUser.hasInvestigationsAddon) || 
+    (currentUser && currentUser.goldenPrimeStatus === 'approved')
+  );
   
   // Track selected dossier for our new immersive reader layout
   const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
@@ -267,6 +279,9 @@ export default function AlWarraqInvestigations({
         const title = isAr ? activeDossier.titleAr : activeDossier.titleEn;
         const summary = isAr ? activeDossier.summaryAr : activeDossier.summaryEn;
         const content = isAr ? activeDossier.contentAr : activeDossier.contentEn;
+        const accessibleContent = isPremiumForInvestigations 
+          ? content 
+          : (isAr ? (activeDossier.summaryAr || activeDossier.excerptAr || '') : (activeDossier.summaryEn || activeDossier.excerptEn || ''));
 
         // Strip simple markdown tags for clean vocal readout
         const cleanMarkdownText = (text: string) => {
@@ -278,7 +293,7 @@ export default function AlWarraqInvestigations({
             .trim();
         };
 
-        const speechText = `${title}. ${summary}. ${cleanMarkdownText(content)}`;
+        const speechText = `${title}. ${summary}. ${cleanMarkdownText(accessibleContent)}`;
         const utterance = new SpeechSynthesisUtterance(speechText);
         
         // Match specific voice codes
@@ -806,8 +821,43 @@ export default function AlWarraqInvestigations({
                       </span>
                     </div>
 
-                    <div className="relative z-10 space-y-2 select-text">
-                      {renderFormattedParagraphs(activeDossier.contentAr || activeDossier.contentEn)}
+                    <div className="relative z-10 space-y-4 select-text">
+                      {renderFormattedParagraphs(
+                        isPremiumForInvestigations 
+                          ? (activeDossier.contentAr || activeDossier.contentEn) 
+                          : (activeDossier.summaryAr || activeDossier.summaryEn || activeDossier.excerptAr || activeDossier.excerptEn || '')
+                      )}
+
+                      {!isPremiumForInvestigations && (
+                        <div className="mt-8 border-4 border-black p-6 bg-[#b91c1c]/5 relative text-center space-y-4 animate-fade-in print:hidden">
+                          <div className="mx-auto bg-black text-amber-300 rounded-full h-12 w-12 flex items-center justify-center shadow-md">
+                            <Lock size={20} className="animate-pulse" />
+                          </div>
+                          
+                          <div className="space-y-2 text-center">
+                            <h4 className="text-lg font-black text-black uppercase tracking-tight">
+                              {isAr 
+                                ? '✦ هذا التحقيق الاستقصائي مخصص للأعضاء المميزين فقط ✦' 
+                                : '✦ EXCLUSIVE INVESTIGATION PORTAL ✦'}
+                            </h4>
+                            <p className="text-xs text-zinc-600 font-sans max-w-lg mx-auto leading-relaxed">
+                              {isAr 
+                                ? 'لقد انتهت قراءة ملخص المستند الاستقصائي للورّاق. للاطلاع على المستندات والرسومات التفاعلية والتحليلات السيادية الكاملة، يرجى الاشتراك في باقة التحقيقات الاستقصائية الممتازة.' 
+                                : 'You have completed the synopsis. To access the full investigative dossier, interactive flowcharts, legal witness registries, and economic data maps, subscribe to the premium investigative service.'}
+                            </p>
+                          </div>
+
+                          <div className="pt-2 text-center">
+                            <button
+                              onClick={() => onNavigateToPremium?.()}
+                              className="bg-[#b91c1c] hover:bg-black text-white font-mono text-xs font-black py-3 px-6 border-2 border-black uppercase tracking-wider transition-all cursor-pointer shadow-[4px_4px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 inline-flex items-center gap-2"
+                            >
+                              <Unlock size={14} />
+                              <span>{isAr ? 'اشترك الآن لفتح كافة التحقيقات الكبرى' : 'UPGRADE TO PREMIUM PORTAL'}</span>
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
 

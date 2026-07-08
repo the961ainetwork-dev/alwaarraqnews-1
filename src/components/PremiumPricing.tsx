@@ -22,6 +22,7 @@ export default function PremiumPricing({
   // Selection states
   const [pricingTier, setPricingTier] = useState<'premium' | 'golden_prime'>('premium');
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'yearly'>('monthly');
+  const [includeInvestigations, setIncludeInvestigations] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPayForm, setShowPayForm] = useState(false);
   const [showCandidacyForm, setShowCandidacyForm] = useState(false);
@@ -44,6 +45,20 @@ export default function PremiumPricing({
   const [demoUsername, setDemoUsername] = useState('');
   const [demoEmail, setDemoEmail] = useState('');
   const [demoSuccess, setDemoSuccess] = useState(false);
+
+  const getPlanPrice = () => {
+    if (pricingTier === 'golden_prime') {
+      return selectedPlan === 'monthly' ? 150 : 1500;
+    }
+    const monthlyBase = 29;
+    const monthlyAddon = includeInvestigations ? 9 : 0;
+    const totalMonthly = monthlyBase + monthlyAddon;
+    if (selectedPlan === 'monthly') {
+      return totalMonthly;
+    } else {
+      return Number((totalMonthly * 12 * 0.9).toFixed(2));
+    }
+  };
 
   const activateDemoForCurrentUser = () => {
     if (!currentUser) return;
@@ -196,6 +211,7 @@ export default function PremiumPricing({
           const updatedUsers = users.map((u: any) => {
             if (u.email.toLowerCase() === currentUser?.email.toLowerCase()) {
               u.isPremiumSubscriber = true;
+              u.hasInvestigationsAddon = pricingTier === 'premium' ? includeInvestigations : true;
             }
             return u;
           });
@@ -207,7 +223,11 @@ export default function PremiumPricing({
 
       // Update current user
       if (currentUser) {
-        const updatedUser = { ...currentUser, isPremiumSubscriber: true };
+        const updatedUser = { 
+          ...currentUser, 
+          isPremiumSubscriber: true,
+          hasInvestigationsAddon: pricingTier === 'premium' ? includeInvestigations : true 
+        };
         localStorage.setItem('alwarraq_current_user', JSON.stringify(updatedUser));
       }
 
@@ -446,10 +466,43 @@ export default function PremiumPricing({
                   >
                     <span>{isAr ? 'سنوياً' : 'Yearly'}</span>
                     <span className="absolute -top-2.5 right-1 bg-[#b91c1c] text-white text-[8px] font-mono font-black py-0.5 px-1 uppercase tracking-tighter">
-                      {isAr ? 'وفّر ٢٠٪' : '-20% SAVE'}
+                      {pricingTier === 'premium' ? (isAr ? 'وفّر ١٠٪' : '-10% SAVE') : (isAr ? 'وفّر ٢٠٪' : '-20% SAVE')}
                     </span>
                   </button>
                 </div>
+
+                {/* INVESTIGATIONS ADD-ON TOGGLE */}
+                {pricingTier === 'premium' && (
+                  <div className="border border-black p-3 bg-stone-50 flex items-center justify-between mb-4 text-right rtl:text-right ltr:text-left">
+                    <div className="flex items-start gap-2">
+                      <input 
+                        type="checkbox" 
+                        id="investigations-addon"
+                        checked={includeInvestigations}
+                        onChange={(e) => setIncludeInvestigations(e.target.checked)}
+                        className="mt-1 h-4 w-4 text-red-900 border-black focus:ring-red-950 accent-red-900 cursor-pointer"
+                      />
+                      <label htmlFor="investigations-addon" className="cursor-pointer select-none">
+                        <strong className="block text-xs font-black text-black leading-tight uppercase">
+                          {isAr ? '✦ إضافة ملحق التحقيقات الاستقصائية الكبرى' : '✦ Add Investigations Premium Module'}
+                        </strong>
+                        <span className="text-[10px] text-zinc-500 font-sans block mt-0.5 leading-tight">
+                          {isAr 
+                            ? 'فتح كافة ملفات ومحاكيات التحقيقات الكبرى السبعة مقابل ٩ دولارات شهرياً فقط.' 
+                            : 'Unlock all 7 major investigative dossiers and custom live simulators for only USD 9/mo.'}
+                        </span>
+                      </label>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <span className="font-mono text-xs font-bold block text-red-900">
+                        {selectedPlan === 'monthly' ? '+$9/mo' : '+$97.20/yr'}
+                      </span>
+                      <span className="text-[8px] text-zinc-400 font-mono block">
+                        {selectedPlan === 'yearly' && (isAr ? 'خصم ١٠٪' : '10% disc.')}
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Display cost */}
                 <div className="text-center py-4 bg-neutral-50 border border-black mb-6">
@@ -463,10 +516,7 @@ export default function PremiumPricing({
                   <div className="flex items-baseline justify-center gap-1 mt-2">
                     <span className="font-mono text-zinc-400 font-bold">$</span>
                     <span className="font-sans font-black text-3.5xl md:text-5xl tracking-tighter leading-none">
-                      {pricingTier === 'premium' 
-                        ? (selectedPlan === 'monthly' ? '20' : '200')
-                        : (selectedPlan === 'monthly' ? '150' : '1500')
-                      }
+                      {getPlanPrice()}
                     </span>
                     <span className="font-mono text-zinc-400 text-xxs ml-0.5">
                       {selectedPlan === 'monthly' ? (isAr ? '/شهرياً' : '/mo') : (isAr ? '/سنوياً' : '/yr')}
@@ -475,8 +525,8 @@ export default function PremiumPricing({
                   <p className="text-[10px] text-zinc-500 font-bold mt-2 px-4">
                     {pricingTier === 'premium' ? (
                       selectedPlan === 'monthly' 
-                        ? (isAr ? 'اشتراك متجدد تلقائياً بقيمة ٢٠ دولار شهرياً، يسحب بداية العقد.' : 'USD 20 billed secure-recurring on a month-to-month continuous cycle.')
-                        : (isAr ? 'اشتراك سنوي بقيمة ٢٠٠ دولار (توفير ٤٠ دولار عن الدفع الفردي).' : 'USD 200 billed once-annual. Represents a definitive 20% discount on monthly equivalent.')
+                        ? (isAr ? `اشتراك متجدد تلقائياً بقيمة ٢٩ دولار شهرياً ${includeInvestigations ? 'بالإضافة إلى ٩ دولارات ملحق التحقيقات الكبرى' : ''}، يسحب بداية العقد.` : `USD ${includeInvestigations ? '38 (29 base + 9 investigations add-on)' : '29'} billed secure-recurring on a month-to-month continuous cycle.`)
+                        : (isAr ? `اشتراك سنوي بقيمة ${getPlanPrice()} دولار (توفير ١٠٪ على القيمة الكلية).` : `USD ${getPlanPrice()} billed once-annual. Represents a definitive 10% discount on the monthly equivalent.`)
                     ) : (
                       selectedPlan === 'monthly'
                         ? (isAr ? 'اشتراك متجدد بقيمة ١٥٠ دولار شهرياً، يفتح لوحة البحث ومحاكاة NotebookLM.' : 'USD 150 billed secure-recurring. Grants full access to NotebookLM-style research workspace.')
@@ -673,12 +723,12 @@ export default function PremiumPricing({
                   <div className="flex justify-between">
                     <span>{isAr ? 'العقد المختار:' : 'Selected Plan:'}</span>
                     <span className="font-bold uppercase text-black font-mono">
-                      {selectedPlan === 'monthly' ? (isAr ? 'اشتراك شهري' : 'MONTHLY DISPATCH') : (isAr ? 'اشتراك سنوي' : 'ANNUAL ENROLLMENT')}
+                      {pricingTier === 'premium' ? (isAr ? `اشتراك بريميوم ${includeInvestigations ? '+ ملحق التحقيقات' : ''}` : 'PREMIUM SUBSCRIPTION') : (isAr ? 'اشتراك سنوي' : 'ANNUAL ENROLLMENT')}
                     </span>
                   </div>
                   <div className="flex justify-between border-t border-dashed pt-1 mt-1 text-xs">
                     <span className="font-bold text-black">{isAr ? 'المجموع المستحق:' : 'Total Amount Due:'}</span>
-                    <span className="font-black text-[#b91c1c] font-mono">${selectedPlan === 'monthly' ? '20.00' : '200.00'}</span>
+                    <span className="font-black text-[#b91c1c] font-mono">${getPlanPrice()}</span>
                   </div>
                 </div>
               </div>
@@ -689,7 +739,7 @@ export default function PremiumPricing({
                   disabled={isSubmitting}
                   className="bg-black hover:bg-zinc-800 text-white font-black text-xs uppercase py-3 border border-black w-full cursor-pointer transition-all disabled:opacity-50"
                 >
-                  {isSubmitting ? (isAr ? 'جاري التحقق من الاعتماد والمصادقة للبنك...' : 'AUTHORIZING ACCOUNT RESERVES...') : (isAr ? `تأكيد ودفع $${selectedPlan === 'monthly' ? '20' : '200'}` : `CONFIRM & DEPOSIT $${selectedPlan === 'monthly' ? '20' : '200'}`)}
+                  {isSubmitting ? (isAr ? 'جاري التحقق من الاعتماد والمصادقة للبنك...' : 'AUTHORIZING ACCOUNT RESERVES...') : (isAr ? `تأكيد ودفع $${getPlanPrice()}` : `CONFIRM & DEPOSIT $${getPlanPrice()}`)}
                 </button>
                 <div className="flex items-center justify-center gap-1 text-[9px] text-zinc-400 font-mono">
                   <Lock size={10} />
