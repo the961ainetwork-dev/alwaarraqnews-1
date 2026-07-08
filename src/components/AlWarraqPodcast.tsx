@@ -59,8 +59,27 @@ const podcastScriptAr: ScriptSegment[] = [
   {
     title: "الخلاصة الاستقصائية",
     text: "الخلاصة الاستقصائية. عملياً، يقع اتفاق واشنطن هذا الأسبوع في المنطقة الرمادية؛ فالخرائط جاهزة والنقاط محددة بدقة، لكن قرار الانسحاب الإسرائيلي بات رهينة صراع الإرادات حول من يبدأ أولاً: انتشار الجيش اللبناني وتفكيك البنية التحتية المسلحة، أم وقف العمليات الحربية الإسرائيلية والانسحاب العسكري الشامل. وبناءً على المعطيات الحالية، فإن التراجع الإسرائيلي عن التنفيذ الفوري يرجّح بقاء التعبئة الميدانية على حالها طيلة الأيام المقبلة بانتظار بلورة آلية الرقابة الثلاثية."
+  },
+  {
+    title: "كأس العالم 2026 والسريرية السياسية",
+    text: "كأس العالم ألفين وستة وعشرين والسريرية السياسية والتحكيمية – هل فقدت الفيفا وميسي شعبيتهما عربيًا؟ يشهد مونديال ألفين وستة وعشرين الحالي سلسلة من الأحداث الغريبة والمثيرة للجدل التي تجاوزت المستطيل الأخضر لتدمج السياسة، والتحيز التحكيمي، والإجراءات الأمنية التعسفية، مما جعل هذه النسخة واحدة من أكثر البطولات جدلًا في التاريخ الحديث. أولاً، فضيحة مباراة مصر والأرجنتين: الكيل بمكيالين لعيون ميسي. في مباراة دور الستة عشر التي أقيمت بالأمس في السابع من تموز عام ألفين وستة وعشرين، تعرض المنتخب المصري لظلم تحكيمي فادح أمام الأرجنتين بقيادة الحكم الفرنسي فرانسوا ليتكسير، حيث تم إلغاء هدف مصيري للمنتخب المصري بينما كانت مصر متقدمة، وذلك لتسهيل عبور رفقاء ميسي. ثانيًا، التسييس والتدخلات الخارجية والإجراءات الأمنية الاستثنائية لشرطة الحدود الأمريكية والجمارك بالتعاون مع وكالات لإنفاذ قوانين الهجرة، حيث أدت تصريحات دونالد ترامب وتوجيهاته الصارمة إلى خلق أجواء مشحونة وإجراءات تفتيش تعسفية ومضايقات طالت المشجعين العرب، مما أثار موجة غضب عارمة وأدى إلى تراجع شعبية الفيفا والمسابقة بشكل غير مسبوق في الشارع العربي."
   }
 ];
+
+const splitIntoSentences = (text: string): string[] => {
+  return text
+    .split(/([.،؛?!。，、\n]+)/)
+    .reduce<string[]>((acc, part, idx, arr) => {
+      if (idx % 2 === 0) {
+        if (part.trim()) {
+          const punc = arr[idx + 1] || '';
+          acc.push((part + punc).trim());
+        }
+      }
+      return acc;
+    }, [])
+    .filter(s => s.length > 0);
+};
 
 const podcastScriptEn: ScriptSegment[] = [
   {
@@ -98,6 +117,10 @@ const podcastScriptEn: ScriptSegment[] = [
   {
     title: "Investigative Summary",
     text: "Investigative Summary. Practically, the Washington Agreement is suspended in a gray zone this week; coordinates are precise, but the withdrawal remains hostage to a battle of wills over who begins first: the LAF's deployment or the complete cessation of Israeli military operations."
+  },
+  {
+    title: "World Cup 2026 & Political Bedside",
+    text: "World Cup twenty twenty-six, political bedside, and refereeing scandals: Have FIFA and Messi lost their popularity in the Arab world? The current twenty twenty-six World Cup is witnessing a series of highly controversial events that extend beyond the football pitch to merge politics, refereeing bias, and arbitrary security measures, making this edition one of the most controversial in modern history. First, the Egypt versus Argentina Round of sixteen match scandal: double standards for Messi's sake. In yesterday's match on July seventh, twenty twenty-six, the Egyptian national team suffered grave refereeing injustice against Argentina, led by French referee Francois Letexier. A crucial Egyptian goal was controversially annulled while Egypt was leading, clearing the path for Messi's squad. Second, politicization and harsh borders: Donald Trump's declarations and CBP/ICE actions created an incredibly tense atmosphere. Arabic fans faced severe profiling, arbitrary inspections, and deportation threats under aggressive migration enforcement. This geopolitical interference has severely damaged FIFA's prestige and Messi's popularity across the Arab world, leaving a permanent scar on the tournament's legacy."
   }
 ];
 
@@ -108,6 +131,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   // Audio Playback States
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [currentSentenceIdx, setCurrentSentenceIdx] = useState(0);
   const [playbackSpeed, setPlaybackSpeed] = useState<number>(1);
   const [pitch, setPitch] = useState<number>(0.85); // Male news anchor has lower pitch (0.8 - 0.9)
   const [volume, setVolume] = useState<number>(0.8);
@@ -133,6 +157,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   // Robust refs to prevent state stale closures inside SpeechSynthesis callbacks
   const isPlayingRef = useRef(isPlaying);
   const currentIdxRef = useRef(currentIdx);
+  const currentSentenceIdxRef = useRef(currentSentenceIdx);
   const playbackSpeedRef = useRef(playbackSpeed);
   const pitchRef = useRef(pitch);
   const volumeRef = useRef(volume);
@@ -143,6 +168,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
   useEffect(() => { isPlayingRef.current = isPlaying; }, [isPlaying]);
   useEffect(() => { currentIdxRef.current = currentIdx; }, [currentIdx]);
+  useEffect(() => { currentSentenceIdxRef.current = currentSentenceIdx; }, [currentSentenceIdx]);
   useEffect(() => { playbackSpeedRef.current = playbackSpeed; }, [playbackSpeed]);
   useEffect(() => { pitchRef.current = pitch; }, [pitch]);
   useEffect(() => { volumeRef.current = volume; }, [volume]);
@@ -341,8 +367,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     };
   }, [isPlaying]);
 
-  // Handle Playback State (robust single-segment sequential sequencer)
-  const playCurrentSegment = (idx: number) => {
+  // Handle Playback State (robust single-segment sequential sentence-by-sentence sequencer)
+  const playCurrentSegment = (idx: number, sentenceIdx: number = 0) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
 
     // Clear event handlers of previous utterance to prevent race conditions during cancel()
@@ -351,7 +377,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       utteranceRef.current.onerror = null;
       utteranceRef.current.onstart = null;
     }
-    window.speechSynthesis.cancel();
+    
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
+    } catch (e) {}
 
     // Out of bounds check
     if (idx < 0 || idx >= scriptRef.current.length) {
@@ -361,15 +391,34 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       return;
     }
 
+    const seg = scriptRef.current[idx];
+    if (!seg) return;
+
+    const sentences = splitIntoSentences(seg.text);
+    if (sentenceIdx < 0 || sentenceIdx >= sentences.length) {
+      // Advance to next segment
+      const nextIdx = idx + 1;
+      if (nextIdx < scriptRef.current.length) {
+        setCurrentIdx(nextIdx);
+        setCurrentSentenceIdx(0);
+        playCurrentSegment(nextIdx, 0);
+      } else {
+        setIsPlaying(false);
+        isPlayingRef.current = false;
+        setCurrentIdx(0);
+        setCurrentSentenceIdx(0);
+        stopHum();
+      }
+      return;
+    }
+
     // Tiny delay to let the speech engine clear its queue before we speak
     setTimeout(() => {
       // If user stopped playing during this tiny timeout, do nothing
       if (!isPlayingRef.current) return;
 
-      const seg = scriptRef.current[idx];
-      if (!seg) return;
-
-      const utterance = new SpeechSynthesisUtterance(seg.text);
+      const sentenceText = sentences[sentenceIdx];
+      const utterance = new SpeechSynthesisUtterance(sentenceText);
 
       // Prevent GC (Garbage Collection) cutoff in Chrome/Safari by holding global strong reference
       (window as any)._activeUtterance = utterance;
@@ -392,6 +441,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
       utterance.onstart = () => {
         setCurrentIdx(idx);
+        setCurrentSentenceIdx(sentenceIdx);
         setIsPlaying(true);
         isPlayingRef.current = true;
         utteranceRef.current = utterance;
@@ -400,17 +450,26 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       utterance.onend = () => {
         (window as any)._activeUtterance = null;
         
-        // Playlist sequencing: if we are still marked as playing, transition to the next segment
         if (isPlayingRef.current) {
-          const nextIdx = idx + 1;
-          if (nextIdx < scriptRef.current.length) {
-            playCurrentSegment(nextIdx);
+          const nextSentenceIdx = sentenceIdx + 1;
+          if (nextSentenceIdx < sentences.length) {
+            setCurrentSentenceIdx(nextSentenceIdx);
+            playCurrentSegment(idx, nextSentenceIdx);
           } else {
-            // End of playlist reached
-            setIsPlaying(false);
-            isPlayingRef.current = false;
-            setCurrentIdx(0);
-            stopHum();
+            // End of sentences in this segment, transition to the next segment
+            const nextIdx = idx + 1;
+            if (nextIdx < scriptRef.current.length) {
+              setCurrentIdx(nextIdx);
+              setCurrentSentenceIdx(0);
+              playCurrentSegment(nextIdx, 0);
+            } else {
+              // End of playlist reached
+              setIsPlaying(false);
+              isPlayingRef.current = false;
+              setCurrentIdx(0);
+              setCurrentSentenceIdx(0);
+              stopHum();
+            }
           }
         }
       };
@@ -419,20 +478,29 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
         if (e.error === 'interrupted' || e.error === 'canceled') {
           return; // Normal cancellation or track switching, do not trigger error states
         }
-        console.warn("Speech synthesis error", e);
+        console.warn("Speech synthesis sentence error", e);
         
-        // If there was a physical error with a segment, attempt to auto-advance to next after a brief pause
         if (isPlayingRef.current) {
           setTimeout(() => {
-            const nextIdx = idx + 1;
-            if (nextIdx < scriptRef.current.length) {
-              playCurrentSegment(nextIdx);
+            const nextSentenceIdx = sentenceIdx + 1;
+            if (nextSentenceIdx < sentences.length) {
+              setCurrentSentenceIdx(nextSentenceIdx);
+              playCurrentSegment(idx, nextSentenceIdx);
             } else {
-              setIsPlaying(false);
-              isPlayingRef.current = false;
-              stopHum();
+              const nextIdx = idx + 1;
+              if (nextIdx < scriptRef.current.length) {
+                setCurrentIdx(nextIdx);
+                setCurrentSentenceIdx(0);
+                playCurrentSegment(nextIdx, 0);
+              } else {
+                setIsPlaying(false);
+                isPlayingRef.current = false;
+                setCurrentIdx(0);
+                setCurrentSentenceIdx(0);
+                stopHum();
+              }
             }
-          }, 200);
+          }, 100);
         }
       };
 
@@ -469,7 +537,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
         }
       } catch (e) {}
 
-      playCurrentSegment(currentIdx);
+      playCurrentSegment(currentIdx, currentSentenceIdx);
     }
   };
 
@@ -485,15 +553,17 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       window.speechSynthesis.cancel();
     }
     setCurrentIdx(0);
+    setCurrentSentenceIdx(0);
     stopHum();
   };
 
   const handleSelectSegment = (idx: number) => {
     // Switching to a different story: prevents playback interruption and plays seamlessly!
     setCurrentIdx(idx);
+    setCurrentSentenceIdx(0);
     isPlayingRef.current = true;
     setIsPlaying(true);
-    playCurrentSegment(idx);
+    playCurrentSegment(idx, 0);
   };
 
   const handlePlayAll = () => {
@@ -501,6 +571,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     
     // Reset to index 0 and start sequence playing
     setCurrentIdx(0);
+    setCurrentSentenceIdx(0);
     isPlayingRef.current = true;
     setIsPlaying(true);
 
@@ -522,7 +593,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       }
     } catch (e) {}
 
-    playCurrentSegment(0);
+    playCurrentSegment(0, 0);
   };
 
   // Clean speech synthesis on unmount
@@ -569,12 +640,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     <div className="bg-zinc-950 border-2 border-amber-800 p-6 md:p-10 shadow-2xl relative text-right rtl:text-right ltr:text-left font-['Cairo'] text-white" style={{ direction: isAr ? 'rtl' : 'ltr', fontFamily: "'Cairo', 'Inter', sans-serif" }}>
       
       {/* Absolute FM Broadcast / Studio Indicators */}
-      <div className={`absolute top-4 ${isAr ? 'left-6' : 'right-6'} flex items-center gap-4 font-['Cairo'] text-base font-black tracking-wider text-white`}>
-        <span className="flex items-center gap-2 bg-zinc-900 border border-zinc-700 px-3.5 py-1.5 rounded text-amber-400 text-base">
+      <div className={`absolute top-4 ${isAr ? 'left-6' : 'right-6'} flex items-center gap-4 font-['Cairo'] text-lg font-black tracking-wider text-white`}>
+        <span className="flex items-center gap-2 bg-zinc-900 border border-zinc-700 px-3.5 py-1.5 rounded text-amber-400 text-lg">
           <Radio size={14} className="animate-pulse" />
           <span>96.5 FM BROADCAST</span>
         </span>
-        <span className={`flex items-center gap-1.5 border px-3.5 py-1.5 rounded text-base ${isPlaying ? 'border-red-600 bg-red-950 text-red-100' : 'border-zinc-700 bg-zinc-900 text-white'}`}>
+        <span className={`flex items-center gap-1.5 border px-3.5 py-1.5 rounded text-lg ${isPlaying ? 'border-red-600 bg-red-950 text-red-100' : 'border-zinc-700 bg-zinc-900 text-white'}`}>
           <span className={`w-2.5 h-2.5 rounded-full ${isPlaying ? 'bg-red-500 animate-ping' : 'bg-white'}`}></span>
           <span>{isPlaying ? (isAr ? 'مباشر على الهواء' : 'ON AIR') : (isAr ? 'تأهب الاستوديو' : 'STANDBY')}</span>
         </span>
@@ -582,14 +653,14 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
       {/* Main Studio Title Block */}
       <div className="space-y-4 mb-8 border-b border-zinc-800 pb-5 pr-1.5 mt-4">
-        <div className="flex items-center gap-2 text-amber-400 font-['Cairo'] text-base md:text-lg font-bold uppercase">
+        <div className="flex items-center gap-2 text-amber-400 font-['Cairo'] text-lg md:text-xl font-bold uppercase">
           <Mic size={20} className="text-amber-400" />
           <span>{isAr ? 'منصة الاستوديو والبودكاست الاستقصائي' : 'AL-WARRAQ PODCAST STUDIO // BEIRUT BROADCAST'}</span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-['Cairo'] font-black text-white">
+        <h2 className="text-5xl md:text-6xl font-['Cairo'] font-black text-white">
           {isAr ? 'ديوان تحريات الورّاق الإذاعي' : 'Al-Warraq Audio Investigation Unit'}
         </h2>
-        <p className="text-base md:text-lg text-white max-w-xl font-['Cairo'] leading-relaxed">
+        <p className="text-lg md:text-xl text-white max-w-xl font-['Cairo'] leading-relaxed">
           {isAr 
             ? 'بث صوتي مباشر يقرأ تفاصيل التقرير الاستقصائي لجنوب لبنان والمناطق التجريبية بنبرة إذاعية ذكورية وقورة.'
             : 'Audio news anchor reciting the investigative report on Southern Lebanon "Pilot Zones" in a structured, solemn male news voice.'}
@@ -604,7 +675,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           
           {/* Audio Visualizer Waveform Panel */}
           <div className="bg-zinc-950 border-2 border-zinc-800 rounded p-5 flex flex-col justify-between h-40 relative overflow-hidden">
-            <div className="flex justify-between items-center font-['Cairo'] text-base text-white border-b border-zinc-900 pb-2">
+            <div className="flex justify-between items-center font-['Cairo'] text-lg text-white border-b border-zinc-900 pb-2">
               <span>{isAr ? 'التردد الصوتي / محلل المدى' : 'AUDIO SPECTRUM // BROADCAST MASTER'}</span>
               <span className="text-amber-400 font-bold">{isPlaying ? 'TRANSMITTING' : 'IDLE'}</span>
             </div>
@@ -623,11 +694,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             </div>
 
             {/* Simulated Tape Counter / Track Progress */}
-            <div className="flex justify-between items-center font-['Cairo'] text-base text-white mt-2 pt-2 border-t border-zinc-900">
+            <div className="flex justify-between items-center font-['Cairo'] text-lg text-white mt-2 pt-2 border-t border-zinc-900">
               <span className="text-amber-400 font-bold">
                 {String(currentIdx + 1).padStart(2, '0')} / {String(script.length).padStart(2, '0')}
               </span>
-              <span className="text-white text-sm tracking-widest uppercase">
+              <span className="text-white text-base tracking-widest uppercase">
                 {isAr ? 'مدرج البث' : 'SEGMENT FEED'}
               </span>
               <span>
@@ -640,7 +711,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           <button
             id="play-all-podcast-btn"
             onClick={handlePlayAll}
-            className="w-full py-4 px-4 flex items-center justify-center gap-3 cursor-pointer bg-amber-500 hover:bg-amber-400 text-zinc-950 font-['Cairo'] font-black text-base md:text-lg uppercase tracking-wider rounded transition-all hover:translate-y-[-2px] shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-y-[0px] active:shadow-none border border-white"
+            className="w-full py-4 px-4 flex items-center justify-center gap-3 cursor-pointer bg-amber-500 hover:bg-amber-400 text-zinc-950 font-['Cairo'] font-black text-lg md:text-xl uppercase tracking-wider rounded transition-all hover:translate-y-[-2px] shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-y-[0px] active:shadow-none border border-white"
           >
             <Radio size={20} className="animate-bounce text-zinc-950" />
             <span>{isAr ? '🎙️ بث كامل التحقيق متواصلاً (بكبسة واحدة)' : '🎙️ PLAY FULL BROADCAST CONTINUOUS (1-CLICK)'}</span>
@@ -658,7 +729,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
             <button
               onClick={handleTogglePlay}
-              className={`flex-1 py-3 px-4 flex items-center justify-center gap-2 cursor-pointer font-['Cairo'] font-black text-base md:text-lg uppercase tracking-wider transition-all hover:translate-y-[-1px] shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none border ${
+              className={`flex-1 py-3 px-4 flex items-center justify-center gap-2 cursor-pointer font-['Cairo'] font-black text-lg md:text-xl uppercase tracking-wider transition-all hover:translate-y-[-1px] shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:shadow-none border ${
                 isPlaying 
                   ? 'bg-amber-500 border-amber-400 text-zinc-950' 
                   : 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
@@ -687,29 +758,29 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           </div>
 
           {/* Advanced Audio Synthesizer Toggles */}
-          <div className="space-y-3.5 border border-zinc-700 bg-zinc-950 p-4 rounded font-['Cairo'] text-base text-white">
+          <div className="space-y-3.5 border border-zinc-700 bg-zinc-950 p-4 rounded font-['Cairo'] text-lg text-white">
             <div className="flex justify-between items-center text-white font-bold uppercase border-b border-zinc-800 pb-2">
               <span className="flex items-center gap-1.5 text-amber-400">
                 <Sliders size={18} />
                 <span>{isAr ? 'معالج الصوت اللاسلكي' : 'RADIO TRANSMITTER CONFIG'}</span>
               </span>
-              <span className="font-mono text-base">STUDIO B</span>
+              <span className="font-mono text-lg">STUDIO B</span>
             </div>
 
             {/* Custom Voice Selection if multiple available */}
             {voices.length > 0 && (
               <div className="space-y-2">
-                <label className="text-white block text-base font-bold">{isAr ? 'صوت المذيع المتاح:' : 'Available Narrator Voice:'}</label>
+                <label className="text-white block text-lg font-bold">{isAr ? 'صوت المذيع المتاح:' : 'Available Narrator Voice:'}</label>
                 <select
                   value={selectedVoiceName}
                   onChange={(e) => {
                     setSelectedVoiceName(e.target.value);
                     if (isPlaying) {
-                      // Restart segment with new voice
-                      setTimeout(() => playCurrentSegment(currentIdx), 50);
+                      // Restart segment with new voice from the current sentence index
+                      setTimeout(() => playCurrentSegment(currentIdx, currentSentenceIdx), 50);
                     }
                   }}
-                  className="w-full bg-zinc-900 border border-zinc-700 text-white p-2 text-base outline-none rounded cursor-pointer font-['Cairo']"
+                  className="w-full bg-zinc-900 border border-zinc-700 text-white p-2 text-lg outline-none rounded cursor-pointer font-['Cairo']"
                 >
                   {voices
                     .filter(v => v.lang.startsWith(isAr ? 'ar' : 'en'))
@@ -723,11 +794,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             )}
 
             {/* Ambient Noise / shortwave Hum switch */}
-            <div className="flex justify-between items-center pt-2 border-t border-zinc-900">
+            <div className="flex justify-between items-center pt-2 border-t border-zinc-900 text-lg">
               <span className="text-white">{isAr ? 'محاكاة همس التردد اللاسلكي السلبي:' : 'Simulated Shortwave Carrier Hum:'}</span>
               <button
                 onClick={() => setIsSynthesizedHumOn(!isSynthesizedHumOn)}
-                className={`px-3.5 py-2 border text-sm font-bold cursor-pointer rounded transition-all ${
+                className={`px-3.5 py-2 border text-base font-bold cursor-pointer rounded transition-all ${
                   isSynthesizedHumOn ? 'bg-amber-950 text-amber-400 border-amber-600' : 'bg-zinc-900 text-white border-zinc-700'
                 }`}
               >
@@ -736,9 +807,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             </div>
 
             {/* Pitch & Speed sliders */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-2 gap-4 pt-2 text-base">
               <div className="space-y-2">
-                <div className="flex justify-between text-sm text-white">
+                <div className="flex justify-between text-base text-white">
                   <span>{isAr ? 'طبقة الصوت (وقار)' : 'Pitch'}</span>
                   <span className="text-amber-400 font-bold">{pitch}</span>
                 </div>
@@ -754,7 +825,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
               </div>
 
               <div className="space-y-2">
-                <div className="flex justify-between text-sm text-white">
+                <div className="flex justify-between text-base text-white">
                   <span>{isAr ? 'سرعة الإلقاء' : 'Speed'}</span>
                   <span className="text-amber-400 font-bold">{playbackSpeed}x</span>
                 </div>
@@ -779,9 +850,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           {/* Script Scroll Container */}
           <div className="bg-zinc-950 border border-zinc-800 p-5 rounded h-[420px] overflow-y-auto space-y-4 custom-scrollbar">
             
-            <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-3 font-['Cairo'] text-base text-white font-bold uppercase">
+            <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-3 font-['Cairo'] text-lg text-white font-bold uppercase">
               <span>{isAr ? 'المخطط الإخباري للنشرة الإذاعية (اضغط لتجاوز القراءة)' : 'INTELLIGENCE BROADCAST TELEPROMPTER'}</span>
-              <span className="flex items-center gap-1.5 text-emerald-400">
+              <span className="flex items-center gap-1.5 text-emerald-400 text-lg">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
                 <span>{isAr ? 'مزامنة حية' : 'LIVE SYNCED'}</span>
               </span>
@@ -801,16 +872,16 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                   style={{ direction: isAr ? 'rtl' : 'ltr' }}
                 >
                   <div className="flex items-center gap-2.5 justify-start mb-2">
-                    <span className={`font-['Cairo'] text-base px-2.5 py-0.5 rounded font-black ${
+                    <span className={`font-['Cairo'] text-lg px-2.5 py-0.5 rounded font-black ${
                       isActive ? 'bg-amber-400 text-zinc-950' : 'bg-zinc-700 text-white'
                     }`}>
                       {idx + 1}
                     </span>
-                    <h4 className={`text-lg md:text-xl font-black font-['Cairo'] ${isActive ? 'text-amber-400' : 'text-white'}`}>
+                    <h4 className={`text-xl md:text-2xl font-black font-['Cairo'] ${isActive ? 'text-amber-400' : 'text-white'}`}>
                       {seg.title}
                     </h4>
                   </div>
-                  <p className={`text-lg md:text-xl font-['Cairo'] leading-relaxed transition-all ${isActive ? 'text-white font-medium' : 'text-white'}`}>
+                  <p className={`text-xl md:text-2xl font-['Cairo'] leading-relaxed transition-all ${isActive ? 'text-white font-medium' : 'text-white'}`}>
                     {seg.text}
                   </p>
 
@@ -825,9 +896,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3.5 py-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-['Cairo'] text-sm font-bold rounded transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+                      className="flex items-center gap-2 px-3.5 py-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-['Cairo'] text-base font-bold rounded transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
                     >
-                      <WhatsAppIcon size={16} className="text-[#25D366]" />
+                      <WhatsAppIcon size={18} className="text-[#25D366]" />
                       <span>{isAr ? 'مشاركة الخبر' : 'Share Story'}</span>
                     </a>
 
@@ -840,9 +911,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3.5 py-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-['Cairo'] text-sm font-black rounded transition-all cursor-pointer shadow-md hover:translate-y-[-1px]"
+                      className="flex items-center gap-2 px-3.5 py-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-['Cairo'] text-base font-black rounded transition-all cursor-pointer shadow-md hover:translate-y-[-1px]"
                     >
-                      <FileText size={16} className="text-zinc-950" />
+                      <FileText size={18} className="text-zinc-950" />
                       <span>{isAr ? 'طلب وثائق البند' : 'Request Documents'}</span>
                     </a>
                   </div>
@@ -852,15 +923,15 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
           </div>
 
           {/* Quick Actions Footer */}
-          <div className="flex items-center justify-between gap-3 bg-zinc-950 p-4 border border-zinc-800 rounded font-['Cairo'] text-base text-white">
+          <div className="flex items-center justify-between gap-3 bg-zinc-950 p-4 border border-zinc-800 rounded font-['Cairo'] text-lg text-white">
             <span>
               {isAr ? 'وثيقة مفرج عنها للجمهور العام.' : 'Classified document cleared for public distribution.'}
             </span>
             <button
               onClick={handleDownloadTranscript}
-              className="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-400 text-amber-400 hover:text-white cursor-pointer transition-all flex items-center gap-2 rounded uppercase font-bold text-base"
+              className="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-400 text-amber-400 hover:text-white cursor-pointer transition-all flex items-center gap-2 rounded uppercase font-bold text-lg"
             >
-              <Download size={18} />
+              <Download size={20} />
               <span>{isAr ? 'تحميل النص الكامل' : 'DOWNLOAD SCRIPT'}</span>
             </button>
           </div>
