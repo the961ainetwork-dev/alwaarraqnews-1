@@ -56,6 +56,44 @@ interface TacticalDossier {
 
 const TACTICAL_DOSSIERS: TacticalDossier[] = [
   {
+    id: 'gulf-explosive-clash-2026',
+    codeName: 'OPERATION BRASS HAMMER',
+    titleEn: 'All-Out Clash Ignites the Gulf, Burying the MOU: Trump Tests Erdoğan at NATO, While Millions Gather in Najaf & Karbala Preparing for Hour of Decision',
+    titleAr: 'الاشتباك الناري الشامل يشعل الخليج ويدفن مذكرة التفاهم... ترامب يختبر أردوغان في الناتو، والملايين في النجف وكربلاء يمهدون لساعة القرار بعد "مشهد"',
+    summaryEn: 'Regional escalation erupted into full-scale conflict today, marking the active collapse of the Washington-Tehran MOU on its 21st day. Heavy US airstrikes targeted over 80 sites in southern Iran, met by a massive Iranian retaliatory swarm of ballistic missiles and drones hitting 85 US facilities across Bahrain and Kuwait, amid historic funeral processions for Ayatollah Ali Khamenei in Iraq.',
+    summaryAr: 'دخلت المواجهة الإقليمية مرحلة الانفجار الشامل اليوم، معلنةً الانهيار الفعلي لمذكرة التفاهم بين واشنطن وطهران في يومها الحادي والعشرين، بعد ضربات جوية أمريكية مكثفة طالت 80 موقعاً في جنوب إيران، ورد إيراني كاسح بـ 85 قذيفة طالت القواعد الأمريكية بالبحرين والكويت، وسط حشود مليونية في العراق تشيع خامنئي وتمهد لساعة الصفر بعد مشهد.',
+    contentEn: `The regional confrontation entered a stage of all-out explosion today, declaring the actual collapse of the MOU between Washington and Tehran on its twenty-first day. The Gulf arena turned into a mutual firing range of ballistic missiles and drones, as US Central Command executed large-scale strikes on southern Iran, met by Tehran's sweeping retaliation targeting US military installations in Bahrain and Kuwait.
+
+This accelerating military escalation coincides with a dangerous strategic shift led by US President Donald Trump from Ankara, utilizing the NATO summit to incite European allies and place Turkish President Recep Tayyip Erdoğan before a historic, decisive test. On the other side, the gathering of millions in the holy cities of Najaf and Karbala, mourning the late Supreme Leader Ayatollah Ali Khamenei today, outlines the ideological and battlefield cohesion of the Axis of Resistance, paving the way for his burial tomorrow, Thursday, in the holy city of Mashhad—a moment set to launch a new, more fierce phase of military and political struggle.
+
+### I. The Gulf Inferno: Vast US Strikes Met by Devastating Iranian Retaliation
+The past hours witnessed an unprecedented military escalation since the signing of the MOU, as both sides bypassed warnings, shifting into direct, large-scale kinetic engagements:
+
+* **US Airstrikes on Southern Iran:** President Donald Trump issued orders from his residence in Turkey to launch intense aggressive attacks, described as four to five times stronger than last week’s strikes. US Central Command (CENTCOM) announced targeting over 80 sites with precision-guided munitions, including air defense systems, command networks, coastal radar stations, and cruise missile sites in Hormozgan province, Mahshahr, Bandar Abbas, Sirik, and Qeshm Island, in addition to targeting about 60 IRGC fast boats. The aggression resulted in the death of an IRGC naval officer in Mahshahr and damaged commercial and fishing port docks.
+* **Sweeping Iranian Retaliation (85 Military Facilities Target List):** Tehran moved rapidly to activate its "offensive doctrine," as IRGC and Iranian military naval and air forces conducted massive joint operations using ballistic missiles and kamikaze drones. The strikes targeted 85 US military facilities across the Fifth Fleet headquarters at Salman Port, Isa Air Base in Bahrain, and Ali Al Salem Air Base in Kuwait.
+* **Downing of US MQ-9 Reaper & Air Defense Alerts:** IRGC air defenses successfully shot down a sophisticated US MQ-9 spy drone over Bushehr province. In response, sirens wailed twice in Bahrain and Kuwait, and the Kuwaiti Army announced that its air defense systems intercepted massive missile and drone strikes.
+* **Massive US Aerial Refueling Bridge (28 Tankers):** Flight tracking systems revealed heavy US aerial activity between Ben Gurion and the Gulf of Aden, featuring 28 aerial refueling aircraft (9 KC-46A and 19 KC-135R tankers) flying continuously. This confirms that Washington is operating a complex, sustained air bridging campaign to secure coverage for its fighters and drones in the region's inflamed skies.`,
+    contentAr: `دخلت المواجهة الإقليمية مرحلة الانفجار الشامل اليوم، معلنةً الانهيار الفعلي لمذكرة التفاهم بين واشنطن وطهران في يومها الحادي والعشرين. وتحولت ساحة الخليج إلى ميدان رماية متبادل بالصواريخ الباليستية والطائرات المسيرة، حيث نفذت القيادة المركزية الأمريكية ضربات واسعة النطاق على جنوب إيران، ردت عليها طهران باستهداف كاسح للمنشآت العسكرية الأمريكية في البحرين والكويت.
+
+يتزامن هذا التصعيد العسكري المتسارع مع تحول استراتيجي خطير يقوده الرئيس الأمريكي دونالد ترامب من أنقرة، مستغلًا قمة حلف شمال الأطلسي (الناتو) لتحريض حلفائه الأوروبيين ووضع الرئيس التركي رجب طيب أردوغان أمام اختبار تاريخي وحاسم. وعلى الجانب الآخر، فإن الحشود المليونية في النجف وكربلاء المقدستين، والتي تشيع اليوم جثمان الإمام الشهيد علي خامنئي، ترسم ملامح التماسك العقائدي والميداني لعاصمة محور المقاومة. ويمهد ذلك لدفنه غدًا الخميس في مدينة مشهد، وهي اللحظة التي ستشكل إشارة الانطلاق لمرحلة جديدة وأكثر ضراوة من الصراع العسكري والسياسي.
+
+### أولاً: جحيم الخليج... ضربات أمريكية واسعة ورد إيراني يضرب في عمق البحرين والكويت
+شهدت الساعات الماضية تصعيدًا عسكريًا غير مسبوق منذ توقيع مذكرة التفاهم، حيث تجاوز الطرفان مرحلة الرسائل التحذيرية إلى اشتباك ناري مباشر وواسع النطاق:
+
+* **الغارات الأمريكية على جنوب إيران:** أصدر الرئيس دونالد ترامب أوامر من مقر إقامته في تركيا بشن هجمات عدوانية مكثفة، وُصفت بأنها أقوى بأربع إلى خمس مرات من ضربات الأسبوع الماضي. وأعلنت القيادة المركزية الأمريكية (سنتكوم) استهداف أكثر من 80 موقعًا بذخائر دقيقة، شملت أنظمة دفاع جوي، وشبكات قيادة، ومواقع رادار ساحلية، ومواقع صواريخ كروز في محافظة هرمزغان، ومدينة ماهشهر، وبندر عباس، وسيريك، وجزيرة قشم، بالإضافة إلى استهداف نحو 60 زورقاً تابعة للحرس الثوري. وأسفر العدوان عن استشهاد أحد عناصر القوة البحرية للحرس الثوري في ماهشهر وتضرر أرصفة موانئ تجارية وموانئ صيد.
+* **الرد الإيراني المدمر (85 منشأة عسكرية):** لم تتأخر طهران في تفعيل "العقيدة الهجومية"؛ حيث نفذت القوات البحرية والجوية للحرس الثوري والجيش الإيراني عمليات مشتركة واسعة النطاق باستخدام الصواريخ الباليستية والطائرات المسيرة. واستهدفت العمليات 85 منشأة عسكرية أمريكية في مقر الأسطول الخامس بميناء سلمان وقاعدة عيسى الجوية في البحرين، بالإضافة إلى قاعدة علي السالم الجوية في الكويت.
+* **إسقاط المسيرة الأمريكية واستنفار الدفاع الجوي:** نجحت الدفاعات الجوية للحرس الثوري في إسقاط طائرة تجسس أمريكية متطورة من طراز (MQ-9) في أجواء محافظة بوشهر. وفي المقابل، دوت صافرات الإنذار مرتين في البحرين والكويت، وأعلن الجيش الكويتي أن دفاعاته الجوية اعترضت هجمات صاروكية وجوية مكثفة بالطائرات المسيرة.
+* **الجسر الجوي الأمريكي (28 طائرة تزويد بالوقود):** كشفت أجهزة الرصد الملاحي عن نشاط جوي أمريكي مكثف بين بن غوريون وخليج عدن، تمثل في تحليق 28 طائرة صهريج للتزويد بالوقود في الجو (9 طائرات من طراز KC-46A و19 طائرة من طراز KC-135R). ويؤكد هذا أن واشنطن تدير عملية جوية مستمرة ومعقدة لتأمين الغطاء لمقاتلاتها ومسيراتها في الأجواء الملتهبة للمنطقة.`,
+    threatLevel: 'CRITICAL',
+    regionEn: 'Persian Gulf / Southern Iran / Iraq / Turkey',
+    regionAr: 'الخليج العربي / جنوب إيران / العراق / تركيا',
+    coordinates: '27.18° N, 56.27° E',
+    dateEn: 'July 8, 2026',
+    dateAr: '٨ يوليو ٢٠٢٦',
+    sourceEn: 'Al-Warraq Strategic Operations Hub',
+    sourceAr: 'غرفة العمليات الاستراتيجية بالورّاق'
+  },
+  {
     id: 'gcc-ma-surge-investment-banking-2026',
     codeName: 'OPERATION GOLDEN HORIZONS',
     titleEn: 'GCC M&A Surge: Global Investment Banks Expand Teams Betting on Long-Term Growth',
@@ -554,7 +592,7 @@ At the end of the call, Trump told Aoun he looked forward to meeting him soon at
 export default function WarRoom({ language, layoutMode = 'digital' }: WarRoomProps) {
   const isAr = language === 'ar';
   
-  const [selectedDossierId, setSelectedDossierId] = useState<string>('us-iran-escalation-ceasefire-2026');
+  const [selectedDossierId, setSelectedDossierId] = useState<string>('gulf-explosive-clash-2026');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [threatFilter, setThreatFilter] = useState<string>('ALL');
   
