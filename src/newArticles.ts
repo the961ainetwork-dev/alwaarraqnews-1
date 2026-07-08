@@ -563,5 +563,111 @@ As a privately-held subsidiary rather than a publicly traded standalone entity, 
     excerpt: 'أودي كابيتال تشارك كشريك رئيسي في صفقة استثمارية عقارية بقيمة ١٠٠ مليون يورو مستهدفة قطاع التصنيع الفاخر في إيطاليا بالتعاون مع LeadCrest.',
     hashtags: ['Audi_Capital', 'Italy_Real_Estate', 'LeadCrest', 'HModa'],
     views: 3120
+  },
+  {
+    id: 'fifa-messi-referee-controversy-2026',
+    category: 'fifa-2026',
+    categories: ['exclusives', 'translations', 'fifa-2026', 'sports', 'opinion'],
+    titleAr: 'كأس العالم 2026 والسريرية السياسية والتحكيمية – هل فقدت الفيفا وميسي شعبيتهما عربيًا؟',
+    titleEn: 'FIFA World Cup 2026 & Political Bedside: Have FIFA and Lionel Messi Lost Their Popularity in the Arab World?',
+    summaryAr: 'تحقيق استقصائي يحلل أحداث مونديال 2026 المثيرة للجدل، من فضيحة مباراة مصر والأرجنتين والتحيز التحكيمي لعيون ليونيل ميسي، إلى التسييس والإجراءات الاستثنائية لشرطة الحدود الأمريكية، وصولاً إلى أزمة الثقة العارمة وتراجع شعبية الاتحاد الدولي في الشارع العربي.',
+    summaryEn: 'An investigative feature on the controversial events of the 2026 World Cup, from the Egypt-Argentina round of 16 refereeing scandal favoring Lionel Messi, to the heavy border security policing, highlighting a dramatic collapse of trust in FIFA across Arab societies.',
+    excerptAr: 'هل فقدت الفيفا وميسي شعبيتهما عربيًا بعد ظلم مصر وتسييس ترامب للمباريات في مونديال 2026؟ تفاصيل الفضيحة والإجراءات الجمركية التعسفية.',
+    excerptEn: 'Has the 2026 World Cup permanently damaged FIFA and Messi\'s popularity in the Arab world following refereeing scandals and Trump\'s border enforcement overreach?',
+    contentAr: `### زلزال في الشارع الرياضي العربي: مونديال 2026 تحت المجهر
+
+يشهد مونديال 2026 الحالي، المستضاف بشكل مشترك في أمريكا الشمالية، سلسلة من الأحداث الغريبة والمثيرة للجدل التي تجاوزت حدود المستطيل الأخضر لتدمج السياسة بالتحيز التحكيمي والإجراءات الأمنية التعسفية، مما جعل هذه النسخة واحدة من أكثر البطولات إثارة للانقسام والجدل في التاريخ الحديث للعبة الشعبية الأولى.
+
+وتطرح هذه التطورات تساؤلاً جوهرياً صار يتردد في المقاهي والمنتديات الرياضية من المحيط إلى الخليج: **هل فقدت الفيفا وميسي شعبيتهما عربيًا؟**
+
+---
+
+### أولاً: فضيحة مباراة مصر والأرجنتين... الكيل بمكيالين لعيون ميسي
+
+في مباراة دور الستة عشر المصيرية التي أقيمت في السابع من يوليو 2026، تعرض المنتخب المصري لظلم تحكيمي فادح وصارخ أمام الأرجنتين بقيادة الحكم الفرنسي **فرانسوا ليتكسير**. 
+
+#### تفاصيل الفضيحة الرياضية:
+* **إلغاء الهدف المصري الشرعي:** بينما كان الفراعنة متقدمين بهدف نظيف ومسيطرين على مجريات اللقاء، ألغى الحكم هدفاً مصيرياً ثانياً بدا صحيحاً بنسبة 100% بشهادة خبراء التحكيم الدوليين، بحجة وجود خطأ وهمي لم تظهره حتى الإعادات التلفزيونية المتعددة.
+* **تسهيل عبور رفقاء ميسي:** في المقابل، حصل المنتخب الأرجنتيني على قرارات تفضيلية مبالغ فيها، شملت التغاضي عن خشونة واضحة وإعطاء أخطاء مجانية على مشارف منطقة الجزاء ساعدت رفقاء ليونيل ميسي على العودة في النتيجة وتأمين العبور غير المستحق إلى الدور المقبل.
+* **الغضب الجماهيري العارم:** فجّر هذا التحيز السافر موجة عارمة من السخط والاحتجاجات عبر منصات التواصل الاجتماعي العربية، حيث اتهم ملايين المشجعين الاتحاد الدولي لكرة القدم "فيفا" بهندسة نتائج البطولة وضمان بقاء ميسي في المسابقة لأطول فترة ممكنة لدواعي تسويقية وتجارية بحتة، وهو ما اعتُبر كبش فداء لآمال المنتخبات العربية الطامحة.
+
+---
+
+### ثانياً: تسييس المونديال وتوجيهات ترامب الأمنية الصارمة
+
+لم تقتصر الأزمة على صافرة الحكم؛ بل امتدت لتشمل أجواء البطولة العامة التي اتسمت بالتوتر والشك، مدفوعةً بظلال التسييس والتدخلات الأمنية والسياسية الصارمة من قبل الإدارة الأمريكية.
+
+* **توجيهات ترامب لشرطة الحدود:** أدت التصريحات الصارمة للرئيس الأمريكي دونالد ترامب وتوجيهاته المشددة لوكالات إنفاذ قوانين الهجرة والجمارك (CBP) إلى تطبيق إجراءات فحص وتفتيش تعسفية واستثنائية على الحدود والمطارات الأمريكية.
+* **مضايقة المشجعين العرب:** اشتكى آلاف المشجعين من الدول العربية ومنطقة الشرق الأوسط من مضايقات مستمرة وتأخير متعمد في مراجعة التأشيرات، بالإضافة إلى تحقيقات مهينة طالتهم فور وصولهم للمطارات لحضور المباريات، تحت مسمى الحفاظ على "الأمن الاستثنائي للمونديال".
+* **خلق أجواء مشحونة:** تحولت الملاعب من كنف الاحتفال الكروي الإنساني إلى ثكنات أمنية مراقبة تثير الرهبة والامتعاض، مما أفسد متعة السفر وجعل المشجع العربي يشعر بأنه مستهدف بصورة مباشرة من قبل الأجهزة الأمريكية.
+
+---
+
+### ثالثاً: حصيلة الأزمة وأثرها على شعبية ميسي والفيفا
+
+تتراكم خيبات الأمل هذه لتحدث تحولاً راديكالياً في الوجدان الكروي العربي تجاه الرموز التقليدية للعبة:
+
+1. **انكسار هيبة ميسي:** ليونيل ميسي، الذي حظي لسنوات بتقدير أسطوري في الشارع العربي، يواجه اليوم تراجعاً حاداً في شعبيته، حيث بات يُنظر إليه من قبل قطاع واسع كرمز لمنظومة مفضلة تحميه الصافرات وتعبّد له الطرق بالفساد والمحسوبية الرياضية.
+2. **انهيار مصداقية الفيفا:** سقط القناع الأخلاقي لـ "الفيفا" التي ترفع شعارات "اللعب النظيف" و"احترام الجميع"، وظهرت كشركة تجارية لا تبالي بالعدالة الرياضية طالما أن عائدات الرعاية والبث التلفزيوني في أمان.
+3. **البحث عن بدائل رقمية:** تزامنت هذه السلوكيات مع هجرة جماعية للجماهير نحو منصات المراهنات اللامركزية وتوقع النتائج المستقلة مثل **Polymarket**، كنوع من التعبير عن سحب الثقة من التحليلات الرسمية والمنصات التقليدية للفيفا التي تمارس حذف التعليقات والرقابة الرقمية على الانتقادات الجماهيرية الغاضبة.
+
+يبدو أن مونديال 2026 قد ينجح تجارياً في تعظيم الأرقام والإيرادات، لكنه بالتأكيد قد وجه ضربة قاضية لروح اللعبة وأخلاقياتها، ودفن شعبية الفيفا وأيقوناتها المفضلة في قلوب الملايين من مشجعي كرة القدم العرب.`,
+    contentEn: `### Earthquake in the Arab Sports World: World Cup 2026 Under Scrutiny
+
+The current 2026 FIFA World Cup, co-hosted across North America, is witnessing a series of extraordinary and highly controversial events that have spilled far beyond the pitch. Merging geopolitics with explicit refereeing bias and harsh security practices, this edition has cemented itself as one of the most divisive and heavily debated tournaments in modern football history.
+
+These developments have triggered a fundamental question echoing across cafes and sports forums from the Ocean to the Gulf: **Have FIFA and Lionel Messi permanently lost their legendary popularity in the Arab world?**
+
+---
+
+### I. The Egypt-Argentina Scandal: Double Standards for Messi's Glory
+
+During the high-stakes Round of 16 match held on July 7, 2026, the Egyptian national team suffered an egregious and blatant refereeing injustice against Argentina, overseen by French referee **François Letexier**.
+
+#### Details of the Sporting Scandal:
+* **Annulling a Clean Egyptian Goal:** While the Pharaohs were leading 1-0 and fully dominating the pitch, the referee annulled a second, 100% legitimate Egyptian goal under the pretext of an imaginary foul—one that even multiple slow-motion TV replays failed to justify.
+* **Paving the Way for Messi:** Conversely, the Argentine squad received continuous preferential treatment. The referee overlooked aggressive tackles and awarded soft, highly questionable free-kicks near the penalty area, facilitating Argentina's comeback and securing an unmerited ticket to the next round.
+* **Massive Public Backlash:** This blatant bias triggered an unprecedented wave of fury and indignation across Arab social media networks. Millions of fans accused FIFA of manufacturing tournament outcomes to keep Lionel Messi in the competition for purely marketing, commercial, and financial incentives, turning Arab national hopes into sacrificial lambs.
+
+---
+
+### II. Geopolitical Overtones: Trump's Border Policies Impact the Game
+
+The crisis was not limited to the referee’s whistle; the overall atmosphere of the tournament was heavily clouded by strict geopolitical, administrative, and security measures enacted by the host country.
+
+* **Strict Directives to Border Patrol:** Aggressive rhetoric and stringent directives issued by US President Donald Trump to Customs and Border Protection (CBP) and immigration agencies led to extreme, arbitrary screening and interrogation procedures at airports.
+* **Targeting Arab Supporters:** Thousands of fans traveling from Arab nations and the Middle East reported deliberate, long delays in visa processing, as well as humiliating questioning and invasive baggage searches at points of entry under the guise of "heightened World Cup security protocols."
+* **Hostile Atmosphere:** Instead of a festive, welcoming celebration, stadiums and transport hubs were transformed into highly monitored security zones, ruining the travel experience and leaving Arab fans feeling targeted and unwelcomed.
+
+---
+
+### III. The Fallout: Deconstructing FIFA & Messi's Broken Image
+
+These combined grievances have caused a radical shift in the hearts of Arab football enthusiasts toward the sport’s traditional icons:
+
+1. **Messi’s Shuttered Legacy:** Lionel Messi, once revered with near-mythological status in the Arab street, now faces a steep drop in support. He is increasingly perceived as the coddled centerpiece of a system that shields him with favorable refereeing whistles.
+2. **The Collapse of FIFA’s Integrity:** FIFA’s moral facade of "Fair Play" has shattered. The governing body is seen more than ever as a corporate entity that sacrifices competitive integrity for broadcasting revenue and sponsor satisfaction.
+3. **The Pivot to Decentralized Betting:** Frustrated by FIFA’s active digital censorship and deletion of angry public comments, millions of fans are bypassing traditional channels entirely, migrating toward independent decentralized prediction markets like **Polymarket** to express their defiance and place their faith in unbiased, mathematical data.
+
+While the 2026 World Cup may break financial records, it has dealt a catastrophic blow to the authentic spirit of the game, burying the prestige of FIFA and its favorite icons in the eyes of millions of Arab supporters.`,
+    author: {
+      nameAr: 'هيئة تحرير صحيفة الورّاق',
+      nameEn: 'Al-Warraq Editorial Board',
+      titleAr: 'التحقيق والتحليل الرياضي والسيادي',
+      titleEn: 'Sports & Sovereign Investigative Unit',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-08',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['الفيفا', 'مونديال_2026', 'مصر_الأرجنتين', 'ليونيل_ميسي', 'ترخيص_التحكيم', 'FIFA', 'World_Cup_2026', 'Messi', 'Egypt_Argentina', 'Referee_Scandal'],
+    excerpt: 'زلزال في الشارع الكروي العربي بعد ظلم مصر لصالح الأرجنتين ومضايقة المشجعين على الحدود الأمريكية بتوجيهات ترامب.',
+    hashtags: ['FIFA', 'WorldCup2026', 'Messi', 'Egypt_Argentina'],
+    views: 9480
   }
 ];
+
