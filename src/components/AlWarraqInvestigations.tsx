@@ -58,6 +58,7 @@ import { FrozenAssetsInfographic } from './FrozenAssetsInfographic';
 import { DepositsInfographic } from './DepositsInfographic';
 import { SubseaCablesInfographic } from './SubseaCablesInfographic';
 import { FuelProfiteeringInfographic } from './FuelProfiteeringInfographic';
+import { BdlSalamehInfographic } from './BdlSalamehInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -154,6 +155,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XI: The 2.22M LBP Fuel Riddle - Inside Lebanon’s Profiteering Cartel',
     descAr: 'تشريح استقصائي لهيكل أسعار صفيحة البنزين والمازوت وفضائح استيراد الوقود الروسي Hawk III لعامي ٢٠٢٥-٢٠٢٦.',
     descEn: 'A detailed look at the 20-liter canister price structure, the corporate cartel oligarchy, and Russian oil evasion scams.'
+  },
+  'bdl-versus-salameh-2026': {
+    fileId: 'AW-FILE-12',
+    badge: 'CENTRAL BANK CONTROVERSY',
+    titleAr: 'الملف الثاني عشر: مصرف لبنان في مواجهة آل سلامة والتدقيق الجنائي',
+    titleEn: 'Dossier XII: Banque du Liban vs. Salameh & Forensic Audit',
+    descAr: 'تحقيق استثنائي شامل يكشف حراك مصرف لبنان القضائي والرقابي لتصفية تركة العقود الماضية ومكافحة الفساد ومطاردة الحاكم السابق.',
+    descEn: 'An intensive study on BDL\'s legal and audit actions, featuring the Alvarez & Marsal audit and the high-profile legal witness register.'
   }
 };
 
@@ -207,7 +216,8 @@ export default function AlWarraqInvestigations({
       article.id === 'iran-frozen-assets-2026' ||
       article.id === 'lebanon-deposits-crisis-2026' ||
       article.id === 'submarine-cables-geopolitics-2026' ||
-      article.id === 'fuel-profiteering-cartel-2026'
+      article.id === 'fuel-profiteering-cartel-2026' ||
+      article.id === 'bdl-versus-salameh-2026'
     );
   });
 
@@ -775,6 +785,10 @@ export default function AlWarraqInvestigations({
                   ) : activeDossier.id === 'fuel-profiteering-cartel-2026' ? (
                     <div className="p-1 bg-[#FAF8F5] relative overflow-hidden rounded-md">
                       <FuelProfiteeringInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'bdl-versus-salameh-2026' ? (
+                    <div className="p-1 relative overflow-hidden rounded-md">
+                      <BdlSalamehInfographic language={language} />
                     </div>
                   ) : null}
                 </div>

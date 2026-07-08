@@ -668,6 +668,162 @@ While the 2026 World Cup may break financial records, it has dealt a catastrophi
     excerpt: 'زلزال في الشارع الكروي العربي بعد ظلم مصر لصالح الأرجنتين ومضايقة المشجعين على الحدود الأمريكية بتوجيهات ترامب.',
     hashtags: ['FIFA', 'WorldCup2026', 'Messi', 'Egypt_Argentina'],
     views: 9480
+  },
+  {
+    id: 'bdl-versus-salameh-2026',
+    category: 'investigations',
+    categories: ['exclusives', 'investigations', 'economy'],
+    titleAr: 'انتفاضة الحسابات: كيف يفكك "مصرف لبنان" تركة الفساد المالي؟',
+    titleEn: 'Banque du Liban vs. Salameh: Deconstructing Financial Corruption & Judicial Pursuit',
+    summaryAr: 'تحقيق استثنائي شامل يكشف حراك مصرف لبنان القضائي والرقابي لتصفية تركة العقود الماضية ومكافحة ملفات الفساد البنيوي، مدمجاً بتقرير التدقيق الجنائي، وملاحقة قضية فوري وملفات السياسيين والمحامين والشهود تحت المجهر.',
+    summaryEn: 'An investigative deep-dive on Banque du Liban’s legal and audit actions, featuring the new Alvarez & Marsal forensic phase, the Fawry scandal, political housing loan charges, and the high-profile legal witness register.',
+    excerptAr: 'خطوة استباقية نحو الحساب الشامل: مصرف لبنان يفتح الدفاتر القديمة ويلاحق الفساد من شركة فوري إلى قروض الإسكان وعقود المحاماة المشبوهة.',
+    excerptEn: 'BDL targets structural corruption: From Fawry and high-profile housing loans to the secret "Consultant Box" and law firm audits.',
+    contentAr: `### انتفاضة الحسابات: كيف يفكك "مصرف لبنان" تركة الفساد المالي؟
+بيروت — يوليو 2026
+
+في خطوة وصفت بأنها بداية "الحساب الشامل"، يشهد مصرف لبنان (BDL) حراكاً قانونياً وإصلاحياً غير مسبوق، يسعى من خلاله إلى تصفية تركة العقود الماضية ومكافحة ملفات الفساد البنيوي التي تسببت في الانهيار المالي التاريخي للبلاد. هذا التحول الجذري، المدفوع بضغوط دولية ومطالب صارمة من صندوق النقد الدولي (IMF)، تمثّل في حزمة من التدابير القضائية والرقابية التي لم توفر أسماءً وازنة في عالم السياسة، المال، والمصارف.
+
+---
+
+### أولاً: تقرير التدقيق الجنائي الجديد (Alvarez & Marsal)
+لم يعد التدقيق الجنائي مجرد وثيقة سياسية، بل تحول إلى أداة ملاحقة حية. فقد قام مصرف لبنان بتلزيم شركة "ألفاريز ومارسال" رسمياً لإجراء مرحلة جديدة ومعمقة من التدقيق المالي الشامل، تغطي الفترة الممتدة من أكتوبر 2019 حتى نهاية عام 2023.
+
+يتجاوز هذا التقرير الجديد الحسابات الدفترية التقليدية ليركز على ملفات حساسة للغاية:
+* **مليارات الدعم:** التدقيق في كيفية إنفاق وتوزيع أموال دعم السلع الأساسية (المحروقات، الدواء، والقمح) وتحديد الجهات والمصارف التي استغلتها بصورة غير مشروعة.
+* **حركة التحويلات المالية:** مراجعة كافة التحويلات التي خرجت من مصرف لبنان إلى المصارف التجارية والخارج خلال فترة "الهيركات" الفعلي ومنع السحوبات عن المودعين.
+* **منصة "صيرفة":** تتبع المستفيدين من ثغرات المنصة السابقة، والبدء في فرض ضرائب استثنائية (بنسبة 17%) على الأرباح غير المشروعة المحققة منها.
+
+---
+
+### ثانياً: قضية شركة "فوري" (Fawry Affairs) وملاحقة آل سلامة
+تعتبر قضية شركة "فوري" (Fawry Associates) حجر الزاوية في ملاحقة الفساد الداخلي بالمصرف. فالشركة المملوكة من رجا سلامة (شقيق الحاكم السابق رياض سلامة) متهمة بالتحول إلى "ممر إجباري" لعمولات وهمية بلغت نحو 330 مليون دولار من أموال مصرف لبنان تحت غطاء عقود وساطة لبيع سندات خزينة و"يوروبوندز".
+
+وفي تطور قضائي بارز، أصدرت الهيئة العامة لمحكمة التمييز اللبنانية قرارات حاسمة برفض "دعاوى المخاصمة" التي تقدم بها الأخوين سلامة لتعطيل التحقيق. هذا القرار أعاد الضوء الأخضر لقاضية التحقيق الأولى في بيروت لاستكمال استجواب المدعى عليهم بجرائم الاختلاس، وتبييض الأموال، والتزوير، والإثراء غير المشروع، تزامناً مع مذكرات اتهام رسمية صدرت مطلع هذا العام (2026) بتهمة اختلاس 44.8 مليون دولار في ملفات متفرقة.
+
+---
+
+### ثالثاً: فتح ملفات الكبار: ميقاتي، الخواجة، وعدس
+تأكيداً على أن الحراك القانوني الحالي لم يعد يستثني أحداً، امتدت الملاحقات والتحقيقات لتطال شبكة معقدة من السياسيين ورجال الأعمال والمصرفيين:
+* **ملف نجيب ميقاتي وعائلته:** عاد إلى الواجهة ملف الادعاء على رئيس الحكومة نجيب ميقاتي وشقيقه طه وابنه ماهر، في قضية "الإثراء غير المشروع" المرتبطة بالحصول على قروض إسكان مدعومة بملايين الدولارات من مصرف لبنان عبر "بنك عوده"، وهي القروض التي كانت مخصصة لذوي الدخل المحدود.
+* **قضية "الخواجة وعدس" ومسؤولي المصارف:** يخضع مسؤولون مصرفيون بارزون، إلى جانب مستشارين ماليين ورجال أعمال (من بينهم أسماء ارتبطت بعمليات هندسة مالية ومقاولات لصالح الدولة مثل الخواجة وعدس)، لتدقيق صارم حول الآليات التي استخدمت لتحويل أموال ضخمة إلى الخارج عشية انهيار عام 2019، ومدى تواطؤ مديريات داخل مصرف لبنان في تسهيل هذه العمليات.
+
+---
+
+### رابعاً: الصندوق الاستشاري الغامض وعقود المحاماة تحت المجهر (The Consultant Box)
+جزء أساسي من التحقيق الاستقصائي الجاري داخل أروقة المصرف المركزي يركز على ما يُعرف بـ "الصندوق الاستشاري" (The Consultant Box)، وهو مصطلح يشير إلى شبكة من مكاتب المحاماة والاستشارات القانونية والمالية المحلية والدولية التي كانت تتقاضى عقوداً سنوية بمليارات الليرات والدولارات لتغطية وتمرير العمليات المالية المشبوهة قانونياً.
+
+وتشير التقارير إلى أن النيابة العامة المالية وفريق مصرف لبنان القانوني يراجعون حالياً مستندات ترتبط بمكاتب محاماة شهيرة (من بينها مكتب قرطباوي في بيروت، ومكتب Dechert القانوني العالمي) بهدف استيضاح الآليات الإجرائية، والتحقق مما إذا كانت هذه الاستشارات قد استخدمت كغطاء لتمرير "نمط عمل متكرر" (Modus Operandi) يسهل تهريب الأموال وتبديد الأصول العامة تحت مسمى "الاستشارات الفنية".
+
+---
+
+### ملاحقات قضائية محلية ودولية: حراك قانوني لمصرف لبنان يضع مسؤولين ومحامين تحت المجهر
+كشف مصادر قانونية مطلعة عن استمرار الفريق القانوني المعني بتقديم المشورة والدعم لمصرف لبنان في إعداد لائحة أولية بأسماء شخصيات قد تُستدعى للإدلاء بشهاداتها وإفاداتها أمام المحاكم اللبنانية والأجنبية، وذلك في إطار الدعاوى القضائية الجارية.
+
+#### مراجعة مستمرة وشخصيات بارزة على قائمة الشهود المحتملين:
+وفقاً للمعلومات المتاحة، لا تزال هذه القائمة خاضعة للمراجعة والتدقيق، ومن المتوقع أن تشمل مروحة واسعة من الموظفين السابقين في البنك المركزي، ومسؤولين في مصارف تجارية، وأعضاء سابقين في هيئات رقابية، بالإضافة إلى مستشارين قانونيين ومحامين يُعتقد أنهم يمتلكون معطيات جوهرية ترتبط بالملفات المنظورة.
+
+وتضم الأسماء المتداولة لغرض الاستماع إلى إفاداتها - في حال رأت الجهات القضائية ضرورة لذلك - الآتي:
+* **مسؤولون سابقون في مصرف لبنان:** رجا أبو عسلة، نعمان نضور، وبيار كنعان.
+* **مسؤولون وممثلون سابقون عن مصارف تجارية:**
+  * **بنك عوده:** ميشال عرموني، ميكي شبلي، ونبيل شعيا.
+  * **بنك البحر المتوسط:** عارف منيمنة، عادل جبر، مصطفى ناقوزي، وسامي عكاوي.
+* **الهيئات الرقابية:** الرئيس السابق للجنة الرقابة على المصارف، سمير حمود.
+* **قطاع المحاماة والاستشارات القانونية:** محامون ومستشارون عملوا على ملفات ذات صلة، وتحديداً من "مكتب قرطباوي" ومكتب "Dechert" العالمي، وذلك لاستيضاح جوانب إجرائية وقانونية محددة.
+
+#### محاور الاستجواب والتركيز القضائي:
+في حال اتخاذ قرار بالاستماع إلى هذه الشخصيات، ستتركز التحقيقات والإفادات حول النقاط الأساسية التالية:
+* **توضيح الآليات:** شرح كيفية تنفيذ المعاملات والعمليات المالية المثيرة للجدل ومحل النزاع.
+* **الأطر التنظيمية:** بيان البيئة القانونية والمؤسسية التي تمت في ظلها هذه العمليات والأدوار التي لعبها الأطراف المعنيون.
+* **تحديد المستفيدين:** المساعدة في كشف هوية "المستفيدين الحقيقيين النهائيين" من تلك العمليات، وذلك وفقاً للأصول القضائية والمستندات المتاحة.
+
+#### نمط عمل متكرر (Modus Operandi) تحت عين القضاء:
+تكتسب هذه اللائحة أهمية استثنائية بحسب المصادر، نظراً لتكرار ورود أسماء بعض الأفراد، والمؤسسات، والآليات القانونية في أكثر من ملف. هذا التكرار قد يتيح للمحاكم التحقق مما إذا كانت العمليات تعكس نمط عمل متكرر وممنهج (Modus Operandi). وعلى الرغم من احتمالية اختلاف المستفيدين النهائيين بين قضية وأخرى، إلا أن التشابه الكبير في الهيكلية القانونية والمالية، وتسلسل آليات التنفيذ، يشكّل عنصراً أساسياً قد تستأنس به المحاكم لاستكمال فهم الحيثيات وتقييم الأدلة.
+
+#### ملاحظة قانونية جوهرية:
+أكدت المصادر أن إدراج أي اسم في هذه اللائحة، أو طلب الاستماع إليه، لا يحمل أي اتهام مباشر أو غير مباشر، ولا يرتب أي مسؤولية جزائية أو مدنية، ولا يشكل قرينة على ارتكاب أي مخالفة. فالهدف ينحصر في استجلاء الحقيقة والإحاطة الشاملة بالملفات، في حين يظل الفصل في المسؤوليات وإصدار الأحكام حقاً حصرياً للقضاء المختص بعد استكمال كافة الإجراءات.`,
+    contentEn: `### The Account Uprising: How Banque du Liban Dismantles Financial Corruption
+Beirut — July 2026
+
+In what has been described as the start of the "Grand Reckoning," Banque du Liban (BDL) is undergoing unprecedented judicial and regulatory reforms. BDL is actively liquidating legacy contracts and investigating structural corruption from previous decades that triggered the nation\'s historic financial collapse. Driven by international pressure and strict IMF benchmarks, these actions target prominent names across Lebanese politics, banking, and legal spheres.
+
+---
+
+### I. Alvarez & Marsal’s New Forensic Audit Phase
+The forensic audit is no longer a passive document; it has evolved into an active investigative tool. BDL has officially commissioned Alvarez & Marsal to initiate an advanced, deep-dive phase of the forensic audit covering the period from October 2019 to the end of 2023.
+
+This new phase bypasses traditional bookkeeping to investigate highly sensitive areas:
+* **Subsidies Billions:** Auditing how funds for essential imports (fuel, pharmaceuticals, and wheat) were spent and identifying entities and commercial banks that leveraged these subsidies illegally.
+* **Capital Outflows during Haircuts:** Reconciling outbound transactions sent from BDL to commercial and foreign accounts while depositors faced harsh withdrawal caps.
+* **Sayrafa Platform Loopholes:** Tracking those who benefited from the previous currency trading platform and enforcing retrofitted 17% exceptional taxes on speculative windfall gains.
+
+---
+
+### II. The Fawry Scandal & Pursuit of the Salamehs
+The "Fawry Associates" case is the cornerstone of BDL\'s internal cleanup. Owned by Raja Salameh (brother of former BDL Governor Riad Salameh), the firm is accused of serving as an unmerited brokerage intermediary, pocketing $330 Million in unauthorized commissions from BDL treasury and Eurobond operations.
+
+In a landmark decision, the Supreme Court of Cassation rejected obstructive legal motions filed by the Salamehs to delay the case. This decision greenlit the first investigative judge in Beirut to proceed with interrogations and indictments on charges of embezzlement, money laundering, forgery, and illicit enrichment, following fresh warrants regarding $44.8 Million in siphoned assets.
+
+---
+
+### III. Targeting VIP Immunity: Mikati, Khawaja, and Adas
+Proving that no one is above the law, the current regulatory push targets intricate political and business networks:
+* **The Najib Mikati Housing Loans File:** Inquiries have reopened regarding subsidized housing loans worth millions of dollars obtained by Prime Minister Najib Mikati, his brother Taha, and son Maher from BDL via Bank Audi—funds legally designated for lower-income citizens.
+* **The Khawaja & Adas Commercial Portfolios:** Senior bankers and state contractors (such as Khawaja and Adas) face intense scrutiny over massive offshore transfers on the eve of the 2019 crisis, examining central bank complicity in facilitating these movements.
+
+---
+
+### IV. The "Consultant Box" and Siphoned Advisory Fees
+A core aspect of BDL\'s investigation focuses on "The Consultant Box"—a network of local and global law firms that secured highly inflated annual advisory agreements worth billions of LBP and USD to legally shield non-compliant transactions.
+
+Financial prosecutors are currently reviewing documents from prominent law firms (including the Kortbawi firm in Beirut and global firm Dechert LLP) to clarify operational procedures and verify whether these consultancies formed a systematic "Modus Operandi" designed to siphon public assets.
+
+---
+
+### Judicial Witness Register: BDL Legal Actions Put Officials Under Scrutiny
+Informed legal sources reveal that BDL\'s advisory legal team is compiling a witness list of key figures to testify before local and international courts.
+
+#### Active Scrutiny & Witness Catalog:
+This list remains subject to review and is expected to cover former central bank executives, commercial bank leadership, regulatory board members, and legal advisors who hold key insights.
+
+Identified figures for potential testimony include:
+* **Former BDL Executives:** Raja Abu Asleh, Nouman Nadour, and Pierre Kanaan.
+* **Commercial Bank Representatives:**
+  * **Bank Audi:** Michel Armouni, Mikey Chebli, and Nabil Chaya.
+  * **Bankmed (Banque de la Méditerranée):** Arif Mneimneh, Adel Jabr, Moustafa Nakouzi, and Sami Akkaoui.
+* **Regulatory Bodies:** Former BCCL President Samir Hammoud.
+* **Legal and Advisory Firms:** Consultants from Kortbawi Law and global firm Dechert LLP.
+
+#### Questioning Objectives:
+If called to testify, the investigation will focus on:
+* **Procedural Mechanisms:** Explaining how disputed financial transfers and engineering operations were executed.
+* **Regulatory Frameworks:** Stating the institutional context and specific executive roles of participating parties.
+* **Identifying Beneficiaries:** Helping uncover the Ultimate Beneficial Owners (UBOs) behind these transactions using official logs.
+
+#### Systematic Modus Operandi Under Investigation:
+The repetition of certain names, legal structures, and transfer methods across multiple files allows judicial bodies to assess if these actions constitute a recurring "Modus Operandi". Although final beneficiaries may differ, structural similarities in financial execution provide vital patterns for evaluating evidence.
+
+#### Essential Legal Disclaimer:
+Legal sources stress that inclusion on this list or a request to testify does not imply direct accusation, criminal or civil liability, or any presumption of wrongdoing. The sole intent is seeking truth and full context; final judgment remains the exclusive authority of the judiciary.`,
+    author: {
+      nameAr: 'هيئة تحرير صحيفة الورّاق',
+      nameEn: 'Al-Warraq Editorial Board',
+      titleAr: 'التحري المالي والرقابي السيادي',
+      titleEn: 'Financial Crime & Sovereign Audit Unit',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-08',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['مصرف_لبنان', 'رياض_سلامة', 'التدقيق_الجنائي', 'شركة_فوري', 'قضاء_لبنان', 'BDL', 'Riad_Salameh', 'Forensic_Audit', 'Fawry_Associates', 'Judiciary'],
+    excerpt: 'مصرف لبنان يفكك تركة الفساد المالي ويفتح ملفات الكبار من شركة فوري وقروض الإسكان وصولاً إلى قائمة الشهود والمحامين ومكتب Dechert.',
+    hashtags: ['BDL', 'Salameh', 'ForensicAudit', 'Fawry'],
+    views: 11240
   }
 ];
+
 
