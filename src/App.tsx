@@ -999,6 +999,10 @@ export default function App() {
     return searchFilteredArticles.filter(story => story.category === 'middle-east' || (story.categories && story.categories.includes('middle-east')));
   }, [searchFilteredArticles]);
 
+  const economyArticles = useMemo(() => {
+    return searchFilteredArticles.filter(story => story.category === 'economy' || (story.categories && story.categories.includes('economy')));
+  }, [searchFilteredArticles]);
+
   const marketsArticles = useMemo(() => {
     return searchFilteredArticles.filter(story => story.category === 'markets' || (story.categories && story.categories.includes('markets')));
   }, [searchFilteredArticles]);
@@ -1044,6 +1048,10 @@ export default function App() {
     return activeCategory === 'all' ? middleEastArticles.slice(0, 8) : middleEastArticles;
   }, [middleEastArticles, activeCategory]);
 
+  const displayedEconomy = useMemo(() => {
+    return activeCategory === 'all' ? economyArticles.slice(0, 8) : economyArticles;
+  }, [economyArticles, activeCategory]);
+
   const displayedMarkets = useMemo(() => {
     return activeCategory === 'all' ? marketsArticles.slice(0, 8) : marketsArticles;
   }, [marketsArticles, activeCategory]);
@@ -1065,7 +1073,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast';
 
   return (
     <div
@@ -2316,6 +2324,52 @@ export default function App() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
+            )}
+
+            {/* SECTION: THE ECONOMY (الاقتصاد) */}
+            {(activeCategory === 'all' || activeCategory === 'economy') && economyArticles.length > 0 && (
+              <section className="space-y-5" id="homepage-economy-section">
+                <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
+                  <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
+                    <TrendingUp size={18} className="text-black shrink-0" />
+                    <span>{isAr ? 'الملف الاقتصادي والمالي' : 'Geo-Economy & Finance'}</span>
+                  </h3>
+                  <span className="font-mono text-xxs font-bold text-zinc-500">
+                    {isAr ? `التقارير المالية والاستقصائية: ${economyArticles.length} تقارير` : `${economyArticles.length} Reports Filed`}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {displayedEconomy.map((story) => (
+                    <div key={story.id} className="break-inside-avoid">
+                      <ArticleCard
+                        article={story}
+                        layoutMode={layoutMode}
+                        language={language}
+                        variant="standard"
+                        onSelect={(article) => setSelectedArticle(article)}
+                        isSaved={savedArticleIds.includes(story.id)}
+                        onToggleSave={handleToggleSaveArticle}
+                        onTagClick={handleTagClick}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {activeCategory === 'all' && economyArticles.length > 0 && (
+                  <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
+                    <button
+                      onClick={() => {
+                        setActiveCategory('economy');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
+                    >
+                      <span>{isAr ? 'طالع كامل صفحات شؤون الاقتصاد ←' : 'Read More in The Economy →'}</span>
+                    </button>
+                  </div>
+                )}
+              </section>
             )}
 
             {/* CONDITIONAL SUB SECTIONS FOR MAIN PAGE (PINTEREST MASONRY GRID 4-IN-A-ROW) */}

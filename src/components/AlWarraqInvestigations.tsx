@@ -212,7 +212,7 @@ export default function AlWarraqInvestigations({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleCopyLink = () => {
-    const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`;
+    const shareUrl = `${window.location.origin}/?article=${selectedDossierId}`;
     navigator.clipboard.writeText(shareUrl).then(() => {
       setCopiedLink(true);
       setTimeout(() => setCopiedLink(false), 2000);
@@ -503,7 +503,7 @@ export default function AlWarraqInvestigations({
                   {/* Share QR */}
                   <button
                     onClick={() => {
-                      const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`;
+                      const shareUrl = `${window.location.origin}/?article=${article.id}`;
                       onOpenQrShare?.(shareUrl);
                     }}
                     className="px-2 py-0.5 bg-amber-600 hover:bg-amber-700 text-white font-bold transition-colors border border-amber-700 cursor-pointer rounded-none text-[9px]"
@@ -515,7 +515,7 @@ export default function AlWarraqInvestigations({
                   {/* Copy Link (CTO) */}
                   <button
                     onClick={() => {
-                      const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`;
+                      const shareUrl = `${window.location.origin}/?article=${article.id}`;
                       navigator.clipboard.writeText(shareUrl).then(() => {
                         setCopiedArticleId(article.id);
                         setTimeout(() => setCopiedArticleId(null), 2000);
@@ -533,7 +533,7 @@ export default function AlWarraqInvestigations({
 
                   {/* WhatsApp */}
                   <a
-                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تقرير استقصائي من ديوان تحريات الورّاق:\n\n' : 'Classified investigation dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`)}`}
+                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تقرير استقصائي من ديوان تحريات الورّاق:\n\n' : 'Classified investigation dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?article=${article.id}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-2 py-0.5 bg-emerald-700 hover:bg-emerald-850 text-white font-bold transition-colors uppercase rounded-none cursor-pointer text-[9px]"
@@ -914,7 +914,7 @@ export default function AlWarraqInvestigations({
                     <div className="flex flex-wrap items-center gap-2 justify-start md:justify-end">
                       {/* Twitter / X */}
                       <a
-                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(isAr ? activeDossier.titleAr : activeDossier.titleEn)}&url=${encodeURIComponent(`${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(isAr ? activeDossier.titleAr : activeDossier.titleEn)}&url=${encodeURIComponent(`${window.location.origin}/?article=${selectedDossierId}`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-2.5 py-1.5 bg-black hover:bg-zinc-850 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
@@ -926,7 +926,7 @@ export default function AlWarraqInvestigations({
 
                       {/* Facebook */}
                       <a
-                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${window.location.origin}/?article=${selectedDossierId}`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-2.5 py-1.5 bg-sky-900 hover:bg-sky-950 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
@@ -938,7 +938,7 @@ export default function AlWarraqInvestigations({
 
                       {/* LinkedIn */}
                       <a
-                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${window.location.origin}/?article=${selectedDossierId}`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-2.5 py-1.5 bg-zinc-850 hover:bg-black text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
@@ -950,7 +950,7 @@ export default function AlWarraqInvestigations({
 
                       {/* WhatsApp */}
                       <a
-                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'هذا مستند استقصائي مفرج عنه من الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? activeDossier.titleAr : activeDossier.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`)}`}
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'هذا مستند استقصائي مفرج عنه من الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? activeDossier.titleAr : activeDossier.titleEn}*\n\n👉 ${window.location.origin}/?article=${selectedDossierId}`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-2.5 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors"
@@ -963,7 +963,7 @@ export default function AlWarraqInvestigations({
                       {/* QR Share */}
                       <button
                         onClick={() => {
-                          const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`;
+                          const shareUrl = `${window.location.origin}/?article=${selectedDossierId}`;
                           onOpenQrShare?.(shareUrl);
                         }}
                         className="flex items-center gap-1 px-2.5 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors cursor-pointer border border-amber-600"

@@ -17,6 +17,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'videos', labelAr: 'فيديو الورّاق', labelEn: 'Al-Warraq Videos' },
   { id: 'podcast', labelAr: 'بودكاست الورّاق', labelEn: 'Al-Warraq Podcast' },
   { id: 'middle-east', labelAr: 'شؤون الشرق الأوسط', labelEn: 'Middle East Core' },
+  { id: 'economy', labelAr: 'الاقتصاد', labelEn: 'The Economy' },
   { id: 'markets', labelAr: 'أسواق المال', labelEn: 'Sovereign Markets' },
   { id: 'arab-markets', labelAr: 'الأسواق العربية', labelEn: 'Arab Markets Indicators' },
   { id: 'telecom-internet', labelAr: 'الاتصالات والإنترنت', labelEn: 'Telecom & Internet' },

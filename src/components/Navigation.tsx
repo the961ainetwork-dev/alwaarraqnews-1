@@ -86,6 +86,12 @@ const DESK_METADATA: Record<string, {
   },
 
   // Geo-Finance Desk
+  'economy': {
+    taglineAr: 'شؤون الاقتصاد',
+    taglineEn: 'Economic Focus',
+    subAr: 'دراسات النمو، سلاسل الإمداد، وحوكمة المال العام',
+    subEn: 'In-depth growth analysis, supply chains, and fiscal public audit'
+  },
   'markets': {
     taglineAr: 'سندات وسلع',
     taglineEn: 'Sovereign Debt & Goods',
@@ -278,6 +284,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       case 'lebanon': return <Anchor size={13} />;
       case 'instats': return <TrendingUp size={13} />;
       case 'middle-east': return <Landmark size={13} />;
+      case 'economy': return <TrendingUp size={13} />;
       case 'markets': return <BarChart2 size={13} />;
       case 'telecom-internet': return <Cpu size={13} />;
       case 'research-reports': return <BookOpen size={13} />;
@@ -303,7 +310,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'المال والاقتصاد',
       labelEn: 'Geo-Finance & Data',
       icon: <TrendingUp size={13} />,
-      tabIds: ['markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports'],
+      tabIds: ['economy', 'markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports'],
       descAr: 'مؤشرات التداول العربي وسندات الخزينة وسلاسل الإمداد ومؤشرات البيانات العقارية',
       descEn: 'Sovereign bond curves, GCC market indexes, subsea cables, and transactional land registries.'
     },
