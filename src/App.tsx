@@ -24,6 +24,7 @@ import AlWarraqInvestigations, { DOSSIER_DESKTOP_META } from './components/AlWar
 import { PrintableDossier } from './components/PrintableDossier';
 import AlWarraqVideos from './components/AlWarraqVideos';
 import { AlWarraqPodcast } from './components/AlWarraqPodcast';
+import { SaudiUaeFinancialChart } from './components/SaudiUaeFinancialChart';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
@@ -2355,6 +2356,11 @@ export default function App() {
                       />
                     </div>
                   ))}
+                </div>
+
+                {/* Saudi-UAE Financial Restrictions & Capital Flow Scrutiny Widget */}
+                <div className="my-6">
+                  <SaudiUaeFinancialChart language={language} layoutMode={layoutMode} />
                 </div>
 
                 {activeCategory === 'all' && economyArticles.length > 0 && (

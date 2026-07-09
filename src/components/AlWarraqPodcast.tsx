@@ -137,6 +137,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   const [volume, setVolume] = useState<number>(0.8);
   const [isMuted, setIsMuted] = useState(false);
   const [isSynthesizedHumOn, setIsSynthesizedHumOn] = useState(true);
+  const [isFallbackMode, setIsFallbackMode] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+    if (!window.speechSynthesis) return true;
+    return false;
+  });
 
   // Web Speech API Voice Settings
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -145,6 +150,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   // Waveform visualization bars
   const [waveHeights, setWaveHeights] = useState<number[]>(Array(36).fill(15));
   const waveTimerRef = useRef<number | null>(null);
+  const simulatedTimeoutRef = useRef<number | null>(null);
+  const fallbackTimeoutRef = useRef<number | null>(null);
 
   // Audio Context for Ambient Shortwave Hum & Beeps
   const audioCtxRef = useRef<AudioContext | null>(null);
@@ -367,6 +374,80 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
     };
   }, [isPlaying]);
 
+  // Simulated playback fallback for browsers/iframes blocking SpeechSynthesis API
+  const playSimulatedSegment = (idx: number, sentenceIdx: number = 0) => {
+    if (simulatedTimeoutRef.current) {
+      clearTimeout(simulatedTimeoutRef.current);
+    }
+    if (fallbackTimeoutRef.current) {
+      clearTimeout(fallbackTimeoutRef.current);
+      fallbackTimeoutRef.current = null;
+    }
+
+    if (idx < 0 || idx >= scriptRef.current.length) {
+      setIsPlaying(false);
+      isPlayingRef.current = false;
+      stopHum();
+      return;
+    }
+
+    const seg = scriptRef.current[idx];
+    if (!seg) return;
+
+    const sentences = splitIntoSentences(seg.text);
+    if (sentenceIdx < 0 || sentenceIdx >= sentences.length) {
+      // Transition to next segment
+      const nextIdx = idx + 1;
+      if (nextIdx < scriptRef.current.length) {
+        setCurrentIdx(nextIdx);
+        setCurrentSentenceIdx(0);
+        playSimulatedSegment(nextIdx, 0);
+      } else {
+        setIsPlaying(false);
+        isPlayingRef.current = false;
+        setCurrentIdx(0);
+        setCurrentSentenceIdx(0);
+        stopHum();
+      }
+      return;
+    }
+
+    setCurrentIdx(idx);
+    setCurrentSentenceIdx(sentenceIdx);
+    setIsPlaying(true);
+    isPlayingRef.current = true;
+
+    // Simulate reading duration based on character length
+    const sentenceText = sentences[sentenceIdx];
+    const duration = Math.max(3000, sentenceText.length * 55 * (1 / playbackSpeedRef.current));
+
+    // Web Audio data beep for shortwave radio atmosphere
+    try {
+      if (audioCtxRef.current && isSynthesizedHumOn && !isMutedRef.current) {
+        const ctx = audioCtxRef.current;
+        if (ctx.state === 'suspended') {
+          ctx.resume();
+        }
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(750, ctx.currentTime);
+        gain.gain.setValueAtTime(0.003 * volumeRef.current, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.12);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.15);
+      }
+    } catch (e) {}
+
+    simulatedTimeoutRef.current = window.setTimeout(() => {
+      if (isPlayingRef.current) {
+        playSimulatedSegment(idx, sentenceIdx + 1);
+      }
+    }, duration);
+  };
+
   // Handle Playback State (robust single-segment sequential sentence-by-sentence sequencer)
   const playCurrentSegment = (idx: number, sentenceIdx: number = 0) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
@@ -412,10 +493,29 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       return;
     }
 
+    // Set a startup timeout of 1.5 seconds. If the native browser TTS does not start speaking,
+    // we automatically fall back to simulated visual-acoustic read mode!
+    if (fallbackTimeoutRef.current) {
+      clearTimeout(fallbackTimeoutRef.current);
+    }
+    fallbackTimeoutRef.current = window.setTimeout(() => {
+      if (isPlayingRef.current) {
+        console.warn("Speech synthesis did not start within 1.5 seconds. Activating secure fallback player...");
+        setIsFallbackMode(true);
+        playSimulatedSegment(idx, sentenceIdx);
+      }
+    }, 1500);
+
     // Tiny delay to let the speech engine clear its queue before we speak
     setTimeout(() => {
       // If user stopped playing during this tiny timeout, do nothing
-      if (!isPlayingRef.current) return;
+      if (!isPlayingRef.current) {
+        if (fallbackTimeoutRef.current) {
+          clearTimeout(fallbackTimeoutRef.current);
+          fallbackTimeoutRef.current = null;
+        }
+        return;
+      }
 
       const sentenceText = sentences[sentenceIdx];
       const utterance = new SpeechSynthesisUtterance(sentenceText);
@@ -440,6 +540,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       utterance.volume = isMutedRef.current ? 0 : volumeRef.current;
 
       utterance.onstart = () => {
+        if (fallbackTimeoutRef.current) {
+          clearTimeout(fallbackTimeoutRef.current);
+          fallbackTimeoutRef.current = null;
+        }
         setCurrentIdx(idx);
         setCurrentSentenceIdx(sentenceIdx);
         setIsPlaying(true);
@@ -448,6 +552,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       };
 
       utterance.onend = () => {
+        if (fallbackTimeoutRef.current) {
+          clearTimeout(fallbackTimeoutRef.current);
+          fallbackTimeoutRef.current = null;
+        }
         (window as any)._activeUtterance = null;
         
         if (isPlayingRef.current) {
@@ -475,6 +583,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       };
 
       utterance.onerror = (e) => {
+        if (fallbackTimeoutRef.current) {
+          clearTimeout(fallbackTimeoutRef.current);
+          fallbackTimeoutRef.current = null;
+        }
         if (e.error === 'interrupted' || e.error === 'canceled') {
           return; // Normal cancellation or track switching, do not trigger error states
         }
@@ -509,12 +621,19 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   const handleTogglePlay = () => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) return;
-
     if (isPlaying) {
       isPlayingRef.current = false;
       setIsPlaying(false);
-      window.speechSynthesis.cancel();
+      if (simulatedTimeoutRef.current) {
+        clearTimeout(simulatedTimeoutRef.current);
+      }
+      if (fallbackTimeoutRef.current) {
+        clearTimeout(fallbackTimeoutRef.current);
+        fallbackTimeoutRef.current = null;
+      }
+      if (typeof window !== 'undefined' && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
       stopHum();
     } else {
       isPlayingRef.current = true;
@@ -537,13 +656,24 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
         }
       } catch (e) {}
 
-      playCurrentSegment(currentIdx, currentSentenceIdx);
+      if (isFallbackMode || typeof window === 'undefined' || !window.speechSynthesis) {
+        playSimulatedSegment(currentIdx, currentSentenceIdx);
+      } else {
+        playCurrentSegment(currentIdx, currentSentenceIdx);
+      }
     }
   };
 
   const handleReset = () => {
     isPlayingRef.current = false;
     setIsPlaying(false);
+    if (simulatedTimeoutRef.current) {
+      clearTimeout(simulatedTimeoutRef.current);
+    }
+    if (fallbackTimeoutRef.current) {
+      clearTimeout(fallbackTimeoutRef.current);
+      fallbackTimeoutRef.current = null;
+    }
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       if (utteranceRef.current) {
         utteranceRef.current.onend = null;
@@ -558,17 +688,32 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   const handleSelectSegment = (idx: number) => {
-    // Switching to a different story: prevents playback interruption and plays seamlessly!
+    if (simulatedTimeoutRef.current) {
+      clearTimeout(simulatedTimeoutRef.current);
+    }
+    if (fallbackTimeoutRef.current) {
+      clearTimeout(fallbackTimeoutRef.current);
+      fallbackTimeoutRef.current = null;
+    }
     setCurrentIdx(idx);
     setCurrentSentenceIdx(0);
     isPlayingRef.current = true;
     setIsPlaying(true);
-    playCurrentSegment(idx, 0);
+    if (isFallbackMode || typeof window === 'undefined' || !window.speechSynthesis) {
+      playSimulatedSegment(idx, 0);
+    } else {
+      playCurrentSegment(idx, 0);
+    }
   };
 
   const handlePlayAll = () => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) return;
-    
+    if (simulatedTimeoutRef.current) {
+      clearTimeout(simulatedTimeoutRef.current);
+    }
+    if (fallbackTimeoutRef.current) {
+      clearTimeout(fallbackTimeoutRef.current);
+      fallbackTimeoutRef.current = null;
+    }
     // Reset to index 0 and start sequence playing
     setCurrentIdx(0);
     setCurrentSentenceIdx(0);
@@ -593,12 +738,22 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       }
     } catch (e) {}
 
-    playCurrentSegment(0, 0);
+    if (isFallbackMode || typeof window === 'undefined' || !window.speechSynthesis) {
+      playSimulatedSegment(0, 0);
+    } else {
+      playCurrentSegment(0, 0);
+    }
   };
 
   // Clean speech synthesis on unmount
   useEffect(() => {
     return () => {
+      if (simulatedTimeoutRef.current) {
+        clearTimeout(simulatedTimeoutRef.current);
+      }
+      if (fallbackTimeoutRef.current) {
+        clearTimeout(fallbackTimeoutRef.current);
+      }
       if (typeof window !== 'undefined' && window.speechSynthesis) {
         if (utteranceRef.current) {
           utteranceRef.current.onend = null;
@@ -641,6 +796,11 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       
       {/* Absolute FM Broadcast / Studio Indicators */}
       <div className={`absolute top-4 ${isAr ? 'left-6' : 'right-6'} flex items-center gap-4 font-['Cairo'] text-lg font-black tracking-wider text-white`}>
+        {isFallbackMode && (
+          <span className="bg-amber-950/80 border border-amber-600 px-3.5 py-1.5 rounded text-base text-amber-400 uppercase font-bold tracking-wider animate-pulse">
+            {isAr ? 'بث محاكي' : 'SIMULATED STREAM'}
+          </span>
+        )}
         <span className="flex items-center gap-2 bg-zinc-900 border border-zinc-700 px-3.5 py-1.5 rounded text-amber-400 text-lg">
           <Radio size={14} className="animate-pulse" />
           <span>96.5 FM BROADCAST</span>
@@ -793,6 +953,38 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
               </div>
             )}
 
+            {/* Stream Mode selector */}
+            <div className="flex justify-between items-center pt-2 border-t border-zinc-900 text-lg">
+              <span className="text-white">{isAr ? 'قناة البث الصوتي:' : 'Broadcast Channel:'}</span>
+              <button
+                onClick={() => {
+                  const newMode = !isFallbackMode;
+                  setIsFallbackMode(newMode);
+                  if (isPlaying) {
+                    // Reset and replay in the new mode
+                    if (simulatedTimeoutRef.current) {
+                      clearTimeout(simulatedTimeoutRef.current);
+                    }
+                    if (typeof window !== 'undefined' && window.speechSynthesis) {
+                      window.speechSynthesis.cancel();
+                    }
+                    setTimeout(() => {
+                      if (newMode) {
+                        playSimulatedSegment(currentIdx, currentSentenceIdx);
+                      } else {
+                        playCurrentSegment(currentIdx, currentSentenceIdx);
+                      }
+                    }, 100);
+                  }
+                }}
+                className={`px-3.5 py-2 border text-base font-bold cursor-pointer rounded transition-all ${
+                  !isFallbackMode ? 'bg-emerald-950 text-emerald-400 border-emerald-600' : 'bg-amber-950 text-amber-400 border-amber-600'
+                }`}
+              >
+                {!isFallbackMode ? (isAr ? 'قراءة آلية (TTS)' : 'System Voice (TTS)') : (isAr ? 'محاكاة لاسلكية' : 'Shortwave Simulation')}
+              </button>
+            </div>
+
             {/* Ambient Noise / shortwave Hum switch */}
             <div className="flex justify-between items-center pt-2 border-t border-zinc-900 text-lg">
               <span className="text-white">{isAr ? 'محاكاة همس التردد اللاسلكي السلبي:' : 'Simulated Shortwave Carrier Hum:'}</span>
@@ -860,6 +1052,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
             {script.map((seg, idx) => {
               const isActive = idx === currentIdx;
+              const sentences = splitIntoSentences(seg.text);
               return (
                 <div
                   key={idx}
@@ -881,8 +1074,24 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                       {seg.title}
                     </h4>
                   </div>
-                  <p className={`text-xl md:text-2xl font-['Cairo'] leading-relaxed transition-all ${isActive ? 'text-white font-medium' : 'text-white'}`}>
-                    {seg.text}
+                  <p className="text-xl md:text-2xl font-['Cairo'] leading-relaxed transition-all">
+                    {sentences.map((sentence, sIdx) => {
+                      const isSentenceActive = isActive && sIdx === currentSentenceIdx;
+                      return (
+                        <span
+                          key={sIdx}
+                          className={`transition-all duration-300 mx-0.5 inline ${
+                            isSentenceActive
+                              ? 'text-amber-400 font-bold underline decoration-amber-500/50 underline-offset-4 bg-amber-500/10 px-1 rounded'
+                              : isActive
+                                ? 'text-zinc-200 font-normal'
+                                : 'text-zinc-400'
+                          }`}
+                        >
+                          {sentence}{' '}
+                        </span>
+                      );
+                    })}
                   </p>
 
                   {/* Integrated Story-Specific Actions (WhatsApp Share + Call to Action Buttons) */}
