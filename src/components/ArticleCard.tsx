@@ -14,6 +14,7 @@ interface ArticleCardProps {
   isSaved?: boolean;
   onToggleSave?: (article: Article, e: React.MouseEvent) => void;
   onTagClick?: (tag: string, e: React.MouseEvent) => void;
+  hideImage?: boolean;
 }
 
 export default function ArticleCard({
@@ -26,6 +27,7 @@ export default function ArticleCard({
   isSaved = false,
   onToggleSave,
   onTagClick,
+  hideImage = false,
 }: ArticleCardProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
@@ -312,7 +314,7 @@ export default function ArticleCard({
         }`}
       >
         <div className="flex flex-col lg:flex-row gap-6">
-          {!isInvestigative && (
+          {!isInvestigative && !hideImage && (
             <div className="lg:w-7/12 relative overflow-hidden">
               <img
                 src={article.imageUrl}
@@ -342,7 +344,7 @@ export default function ArticleCard({
             </div>
           )}
 
-          <div className={`${isInvestigative ? 'lg:w-full' : 'lg:w-5/12'} flex flex-col justify-center px-2 lg:px-0`}>
+          <div className={`${(isInvestigative || hideImage) ? 'lg:w-full' : 'lg:w-5/12'} flex flex-col justify-center px-2 lg:px-0`}>
             <div className="flex items-center gap-2 text-[10px] text-zinc-500 mb-3 font-sans font-bold uppercase">
               {article.category !== 'editor-desk' && (
                 <>
@@ -428,7 +430,7 @@ export default function ArticleCard({
             : 'bg-white rounded-md border-2 border-black h-full hover:bg-zinc-50'
         }`}
       >
-        {!isInvestigative && (
+        {!isInvestigative && !hideImage && (
           <div className="relative overflow-hidden aspect-video border-b border-black">
             <img
               src={article.imageUrl}

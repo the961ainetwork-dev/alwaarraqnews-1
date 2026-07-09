@@ -2351,6 +2351,7 @@ export default function App() {
                         isSaved={savedArticleIds.includes(story.id)}
                         onToggleSave={handleToggleSaveArticle}
                         onTagClick={handleTagClick}
+                        hideImage={true}
                       />
                     </div>
                   ))}
@@ -2404,6 +2405,7 @@ export default function App() {
                         isSaved={savedArticleIds.includes(fifaFeature.id)}
                         onToggleSave={handleToggleSaveArticle}
                         onTagClick={handleTagClick}
+                        hideImage={activeCategory === 'all'}
                       />
                     </div>
                   );
@@ -2424,6 +2426,7 @@ export default function App() {
                           isSaved={savedArticleIds.includes(story.id)}
                           onToggleSave={handleToggleSaveArticle}
                           onTagClick={handleTagClick}
+                          hideImage={activeCategory === 'all'}
                         />
                       </div>
                     ))}

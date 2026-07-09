@@ -962,6 +962,117 @@ Should these transactional frictions persist without direct political settlement
     excerpt: 'تحقيق استقصائي حول الاضطرابات المالية الأخيرة والقيود المصرفية غير المعلنة المفروضة على الحسابات والشركات الإماراتية في السعودية والتحويلات البينية لعام ٢٠٢٦.',
     hashtags: ['SaudiUAE', 'FinancialRestrictions', 'SAMA', 'CapitalScrutiny'],
     views: 12800
+  },
+  {
+    id: 'strait-of-hormuz-oil-flow-2026',
+    category: 'economy',
+    categories: ['economy', 'markets', 'arab-markets'],
+    titleAr: 'عودة النبض إلى شريان العالم: كيف تتدفق دماء النفط عبر هرمز رغم أنف الحرب',
+    titleEn: 'The Great Oil Reboot: How Gulf Crude Defies War in the Strait of Hormuz',
+    summaryAr: `في خضم الدخان المتصاعد من مياه الخليج، وتحت سماء ملبدة بغيوم صراع جيوسياسي محتدم، تتدفق شحنات النفط عبر هرمز بوتيرة أسرع من كل التوقعات، كاشفةً عن خطة طوارئ خليجية قلبت موازين اللعبة من خلال دمج الأساطيل الوطنية والاعتماد على أنابيب التجاوز الاستراتيجية والتعاون الإقليمي غير المسبوق بقيادة أدنوك.`,
+    summaryEn: `Amid rising geopolitical smoke and elevated maritime security threat levels in the Gulf, crude oil shipments are transiting the Strait of Hormuz faster than ever, defying war logic. A bold emergency strategy by GCC producers using sovereign fleets, ADCOP bypass pipelines, and ADNOC's regional logistics has turned the chokepoint into a resilient, sovereign bridge.`,
+    excerptAr: 'قصة "إعادة التشغيل الكبرى" للنفط التي تُكتب في صمت على سطح الماء، وكيف تقود عواصم الخليج براغماتية ملاحية مرنة في مواجهة طبول الحرب والتهديد الأمني ومستوى المخاطر.',
+    excerptEn: 'The untold story of the "Great Oil Reboot" on the water, showing how Gulf producers are leveraging sovereign fleets and strategic pipelines to bypass maritime war risk.',
+    contentAr: `### عودة النبض إلى شريان العالم: كيف تتدفق دماء النفط عبر هرمز رغم أنف الحرب
+
+**تاريخ التقرير:** 9 يوليو 2026  
+**الموضوع:** اللوجستيات السيادية، آليات التجاوز، والتنسيق البحري الخليجي في مضيق هرمز.
+
+---
+
+### فخ الموت المزعوم
+
+في خضم الدخان المتصاعد من مياه الخليج، وتحت سماء ملبدة بغيوم صراع جيوسياسي محتدم، يبدو مضيق هرمز من الخارج وكأنه فخ موت محكم. التحذيرات الملاحية تومض باللون الأحمر، ومستوى التهديد الأمني رُفع مؤخراً إلى درجة "شديد الخطورة" بعد استهداف ناقلات تجارية. الشركات العالمية الكبرى تتردد، وقباطنة السفن يحسبون ألف حساب قبل دخول هذا الممر الضيق الذي يبلغ عرضه 21 ميلاً فقط.
+
+لكن بعيداً عن عناوين الرعب والشاشات الإخبارية المشتعلة، هناك قصة أخرى تُكتب في صمت على سطح الماء: "إعادة التشغيل الكبرى" للنفط قد بدأت بالفعل. وبطريقة تتحدى منطق الحرب، تتدفق شحنات النفط عبر هرمز بوتيرة أسرع من كل التوقعات، كاشفةً عن خطة طوارئ خليجية قلبت موازين اللعبة.
+
+---
+
+### أساطيل السيادة: كسر احتكار الخوف
+
+عندما بدأ الصراع في التهام ضمانات الأمن الملاحي، راهن الكثيرون على أن شريان الطاقة العالمي سيُصاب بجلطة قاتلة، تماماً كما حدث خلال فترات الإغلاق السابقة التي حجبت ملايين البراميل عن الأسواق. لكن ما لم يحسب له أحد حساباً هو الاستراتيجية الجريئة التي اتخذتها الدول الخليجية المنتجة.
+
+لم تقف السعودية والإمارات والكويت مكتوفة الأيدي في انتظار شركات الشحن الغربية لتقييم المخاطر. بدلاً من ذلك، قررت هذه الدول أخذ زمام المبادرة عبر نشر أساطيلها الوطنية الخاصة. تحركت ناقلات النفط العملاقة التي ترفع أعلام هذه الدول، مدعومةً بتنسيق أمني وعسكري عالي المستوى، لتشق عباب مياه المضيق.
+
+لقد خلقت هذه الخطوة واقعاً جديداً؛ فالاعتماد على الشركات الوطنية للشحن أزال طبقة التردد التي تفرضها شركات التأمين الأجنبية، ومكن هذه الدول من فرض إيقاعها الخاص على حركة الصادرات، محولةً المضيق من نقطة اختناق إلى جسرٍ يُدار بإرادة سيادية.
+
+---
+
+### "أدنوك" كقائد أوركسترا إقليمي
+
+في قلب هذه الحركة الدؤوبة، برزت شركة بترول أبوظبي الوطنية (أدنوك) ليس فقط كمنقذ لصادراتها، بل كمايسترو لوجستي للمنطقة بأسرها. فقد سجلت الصادرات الإماراتية من النفط الخام أرقاماً قياسية تخطت حاجز 3.5 مليون برميل يومياً في شهر يونيو.
+
+لكن المفاجأة الكبرى تكمن في الدور الإقليمي الذي تلعبه أدنوك في الخفاء. لتجاوز العقدة اللوجستية التي خنقت جيرانها، فتحت الشركة أبواب بنيتها التحتية العملاقة لتسهيل خروج النفط والغاز من دول الجوار:
+
+1. **طوق النجاة للعراق وقطر:** تعمل أدنوك بمرونة عالية لتسهيل شحن البراميل لصالح شركة تسويق النفط العراقية (سومو)، بينما تقدم حلولاً لوجستية ومسارات بديلة للغاز الطبيعي المسال القطري الذي واجهت ناقلاته تعقيدات شديدة في عبور المضيق.
+2. **مناورات مرنة وخيارات تسليم مبتكرة:** لمواجهة خطر الإغلاق، قدمت أدنوك للمشترين الآسيويين طيفاً من الخيارات، بدءاً من تحميل الشحنات داخل المضيق من جزيرتي "زركوه" و"داس" لمن يمتلكون الجرأة، وصولاً إلى التسليم في ميناء الفجيرة، الذي يقع بأمان خارج المضيق ويُغذى مباشرة عبر خط أنابيب "أدكوب" (ADCOP) القادر على ضخ 1.5 مليون برميل يومياً متجاوزاً هرمز بالكامل.
+
+---
+
+### عهد جديد لإدارة الأزمات
+
+لقد أثبتت الأسابيع القليلة الماضية أن جغرافيا مضيق هرمز قد تكون محكومة بنيران الجغرافيا السياسية، لكن تدفق النفط عبره تحكمه الآن براغماتية بحرية هندستها عواصم الخليج. من خلال دمج الأساطيل الوطنية، والاعتماد على أنابيب التجاوز الاستراتيجية، والتعاون الإقليمي غير المسبوق، تحولت "إعادة التشغيل الكبرى" من مجرد رد فعل مؤقت إلى هيكل جديد ومستدام لإدارة أزمات الطاقة.
+
+إنها رسالة واضحة يكتبها النفط على صفحة الماء: العالم لن يتوقف، وشريان هرمز سيجد دائماً طريقة لينبض.`,
+    contentEn: `### The Great Oil Reboot: How Gulf Crude Defies War in the Strait of Hormuz
+
+**Date:** July 9, 2026  
+**Subject:** Sovereign logistics, bypass mechanisms, and GCC naval coordination in the Strait of Hormuz.
+
+---
+
+### The Alleged Death Trap
+
+In the midst of smoke rising from Gulf waters, and under skies clouded by an escalating geopolitical struggle, the Strait of Hormuz outwardly resembles a perfect death trap. Shipping warnings flash crimson, and security threat levels have recently been upgraded to "Severe Risk" following attacks on commercial tankers. Global insurance conglomerates hesitate, and sea captains meticulously recalculate risk before venturing into this narrow, 21-mile-wide passage.
+
+But far from the horror headlines and burning television screens, another story is being written in silence on the water's surface: "The Great Oil Reboot" has already begun. In a manner that defies the conventional logic of war, crude shipments are transiting Hormuz at a faster pace than even the most optimistic forecasts suggested, revealing a bold Gulf emergency blueprint that has quietly flipped the chessboard.
+
+---
+
+### Sovereign Fleets: Shattering the Monopoly of Fear
+
+When conflict began eroding traditional maritime security guarantees, many market analysts bet that the global energy artery would suffer a fatal blockage—reminiscent of past shutdowns that held millions of barrels hostage. But what they failed to anticipate was the aggressive, sovereign strategy adopted by Gulf producing nations.
+
+Saudi Arabia, the United Arab Emirates, and Kuwait did not wait for Western shipping conglomerates to evaluate risk metrics. Instead, they seized the initiative by deploying their own national fleets. Megatankers flying sovereign Gulf flags, backed by high-level military and intelligence security coordination, sliced through the tense waters of the Strait.
+
+This decisive pivot established a new reality: relying on national shipping entities completely bypassed the hesitation layers typically imposed by foreign insurers, enabling GCC capitals to dictate their own export cadences and transforming a historical chokepoint into a tightly-managed sovereign bridge.
+
+---
+
+### ADNOC as a Regional Logistics Conductor
+
+At the heart of this tireless movement, Abu Dhabi National Oil Company (ADNOC) has emerged not just as a protector of its own exports, but as a strategic logistical orchestrator for the entire region. UAE crude exports registered record numbers in June, exceeding 3.5 million barrels per day.
+
+But the real revelation lies in the regional role ADNOC is playing behind closed doors. To bypass logistical bottlenecks choking neighboring producers, ADNOC has opened its state-of-the-art infrastructure to streamline the export of oil and gas from adjacent countries:
+
+1. **Life Support for Iraq and Qatar:** ADNOC is operating with unprecedented flexibility to facilitate shipments for Iraq's State Organization for Marketing of Oil (SOMO), while offering innovative logistical solutions and alternative routes for Qatari LNG tankers that faced severe transit complications.
+2. **Flexible Maneuvers & Delivery Options:** To mitigate total closure risks, ADNOC provided Asian buyers with a diverse spectrum of options—ranging from deep-strait loadings at Zarkaw and Das islands for the daring, to deliveries at the Port of Fujairah, located safely outside the Strait and fed directly by the 1.5 million barrel-per-day ADCOP bypass pipeline.
+
+---
+
+### A New Era of Crisis Management
+
+Recent weeks have proved that while the geography of the Strait of Hormuz may be captive to geopolitical crossfire, the actual flow of crude remains governed by maritime pragmatism engineered in Gulf capitals. By merging national fleets, leveraging strategic bypass corridors, and executing unprecedented regional cooperation, the "Great Oil Reboot" has evolved from a temporary crisis reflex into a permanent, highly resilient architecture for managing global energy supply.
+
+The message written by crude oil on the water is unmistakable: the world will not stop, and the artery of Hormuz will always find a way to beat.`,
+    author: {
+      nameAr: 'ديوان الورّاق',
+      nameEn: 'Al-Warraq Desk',
+      titleAr: 'مكتب التحقيقات الاقتصادية والسياسية',
+      titleEn: 'Sovereign Energy & Intelligence Unit',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-09',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['مضيق_هرمز', 'أدنوك', 'صادرات_النفط', 'خط_أدكوب', 'الخليج_العربي', 'أمن_الطاقة', 'Hormuz', 'ADNOC', 'Oil_Exports', 'ADCOP', 'Energy_Security', 'GCC'],
+    excerpt: 'قصة "إعادة التشغيل الكبرى" للنفط التي تُكتب في صمت على سطح الماء، وكيف تقود عواصم الخليج براغماتية ملاحية مرنة في مواجهة طبول الحرب والتهديد الأمني ومستوى المخاطر.',
+    hashtags: ['Hormuz', 'ADNOC', 'EnergySecurity', 'OilFlow'],
+    views: 14520
   }
 ];
 
