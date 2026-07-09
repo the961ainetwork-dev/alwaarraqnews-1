@@ -40,7 +40,8 @@ import {
   Download,
   Facebook,
   Twitter,
-  Linkedin
+  Linkedin,
+  QrCode
 } from 'lucide-react';
 import { Article } from '../types';
 
@@ -159,10 +160,10 @@ export const DOSSIER_DESKTOP_META: Record<string, {
   'bdl-versus-salameh-2026': {
     fileId: 'AW-FILE-12',
     badge: 'CENTRAL BANK CONTROVERSY',
-    titleAr: 'الملف الثاني عشر: مصرف لبنان في مواجهة آل سلامة والتدقيق الجنائي',
-    titleEn: 'Dossier XII: Banque du Liban vs. Salameh & Forensic Audit',
+    titleAr: 'الملف الثاني عشر: مصرف لبنان في مواجهة سلامة (Banque du Liban versus Salameh)',
+    titleEn: 'Dossier XII: Banque du Liban versus Salameh',
     descAr: 'تحقيق استثنائي شامل يكشف حراك مصرف لبنان القضائي والرقابي لتصفية تركة العقود الماضية ومكافحة الفساد ومطاردة الحاكم السابق.',
-    descEn: 'An intensive study on BDL\'s legal and audit actions, featuring the Alvarez & Marsal audit and the high-profile legal witness register.'
+    descEn: 'An intensive study on Banque du Liban’s legal and audit actions, featuring the Alvarez & Marsal audit and the high-profile legal witness register.'
   }
 };
 
@@ -175,6 +176,7 @@ interface AlWarraqInvestigationsProps {
   currentUser?: any;
   isHomeDemoUser?: boolean;
   onNavigateToPremium?: () => void;
+  onOpenQrShare?: (url: string) => void;
 }
 
 export default function AlWarraqInvestigations({
@@ -185,7 +187,8 @@ export default function AlWarraqInvestigations({
   onSelectDossier,
   currentUser,
   isHomeDemoUser,
-  onNavigateToPremium
+  onNavigateToPremium,
+  onOpenQrShare
 }: AlWarraqInvestigationsProps) {
   const isAr = language === 'ar';
   
@@ -205,6 +208,7 @@ export default function AlWarraqInvestigations({
   const [isPlayingContent, setIsPlayingContent] = useState(false);
   const [speechRate, setSpeechRate] = useState<number>(1.0);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [copiedArticleId, setCopiedArticleId] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleCopyLink = () => {
@@ -491,34 +495,52 @@ export default function AlWarraqInvestigations({
 
               {/* Share, WhatsApp, and PDF buttons */}
               <div 
-                className="mt-2 pt-2 border-t border-zinc-200 flex items-center justify-between gap-2 text-xxs font-mono"
+                className="mt-2 pt-2 border-t border-zinc-200 flex items-center justify-between gap-2 text-[10px] font-mono"
                 onClick={(e) => e.stopPropagation()}
               >
-                <span className="text-[10px] text-zinc-400 font-bold">{isAr ? 'روابط بث سريعة:' : 'QUICK TRANSMIT:'}</span>
-                <div className="flex items-center gap-1.5">
+                <span className="text-[10px] text-zinc-400 font-black">{isAr ? 'روابط بث سريعة:' : 'QUICK TRANSMIT:'}</span>
+                <div className="flex items-center gap-1">
+                  {/* Share QR */}
+                  <button
+                    onClick={() => {
+                      const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`;
+                      onOpenQrShare?.(shareUrl);
+                    }}
+                    className="px-2 py-0.5 bg-amber-600 hover:bg-amber-700 text-white font-bold transition-colors border border-amber-700 cursor-pointer rounded-none text-[9px]"
+                    title={isAr ? 'مشاركة عبر رمز QR' : 'Share via QR Code'}
+                  >
+                    {isAr ? 'مشاركة' : 'SHARE'}
+                  </button>
+
+                  {/* Copy Link (CTO) */}
+                  <button
+                    onClick={() => {
+                      const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`;
+                      navigator.clipboard.writeText(shareUrl).then(() => {
+                        setCopiedArticleId(article.id);
+                        setTimeout(() => setCopiedArticleId(null), 2000);
+                      });
+                    }}
+                    className={`px-2 py-0.5 font-bold transition-all border cursor-pointer rounded-none text-[9px] ${
+                      copiedArticleId === article.id 
+                        ? 'bg-emerald-700 border-emerald-700 text-white' 
+                        : 'bg-zinc-800 border-black hover:bg-black text-white'
+                    }`}
+                    title={isAr ? 'نسخ الرابط المباشر للمستند' : 'Copy direct link to document'}
+                  >
+                    {copiedArticleId === article.id ? (isAr ? 'تم!' : 'COPIED') : (isAr ? 'نسخ' : 'LINK')}
+                  </button>
+
                   {/* WhatsApp */}
                   <a
                     href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تقرير استقصائي من ديوان تحريات الورّاق:\n\n' : 'Classified investigation dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2 py-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold transition-colors uppercase rounded-none cursor-pointer"
+                    className="px-2 py-0.5 bg-emerald-700 hover:bg-emerald-850 text-white font-bold transition-colors uppercase rounded-none cursor-pointer text-[9px]"
                     title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
                   >
                     WA
                   </a>
-
-                  {/* Copy Link */}
-                  <button
-                    onClick={() => {
-                      const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${article.id}`;
-                      navigator.clipboard.writeText(shareUrl).then(() => {
-                        alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
-                      });
-                    }}
-                    className="px-2 py-1 bg-zinc-800 hover:bg-black text-white font-bold transition-colors border border-black cursor-pointer rounded-none"
-                  >
-                    LINK
-                  </button>
 
                   {/* PDF Download */}
                   <button
@@ -528,7 +550,7 @@ export default function AlWarraqInvestigations({
                         window.print();
                       }, 300);
                     }}
-                    className="px-2 py-1 bg-red-900 hover:bg-red-950 text-white font-bold transition-colors border border-red-950 cursor-pointer rounded-none"
+                    className="px-2 py-0.5 bg-red-900 hover:bg-red-950 text-white font-bold transition-colors border border-red-950 cursor-pointer rounded-none text-[9px]"
                     title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
                   >
                     PDF
@@ -937,6 +959,19 @@ export default function AlWarraqInvestigations({
                         <Send size={10} />
                         <span>WHATSAPP</span>
                       </a>
+
+                      {/* QR Share */}
+                      <button
+                        onClick={() => {
+                          const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${selectedDossierId}`;
+                          onOpenQrShare?.(shareUrl);
+                        }}
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-none text-[10px] font-mono font-bold uppercase transition-colors cursor-pointer border border-amber-600"
+                        title={isAr ? 'مشاركة عبر رمز الاستجابة السريعة' : 'Share via QR Code'}
+                      >
+                        <QrCode size={10} />
+                        <span>QR SHARE</span>
+                      </button>
 
                       {/* Copy Link */}
                       <button

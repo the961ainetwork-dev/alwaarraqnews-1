@@ -116,6 +116,10 @@ export default function App() {
   const [layoutMode, setLayoutMode] = useState<LayoutMode>(() => siteDesign.layoutMode);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>(() => {
+    const params = new URLSearchParams(window.location.search);
+    const catParam = params.get('category');
+    if (catParam) return catParam;
+
     const rawPath = window.location.pathname || '/';
     const cleanPath = rawPath.toLowerCase().replace(/^\/|\/$/g, '');
     if (cleanPath === 'admin') {
@@ -146,10 +150,19 @@ export default function App() {
     }
   };
   const [isGeneratorOpen, setIsGeneratorOpen] = useState(false);
-  const [selectedDossierId, setSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
+  const [selectedDossierId, setSelectedDossierId] = useState<string>(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('dossier') || 'lebanon-framework-agreement-analysis-2026';
+  });
   const [isPrintingDossier, setIsPrintingDossier] = useState(false);
   const [previewDossierId, setPreviewDossierId] = useState<string | null>(null);
   const [showQrOverlay, setShowQrOverlay] = useState(false);
+  const [qrShareUrl, setQrShareUrl] = useState<string>(() => {
+    const params = new URLSearchParams(window.location.search);
+    const dossierId = params.get('dossier') || 'lebanon-framework-agreement-analysis-2026';
+    const category = params.get('category') || 'alwarraq-investigations';
+    return `${window.location.origin}/?category=${category}&dossier=${dossierId}`;
+  });
   
   // Persistent States
   const [allArticles, setAllArticles] = useState<Article[]>(() => {
@@ -692,6 +705,42 @@ export default function App() {
     }
   }, [activeCategory]);
 
+  // Synchronize activeCategory and selectedDossierId to query parameters in real-time
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    let changed = false;
+
+    if (activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room') {
+      if (params.get('category') !== activeCategory) {
+        params.set('category', activeCategory);
+        changed = true;
+      }
+      if (params.get('dossier') !== selectedDossierId) {
+        params.set('dossier', selectedDossierId);
+        changed = true;
+      }
+    } else {
+      if (params.has('category')) {
+        params.delete('category');
+        changed = true;
+      }
+      if (params.has('dossier')) {
+        params.delete('dossier');
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      const newSearch = params.toString();
+      const suffix = newSearch ? `?${newSearch}` : '';
+      try {
+        window.history.replaceState(null, '', window.location.pathname + suffix);
+      } catch (e) {
+        console.warn("History replaceState bypassed:", e);
+      }
+    }
+  }, [activeCategory, selectedDossierId]);
+
   // Use a ref for allArticles to avoid re-triggering this effect when articles list changes
   const allArticlesRef = React.useRef(allArticles);
   useEffect(() => {
@@ -1175,6 +1224,10 @@ export default function App() {
                   setActiveCategory('premium-pricing');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
+                onOpenQrShare={(url) => {
+                  setQrShareUrl(url);
+                  setShowQrOverlay(true);
+                }}
               />
             ) : activeCategory === 'videos' ? (
               <AlWarraqVideos
@@ -1190,6 +1243,12 @@ export default function App() {
               <WarRoom
                 language={language}
                 layoutMode={layoutMode}
+                selectedDossierId={selectedDossierId}
+                onSelectDossier={setSelectedDossierId}
+                onOpenQrShare={(url) => {
+                  setQrShareUrl(url);
+                  setShowQrOverlay(true);
+                }}
               />
             ) : activeCategory === 'press-releases' ? (
               <PressReleases
@@ -1784,8 +1843,19 @@ export default function App() {
                     {/* Left Column (8/12) - Vertical News Menu Layout */}
                     <div className="lg:col-span-8 w-full">
                       <section className="relative overflow-hidden border-4 border-double border-black p-4 bg-white" id="home-vertical-news-hero">
+                        {/* Share Button in Top-Right Corner */}
+                        <button
+                          onClick={() => setShowQrOverlay(true)}
+                          className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1 bg-black hover:bg-zinc-800 text-white text-[10px] font-mono font-black py-1 px-1.5 md:py-1.5 md:px-2.5 border border-black uppercase tracking-wider transition-all cursor-pointer select-none active:translate-y-0.5"
+                          title={isAr ? 'مشاركة عبر رمز الاستجابة السريعة' : 'Share via QR Code'}
+                          id="home-hero-share-btn"
+                        >
+                          <Share2 size={12} className="text-amber-400" />
+                          <span className="hidden sm:inline">{isAr ? 'مشاركة' : 'SHARE'}</span>
+                        </button>
+
                         {/* Section header indicator */}
-                        <div className="flex justify-between items-center pb-2.5 mb-4 border-b border-zinc-200">
+                        <div className="flex justify-between items-center pb-2.5 mb-4 border-b border-zinc-200 pr-12 sm:pr-24">
                           <div className="flex items-center gap-2">
                             <span className="w-2.5 h-2.5 bg-red-950 rounded-none inline-block animate-pulse"></span>
                             <span className="font-mono text-xxs tracking-widest font-black uppercase">
@@ -3307,7 +3377,7 @@ export default function App() {
               {/* QR Code Container */}
               <div className="bg-white p-3 inline-block rounded border-2 border-zinc-800 shadow-md">
                 <QRCodeSVG 
-                  value={window.location.origin} 
+                  value={qrShareUrl} 
                   size={160}
                   level="M"
                   includeMargin={true}
@@ -3316,7 +3386,7 @@ export default function App() {
 
               {/* URL Display */}
               <div className="bg-zinc-900 p-2 border border-zinc-800 rounded font-mono text-[9px] text-zinc-300 break-all select-all flex items-center justify-between gap-1">
-                <span>{window.location.origin}</span>
+                <span>{qrShareUrl}</span>
                 <span className="text-[8px] text-amber-500 font-bold uppercase">{isAr ? 'رابط' : 'LINK'}</span>
               </div>
 

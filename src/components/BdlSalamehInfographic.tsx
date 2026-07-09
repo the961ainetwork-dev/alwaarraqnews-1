@@ -239,7 +239,7 @@ export const BdlSalamehInfographic: React.FC<BdlSalamehInfographicProps> = ({ la
               : 'bg-white text-zinc-800 border-zinc-300 hover:bg-stone-50'
           }`}
         >
-          📁 {isAr ? '١. انتفاضة الحسابات وتصفية الإرث' : '1. The Account Uprising & Audits'}
+          📁 {isAr ? 'انتفاضة الحسابات: كيف يفكك "مصرف لبنان" تركة الفساد المالي؟' : '1. Account Uprising: Deconstructing Financial Corruption'}
         </button>
         <button
           onClick={() => setActiveMainTab('scrutiny')}
@@ -249,7 +249,7 @@ export const BdlSalamehInfographic: React.FC<BdlSalamehInfographicProps> = ({ la
               : 'bg-white text-zinc-800 border-zinc-300 hover:bg-stone-50'
           }`}
         >
-          ⚖ {isAr ? '٢. الملاحقات وقائمة الشهود والشركاء' : '2. Legal Scrutiny & Witness List'}
+          ⚖ {isAr ? 'ملاحقات قضائية محلية ودولية' : '2. Local and International Judicial Pursuits'}
         </button>
       </div>
 

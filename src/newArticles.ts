@@ -674,7 +674,7 @@ While the 2026 World Cup may break financial records, it has dealt a catastrophi
     category: 'investigations',
     categories: ['exclusives', 'investigations', 'economy'],
     titleAr: 'انتفاضة الحسابات: كيف يفكك "مصرف لبنان" تركة الفساد المالي؟',
-    titleEn: 'Banque du Liban vs. Salameh: Deconstructing Financial Corruption & Judicial Pursuit',
+    titleEn: 'Banque du Liban versus Salameh',
     summaryAr: 'تحقيق استثنائي شامل يكشف حراك مصرف لبنان القضائي والرقابي لتصفية تركة العقود الماضية ومكافحة ملفات الفساد البنيوي، مدمجاً بتقرير التدقيق الجنائي، وملاحقة قضية فوري وملفات السياسيين والمحامين والشهود تحت المجهر.',
     summaryEn: 'An investigative deep-dive on Banque du Liban’s legal and audit actions, featuring the new Alvarez & Marsal forensic phase, the Fawry scandal, political housing loan charges, and the high-profile legal witness register.',
     excerptAr: 'خطوة استباقية نحو الحساب الشامل: مصرف لبنان يفتح الدفاتر القديمة ويلاحق الفساد من شركة فوري إلى قروض الإسكان وعقود المحاماة المشبوهة.',
