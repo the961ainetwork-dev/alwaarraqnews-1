@@ -1073,6 +1073,137 @@ The message written by crude oil on the water is unmistakable: the world will no
     excerpt: 'قصة "إعادة التشغيل الكبرى" للنفط التي تُكتب في صمت على سطح الماء، وكيف تقود عواصم الخليج براغماتية ملاحية مرنة في مواجهة طبول الحرب والتهديد الأمني ومستوى المخاطر.',
     hashtags: ['Hormuz', 'ADNOC', 'EnergySecurity', 'OilFlow'],
     views: 14520
+  },
+  {
+    id: 'telecom-restructuring-unknown-2026',
+    category: 'exclusives',
+    categories: ['exclusives', 'lebanon', 'telecom-internet', 'economy'],
+    titleAr: 'هيكلة وزارة الاتصالات: قفزة في المجهول تطيح بالإدارة التشغيلية وتكرّس هيمنة الوزير',
+    titleEn: 'Ministry of Telecom Restructuring: A Leap into the Unknown Overthrowing Operational Management and Consolidating Ministerial Dominance',
+    summaryAr: 'قرار مجلس الوزراء الصادر لإعادة هيكلة وزارة الاتصالات يثير مخاوف حول تفكيك البنية التشغيلية الأساسية قبل إنشاء شركة ليبان تليكوم البديلة، مما ينذر بفراغ إداري خطير ويمهد الطريق للخصخصة المقنعة.',
+    summaryEn: 'The Cabinet’s recent decision to restructure the Ministry of Telecommunications raises concerns over dismantling the core operational structure before establishing "Liban Telecom," threatening an administrative vacuum and paving the way for disguised privatization.',
+    excerptAr: 'تحقيق استقصائي يفكك قرار هيكلة وزارة الاتصالات وإلغاء المديريات العامة التشغيلية قبل إنشاء ليبان تليكوم.',
+    excerptEn: 'An investigative report dismantling the decision to restructure the Ministry of Telecommunications and dissolve core operational general directorates before establishing Liban Telecom.',
+    contentAr: `### تفكيك الجهاز التشغيلي للدولة قبل البديل القانوني
+في خطوة لم تعد مفاجئة ضمن مسار حكومة الرئيس نواف سلام، والتي غالباً ما تواجه اتهامات بتفضيل مصالح الشركات على حساب المصلحة العامة والمال العام، أقرّ مجلس الوزراء في جلسته الأخيرة مشروع مرسوم طرحه وزير الاتصالات شارل الحاج. يهدف المشروع ظاهرياً إلى "إعادة هيكلة وزارة الاتصالات"، ولكنه في جوهره يمثل تفكيكاً canلاً للجهاز التشغيلي للدولة قبل تأمين البديل القانوني والمؤسساتي.
+
+هذا القرار، الذي مرّر وسط غياب دراسة كافية من معظم الوزراء، يفتح الباب أمام مرحلة انتقالية غامضة قد تغير وجه قطاع الاتصالات في لبنان، وتُسلمه لخصخصة مقنّعة تحت ستار "تطبيق القانون".
+
+---
+
+### تفكيك مسبق: "العربة أمام الحصان"
+يستند مشروع الوزير الحاج إلى إلغاء مديريتين عامتين تشغيليتين أساسيتين في الوزارة:
+
+1. **مديرية الإنشاء والتجهيز:** المسؤولة عن البنية التحتية والمشاريع الاستراتيجية.
+2. **مديرية الاستثمار والصيانة:** التي تُعد الشريان الحيوي للقطاع، حيث تمر عبرها العمليات اليومية من شراء السعات الدولية (Internet Bandwidth)، وأعمال الصيانة مع هيئة "أوجيرو"، وتحديد الاعتمادات المالية، واستيراد المعدات.
+
+تُبرر هذه الخطوة بالتحضير لتحويل الوزارة إلى جهة مختصة بـ "وضع السياسات والرقابة فقط"، تطبيقاً لقانون الاتصالات رقم 431/2002، والذي ينص على إنشاء شركة "Liban Telecom" (ليبان تليكوم) لإدارة المرفق العام.
+
+**المفارقة الكبرى:** أن شركة "Liban Telecom" لم تُنشأ حتى اللحظة. وبالتالي، فإن إلغاء الهيكل التشغيلي الحالي قبل ولادة الشركة البديلة يخلق فراغاً إدارياً خطيراً، ويجعل مصير استمرارية المرفق العام، من صيانة الشبكات إلى العلاقة مع الموردين والمشتركين، معلقاً في الهواء.
+
+---
+
+### التسلسل المنطقي المفقود لضمان الانتقال الآمن
+لضمان انتقال آمن يحمي مقدرات الدولة، يتطلب المسار الإداري السليم الخطوات التالية (والتي تم تجاوزها بالكامل في المشروع المَقَرّ):
+
+* **تأسيس الشركة أولاً:** الإعلان الرسمي عن تأسيس "Liban Telecom" وتعيين مجلس إدارتها المستقل.
+* **جرد الأصول وتقييمها:** إجراء مسح شامل لأصول قطاع الاتصالات (الشبكات الوطنية، الكابلات البحرية، السنترالات، الترددات، حقوق الأرقام، والموجودات المالية).
+* **نقل المهام والموظفين:** جدولة انتقال الموظفين والعقود والالتزامات من الوزارة وهيئة أوجيرو إلى الشركة الجديدة بضمانات واضحة.
+* **إعادة الهيكلة كخطوة أخيرة:** بعد إثبات جاهزية الشركة للإدارة، يتم تحويل دور الوزارة إلى الرقابة والتنظيم عبر "الهيئة المنظمة للاتصالات".
+
+---
+
+### إحياء قانون 431/2002... "بالمقلوب"
+يعود الوزير الحاج إلى إحياء قانون الاتصالات رقم 431، الذي أُقر قبل 24 عاماً، رغم التطورات التكنولوجية والاقتصادية الهائلة التي جعلته قاصراً عن مواكبة العصر الرقمي الحالي (مثل تقنيات الجيل الخامس، الحوسبة السحابية، وإنترنت الأشياء).
+
+بدلاً من الدفع نحو تحديث الإطار التشريعي، يستخدم الحاج هذا القانون المتقادم لفرض هيكلية تفرّغ الوزارة من صلاحياتها. وبدلاً من أن تحتفظ الدولة بإدارة أصولها في مرحلة الأزمة المالية التي تحتاج فيها الخزينة لكل عائد، يُمهّد المشروع لتسليم القطاع لشركات خاصة بأبخس الأثمان.
+
+---
+
+### عودة شبح "أوراسكوم" و"زين" والمحاصصة الخليوية
+لا تقتصر استراتيجية الحاج على تفكيك الإدارة الثابتة، بل تمتد إلى الشبكات الخلوية. يندرج ضمن هذا السياق توجّه الوزير لإعادة تلزيم إدارة شركتي الخليوي المملوكتين للدولة (MIC1 و MIC2) إلى مشغلين من القطاع الخاص.
+
+تُشير المعطيات إلى محاولة استنساخ التجربة السابقة المتمثلة بتكليف شركات مثل "زين" (التي أدارت تاتش) و"أوراسكوم" (التي أدارت ألفا) بصيغة عقود إدارة. وهي تجربة يعتبرها الخبراء سيئة ومكلفة، حيث كبّدت الخزينة آنذاك نفقات رأسمالية وتشغيلية ضخمة (CAPEX و OPEX) دون رقابة صارمة، مما أدى في النهاية إلى تراجع جودة القطاع قبل استرداد الدولة لإدارتهما.
+
+---
+
+### مجلس شورى الدولة يتصدّى للنفوذ المطلق للوزير
+في النسخة الأولى من مشروع المرسوم، حاول وزير الاتصالات انتزاع "تفويض مفتوح" من مجلس الوزراء لتطبيق قانون الاتصالات، مما كان سيمنحه صلاحية مطلقة لتمديد المرحلة الانتقالية وتفرّد كامل بالقرارات بمعزل عن الحكومة.
+
+إلا أن مجلس شورى الدولة أسقط هذه المحاولة بوضوح، مسجلاً ملاحظات جوهرية أبرزها:
+
+> "لا يجوز أن يأتي التفويض بصيغة مطلقة وغير محددة، ولا سيما أنه لا يجوز تفويض الصلاحيات الدستورية والتنظيمية... ولا يجوز التفويض على التفويض، طالما أن القانون حدّد دقائق تطبيقه بموجب مراسيم تُتخذ في مجلس الوزراء."
+
+ورغم أن الحكومة أقرت نسخة معدلة تستجيب شكلياً لملاحظات "الشورى"، إلا أن اعتراض وزيري الصحة ركان ناصر الدين والبيئة تمارا الزين لم يكن كافياً لوقف المشروع. فقد وُزّع المرسوم قبل أقل من 48 ساعة من الجلسة، وصوّت عليه وزراء لم يطّلعوا على تداعياته الاستراتيجية التي قد تعيد رسم خريطة النفوذ المالي والسياسي في أحد أهم قطاعات الدولة اللبنانية المتبقية.`,
+    contentEn: `### Dismantling the State’s Operational Apparatus Prior to Legal Alternatives
+In a move that has ceased to surprise observers of Prime Minister Nawaf Salam’s administration—often accused of favoring corporate interests at the expense of public interest and state funds—the Cabinet recently approved a draft decree presented by Minister of Telecommunications Charbel El Hage. Ostensibly aimed at "restructuring the Ministry of Telecommunications," the decree fundamentally dismantles the state’s operational engine before securing a legal or institutional alternative.
+
+Passed amidst a glaring absence of rigorous deliberation by most ministers, this decision opens the door to an ambiguous transitional phase that could reshape Lebanon's telecom landscape, delivering it to disguised privatization under the guise of "law enforcement."
+
+---
+
+### Putting the Cart Before the Horse
+Minister El Hage's plan hinges on the complete dissolution of two vital operational General Directorates within the ministry:
+
+1. **The Directorate of Construction and Equipment:** Responsible for critical national infrastructure and strategic telecom developments.
+2. **The Directorate of Investment and Maintenance:** The lifeforce of the sector, overseeing daily operations including international internet bandwidth procurement, coordination with "Ogero," allocation of operational credits, and hardware imports.
+
+This drastic move is justified as preparing the Ministry to shift into a purely "policy-making and regulatory body," in line with Telecom Law 431/2002, which mandates the creation of the public-owned entity "Liban Telecom" to manage the public sector.
+
+**The Major Paradox:** "Liban Telecom" does not exist yet. Consequently, dissolving the operational hierarchy before establishing the designated successor creates a hazardous administrative vacuum, leaving the continuity of public service—from network maintenance to client and vendor relations—entirely hanging in the balance.
+
+---
+
+### The Missing Sequence for a Safe Transition
+To guarantee a secure transition that safeguards public wealth, standard administrative procedures require the following chronological steps (all of which were bypassed in the approved decree):
+
+* **Establish the Corporation First:** Declare the formal incorporation of "Liban Telecom" and appoint its independent board of directors.
+* **Audit and Appraise Assets:** Conduct a comprehensive inventory and valuation of all telecom assets (national copper and fiber networks, international marine cables, exchange stations, frequencies, and financial assets).
+* **Transfer Functions and Personnel:** Schedule a clear and legally-guaranteed transfer of contracts, personnel, and obligations from the Ministry and Ogero to the new corporation.
+* **Restructure as the Final Step:** Once the corporation is fully operational and capable of autonomous management, adjust the Ministry's role to regulatory oversight via the "Telecommunications Regulatory Authority" (TRA).
+
+---
+
+### Reviving Law 431/2002... "In Reverse"
+Minister El Hage is reviving a 24-year-old law (Law 431/2002) that is hopelessly outdated in the face of modern digital realities, such as 5G infrastructure, cloud computing, and the Internet of Things (IoT).
+
+Instead of championing modern, modernized legislative frameworks, El Hage leverages this obsolete law to hollow out the Ministry's authority. Rather than preserving public control over lucrative assets during a severe financial crisis where the treasury desperately needs every stream of revenue, the approved decree paves the way for selling off public assets to private interests at fire-sale prices.
+
+---
+
+### The Haunting Return of "Orascom" and "Zain"
+El Hage's strategy goes beyond dismantling fixed-line administration; it targets cellular networks. The Minister intends to lease the management of the state-owned mobile networks (MIC1 and MIC2) back to private operators.
+
+Insiders reveal an attempt to clone previous management contracts with operators like "Zain" (which managed Touch) and "Orascom" (which managed Alfa). Financial experts widely criticize those contracts as extremely costly, as they burdened the treasury with massive capital and operational expenditures (CAPEX and OPEX) under loose oversight, resulting in deteriorated services before the state eventually reclaimed direct management.
+
+---
+
+### State Council Defends Against Absolute Control
+In the original draft of the decree, the Minister of Telecommunications attempted to extract an "open-ended authorization" from the Cabinet to execute the law, which would have granted him unilateral power to extend transitional phases and make monumental decisions without government oversight.
+
+However, the State Council (Conseil d'État) roundly struck down this attempt, issuing a scathing critique:
+
+> "An authorization cannot be absolute or undefined, particularly since constitutional and regulatory authorities cannot be delegated... and sub-delegation is impermissible as long as the law mandates that its implementation details be enacted via specific decrees approved by the Council of Ministers."
+
+Although the Cabinet subsequently passed a modified version to superficially accommodate the State Council's observations, strong objections from Minister of Health Rakan Nasser Eldine and Minister of Environment Tamara El Zein were ignored. The decree was distributed less than 48 hours before the Cabinet meeting and rushed to a vote, leaving ministers with little time to grasp its severe geopolitical and financial implications on one of the few remaining revenue-generating sectors of the Lebanese state.`,
+    author: {
+      nameAr: 'ندى أيوب',
+      nameEn: 'Nada Ayoub',
+      titleAr: 'صحفية استقصائية ورئيسة قسم التحقيقات',
+      titleEn: 'Senior Investigative Reporter',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-10',
+    readTimeAr: '٤ دقائق قراءة',
+    readTimeEn: '4 min read',
+    isBreaking: false,
+    isFeatured: false,
+    isPremium: true,
+    tags: ['وزارة_الاتصالات', 'ليبان_تليكوم', 'شارل_الحاج', 'أوجيرو', 'الخصخصة', 'ندى_أيوب', 'Telecom', 'Liban_Telecom', 'Restructuring', 'Lebanon', 'Sovereignty'],
+    excerpt: 'ندى أيوب تكشف بالوثائق كواليس مشروع مرسوم هيكلة الاتصالات: تفكيك للمديريات العامة وخصخصة مقنعة تكرّس النفوذ المطلق للوزير.',
+    hashtags: ['TelecomRestructuring', 'LibanTelecom', 'LebanonTelecom', 'Ogero'],
+    views: 3120
   }
 ];
 

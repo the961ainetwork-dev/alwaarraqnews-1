@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw, Volume2, VolumeX, Mic, Radio, Sliders, ChevronRight, ChevronLeft, Globe, HelpCircle, FileText, Download } from 'lucide-react';
+import { Play, Pause, RotateCcw, Volume2, VolumeX, Mic, Radio, Sliders, ChevronRight, ChevronLeft, Globe, HelpCircle, FileText, Download, Info } from 'lucide-react';
 
 const WhatsAppIcon = ({ size = 18, className }: { size?: number; className?: string }) => (
   <svg 
@@ -621,6 +621,19 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   const handleTogglePlay = () => {
+    // Try to initialize/resume AudioContext on user interaction
+    try {
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContextClass) {
+        if (!audioCtxRef.current) {
+          audioCtxRef.current = new AudioContextClass();
+        }
+        if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
+          audioCtxRef.current.resume();
+        }
+      }
+    } catch (e) {}
+
     if (isPlaying) {
       isPlayingRef.current = false;
       setIsPlaying(false);
@@ -640,9 +653,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       setIsPlaying(true);
       // Play brief studio cue tone beep (330Hz, 150ms)
       try {
-        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-        if (AudioContextClass) {
-          const ctx = new AudioContextClass();
+        if (audioCtxRef.current) {
+          const ctx = audioCtxRef.current;
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = 'sine';
@@ -688,6 +700,19 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   const handleSelectSegment = (idx: number) => {
+    // Try to initialize/resume AudioContext on user interaction
+    try {
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContextClass) {
+        if (!audioCtxRef.current) {
+          audioCtxRef.current = new AudioContextClass();
+        }
+        if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
+          audioCtxRef.current.resume();
+        }
+      }
+    } catch (e) {}
+
     if (simulatedTimeoutRef.current) {
       clearTimeout(simulatedTimeoutRef.current);
     }
@@ -707,6 +732,19 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
   };
 
   const handlePlayAll = () => {
+    // Try to initialize/resume AudioContext on user interaction
+    try {
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContextClass) {
+        if (!audioCtxRef.current) {
+          audioCtxRef.current = new AudioContextClass();
+        }
+        if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
+          audioCtxRef.current.resume();
+        }
+      }
+    } catch (e) {}
+
     if (simulatedTimeoutRef.current) {
       clearTimeout(simulatedTimeoutRef.current);
     }
@@ -722,9 +760,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
 
     // Play brief studio cue tone beep
     try {
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-      if (AudioContextClass) {
-        const ctx = new AudioContextClass();
+      if (audioCtxRef.current) {
+        const ctx = audioCtxRef.current;
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = 'sine';
@@ -764,6 +801,40 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
       }
     };
   }, []);
+
+  // Trigger download of an individual podcast segment as TXT
+  const handleDownloadSegment = (idx: number) => {
+    const seg = script[idx];
+    if (!seg) return;
+    
+    const header = isAr 
+      ? `تحقيقات الورّاق - ملف بث منفرد: ${seg.title}`
+      : `Al-Warraq Briefing - Individual Segment: ${seg.title}`;
+    
+    let content = `${header}\n`;
+    content += `==============================================\n`;
+    content += isAr ? `رقم البند: ${idx + 1}\n` : `Item Number: ${idx + 1}\n`;
+    content += `==============================================\n\n`;
+    content += `${seg.text}\n\n`;
+    content += `----------------------------------------------\n`;
+    content += isAr 
+      ? `تاريخ البث: يوليو ٢٠٢٦ - إذاعة الورّاق الاستقصائية الفيدرالية ٩٦.٥ FM\nتم تحميل الملف بشكل رسمي ومصادق.`
+      : `Broadcast Date: July 2026 - Al-Warraq Federal Investigation Radio 96.5 FM\nOfficial certified segment report.`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    
+    // Clean file name
+    const cleanTitle = seg.title.toLowerCase().replace(/[\s]+/g, '-').replace(/[^a-z0-9-]/g, '');
+    link.download = `alwarraq-segment-${idx + 1}-${cleanTitle || 'report'}.txt`;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
 
   // Trigger download of written podcast transcript as TXT
   const handleDownloadTranscript = () => {
@@ -826,6 +897,23 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
             : 'Audio news anchor reciting the investigative report on Southern Lebanon "Pilot Zones" in a structured, solemn male news voice.'}
         </p>
       </div>
+
+      {/* Secure Fallback Info Notice regarding Iframe limitations */}
+      {isFallbackMode && (
+        <div className="mb-6 p-4 border border-amber-500/30 bg-amber-950/20 rounded flex items-start gap-3 text-right">
+          <Info className="text-amber-400 shrink-0 mt-0.5" size={18} />
+          <div className="space-y-1">
+            <h5 className="font-['Cairo'] font-black text-amber-400 text-base">
+              {isAr ? '📢 تم تفعيل وضع البث المحاكي الآمن' : '📢 Simulated Audio Mode Active'}
+            </h5>
+            <p className="font-['Cairo'] text-zinc-300 text-sm leading-relaxed">
+              {isAr 
+                ? 'بسبب قيود حماية المتصفح وإطار العرض (Iframe)، تم حظر مشغل القراءة الصوتية التلقائية بالذكاء الاصطناعي. لسماع المعلق الإذاعي الصوتي الحقيقي بالكامل، يرجى الضغط على زر "فتح في نافذة جديدة" (Open in New Tab) في أعلى يمين الشاشة.'
+                : 'Due to browser security and iframe sandbox restrictions, the native AI Speech Narrator is blocked. To hear the real, high-quality audio recitation, please click the "Open in New Tab" button in the upper-right corner of the screen.'}
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Retro Transmitter Deck / Player */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-zinc-900/60 border border-zinc-800 p-6 shadow-inner rounded mb-6">
@@ -1125,6 +1213,15 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language }) =>
                       <FileText size={18} className="text-zinc-950" />
                       <span>{isAr ? 'طلب وثائق البند' : 'Request Documents'}</span>
                     </a>
+
+                    {/* Individual Download Transcript Button */}
+                    <button
+                      onClick={() => handleDownloadSegment(idx)}
+                      className="flex items-center gap-2 px-3.5 py-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-amber-400 hover:text-white font-['Cairo'] text-base font-bold rounded transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+                    >
+                      <Download size={18} />
+                      <span>{isAr ? 'تحميل النص' : 'Download Text'}</span>
+                    </button>
                   </div>
                 </div>
               );

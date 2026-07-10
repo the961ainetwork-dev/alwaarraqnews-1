@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   TrendingUp, 
   TrendingDown, 
@@ -39,6 +39,23 @@ export const SaudiUaeFinancialChart: React.FC<SaudiUaeFinancialChartProps> = ({
   const isPrint = layoutMode === 'classic-print';
   const [activeTab, setActiveTab] = useState<'decline' | 'latency'>('decline');
   const [rhqStrictness, setRhqStrictness] = useState<'high' | 'medium' | 'low'>('high');
+
+  // Dynamic state to force Recharts re-render on resize and avoid truncation
+  const [chartKey, setChartKey] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setChartKey(prev => prev + 1);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 640;
+  const isTablet = windowWidth < 1024;
 
   // Baseline data from investigative report (June - July 2026)
   const baseDeclineData = [
@@ -104,18 +121,21 @@ export const SaudiUaeFinancialChart: React.FC<SaudiUaeFinancialChartProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-zinc-950 text-white p-3 border border-zinc-800 rounded font-sans text-xs shadow-xl">
-          <p className="font-bold mb-1.5 text-zinc-400">{isAr ? data.dateAr : data.date}</p>
-          <div className="space-y-1">
+        <div className="bg-zinc-950 text-white p-3.5 border-2 border-black rounded shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] font-sans text-xs space-y-2">
+          <div className="flex items-center gap-1.5 border-b border-zinc-800 pb-1.5">
+            <span className="w-2 h-2 rounded-full bg-red-500"></span>
+            <p className="font-bold text-zinc-300">{isAr ? data.dateAr : data.date}</p>
+          </div>
+          <div className="space-y-1.5">
             <p className="flex justify-between gap-6">
-              <span>{isAr ? 'معدل الرفض والتعليق:' : 'Decline/Hold Rate:'}</span>
-              <span className="text-red-400 font-mono font-bold">{payload[0].value}%</span>
+              <span className="text-zinc-400">{isAr ? 'معدل الرفض والتعليق:' : 'Decline/Hold Rate:'}</span>
+              <span className="text-red-400 font-mono font-bold text-sm">{payload[0].value}%</span>
             </p>
             <p className="flex justify-between gap-6">
-              <span>{isAr ? 'حجم المعاملات اليومي (مليون $):' : 'Daily Tx Volume (M$):'}</span>
-              <span className="text-amber-400 font-mono font-bold">{data.volume}M$</span>
+              <span className="text-zinc-400">{isAr ? 'حجم المعاملات اليومي:' : 'Daily Tx Volume:'}</span>
+              <span className="text-amber-400 font-mono font-bold text-sm">{data.volume}M$</span>
             </p>
-            <p className="text-xxs text-zinc-500 border-t border-zinc-800 pt-1.5 mt-1.5">
+            <p className="text-xxs text-zinc-500 border-t border-zinc-800 pt-1.5">
               {isAr ? `الحالة: ${data.descAr}` : `Status: ${data.descEn}`}
             </p>
           </div>
@@ -129,16 +149,19 @@ export const SaudiUaeFinancialChart: React.FC<SaudiUaeFinancialChartProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-zinc-950 text-white p-3 border border-zinc-800 rounded font-sans text-xs shadow-xl">
-          <p className="font-bold mb-1.5 text-zinc-400">{isAr ? data.dateAr : data.date}</p>
-          <div className="space-y-1">
+        <div className="bg-zinc-950 text-white p-3.5 border-2 border-black rounded shadow-[4px_4px_0px_0px_rgba(245,158,11,1)] font-sans text-xs space-y-2">
+          <div className="flex items-center gap-1.5 border-b border-zinc-800 pb-1.5">
+            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+            <p className="font-bold text-zinc-300">{isAr ? data.dateAr : data.date}</p>
+          </div>
+          <div className="space-y-1.5">
             <p className="flex justify-between gap-6">
-              <span>{isAr ? 'متوسط زمن المعالجة:' : 'Avg. Settlement Latency:'}</span>
-              <span className="text-amber-400 font-mono font-bold">{payload[0].value} {isAr ? 'أيام عمل' : 'business days'}</span>
+              <span className="text-zinc-400">{isAr ? 'متوسط زمن المعالجة:' : 'Avg. Settlement Latency:'}</span>
+              <span className="text-amber-400 font-mono font-bold text-sm">{payload[0].value} {isAr ? 'أيام عمل' : 'business days'}</span>
             </p>
             <p className="flex justify-between gap-6">
-              <span>{isAr ? 'المعاملات البينية اليومية:' : 'Bilateral Txs / Day:'}</span>
-              <span className="text-zinc-400 font-mono font-bold">{data.transactions.toLocaleString()}</span>
+              <span className="text-zinc-400">{isAr ? 'المعاملات البينية اليومية:' : 'Bilateral Txs / Day:'}</span>
+              <span className="text-zinc-300 font-mono font-bold text-sm">{data.transactions.toLocaleString()}</span>
             </p>
           </div>
         </div>
@@ -317,34 +340,38 @@ export const SaudiUaeFinancialChart: React.FC<SaudiUaeFinancialChartProps> = ({
           </div>
 
           {/* Recharts Container */}
-          <div className="w-full grow relative">
-            <ResponsiveContainer width="100%" height="100%">
+          <div className="w-full grow relative" style={{ minHeight: '220px' }}>
+            <ResponsiveContainer width="100%" height="100%" key={chartKey}>
               {activeTab === 'decline' ? (
                 <AreaChart
                   data={activeDeclineData}
-                  margin={{ top: 10, right: 10, left: -25, bottom: 0 }}
+                  margin={isMobile ? { top: 15, right: 10, left: -15, bottom: 5 } : { top: 15, right: 15, left: -20, bottom: 5 }}
                 >
                   <defs>
                     <linearGradient id="colorRate" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#ef4444" stopOpacity={0.2}/>
+                      <stop offset="5%" stopColor="#ef4444" stopOpacity={0.25}/>
                       <stop offset="95%" stopColor="#ef4444" stopOpacity={0.01}/>
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                   <XAxis 
                     dataKey={isAr ? 'dateAr' : 'date'} 
-                    tick={{ fontSize: 10, fill: '#71717a', fontFamily: 'sans-serif' }}
-                    axisLine={{ stroke: '#e4e4e7' }}
+                    tick={{ fontSize: isMobile ? 9 : 10, fill: '#4b5563', fontFamily: 'sans-serif', fontWeight: 500 }}
+                    axisLine={{ stroke: '#d1d5db' }}
                     tickLine={false}
                   />
                   <YAxis 
-                    tick={{ fontSize: 10, fill: '#71717a', fontFamily: 'monospace' }}
+                    tick={{ fontSize: isMobile ? 9 : 10, fill: '#4b5563', fontFamily: 'monospace', fontWeight: 600 }}
                     axisLine={false}
                     tickLine={false}
                     domain={[0, 10]}
                     unit="%"
                   />
-                  <Tooltip content={<CustomDeclineTooltip />} />
+                  <Tooltip 
+                    content={<CustomDeclineTooltip />} 
+                    cursor={{ stroke: '#ef4444', strokeWidth: 1.5, strokeDasharray: '4 4' }}
+                    trigger="hover"
+                  />
                   <Area 
                     type="monotone" 
                     dataKey="rate" 
@@ -352,34 +379,39 @@ export const SaudiUaeFinancialChart: React.FC<SaudiUaeFinancialChartProps> = ({
                     strokeWidth={2.5} 
                     fillOpacity={1} 
                     fill="url(#colorRate)" 
+                    activeDot={{ r: 6, stroke: '#ef4444', strokeWidth: 2, fill: '#ffffff' }}
                   />
                 </AreaChart>
               ) : (
                 <AreaChart
                   data={activeLatencyData}
-                  margin={{ top: 10, right: 10, left: -25, bottom: 0 }}
+                  margin={isMobile ? { top: 15, right: 10, left: -15, bottom: 5 } : { top: 15, right: 15, left: -20, bottom: 5 }}
                 >
                   <defs>
                     <linearGradient id="colorDays" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.2}/>
+                      <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.25}/>
                       <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.01}/>
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                   <XAxis 
                     dataKey={isAr ? 'dateAr' : 'date'} 
-                    tick={{ fontSize: 10, fill: '#71717a', fontFamily: 'sans-serif' }}
-                    axisLine={{ stroke: '#e4e4e7' }}
+                    tick={{ fontSize: isMobile ? 9 : 10, fill: '#4b5563', fontFamily: 'sans-serif', fontWeight: 500 }}
+                    axisLine={{ stroke: '#d1d5db' }}
                     tickLine={false}
                   />
                   <YAxis 
-                    tick={{ fontSize: 10, fill: '#71717a', fontFamily: 'monospace' }}
+                    tick={{ fontSize: isMobile ? 9 : 10, fill: '#4b5563', fontFamily: 'monospace', fontWeight: 600 }}
                     axisLine={false}
                     tickLine={false}
                     domain={[0, 12]}
                     unit="D"
                   />
-                  <Tooltip content={<CustomLatencyTooltip />} />
+                  <Tooltip 
+                    content={<CustomLatencyTooltip />} 
+                    cursor={{ stroke: '#f59e0b', strokeWidth: 1.5, strokeDasharray: '4 4' }}
+                    trigger="hover"
+                  />
                   <Area 
                     type="monotone" 
                     dataKey="days" 
@@ -387,6 +419,7 @@ export const SaudiUaeFinancialChart: React.FC<SaudiUaeFinancialChartProps> = ({
                     strokeWidth={2.5} 
                     fillOpacity={1} 
                     fill="url(#colorDays)" 
+                    activeDot={{ r: 6, stroke: '#f59e0b', strokeWidth: 2, fill: '#ffffff' }}
                   />
                 </AreaChart>
               )}
