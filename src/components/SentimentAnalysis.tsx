@@ -44,7 +44,7 @@ export default function SentimentAnalysis({ language, layoutMode }: SentimentAna
   const isAr = language === 'ar';
   
   // Interactive search state starting with a key sovereign brand tag
-  const [searchTarget, setSearchTarget] = useState(isAr ? 'منطقة بيروت الرقمية' : 'Beirut Digital District');
+  const [searchTarget, setSearchTarget] = useState(isAr ? 'مفاوضات لبنان وإسرائيل' : 'Lebanon-Israel Negotiations');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sentimentResult, setSentimentResult] = useState<SentimentData | null>(null);
@@ -245,6 +245,176 @@ export default function SentimentAnalysis({ language, layoutMode }: SentimentAna
             </button>
           </div>
         </form>
+      </div>
+
+      {/* Upper Feature Section of the Page dated Today (July 10, 2026) focusing on Lebanon-Israel negotiations */}
+      <div className="border-4 border-black p-7 bg-[#fbfbf9] shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] text-left rtl:text-right space-y-6" id="upper-feature-negotiations">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-6 border-b-2 border-black pb-6">
+          {/* Main Story Column */}
+          <div className="lg:w-7/12 space-y-3.5">
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <span className="font-mono text-[13px] font-black text-white bg-red-650 px-2.5 py-1 border border-black uppercase animate-pulse">
+                {isAr ? 'قصة مميزة عاجلة - اليوم' : "TODAY'S SPECIAL DISPATCH"}
+              </span>
+              <span className="font-mono text-[14px] text-zinc-500 font-bold">
+                {isAr ? 'الجمعة، ١٠ يوليو ٢٠٢٦' : 'Friday, July 10, 2026'}
+              </span>
+              <span className="font-mono text-[13px] text-zinc-400">|</span>
+              <span className="font-mono text-[13px] text-emerald-600 font-bold">
+                {isAr ? 'رصد فوري متقلب' : 'LIVE DISCOURSE VOLATILITY'}
+              </span>
+            </div>
+            
+            <h2 className="font-sans font-black text-[21px] md:text-[25px] text-black tracking-tight leading-snug uppercase">
+              {isAr 
+                ? 'مفاوضات وقف إطلاق النار: انقسام حاد في مشاعر الشارع مع تسريب الملحق الأمني السري والتحذير من البند ١٣' 
+                : 'CEASEFIRE TELEMETRY: PUBLIC SENTIMENT SHARPLY DIVIDED AS SECRETS OF THE SECURITY ANNEX EXPOSE ASYMMETRIC RIGHTS'}
+            </h2>
+            
+            <div className="font-serif text-[15.5px] leading-relaxed text-zinc-800 space-y-3 select-text">
+              <p>
+                {isAr ? (
+                  <>
+                    <strong>بيروت —</strong> مع دخول الاتفاق الإطاري اللبناني الإسرائيلي المكون من 14 نقطة مرحلة التدقيق الشعبي الحرجة اليوم، رصد مركز الاستخبارات الرقمية التابع لـ «الورّاق نيوز» تقلبات حادة في مشاعر الرأي العام عبر مختلف المنصات الاجتماعية. في حين يهيمن التفاؤل والارتياح على منصات إنستغرام وفيسبوك (محرزة ذروة تفاؤل إيجابي بنسبة ٥٨٪) بسبب الرغبة الملحة لعودة النازحين إلى مدن وقرى الجنوب واستقرار الأوضاع الميدانية، يعتمل في عمق منصة «إكس» والشبكات المهنية استياء شديد وحذر قانوني بالغ.
+                  </>
+                ) : (
+                  <>
+                    <strong>BEIRUT —</strong> As the US-mediated 14-point framework agreement between Lebanon and Israel enters its critical public vetting phase today, Al-Warraq's digital intelligence core has observed unprecedented volatility in citizen cognitive mapping across social networks. While mainstream networks like Instagram and Facebook strike an optimistic tone regarding border de-escalation and the repatriation of displaced families (drawing a 58% positive sentiment peak on hopes of returning to Tyre and Nabatieh), a deep undercurrent of legal anxiety is sweeping through X (Twitter) and professional directories.
+                  </>
+                )}
+              </p>
+              <p>
+                {isAr ? (
+                  <>
+                    وتتركز الانتقادات الرقمية والهاشتاغات النشطة اليوم حول تسريبين بالغي الخطورة: «الملحق الأمني السري» الذي يربط الانسحاب الإسرائيلي بنزع السلاح دون جداول زمنية محددة ويمنح الطيران الإسرائيلي حرية العمل العسكري، والمادة ١٣ من الاتفاق الإطاري التي تحرم الدولة اللبنانية من سيادتها في مقاضاة إسرائيل أمام المحافل القانونية الدولية عن خسائر الحرب. ويندد المغردون اللبنانيون بما يصفونه بـ «المفارقة التاريخية المحرجة» لرئيس الوزراء نواف سلام، وهو الرئيس السابق لمحكمة العدل الدولية، الذي يرأس حالياً حكومة تتخلى تحت الضغط الدولي عن حقوق المساءلة القانونية للبنان مقابل وقف حرب مدمرة.
+                  </>
+                ) : (
+                  <>
+                    The focus of public ire centers on two highly controversial disclosures: the unreleased 'Secret Security Annex' (which leaks suggest codifies Israeli military intervention rights and ties withdrawal to Hezbollah disarming with no fixed schedules) and the notorious 'Article 13' (which strips Beirut of its sovereignty to pursue international legal accountability). Lebanese social media users are actively pointing to the profound historical irony of Prime Minister Nawaf Salam—a former President of the International Court of Justice (ICJ)—administering a framework that forces his own state to withdraw complaints of war crimes from international forums.
+                  </>
+                )}
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-3.5 border-t border-zinc-200">
+              <div className="flex items-center gap-3">
+                <img 
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=80"
+                  className="w-10 h-10 rounded-full border border-black object-cover animate-fade-in" 
+                  alt="Maan Barazy"
+                />
+                <div>
+                  <span className="font-sans font-black text-[14px] text-black block leading-none">
+                    {isAr ? 'معن برازي' : 'Maan Barazy'}
+                  </span>
+                  <span className="font-mono text-[11.5px] text-zinc-500 font-bold leading-none">
+                    {isAr ? 'رئيس تحرير صحيفة الورّاق' : 'Editor-in-Chief, Al-Warraq'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Action Button to activate the detailed dashboard for this topic */}
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchTarget(isAr ? 'مفاوضات لبنان وإسرائيل' : 'Lebanon-Israel Negotiations');
+                  setTimeout(() => {
+                    handleRunAnalysis();
+                    const el = document.getElementById('tweetdeck-container');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
+                className="bg-black hover:bg-red-750 text-white hover:text-white font-mono font-black text-[13px] uppercase tracking-widest px-4 py-2.5 border border-black transition-colors shadow-[2px_2px_0px_0px_rgba(185,28,28,1)] flex items-center gap-2 cursor-pointer select-none"
+              >
+                <span>{isAr ? 'تحديث وتدقيق بيانات المشاعر الفورية ←' : 'ACTIVATE COGNITIVE WIRE DECK →'}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Metrics Column */}
+          <div className="w-full lg:w-5/12 bg-white border-2 border-black p-5 space-y-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex justify-between items-center pb-2 border-b border-dashed border-zinc-300">
+              <span className="font-mono text-[13px] font-black uppercase text-zinc-500">
+                {isAr ? 'مؤشرات النبض الرقمي الميداني' : 'CEASEFIRE DISCOURSE RATINGS'}
+              </span>
+              <span className="font-mono text-[11px] font-black uppercase text-white bg-[#b91c1c] px-1.5 py-0.5 animate-pulse">
+                {isAr ? '١٠ يوليو ٢٠٢٦' : 'JULY 10, 2026'}
+              </span>
+            </div>
+
+            <div className="space-y-3.5">
+              {/* Metric 1 */}
+              <div className="space-y-1">
+                <div className="flex justify-between text-[14px] font-bold">
+                  <span className="text-zinc-800">{isAr ? 'الرغبة في الاستقرار وعودة النازحين' : 'Border De-escalation & Repatriation'}</span>
+                  <span className="text-emerald-600 font-black">58% {isAr ? 'إيجابي' : 'POS'}</span>
+                </div>
+                <div className="w-full h-3 bg-zinc-100 border border-zinc-300 rounded-xs overflow-hidden">
+                  <div className="h-full bg-emerald-400 transition-all" style={{ width: '58%' }}></div>
+                </div>
+                <p className="text-[11.5px] text-zinc-500 font-serif leading-tight">
+                  {isAr 
+                    ? 'أمل عارم بعودة الأسر النازحة إلى صور والنبطية والخط الأزرق.' 
+                    : 'Intense public longing for regional safety, return to Tyre/Nabatieh, and end of airstrikes.'}
+                </p>
+              </div>
+
+              {/* Metric 2 */}
+              <div className="space-y-1">
+                <div className="flex justify-between text-[14px] font-bold">
+                  <span className="text-zinc-800">{isAr ? 'السيادة والاعتراض على الملحق الأمني' : 'Security Annex & Airspace Control'}</span>
+                  <span className="text-rose-600 font-black">84% {isAr ? 'سلبي' : 'NEG'}</span>
+                </div>
+                <div className="w-full h-3 bg-zinc-100 border border-zinc-300 rounded-xs overflow-hidden">
+                  <div className="h-full bg-rose-500 transition-all" style={{ width: '84%' }}></div>
+                </div>
+                <p className="text-[11.5px] text-zinc-500 font-serif leading-tight">
+                  {isAr 
+                    ? 'رفض شعبي جارف لمنح سلاح الجو الأجنبي حرية الحركة والعمل الميداني.' 
+                    : 'Severe resentment regarding foreign airspace operational freedom in southern Lebanon.'}
+                </p>
+              </div>
+
+              {/* Metric 3 */}
+              <div className="space-y-1">
+                <div className="flex justify-between text-[14px] font-bold">
+                  <span className="text-zinc-800">{isAr ? 'التنازل القانوني والمساءلة (البند ١٣)' : 'Article 13 Waiver & Accountability'}</span>
+                  <span className="text-rose-600 font-black">78% {isAr ? 'سلبي' : 'NEG'}</span>
+                </div>
+                <div className="w-full h-3 bg-zinc-100 border border-zinc-300 rounded-xs overflow-hidden">
+                  <div className="h-full bg-rose-400 transition-all" style={{ width: '78%' }}></div>
+                </div>
+                <p className="text-[11.5px] text-zinc-500 font-serif leading-tight">
+                  {isAr 
+                    ? 'استياء بالغ من إسقاط لبنان حقه في ملاحقة إسرائيل قانونياً في المحافل الدولية.' 
+                    : 'Widespread distress over state withdrawal of ICC/ICJ complaints as a pricing hurdle for peace.'}
+                </p>
+              </div>
+
+              {/* Metric 4 */}
+              <div className="space-y-1">
+                <div className="flex justify-between text-[14px] font-bold">
+                  <span className="text-zinc-800">{isAr ? 'إعادة الإعمار والتمويل الخارجي' : 'Telecom & Utility Reconstruction'}</span>
+                  <span className="text-zinc-650 font-black">65% {isAr ? 'مستقر' : 'NEU/POS'}</span>
+                </div>
+                <div className="w-full h-3 bg-zinc-100 border border-zinc-300 rounded-xs overflow-hidden">
+                  <div className="h-full bg-blue-400 transition-all" style={{ width: '65%' }}></div>
+                </div>
+                <p className="text-[11.5px] text-zinc-500 font-serif leading-tight">
+                  {isAr 
+                    ? 'تطلع حذر لبدء تمويل وتدقيق تأهيل الاتصالات وشبكات الكهرباء والمياه.' 
+                    : 'Cautious hope that international funds will quickly restore Alfa/Touch telecom stations.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-dashed border-zinc-200 text-center">
+              <span className="font-mono text-[11px] text-zinc-400 font-bold uppercase">
+                {isAr ? 'عينة الرصد المستهدفة: ٢,٥٠٠ تدوينة مصنفة بالذكاء الاصطناعي' : 'DISCOURSE COHORT: 2,500 MODEL-CLASSIFIED SOCIAL POSTS'}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Social Media Monitoring Feature Introduction & Highlight Bar */}

@@ -112,6 +112,143 @@ function generateMockSentimentData(keyword: string) {
   const kwAr = isArKeyword ? keyword : `استقصاء ${keyword}`;
   const kwEn = isArKeyword ? `Insight on ${keyword}` : keyword;
 
+  const isGeopoliticalQuery = /israel|lebanon|negotiation|ceasefire|border|clash|security|annex|إسرائيل|لبنان|مفاوضات|حدود|أمني|سلام|اتفاق/i.test(keyword);
+
+  if (isGeopoliticalQuery) {
+    const feed = [
+      // X (Twitter)
+      {
+        platform: "X",
+        userHandle: "@nadimb_tech",
+        userName: "Nadim Bou-Ghanem",
+        originalText: "Optimistic about the border stabilization. If the security guarantees hold and refugees can finally return safely, this is the first real step to peace. The 14-point framework provides a viable pathway.",
+        summaryEn: "Expressed optimism about border stability, security guarantees, and the return of refugees via the 14-point framework.",
+        summaryAr: "أبدى تفاؤلاً بشأن استقرار الحدود، والضمانات الأمنية، وعودة النازحين من خلال الاتفاق الإطاري المكون من 14 نقطة.",
+        sentiment: "positive",
+        score: 0.75,
+        topics: ["ceasefire", "peace", "repatriation"],
+        url: "https://x.com/nadimb_tech/status/1726501",
+        timestamp: "2 hours ago"
+      },
+      {
+        platform: "X",
+        userHandle: "@samer_k_economy",
+        userName: "Samer Khoury",
+        originalText: "Article 13 is an absolute disaster for Lebanese legal sovereignty. We are literally surrendering our right to hold anyone accountable for war crimes in international courts just to secure a fragile deal. PM Nawaf Salam must answer for this legal compromise!",
+        summaryEn: "Critiqued Article 13 of the agreement as a surrender of legal sovereignty and rights to international prosecution.",
+        summaryAr: "انتقد المادة 13 من الاتفاق واصفاً إياها بالتنازل عن السيادة القانونية وحق الملاحقة القضائية الدولية.",
+        sentiment: "negative",
+        score: -0.85,
+        topics: ["article-13", "sovereignty", "legal-surrender"],
+        url: "https://x.com/samer_k_economy/status/1726558",
+        timestamp: "4 hours ago"
+      },
+
+      // Facebook
+      {
+        platform: "Facebook",
+        userHandle: "rola.haddad.business",
+        userName: "Rola Haddad",
+        originalText: "A historic opportunity for reconstruction. International funds will flow again, and Alfred Alfa/MTC networks can finally rebuild the telecom grid in southern Lebanon. A secure framework is better than infinite war.",
+        summaryEn: "Highlighted the economic and reconstruction opportunities for telecom networks under the security framework.",
+        summaryAr: "سلطت الضوء على فرص إعادة الإعمار وتدفق الصناديق لتأهيل شبكات الاتصالات في جنوب لبنان.",
+        sentiment: "positive",
+        score: 0.8,
+        topics: ["reconstruction", "funding", "stability"],
+        url: "https://facebook.com/rola.haddad/posts/99150",
+        timestamp: "6 hours ago"
+      },
+      {
+        platform: "Facebook",
+        userHandle: "lebanon.telecom.watch",
+        userName: "Lebanon Telecom Monitor",
+        originalText: "How can we agree to a Secret Security Annex that gives Israeli jets operational freedom over our airspace? This isn't a peace deal, it's a structural occupation disguised as diplomacy. Absolute lack of transparency from the government.",
+        summaryEn: "Condemned the Secret Security Annex for codifying foreign airspace access and lacking democratic transparency.",
+        summaryAr: "أدان الملحق الأمني السري لمنحه الطيران الأجنبي حرية التحرك والعمل وغياب الشفافية الديمقراطية.",
+        sentiment: "negative",
+        score: -0.9,
+        topics: ["security-annex", "airspace", "transparency"],
+        url: "https://facebook.com/telecom.watch/posts/10085",
+        timestamp: "8 hours ago"
+      },
+
+      // LinkedIn
+      {
+        platform: "LinkedIn",
+        userHandle: "charbel-y-telecom",
+        userName: "Charbel Yazbeck",
+        originalText: "From a sovereign risk assessment perspective, the US-mediated framework shifts the geopolitical rating of Lebanon from 'unstable' to 'fragile but managed'. Corporate clients are carefully auditing the legal safety of rebuilding critical telecom and subsea cables.",
+        summaryEn: "Analyzed the shift in sovereign risk rating and noted corporate caution regarding infrastructure investment legalities.",
+        summaryAr: "حلل تحول تصنيف المخاطر السيادية ودعا للحذر الاستثماري بشأن البنية التحتية والاتصالات وكابلات البحر.",
+        sentiment: "neutral",
+        score: 0.15,
+        topics: ["risk-assessment", "geopolitics", "infrastructure"],
+        url: "https://linkedin.com/posts/charbel-y-telecom_1085",
+        timestamp: "12 hours ago"
+      },
+      {
+        platform: "LinkedIn",
+        userHandle: "mona-atallah-legal",
+        userName: "Mona Atallah",
+        originalText: "The legal paradox of Nawaf Salam's administration: A former ICJ president who fought for international justice is now presiding over a framework that bars his own nation from seeking international judicial remedy. A tough pill for legal scholars.",
+        summaryEn: "Highlighted the legal paradox of a former ICJ president presiding over a waiver of international legal recourse.",
+        summaryAr: "أبرزت المفارقة القانونية لرئيس سابق لمحكمة العدل الدولية يترأس تنازلاً عن سبل الانتصاف القانوني الدولي.",
+        sentiment: "negative",
+        score: -0.7,
+        topics: ["legal-paradox", "icj", "governance"],
+        url: "https://linkedin.com/posts/mona-atallah_5120",
+        timestamp: "1 day ago"
+      },
+
+      // Instagram
+      {
+        platform: "Instagram",
+        userHandle: "beirut_tech_scene",
+        userName: "Beirut Tech Scene",
+        originalText: "Visualizing peace and safety at the southern border. Families are packing bags to return to Tyre and Nabatieh. The hope for permanent stability after months of fear is palpable. Let's rebuild! 🕊️🇱🇧",
+        summaryEn: "Shared images showing hopeful border return preparations and community excitement about regional reconstruction.",
+        summaryAr: "عرض صوراً تظهر الاستعدادات لعودة النازحين وتطلع المجتمعات المحلية لإعادة بناء الجنوب اللبناني.",
+        sentiment: "positive",
+        score: 0.85,
+        topics: ["hope", "border-return", "peace"],
+        url: "https://instagram.com/p/C8o9VbzIe_geo",
+        timestamp: "14 hours ago"
+      },
+      {
+        platform: "Instagram",
+        userHandle: "ecogreen_leb",
+        userName: "EcoGreen Lebanon",
+        originalText: "Monitoring the UNEF patrol stations along the Blue Line. While the diplomatic signing happened in Washington, the real verification happens on the ground. Vetting pilot zones will take months. 📡🇱🇧",
+        summaryEn: "Stressed that physical verification along the Blue Line and vetting pilot zones will require months of field telemetry.",
+        summaryAr: "أكد أن عملية التحقق الميداني وتدقيق مناطق الانتشار التجريبية على طول الخط الأزرق ستتطلب شهوراً.",
+        sentiment: "neutral",
+        score: 0.05,
+        topics: ["unef", "blue-line", "verification"],
+        url: "https://instagram.com/p/C8p2Ky8Xy_geo",
+        timestamp: "18 hours ago"
+      },
+    ];
+
+    const topicsCloud = [
+      { text: "lebanon-israel deal", weight: 10 },
+      { text: "security annex", weight: 9 },
+      { text: "article 13 waiver", weight: 9 },
+      { text: "border ceasefire", weight: 8 },
+      { text: "sovereignty", weight: 8 },
+      { text: "nawaf salam", weight: 7 },
+      { text: "reconstruction", weight: 7 },
+      { text: "blue line", weight: 6 },
+      { text: "airspace access", weight: 6 },
+      { text: "pilot zones", weight: 5 },
+    ];
+
+    return {
+      feed,
+      globalSentimentScore: -12, // Volatile/divided public sentiment
+      topicsCloud
+    };
+  }
+
   const feed = [
     // X (Twitter)
     {

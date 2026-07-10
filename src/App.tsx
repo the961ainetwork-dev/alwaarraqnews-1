@@ -25,6 +25,7 @@ import { PrintableDossier } from './components/PrintableDossier';
 import AlWarraqVideos from './components/AlWarraqVideos';
 import { AlWarraqPodcast } from './components/AlWarraqPodcast';
 import { SaudiUaeFinancialChart } from './components/SaudiUaeFinancialChart';
+import { LebanonTelecomFinanceDashboard } from './components/LebanonTelecomFinanceDashboard';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
@@ -2358,9 +2359,14 @@ export default function App() {
                   ))}
                 </div>
 
-                {/* Saudi-UAE Financial Restrictions & Capital Flow Scrutiny Widget */}
-                <div className="my-6">
+                {/* Saudi-UAE Financial Restrictions & Capital Flow Scrutiny Widget & Lebanon Telecom Finance Dashboard */}
+                <div className="my-6 space-y-6">
                   <SaudiUaeFinancialChart language={language} layoutMode={layoutMode} />
+                  <LebanonTelecomFinanceDashboard 
+                    language={language} 
+                    layoutMode={layoutMode} 
+                    onSelectArticle={(article) => setSelectedArticle(article)} 
+                  />
                 </div>
 
                 {activeCategory === 'all' && economyArticles.length > 0 && (

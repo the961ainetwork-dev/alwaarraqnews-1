@@ -1204,6 +1204,116 @@ Although the Cabinet subsequently passed a modified version to superficially acc
     excerpt: 'ندى أيوب تكشف بالوثائق كواليس مشروع مرسوم هيكلة الاتصالات: تفكيك للمديريات العامة وخصخصة مقنعة تكرّس النفوذ المطلق للوزير.',
     hashtags: ['TelecomRestructuring', 'LibanTelecom', 'LebanonTelecom', 'Ogero'],
     views: 3120
+  },
+  {
+    id: 'rotten-golden-egg-telecom-cartel-2026',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'lebanon', 'economy', 'telecom-internet'],
+    titleAr: 'البيضة الذهبية فاسدة: حان الوقت لهدم كارتيل وزارة الاتصالات وإطلاق العنان لجيل الذكاء الاصطناعي',
+    titleEn: 'The Rotten Golden Egg: It is Time to Dismantle the Ministry of Telecommunications Cartel and Unleash the AI Generation',
+    summaryAr: 'مقال افتتاحي بقلم رئيس التحرير معن برازي يدعو فيه إلى تفكيك احتكار وزارة الاتصالات اللبنانية بالكامل ودمج قطاعات الوسائط المتعددة والبيانات، وتحرير السوق لتمكين رواد الأعمال وجيل الذكاء الاصطناعي في مواجهة الكارتيل البيروقراطي.',
+    summaryEn: 'An editorial by Editor-in-Chief Maan Barazy calling for the complete dismantling of Lebanon’s state telecom monopoly, the merging of multimedia and data sectors, and full deregulation to empower local AI entrepreneurs against the bureaucratic cartel.',
+    excerptAr: 'معن برازي يكتب عن ضرورة تفكيك الاحتكار الرقمي للدولة اللبنانية وتحرير البنية التحتية فوراً لتمكين جيل الذكاء الاصطناعي.',
+    excerptEn: 'Maan Barazy writes on the urgent need to dismantle the Lebanese state’s digital monopoly and immediately deregulate infrastructure to empower the AI generation.',
+    contentAr: `### البيضة الذهبية فاسدة: حان الوقت لهدم كارتيل وزارة الاتصالات وإطلاق العنان لجيل الذكاء الاصطناعي
+
+**بقلم معن برازي — رئيس التحرير**
+
+لعقود من الزمن، تم التغني بوزارة الاتصالات باعتبارها "البيضة الذهبية" للجمهورية. كانت بمثابة البقرة الحلوب التي أبقت دولة فاشلة على قيد الحياة، حيث ضخت المليارات في خزانة استنزفتها الهندسات المالية والسرقة الممنهجة. لكن اليوم، سقط القناع بالكامل. فما كان يوماً ألمع جواهر التاج اللبناني، تحول إلى كابوس بائس؛ ملعب للفساد المستشري، وبنية تحتية من عصور ما قبل التاريخ، ووزراء ينظرون إلى السيادة الرقمية لأمة بأكملها على أنها إقطاعيتهم الخاصة.
+
+إن المناورات التنفيذية الأخيرة لـ "إعادة هيكلة" الوزارة ليست إصلاحاً إدارياً؛ بل هي لعبة احتيال لبنانية كلاسيكية. فإلغاء المديريات التشغيلية قبل حتى تأسيس بديل مستقل وقابل للحياة مثل "ليبان تليكوم" (Liban Telecom) هو تخريب مؤسساتي. إنها خطوة مدروسة تهدف إلى حصر السلطة المطلقة في يد وزير واحد، وإغراق القطاع في حالة من الفوضى المُدارة. هذا الضباب المتعمد يخدم غرضاً واحداً فقط: السماح للمنتفعين وأصحاب النفوذ وكارتيلات الاتصالات الخاصة باقتطاع وابتلاع ما تبقى من القطاع بأبخس الأثمان.
+
+وبينما يتسابق العالم نحو أفق عام 2026 الذي تقوده التكنولوجيا، تنشغل قيادة قطاع الاتصالات في لبنان بنبش القانون 431/2002 - وهو جثة تشريعية عمرها 24 عاماً. إنهم يحاولون بيأس إحياء عقود إدارة فاشلة ومكلفة مع مشغلين أجانب، سبق وأن استنزفت نفقاتنا الرأسمالية ($CAPEX$) وتركت المستهلكين أمام فواتير باهظة وسرعات إنترنت بدائية.
+
+هذا لم يعد مجرد فساد؛ بل هو خيانة اقتصادية. نحن لسنا بحاجة إلى وزير يتصرف كسمسار لاحتكارات الاتصالات التي تنتمي للماضي. نحن بحاجة إلى تحرير كامل لا مساومة فيه للقطاع.
+
+---
+
+### المخطط الرقمي: التحرير، الوسائط المتعددة، والذكاء الاصطناعي
+
+الإصلاح الحقيقي يتطلب قطيعة تامة مع الماضي. لقد أصبحت الحدود التقليدية بين الاتصالات الهاتفية المحلية، والسعات الدولية، ومزودي خدمات الإنترنت (ISPs)، والبث، بالية تماماً. ومن أجل البقاء، يجب على لبنان دمج جميع خدمات الاتصالات والوسائط المتعددة والبيانات الرقمية بقوة في بنية تحتية واحدة وسلسة.
+
+من خلال التحرير الكامل للسوق وإنهاء احتكار الدولة، يمكننا فتح الأبواب أمام الثورة التكنولوجية المحلية والعالمية. في عصر الذكاء الاصطناعي، لا يعتبر الاتصال السريع وغير المقيد بالألياف الضوئية رفاهية - بل هو البنية التحتية الأساسية المطلوبة للبقاء الوطني.
+
+---
+
+### السلطة للبنّائين: رواد أعمال الذكاء الاصطناعي في مواجهة النخبة البيروقراطية
+
+في حين تتطلع الشخصيات السياسية المتجذرة إلى الماضي لحماية تدفقاتها النقدية الموروثة، هناك جيل جديد من البناة اللبنانيين مستعد للتطلع إلى المستقبل. إذا قمنا بتفكيك حواجز هذا الاحتكار الذي ترعاه الدولة، فيمكننا إشعال نهضة اقتصادية يقودها الذكاء الاصطناعي، ومسارات العمل متعددة الوكلاء، والتكنولوجيا اللامركزية.
+
+إليك كيف يمكن للاقتصاد الرقمي المحرر والمدفوع بالذكاء الاصطناعي أن يمكّن رواد الأعمال بشكل أساسي على حساب الكارتيل السياسي:
+
+1. **تحطيم الاحتكارات عبر اللامركزية:** يتيح قطاع الاتصالات المحرر للشركات الناشئة في مجال التكنولوجيا تجاوز وسطاء الدولة الفاسدين. يمكن لرواد الأعمال بناء شبكات متداخلة (Mesh Networks) محلية، ومزودي خدمات إنترنت بديلين، وبنية تحتية سحابية لامركزية، مما يجعل الاختناقات المفتعلة من قبل الوزارة غير ذات صلة تماماً.
+2. **نشر أطر عمل الذكاء الاصطناعي متعددة الوكلاء:** مع إمكانية الوصول المفتوح إلى تدفقات البيانات عالية السرعة والسعات الدولية بأسعار معقولة، يمكن للمطورين اللبنانيين بناء محركات بحث متقدمة تعتمد على الذكاء الاصطناعي، وأدوات امتثال آلية، وشبكات استخبارات سيادية. بدلاً من استجداء وزارة للحصول على ترخيص رقمي، يمكن للمؤسسين بناء منتجات برمجية عابرة للحدود وتوسيع نطاقها عالمياً انطلاقاً من بيروت.
+3. **أتمتة الأسواق وإنشاء المشاريع:** من خلال الاستفادة من التوليد المعزز بالاسترجاع ($RAG$) وخوارزميات المطابقة المعتمدة على الذكاء الاصطناعي، يمكن لنماذج الحاضنات الجديدة أن تسد الفجوة فوراً بين المبتكرين التكنولوجيين المحليين اللامعين والموارد المالية الهائلة للاغتراب اللبناني. يمكن أن يتدفق الاستثمار مباشرة إلى المشاريع التكنولوجية السيادية، متجاوزاً بالكامل القطاع المصرفي الفاسد وتنظيمات الدولة الجشعة.
+
+---
+
+### الحُكم: أمة رهينة
+
+المفارقة المأساوية مكتملة. إن قيادة الوزارة الحالية، المتورطة بعمق في مصالحها الخاصة بالاتصالات والشركات، عمياء مفاهيمياً وتكنولوجياً عن هذا المستقبل. إنهم غير قادرين أساساً على بناء نظام بيئي يمكن لمؤسسي التكنولوجيا الشباب أن يزدهروا فيه، لأن الاقتصاد الرقمي المزدهر والشفاف واللامركزي يهدد سيطرتهم المركزية بشكل مباشر.
+
+إن شباب ورواد الأعمال في هذا البلد ليسوا بحاجة إلى وزير للتفاوض على باقة إنترنت أرخص أو لتوزيع عقود من الباطن مفضلة. إنهم بحاجة إلى أن ترفع الدولة يديها الثقيلتين والفاسدتين عن الأسلاك.
+
+حان الوقت لتحرير القطاع بالكامل، ودمج شبكات الوسائط المتعددة، وتسليم مفاتيح الجمهورية الرقمية لمهندسي الذكاء الاصطناعي الذين يعرفون حقاً كيف يبنون المستقبل. الحرس القديم يريد إدارة انحدار بيضة ذهبية فاسدة; أما الجيل الجديد فهو مستعد لبناء الحاضنة التي ستحل محلها.`,
+    contentEn: `### The Rotten Golden Egg: It is Time to Dismantle the Ministry of Telecommunications Cartel and Unleash the AI Generation
+
+**By Maan Barazy — Editor-in-Chief**
+
+For decades, the Ministry of Telecommunications has been hailed as the "golden egg" of the Lebanese Republic. It served as the cash cow that kept a failed state on life support, pumping billions into a treasury drained by financial engineering and systemic plundering. But today, the mask has completely fallen. What was once the brightest jewel in the Lebanese crown has degenerated into a dystopian nightmare: a playground of rampant corruption, prehistoric infrastructure, and ministers who view the digital sovereignty of an entire nation as their private fiefdom.
+
+The recent executive maneuvers to "restructure" the Ministry are not administrative reforms; they are a classic Lebanese shell game. Dissolving operational general directorates before establishing an independent, viable successor like "Liban Telecom" is institutional sabotage. It is a calculated move designed to centralize absolute power in the hands of a single minister and plunge the sector into managed chaos. This deliberate fog serves only one purpose: allowing cronies, power brokers, and private telecom cartels to carve up and swallow what remains of the sector at fire-sale prices.
+
+While the rest of the world races toward a tech-driven 2026 horizon, Lebanon’s telecom leadership is busy exhuming Law 431/2002—a 24-year-old legislative corpse. They are desperately trying to revive failed, expensive management contracts with foreign operators that have historically drained our capital expenditures ($CAPEX$) while leaving consumers with extortionate bills and dial-up speeds.
+
+This is no longer mere corruption; it is economic treason. We do not need a minister acting as a broker for the telecom monopolies of the past. We need a complete, uncompromising liberation of the sector.
+
+---
+
+### The Digital Blueprint: Deregulation, Multimedia, and AI
+
+True reform demands a complete rupture with the past. The traditional boundaries dividing local telephony, international capacities, internet service providers (ISPs), and broadcasting are completely obsolete. To survive, Lebanon must forcefully merge all telecom, multimedia, and digital data services into a single, seamless infrastructure.
+
+By fully deregulating the market and ending the state monopoly, we can throw open the doors to local and global technological revolutions. In the age of Artificial Intelligence, fast and unrestricted fiber-optic connectivity is not a luxury—it is the foundational infrastructure required for national survival.
+
+---
+
+### Power to the Builders: AI Entrepreneurs vs. The Bureaucratic Elite
+
+While entrenched political figures look backward to protect their legacy cash streams, a new generation of Lebanese builders stands ready to look forward. If we dismantle the barriers of this state-sponsored monopoly, we can ignite an economic renaissance driven by AI, multi-agent workflows, and decentralized technology.
+
+Here is how a deregulated, AI-driven digital economy can fundamentally empower entrepreneurs at the expense of the political cartel:
+
+1. **Smashing Monopolies Through Decentralization:** A deregulated telecom sector allows tech startups to bypass corrupt state intermediaries. Entrepreneurs can build local mesh networks, alternative ISPs, and decentralized cloud infrastructure, making the Ministry's artificial bottlenecks entirely irrelevant.
+2. **Deploying Multi-Agent AI Frameworks:** With open access to high-speed data streams and affordable international capacity, Lebanese developers can build advanced AI search engines, automated compliance tools, and sovereign intelligence networks. Instead of begging a ministry for a digital license, founders can build cross-border software products and scale globally right out of Beirut.
+3. **Automating Markets and Venture Creation:** Leveraging Retrieval-Augmented Generation ($RAG$) and AI-driven matching algorithms, new incubator models can instantly bridge the gap between brilliant local tech innovators and the vast financial resources of the Lebanese diaspora. Investment can flow directly into sovereign tech ventures, completely bypassing a corrupt banking sector and a predatory state.
+
+---
+
+### The Verdict: A Nation Held Captive
+
+The tragic irony is complete. The current ministry leadership, deeply embedded in corporate and telecommunications self-interest, is conceptually and technologically blind to this future. They are fundamentally incapable of building an ecosystem where young tech founders can thrive, because a prosperous, transparent, and decentralized digital economy directly threatens their centralized control.
+
+The youth and entrepreneurs of this country do not need a minister to negotiate a cheaper internet bundle or to distribute preferential sub-contracts. They need the state to lift its heavy, corrupt hands off the wires.
+
+It is time to fully liberate the sector, integrate multimedia networks, and hand over the keys of the digital republic to the AI engineers who actually know how to build the future. The old guard wants to manage the decline of a rotten golden egg; the new generation is ready to build the incubator that replaces it.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس تحرير صحيفة الورّاق',
+      titleEn: 'Editor-in-Chief, Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-10',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['وزارة_الاتصالات', 'التحرير_الرقمي', 'الذكاء_الاصطناعي', 'ليبان_تليكوم', 'معن_برازي', 'Telecom', 'AI_Revolution', 'Deregulation', 'Maan_Barazy', 'Lebanon_Crisis'],
+    hashtags: ['LebanonTelecom', 'AI_Revolution', 'Sovereignty', 'FreeTheWires'],
+    views: 8940
   }
 ];
 

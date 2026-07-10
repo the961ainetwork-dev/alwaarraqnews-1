@@ -709,48 +709,106 @@ Respond with a single raw JSON object matching this schema:
       let score = 0;
       let topics: string[] = [];
 
-      if (sentiment === "positive") {
-        score = 0.5 + Math.random() * 0.5;
-        topics = ["innovation", "reliability", "strategic-fit"];
-        if (platform === "LinkedIn") {
-          original = `Incredibly impressed with the growth and development surrounding ${kw}. Our regional operations have seen massive efficiencies. Highly recommended for strategic expansion.`;
-          sumEn = `Expressed strong satisfaction with the expansion and regional efficiencies unlocked by ${kw}.`;
-          sumAr = `أعرب عن رضا كبير تجاه التوسع والموثوقية التشغيلية التي جلبتها ${kw} إقليمياً.`;
-        } else if (platform === "X") {
-          original = `What an absolute game-changer. ${kw} is delivering values beyond expectations! 🚀 #TechLebanon #Security #Future`;
-          sumEn = `Highlighted ${kw} as an absolute technological game-changer with high public value.`;
-          sumAr = `أكد أن ${kw} تُمثّل تحولاً جذرياً في قواعد اللعبة مع قيم مضافة ممتازة.`;
-        } else if (platform === "Reddit") {
-          original = `Gotta give credit where it is due, ${kw} has solved most of my major headaches this quarter. Code is robust and community vibes are amazing.`;
-          sumEn = `Praised ${kw} for solving developer headaches and fostering an active tech community.`;
-          sumAr = `أشاد بقدرة ${kw} على تقديم حلول ملموسة لمشاكل المطورين والمهتمين.`;
+      const isGeopolitical = /israel|lebanon|negotiation|ceasefire|border|clash|security|annex|إسرائيل|لبنان|مفاوضات|حدود|أمني|سلام|اتفاق/i.test(kw);
+
+      if (isGeopolitical) {
+        if (sentiment === "positive") {
+          score = 0.5 + Math.random() * 0.5;
+          if (platform === "X") {
+            original = `Optimistic about the border stabilization for ${kw}. If the security guarantees hold and refugees can finally return safely, this is the first real step to peace. The 14-point framework is robust.`;
+            sumEn = "Expressed optimism about border stability, security guarantees, and the return of refugees.";
+            sumAr = "أعرب عن تفاؤله بشأن استقرار الحدود والضمانات الأمنية وعودة النازحين.";
+            topics = ["ceasefire", "peace", "repatriation"];
+          } else if (platform === "Facebook") {
+            original = `A historic opportunity for reconstruction under ${kw}. International funds will flow again, and Alfa/MTC networks can finally rebuild the telecom grid in southern Lebanon. Highly needed!`;
+            sumEn = "Highlighted the economic and reconstruction opportunities for telecom networks under the security framework.";
+            sumAr = "سلط الضوء على فرص إعادة الإعمار وتدفق الصناديق لتأهيل شبكات الاتصالات في جنوب لبنان.";
+            topics = ["reconstruction", "funding", "stability"];
+          } else if (platform === "LinkedIn") {
+            original = `The latest achievements regarding ${kw} are opening doors for regional stability. Telecommunication and power sectors will see a massive push once the borders are legally demarcated.`;
+            sumEn = "Noted that border demarcation will unlock long-term investments in the telecom and power sectors.";
+            sumAr = "أشار إلى أن ترسيم الحدود سيفتح الباب لاستثمارات طويلة الأجل في قطاعي الاتصالات والطاقة.";
+            topics = ["investment", "infrastructure", "demarcation"];
+          } else {
+            original = `Visualizing peace and safety at the southern border under ${kw}. Families are packing bags to return to Tyre and Nabatieh. The hope for permanent stability after months of fear is palpable. Let's rebuild! 🕊️🇱🇧`;
+            sumEn = "Shared images showing hopeful border return preparations and community excitement about regional reconstruction.";
+            sumAr = "عرض صوراً تظهر الاستعدادات لعودة النازحين وتطلع المجتمعات المحلية لإعادة بناء الجنوب اللبناني.";
+            topics = ["hope", "border-return", "peace"];
+          }
+        } else if (sentiment === "negative") {
+          score = -0.5 - Math.random() * 0.5;
+          if (platform === "X") {
+            original = `Article 13 is an absolute disaster for Lebanese legal sovereignty in ${kw}. We are literally surrendering our right to hold anyone accountable in international courts just to secure a fragile deal. PM Nawaf Salam must answer!`;
+            sumEn = "Critiqued Article 13 of the agreement as a surrender of legal sovereignty and rights to international prosecution.";
+            sumAr = "انتقد المادة 13 من الاتفاق واصفاً إياها بالتنازل عن السيادة القانونية وحق الملاحقة القضائية الدولية.";
+            topics = ["article-13", "sovereignty", "legal-surrender"];
+          } else if (platform === "Facebook") {
+            original = `How can we agree to a Secret Security Annex in ${kw} that gives foreign jets operational freedom over our airspace? This isn't a peace deal, it's a structural occupation disguised as diplomacy. No transparency!`;
+            sumEn = "Condemned the Secret Security Annex for codifying foreign airspace access and lacking democratic transparency.";
+            sumAr = "أدان الملحق الأمني السري لمنحه الطيران الأجنبي حرية التحرك والعمل وغياب الشفافية الديمقراطية.";
+            topics = ["security-annex", "airspace", "transparency"];
+          } else if (platform === "LinkedIn") {
+            original = `The legal paradox of Nawaf Salam's administration on ${kw}: A former ICJ president who fought for international justice is now presiding over a framework that bars his own nation from seeking international judicial remedy. Highly controversial.`;
+            sumEn = "Highlighted the legal paradox of a former ICJ president presiding over a waiver of international legal recourse.";
+            sumAr = "أبرزت المفارقة القانونية لرئيس سابق لمحكمة العدل الدولية يترأس تنازلاً عن سبل الانتصاف القانوني الدولي.";
+            topics = ["legal-paradox", "icj", "governance"];
+          } else {
+            original = `While the concept of ${kw} is sound, the implementation feels underdeveloped and heavily overpriced for the national treasury. Hard to justify these structural compromises.`;
+            sumEn = "Noted that while the concept has potential, the execution is weak and places heavy burdens on the treasury.";
+            sumAr = "انتقد ضعف التنفيذ والمغالاة في التنازلات البنيوية رغم قوة المفهوم النظري.";
+            topics = ["compromise", "treasury", "execution"];
+          }
         } else {
-          original = `The latest achievements from ${kw} are beautifully crafted and highly reliable. Absolute masterpiece.`;
-          sumEn = `Shared photos of successful integration with ${kw}, noting its craft and precision.`;
-          sumAr = `أشاد بالإنجازات الجميلة والمتقنة الخاصة بـ ${kw} مؤكداً على الدقة العالية.`;
-        }
-      } else if (sentiment === "negative") {
-        score = -0.5 - Math.random() * 0.5;
-        topics = ["latency", "pricing-hurdle", "support"];
-        if (platform === "Reddit") {
-          original = `Am I the only one suffering from high pricing and latency with ${kw}? Support has been completely unresponsive for 2 days now. Very frustrated.`;
-          sumEn = `Complained about high prices, packet latency, and unresponsive support channels for ${kw}.`;
-          sumAr = `اشتكى من غلاء أسعار ${kw} والبطء الملحوظ وتأخر قنوات المساعدة الفنية.`;
-        } else if (platform === "X") {
-          original = `Seriously? ${kw} failed again during peak business hours. Unacceptable for a sovereign infrastructure! 😡 #Failure`;
-          sumEn = `Reported downtime and critical platform failure of ${kw} during heavy business usage hours.`;
-          sumAr = `أعرب عن غضبه من توقف ${kw} الطارئ خلال ساعات العمل الحيوية وعجز الدعم الفني.`;
-        } else {
-          original = `While the concept of ${kw} is sound, the implementation feels underdeveloped and heavily overpriced. Hard to justify the current licensing model.`;
-          sumEn = `Noted that while ${kw} has a good concept, the execution is weak and overpriced.`;
-          sumAr = `انتقد ضعف التنفيذ والمغالاة في تسعير تراخيص ${kw} رغم قوة المفهوم النظري.`;
+          score = -0.2 + Math.random() * 0.4;
+          original = `UNEF and international observers are evaluating the field security parameters around ${kw} to ensure legal alignment. Vetting pilot zones will take months.`;
+          sumEn = "Stressed that physical verification along the Blue Line and vetting pilot zones will require months of field telemetry.";
+          sumAr = "أكد أن عملية التحقق الميداني وتدقيق مناطق الانتشار التجريبية على طول الخط الأزرق ستتطلب شهوراً.";
+          topics = ["unef", "blue-line", "verification"];
         }
       } else {
-        score = -0.2 + Math.random() * 0.4;
-        topics = ["governance", "market-impact", "regulation"];
-        original = `Reuters reports that authorities are evaluating the regulatory framework around ${kw} to ensure legal alignment. Discussions are ongoing.`;
-        sumEn = `Discussed ongoing standard regulatory and compliance evaluations regarding ${kw}.`;
-        sumAr = `تناول المباحثات التنظيمية الجارية حول تقييم أداء وقوانين ${kw}.`;
+        if (sentiment === "positive") {
+          score = 0.5 + Math.random() * 0.5;
+          topics = ["innovation", "reliability", "strategic-fit"];
+          if (platform === "LinkedIn") {
+            original = `Incredibly impressed with the growth and development surrounding ${kw}. Our regional operations have seen massive efficiencies. Highly recommended for strategic expansion.`;
+            sumEn = `Expressed strong satisfaction with the expansion and regional efficiencies unlocked by ${kw}.`;
+            sumAr = `أعرب عن رضا كبير تجاه التوسع والموثوقية التشغيلية التي جلبتها ${kw} إقليمياً.`;
+          } else if (platform === "X") {
+            original = `What an absolute game-changer. ${kw} is delivering values beyond expectations! 🚀 #TechLebanon #Security #Future`;
+            sumEn = `Highlighted ${kw} as an absolute technological game-changer with high public value.`;
+            sumAr = `أكد أن ${kw} تُمثّل تحولاً جذرياً في قواعد اللعبة مع قيم مضافة ممتازة.`;
+          } else if (platform === "Reddit") {
+            original = `Gotta give credit where it is due, ${kw} has solved most of my major headaches this quarter. Code is robust and community vibes are amazing.`;
+            sumEn = `Praised ${kw} for solving developer headaches and fostering an active tech community.`;
+            sumAr = `أشاد بقدرة ${kw} على تقديم حلول ملموسة لمشاكل المطورين والمهتمين.`;
+          } else {
+            original = `The latest achievements from ${kw} are beautifully crafted and highly reliable. Absolute masterpiece.`;
+            sumEn = `Shared photos of successful integration with ${kw}, noting its craft and precision.`;
+            sumAr = `أشاد بالإنجازات الجميلة والمتقنة الخاصة بـ ${kw} مؤكداً على الدقة العالية.`;
+          }
+        } else if (sentiment === "negative") {
+          score = -0.5 - Math.random() * 0.5;
+          topics = ["latency", "pricing-hurdle", "support"];
+          if (platform === "Reddit") {
+            original = `Am I the only one suffering from high pricing and latency with ${kw}? Support has been completely unresponsive for 2 days now. Very frustrated.`;
+            sumEn = `Complained about high prices, packet latency, and unresponsive support channels for ${kw}.`;
+            sumAr = `اشتكى من غلاء أسعار ${kw} والبطء الملحوظ وتأخر قنوات المساعدة الفنية.`;
+          } else if (platform === "X") {
+            original = `Seriously? ${kw} failed again during peak business hours. Unacceptable for a sovereign infrastructure! 😡 #Failure`;
+            sumEn = `Reported downtime and critical platform failure of ${kw} during heavy business usage hours.`;
+            sumAr = `أعرب عن غضبه من توقف ${kw} الطارئ خلال ساعات العمل الحيوية وعجز الدعم الفني.`;
+          } else {
+            original = `While the concept of ${kw} is sound, the implementation feels underdeveloped and heavily overpriced. Hard to justify the current licensing model.`;
+            sumEn = `Noted that while ${kw} has a good concept, the execution is weak and overpriced.`;
+            sumAr = `انتقد ضعف التنفيذ والمغالاة في تسعير تراخيص ${kw} رغم قوة المفهوم النظري.`;
+          }
+        } else {
+          score = -0.2 + Math.random() * 0.4;
+          topics = ["governance", "market-impact", "regulation"];
+          original = `Reuters reports that authorities are evaluating the regulatory framework around ${kw} to ensure legal alignment. Discussions are ongoing.`;
+          sumEn = `Discussed ongoing standard regulatory and compliance evaluations regarding ${kw}.`;
+          sumAr = `تناول المباحثات التنظيمية الجارية حول تقييم أداء وقوانين ${kw}.`;
+        }
       }
 
       return { original, sumAr, sumEn, score: parseFloat(score.toFixed(2)), topics };
