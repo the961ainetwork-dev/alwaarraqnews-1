@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Shield, 
@@ -32,6 +32,7 @@ import {
   Link,
   Check
 } from 'lucide-react';
+import { Article } from '../types';
 
 interface WarRoomProps {
   language: 'ar' | 'en';
@@ -39,6 +40,7 @@ interface WarRoomProps {
   selectedDossierId?: string;
   onSelectDossier?: (id: string) => void;
   onOpenQrShare?: (url: string) => void;
+  latestBreaking?: Article | null;
 }
 
 interface TacticalDossier {
@@ -685,7 +687,8 @@ export default function WarRoom({
   layoutMode = 'digital',
   selectedDossierId: propSelectedDossierId,
   onSelectDossier: propOnSelectDossier,
-  onOpenQrShare
+  onOpenQrShare,
+  latestBreaking
 }: WarRoomProps) {
   const isAr = language === 'ar';
   
@@ -711,6 +714,55 @@ export default function WarRoom({
   const [blockadeRisk, setBlockadeRisk] = useState<number>(78);
   const [activeSensors, setActiveSensors] = useState<number>(14);
   const [straitStatus, setStraitStatus] = useState<'CONTRASTED' | 'BLOCKED' | 'NORMAL'>('CONTRASTED');
+
+  // Breathing glow states triggered by new breaking reports
+  const [isGlowing, setIsGlowing] = useState<boolean>(false);
+  const [lastSeenBreakingId, setLastSeenBreakingId] = useState<string | null>(null);
+  const [simulatedBreaking, setSimulatedBreaking] = useState<{
+    titleEn: string;
+    titleAr: string;
+    active: boolean;
+  } | null>(null);
+
+  // Trigger glow effect when a new breaking report is pushed to the live wire
+  useEffect(() => {
+    if (latestBreaking) {
+      if (!lastSeenBreakingId) {
+        // Initialize with current latest breaking without flashing initially
+        setLastSeenBreakingId(latestBreaking.id);
+      } else if (latestBreaking.id !== lastSeenBreakingId) {
+        // A new breaking report has been pushed!
+        setLastSeenBreakingId(latestBreaking.id);
+        setIsGlowing(true);
+        
+        // Auto-turn off intense breathing glow after 25 seconds to keep it elegant and non-intrusive
+        const timer = setTimeout(() => {
+          setIsGlowing(false);
+        }, 25000);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [latestBreaking, lastSeenBreakingId]);
+
+  // Helper to trigger simulated breaking wire push
+  const triggerSimulatedBreakingPush = () => {
+    setIsGlowing(true);
+    setSimulatedBreaking({
+      titleEn: "FLASH WIRE: Fifth Fleet signals increased radar clutter; threat level synchronized",
+      titleAr: "بث عاجل: الأسطول الخامس يرصد تشويشاً رادارياً متصاعداً وتأهب مستوى التهديد",
+      active: true
+    });
+    
+    // Auto-clear simulation text after 15 seconds
+    setTimeout(() => {
+      setSimulatedBreaking(prev => prev ? { ...prev, active: false } : null);
+    }, 15000);
+    
+    // Auto-fade threat glow after 25 seconds
+    setTimeout(() => {
+      setIsGlowing(false);
+    }, 25000);
+  };
 
   const activeDossier = TACTICAL_DOSSIERS.find(d => d.id === selectedDossierId) || TACTICAL_DOSSIERS[0];
 
@@ -972,7 +1024,11 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
         {/* Header Widgets Container */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 w-full xl:w-auto">
           {/* Visual Threat Level Gauge Widget */}
-          <div className="bg-zinc-900/40 border border-zinc-800 p-3 rounded-md flex items-center gap-4 text-xs font-mono select-none shadow-md flex-1 md:flex-none">
+          <div className={`border p-3 rounded-md flex items-center gap-4 text-xs font-mono select-none shadow-md flex-1 md:flex-none transition-all duration-500 ${
+            isGlowing 
+              ? 'breathing-threat-glow border-red-500/80 bg-red-950/20' 
+              : 'bg-zinc-900/40 border-zinc-800'
+          }`}>
             <div className="relative w-16 h-10 flex items-center justify-center overflow-hidden">
               <svg className="w-16 h-16 absolute -bottom-8" viewBox="0 0 100 100">
                 {/* Background Arc */}
@@ -1005,14 +1061,14 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
             <div>
               <span className="text-zinc-500 block uppercase text-[8px] font-black tracking-widest">{isAr ? 'مقياس التوتر العسكري الحرج' : 'MILITARY TENSION GAUGE'}</span>
               <span className="text-red-500 font-extrabold text-[11px] tracking-wider uppercase flex items-center gap-1.5 mt-0.5 animate-pulse">
-                <span className="w-1.5 h-1.5 bg-red-500 rounded-full inline-block"></span>
+                <span className={`w-1.5 h-1.5 rounded-full inline-block ${isGlowing ? 'bg-red-400 animate-ping' : 'bg-red-500'}`}></span>
                 {isAr ? `الحالة الحالية: ${TACTICAL_DOSSIERS[0].threatLevel}` : `CURRENT STATUS: ${TACTICAL_DOSSIERS[0].threatLevel}`}
               </span>
             </div>
           </div>
 
           {/* Telemetry quick status */}
-          <div className="bg-zinc-900/60 border border-zinc-800 p-3 rounded flex items-center gap-4 text-xs font-mono select-none flex-1 md:flex-none">
+          <div className="bg-zinc-900/60 border border-zinc-800 p-3 rounded flex flex-wrap items-center gap-4 text-xs font-mono select-none flex-1 md:flex-none">
             <div>
               <span className="text-zinc-500 block uppercase text-[9px]">{isAr ? 'مؤشر خطورة المضيق' : 'HORMA CHOKE RISK'}</span>
               <span className="text-red-500 font-bold text-base">{blockadeRisk}%</span>
@@ -1036,9 +1092,59 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
                 {straitStatus} ↻
               </button>
             </div>
+            <div className="h-8 w-px bg-zinc-800"></div>
+            <div>
+              <span className="text-zinc-500 block uppercase text-[9px]">{isAr ? 'البث المباشر' : 'LIVE WIRE'}</span>
+              <button 
+                onClick={triggerSimulatedBreakingPush}
+                className="px-1.5 py-0.5 rounded text-[10px] font-extrabold cursor-pointer transition-all bg-red-950 text-red-400 border border-red-800 hover:bg-red-900 hover:text-white"
+                title={isAr ? 'بث خبر عاجل محاكي' : 'Push simulated breaking wire briefing'}
+              >
+                {isAr ? 'بث ⚡' : 'PUSH ⚡'}
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Dynamic Live Wire Alert Banner */}
+      <AnimatePresence>
+        {isGlowing && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, y: -10 }}
+            animate={{ opacity: 1, height: 'auto', y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -10 }}
+            className="mb-6 overflow-hidden"
+          >
+            <div className="bg-red-950/40 border border-red-900/60 p-3 rounded-md flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                </span>
+                <span className="text-[9px] font-mono font-black text-red-400 bg-red-950/80 px-1.5 py-0.5 border border-red-900/40 rounded uppercase tracking-widest whitespace-nowrap">
+                  {isAr ? 'إشارة عاجلة واردة' : 'LIVE WIRE INTERCEPT'}
+                </span>
+                <p className="text-xs font-sans text-zinc-100 font-extrabold leading-tight">
+                  {simulatedBreaking?.active 
+                    ? (isAr ? simulatedBreaking.titleAr : simulatedBreaking.titleEn)
+                    : (latestBreaking 
+                        ? (isAr ? `عاجل: ${latestBreaking.titleAr}` : `FLASH: ${latestBreaking.titleEn}`)
+                        : (isAr ? 'تم رصد نشاط عسكري متزايد في المنطقة المجاورة' : 'Increased military activity detected in the active quadrant')
+                      )
+                  }
+                </p>
+              </div>
+              <button 
+                onClick={() => setIsGlowing(false)}
+                className="text-zinc-500 hover:text-white font-mono text-[9px] font-black uppercase px-1.5 py-0.5 border border-zinc-800 rounded hover:border-zinc-700 transition-colors cursor-pointer shrink-0"
+              >
+                {isAr ? 'تجاهل' : 'DISMISS'}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main Grid Structure */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

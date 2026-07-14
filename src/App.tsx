@@ -1259,6 +1259,7 @@ export default function App() {
                   setQrShareUrl(url);
                   setShowQrOverlay(true);
                 }}
+                latestBreaking={latestBreaking}
               />
             ) : activeCategory === 'press-releases' ? (
               <PressReleases
