@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { exec } from "child_process";
+import { INITIAL_ARTICLES } from "./src/data";
 
 dotenv.config();
 
@@ -232,6 +233,113 @@ You MUST respond with a single JSON asset matching this structure:
 // API Endpoint 2: Get all custom generated articles
 app.get("/api/news/custom", (req, res) => {
   res.json(customArticles);
+});
+
+// API Endpoint to publish/sync manual articles from CMS
+app.post("/api/news/publish-manual", (req, res) => {
+  const article = req.body;
+  if (!article || !article.id) {
+    return res.status(400).json({ error: "Invalid article payload" });
+  }
+  // Prevent duplicate ids
+  customArticles = customArticles.filter(art => art.id !== article.id);
+  customArticles.unshift(article);
+  res.json({ success: true, article });
+});
+
+// Google News Sitemap automated XML endpoint
+app.get("/news-sitemap.xml", (req, res) => {
+  // Combine custom articles and INITIAL_ARTICLES
+  const allArticles = [...customArticles, ...INITIAL_ARTICLES];
+  
+  // Helper to parse date to timestamp
+  function parseDateToTimestamp(dateStr: string): number {
+    if (!dateStr) return 0;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+      return new Date(dateStr).getTime();
+    }
+    let cleaned = dateStr.replace(/[٠-٩]/g, (d) => String("٠١٢٣٤٥٦٧٨٩".indexOf(d)));
+    const arabicMonths: { [key: string]: number } = {
+      'يناير': 0, 'فبراير': 1, 'مارس': 2, 'أبريل': 3, 'مايو': 4, 'يونيو': 5,
+      'يوليو': 6, 'أغسطس': 7, 'سبتمبر': 8, 'أكتوبر': 9, 'نوفمبر': 10, 'ديسمبر': 11
+    };
+    const parts = cleaned.trim().split(/\s+/);
+    if (parts.length === 3) {
+      const day = parseInt(parts[0], 10);
+      const monthStr = parts[1];
+      const year = parseInt(parts[2], 10);
+      if (!isNaN(day) && !isNaN(year)) {
+        let month = 0;
+        if (arabicMonths[monthStr] !== undefined) {
+          month = arabicMonths[monthStr];
+        } else {
+          const engIdx = new Date(`${monthStr} 1, 2000`).getMonth();
+          if (!isNaN(engIdx)) month = engIdx;
+        }
+        return new Date(year, month, day).getTime();
+      }
+    }
+    const parsed = Date.parse(dateStr);
+    return isNaN(parsed) ? 0 : parsed;
+  }
+
+  const now = new Date();
+  const fortyEightHoursAgo = new Date(now.getTime() - 48 * 60 * 60 * 1000);
+
+  // Filter articles from the last 48 hours
+  let sitemapArticles = allArticles.filter(art => {
+    if (!art.date) return false;
+    const timestamp = parseDateToTimestamp(art.date);
+    if (!timestamp) return false;
+    const artDate = new Date(timestamp);
+    // Google News Sitemap allows articles up to 48 hours old.
+    // If we're in static demo, we also allow any 2026 articles to ensure it has seed content.
+    return artDate >= fortyEightHoursAgo || artDate.getFullYear() === 2026;
+  });
+
+  // Limit to 1000 URLs per Google News guidelines
+  sitemapArticles = sitemapArticles.slice(0, 1000);
+
+  // XML formatting
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  xml += '        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n';
+
+  sitemapArticles.forEach(art => {
+    const category = art.category || 'news';
+    const slug = art.slug || art.id;
+    const url = `https://alwarraqnews.com/${category}/${slug}`;
+    const timestamp = parseDateToTimestamp(art.date);
+    const isoDate = timestamp ? new Date(timestamp).toISOString() : new Date().toISOString();
+    
+    // Clean XML title string to prevent invalid XML entities
+    const title = (art.titleAr || art.titleEn || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
+
+    const hasArabic = /[\u0600-\u06FF]/.test(title);
+    const lang = hasArabic ? 'ar' : 'en';
+
+    xml += '  <url>\n';
+    xml += `    <loc>${url}</loc>\n`;
+    xml += '    <news:news>\n';
+    xml += '      <news:publication>\n';
+    xml += `        <news:name>جريدة الورق | Al-Warraq News</news:name>\n`;
+    xml += `        <news:language>${lang}</news:language>\n`;
+    xml += '      </news:publication>\n';
+    xml += `      <news:publication_date>${isoDate}</news:publication_date>\n`;
+    xml += `      <news:title>${title}</news:title>\n`;
+    xml += '    </news:news>\n';
+    xml += '  </url>\n';
+  });
+
+  xml += '</urlset>';
+
+  res.header('Content-Type', 'application/xml');
+  res.send(xml);
 });
 
 // API Endpoint 3: Analyze/Summarize/Fact-check an existing article with custom views
@@ -1303,6 +1411,193 @@ Respond with a single raw JSON object matching this schema:
   }
 });
 
+// Global SEO Helpers for Server-Side Rendering (SSR) Meta Tag Injection
+function parseDateToTimestamp(dateStr: string): number {
+  if (!dateStr) return 0;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return new Date(dateStr).getTime();
+  }
+  let cleaned = dateStr.replace(/[٠-٩]/g, (d) => String("٠١٢٣٤٥٦٧٨٩".indexOf(d)));
+  const arabicMonths: { [key: string]: number } = {
+    'يناير': 0, 'فبراير': 1, 'مارس': 2, 'أبريل': 3, 'مايو': 4, 'يونيو': 5,
+    'يوليو': 6, 'أغسطس': 7, 'سبتمبر': 8, 'أكتوبر': 9, 'نوفمبر': 10, 'ديسمبر': 11
+  };
+  const parts = cleaned.trim().split(/\s+/);
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10);
+    const monthStr = parts[1];
+    const year = parseInt(parts[2], 10);
+    if (!isNaN(day) && !isNaN(year)) {
+      let month = 0;
+      if (arabicMonths[monthStr] !== undefined) {
+        month = arabicMonths[monthStr];
+      } else {
+        const engIdx = new Date(`${monthStr} 1, 2000`).getMonth();
+        if (!isNaN(engIdx)) month = engIdx;
+      }
+      return new Date(year, month, day).getTime();
+    }
+  }
+  const parsed = Date.parse(dateStr);
+  return isNaN(parsed) ? 0 : parsed;
+}
+
+function findArticleForRequest(req: express.Request): any {
+  const allArticles = [...customArticles, ...INITIAL_ARTICLES];
+  
+  const articleId = req.query.article as string;
+  const dossierId = req.query.dossier as string;
+  
+  const segments = req.path.split("/").filter(Boolean);
+  let category = "";
+  let slug = "";
+  
+  if (segments.length === 2) {
+    category = segments[0];
+    slug = segments[1];
+  } else if (segments.length === 3 && segments[0] === "section") {
+    category = segments[1];
+    slug = segments[2];
+  }
+
+  const targetIdentifier = slug || articleId || dossierId;
+  if (!targetIdentifier) return null;
+
+  return allArticles.find(art => {
+    const idMatches = art.id && String(art.id).toLowerCase() === String(targetIdentifier).toLowerCase();
+    const slugMatches = art.slug && String(art.slug).toLowerCase() === String(targetIdentifier).toLowerCase();
+    const focusKeywordMatches = art.focusKeyword && String(art.focusKeyword).toLowerCase() === String(targetIdentifier).toLowerCase();
+    return idMatches || slugMatches || focusKeywordMatches;
+  });
+}
+
+function injectSEO(html: string, article: any, isAr: boolean) {
+  const title = isAr ? article.titleAr : article.titleEn;
+  const summary = isAr ? (article.summaryAr || article.excerptAr || "") : (article.summaryEn || article.excerptEn || "");
+  const cleanTitle = title.length > 60 ? title.substring(0, 57) + "..." : title;
+  const cleanDesc = summary.length > 155 ? summary.substring(0, 152) + "..." : summary;
+  
+  const siteName = isAr ? "الورّاق Al-Warraq" : "Al-Warraq News";
+  const fullTitle = `${cleanTitle} | ${siteName}`;
+  const canonicalUrl = `https://alwarraqnews.com/${article.category || "news"}/${article.slug || article.id}`;
+  
+  // Create images for Google Discover (16:9, 4:3, 1:1)
+  const cleanImgUrl = (article.imageUrl || "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=600").split("?")[0];
+  const img16x9 = `${cleanImgUrl}?auto=format&fit=crop&w=1600&h=900&q=80`;
+  const img4x3 = `${cleanImgUrl}?auto=format&fit=crop&w=1200&h=900&q=80`;
+  const img1x1 = `${cleanImgUrl}?auto=format&fit=crop&w=1000&h=1000&q=80`;
+  
+  // Format published dates
+  const dateStr = article.date || "2026-07-14";
+  const timestamp = parseDateToTimestamp(dateStr);
+  const isoDate = timestamp ? new Date(timestamp).toISOString() : new Date().toISOString();
+  
+  // Determine if it is a FinancialNewsArticle
+  const isFinancial = ["economy", "markets", "arab-markets", "lebanon-banking", "bdl", "deposits"].includes(article.category) ||
+    article.categories?.some((cat: any) => ["economy", "markets", "arab-markets", "lebanon-banking"].includes(cat)) ||
+    article.tags?.some((tag: any) => ["اقتصاد", "أسواق", "بنوك", "عملات", "سندات", "دولار", "الليرة_اللبنانية", "Economy", "Markets", "Banking", "Finance", "SST_Removal", "reconstruction", "fuel-profiteering"].some(kw => tag.toLowerCase().includes(kw.toLowerCase())));
+  
+  const schemaType = isFinancial ? "FinancialNewsArticle" : "NewsArticle";
+  
+  const authorName = isAr ? (article.author?.nameAr || "محرر الصحيفة") : (article.author?.nameEn || "Al-Warraq Scribe");
+  const authorTitle = isAr ? (article.author?.titleAr || "تقرير استراتيجي") : (article.author?.titleEn || "Strategic Analyst");
+  const authorSlug = (article.author?.nameEn || "scribe").toLowerCase().replace(/[^a-z0-9]/g, "-");
+  
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": schemaType,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "headline": title.substring(0, 110),
+    "description": cleanDesc,
+    "image": [img16x9, img4x3, img1x1],
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "author": {
+      "@type": "Person",
+      "name": authorName,
+      "jobTitle": authorTitle,
+      "url": `https://alwarraqnews.com/author/${authorSlug}`
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "جريدة الورق | Al-Warraq News",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alwarraqnews.com/logo_al_warraq_square.png"
+      }
+    }
+  };
+
+  const seoTags = `
+    <title>${fullTitle}</title>
+    <meta name="description" content="${cleanDesc}" />
+    <link rel="canonical" href="${canonicalUrl}" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${summary}" />
+    <meta property="og:image" content="${img16x9}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta property="og:site_name" content="جريدة الورق | Al-Warraq News" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${title}" />
+    <meta name="twitter:description" content="${summary}" />
+    <meta name="twitter:image" content="${img16x9}" />
+    <script type="application/ld+json" id="seo-news-article-jsonld">
+      ${JSON.stringify(jsonLd, null, 2)}
+    </script>
+  `;
+
+  let cleanHtml = html
+    .replace(/<title>.*?<\/title>/gi, "")
+    .replace(/<meta name="description" content=".*?" \/>/gi, "")
+    .replace(/<meta property="og:title" content=".*?" \/>/gi, "")
+    .replace(/<meta property="og:description" content=".*?" \/>/gi, "");
+
+  cleanHtml = cleanHtml.replace(/<head>/i, `<head>${seoTags}`);
+  return cleanHtml;
+}
+
+function injectDefaultSEO(html: string, isAr: boolean) {
+  const siteName = "جريدة الورق | Al-Warraq News";
+  const title = isAr 
+    ? "منصة التحليلات السيادية والاستقصاء الإخباري لمنطقة الشرق الأوسط ولبنان"
+    : "Premium Lebanon & Middle East Economic Portal";
+  const fullTitle = `${siteName} - ${title}`;
+  const desc = isAr
+    ? "جريدة الورّاق تقدم تحليلات مالية سيادية، وتقارير استقصائية معمقة حول شؤون لبنان والشرق الأوسط، ومؤشرات أسواق الأسهم والعملات وصياغة المخاطر الجيوسياسية."
+    : "Al-Warraq News provides authoritative Lebanon and Middle East economic news, sovereign financial indicators, and deep investigative geopolitics.";
+  
+  const defaultUrl = "https://alwarraqnews.com/";
+  const defaultImg = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200";
+
+  const seoTags = `
+    <title>${fullTitle}</title>
+    <meta name="description" content="${desc}" />
+    <link rel="canonical" href="${defaultUrl}" />
+    <meta property="og:title" content="${fullTitle}" />
+    <meta property="og:description" content="${desc}" />
+    <meta property="og:image" content="${defaultImg}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${defaultUrl}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${fullTitle}" />
+    <meta name="twitter:description" content="${desc}" />
+    <meta name="twitter:image" content="${defaultImg}" />
+  `;
+
+  let cleanHtml = html
+    .replace(/<title>.*?<\/title>/gi, "")
+    .replace(/<meta name="description" content=".*?" \/>/gi, "")
+    .replace(/<meta property="og:title" content=".*?" \/>/gi, "")
+    .replace(/<meta property="og:description" content=".*?" \/>/gi, "");
+
+  cleanHtml = cleanHtml.replace(/<head>/i, `<head>${seoTags}`);
+  return cleanHtml;
+}
+
 // Serve static assets and bind Vite Dev Server
 async function start() {
   const isProdMode = process.env.NODE_ENV === "production" || fs.existsSync(path.resolve(process.cwd(), "dist", "index.html"));
@@ -1321,6 +1616,15 @@ async function start() {
         const htmlFile = path.join(process.cwd(), "index.html");
         let html = fs.readFileSync(htmlFile, "utf-8");
         html = await vite.transformIndexHtml(url, html);
+        
+        const isAr = req.query.lang !== "en";
+        const article = findArticleForRequest(req);
+        if (article) {
+          html = injectSEO(html, article, isAr);
+        } else {
+          html = injectDefaultSEO(html, isAr);
+        }
+        
         res.status(200).set({ "Content-Type": "text/html" }).end(html);
       } catch (err) {
         next(err);
@@ -1358,7 +1662,19 @@ async function start() {
       }
 
       if (indexFile) {
-        res.sendFile(indexFile);
+        try {
+          let html = fs.readFileSync(indexFile, "utf-8");
+          const isAr = req.query.lang !== "en";
+          const article = findArticleForRequest(req);
+          if (article) {
+            html = injectSEO(html, article, isAr);
+          } else {
+            html = injectDefaultSEO(html, isAr);
+          }
+          res.status(200).set({ "Content-Type": "text/html" }).send(html);
+        } catch (e: any) {
+          res.sendFile(indexFile);
+        }
       } else {
         res.status(404).send(`Error: built index.html not found! Checked locations: ${possibleIndexPaths.join(', ')}`);
       }

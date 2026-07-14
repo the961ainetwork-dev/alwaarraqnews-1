@@ -269,6 +269,24 @@ export default function AdminPanel({
   const [storyParentAuthorityArticleId, setStoryParentAuthorityArticleId] = useState('');
   const [isTranslating, setIsTranslating] = useState(false);
 
+  // SEO Targeted Focus Keyword & Slug States
+  const [storyFocusKeyword, setStoryFocusKeyword] = useState('');
+  const [storySlug, setStorySlug] = useState('');
+
+  const slugify = (text: string) => {
+    return text
+      .toLowerCase()
+      .trim()
+      .replace(/[^\u0600-\u06FFa-zA-Z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
+
+  const handleFocusKeywordChange = (val: string) => {
+    setStoryFocusKeyword(val);
+    setStorySlug(slugify(val));
+  };
+
   const handleAutoTranslate = async () => {
     if (!storyTitleAr || !storyContentAr) {
       alert(isAr ? 'برجاء كتابة عنوان الخبر ومتن المقال بالعربية أولاً لتلقيم الترجمة!' : 'Please supply Ar Title and Ar Content first to parse translation!');
@@ -504,6 +522,7 @@ export default function AdminPanel({
     }
 
     const uniqueId = `curated-dispatch-${Date.now()}`;
+    const finalSlug = slugify(editTitleAr || uniqueId);
     const newArticle: Article = {
       id: uniqueId,
       category: editCategory,
@@ -527,10 +546,20 @@ export default function AdminPanel({
       isFeatured: editIsFeatured,
       isPremium: editIsPremium,
       tags: editTags,
-      views: Math.floor(Math.random() * 200) + 18
+      views: Math.floor(Math.random() * 200) + 18,
+      slug: finalSlug,
+      focusKeyword: editTitleAr
     };
 
     setArticles(prev => [newArticle, ...prev]);
+
+    // Async sync with Express backend for Server-Side Rendering (SSR) & XML Sitemap compatibility
+    fetch('/api/news/publish-manual', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newArticle)
+    }).catch(err => console.warn('Backend sync failed:', err));
+
     setPublishSuccessMessage(isAr ? '✓ تم نشر المادة بنجاح في الجريدة!' : '✓ Article published successfully to the live news feed!');
 
     setTimeout(() => {
@@ -720,6 +749,7 @@ export default function AdminPanel({
     }
 
     const rawId = `story-custom-${Date.now()}`;
+    const finalSlug = storySlug || slugify(storyFocusKeyword || storyTitleAr || rawId);
     const newArticles: Article = {
       id: rawId,
       category: storyCategory,
@@ -744,10 +774,19 @@ export default function AdminPanel({
       isPremium: storyIsPremium,
       tags: storyTags,
       parentAuthorityArticleId: storyParentAuthorityArticleId || undefined,
-      views: Math.floor(Math.random() * 200) + 12
+      views: Math.floor(Math.random() * 200) + 12,
+      focusKeyword: storyFocusKeyword || undefined,
+      slug: finalSlug || undefined
     };
 
     setArticles(prev => [newArticles, ...prev]);
+
+    // Async sync with Express backend for Server-Side Rendering (SSR) & XML Sitemap compatibility
+    fetch('/api/news/publish-manual', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newArticles)
+    }).catch(err => console.warn('Backend sync omitted or failed:', err));
 
     // Recenter
     setStoryTitleAr('');
@@ -759,6 +798,8 @@ export default function AdminPanel({
     setStoryIsPremium(false);
     setStoryTags([]);
     setStoryParentAuthorityArticleId('');
+    setStoryFocusKeyword('');
+    setStorySlug('');
     setStorySuccess(isAr ? '✓ تم قيد ونشر المقال مع الترجمة التلقائية بالذكاء الاصطناعي!' : '✓ News story committed with AI translation.');
   };
 
@@ -1782,6 +1823,47 @@ export default function AdminPanel({
                       placeholder={isTranslating ? "Translating from Arabic with AI..." : "Major Hydrological Reserves Discovered in Central Desert (Or leave blank to auto-translate)"}
                       className="w-full p-2.5 border-2 border-black bg-white font-bold"
                     />
+                  </div>
+                </div>
+
+                {/* SEO Focus Keyword and Slug Preview */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-red-100 p-3.5 bg-red-50/10">
+                  <div className="space-y-1">
+                    <label className="block text-xxs font-mono font-black text-[#b91c1c] uppercase flex items-center gap-1">
+                      <Tag size={11} />
+                      {isAr ? "الكلمة المفتاحية المستهدفة (Focus Keyword)" : "Target Focus Keyword"}
+                    </label>
+                    <input
+                      type="text"
+                      value={storyFocusKeyword}
+                      onChange={(e) => handleFocusKeywordChange(e.target.value)}
+                      placeholder={isAr ? "مثال: لبنان-صادرات-الصناعة-2025" : "e.g. lebanon-industry-exports-2025"}
+                      className="w-full p-2.5 border-2 border-black bg-white font-sans text-xs font-bold"
+                    />
+                    <p className="text-[9px] text-zinc-400 leading-tight">
+                      {isAr ? "تستخدم هذه الكلمة لربط عنوان الرابط الثابت وقصص الأرشفة العضوية." : "Directly binds to the canonical URL slug for aggressive search indexation."}
+                    </p>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="block text-xxs font-mono font-black text-zinc-500 uppercase">
+                      {isAr ? "معاينة الرابط الثابت (SEO Canonical Slug)" : "SEO Canonical Slug Preview"}
+                    </label>
+                    <div className="flex items-center">
+                      <span className="bg-zinc-100 px-2 py-2.5 border-2 border-r-0 border-black text-[10px] font-mono text-zinc-500 select-none">
+                        /{storyCategory}/
+                      </span>
+                      <input
+                        type="text"
+                        value={storySlug}
+                        onChange={(e) => setStorySlug(slugify(e.target.value))}
+                        placeholder="auto-generated-slug"
+                        className="w-full p-2.5 border-2 border-black bg-neutral-50 font-mono text-xs font-bold text-zinc-600"
+                      />
+                    </div>
+                    <p className="text-[9px] text-zinc-400 leading-tight">
+                      {isAr ? "رابط ثابت نظيف وجاهز للزحف من محركات البحث والخرائط الإخبارية." : "Fully optimized clean URL path for search engine crawlers."}
+                    </p>
                   </div>
                 </div>
 

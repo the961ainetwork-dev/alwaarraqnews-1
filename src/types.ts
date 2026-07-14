@@ -29,6 +29,8 @@ export interface Article {
   views: number;
   excerpt?: string; // Unified excerpt property
   hashtags?: string[]; // Unified hashtags array
+  focusKeyword?: string; // Focus Keyword for SEO optimization
+  slug?: string; // URL Slug matching the focus keyword or title
 }
 
 export interface UserProfile {

@@ -3,6 +3,8 @@ import { Article } from './types';
 export const NEW_ARTICLES: Article[] = [
   {
     id: 'syria-terror-list-removal-2026',
+    slug: 'syria-terror-list-removal-2026',
+    focusKeyword: 'سوريا-شطب-الإرهاب-إعادة-الإعمار',
     category: 'exclusives',
     categories: ['exclusives', 'middle-east', 'economy', 'markets'],
     titleAr: 'الملف الرابع عشر: فكّ الأغلال: إزالة سوريا من قوائم الإرهاب والعبور نحو عصر الإعمار والاستثمار',

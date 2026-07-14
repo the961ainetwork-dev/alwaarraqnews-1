@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Article } from '../types';
-import { getAuthorProfile } from '../seoData';
+import { injectNewsArticleSchema } from '../utils/seoSchema';
 
 interface SEOMetadataManagerProps {
   article: Article | null;
@@ -26,8 +26,6 @@ export default function SEOMetadataManager({ article, siteName = 'الورّاق
     const isAr = language === 'ar';
     const title = isAr ? article.titleAr : article.titleEn;
     const summary = isAr ? article.summaryAr : article.summaryEn;
-    const authorName = isAr ? (article.author?.nameAr || '') : (article.author?.nameEn || '');
-    const authorId = (article.author?.nameEn || '').toLowerCase().replace(/[^a-z0-9]/g, '-');
 
     // 1. Dynamic Page title (Max 60 chars optimal for Google SERPs)
     const rawTitle = `${title} | ${siteName}`;
@@ -47,42 +45,8 @@ export default function SEOMetadataManager({ article, siteName = 'الورّاق
     updateMetaTag('property', 'og:type', 'article');
     updateMetaTag('name', 'twitter:card', 'summary_large_image');
 
-    // 4. Structured Data (JSON-LD NewsArticle)
-    // Map dates cleanly to iso string format if possible or mock standard format
-    const isoDate = '2026-06-18T08:00:00Z'; // fallback standard for 2026 portal
-    const profile = getAuthorProfile(article.author?.nameEn || '', article.author?.nameAr || '');
-
-    const jsonLdData = {
-      '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      'mainEntityOfPage': {
-        '@type': 'WebPage',
-        '@id': `https://alwarraqnews.com/article/${article.id}`
-      },
-      'headline': title,
-      'image': [
-        article.imageUrl
-      ],
-      'datePublished': isoDate,
-      'dateModified': isoDate,
-      'author': {
-        '@type': 'Person',
-        'name': authorName,
-        'jobTitle': isAr ? profile.titleAr : profile.titleEn,
-        'sameAs': `https://alwarraqnews.com/author/${profile.id}`
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': siteName,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': 'https://alwarraqnews.com/logo_al_warraq.png' // static asset logo URL
-        }
-      },
-      'description': summary
-    };
-
-    injectJsonLd(jsonLdData);
+    // 4. Inject Dynamic JSON-LD structured schema for Google Discover/News compliance
+    injectNewsArticleSchema(article, isAr, siteName);
 
     return () => {
       // Cleanup
@@ -109,15 +73,6 @@ function removeMetaTag(attributeName: 'name' | 'property', attributeValue: strin
   if (element) {
     element.remove();
   }
-}
-
-function injectJsonLd(data: any) {
-  removeJsonLd(); // prevent duplicates
-  const script = document.createElement('script');
-  script.id = 'seo-news-article-jsonld';
-  script.type = 'application/ld+json';
-  script.text = JSON.stringify(data);
-  document.head.appendChild(script);
 }
 
 function removeJsonLd() {

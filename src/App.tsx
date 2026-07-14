@@ -709,6 +709,8 @@ export default function App() {
 
   // Synchronize activeCategory and selectedDossierId to query parameters in real-time
   useEffect(() => {
+    if (selectedArticle) return; // Let article URL take precedence when an article is open
+    
     const params = new URLSearchParams(window.location.search);
     let changed = false;
 
@@ -741,7 +743,7 @@ export default function App() {
         console.warn("History replaceState bypassed:", e);
       }
     }
-  }, [activeCategory, selectedDossierId]);
+  }, [activeCategory, selectedDossierId, selectedArticle]);
 
   // Use a ref for allArticles to avoid re-triggering this effect when articles list changes
   const allArticlesRef = React.useRef(allArticles);
@@ -749,53 +751,103 @@ export default function App() {
     allArticlesRef.current = allArticles;
   }, [allArticles]);
 
-  // Load and synchronize article from URL parameter ?article=xxx on mount/popstate
+  // Load and synchronize article from URL path (clean SEO URLs) or parameter ?article=xxx on mount/popstate
   useEffect(() => {
+    const KNOWN_CATEGORIES = [
+      'all', 'in-case-you-missed-it', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street',
+      'sentiment-analysis', 'fifa-2026', 'exclusives', 'editor-desk', 'translations', 'lebanon',
+      'instats', 'videos', 'podcast', 'middle-east', 'economy', 'markets', 'arab-markets',
+      'telecom-internet', 'research-reports', 'sports', 'wellness-lifestyle', 'what-if-simulator',
+      'press-releases', 'newsletter', 'premium-pricing', 'section'
+    ];
+
     const handleArticleParam = () => {
+      // 1. Check path segments first (e.g. /economy/لبنان-صادرات-الصناعة-2025)
+      const pathSegments = window.location.pathname.split('/').filter(Boolean);
+      let targetSlug = '';
+      let targetCategory = '';
+      
+      if (pathSegments[0] === 'section' && pathSegments.length >= 3) {
+        targetCategory = pathSegments[1];
+        targetSlug = pathSegments[2];
+      } else if (pathSegments.length === 2 && KNOWN_CATEGORIES.includes(pathSegments[0])) {
+        targetCategory = pathSegments[0];
+        targetSlug = pathSegments[1];
+      } else if (pathSegments.length === 1 && KNOWN_CATEGORIES.includes(pathSegments[0]) && pathSegments[0] !== 'section') {
+        setActiveCategory(pathSegments[0]);
+      }
+
+      // 2. Check query params as fallback
       const params = new URLSearchParams(window.location.search);
       const articleId = params.get('article');
-      if (articleId) {
-        const match = allArticlesRef.current.find(a => a.id === articleId);
+      const dossierId = params.get('dossier');
+      
+      const identifier = targetSlug || articleId || dossierId;
+      if (identifier) {
+        const match = allArticlesRef.current.find(a => 
+          String(a.id).toLowerCase() === String(identifier).toLowerCase() ||
+          (a.slug && String(a.slug).toLowerCase() === String(identifier).toLowerCase()) ||
+          (a.focusKeyword && String(a.focusKeyword).toLowerCase() === String(identifier).toLowerCase())
+        );
         if (match) {
           setSelectedArticle(match);
+          if (match.category) {
+            setActiveCategory(match.category);
+          }
+          return;
         }
-      } else {
-        setSelectedArticle(null);
       }
+      setSelectedArticle(null);
     };
+
     handleArticleParam();
     window.addEventListener('popstate', handleArticleParam);
     return () => window.removeEventListener('popstate', handleArticleParam);
   }, []);
 
-  // Synchronize browser URL parameter with open selectedArticle state
+  // Synchronize browser URL parameters/pathname with open selectedArticle state
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const existingId = params.get('article');
     
     if (selectedArticle) {
-      if (existingId !== selectedArticle.id) {
-        params.set('article', selectedArticle.id);
-        const newSearch = params.toString();
+      const category = selectedArticle.category || 'news';
+      const slug = selectedArticle.slug || selectedArticle.id;
+      const cleanPath = `/section/${category}/${slug}`;
+      
+      if (window.location.pathname !== cleanPath) {
+        params.delete('article'); // Prefer clean paths
+        const searchStr = params.toString();
+        const suffix = searchStr ? `?${searchStr}` : '';
         try {
-          window.history.pushState({ articleId: selectedArticle.id }, '', `${window.location.pathname}?${newSearch}`);
+          window.history.pushState({ articleId: selectedArticle.id }, '', `${cleanPath}${suffix}`);
         } catch (e) {
           console.warn("History pushState bypassed due to security/sandbox constraints:", e);
         }
       }
     } else {
-      if (existingId) {
+      const pathSegments = window.location.pathname.split('/').filter(Boolean);
+      if (pathSegments.length >= 2) {
+        try {
+          const categoryPath = activeCategory && activeCategory !== 'all' ? `/section/${activeCategory}` : '/';
+          window.history.pushState({ articleId: null }, '', categoryPath);
+        } catch (e) {
+          try {
+            window.history.pushState({ articleId: null }, '', '/');
+          } catch (e2) {}
+        }
+      } else if (existingId) {
         params.delete('article');
         const searchStr = params.toString();
         const suffix = searchStr ? `?${searchStr}` : '';
         try {
           window.history.pushState({ articleId: null }, '', `${window.location.pathname}${suffix}`);
         } catch (e) {
-          console.warn("History pushState bypassed due to security/sandbox constraints:", e);
+          console.warn("History pushState bypassed:", e);
         }
       }
     }
-  }, [selectedArticle]);
+  }, [selectedArticle, activeCategory]);
 
   // Hero Slider Index pointer
   const [currentSlide, setCurrentSlide] = useState(0);

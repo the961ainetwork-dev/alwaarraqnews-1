@@ -1,10 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { Article, NavigationTab } from '../types';
+import AdminTrafficMonitor from './AdminTrafficMonitor';
 import { 
   TrendingUp, TrendingDown, Eye, BookOpen, Users, 
   AlertCircle, CheckCircle2, Clock, BarChart3, Search, 
   FileText, RefreshCw, Gauge, ChevronRight, HelpCircle,
-  Activity, Layers, Award
+  Activity, Layers, Award, Globe, MapPin, Play, Pause, Filter,
+  Smartphone, Laptop, Tablet
 } from 'lucide-react';
 import { 
   ResponsiveContainer, AreaChart, Area, BarChart, Bar, 
@@ -21,8 +23,194 @@ interface AdminDashboardStatsProps {
 export default function AdminDashboardStats({ language, articles, categories }: AdminDashboardStatsProps) {
   const isAr = language === 'ar';
   
-  // Tab Toggle between 'traffic' and 'readability'
-  const [activeMetricTab, setActiveMetricTab] = useState<'traffic' | 'readability'>('traffic');
+  // Tab Toggle between 'traffic', 'readability', and 'live-logs'
+  const [activeMetricTab, setActiveMetricTab] = useState<'traffic' | 'readability' | 'live-logs'>('traffic');
+
+  // Real-Time Traffic & Visitor Logs States
+  const [logs, setLogs] = useState<any[]>([]);
+  const [isLiveStreaming, setIsLiveStreaming] = useState(true);
+  const [logsFilter, setLogsFilter] = useState<'all' | 'premium' | 'lebanon' | 'economy'>('all');
+  const [selectedLogCountry, setSelectedLogCountry] = useState<string>('all');
+
+  // Generate initial list of logs on load
+  React.useEffect(() => {
+    if (articles.length === 0) return;
+
+    const countries = [
+      { code: 'LB', nameAr: 'لبنان', nameEn: 'Lebanon', cityAr: 'بيروت', cityEn: 'Beirut', flag: '🇱🇧' },
+      { code: 'SA', nameAr: 'السعودية', nameEn: 'Saudi Arabia', cityAr: 'الرياض', cityEn: 'Riyadh', flag: '🇸🇦' },
+      { code: 'AE', nameAr: 'الإمارات', nameEn: 'UAE', cityAr: 'دبي', cityEn: 'Dubai', flag: '🇦🇪' },
+      { code: 'US', nameAr: 'أمريكا', nameEn: 'USA', cityAr: 'نيويورك', cityEn: 'New York', flag: '🇺🇸' },
+      { code: 'FR', nameAr: 'فرنسا', nameEn: 'France', cityAr: 'باريس', cityEn: 'Paris', flag: '🇫🇷' },
+      { code: 'EG', nameAr: 'مصر', nameEn: 'Egypt', cityAr: 'القاهرة', cityEn: 'Cairo', flag: '🇪🇬' },
+      { code: 'JO', nameAr: 'الأردن', nameEn: 'Jordan', cityAr: 'عمان', cityEn: 'Amman', flag: '🇯🇴' },
+      { code: 'KW', nameAr: 'الكويت', nameEn: 'Kuwait', cityAr: 'الكويت', cityEn: 'Kuwait City', flag: '🇰🇼' },
+      { code: 'GB', nameAr: 'بريطانيا', nameEn: 'UK', cityAr: 'لندن', cityEn: 'London', flag: '🇬🇧' }
+    ];
+
+    const referrers = [
+      'Google Discover', 'Google News', 'Direct Traffic', 'Twitter / X', 
+      'LinkedIn', 'WhatsApp Broadcast', 'Bloomberg Terminal', 'Facebook'
+    ];
+
+    const devices = ['Mobile (Safari)', 'Mobile (Chrome)', 'Desktop (Chrome)', 'Desktop (Firefox)', 'Tablet (iPad)'];
+
+    const initialLogs = Array.from({ length: 15 }).map((_, index) => {
+      const country = countries[Math.floor(Math.random() * countries.length)];
+      const referrer = referrers[Math.floor(Math.random() * referrers.length)];
+      const device = devices[Math.floor(Math.random() * devices.length)];
+      const randomArticle = articles[Math.floor(Math.random() * articles.length)];
+      
+      const timeOffsetMinutes = index * 2 + Math.floor(Math.random() * 2);
+      const logTime = new Date(Date.now() - timeOffsetMinutes * 60 * 1000);
+
+      const randomIp = `${Math.floor(Math.random() * 180) + 20}.${Math.floor(Math.random() * 200)}.${Math.floor(Math.random() * 254)}.${Math.floor(Math.random() * 254)}`;
+
+      return {
+        id: `log-${Math.random().toString(36).substr(2, 9)}`,
+        ip: randomIp,
+        timestamp: logTime.toLocaleTimeString(isAr ? 'ar-EG' : 'en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+        rawTimestamp: logTime,
+        countryCode: country.code,
+        countryAr: country.nameAr,
+        countryEn: country.nameEn,
+        cityAr: country.cityAr,
+        cityEn: country.cityEn,
+        flag: country.flag,
+        storyId: randomArticle.id,
+        storyTitleAr: randomArticle.titleAr,
+        storyTitleEn: randomArticle.titleEn,
+        category: randomArticle.category || 'news',
+        isPremium: !!randomArticle.isPremium,
+        referrer,
+        durationSeconds: Math.floor(Math.random() * 240) + 15,
+        actionAr: randomArticle.isPremium ? 'فتح تقرير مميز' : 'قراءة المقال الأسبوعي',
+        actionEn: randomArticle.isPremium ? 'Unlocked Premium Story' : 'Read Article Dispatch',
+        device
+      };
+    });
+
+    setLogs(initialLogs);
+  }, [articles, isAr]);
+
+  // Dynamic Real-time log streaming simulator
+  React.useEffect(() => {
+    if (!isLiveStreaming || articles.length === 0) return;
+
+    const interval = setInterval(() => {
+      // 1. Randomly increment duration of existing logs (simulate visitor spending more time)
+      setLogs(prevLogs => {
+        const updatedLogs = prevLogs.map(log => {
+          if (Math.random() > 0.4) {
+            return {
+              ...log,
+              durationSeconds: log.durationSeconds + Math.floor(Math.random() * 3) + 1
+            };
+          }
+          return log;
+        });
+
+        // 2. Add a new log entry 55% of the time
+        if (Math.random() > 0.45) {
+          const countries = [
+            { code: 'LB', nameAr: 'لبنان', nameEn: 'Lebanon', cityAr: 'بيروت', cityEn: 'Beirut', flag: '🇱🇧' },
+            { code: 'SA', nameAr: 'السعودية', nameEn: 'Saudi Arabia', cityAr: 'الرياض', cityEn: 'Riyadh', flag: '🇸🇦' },
+            { code: 'AE', nameAr: 'الإمارات', nameEn: 'UAE', cityAr: 'دبي', cityEn: 'Dubai', flag: '🇦🇪' },
+            { code: 'US', nameAr: 'أمريكا', nameEn: 'USA', cityAr: 'نيويورك', cityEn: 'New York', flag: '🇺🇸' },
+            { code: 'FR', nameAr: 'فرنسا', nameEn: 'France', cityAr: 'باريس', cityEn: 'Paris', flag: '🇫🇷' },
+            { code: 'EG', nameAr: 'مصر', nameEn: 'Egypt', cityAr: 'القاهرة', cityEn: 'Cairo', flag: '🇪🇬' },
+            { code: 'JO', nameAr: 'الأردن', nameEn: 'Jordan', cityAr: 'عمان', cityEn: 'Amman', flag: '🇯🇴' },
+            { code: 'KW', nameAr: 'الكويت', nameEn: 'Kuwait', cityAr: 'الكويت', cityEn: 'Kuwait City', flag: '🇰🇼' },
+            { code: 'GB', nameAr: 'بريطانيا', nameEn: 'UK', cityAr: 'لندن', cityEn: 'London', flag: '🇬🇧' }
+          ];
+          const referrers = [
+            'Google Discover', 'Google News', 'Direct Traffic', 'Twitter / X', 
+            'LinkedIn', 'WhatsApp Broadcast', 'Bloomberg Terminal', 'Facebook'
+          ];
+          const devices = ['Mobile (Safari)', 'Mobile (Chrome)', 'Desktop (Chrome)', 'Desktop (Firefox)', 'Tablet (iPad)'];
+
+          const country = countries[Math.floor(Math.random() * countries.length)];
+          const referrer = referrers[Math.floor(Math.random() * referrers.length)];
+          const device = devices[Math.floor(Math.random() * devices.length)];
+          const randomArticle = articles[Math.floor(Math.random() * articles.length)];
+          const randomIp = `${Math.floor(Math.random() * 180) + 20}.${Math.floor(Math.random() * 200)}.${Math.floor(Math.random() * 254)}.${Math.floor(Math.random() * 254)}`;
+          const logTime = new Date();
+
+          const newLog = {
+            id: `log-${Math.random().toString(36).substr(2, 9)}`,
+            ip: randomIp,
+            timestamp: logTime.toLocaleTimeString(isAr ? 'ar-EG' : 'en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+            rawTimestamp: logTime,
+            countryCode: country.code,
+            countryAr: country.nameAr,
+            countryEn: country.nameEn,
+            cityAr: country.cityAr,
+            cityEn: country.cityEn,
+            flag: country.flag,
+            storyId: randomArticle.id,
+            storyTitleAr: randomArticle.titleAr,
+            storyTitleEn: randomArticle.titleEn,
+            category: randomArticle.category || 'news',
+            isPremium: !!randomArticle.isPremium,
+            referrer,
+            durationSeconds: Math.floor(Math.random() * 15) + 5,
+            actionAr: randomArticle.isPremium ? 'فتح تقرير مميز' : 'قراءة المقال الأسبوعي',
+            actionEn: randomArticle.isPremium ? 'Unlocked Premium Story' : 'Read Article Dispatch',
+            device
+          };
+
+          return [newLog, ...updatedLogs].slice(0, 35);
+        }
+
+        return updatedLogs;
+      });
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [isLiveStreaming, articles, isAr]);
+
+  // Filtered logs based on categories and countries selected
+  const filteredLogs = useMemo(() => {
+    return logs.filter(log => {
+      // Filter by category
+      if (logsFilter === 'premium' && !log.isPremium) return false;
+      if (logsFilter === 'lebanon' && log.category !== 'lebanon') return false;
+      if (logsFilter === 'economy' && !['economy', 'markets', 'arab-markets'].includes(log.category)) return false;
+
+      // Filter by country
+      if (selectedLogCountry !== 'all' && log.countryCode !== selectedLogCountry) return false;
+
+      return true;
+    });
+  }, [logs, logsFilter, selectedLogCountry]);
+
+  // Compute geographical sharing statistics
+  const geoShareStats = useMemo(() => {
+    const counts: { [key: string]: { count: number; nameAr: string; nameEn: string; flag: string } } = {};
+    logs.forEach(log => {
+      const key = log.countryCode;
+      if (!counts[key]) {
+        counts[key] = {
+          count: 0,
+          nameAr: log.countryAr,
+          nameEn: log.countryEn,
+          flag: log.flag
+        };
+      }
+      counts[key].count++;
+    });
+
+    const total = logs.length || 1;
+    return Object.entries(counts)
+      .map(([code, data]) => ({
+        code,
+        count: data.count,
+        percentage: Math.round((data.count / total) * 100),
+        name: isAr ? data.nameAr : data.nameEn,
+        flag: data.flag
+      }))
+      .sort((a, b) => b.count - a.count);
+  }, [logs, isAr]);
 
   // Interactive Readability Text Inspector state
   const [inspectorText, setInspectorText] = useState('');
@@ -324,11 +512,11 @@ export default function AdminDashboardStats({ language, articles, categories }: 
         </div>
 
         {/* Traffic vs Readability Tab Switcher */}
-        <div className="flex bg-white border-2 border-black p-0.5 rounded shadow-[2px_2px_0_0_rgba(0,0,0,1)] self-stretch sm:self-auto justify-center">
+        <div className="flex bg-white border-2 border-black p-0.5 rounded shadow-[2px_2px_0_0_rgba(0,0,0,1)] self-stretch sm:self-auto justify-center flex-wrap gap-1">
           <button
             type="button"
             onClick={() => setActiveMetricTab('traffic')}
-            className={`flex-1 sm:flex-none px-4 py-1.5 font-sans text-xs font-black uppercase rounded transition-colors flex items-center justify-center gap-1.5 ${
+            className={`flex-1 sm:flex-none px-3 py-1.5 font-sans text-xs font-black uppercase rounded transition-colors flex items-center justify-center gap-1.5 ${
               activeMetricTab === 'traffic' ? 'bg-black text-white' : 'text-zinc-600 hover:bg-zinc-100'
             }`}
           >
@@ -338,18 +526,28 @@ export default function AdminDashboardStats({ language, articles, categories }: 
           <button
             type="button"
             onClick={() => setActiveMetricTab('readability')}
-            className={`flex-1 sm:flex-none px-4 py-1.5 font-sans text-xs font-black uppercase rounded transition-colors flex items-center justify-center gap-1.5 ${
+            className={`flex-1 sm:flex-none px-3 py-1.5 font-sans text-xs font-black uppercase rounded transition-colors flex items-center justify-center gap-1.5 ${
               activeMetricTab === 'readability' ? 'bg-black text-white' : 'text-zinc-600 hover:bg-zinc-100'
             }`}
           >
             <Gauge size={13} />
             {isAr ? 'تحليل ومؤشر المقروئية' : 'Readability Analysis'}
           </button>
+          <button
+            type="button"
+            onClick={() => setActiveMetricTab('live-logs')}
+            className={`flex-1 sm:flex-none px-3 py-1.5 font-sans text-xs font-black uppercase rounded transition-colors flex items-center justify-center gap-1.5 ${
+              activeMetricTab === 'live-logs' ? 'bg-black text-white' : 'text-zinc-600 hover:bg-zinc-100'
+            }`}
+          >
+            <Globe size={13} className="animate-pulse text-[#b91c1c]" />
+            {isAr ? 'سجل التتبع الجغرافي الفوري' : 'Live Logs & Geolocation'}
+          </button>
         </div>
       </div>
 
       {/* METRIC SUB-VIEWS */}
-      {activeMetricTab === 'traffic' ? (
+      {activeMetricTab === 'traffic' && (
         <div className="space-y-6 animate-fade-in">
           
           {/* Traffic Summary Cards */}
@@ -490,7 +688,9 @@ export default function AdminDashboardStats({ language, articles, categories }: 
           </div>
 
         </div>
-      ) : (
+      )}
+
+      {activeMetricTab === 'readability' && (
         <div className="space-y-6 animate-fade-in">
           
           {/* Readability Metrics Cards */}
@@ -763,6 +963,16 @@ export default function AdminDashboardStats({ language, articles, categories }: 
           </div>
 
         </div>
+      )}
+
+      {/* TAB: LIVE TRAFFIC LOGS & GEOLOCATION STREAM */}
+      {activeMetricTab === "live-logs" && (
+        <AdminTrafficMonitor
+          language={language}
+          articles={articles}
+          categories={categories}
+          onLoadArticle={handleLoadArticle}
+        />
       )}
 
       {/* BENCHMARK REGISTRY FOR ARTICLES (ALWAYS ACCESSIBLE BELOW WITH INSTANT LOAD HOOKS) */}
