@@ -2,6 +2,166 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'syria-terror-list-removal-2026',
+    category: 'exclusives',
+    categories: ['exclusives', 'middle-east', 'economy', 'markets'],
+    titleAr: 'الملف الرابع عشر: فكّ الأغلال: إزالة سوريا من قوائم الإرهاب والعبور نحو عصر الإعمار والاستثمار',
+    titleEn: 'Dossier XIV: Unshackling - Removing Syria from Terror Lists & Transition to Reconstruction',
+    summaryAr: `"عقودٌ من العزلة، وخمسة عشر عاماً من الحرب والدمار، تنتهي عند عتبة تحول جيوسياسي غير مسبوق. إن قرار الولايات المتحدة بإطلاق عملية شطب سوريا من قائمة الدول الراعية للإرهاب ليس مجرد حبرٍ على ورق دبلوماسي، بل هو بمثابة 'تأشيرة دخول مجانية' للاقتصاد السوري إلى النظام المالي العالمي. هذا التحقيق يفتح لكم الدفاتر المغلقة ليرسم خارطة طريق الفرص غير المحدودة، ويستعرض كيف ستتحول الأنقاض إلى ورشات عمل كبرى، والأسواق المتعطشة إلى مغناطيس لرؤوس الأموال الخليجية والعالمية."`,
+    summaryEn: `"Decades of isolation and fifteen years of war and destruction end at the threshold of an unprecedented geopolitical shift. The United States' decision to initiate the removal of Syria from the State Sponsors of Terrorism list is not just ink on diplomatic paper; it is a 'free entry visa' for the Syrian economy into the global financial system. This investigation opens closed books to map unlimited opportunities, exploring how rubble will turn into massive workshops and thirsty markets into a magnet for Gulf and global capital."`,
+    excerptAr: 'قرار تاريخي لشطب سوريا من قوائم الإرهاب يمهد الطريق لتدفق مليارات الدولارات من الصناديق السيادية الخليجية ومؤسسات التنمية لإعادة الإعمار.',
+    excerptEn: 'A historic decision to remove Syria from State Sponsors of Terrorism lists paves the way for billions in Gulf sovereign wealth and international reconstruction funds.',
+    author: {
+      nameAr: 'مكتب البحوث الجيوسياسية',
+      nameEn: 'Geopolitical Research Desk',
+      titleAr: 'كبير محللي الشرق الأوسط',
+      titleEn: 'Senior Middle East Analyst',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '١٢ دقيقة قراءة',
+    readTimeEn: '12 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 31500,
+    tags: ['سوريا', 'إعادة_الإعمار', 'دونالد_ترامب', 'أحمد_الشرع', 'عقوبات_سوريا', 'الكونغرس', 'Syria', 'SST_Removal', 'Reconstruction_Syria', 'Trump_Foreign_Policy', 'OFAC_Waivers', 'Middle_East_Markets'],
+    hashtags: ['SyriaRebuild', 'SSTRemoval', 'GulfCapitalSyria', 'MiddleEastGeopolitics'],
+    contentAr: `### مقدمة التحقيق الاستقصائي
+عقودٌ من العزلة، وخمسة عشر عاماً من الحرب والدمار، تنتهي عند عتبة تحول جيوسياسي غير مسبوق. إن قرار الولايات المتحدة بإطلاق عملية شطب سوريا من قائمة الدول الراعية للإرهاب ليس مجرد حبرٍ على ورق دبلوماسي، بل هو بمثابة "تأشيرة دخول مجانية" للاقتصاد السوري إلى النظام المالي العالمي. هذا التحقيق يفتح لكم الدفاتر المغلقة ليرسم خارطة طريق الفرص غير المحدودة، ويستعرض كيف ستتحول الأنقاض إلى ورشات عمل كبرى، والأسواق المتعطشة إلى مغناطيس لرؤوس الأموال الخليجية والعالمية.
+
+---
+
+### أولاً: السياق التاريخي والسياسي (من عام 1979 حتى يوليو 2026)
+ظلت سوريا مُدرجة على اللائحة الأمريكية للدول الراعية للإرهاب (SST) منذ ديسمبر عام 1979 في عهد الرئيس الراحل حافظ الأسد. كان هذا التصنيف يمثل حجر الأساس لشبكة معقدة من العقوبات الاقتصادية، والقيود على الصادرات، والحظر المالي التام الذي فرض شللاً كاملاً على المعاملات البنكية الدولية مع دمشق لعقود. *(المصدر: ANI News)*
+
+تحول مجرى التاريخ السوري بشكل جذري مع نهاية عام 2024، وتحديداً في ديسمبر 2024، إثر سقوط نظام بشار الأسد وسيطرة قوى المعارضة السورية على السلطة بقيادة رئيس الحكومة الانتقالية الحالي أحمد الشرع (المعروف سابقاً بأبي محمد الجولاني). *(المصدر: ANI News)*
+
+منذ مطلع عام 2025، انخرطت الإدارة الأمريكية بقيادة الرئيس دونالد ترامب في مسار تدريجي لتخفيف الضغط الاقتصادي بالتوازي مع التغيرات السياسية داخل دمشق وضمانات مكافحة الإرهاب التي قدمتها القيادة السورية الجديدة. *(المصدر: time.com)*
+
+#### تسلسل الخطوات السياسية والاقتصادية المؤدية للقرار:
+* **[ديسمبر 2024]** سقوط نظام الأسد وتولي أحمد الشرع قيادة المرحلة الانتقالية.
+* **[يناير - سبتمبر 2025]** وزارة الخزانة الأمريكية (OFAC) تصدر تراخيص وتعديلات لتخفيف العقوبات التجارية والإنسانية.
+* **[ديسمبر 2025]** الرئيس ترامب يوقع قانون "الدفاع الوطني لعام 2026" ملغياً قانون "قيصر" لعام 2019.
+* **[يوليو 2026]** لقاء قمة تاريخي بين ترامب والشرع في أنقرة وإعلان نية الشطب رسمياً.
+
+**يناير - سبتمبر 2025:** أصدر مكتب مراقبة الأصول الأجنبية الأمريكي (OFAC) سلسلة تراخيص عامة لتسهيل المساعدات الإنسانية والتبادل التجاري، تلاها إلغاء "لوائح العقوبات السورية" تدريجياً وتخفيف قيود التصدير من وزارة التجارة.
+
+**18 ديسمبر 2025:** خطوة تشريعية كبرى حيث وقع الرئيس ترامب قانون تفويض الدفاع الوطني (NDAA) لعام 2026، والذي تضمن إلغاء قانون "قيصر" لحماية المدنيين في سوريا لعام 2019، وهو القانون الذي كان يفرض عقوبات ثانوية خانقة على أي جهة دولية تتعامل مع دمشق.
+
+**8 يوليو 2026:** على هامش قمة حلف شمال الأطلسي (NATO) في أنقرة، التقى الرئيس ترامب بالرئيس السوري المؤقت أحمد الشرع. وعقب اللقاء، أبلغ ترامب الكونغرس رسمياً بنيته إزالة سوريا من قائمة الدول الراعية للإرهاب، لتبدأ فترة المراجعة الدستورية للكونغرس البالغة 45 يوماً قبل دخول القرار حيز التنفيذ الفعلي.
+
+---
+
+### ثانياً: الأثر القانوني المباشر لإزالة التصنيف
+بمجرد انقضاء مهلة الـ 45 يوماً وإتمام الشطب رسمياً، سيتم تفكيك الحواجز القانونية التالية: *(المصدر: time.com)*
+
+1. **رفع قيود التصدير الثنائية:** إلغاء ضوابط مكافحة الإرهاب (AT) المفروضة من مكتب الصناعة والأمن (BIS) الأمريكي، مما يسمح باستيراد التقنيات والمعدات الحساسة والتكنولوجية اللازمة لشبكات الاتصالات والصناعة والمقاولات. *(المصدر: SmarTrade | Thompson Hine)*
+2. **فتح الباب للمساعدات الخارجية والقروض الدولية:** زوال الحظر التلقائي على تقديم قروض أو مساعدات تمويلية من البنك الدولي وصندوق النقد الدولي (IMF) لإعادة إعمار سوريا وإصلاح هياكلها المالية العامة. *(المصدر: SmarTrade | Thompson Hine)*
+3. **تفعيل قنوات المراسلة البنكية:** استعادة البنوك السورية قدرتها الكاملة على فتح حسابات مراسلة والتعامل مع نظام سويفت (SWIFT) المالي العالمي دون خوف المؤسسات المالية الدولية من الغرامات الأمريكية أو الحظر المطبق على الأصول.
+
+---
+
+### ثالثاً: القطاعات الاقتصادية الأكثر استفادة (ترتيب تنازلي حسب الأثر الفوري)
+إن تصفير المخاطر السياسية والقانونية سيجعل من سوريا ورشة العمل الأكبر في شرق المتوسط. فيما يلي تصنيف للقطاعات الاقتصادية التي ستقود القاطرة التنموية:
+
+* **المصارف والخدمات المالية:** ربط البنوك المحلية بالمراسلات الدولية، تسهيل الاعتمادات المستندية، وتدفق الحوالات الخارجية للمغتربين التي تقدر بمليارات الدولارات سنوياً. *(مصادر التمويل المتوقعة: استثمارات خليجية ومؤسسات تنموية دولية).*
+* **الطاقة والبنية التحتية:** إعادة تأهيل محطات التوليد، شبكات المياه، وإصلاح وصيانة حقول النفط والغاز في شمال شرق البلاد وتطويرها بتقنيات حديثة. *(مصادر التمويل المتوقعة: شركات النفط العالمية وصناديق سيادية إقليمية).*
+* **المقاولات والتشييد (إعادة الإعمار):** بناء المدن المدمرة، تعبيد الطرق السريعة، وتشييد مجمعات سكنية وتجارية لتعويض العجز السكني الهائل. *(مصادر التمويل المتوقعة: تمويل حكومي مشترك، شراكات بين القطاعين العام والخاص PPP).*
+* **النقل واللوجستيات:** بحكم موقع سوريا الاستراتيجي، سيعاد تفعيل الموانئ البحرية (اللاذقية وطرطوس) والمطارات، وممرات النقل البري بين الخليج وتركيا وأوروبا. *(مصادر التمويل المتوقعة: استثمارات إقليمية مشتركة).*
+* **الزراعة والصناعات الغذائية:** تأمين الأسمدة الحديثة والمعدات الزراعية المحظورة سابقاً، وفتح أسواق التصدير للمنتجات الزراعية السورية الشهيرة (زيت الزيتون، الحمضيات). *(مصادر التمويل المتوقعة: القطاع الخاص المحلي والعربي).*
+
+---
+
+### رابعاً: وثيقة الآفاق الاستثمارية لجمهور المستثمرين (Prospectus)
+
+#### 1. الرؤية العامة للفرصة الاستثمارية
+تُقدم سوريا اليوم حالة استثنائية عالمياً: بلدٌ يمتلك بنية تحتية أساسية تحتاج للتحديث، وموقعاً جغرافياً يربط القارات الثلاث، مع وفرة في اليد العاملة المؤهلة والمنخفضة التكلفة، مدعوماً برغبة دولية وإقليمية جارفة لإعادة الاستقرار وتثبيت عجلة التنمية لمنع موجات اللجوء.
+
+#### 2. محركات النمو وعوامل الجذب الأساسية
+* **التعطش التنموي:** يقدر البنك الدولي والعديد من الخبراء احتياجات إعادة الإعمار في سوريا بـ 250 إلى 400 مليار دولار أمريكي، مما يخلق طلباً هائلاً ومستداماً على المواد والخدمات طيلة العقدين القادمين.
+* **الدعم الإقليمي والدولية المتسارع:** سارعت دول إقليمية كبرى مثل الإمارات العربية المتحدة وتركيا للترحيب بالقرار الأمريكي، مما يمهد الطريق لتدفق فوري لرؤوس الأموال الخليجية الباحثة عن عوائد مرتفعة في سوق بكر. *(المصدر: Anadolu Ajansı)*
+* **القوة البشرية والديمغرافية:** يمثل عودة الكفاءات السورية المهاجرة ورجال الأعمال المغتربين طاقة دافعة ستقود المشاريع المحلية بكفاءة عالية مستفيدة من نقل المعرفة والتكنولوجيا والخبرات المكتسبة دولياً.
+
+#### 3. تقييم المخاطر الاستثمارية (Risk Assessment)
+قبل ضخ رؤوس الأموال، يتعين على المستثمرين أخذ النقاط التالية بعين الاعتبار:
+* **استكمال البنية التحتية القانونية:** لا تزال البلاد بحاجة إلى تطوير وتحديث قوانين الاستثمار، وحماية الملكية الفردية، وتسهيل خروج ودخول الأرباح بالعملة الأجنبية بشكل مرن.
+* **استقرار سعر الصرف والتضخم:** التحدي الأكبر على المدى القصير هو السيطرة على معدلات التضخم التاريخية واستقرار الليرة السورية عبر تعزيز الاحتياطي النقدي المركزي.
+* **المخاطر السياسية المتبقية:** على الرغم من التوافق الدولي الحالي، يجب مراقبة مدى استتباب الأمن الداخلي وقدرة الحكومة الانتقالية على بسط سلطة القانون وتفكيك بؤر التوتر بشكل كامل. *(المصدر: time.com)*
+
+---
+
+### خاتمة استقصائية
+إن الخروج من "القائمة السوداء" ليس مجرد انتصار سياسي للإدارة السورية الجديدة؛ بل هو بمثابة إطلاق طاقات كامنة لاقتصادٍ شُلت حركته لعقود. ستتحول سوريا في السنوات القليلة المقبلة من عبء أمني إقليمي إلى أكبر ساحة استثمارية وتجارية واعدة في منطقة شرق المتوسط. المستثمرون الذين سيتخذون مواقعهم في هذه المرحلة التأسيسية هم من سيجنون العوائد الأعلى مع مطلع العقد القادم. *(المصدر: SmarTrade | Thompson Hine)*`,
+    contentEn: `### Investigative Report Introduction
+Decades of isolation and fifteen years of war and destruction end at the threshold of an unprecedented geopolitical shift. The United States' decision to initiate the removal of Syria from the State Sponsors of Terrorism list is not just ink on diplomatic paper; it is a "free entry visa" for the Syrian economy into the global financial system. This investigation opens closed books to map unlimited opportunities, exploring how rubble will turn into massive workshops and thirsty markets into a magnet for Gulf and global capital.
+
+---
+
+### First: Historical and Political Context (1979 to July 2026)
+Syria remained listed on the US State Sponsors of Terrorism (SST) registry since December 1979 under late President Hafez al-Assad. This classification acted as the cornerstone for a complex web of economic sanctions, export controls, and absolute financial embargos that paralyzed international banking operations with Damascus for decades. *(Source: ANI News)*
+
+The course of Syrian history shifted dramatically at the end of 2024, specifically in December 2024, following the collapse of the Bashar al-Assad regime and the assumption of power by transitional forces led by the head of the interim government, Ahmad al-Sharaa (previously known as Abu Mohammad al-Julani). *(Source: ANI News)*
+
+Since early 2025, the US administration led by President Donald Trump engaged in a step-by-step track to reduce economic pressure in tandem with domestic political developments in Damascus and rigorous counter-terrorism guarantees offered by the new leadership. *(Source: time.com)*
+
+#### Timeline of Political & Financial Thresholds Leading to the Verdict:
+* **[December 2024]** Assad regime collapse; Ahmad al-Sharaa assumes transitional leadership.
+* **[January - September 2025]** US Treasury (OFAC) issues general waivers and amendments easing trade and humanitarian access.
+* **[December 2025]** President Trump signs the "National Defense Authorization Act of 2026" effectively repealing the "Caesar Act" of 2019.
+* **[July 2026]** Historic Ankara summit between Trump and Sharaa; formal notice of intent to delist is submitted to Congress.
+
+**January - September 2025:** The US Office of Foreign Assets Control (OFAC) issued a series of sweeping general licenses facilitating humanitarian aid and commerce, followed by the gradual dismantling of the Syrian Sanctions Regulations and Department of Commerce export limits.
+
+**December 18, 2025:** A massive legislative breakthrough occurred when President Trump signed the National Defense Authorization Act (NDAA) for FY2026, which included a complete repeal of the 2019 Caesar Syria Civilian Protection Act, the primary statutory tool that levied heavy secondary sanctions on third-party entities doing business with Damascus.
+
+**July 8, 2026:** On the sidelines of the NATO summit in Ankara, President Trump met with interim Syrian President Ahmad al-Sharaa. Following the landmark conference, Trump officially notified Congress of his intent to remove Syria from the State Sponsors of Terrorism list, kicking off the 45-day constitutional review period before the executive order takes full legal effect.
+
+---
+
+### Second: Direct Legal Consequences of Delisting
+Once the 45-day congressional notification period expires and the delisting is finalized, key legal boundaries will dissolve: *(Source: time.com)*
+
+1. **Lifting Bilateral Export Restrictions:** Eliminating Anti-Terrorism (AT) controls imposed by the US Bureau of Industry and Security (BIS), permitting the acquisition of highly sensitive technologies, manufacturing equipment, and components for telecom networks and heavy construction. *(Source: SmarTrade | Thompson Hine)*
+2. **Access to International Aid and Developmental Loans:** Removing automatic statutory blocks on loans from the World Bank and the IMF, enabling structural macro-financing to rebuild national grids and municipal systems. *(Source: SmarTrade | Thompson Hine)*
+3. **Re-establishing Correspondent Banking:** Restoring Syrian banks' access to the SWIFT global financial messaging system without fear of secondary sanctions, asset freezes, or heavy compliance fines on international banking partners.
+
+---
+
+### Third: High-Impact Economic Sectors (Ranked by Immediate Benefit)
+Zeroing out political and legal risk will turn Syria into the largest reconstruction canvas in the Levant. Here is how key industries will lead the recovery:
+
+* **Banking & Financial Services:** Linking local banks with foreign correspondents, unlocking commercial letters of credit, and welcoming billions of dollars in annual migrant remittances. *(Funding sources: Gulf banking partnerships & international development funds).*
+* **Energy & Public Infrastructure:** Restoring crippled electrical grids, water treatment plants, and maintaining oil/gas wells in the northeast via state-of-the-art tech. *(Funding sources: International oil majors & regional sovereign wealth funds).*
+* **Construction & Contracting (The Rebuild):** Reconstructing war-torn cities, laying highway lines, and developing massive housing networks. *(Funding sources: Joint state budgets & Public-Private Partnerships [PPP]).*
+* **Logistics & National Transit:** Activating the Mediterranean deepwater ports of Lattakia and Tartous, airports, and regional freight corridors linking the GCC to Europe. *(Funding sources: Joint regional transit syndicates).*
+* **Agriculture & Food Processing:** Sourcing modern fertilizers and machinery, reopening export channels for world-renowned Syrian crops (citrus, high-quality olive oil). *(Funding sources: Regional private equity & agro-finance).*
+
+---
+
+### Fourth: Investment Outlook & Prospectus
+
+#### 1. Investment Opportunity Paradigm
+Syria currently presents a singular macroeconomic case: a country with basic industrial foundations in need of upgrade, a geographical position bridging three continents, a highly skilled and low-cost labor market, and massive regional support to restore stability and contain regional demographic crises.
+
+#### 2. Growth Pillars & Attractiveness
+* **Reconstruction Appetite:** The World Bank and private analysts estimate Syria's long-term reconstruction needs to range between $250 Billion and $400 Billion, creating stable multi-decade demand.
+* **Regional Strategic Backing:** Regional powers including the United Arab Emirates and Turkey quickly hailed the US decision, prepping immediately for substantial GCC investment inflows. *(Source: Strategic Intelligence / SANA)*
+* **Demographic Dividend:** The anticipated return of Syrian business elites and expatriates will inject expertise, global networks, and private investment back into the local economy.
+
+#### 3. Investment Risk Matrix
+Investors must evaluate the following indicators:
+* **Legal and Statutory Infrastructure:** Transitioning local commercial laws to protect private property, intellectual rights, and ensure transparent, unrestricted foreign capital repatriation.
+* **Inflation & Forex Stabilization:** Controlling hyperinflation and establishing a stable peg for the Syrian Lira via a rebuilt Central Bank reserve.
+* **Residual Geopolitical Risks:** Tracking transitional authority alignment, enforcing strict rule of law nationwide, and neutralizing remaining rogue elements. *(Source: time.com)*
+
+---
+
+### Investigative Conclusion
+Exiting the SST "Blacklist" is not merely a symbolic political victory for the new administration; it is the release of decades-long economic shackles. Over the next decade, Syria will pivot from a regional security liability to the Levant's largest construction and investment market. First-movers in this foundation phase are poised to reap the highest returns in the coming decades. *(Source: SmarTrade | Thompson Hine)*`
+  },
+  {
     id: 'fuel-profiteering-cartel-2026',
     category: 'exclusives',
     categories: ['exclusives', 'lebanon', 'markets', 'economy'],

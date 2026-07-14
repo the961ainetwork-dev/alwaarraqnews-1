@@ -61,6 +61,7 @@ import { SubseaCablesInfographic } from './SubseaCablesInfographic';
 import { FuelProfiteeringInfographic } from './FuelProfiteeringInfographic';
 import { BdlSalamehInfographic } from './BdlSalamehInfographic';
 import { USSPRReleaseInfographic } from './USSPRReleaseInfographic';
+import { SyriaReconstructionInfographic } from './SyriaReconstructionInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -173,6 +174,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XIII: US SPR Drawdown & Coordinated 400M Barrel IEA Release',
     descAr: 'تفاصيل القرار الفيدرالي الاستثنائي لسحب ١٧٢ مليون برميل وأبعاد استجابة ٣٢ دولة في باريس للسيطرة على أسعار الطاقة.',
     descEn: 'A multi-agency analytics brief on the U.S. Strategic Petroleum Reserve release, IEA global intervention, and supply chain pressure.'
+  },
+  'syria-terror-list-removal-2026': {
+    fileId: 'AW-FILE-14',
+    badge: 'GEOPOLITICAL INVESTIGATION',
+    titleAr: 'الملف الرابع عشر: فكّ الأغلال: إزالة سوريا من قوائم الإرهاب والعبور نحو عصر الإعمار والاستثمار',
+    titleEn: 'Dossier XIV: Unshackling - Removing Syria from Terror Lists & Transition to Reconstruction',
+    descAr: 'تحقيق خاص يستكشف تداعيات شطب سوريا من قائمة الدول الراعية للإرهاب وفتح الأبواب لتدفق رؤوس الأموال والتمويلات الخليجية.',
+    descEn: 'An in-depth investigation on the consequences of removing Syria from the US State Sponsors of Terrorism list and opening Gulf investment lanes.'
   }
 };
 
@@ -242,7 +251,9 @@ export default function AlWarraqInvestigations({
       article.id === 'lebanon-deposits-crisis-2026' ||
       article.id === 'submarine-cables-geopolitics-2026' ||
       article.id === 'fuel-profiteering-cartel-2026' ||
-      article.id === 'bdl-versus-salameh-2026'
+      article.id === 'bdl-versus-salameh-2026' ||
+      article.id === 'us-spr-release-172m-2026' ||
+      article.id === 'syria-terror-list-removal-2026'
     );
   });
 
@@ -839,6 +850,10 @@ export default function AlWarraqInvestigations({
                   ) : activeDossier.id === 'us-spr-release-172m-2026' ? (
                     <div className="p-1 relative overflow-hidden rounded-md">
                       <USSPRReleaseInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'syria-terror-list-removal-2026' ? (
+                    <div className="p-1 relative overflow-hidden rounded-md">
+                      <SyriaReconstructionInfographic language={language} />
                     </div>
                   ) : null}
                 </div>
