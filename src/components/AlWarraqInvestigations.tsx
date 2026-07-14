@@ -60,6 +60,7 @@ import { DepositsInfographic } from './DepositsInfographic';
 import { SubseaCablesInfographic } from './SubseaCablesInfographic';
 import { FuelProfiteeringInfographic } from './FuelProfiteeringInfographic';
 import { BdlSalamehInfographic } from './BdlSalamehInfographic';
+import { USSPRReleaseInfographic } from './USSPRReleaseInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -164,6 +165,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XII: Banque du Liban versus Salameh',
     descAr: 'تحقيق استثنائي شامل يكشف حراك مصرف لبنان القضائي والرقابي لتصفية تركة العقود الماضية ومكافحة الفساد ومطاردة الحاكم السابق.',
     descEn: 'An intensive study on Banque du Liban’s legal and audit actions, featuring the Alvarez & Marsal audit and the high-profile legal witness register.'
+  },
+  'us-spr-release-172m-2026': {
+    fileId: 'AW-FILE-13',
+    badge: 'ENERGY SECURITY',
+    titleAr: 'الملف الثالث عشر: إطلاق ١٧٢ مليون برميل نفط من الاحتياطي الأمريكي والوكالة الدولية',
+    titleEn: 'Dossier XIII: US SPR Drawdown & Coordinated 400M Barrel IEA Release',
+    descAr: 'تفاصيل القرار الفيدرالي الاستثنائي لسحب ١٧٢ مليون برميل وأبعاد استجابة ٣٢ دولة في باريس للسيطرة على أسعار الطاقة.',
+    descEn: 'A multi-agency analytics brief on the U.S. Strategic Petroleum Reserve release, IEA global intervention, and supply chain pressure.'
   }
 };
 
@@ -826,6 +835,10 @@ export default function AlWarraqInvestigations({
                   ) : activeDossier.id === 'bdl-versus-salameh-2026' ? (
                     <div className="p-1 relative overflow-hidden rounded-md">
                       <BdlSalamehInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'us-spr-release-172m-2026' ? (
+                    <div className="p-1 relative overflow-hidden rounded-md">
+                      <USSPRReleaseInfographic language={language} />
                     </div>
                   ) : null}
                 </div>

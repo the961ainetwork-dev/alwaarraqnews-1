@@ -125,6 +125,32 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
     }, 1200);
   };
 
+  // Auto-fluctuate crude oil and natural gas prices in real-time
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCommoditiesList(prev => prev.map(comm => {
+        // Only fluctuate Brent Crude, WTI Light Sweet, and Natural Gas Spot
+        const nameEn = comm.nameEn.toLowerCase();
+        if (nameEn.includes('brent') || nameEn.includes('wti') || nameEn.includes('natural gas')) {
+          const changePct = (Math.random() * 0.2 - 0.1); // small real-time variation (-0.1% to +0.1%)
+          const multiplier = 1 + (changePct / 100);
+          const newValue = comm.value * multiplier;
+          // Change relative trend
+          const changeDelta = (Math.random() * 0.15 - 0.075);
+          const newChange = comm.change + changeDelta;
+          return {
+            ...comm,
+            value: parseFloat(newValue.toFixed(comm.value < 10 ? 3 : 2)),
+            change: parseFloat(newChange.toFixed(2)),
+            up: newChange >= 0
+          };
+        }
+        return comm;
+      }));
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
   // Specific Arab markets sparkline paths (mock SVGs for professional trading appearance)
   const getSparklinePath = (index: number, up: boolean) => {
     const paths = [
@@ -189,6 +215,87 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
           </span>
         </div>
       )}
+
+      {/* Real-time Animated Ticker Bar using CSS keyframes */}
+      <div className="mb-5 border border-zinc-200 rounded-md bg-zinc-950 text-white overflow-hidden py-2 relative shadow-inner select-none">
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes ticker-marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+          }
+          .ticker-marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            display: flex;
+            align-items: center;
+          }
+          .ticker-marquee-inner {
+            display: inline-flex;
+            animation: ticker-marquee 25s linear infinite;
+            width: max-content;
+            gap: 2rem;
+          }
+          .ticker-marquee-inner:hover {
+            animation-play-state: paused;
+          }
+        `}} />
+        
+        <div className="ticker-marquee-container">
+          {/* Badge indicator on the left side of the tape */}
+          <div className="absolute left-0 top-0 bottom-0 px-3 bg-red-600 font-bold flex items-center text-[10px] uppercase tracking-wider font-mono z-10 border-r border-red-700 select-none shadow-md">
+            <span className="animate-pulse mr-1.5 h-1.5 w-1.5 rounded-full bg-white inline-block"></span>
+            {isAr ? 'مباشر' : 'LIVE'}
+          </div>
+          
+          <div className="ticker-marquee-inner pl-16">
+            {/* We duplicate items to create a seamless infinite marquee scrolling loop */}
+            {[...Array(3)].map((_, loopIdx) => (
+              <React.Fragment key={loopIdx}>
+                {commoditiesList
+                  .filter(c => {
+                    const name = c.nameEn.toLowerCase();
+                    return name.includes('brent') || name.includes('wti') || name.includes('natural gas');
+                  })
+                  .map((item, idx) => {
+                    // For RISING (change >= 0): Red color indicator, TrendingUp icon
+                    // For FALLING (change < 0): Green color indicator, TrendingDown icon
+                    const isRising = item.change >= 0;
+                    const colorClass = isRising ? 'text-red-500 font-bold' : 'text-emerald-400 font-bold';
+                    const bgClass = isRising ? 'bg-red-950/40 border-red-900/50' : 'bg-emerald-950/40 border-emerald-900/50';
+                    const IconComponent = isRising ? TrendingUp : TrendingDown;
+                    
+                    return (
+                      <div 
+                        key={`${loopIdx}-${idx}`} 
+                        className={`inline-flex items-center gap-2 px-3 py-1 rounded border text-xs font-mono transition-colors duration-300 ${bgClass}`}
+                      >
+                        <span className="text-zinc-400 text-[10px] font-sans">
+                          {isAr ? item.nameAr.split('(')[0].trim() : item.nameEn}
+                        </span>
+                        <span className="text-white font-bold">${item.value.toFixed(item.value < 10 ? 3 : 2)}</span>
+                        <span className={`flex items-center gap-1 ${colorClass}`}>
+                          <IconComponent size={12} className={isRising ? "text-red-500 shrink-0" : "text-emerald-400 shrink-0"} />
+                          <span>{isRising ? '+' : ''}{item.change.toFixed(2)}%</span>
+                        </span>
+                      </div>
+                    );
+                  })}
+                {/* Additional SPR Delivery item to make the tape richer and thematic */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded border bg-zinc-900/60 border-zinc-800 text-xs font-mono">
+                  <span className="text-zinc-400 text-[10px] font-sans">
+                    {isAr ? 'معدل سحب الاستراتيجي الفيدرالي' : 'US Federal SPR Draw'}
+                  </span>
+                  <span className="text-white font-bold">1.43M bpd</span>
+                  <span className="text-red-400 font-bold px-1.5 py-0.25 bg-red-950/50 border border-red-900/40 rounded text-[9px]">
+                    {isAr ? 'نشط طارئ' : 'ACTIVE'}
+                  </span>
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* SECTION HEADER: double line editorial format */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center pb-4 mb-5 border-b-2 border-black border-double gap-4">

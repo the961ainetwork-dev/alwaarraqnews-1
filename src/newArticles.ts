@@ -1314,7 +1314,686 @@ It is time to fully liberate the sector, integrate multimedia networks, and hand
     tags: ['وزارة_الاتصالات', 'التحرير_الرقمي', 'الذكاء_الاصطناعي', 'ليبان_تليكوم', 'معن_برازي', 'Telecom', 'AI_Revolution', 'Deregulation', 'Maan_Barazy', 'Lebanon_Crisis'],
     hashtags: ['LebanonTelecom', 'AI_Revolution', 'Sovereignty', 'FreeTheWires'],
     views: 8940
+  },
+  {
+    id: 'us-spr-release-172m-2026',
+    category: 'investigations',
+    categories: ['investigations', 'arab-markets', 'economy'],
+    titleAr: 'التقرير الاستقصائي الحرج: إطلاق 172 مليون برميل نفط من الاحتياطي الاستراتيجي الأمريكي وتحدي مخزونات كوشينغ',
+    titleEn: 'Sovereign Intel: US Initiates 172 Million Barrel Strategic Reserve Release as Hormuz Siege Threatens Cushing Limits',
+    summaryAr: 'تفاصيل الخطة الطارئة لإدارة ترامب لسحب 172 مليون برميل لمواجهة أزمة أسعار البنزين الحادة المتصاعدة تزامناً مع ضربات مضيق هرمز التحذيرية، والتوجه لتعويض الاحتياطي الاستراتيجي بزيادة 20% مع تزايد الشكوك حول مستويات تعافي مخازن كوشينغ الفيدرالية.',
+    summaryEn: 'Detailed analytical dossier on the Trump administration’s emergency 172M barrel draw to mitigate escalating retail prices amidst Hormuz shipping blockages, and plans to refill the SPR by an additional 20% while Cushing storage reaches its operational limits.',
+    excerptAr: 'معن برازي يكشف كواليس السحب الاستثنائي من الاحتياطي الأمريكي وتأثيراته الفورية على هيكل أسعار المنتجات المكررة وموازين الطاقة العالمية.',
+    excerptEn: 'Maan Barazy writes on the logistics of the emergency US crude drawdown, refinery yield pressure, and global maritime insurance premiums.',
+    contentAr: `### معركة خفض العبء: كواليس السحب الطارئ وتحدي جغرافيا الطاقة لعام 2026
+
+**بقلم معن برازي — رئيس التحرير**
+
+صرح الرئيس الأمريكي يوم الأربعاء أن إدارة ترامب بدأت في السحب من الاحتياطي البترولي الاستراتيجي للولايات المتحدة لتخفيف حدة أسعار الغاز (الوقود) المرتفعة وسط الحرب مع إيران. وأعلنت وزارة الطاقة الفيدرالية أنه سيتم إطلاق 172 مليون برميل من النفط بدءاً من الأسبوع المقبل لموازنة العجز الفوري وضبط جماح التضخم المستورد في محطات الوقود.
+
+وقالت وزارة الطاقة في بيان رسمي لها: "سيستغرق تسليم هذه الكمية قرابة 120 يوماً بناءً على معدلات التفريغ المخطط لها". وأضافت بنبرة سياسية واضحة: "على عكس الإدارة السابقة التي تركت احتياطيات النفط الأمريكية مستنزفة ومتضررة، فقد رتبت الولايات المتحدة لتعويض هذه الاحتياطيات الاستراتيجية بأكثر من حجمها وضخ حوالي 200 مليون برميل خلال العام المقبل —أي بزيادة قدرها 20% عن البراميل التي سيتم سحبها— ودون أي تكلفة إضافية على عاتق دافعي الضرائب".
+
+---
+
+### صدمة الأسعار وتوزيع الكلفة الفيدرالية
+
+شهدت محطات الوقود قفزات تاريخية خلال أسابيع قليلة بفعل علاوة التهديد الملاحي وتراجع الاستقرار في مضيق هرمز:
+
+*   **بنزين السيارات العادي:** بلغ المتوسط الوطني لسعر جالون غاز السيارات قبل شهر **2.94 دولاراً**. وفي الأسبوع الماضي، قفز الرقم إلى **3.20 دولاراً**، ليسجل يوم الأربعاء الماضي صعوداً قياسياً عند **3.58 دولاراً للجالون**، في حين حلقت ولاية كاليفورنيا منفردة بأعلى الأسعار بمتوسط بلغ **5.34 دولاراً**.
+*   **ديزل النقل الفيدرالي:** سجل المتوسط الوطني للديزل يوم الأربعاء **4.83 دولاراً للجالون**، مقارنة بـ **4.04 دولاراً** قبل أسبوع، و**3.67 دولاراً** قبل شهر كامل، مما يضغط بقوة على هوامش شركات الشحن وسلاسل التوريد البرية.
+
+وعلق ترامب في مؤتمره الصحفي قائلاً: "يجب أن نتخلص من الشر"، مؤكداً أن إطلاق الاحتياطي يهدف لامتصاص الصدمة العنيفة التي يواجهها المستهلكون عند محطات الوقود بسبب الحرب الدائرة وتأمين خطوط الإمداد الحيوية.
+
+---
+
+### الموقف التاريخي لوكالة الطاقة الدولية (IEA)
+
+تأتي هذه الخطوات الفيدرالية بالتوازي مع قرار تاريخي اتخذته وكالة الطاقة الدولية (IEA)، ومقرها باريس، حيث وافقت 32 حكومة من الدول الأعضاء على إطلاق **400 مليون برميل** من احتياطياتها الطارئة، في أكبر عملية سحب منسقة مسجلة في التاريخ المعاصر للتخفيف من حدة الارتفاع العنيف لأسعار الطاقة العالمية.
+
+لكن المحللين يشيرون إلى الطبيعة الضخمة للطلب العالمي؛ حيث يبلغ الاستهلاك اليومي للنفط الخام حوالي **100 مليون برميل**، مما يعني أن كامل الكمية المفرج عنها دولياً تغطي استهلاك **أربعة أيام فقط** على مستوى العالم. وهو ما يدفع الخبراء، ومنهم مارك مالك رئيس استراتيجيات الاستثمار في "سيبيرت المالية"، للتحذير من أن الأثر الحقيقي قد يكون "نفسياً" وتطميناً مؤقتاً للأسواق لا يعالج خلل العرض الهيكلي.
+
+---
+
+### مخزونات كوشينغ وعقدة انتهاء الهدنة
+
+عقب تصريحات ترامب بشأن انتهاء وقف إطلاق النار المؤقت مع إيران، دخلت أسواق النفط مرحلة بالغة الحرج:
+1.  **الحدود التشغيلية لكوشينغ:** على الرغم من ارتفاع المخزونات التجارية الأمريكية بمقدار **3 ملايين برميل** في الأسبوع الأخير (أول زيادة بعد 10 أسابيع من السحب)، إلا أن مركز التخزين الرئيسي في "كوشينغ" بولاية أوكلاهوما يقترب من الحدود التشغيلية الدنيا والقصوى للضخ الفعلي، مما يعقد لوجستيات السحب.
+2.  **استنزاف الملح الفيدرالي:** تقبع مخزونات الكهوف الملحية على ساحل الخليج التي تديرها الحكومة عند أدنى مستوى لها منذ عام **1983**، مما يحد من هوامش المناورة الجيوسياسية للولايات المتحدة في حال اتساع رقعة الحرب المفتوحة واستهداف الناقلات مجدداً.
+
+وحذر آندي ليبو، رئيس شركة "ليبو أويل أسوشيتس" في هيوستن، قائلاً: "إن أسوأ مخاوف سوق النفط لا تزال قابلة للتحقق في وقت لاحق من هذا العام مع وصولنا إلى الحد الأدنى من مستويات التشغيل الفنية... الطريقة الوحيدة لإعادة توازن الأسواق ستكون تدمير الطلب المفرط بداعي الغلاء الفاحش".`,
+    contentEn: `### The Strategic Petroleum Blitz: Behind the 172M Barrel Drawdown and Cushing Terminal Stress
+
+**By Maan Barazy — Editor-in-Chief**
+
+The U.S. government announced Wednesday that the Trump administration has initiated an emergency release from the Strategic Petroleum Reserve (SPR) to cool escalating retail gas prices driven by active hostilities with Iran. The Department of Energy confirmed that **172 million barrels of crude** will begin entering international markets starting next week to stabilize distribution networks.
+
+According to the official Department of Energy release: "The delivery of this volume will take approximately 120 days based on scheduled drawdown parameters." The statement added: "Unlike the previous administration, which left U.S. reserves severely depleted, the United States has arranged to fully replenish these strategic caverns by up to 120% of the release volume—adding approximately 200 million barrels over the next fiscal year—at zero net cost to the American taxpayer."
+
+---
+
+### The Retail Price Shock Matrix
+
+Retail fuel prices at major U.S. pumps have experienced steep, consecutive weekly surges driven by transit risks and high insurance premiums around the Strait of Hormuz:
+
+*   **Regular Gasoline:** The national retail average rose from **$2.94/gallon** a month ago, to **$3.20/gallon** last week, settling at a sharp **$3.58/gallon** on Wednesday. California reported the highest localized pain with averages peaking at **$5.34/gallon**.
+*   **Federal Diesel Blend:** Diesel surged to a national average of **$4.83/gallon**, up from **$4.04/gallon** just a week prior and **$3.67/gallon** a month ago, hitting transport margins severely.
+
+In his Oval Office remarks, Trump commented, "We must eliminate the threat," explaining that the emergency injection is designed to absorb the severe shock felt by American consumers at the pumps due to active regional war scenarios.
+
+---
+
+### The Paris-Led Coordinated Response
+
+The U.S. drawdown is closely linked with a major intervention by the International Energy Agency (IEA) in Paris. Following an emergency session of 32 member governments, the alliance pledged a joint release of **400 million barrels** of emergency crude reserves—marking the largest coordinated intervention in the history of the modern energy market.
+
+However, energy analysts caution that global demand hover near **100 million barrels per day**, meaning the IEA’s historic release represents just **four days** of total global consumption. Mark Malek, chief investment strategist at Siebert Financial, commented that the initial market reaction might be "primarily psychological," acting as a short-term placebo rather than resolving deep structural bottlenecks.
+
+---
+
+### Cushing Gaps and Refill Bottlenecks
+
+As the temporary truce with Iran ends, U.S. domestic supply chains face structural hurdles:
+1.  **Cushing Tank Bottoms:** While commercial stocks recorded a minor **3 million barrel** build last week (reversing 10 straight weeks of heavy draws), inventories at the Cushing, Oklahoma storage hub are operating near structural technical limits, hindering rapid transport.
+2.  **SPR Salt Cavern Limits:** Government-managed Gulf Coast salt cavern inventories remain hovering at their lowest levels since **1983**, reducing the long-term buffer capacity against future geopolitical shocks.
+
+"The worst-case scenario for the global market remains a real possibility later this year as we test these absolute minimum operational baselines," warned Andy Lipow, president of Lipow Oil Associates. "If terminals empty out completely, the market will force a balance through severe price-induced demand destruction."`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس تحرير صحيفة الورّاق',
+      titleEn: 'Editor-in-Chief, Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['الاحتياطي_الاستراتيجي', 'أسعار_النفط', 'مضيق_هرمز', 'وكالة_الطاقة', 'معن_برازي', 'US_SPR', 'Hormuz_Siege', 'Oil_Crisis', 'Cushing_Limits', 'Maan_Barazy'],
+    hashtags: ['SPR_Drawdown', 'HormuzConflict', 'OilPrices', 'EnergySecurity'],
+    views: 12430
+  },
+  {
+    id: 'saudi-uae-rivalry-bloomberg-2026',
+    category: 'arab-markets',
+    categories: ['arab-markets', 'economy', 'investigations', 'markets'],
+    titleAr: 'بلومبرغ: الصناديق الكبرى ووول ستريت تستعد لتفاقم الخلاف السعودي-الإماراتي وحرب الأسعار النفطية',
+    titleEn: 'Sovereign Rift: Bloomberg Reveals Wall Street Bracing for Saudi-UAE Regional Split & Price War',
+    summaryAr: 'ترصد بلومبرغ نقاشاً جاداً داخل بنوك الاستثمار والصناديق الكبرى للاستعداد لتفاقم الخلاف بين السعودية والإمارات، حيث بدأت المؤسسات المالية العالمية تعيد ترتيب عقودها وموظفيها وقنواتها السياسية ومراجعة عقودها اللوجستية.',
+    summaryEn: 'Detailed dossier on global investment banks and sovereign funds preparing contingency scenarios for a Saudi-UAE split, regional competition, and an impending oil price war following the UAE’s OPEC departure.',
+    excerptAr: 'وول ستريت تبحث خيارات القوة القاهرة وتفصل ترتيباتها اللوجستية في الخليج مع تسارع التنافس الاقتصادي وحرب الحصص النفطية.',
+    excerptEn: 'How Goldman, Morgan Stanley, and BlackRock are navigating the regional divide to manage $3 trillion in sovereign wealth.',
+    contentAr: `### تصدع البيت الخليجي: كواليس الحراك الصامت في ردهات وول ستريت وصناديق الاستثمار الكبرى
+
+**تحقيق خاص — هيئة التحرير (بالتعاون مع بلومبرغ والدوائر المالية الدولية)**
+
+ترصد وكالة "بلومبرغ" نقاشاً جاداً وغير مسبوق يدور خلف الأبواب المغلقة داخل بنوك الاستثمار الكبرى وصناديق الثروة العالمية بشأن الاستعداد لاحتمال تفاقم الخلاف الجيوسياسي والاقتصادي بين المملكة العربية السعودية ودولة الإمارات العربية المتحدة. 
+
+وبدأت المؤسسات المالية العالمية تعيد ترتيب عقودها، وموظفيها، وقنواتها السياسية في منطقة الخليج على هذا الأساس، تحسباً لنهاية حقبة "التكامل السلس" الذي ميّز الأسواق الخليجية لعقود.
+
+ويستند هذا التقرير الاستقصائي الاستثنائي إلى مقابلات حصرية أجريت مع أكثر من عشرة من كبار المصرفيين والتنفيذيين في وول ستريت، وشركات الملكية الخاصة الكبرى، إضافة إلى مسؤولين إقليميين وأشخاص مطلعين على السياسات المباشرة للبلدين.
+
+---
+
+### سيناريوهات وول ستريت البديلة: حرج الاختيار بين الرياض وأبوظبي
+
+مؤسسات مالية عملاقة مثل **غولدمان ساكس (Goldman Sachs)**، و**مورغان ستانلي (Morgan Stanley)**، و**بلاك روك (BlackRock)**، و**بروكفيلد (Brookfield)**، و**كي كي آر (KKR)** باتت تضع سيناريوهات احتياطية طارئة تحسباً لتدهور حاد في العلاقات الثنائية بين الرياض وأبوظبي. 
+
+ويعود سبب هذا القلق المتعاظم إلى أن هذه الشركات توسعت بقوة في كلا السوقين معاً للوصول إلى الصناديق السيادية الضخمة للبلدين (مثل صندوق الاستثمارات العامة السعودي PIF، وجهاز أبوظبي للاستثمار ADIA، ومبادلة) والتي تدير مجتمعة أصولاً تتجاوز **ثلاثة تريليونات دولار**. 
+
+إن أي انقسام حاد أو قطيعة اقتصادية قد يفرض على هذه المؤسسات لاحقاً الاختيار الإجباري بين مركزين ماليين متنافسين، بعد أن كانت تتعامل معهما حتى الآن باعتبارهما قابلين للجمع والشراكة المتزامنة.
+
+---
+
+### تداعيات ميدانية: تأشيرات معطلة وعراقيل مصرفية
+
+تشير تقارير "بلومبرغ" إلى أن التداعيات الميدانية للخلاف بدأت تظهر بشكل ملموس:
+1. **أزمة تأشيرات العمل:** بدأت بعض الشركات الأجنبية الكبرى المتمركزة في دولة الإمارات العربية المتحدة في مواجهة مشكلات وصعوبات غير معتادة للحصول على تأشيرات أعمال سعودية لموظفيها، على خلفية الخلافات السياسية حول الملف اليمني وملف النفط.
+2. **تأخير التحويلات المصرفية:** أبلغت شركات وأفراد عن مواجهة تأخيرات مصرفية غير معتادة وغير مسبوقة خلال الأسابيع الأخيرة في المعاملات المالية الموجهة والتحويلات المصرفية الصادرة من المملكة العربية السعودية إلى دولة الإمارات.
+3. **تقييمات المخاطر الداخلية:** أجرت عدة بنوك استثمارية عالمية، ومسؤولون في حكومة إقليمية واحدة على الأقل، تقييماً داخلياً شاملاً للسيناريوهات المتوقعة وتأثيراتها الاقتصادية في حال اشتداد التنافس الاقتصادي المباشر بين القطبين الخليجيين.
+
+---
+
+### الهندسة اللوجستية وعقود القوة القاهرة
+
+بسبب هذه المخاوف، بدأت الشركات الدولية في اتخاذ تدابير استباقية للحد من الأضرار:
+* **فصل الترتيبات اللوجستية:** شرعت شركات كبرى في فصل ترتيباتها اللوجستية والمكتبية لكل دولة على حدة، لتجنب أي تعقيدات ناتجة عن تشريعات المقرات الإقليمية (RHQ) السعودية الصارمة.
+* **بنود القوة القاهرة:** مراجعة بنود "القوة القاهرة" وعقود التأمين والتحكيم لمواجهة أي توترات حدودية أو جمركية محتملة.
+* **تدقيق العلاقات المحلية:** مراجعة شبكة الشركاء والوكلاء المحليين لضمان عدم تأثر الأعمال في السعودية بالارتباط بكيانات إماراتية أو العكس.
+* **تأمين الموظفين المقيمين:** تحاول شركات عديدة ضمان وجود عدد كافٍ من الكوادر والموظفين المقيمين قانونياً بشكل كامل ومستقل في كلا البلدين لتلافي أي قيود مفاجئة على السفر البيني.
+
+وتكشف مصادر مطلعة أن شركة عالمية واحدة على الأقل وضعت تصوراً أولياً لممارسة ضغوط موازية عبر الإدارة الأمريكية إذا ما تفاقم الخلاف، بينما بات مكتب محاماة دولي بارز أكثر حذراً وانتقائية في القضايا والأعمال الاستشارية التي يقبلها في منطقة الخليج لتلافي إغضاب أي من العاصمتين.
+
+---
+
+### قيود الصناديق السيادية وشبح جفاف السيولة
+
+تنقل "بلومبرغ" أيضاً عن مدير صندوق استثماري دولي بارز، يسعى لجمع تمويل لصندوق مخصص للشرق الأوسط، أنه أُبلغ بشكل صريح من مستثمرين سعوديين بأنهم **لن يستثمروا** إلا في الكيانات والشركات التي تركز نشاطها بالكامل على المملكة العربية السعودية، مع ضرورة تجنب الانكشاف على السوق الإماراتي.
+
+ويرى بعض التنفيذيين والمحللين الماليين أن ضيق مستويات السيولة الحرة داخل النظام المصرفي السعودي (بسبب المشاريع المليارية الضخمة لرؤية 2030) قد يفسر جانباً كبيراً من هذه القيود والشروط الحمائية المشددة، وليس الدافع السياسي الصرف وحده.
+
+---
+
+### الجذور الجيوسياسية وخروج الإمارات من أوبك
+
+يرتبط هذا التوتر المتصاعد بملفات سياسية شائكة ومتراكمة:
+1. **الملف اليمني والسوداني:** رغبة الرياض في إنهاء الدور العسكري والسياسي الإماراتي في اليمن وتقليص نفوذ أبوظبي في ساحات حيوية مثل القرن الأفريقي والسودان.
+2. **العلاقات مع طهران:** تبنت السعودية في الآونة الأخيرة سياسة مهدئة وتصالحية مع إيران، في حين اتخذت الإمارات في البداية موقفاً أكثر تشدداً وتوجساً.
+3. **مفاجأة أوبك الكبرى:** جاء قرار الإمارات المفاجئ بمغادرة منظمة الدول المصدرة للنفط "أوبك" ليصدم القيادة السعودية، التي اعتبرت الخطوة بمثابة تهديد مباشر لاستقرار المنظمة ونفوذها التاريخي في تسعير الطاقة العالمية.
+
+---
+
+### حرب الأسعار وسلاسل الإمداد البرية
+
+في قطاع الطاقة، يتوقع محللو **مجموعة أوراسيا (Eurasia Group)** تصاعد "حرب أسعار ناشئة" وضارية بين البلدين. ويرتكز هذا التحليل على حقيقة أن خروج الإمارات من قيود "أوبك" حرر قدراتها الإنتاجية الهائلة، في وقت تحتاج فيه السعودية إلى إبقاء أسعار النفط عند مستويات مرتفعة لتغطية عجز الموازنة المتزايد وتمويل مشاريعها العملاقة. 
+
+ويتجاوز أثر هذا الخلاف أسواق المال والطاقة ليصل مباشرة إلى سلاسل الإمداد الخليجية البرية. فمع استمرار اضطرابات الملاحة والألغام في مضيق هرمز لعام 2026، باتت الشركات والبلدان تعتمد بشكل حيوي ومكثف على الشحن البري عبر الشاحنات المارة بين الإمارات والسعودية لنقل الغذاء والدواء والبضائع الأساسية. هذه التطورات رفعت من اعتماد أبوظبي على ممرات الشاحنات البرية السعودية، مما يجعل أي احتكاك اقتصادي أو جمركي بين الطرفين عالي التكلفة ومباشر الأثر على الاستقرار الغذائي والاستثماري للمنطقة ككل.`,
+    contentEn: `### Sovereign Friction: Wall Street and Mega Funds Braced for Saudi-UAE Regional Divide
+
+**Special Report — Financial Desk (In collaboration with Bloomberg & Institutional Analysts)**
+
+Bloomberg reports a serious and unprecedented discourse taking place behind closed doors within major global investment banks and sovereign wealth funds regarding the potential escalation of geopolitical and economic friction between Saudi Arabia and the United Arab Emirates.
+
+Global financial institutions are quietly restructuring their contracts, staffing plans, and regional operational centers in the Gulf, signaling an end to the era of seamless regional integration.
+
+This investigative report draws on exclusive interviews with more than a dozen Wall Street bankers, private equity executives, regional officials, and sovereign wealth advisors.
+
+---
+
+### The Wall Street Dilemma: Forced Monocentric Choices
+
+Global finance heavyweights—including **Goldman Sachs**, **Morgan Stanley**, **BlackRock**, **Brookfield**, and **KKR**—are actively modeling emergency scenarios for a structural breakdown in the Riyadh-Abu Dhabi axis.
+
+The driver of this institutional anxiety is clear: these firms expanded aggressively into both markets simultaneously to gain access to sovereign wealth funds (such as Saudi Arabia’s PIF and Abu Dhabi’s ADIA and Mubadala) which collectively manage over **$3 trillion in assets**.
+
+A major economic schism would force these firms to choose between two competing financial capitals, dismantling a dual-hub model they had previously treated as highly compatible.
+
+---
+
+### Real-world Friction: Visa Blocks and Remittance Latency
+
+Operational ripples from the bilateral tension are already materializing:
+1. **Visa Restrictions:** Several multinational corporations based in Dubai are experiencing unusual difficulties obtaining Saudi commercial visas for their administrative staff, tied to lingering disputes over Yemen and oil quota policy.
+2. **Remittance Delays:** Financial managers have reported unexpected, unexplained processing delays for cross-border bank transfers moving out of Saudi Arabia into the UAE in recent weeks.
+3. **Risk Stress-Testing:** Several global investment banks, as well as officials in at least one regional government, have completed internal contingency reviews to prepare for direct economic retaliation.
+
+---
+
+### Logistics Splitting and Force Majeure Redrafts
+
+Faced with these friction points, multinational corporations are implementing defensive measures:
+* **Monocentric Desk Splitting:** Major firms are splitting operations entirely by jurisdiction to avoid falling afoul of Saudi Arabia's strict Regional Headquarters (RHQ) mandate.
+* **Force Majeure Redrafts:** Legal teams are reviewing force majeure and arbitration clauses in regional logistics agreements to guard against sudden custom controls.
+* **Local Proxy Audits:** Inspecting local corporate proxies to ensure that deep ties with Abu Dhabi do not contaminate relationships in Riyadh.
+* **Sovereign Residency Backstops:** Restructuring residency permits to ensure full, independent operational teams are legally established in both countries, bypassing cross-border travel interruptions.
+
+One multinational firm has reportedly drafted a lobbying strategy directed at the U.S. executive branch should the rift worsen, while a prominent international law firm has tightened its regional client vetting to avoid taking cases that could antagonize either sovereign capital.
+
+---
+
+### Capital Scarcity and Sovereign Investment Mandates
+
+Bloomberg further reveals that an international fund manager raising capital for a Middle East-focused investment fund was explicitly told by Saudi sovereign allocators that their commitments would be strictly contingent on **zero exposure to UAE-based entities**.
+
+Some finance executives suggest that tightening liquidity within the Saudi domestic banking system—pinched by the immense capital demands of Vision 2030 megaprojects—explains these protective investment silos, rather than political rivalry alone.
+
+---
+
+### Geopolitical Roots and the OPEC Departure
+
+The political friction is tied to several deep-seated disputes:
+1. **Yemen and Sudan:** Riyadh's push to end the UAE's military and political footprint in Yemen, as well as clashing strategic operations in the Horn of Africa and Sudan.
+2. **Rapprochement with Iran:** While Saudi Arabia adopted a highly defensive but diplomatic detente with Tehran, the UAE initially maintained a more hawkish and defensive posture.
+3. **The OPEC Withdrawal:** Abu Dhabi's sudden departure from OPEC sent shockwaves through Riyadh, representing a direct threat to Saudi hegemony over global crude supply pricing.
+
+---
+
+### Pricing Wars and Overland Supply Constraints
+
+On the energy front, analysts at **Eurasia Group** predict an impending "price war" between the two giants. The core assumption is that the UAE's exit from OPEC frees its massive spare capacity at a time when Saudi Arabia desperately needs elevated oil prices to cover its budget deficit.
+
+Furthermore, the impact of this friction extends beyond financial and energy desks into Gulf land-based supply chains. With navigation in the Strait of Hormuz highly restricted in 2026, land corridors between the UAE and Saudi Arabia have become critical arteries for food, medicine, and consumer goods. This reliance on Saudi highways makes any border friction highly expensive, directly impacting regional supply security.`,
+    author: {
+      nameAr: 'هيئة التحرير',
+      nameEn: 'Editorial Desk',
+      titleAr: 'القسم الاقتصادي - صحيفة الورّاق',
+      titleEn: 'Economics Desk, Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['السعودية_والإمارات', 'الخلاف_الخليجي', 'أسعار_النفط', 'صناديق_سيادية', 'وول_ستريت', 'Saudi_UAE', 'OPEC_Exit', 'Sovereign_Wealth', 'Wall_Street', 'Eurasia_Group'],
+    hashtags: ['SaudiUaeRivalry', 'OilPrices', 'OPEC', 'GulfCapital'],
+    views: 18450
+  },
+  {
+    id: 'us-deterrence-erosion-iran-2026',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'exclusives', 'investigations', 'war-room'],
+    titleAr: 'معادلة الردع المتآكلة: كيف تعيد "حرب إيران" صياغة النفوذ العسكري الأمريكي في المنطقة',
+    titleEn: 'The Eroded Deterrence Equation: How the "Iran War" Reshapes US Military Hegemony',
+    summaryAr: 'طوال المواجهة العسكرية المباشرة ركزت واشنطن على استعراض أرقام تفوقها التقليدي كأداة وحيدة لقياس النجاح، لكن السحق الكمي لم يترجم لأهداف استراتيجية وتآكل الردع أمام استراتيجية الاستنزاف الإيرانية وحصار هرمز.',
+    summaryEn: 'An insightful editorial on how Iran’s asymmetric "Mosaic Defense" and the Strait of Hormuz naval blockade eroded the US military deterrent during Operation Epic Fury, exposing deep structural bottlenecks in critical ammunition.',
+    excerptAr: 'وهم التفوق الكمي وسراب الغضب الملحمي يتلاشى أمام عقيدة الدفاع الفسيفسائي وحرب الاستنزاف المفتوحة.',
+    excerptEn: 'How asymmetric drone saturation and coastal sea-denial systems exposed the limits of US conventional power.',
+    contentAr: `### معادلة الردع المتآكلة: كيف تعيد "حرب إيران" صياغة النفوذ العسكري الأمريكي في المنطقة
+
+**بقلم هيئة التحرير — رئيس تحرير قسم الأمن القومي**
+
+طوال المواجهة العسكرية المباشرة بين الولايات المتحدة وإسرائيل من جهة، وإيران من جهة أخرى، ركزت واشنطن على استعراض أرقام تفوقها العسكري التقليدي كأداة وحيدة لقياس النجاح. وتفاخرت إدارة الرئيس دونالد ترامب بإنجازات عملياتية هائلة قبل سريان وقف إطلاق النار في 8 نيسان/أبريل؛ حيث نفذت القوات الأمريكية منفردة أكثر من 10,000 طلعة جوية، واستهدفت ما يزيد على 130,000 هدف، واعترضت نحو 1,700 صاروخ وطائرة مسيرة. ووفقاً لتقارير القيادة المركزية الأمريكية (سنتكوم)، أدت هذه الضربات الكثيفة إلى تحييد 85% من منشآت إنتاج الصواريخ والمسيرات الإيرانية، وتدمير 70% من بنية الإطلاق التحتية، فضلاً عن إغراق الجزء الأكبر من القطع البحرية التابعة لطهران.
+
+ومع ذلك، فإن هذا السحق الكمي للقدرات العسكرية التقليدية لم يترجم إلى تحقيق الأهداف الاستراتيجية الكبرى التي روجت لها واشنطن في بداية عملية "الغضب الملحمي" (Operation Epic Fury). فالوعود الأمريكية التي تراوحت بين فرض الاستسلام الكامل على النظام، وتخليص المنطقة نهائياً من نفوذه الإقليمي، وانتزاع اتفاق نووي جديد يتجاوز مكاسب اتفاق عام 2015، تبخرت جميعها أمام واقع مغاير. لقد أثبت النظام في طهران قدرة عالية على التكيف الديناميكي، متحولاً نحو استراتيجية استنزاف مرنة. هذه الاستراتيجية لم تكتفِ بإنهاك الترسانة الصاروخية الأمريكية الفائقة التطور فحسب، بل نقلت المعركة إلى عمق البنية التحتية المدنية والاقتصادية في الشرق الأوسط، مما أدى إلى صياغة واقع جيوسياسي جديد فرض ضغوطاً غير مسبوقة على شريان الاقتصاد العالمي وعقيدة فرض القوة الأمريكية.
+
+---
+
+### "الدفاع الفسيفسائي": العقيدة اللامتناظرة والذكاء العملياتي لجمهورية إيران
+
+كشفت الحرب الحالية عن تحول جوهري في العقيدة العسكرية الإيرانية، مستفيدة من الدروس القاسية لحرب الـ 12 يوماً التي شهدت ضربات إسرائيلية وأمريكية مكثفة على برامجها النووية والصاروخية. أدركت طهران حينها أن هيكل قيادتها المركزي والبطيء يمثل نقطة ضعف قاتلة أمام ضربات قطع الرأس التي تستهدف القيادات العليا. وبناءً عليه، أعادت إيران هندسة منظومتها الدفاعية والهجومية وفق ما يُعرف بـ "الدفاع الفسيفسائي":
+
+*   **لامركزية القرار العسكري:** جرى تفويض سلطات الرد والاشتباك مسبقاً إلى مستويات قيادية ميدانية أدنى، وتحديد بنك أهداف مرن وقابل للتوسيع التلقائي. وبفضل هذا التحول، لم تتأثر قدرة النظام على إدارة العمليات حتى بعد الضربات الإسرائيلية التي أدت إلى اغتيال نحو 40 من كبار القادة السياسيين والعسكريين، بمن فيهم المرشد الأعلى علي خامنئي.
+*   **تكتيكات الإشباع الصاروخي والمسيرات الانقضاضية:** استلهمت طهران تكتيكات الحرب الروسية في أوكرانيا، مستخدمة أسراباً من الطائرات المسيرة رخيصة التكلفة لإنهاك شبكات الرادار الغربية واستنزاف مخزون الصواريخ الاعتراضية الثمينة، تمهيداً لشن ضربات صاروخية دقيقة.
+*   **نقل الصراع إلى الجوار الإقليمي والبنية التحتية الحرجة:** بدلاً من حصر الرد في مواجهة مباشرة مع إسرائيل أو القواعد الأمريكية التقليدية، وسعت إيران مروحة استهدافاتها لتشمل منشآت الطاقة والمطارات ومحطات تحلية المياه والفنادق في دول الخليج المتحالفة مع واشنطن. ويمثل الرد الإيراني السريع على ضرب حقل "جنوب فارس" للغاز في 18 آذار/مارس نموذجاً واضحاً؛ إذ امتدت الضربات الانتقامية في غضون ساعات لتطال المنشآت النفطية السعودية والكويتية، والجانب القطري من الحقل نفسه.
+
+---
+
+### معضلة الاستنزاف: الأزمة الهيكلية للترسانة الأمريكية
+
+وضعت حرب إيران القاعدة الصناعية الدفاعية الأمريكية أمام واقع مأزوم، مظهرةً عدم جاهزية الولايات المتحدة لخوض حروب استنزاف طويلة الأجل وعالية الكثافة ضد خصوم يعتمدون تكتيكات منخفضة التكلفة. ورغم أن المخزونات الأمريكية نجحت في حسم الجولات الأولى، إلا أن التكلفة المادية والعملياتية كانت باهظة ومقلقة للمخططين العسكريين في البنتاغون:
+
+| نوع الذخيرة/المنظومة الاعتراضية | الكمية المستهلكة (بين 28 شباط و8 نيسان) | النسبة من إجمالي المخزون الأمريكي قبل الحرب | معدل الإنتاج السنوي الأمريكي |
+| :--- | :---: | :---: | :---: |
+| **صواريخ كروز "توماهوك" (Tomahawk)** | أكثر من 1,000 صاروخ | — | 90 - 100 صاروخ فقط |
+| **صواريخ اعتراض "ثاد" (THAAD)** | ما لا يقل عن 190 صاروخاً | 53% | بطيء ومحدود تقنياً |
+| **صواريخ اعتراض "باتريوت" (Patriot)** | ما لا يقل عن 1,060 صاروخاً | 46% | لا يغطي الاستهلاك المتزامن |
+
+هذا الاستهلاك الحاد للذخائر الحرجة يعني ببساطة أن واشنطن باتت عاجزة عسكرياً عن مواجهة تهديدات جوية متزامنة في مسارح استراتيجية أخرى (مثل تايوان أو شرق أوروبا) إذا ما اندلعت مواجهة مفاجئة، وهو ما يفرض مراجعة جذرية لآليات الإنتاج المشترك ونقل التكنولوجيا مع الحلفاء عبر تذليل العقبات البيروقراطية وبطء المبيعات العسكرية الخارجية.
+
+---
+
+### اختناق الملاحة وصدمة هرمز الاقتصادية
+
+تجلت قدرة إيران على الابتكار الخلاق في الحرب البحرية عبر فرض حصار ذكي وخانق على مضيق هرمز عام 2026. وإدراكاً منها لعدم التكافؤ مع الأساطيل البحرية الأمريكية التقليدية، اعتمدت طهران على استراتيجية "الإنكار البحري" باستخدام زوارق سريعة صغيرة، وألغام بحرية ذكية، ووحدات إطلاق برية متموضعة بدقة على السواحل.
+
+ولم تكن الغاية تدمير القطع الحربية الأمريكية، بل خلق حالة مستدامة من عدم اليقين الملاحي والتشكيك الأمني. نجح هذا تكتيك اللامتناظر في شل حركة المرور التجاري عبر الممر المائي الذي يتدفق من خلاله 20% من الشحن العالمي، مما أدى إلى قفزات حادة في تكاليف التأمين البحري، وضغوط تضخمية عنيفة هزت الأسواق المالية العالمية، وحطمت السمعة التاريخية لمنطقة الخليج كملاذ آمن ومستقر للأعمال والاستثمارات الدولية.
+
+---
+
+### "مشروع الحرية" وتصدع جدار الثقة بين واشنطن والخليج
+
+أفرزت الحرب اختباراً عسيراً لشبكة التحالفات الأمريكية الإقليمية. فرغم النجاح في بناء "شبكة الوصول الغربية" والاعتماد على قواعد مرنة في إسرائيل والأردن والسعودية لتجنب الخسائر البشرية في القواعد التقليدية المعرضة للصواريخ الإيرانية قصيرة المدى، إلا أن الإدارة السياسية للصراع خلقت فجوة ثقة عميقة.
+
+وعندما أطلقت واشنطن عملية "مشروع الحرية" (Project Freedom) لإعادة فتح مضيق هرمز ومرافقة السفن التجارية، ردت إيران بضرب محطة نفطية إماراتية واستهداف سفينة تجارية كورية جنوبية لإثبات جديتها. واكتفاء إدارة ترامب بالدفاع عن قطعها البحرية دون رد ردعي حاسم على استهداف المنشآت الخليجية دفع دولاً كالكويت والمملكة العربية السعودية إلى اتخاذ قرار مفاجئ بإغلاق أجوائهما أمام الطائرات العسكرية الأمريكية وفرض قيود صارمة على استخدام القواعد خلال 24 ساعة. ورغم استئناف التنسيق لاحقاً، إلا أن هذه الحادثة أحدثت شرخاً سياسياً غير مسبوق أثبت أن الشراكات العسكرية باتت رهينة لحسابات سياسية محلية متبادلة.
+
+---
+
+### نحو نظام أمني متعدد الأقطاب ومصغر (Minilateralism)
+
+أمام التردد الأمريكي وتصاعد شهية الرأي العام في الولايات المتحدة للانسحاب من الأزمات الخارجية، سارعت عواصم المنطقة إلى تنويع شراكاتها الأمنية والدفاعية كأمر واقع لا غنى عنه:
+
+*   **محور مكافحة المسيرات (أوكرانيا والخليج):** وقعت كل من قطر والسعودية والإمارات اتفاقيات أمنية طويلة الأجل مع أوكرانيا للاستفادة من خبراتها الميدانية في تحييد المسيرات ونقل تكنولوجيا التصنيع المشترك.
+*   **التعاون الدفاعي البيني:** طلبت الإمارات رسمياً من إسرائيل نشر منظومات دفاع جوي وقوات إضافية على أراضيها لتعزيز مظلتها الأمنية.
+*   **الدور الأوروبي المستقل:** برز حضور أوروبي لافت تمثل في قيام فرنسا بنشر مقاتلات لحماية الأجواء الإماراتية، وإرسال حاملة طائراتها إلى البحر الأحمر، بالتوازي مع تنسيق بريطاني نشط مع البحرين والسعودية. وفي أواخر نيسان/أبريل، قادت باريس ولندن قمة للأمن البحري بمشاركة أكثر من 30 دولة لوضع أطر استراتيجية جماعية تضمن حرية الملاحة وتملأ الفراغ الذي خلّفته المقاربة الأمريكية التراجعية.
+
+إن الدرس الأبرز لعملية "الغضب الملحمي" هو أن واشنطن لم تعد قادرة على لعب دور "الضامن الأمني الوحيد" للمنطقة، وعليها التحول سريعاً لتكون مجرد "مكامل أمني" (Security Integrator) يدير شبكة معقدة ومتعددة الأطراف من الحلفاء المحليين والدوليين، وإلا فإن عجزها الاستراتيجي سيرسخ قناعة عالمية بأن المظلة الأمنية الأمريكية باتت عبئاً عسكرياً وسياسياً لا رصيداً موثوقاً.`,
+    contentEn: `### Eroded Deterrence: How the "Iran War" Reshapes US Military Projections
+
+**Editorial Board — National Security Desk**
+
+Throughout the direct military confrontation between the United States and Israel on one side, and Iran on the other, Washington has consistently focused on showcasing raw numbers of conventional military superiority as the sole metric of success. The administration of President Donald Trump boasted of immense operational milestones before the April 8 ceasefire went into effect; U.S. forces alone flew over 10,000 sorties, struck over 130,000 targets, and intercepted approximately 1,700 rockets and drones. According to US Central Command (CENTCOM) briefs, these heavy strikes successfully neutralized 85% of Iranian missile and drone production facilities, destroyed 70% of launching infrastructures, and sank the bulk of Tehran's surface navy.
+
+Yet, this quantitative devastation of conventional capabilities failed to translate into the overarching strategic objectives that Washington initially advertised under "Operation Epic Fury." U.S. promises—ranging from forcing a complete capitulation of the regime, to permanently expelling its regional influence and extracting a new nuclear accord surpassing the 2015 JCPOA—evaporated against a starkly different reality. The regime in Tehran demonstrated high dynamic adaptation, shifting toward a highly flexible war of attrition. This asymmetric campaign not only depleted Washington’s highly advanced interceptor stockpiles but also successfully projected the conflict into the civilian and economic heart of the Middle East, altering the geopolitical balance.
+
+---
+
+### "Mosaic Defense": The Asymmetric Doctrine and Operational Agility of Iran
+
+The active conflict exposed a structural evolution in Iranian military doctrine, leveraging lessons from the intense 12-day war that saw joint US-Israeli strikes on nuclear and missile facilities. Tehran recognized that its centralized command structure was a fatal vulnerability under decapitation strikes. Consequently, Iran engineered its defense and strike networks around what is known as "Mosaic Defense":
+
+*   **Decentralized Military Command:** Decisive engagement authority was pre-delegated to lower-tier field commanders, governed by a highly flexible and expanding target matrix. Thanks to this transition, the regime's operational command remained functional even after Israeli strikes assassinated nearly 40 high-ranking political and military figures, including Supreme Leader Ali Khamenei.
+*   **Drone Swarm Saturation Tactics:** Inspiring their tactics from Russian drone warfare in Ukraine, Tehran deployed massive waves of low-cost loitering munitions to overwhelm Western radar grids and deplete expensive interceptor stockpiles before launching highly precise, targeted ballistic missiles.
+*   **Targeting Critical regional Infrastructure:** Rather than confining its response to direct, symmetrical exchanges with Israel or heavily fortified US military installations, Iran targeted the energy, logistics, and desalination grids of Washington's regional partners. The rapid Iranian retaliation to the strike on the "South Pars" gas field on March 18 is a case in point: within hours, retaliatory strikes crippled Saudi and Kuwaiti oil facilities, and even struck the Qatari-managed sector of the same field.
+
+---
+
+### The Attrition Trap: The US Munitions Bottle-neck
+
+The conflict brought the U.S. defense industrial base face-to-face with an industrial bottleneck, proving that the U.S. remains under-equipped for high-intensity, prolonged wars of attrition against adversaries deploying low-cost, asymmetrical assets. While U.S. inventories held during the initial rounds, the operational costs were staggering:
+
+| Ammunition / Intercept System | Quantity Consumed (Feb 28 - Apr 8) | % of Pre-War US Active Inventory | US Annual Production Rate |
+| :--- | :---: | :---: | :---: |
+| **Tomahawk Cruise Missiles** | Over 1,000 | — | 90 - 100 missiles only |
+| **THAAD Interceptors** | At least 190 | 53% | Slow and technologically constrained |
+| **Patriot Interceptors** | At least 1,060 | 46% | Insufficient for concurrent conflicts |
+
+This acute rate of munitions consumption means Washington is functionally constrained in addressing concurrent threats in other major theaters (such as Taiwan or Eastern Europe) if a secondary conflict erupts. It forces a fundamental review of joint co-production and military sales procedures to bypass bureaucratic delays.
+
+---
+
+### Maritime Chokepoints and the Hormuz Economic Shock
+
+Iran's naval innovation manifested through a highly restrictive, localized blockade of the Strait of Hormuz in 2026. Acknowledging its conventional inferiority to U.S. fleets, Tehran relied on "sea denial" tactics using fast attack craft, intelligent smart mines, and well-positioned coastal missile launchers.
+
+The objective was not the destruction of U.S. warships, but rather the creation of persistent maritime uncertainty. This asymmetric blockade successfully froze commercial traffic through a corridor that handles 20% of global oil shipments. It led to unprecedented spikes in maritime insurance premiums, triggered severe global inflationary spikes, and dented the historical reputation of the Gulf as a secure, low-risk destination for international capital.
+
+---
+
+### "Project Freedom" and the Gulf Trust Deficit
+
+The war severely tested Washington's regional alliances. While CENTCOM successfully utilized "Western access networks" across bases in Jordan and Saudi Arabia to minimize personnel losses, the political management of the conflict created deep trust deficits.
+
+When Washington launched "Project Freedom" to escort commercial vessels and force open the Strait of Hormuz, Iran immediately struck an Emirati terminal and targeted a South Korean commercial vessel. The Trump administration's decision to restrict its response to defending its own naval vessels—rather than launching a decisive deterrent counter-strike on behalf of its Gulf allies—prompted Kuwait and Saudi Arabia to close their airspace to U.S. military aircraft and impose strict restrictions on base usage within 24 hours. While cooperation eventually resumed, the incident left a lasting political scar, proving that security partnerships are deeply contingent on domestic political calculations.
+
+---
+
+### Toward a Minilateral Security Order
+
+Faced with American hesitancy and a growing domestic U.S. appetite for foreign retrenchment, regional capitals have rushed to diversify their security dependencies:
+
+*   **Counter-Drone Axis (Ukraine & The Gulf):** Qatar, Saudi Arabia, and the UAE signed long-term security pacts with Ukraine to leverage Kyiv's battlefield experience in counter-unmanned aerial vehicle (UAV) defense and joint production.
+*   **Bilateral Defense Integrations:** The UAE formally requested Israel to deploy advanced air defense batteries and support personnel on its soil to reinforce its security umbrella.
+*   **Independent European Deployments:** France deployed fighter jets to protect Emirati skies and sent its aircraft carrier to the Red Sea, alongside active British maritime coordination with Bahrain and Saudi Arabia. In late April, Paris and London convened a maritime security summit with over 30 nations to establish a collective framework, filling the vacuum left by Washington's shifting strategic posture.
+
+The overarching lesson of "Operation Epic Fury" is that Washington can no longer act as the sole "security guarantor" of the Middle East. It must transition into a "security integrator" managing a highly complex, minilateral web of local and international partners—or risk a global realization that the U.S. security umbrella is now a liability.`,
+    author: {
+      nameAr: 'هيئة التحرير',
+      nameEn: 'Editorial Board',
+      titleAr: 'محلل شؤون الأمن القومي والردع',
+      titleEn: 'National Security Analyst, Al-Warraq',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    tags: ['الردع_الأمريكي', 'حرب_الخليج', 'سنتكوم', 'توماهوك', 'الغضب_الملحمي', 'US_Deterrence', 'Epic_Fury', 'Hormuz_Blockade', 'Asymmetric_Warfare', 'Middle_East'],
+    hashtags: ['US_Deterrence', 'OperationEpicFury', 'HormuzConflict', 'MilitaryAviation'],
+    views: 9430
+  },
+  {
+    id: 'lebanon-financial-architecture-laws-2026',
+    category: 'economy',
+    categories: ['economy', 'lebanon', 'markets', 'investigations'],
+    titleAr: 'محاولة أخيرة لصياغة هندسة مالية جديدة في لبنان: التناقضات وحرب الصلاحيات والمسؤوليات التائهة',
+    titleEn: 'Lebanon’s Final Gambit: Power Struggles and Contradictions in the New Financial Architecture',
+    summaryAr: 'يقف النظام المالي اللبناني اليوم عند مفترق طرق تاريخي ومصيري يختزل في طياته واحدة من أعقد الأزمات الاقتصادية والسياسية. وتأتي حزمة التشريعات المعروضة على مشارف مجلس النواب اللبناني (المرسومان ٣٠٥٦ و٢٢٢٤) كصياغة أخيرة تصطدم بحرب الصلاحيات.',
+    summaryEn: 'An exhaustive analytical review of Lebanon’s final attempts to reform its banking sector via draft Decrees 3056 and 2224, mapping out the severe resistance from commercial banks and parliamentary conflicts of interest.',
+    excerptAr: 'معن برازي يفكك خلفيات ومحاور مشروعي قانوني إصلاح المصارف والانتظام المالي ومصير الودائع المؤهلة وغير المؤهلة.',
+    excerptEn: 'Deep-dive into the legal battle over the $70 billion loss gap, asset quality reviews, and deposit recovery funds.',
+    contentAr: `### محاولة أخيرة لصياغة هندسة مالية جديدة: التناقضات وحرب الصلاحيات
+
+**بقلم معن برازي — رئيس التحرير**
+
+يقف النظام المالي اللبناني اليوم عند مفترق طرق تاريخي ومصيري، يختزل في طياته واحدة من أعقد الأزمات الاقتصادية والسياسية في التاريخ الحديث. وتأتي حزمة التشريعات المعروضة على مشارف الهيئة العامة لمجلس النواب اللبناني — والمتمثلة بمشروع قانون "إصلاح وضع المصارف وإعادة تنظيمها" (المرسوم رقم 3056) ومشروع قانون "الانتظام المالي واسترداد الودائع" (المرسوم رقم 2224) — لتمثّل محاولة أخيرة لصياغة هندسة مالية جديدة، بيد أنها تصطدم بجدار سميك من التناقضات وحرب الصلاحيات. 
+
+يتبلور هذا المشهد المأزوم في جوهره حول أربعة محاور تشريعية وسياسية حارقة:
+
+*   **إملاءات صندوق النقد الدولي (IMF) مقابل المحاصصة المحلية:** يطالب صندوق النقد بشروط صارمة وعلمية لا تقبل المواربة، تبدأ بالاعتراف الفوري بـ "فجوة الخسائر" المالية التاريخية وشطب الرساميل، ووضع أطر واضحة لتصنيف المصارف القابلة للاستمرار. في المقابل، تحاول القوى المحلية جاهدة تدوير زوايا القوانين لتجنب تسييل خسائر القطاع أو إقرار "اقتطاع" (Haircut) صريح قد يحمل كلفة سياسية وانتخابية باهظة. 
+*   **معضلة "التبادل المصلحي" وتوزيع المسؤوليات (Quiproquo):** يدور خلف الكواليس النيابية صراع حاد لتقاذف المسؤولية الجنائية والمالية عن تبديد فجوة الخسائر (التي تتجاوز 70 مليار دولار). وفيما يحاول مصرف لبنان النأي بنفسه تحت مظلة استقلالية القرار النقدي والمطالبة بمراعاة قانون النقد والتسليف، يقع اشتباك مالي وقضائي موازٍ بين الدولة التي ترفض رهن أصولها ومرافقها العامة، وجمعية المصارف التي تحصنت مؤخراً بقرار مبرم من مجلس شورى الدولة يبطل شطب التزامات مصرف لبنان تجاه البنوك، معتبرة أن الدولة هي المقترض والمبدد الأول للمال العام. 
+*   **الولاءات السياسية وتضارب المصالح داخل البرلمان:** تشهد اللجان النيابية المشتركة (المال والموازنة، والإدارة والعدل) انعكاساً مباشراً لتضارب مصالح فجّ؛ إذ تتقاطع التركيبة البرلمانية بعلاقات عضوية ومساهمات مباشرة لرموز سياسية في رؤوس أموال المصارف اللبنانية. هذا التداخل بين "المشرّع" و"المصرفي" أنتج تعديلات متلاحقة أفرغت القوانين من طبيعتها الإصلاحية مراراً، مما يطرح تساؤلاً جوهرياً: هل تملك الهيئة العامة الإرادة والقدرة السياسية على تمرير هذه التعديلات المصرفية الهيكلية بنزاهة، أم ستقع القوانين مجدداً في فخ المماطلة وتأجيل البت لخدمة الكارتيلات المالية؟ 
+*   **مصير المودعين ومستقبل الكيان المالي اللبناني:** يمثل إقرار هذه القوانين — أو تطييرها — الحكم النهائي على مصير مئات الآلاف من المودعين الذين قُسّمت حقوقهم تعسفياً بين وديعة "مؤهلة" وغير "مؤهلة"، وسط مخاوف حقيقية من قوننة خسارتهم عبر صندوق وهمي لاسترداد الودائع يعتمد على عائدات مستقبلية غير مضمونة. إن النتيجة لن تحدد فقط كيفية سداد الودائع، بل سترسم الهوية الاقتصادية القادمة للبنان: فإما العودة التدريجية إلى نظام مصرفي شرعي يستعيد الثقة الدولية والمحلية، وإما الاستسلام الشامل لـ "اقتصاد الكاش" المدفوع بقطاع مالي موازٍ غير خاضع للرقابة يهدد بانهيار ما تبقى من الدولة. 
+
+---
+
+### أولاً: مشروع قانون "إصلاح وضع المصارف وإعادة تنظيمها" (المرسوم رقم 3056)
+
+يركّز هذا المشروع بشكل أساسي على البنية الهيكلية للقطاع المصرفي اللبناني وآليات إعادة فرزه وتصفيته، ويتمحور حول عدة ركائز أساسية أثارت انقساماً حاداً:
+
+1.  **تقييم الملاءة والسيولة (AQR - Asset Quality Review):** إلزام كافة المصارف اللبنانية بالخضوع لعملية تدقيق شاملة وصارمة لأصولها ومحافظ تسليفاتها من قبل شركات تدقيق دولية ومستقلة، لتحديد المصارف القابلة للاستمرار (Viable Banks) والمصارف غير القابلة للاستمرار.
+2.  **رأسمالية المصارف وضخ السيولة:** يفرض القانون على أصحاب المصارف الحاليين والمساهمين ضخ سيولة طازجة (Fresh Dollars) لرفع الرأسمال إلى مستويات معينة يحددها مصرف لبنان. المصارف التي تعجز عن تأمين هذه السيولة ستوضع يد الدولة أو مصرف لبنان عليها.
+3.  **آليات دمج المصارف والتصفية:**
+    *   **الدمج والاستحواذ:** تسهيل آليات دمج المصارف المتعثرة مع مصارف أكبر أو مصارف أجنبية ترغب في دخول السوق.
+    *   **التصفية الذاتية أو القسرية:** للمصارف التي يثبت عدم قدرتها على الاستمرار، مع وضع أطر قانونية لحماية أصولها المتبقية لتسديد جزء من التزاماتها.
+4.  **شطب الرساميل وحقوق المساهمين (Bail-in):** يتضمن المقترح تحميل الخسائر أولاً للمساهمين وأصحاب المصارف عبر شطب رساميلهم بالكامل قبل المساس بالودائع، وهو البند الذي يواجه معارضة شرسة من "جمعية المصارف" التي تطالب بتحميل الدولة الجزء الأكبر من الخسائر باعتبارها المتسبب الأول بالهدر.
+
+---
+
+### ثانياً: مشروع قانون "الانتظام المالي واسترداد الودائع" (المرسوم رقم 2224)
+
+يعالج هذا المشروع المعضلة الأخلاقية والقانونية الأكبر: كيف ومتى وبأي عملة ستُعاد أموال المودعين المحتجزة؟ ويمثل هذا القانون الممر الإلزامي لإنهاء التعددية الحالية في أسعار الصرف (اللالول مقابل الدولار).
+
+1.  **تصنيف الودائع (المؤهلة وغير المؤهلة):**
+    *   **الودائع المؤهلة (Eligible):** وهي الودائع التي كانت موجودة في المصارف بالعملة الأجنبية قبل 17 تشرين الأول 2019. يعطيها القانون الأولوية في السداد التدريجي بالعملة الأجنبية الفصيلية.
+    *   **الودائع غير المؤهلة (Non-Eligible):** وهي الودائع التي تم تحويلها من الليرة اللبنانية إلى الدولار، أو دخلت الحسابات عبر شيكات مصرفية بعد هذا التاريخ. تقترح الصيغ المطروحة وضع سقوف منخفضة لسدادها أو تحويلها (Liralization) بأسعار صرف مجحفة مقارنة بالسوق.
+2.  **صندوق استرداد الودائع (Deposit Recovery Fund):** إنشاء صندوق سيادي خاص تحوّل إليه بعض الأصول أو الإيرادات المستقبلية (مثل نسبة من أرباح مصرف لبنان، أو جزء من عائدات أملاك الدولة دون نقل ملكيتها، أو إيرادات من قطاعات منتجة). يهدف الصندوق إلى تغطية الودائع التي تتجاوز سقف الضمانة المباشرة (غالباً ما فوق 100 ألف دولار).
+3.  **ضمان الودائع الصغيرة:** يتضمن القانون التزاماً جازماً بإعادة الودائع الصغيرة (التي تقع تحت سقف 50 ألف أو 100 ألف دولار، حسب الصيغة النهائية المعدلة في اللجان) بالكامل على مدى زمني محدد (مثلاً 5 إلى 10 سنوات) عبر دفعات شهرية بالدولار النقدى.
+4.  **تحويل الودائع إلى أسهم (Debt-to-Equity Swap):** بالنسبة للمودعين الكبار، يطرح القانون خيار تحويل جزء من وديعتهم المحتجزة إلى أسهم في المصارف التي يملكون حسابات فيها، أو سندات طويلة الأجل الصادرة عن صندوق استرداد الودائع.
+
+---
+
+### ثالثاً: كواليس الخلافات النيابية الحالية (لماذا هي ملفات ساخنة؟)
+
+خلف الأبواب المغلقة للجان المشتركة ولجنتي "المال والموازنة" و"الإدارة والعدل"، تدور حرب صلاحيات وضغوط متبادلة:
+
+*   **مسؤولية الدولة vs مسؤولية المصارف:** النقطة المركزية التي تعطل التوافق هي تحديد "فجوة الخسائر المالية" (المقدرة بأكثر من 70 مليار دولار). نواب يمثلون كتلًا معينة يضغطون باتجاه إجبار الدولة على رهن مرافقها لإعادة أموال المودعين، بينما تصر قوى أخرى مدعومة برؤية صندوق النقد الدولي على أن الدولة مفلسة، وأن تحميلها الخسائر بالكامل يعني تدمير ما تبقى من الاقتصاد العام، وبالتالي يجب على المصارف ومصرف لبنان تحمل العبء الأكبر.
+*   **شروط صندوق النقد الدولي (IMF):** يراقب ممثلو الصندوق هذه النقاشات بدقة؛ إذ يرفض الصندوق أي صيغة لقانون الانتظام المالي تعتمد على أوهام "تصفير الخسائر" أو إعطاء وعود غير واقعية للمودعين دون شطب حقيقي للديون غير القابلة للسداد.
+*   **الضغوط السياسية والانتخابية:** يخشى معظم النواب السير في قوانين تقر علناً بشطب جزء من الودائع (Haircut) لما لها من أثر شعبي وسياسي كارثي، مما يدفهم إلى تقاذف المسؤوليات بين اللجان النيابية والحكومة، والسعي لإدخال تعديلات فضفاضة تفرغ القوانين من جوهرها الإصلاحي الصارم.
+
+من المتوقع أن تشهد الجلسة التشريعية العامة (الأربعاء والخميس) مواجهات كلامية حادة، حيث يحاول بري حث اللجان على تقديم صيغ موحدة أو "بين-بين" لتفادي مأزق رد القوانين مجدداً إلى اللجان، وهو ما قد يعيد المفاوضات الدولية للبنان إلى نقطة الصفر.`,
+    contentEn: `### Lebanon’s Final Gambit: Power Struggles and Contradictions in the New Financial Architecture
+
+**By Maan Barazy — Editor-in-Chief**
+
+The Lebanese financial system stands at a historic crossroads, facing one of the most complex economic crises in modern history. The legislative package currently presented to the General Assembly of the Lebanese Parliament—namely the draft law for "Bank Restructuring and Reform" (Decree No. 3056) and the "Financial Regularity and Deposit Recovery" draft law (Decree No. 2224)—represents a final attempt to design a new financial architecture. However, this attempt is colliding with a thick wall of political contradictions and institutional turf wars.
+
+This crisis pivots around four burning legislative and political battlegrounds:
+
+*   **IMF Mandates vs. Sectarian Apportionment:** The International Monetary Fund (IMF) demands strict, scientifically rigorous conditions, beginning with the immediate recognition of the historical "loss gap" and the complete write-down of bank equity, along with establishing clear criteria for viable banks. Conversely, local political factions are trying to dilute the legislation to avoid liquidating the banking sector’s assets or declaring an explicit haircut, which would carry immense political and electoral costs.
+*   **The Responsibility Mud-slinging (Quiproquo):** Behind parliamentary closed doors, a fierce battle is raging to escape legal and financial liability for the dissipation of the loss gap (which exceeds $70 billion). While the Banque du Liban (BDL) attempts to distance itself under the umbrella of monetary independence, a parallel legal and judicial clash is unfolding. The State refuses to pledge its public assets and utilities, while the Association of Banks in Lebanon (ABL) has armed itself with a binding State Council ruling that annulled the cancellation of BDL’s liabilities to commercial banks, asserting that the State is the primary debtor and dissipator of public funds.
+*   **Sectarian Loyalties and Conflicts of Interest in Parliament:** The joint parliamentary committees (Finance & Budget, Administration & Justice) directly reflect these conflicts of interest. The legislative makeup is deeply intertwined with direct bank shareholdings by prominent political figures. This crossover between "legislator" and "banker" has produced successive amendments that have gutted reform initiatives, raising a fundamental question: does the parliament possess the political will to pass these structural bank reforms, or will the bills remain hostage to cartel interests?
+*   **The Fate of Depositors and Lebanon’s Financial Future:** Passing—or killing—these laws represents a final verdict on the fate of hundreds of thousands of depositors whose savings have been arbitrarily divided into "eligible" and "non-eligible" accounts, amid fears of locking in their losses through a hollow "Deposit Recovery Fund" relying on non-guaranteed future revenues. The outcome will not only dictate how deposits are repaid but will define Lebanon’s economic identity: either a gradual return to a regulated banking system that restores international trust, or complete capitulation to a cash economy driven by an unregulated parallel financial sector.
+
+---
+
+### I. Bank Restructuring and Reform (Decree No. 3056)
+
+This draft focuses primarily on the structural composition of the Lebanese banking sector, establishing mechanisms for audit, consolidation, and liquidation:
+
+1.  **Asset Quality Review (AQR):** Mandating all Lebanese banks to undergo a comprehensive and rigorous audit of their assets and loan portfolios by independent, international auditing firms to classify viable versus non-viable banks.
+2.  **Recapitalization and Liquidity Injection:** Forcing current bank owners and shareholders to inject "fresh dollars" to raise capital to targets set by BDL. Banks failing to secure this capital will be placed under state or central bank receivership.
+3.  **Mergers, Acquisitions, and Liquidation:**
+    *   **Mergers:** Facilitating the merger of distressed banks with larger domestic or foreign banks looking to enter the market.
+    *   **Liquidation:** Establishing legal guidelines for non-viable banks to self-liquidate or face forced liquidation, safeguarding remaining assets to pay off liabilities.
+4.  **Bail-in and Capital Write-downs:** Proposing that losses must be absorbed first by shareholders and bank owners through a complete write-down of equity before touching any deposits. This clause faces fierce resistance from the ABL, which demands the state bear the losses as the primary spender.
+
+---
+
+### II. Financial Regularity and Deposit Recovery (Decree No. 2224)
+
+This draft addresses the core ethical and legal dilemma: how, when, and in what currency will frozen deposits be recovered? This law acts as the mandatory gateway to end the current multiple-exchange-rate system (Lollar vs. USD).
+
+1.  **Classification of Deposits (Eligible vs. Non-Eligible):**
+    *   **Eligible Deposits:** Foreign currency deposits held in banks prior to October 17, 2019. The draft gives these accounts priority for gradual repayment in actual foreign currency.
+    *   **Non-Eligible Deposits:** Deposits converted from LBP to USD, or entered into accounts via local bank checks after October 17, 2019. The current proposals suggest low ceilings for repayment or forced "liralization" at disadvantageous rates.
+2.  **Deposit Recovery Fund (DRF):** Establishing a special sovereign fund to which specific future revenues or assets will be transferred (such as a portion of BDL profits, or revenues from state-owned enterprises without transferring state ownership). The fund aims to cover deposits exceeding the direct guarantee threshold (usually above $100,000).
+3.  **Guaranteeing Small Deposits:** Committing to repay small deposits (below $50,000 or $100,000, depending on joint committee negotiations) in full over a specified timeframe (e.g., 5 to 10 years) through monthly cash USD payments.
+4.  **Debt-to-Equity Swaps:** For large depositors, the draft proposes options to convert a portion of frozen deposits into bank shares or long-term bonds issued by the Deposit Recovery Fund.
+
+---
+
+### III. Parliamentary Negotiations: The Bottlenecks
+
+Behind closed committee doors, a battle of leverage is unfolding:
+*   **State Liability vs. Bank Liability:** The central block is the allocation of the $70 billion loss. Pro-bank MPs push to force the state to pledge its assets to repay depositors, while others, aligned with the IMF, argue that the state is insolvent and that forcing it to bear the entire loss would destroy the public economy, requiring banks and the BDL to bear the majority.
+*   **IMF Oversight:** IMF representatives are closely monitoring these debates, rejecting any draft that relies on a fictional "zero-loss" model or makes unrealistic promises to depositors without real debt restructuring.
+*   **Electoral Pushback:** Most MPs fear backing any law that explicitly recognizes a "haircut" due to the catastrophic public backlash. This leads to a continuous loop of passing responsibility between parliamentary committees and the cabinet, introducing loopholes that gut the reform's core.`,
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس تحرير صحيفة الورّاق',
+      titleEn: 'Editor-in-Chief, Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    tags: ['مصرف_لبنان', 'جمعية_المصارف', 'هيكلة_المصارف', 'الانتظام_المالي', 'المودعين', 'Maan_Barazy', 'Lebanon_Crisis', 'BDL_Reform', 'IMF_Demands', 'Deposit_Recovery'],
+    hashtags: ['LebanonEconomy', 'BankingReform', 'FinancialCrisis', 'IMF'],
+    views: 11230
+  },
+  {
+    id: 'ahmadinejad-mossad-recruitment-scoop',
+    category: 'investigations',
+    categories: ['investigations', 'exclusives', 'war-room', 'arab-markets'],
+    titleAr: 'تحقيق استخباري لنيويورك تايمز: تفاصيل تجنيد الموساد للرئيس الإيراني الأسبق أحمدي نجاد وعملية تهريبه',
+    titleEn: 'NYT Intelligence Scoop: Inside Mossad’s Recruitment of Former Iranian President Mahmoud Ahmadinejad',
+    summaryAr: 'أخطر تحقيق استخباري يكشف كواليس تجنيد الموساد لأحمدي نجاد واجتماعه برئيس الموساد واستخدام جامعة في بودابست غطاءً للتواصل ومحاولة تهريبه بسيارة بيجو سوداء يقودها عناصر الموساد في طهران قبل وقوعه قيد الإقامة الجبرية.',
+    summaryEn: 'A major national security investigation based on intelligence sources mapping the full recruitment of former Iranian President Mahmoud Ahmadinejad by Mossad, including Budapest covert talks, the Peugeot extraction, and IRGC house arrest.',
+    excerptAr: 'كواليس اللقاءات السرية لرئيس الموساد السابق في بودابست وتفاصيل عملية الهروب الفاشلة بعد ضربة طهران الصاروخية.',
+    excerptEn: 'From academic climate cover conferences in Hungary to a dramatic escape driven by Mossad agents in Tehran.',
+    contentAr: `### زلزال في طهران: كواليس تجنيد الموساد للرئيس الإيراني الأسبق أحمدي نجاد وعملية تهريبه الفاشلة
+
+**تحقيق استقصائي خاص — قسم الشؤون الأمنية والعسكرية**
+
+يكشف تحقيق استخباري بالغ الخطورة نشرته صحيفة "نيويورك تايمز" وتناقلته الأوساط الاستخبارية عن تجنيد الاستخبارات الإسرائيلية (الموساد) للرئيس الإيراني الأسبق أحمدي نجاد. ويكشف التحقيق عن اجتماعه برئيس الموساد واستعمال جامعة أوروبية كغطاء للتواصل السري بين الطرفين.
+
+وتأتي أهمية هذا التحقيق من زاوية العمل الاستخباري المعقد لأنها تقدم، للمرة الأولى بهذا التفصيل، تسلسلاً شبه كامل لعملية استمالة سياسية بدأت بمؤتمرات صورية ولقاءات خارجية وانتهت بمحاولة إخراج وإخلاء ميدانية دراماتيكية داخل طهران.
+
+والتحقيق منشور في "نيويورك تايمز" وأعده أربعة من أبرز صحفييها المتخصصين في ملفات الاستخبارات والأمن القومي وإيران. كما أن المعلومات منقولة عن مسؤولين أمريكيين وإيرانيين وإسرائيليين سابقين وحاليين، ومن شهادات مباشرة لبعض الأشخاص الذين شاركوا في توفير الغطاء اللوجستي للعملية.
+
+---
+
+### استمالة أحمدي نجاد: الزعيم البديل المرتقب
+
+تشير وثائق التحقيق إلى أن إسرائيل عملت لسنوات على استمالة الرئيس الإيراني الأسبق محمود أحمدي نجاد وتحويله إلى أصل استخباري وسياسي ثمين، يمكن استخدامه في خطة طويلة الأجل لتغيير النظام الإيراني وتنصيبه زعيماً بديلاً.
+
+وتنسب الصحيفة هذا التوصيف إلى مسؤولين أمريكيين وإيرانيين مطلعين على خبايا العملية، وتؤكد أن المشروع لم يكن مجرد قناة اتصال خلفية، بل خطة استراتيجية شملت لقاءات سرية، وتمويلاً مالياً ضخماً، وترتيبات سفر معقدة، وصولاً إلى محاولة فعلية لنقله إلى مكان آمن داخل إيران فور اندلاع الحرب الحالية.
+
+---
+
+### غطاء بودابست: جامعة "لودوفيكا" واجهة الموساد
+
+من أهم المعلومات الحصرية التي كشف عنها التحقيق أن جامعة **لودوفيكا للخدمة العامة (Ludovica University)** في بودابست استُخدمت غطاءً رسمياً لعقد اللقاءات السرية بين أحمدي نجاد ومسؤولين استخباريين إسرائيليين كبار.
+
+ولا تأتي هذه المعلومة الخطيرة من مصادر مجهلة فحسب، بل من شهادة مباشرة أدلى بها رئيس الجامعة **غيرغيلي ديلي (Gergely Deli)**، الذي أكد لصحفيي نيويورك تايمز أن مسؤولاً حكومياً مجرياً رفيع المستوى طلب منه شخصياً تنظيم مؤتمر علمي صوري حول "التغير المناخي والبيئة" ودعوة أحمدي نجاد للمشاركة فيه كمتحدث رئيسي، في حين كان الهدف الحقيقي والفعلي هو تأمين ترتيبات محادثات سرية للغاية مع الاستخبارات الإسرائيلية. وأقر ديلي صراحة بأنه أدرك لاحقاً أن المؤتمر مجرد واجهة، واصفاً دوره بأنه كان بمثابة "الدمية" أو "الواجهة اللوجستية" لتسهيل العملية.
+
+---
+
+### دافيد برنياع في بودابست لعام 2024
+
+يكشف التحقيق أن رئيس الموساد السابق **دافيد برنياع (David Barnea)** سافر شخصياً وبشكل سري للغاية إلى العاصمة المجرية بودابست عام 2024 للقاء أحمدي نجاد بشكل مباشر، وفق ما نقله مسؤولون أمريكيون سابقون.
+
+وعقب هذا اللقاء التاريخي، أبلغ جهاز الموساد رسمياً وكالة الاستخبارات المركزية الأمريكية (CIA) بأنه بات على اتصال وثيق ومنتظم بالرئيس الإيراني الأسبق.
+
+وتضيف الصحيفة، نقلاً عن مسؤولين أمريكيين، أن إسرائيل دفعت مبالغ مالية طائلة لأحمدي نجاد خلال السنوات الأخيرة لتغطية نفقات إقامته وسفرياته وتنقلاته الدولية، وأن ضباط ارتباط من الموساد التقوه شخصياً خارج إيران في مناسبات وبلدان متعددة.
+
+---
+
+### عملية الإنقاذ الميدانية بسيارة بيجو سوداء لعام 2026
+
+بلغت العملية الاستخبارية ذروتها الدراماتيكية في **28 فبراير 2026**، عندما استهدفت غارة جوية إسرائيلية مجمعاً سكنياً ملحقاً بمقر أحمدي نجاد في العاصمة طهران، مما أسفر عن تدمير مبنى الحراس وسيارته المصفحة الشخصية.
+
+وتنقل الصحيفة عن أربعة مسؤولين إيرانيين كبار أنه فور وقوع الضربة الجوية، وصلت سيارة من طراز **بيجو (Peugeot) سوداء اللون** بسرعة فائقة إلى الموقع، ونقلت أحمدي نجاد على عجل من مسرح الانفجار. أما المعلومة الأكثر إثارة للحساسية فتأتي من مسؤولين أمريكيين وإيرانيين مطلعين على العملية، والذين أكدوا أن تلك السيارة **كان يقودها عناصر محليون تابعون للموساد الإسرائيلي (خلايا نائمة داخل طهران)**، والذين نجحوا في نقله بسرعة قياسية إلى منزل آمن وسري أعد مسبقاً داخل الأراضي الإيرانية.
+
+---
+
+### الفوضى، الفشل، والإقامة الجبرية تحت عيون الحرس الثوري
+
+على الرغم من نجاح عملية الإخلاء الميدانية، لم تسر الأمور اللاحقة كما خططت لها غرف العمليات الإسرائيلية. فقد أبدى أحمدي نجاد انزعاجاً شديداً من طريقة نقله الفوضوية وعبر عن إحباطه وتشككه من واقعية الخطة الإسرائيلية الرامية لإعادته إلى هرم السلطة.
+
+وغادر نجاد المنزل الآمن في ظروف غامضة وغير واضحة تماماً. وتنقل الصحيفة عن أربعة مسؤولين إيرانيين كبار أن أحمدي نجاد وقع لاحقاً في قبضة **جهاز استخبارات الحرس الثوري الإيراني (IRGC-Intel)** الذي تمكن من كشف أجزاء واسعة من شبكة اتصالاته المشفرة بإسرائيل وتحديد موقعه.
+
+وتم وضع الرئيس الأسبق على الفور قيد **الإقامة الجبرية المشددة**، وهو ما يفسر ظهوره القصير والغامض والمقيد خلال مراسم جنازة المرشد الأعلى علي خامنئي، حيث ظهر مطأطئ الرأس، محاطاً بحراسة أمنية استثنائية لصيقة، ودون أن يسمح له بالإدلاء بأي تصريحات أو التحدث لأي من وسائل الإعلام.
+
+---
+
+### مشروع "تغيير النظام" والمحور الكردي
+
+يكشف التقرير أن خطة تنصيب أحمدي نجاد لم تكن خطوة معزولة، بل جزءاً من مشروع إقليمي أوسع لتغيير النظام الحاكم في طهران. ومن أبرز عناصر هذا المشروع:
+* **تسليح المعارضة الكردية:** تدريب وتسليح جماعات كردية إيرانية معارضة متمركزة في إقليم كردستان العراق المحاذي.
+* **الاجتياح والسيطرة الميدانية:** تدريب هذه القوات للعبور والتوغل في غرب إيران، والسيطرة على حيز جغرافي استراتيجي، ثم التقدم التدريجي لتأمين المداخل نحو العاصمة طهران لدعم نفوذ أحمدي نجاد المنصّب.
+
+وتشير الصحيفة إلى أن هذا المسار اللوجستي تعثر ولم يتحقق على أرض الواقع. وتستشهد بتصريحات سابقة لـ **تامير هايمان (Tamir Hayman)**، الرئيس الأسبق للاستخبارات العسكرية الإسرائيلية (أمان)، والذي أقر فيها بأن خطط تغيير النظام تضمنت سلسلة من العمليات الخاصة المعقدة والفريدة، مؤكداً أن أحمدي نجاد كان يمثل جزءاً رئيسياً ومحورياً من هذا المخطط الإقليمي.`,
+    contentEn: `### Earthquake in Tehran: NYT Bombeshell Details Mossad’s Cultivation and Failed Rescue of Ahmadinejad
+
+**Special National Security & Intelligence Dossier — War Room Desk**
+
+The New York Times has published a bombshell intelligence exposé revealing how Israel's foreign intelligence agency, Mossad, successfully recruited former Iranian President Mahmoud Ahmadinejad as a strategic asset. The scoop details his secret meetings with the Mossad director, the utilization of a European university as a front for covert communications, and a dramatic evacuation attempt inside Tehran.
+
+The significance of this investigation lies in its granular detail, presenting—for the first time—the complete timeline of a high-level political cultivation process that began with sham climate conferences and ended with a physical extraction attempt.
+
+The report, co-authored by four of the Times' leading national security, intelligence, and Iran correspondents, draws on interviews with current and former American, Iranian, and Israeli intelligence officials, as well as direct testimonies from individuals who provided logistical cover for the operation.
+
+---
+
+### The Asset: Cultivating a Former President
+
+Israel spent years cultivating former Iranian President Mahmoud Ahmadinejad, transforming him into a political and intelligence asset to be utilized in a long-term plan for regime change, potentially positioning him as a transitional leader.
+
+U.S. and Iranian officials familiar with the operation describe the project not merely as a communication channel, but as a long-term strategic play involving secret rendezvous, funding, travel logistics, and an active physical extraction plan executed during the height of the 2026 regional hostilities.
+
+---
+
+### The Budapest Cover: Ludovica University as a Front
+
+One of the most exclusive revelations in the report is that the Ludovica University of Public Service in Budapest, Hungary, was utilized as a secure front for meetings between Ahmadinejad and Israeli intelligence officials.
+
+This detail is backed by the direct testimony of the university's rector, Gergely Deli. Deli admitted that a senior Hungarian government official instructed him to organize an academic climate change conference and extend a personal invitation to Ahmadinejad, while the true objective was facilitating backchannel talks with Mossad officers. Deli acknowledged realizing the conference was a front, describing his role as acting as a "dummy" or "facade" for the operation.
+
+---
+
+### The Director’s Rendezvous
+
+The investigation reveals that former Mossad Director David Barnea personally traveled to Budapest in 2024 to meet with Ahmadinejad, according to former U.S. officials. Following this high-level meeting, Mossad briefed the CIA, confirming they had established a direct, active channel with the former Iranian president.
+
+U.S. officials also state that Israel provided substantial financial support to Ahmadinejad over recent years, covering luxury accommodation, international travel, and security expenses, with Israeli handlers meeting him outside Iran on multiple occasions.
+
+---
+
+### The Peugeot Evacuation of February 2026
+
+The operation reached a dramatic climax on February 28, 2026, when an Israeli airstrike targeted Ahmadinejad’s residential compound in Tehran, striking his guards' quarters and his armored vehicle.
+
+According to four senior Iranian officials, a black Peugeot arrived immediately after the strike, swiftly evacuating Ahmadinejad from the scene. The most sensitive detail, confirmed by U.S. and Iranian officials familiar with the incident, is that the vehicle was driven by Mossad operatives, who transported him to a pre-arranged safehouse inside Iran.
+
+---
+
+### TCG Collapse and House Arrest
+
+The extraction did not unfold as smoothly as Israeli planners had anticipated. Ahmadinejad was reportedly highly agitated by the chaotic transport and became deeply frustrated with the Israeli blueprint for his political return. He subsequently left the safehouse under circumstances that remain unclear.
+
+Four senior Iranian officials confirm that Ahmadinejad was subsequently apprehended by the Islamic Revolutionary Guard Corps (IRGC) intelligence wing and placed under strict house arrest after Iranian authorities compromised large portions of his communications network with Israel. This explains his brief, heavily guarded appearance at the funeral of Ali Khamenei, where he sat surrounded by security personnel, keeping his head down and remaining entirely silent.
+
+---
+
+### The Kurdish Axis and Regime Change Blueprint
+
+The plan to install Ahmadinejad was part of a larger Israeli blueprint for regime change. Key components included arming and training Iranian-Kurdish opposition groups based in northern Iraq, preparing them to cross into western Iran, secure territory, and eventually march toward Tehran.
+
+While this operational track failed to materialize, it aligns with comments by Tamir Hayman, former head of Israeli Military Intelligence, who previously noted that efforts toward regime change in Tehran relied on a series of highly unique special operations—with Ahmadinejad acting as a critical component.`,
+    author: {
+      nameAr: 'التحرير الاستخباري',
+      nameEn: 'Intelligence Desk',
+      titleAr: 'محلل شؤون الاستخبارات الإقليمية',
+      titleEn: 'Regional Intelligence Analyst',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    tags: ['محمود_أحمدي_نجاد', 'الموساد', 'الحرس_الثوري', 'بودابست', 'نيويورك_تايمز', 'Ahmadinejad', 'Mossad_Asset', 'Budapest_Cover', 'Tehran_Evacuation', 'IRGC_Intel'],
+    hashtags: ['MossadSpy', 'Ahmadinejad', 'TehranIntel', 'BudapestDossier'],
+    views: 24390
   }
 ];
+
+
 
 
