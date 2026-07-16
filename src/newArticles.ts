@@ -2153,6 +2153,162 @@ While this operational track failed to materialize, it aligns with comments by T
     tags: ['محمود_أحمدي_نجاد', 'الموساد', 'الحرس_الثوري', 'بودابست', 'نيويورك_تايمز', 'Ahmadinejad', 'Mossad_Asset', 'Budapest_Cover', 'Tehran_Evacuation', 'IRGC_Intel'],
     hashtags: ['MossadSpy', 'Ahmadinejad', 'TehranIntel', 'BudapestDossier'],
     views: 24390
+  },
+  {
+    id: 'iraq-new-landscape-2026',
+    slug: 'iraq-new-landscape-2026',
+    focusKeyword: 'العراق-علي-الزيدي-ترامب-دبلوماسية-بغداد',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'war-room', 'middle-east', 'exclusives'],
+    titleAr: 'مفارقات الزمن الكبرى: عندما يصفق "العم سام" لدبلوماسية بغداد... تقرير استقصائي في المشهد العراقي الجديد',
+    titleEn: "The Great Paradoxes of Time: When 'Uncle Sam' Applauds Baghdad's Diplomacy... An Investigative Report on the New Iraqi Landscape",
+    summaryAr: 'مقدمة تحريرية: كيف يُعيد التاريخ كتابة نصوصه الساخرة؟ لكل زمان دولة ورجال، ولكل غزو أمريكي عواقب يغصّ بها التاريخ ضحكاً. واليوم يقف الرئيس ترامب ليُبدي إعجابه بدبلوماسية رئيس الوزراء الجديد علي الزيدي وعملية الفجر الكبرى ضد حيتان الفساد.',
+    summaryEn: "Editorial Introduction: How does history rewrite its satirical scripts? For every era, there is a state and men, and for every American invasion there are consequences that history chokes with laughter. Today, President Trump applauds the diplomacy of new PM Ali Al-Zaidi and the great Dawn anti-corruption operation.",
+    excerptAr: 'تحقيق استقصائي شامل في المشهد العراقي الجديد لعام ٢٠٢٦، متناولاً تفاصيل عملية الفجر ومصادرة الذهب والعملات والتحول التاريخي للدبلوماسية مع واشنطن وطهران.',
+    excerptEn: 'A comprehensive investigative report on the new 2026 Iraqi landscape, featuring details on Operation Fajr, the retrieval of gold and currency, and the historic diplomatic shift with Washington and Tehran.',
+    author: {
+      nameAr: 'هيئة التحرير الاستقصائي بالورّاق',
+      nameEn: 'Al-Warraq Investigative Editorial Board',
+      titleAr: 'كبير مراسلي الشؤون السيادية والعراقية',
+      titleEn: 'Senior Sovereign & Iraqi Affairs Correspondent',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-14',
+    readTimeAr: '١٠ دقائق قراءة',
+    readTimeEn: '10 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    tags: ['علي_الزيدي', 'دونالد_ترامب', 'عملية_الفجر', 'العراق_٢٠٢٦', 'محاربة_الفساد', 'Ali_Al_Zaidi', 'Donald_Trump', 'Operation_Fajr', 'Iraq_2026', 'Anti_Corruption_Iraq'],
+    hashtags: ['IraqNewEra', 'OperationFajr', 'TrumpZaidi', 'BaghdadDiplomacy'],
+    views: 18450,
+    contentAr: `### مقدمة تحريرية: كيف يُعيد التاريخ كتابة نصوصه الساخرة؟
+
+لكل زمان دولة ورجال، ولكل غزو أمريكي عواقب يغصّ بها التاريخ ضحكاً. في عام 2003، هبطت الدبابات الأمريكية في بغداد لتبشر بـ'الديمقراطية المستوردة' و'العراق الجديد' الذي انتهى به المطاف غارقاً في طوفان من المليشيات والفساد العابر للقارات. واليوم، في يوليو 2026، يقف الرئيس دونالد ترامب في المكتب البيضاوي ليُبدي إعجابه الشديد بـ'الكيمياء الرائعة' ودبلوماسية رئيس الوزراء العراقي الجديد، علي الزيدي، الذي لم يكن يوماً جزءاً من طبقة اللصوص السياسيين التي رعتها واشنطن لسنوات. يا لها من مفارقة: واشنطن التي تسببت في الفوضى، تصفق اليوم للرجل الذي يكنس ركام هذه الفوضى.
+
+---
+
+### أولاً: زلزال "الفجر" وتجريد الحيتان من ذهبها
+
+لم تبدأ قصة الدور العراقي الجديد من واشنطن، بل من أزقة "المنطقة الخضراء" المحصنة وباحات وزارة النفط في بغداد. لطالما كان الفساد في العراق نظاماً متكاملاً محصناً بميليشيات مسلحة وهياكل طائفية، إلا أن رئيس الوزراء الجديد، رجل الأعمال المستقل علي الزيدي الذي تسلم السلطة في مايو 2026 كمرشح تسوية غير حزبي، قرر اللعب بأوراق مغايرة تماماً.
+
+في أواخر يونيو ومطلع يوليو 2026، استيقظت بغداد على "عملية الفجر". تحت جنح الظلام، تحركت قوات مكافحة الإرهاب النخبوية لتنفيذ مذكرات اعتقال بحق 47 مسؤولاً رفيعاً، بينهم 12 برلمانياً حالياً ونواب وزراء نفط سابقين وحاليين.
+
+#### حصاد الجبايات المنهوبة:
+ولأن تفاصيل الكوميديا السوداء العراقية لا تنتهي، كشفت التحقيقات القضائية المدعومة باعترافات نائب وزير النفط السابق "عدنان الجميلي" عن حيازة المسؤولين لثروات خيالية:
+* **ذهب مخبأ في الجدران**: استعادت السلطات أكثر من 375 كيلوغراماً من السبائك الذهبية التي تم تسليمها للبنك المركزي.
+* **أموال في حفر الصرف الصحي**: سحبت الأجهزة الأمنية ملايين الدولارات وعشرة مليارات دينار عراقي كانت مخبأة داخل "بلاعات ومجاري صرف مياه الأمطار".
+* **حلم الحقيبة الوزارية بـ250 مليون دولار**: أثبتت التحقيقات أن الجميلي كان يتفاوض على دفع ربع مليار دولار لجهات سياسية من أجل تنصيبه وزيراً للتخطيط أو الدفاع.
+
+أثارت هذه الهجمة الشرسة حفيظة "الإطار التنسيقي" والقوى التقليدية الموالية لإيران التي وضعت الزيدي في المنصب أصلاً، معتبرة تحركاته انفرادية وتستهدف تقويض نفوذها. لكن الشارع، ومعه المرجعية الدينية والتيار الصدري، تضامنوا سريعاً، مما منح رئيس الوزراء غطاءً شعبياً نادراً للمضي قُدماً.
+
+---
+
+### ثانياً: دبلوماسية "الكيمياء الرائعة" في واشنطن
+
+بعد إثبات جديته في الداخل، طار علي الزيدي إلى واشنطن في منتصف يوليو 2026 كأول محطة خارجية له منذ توليه المنصب. والهدف؟ تسويق "العراق المستقل الجديد" بعيداً عن كونه مجرد حديقة خلفية للنفوذ الإيراني.
+
+في 14 يوليو 2026، استقبله الرئيس دونالد ترامب بحفاوة بالغة في المكتب البيضاوي. ترامب، الباحث دائماً عن الصفقات والزعماء الاقتصاديين الذين يشبهونه (كون الزيدي رجل أعمال غني بلا خلفية سياسية تذكر)، صرّح علانية بوجود "كيمياء رائعة" تجمعه بالضيف العراقي، ووصفه بأنه "سيكون قائداً عظيماً ليس فقط للعراق بل للشرق الأوسط بأكمله".
+
+أثنى ترامب بشكل خاص على "الدبلوماسية العراقية الجديدة" الشجاعة، والتي تتلخص في:
+1. **نزع سلاح الفصائل**: تحديد موعد نهائي صارم (30 سبتمبر 2026) لجميع الميليشيات لتسليم سلاحها للدولة العراقية.
+2. **العقود التجارية مقابل الدعم**: فتح الباب للشركات الأمريكية للاستثمار الموسع في مجالات الطاقة والبنية التحتية، وإزالة القيود القانونية التي تمنع الشركات الأجنبية من امتلاك أكثر من 49% من المشاريع المحلية.
+3. **تفكيك شبكات الفساد المالي**: وهي الشبكات التي تستغلها طهران للالتفاف على العقوبات الدولية.
+
+---
+
+### ثالثاً: العراق في فوهة المدفع.. دور "ساعي البريد" في حرب المحاور
+
+تزامنت هذه الخطوات الدبلوماسية مع بقاء العراق ساحة مشتعلة بالوكالة. مع اشتعال شرارة المواجهة العسكرية الشاملة والضربات المتبادلة بين الولايات المتحدة وإسرائيل من جهة، وإيران من جهة أخرى (والتي بلغت ذروتها في ربيع 2026)، تحولت الأجواء والأراضي العراقية إلى مسرح للدراما الحربية.
+
+#### تفاصيل الصراع على السيادة:
+* **موجات المسيرات**: استخدمت الفصائل الموالية لإيران الأراضي العراقية لإطلاق طائوات مسيرة باتجاه القواعد الأمريكية وحلفاء واشنطن في المنطقة (مثل السعودية والخليج).
+* **الضربات الأمريكية المضادة**: شنت واشنطن غارات جوية قوية داخل العراق، مستهدفة مقار الفصائل ومستودعات صواريخها، مما أسفر عن سقوط ضحايا من القوات الرسمية العراقية وإثارة احتجاجات برلمانية حادة.
+* **الرفض العراقي القاطع**: أبلغ وزير الخارجية العراقي، فؤاد حسين، نظراءه في دول مجلس التعاون الخليجي صراحة في يوليو 2026 بأن بغداد ترفض استخدام أراضيها أو أجوائها كمنطلق للهجوم على جيرانها، محذراً من أن انزلاق العراق في أتون حرب أمريكية-إيرانية شاملة سيعني نهايته.
+
+هنا يكمن التحدي التاريخي للعراق: كيف يحافظ على توازنه وهو يلعب دور "الإسفنجة الدبلوماسية" التي تمتص الضربات، بينما تحاول واشنطن جاهدة دفعه لإعلان قطيعة تامة مع الجارة إيران؟
+
+---
+
+### رابعاً: مقارنة سريعة لتغير مواقف واشنطن تجاه حكام بغداد
+
+| الفترة الزمنية | الحاكم العراقي | طبيعة الموقف الأمريكي | النتيجة السياسية |
+| :--- | :--- | :--- | :--- |
+| **2003 - 2004** | الحاكم المدني بول بريمر | فرض الوصاية المباشرة، وحل مؤسسات الدولة العراقية. | تأسيس نظام المحاصصة الطائفية وسرقة الموارد. |
+| **2006 - 2014** | نوري المالكي | دعم وتغاضٍ عن تمدد النفوذ الإيراني بحجة حفظ الاستقرار. | تهديد ترامب الأخير بقطع المساعدات في حال عودته. |
+| **يوليو 2026** | علي الزيدي | احتفاء حار بالدبلوماسية المستقلة، وإشادة بـ"الكيمياء الرائعة". | محاولة لدمج العراق في الاقتصاد العالمي واستثمار أموال الإعمار. |
+
+---
+
+### الخلاصة: هل ينجو "العراق الجديد" من هذا العناق الأمريكي؟
+
+تحت سخرية الأقدار، تقف بغداد اليوم في موقف لم يتخيله أكثر المخططين تفاؤلاً في البنتاغون عام 2003. فالدولة التي تم تفكيكها وتدمير مؤسساتها بذريعة جلب الديمقراطية، أصبحت اليوم مركز الجذب الدبلوماسي الأهم لتهدئة صراعات المنطقة.
+
+الرئيس ترامب يثق بالزيدي لأنه يتحدث لغة الأرقام والاستثمار، ويرى فيه فرصة لإخراج أمريكا من مستنقع التدخل العسكري المباشر عبر "صيغة تجارية ومكافحة فساد" ذاتية التمويل. ومع ذلك، فإن نجاح هذه المغامرة العراقية يعتمد كلياً على قدرة بغداد على سحب فتيل الميليشيات قبل حلول الموعد النهائي في نهاية سبتمبر، دون أن يتسبب ذلك في اندلاع حرب أهلية جديدة تحرق الأخضر واليابس والذهب المسترجع حديثاً من بالوعات الفساد.`,
+    contentEn: `### Editorial Introduction: How History Writes Its Satirical Scripts?
+
+For every era there is a state and men, and for every American invasion there are consequences that history chokes with laughter. In 2003, American tanks rolled into Baghdad to herald an "imported democracy" and a "New Iraq" that ended up drowning in a flood of militias and transcontinental corruption. Today, in July 2026, President Donald Trump stands in the Oval Office to express his profound admiration for the "wonderful chemistry" and diplomacy of Iraq's new Prime Minister, Ali Al-Zaidi, who was never part of the political class of thieves nurtured by Washington for years. What a paradox: Washington, which caused the chaos, applauds today the man sweeping away its ruins.
+
+---
+
+### I. The 'Fajr' Earthquake and Stripping the Whales of Their Gold
+
+The story of the new Iraqi role did not begin in Washington, but rather from the alleys of the fortified "Green Zone" and the courtyards of the Ministry of Oil in Baghdad. Corruption in Iraq has long been an integrated system protected by armed militias and sectarian structures. However, the new Prime Minister, independent businessman Ali Al-Zaidi, who assumed office in May 2026 as a non-partisan compromise candidate, decided to play entirely different cards.
+
+In late June and early July 2026, Baghdad woke up to "Operation Fajr" (Dawn). Under the cover of darkness, elite counter-terrorism forces moved to execute arrest warrants against 47 high-ranking officials, including 12 current members of parliament and former and current deputy oil ministers.
+
+#### Harvest of Plundered Levies:
+And because the details of Iraqi black comedy never end, judicial investigations backed by the confessions of former Deputy Oil Minister "Adnan Al-Jumaili" revealed that officials possessed astronomical wealth:
+* **Gold hidden in walls**: Authorities recovered more than 375 kilograms of gold bullion, which was handed over to the Central Bank.
+* **Cash in sewers**: Security forces retrieved millions of dollars and ten billion Iraqi dinars hidden inside "rainwater drainage systems and sewers".
+* **A $250M ministerial portfolio dream**: Investigations proved Al-Jumaili was negotiating a quarter-billion dollar payment to political factions to appoint him Minister of Planning or Defense.
+
+This fierce offensive raised the ire of the "Coordination Framework" and traditional pro-Iran forces that originally backed Al-Zaidi's appointment, viewing his moves as unilateral efforts to undermine their influence. However, the public, along with the religious authority (Marjaiya) and the Sadrist movement, quickly rallied, giving the Prime Minister rare public cover to press forward.
+
+---
+
+### II. The 'Wonderful Chemistry' Diplomacy in Washington
+
+After proving his domestic resolve, Ali Al-Zaidi flew to Washington in mid-July 2026 for his first foreign visit since taking office. The goal? Marketing a "new independent Iraq" far from being a mere backyard for Iranian influence.
+
+On July 14, 2026, President Donald Trump warmly received him in the Oval Office. Trump, ever on the hunt for deals and business-oriented leaders (since Al-Zaidi is a wealthy businessman with virtually no political background), declared publicly that a "wonderful chemistry" unites them, predicting Al-Zaidi "will be a great leader not just for Iraq but for the entire Middle East."
+
+Trump particularly praised the bold "new Iraqi diplomacy," which focuses on:
+1. **Disarming factions**: Setting a strict deadline (September 30, 2026) for all militias to hand over their weapons to the Iraqi state.
+2. **Business contracts in exchange for support**: Opening the door to massive US corporate investment in energy and infrastructure, removing legal barriers that prevent foreign firms from owning more than 49% of local projects.
+3. **Dismantling financial corruption networks**: The very networks used by Tehran to bypass international sanctions.
+
+---
+
+### III. Iraq in the Crosshairs: The 'Messenger' Role in the War of Axes
+
+These diplomatic steps coincided with Iraq remaining a hot proxy theater. With the ignition of a full military confrontation and retaliatory strikes between the US/Israel and Iran (which peaked in the spring of 2026), Iraqi skies and lands transformed into a war drama.
+
+#### Sovereignty Conflict Details:
+* **Drone Waves**: Pro-Iran factions used Iraqi territory to launch drone swarms toward US bases and regional allies (like Saudi Arabia and the Gulf).
+* **US Counterstrikes**: Washington launched heavy air raids within Iraq, targeting militia headquarters and missile caches, leading to official Iraqi security casualties and sparking sharp parliamentary protests.
+* **Absolute Iraqi Rejection**: Iraqi Foreign Minister Fuad Hussein explicitly informed his GCC counterparts in July 2026 that Baghdad rejects the use of its land or skies to attack neighbors, warning that dragging Iraq into a full US-Iran war would spell its demise.
+
+Here lies the historic challenge: How can Iraq maintain balance while acting as a "diplomatic sponge" absorbing blows, while Washington pushes hard for a total break with neighbor Iran?
+
+---
+
+### IV. Comparison of Washington's Shifting Stance Toward Baghdad's Rulers
+
+| Time Period | Iraqi Ruler | US Stance | Political Outcome |
+| :--- | :--- | :--- | :--- |
+| **2003 - 2004** | Civil Governor Paul Bremer | Direct mandate and dissolving state institutions. | Establishing sectarian quotas and resource plundering. |
+| **2006 - 2014** | Nouri Al-Maliki | Support and tolerance of Iranian influence expansion under the guise of stability. | Trump's recent threat to cut off aid should he return to power. |
+| **July 2026** | Ali Al-Zaidi | Warm celebration of independent diplomacy and praise for 'wonderful chemistry'. | Efforts to integrate Iraq into the global economy and channel reconstruction investments. |
+
+---
+
+### Conclusion: Will the 'New Iraq' Survive This American Embrace?
+
+By a twist of historical irony, Baghdad stands today in a position unimaginable to the most optimistic Pentagon planners of 2003. The state dismantled under the banner of importing democracy has become the most critical diplomatic gravity center to de-escalate regional wars.
+
+President Trump trusts Al-Zaidi because he speaks the language of investments and numbers, seeing an opportunity to extract America from direct military entanglements through a self-funding business-and-anti-corruption formula. However, the success of this Iraqi gamble depends entirely on Baghdad's capacity to defuse the militia fuse before the late September deadline, without triggering a civil war that would burn everything, including the newly retrieved gold from the gutters of corruption.`
   }
 ];
 

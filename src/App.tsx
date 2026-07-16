@@ -1403,77 +1403,166 @@ export default function App() {
 
                 {/* UPPER BANNER: ALWARRAQ INVESTIGATIVE DOSSIERS ACCESS */}
                 {activeCategory === 'all' && !searchQuery && (
-                  <div className="border-4 border-black p-5 md:p-6 bg-amber-50 text-black my-6 relative shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden" id="alwarraq-investigations-access-banner">
-                    {/* Retro line pattern watermark */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px)] [background-size:100%_4px] pointer-events-none"></div>
+                  <div className="border-4 border-black p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] overflow-hidden rounded-sm group/banner" id="alwarraq-investigations-access-banner">
+                    {/* Architectural Grid Watermark Backing */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+                    {/* Glowing ambient background spots */}
+                    <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none transition-transform duration-1000 group-hover/banner:scale-110"></div>
+                    <div className="absolute -bottom-20 -right-10 w-80 h-80 bg-red-700/10 rounded-full blur-3xl pointer-events-none"></div>
                     
+                    {/* Fine aesthetic border line accents inside */}
+                    <div className="absolute top-2 right-2 bottom-2 left-2 border border-amber-500/15 pointer-events-none"></div>
+
                     <div className="relative z-10">
-                      <div className="flex flex-col lg:flex-row justify-between items-stretch gap-6">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                         
-                        {/* Left: Headline & Editorial Info */}
-                        <div className="flex-1 space-y-4 text-right rtl:text-right ltr:text-left">
-                          <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
-                            <span className="bg-amber-800 text-white text-[10px] font-mono font-black px-2.5 py-1 uppercase tracking-widest inline-block">
-                              {isAr ? 'بوابة التحقيقات الاستقصائية للورّاق' : 'ALWARRAQ INVESTIGATIVE DOSSIERS'}
-                            </span>
-                            <span className="bg-black text-amber-300 text-[10px] font-mono px-2 py-0.5 font-bold border border-black">
-                              {isAr ? 'مستندات حرة وقراءة ممتدة' : 'FREE ARCHIVE & ANALYSIS'}
-                            </span>
+                        {/* Main Info Columns (8 Columns) */}
+                        <div className="lg:col-span-8 flex flex-col justify-between space-y-6 text-right rtl:text-right ltr:text-left">
+                          <div className="space-y-4">
+                            {/* Tags row */}
+                            <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
+                              <span className="bg-amber-500 text-zinc-950 text-[10px] font-mono font-black px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 border border-amber-400">
+                                <Sparkles size={11} className="animate-pulse text-red-700" />
+                                {isAr ? 'بوابة التحقيقات الاستقصائية للورّاق' : 'ALWARRAQ INVESTIGATIVE DOSSIERS'}
+                              </span>
+                              <span className="bg-zinc-900 text-amber-300 text-[10px] font-mono px-3 py-1 font-bold border border-zinc-700 inline-flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                {isAr ? 'وثائق سيادية حرة ومفتوحة' : 'DECLASSIFIED CORE INTEL'}
+                              </span>
+                            </div>
+                            
+                            {/* High-Impact Main Title */}
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white font-sans leading-tight">
+                              {isAr 
+                                ? 'التحقيقات الاستقصائية الكبرى' 
+                                : 'Sovereign Investigations Vault'}
+                              <span className="text-amber-400">.</span>
+                            </h2>
+                            
+                            {/* Serif Subtitle Description */}
+                            <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed max-w-4xl">
+                              {isAr 
+                                ? 'نظام وصول معلوماتي متكامل لتقارير معن البرازي الحصريّة. تتبّع خرائط النفوذ الجيو-سياسي، ومنحنيات بورصة بيروت التاريخية، ومستندات بطلان عقود سوليدير لعام ٢٠٦٩ في واجهة مستندات تفاعلية حية.' 
+                                : 'A comprehensive intelligence matrix hosting Maan Barazy’s classified economic dispatches. Navigate interactive geopolitical assets, corporate proxy charts, and physical Solidere 2069 archives in standard fidelity.'}
+                            </p>
                           </div>
-                          
-                          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-zinc-950 font-sans leading-tight">
-                            {isAr 
-                              ? 'التحقيقات الاستقصائية الكبرى:' 
-                              : 'AlWarraq Special Investigations: Sovereign Gazettes & Boardroom Battles'}
-                          </h2>
-                          
-                          <p className="text-sm md:text-base text-zinc-850 font-serif leading-relaxed max-w-4xl">
-                            {isAr 
-                              ? 'ولوج مجاني وحصري إلى تقارير معن البرازي العميقة المدعومة بخرائط تفاعلية، وتحليلات الجغرافيا السياسية، ومخططات سوليدير لعام ٢٠٦٩ وصراعات البورصة. تصفّح الأدلة والرسوم البيانية الآن.' 
-                              : 'Unrestricted entry to Maan Barazy’s deep-dive archives. Includes interactive geopolitical border templates, historical Solidere 2069 timelines, and Beirut Stock Exchange takeover analysis.'}
-                          </p>
+
+                          {/* Redesigned 3 Prime Dossier Highlight Badges (Bento Style Preview Row) */}
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-4 border-t border-zinc-800">
+                            <div className="bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 p-3 rounded transition-all group/item cursor-pointer"
+                                 onClick={() => {
+                                   setSelectedDossierId('solidere-bonds');
+                                   setActiveCategory('alwarraq-investigations');
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}>
+                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
+                                <span className="p-1 bg-red-950 text-red-400 rounded border border-red-900 text-[10px]">01</span>
+                                <span className="text-[10px] font-mono font-black uppercase text-amber-400 tracking-tight">SOLIDERE 2069</span>
+                              </div>
+                              <h4 className="text-xs font-bold text-white group-hover/item:text-amber-400 transition-colors line-clamp-1">
+                                {isAr ? 'عقود سوليدير والأراضي' : 'Solidere Land Covenants'}
+                              </h4>
+                            </div>
+
+                            <div className="bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 p-3 rounded transition-all group/item cursor-pointer"
+                                 onClick={() => {
+                                   setSelectedDossierId('sovereign-gold');
+                                   setActiveCategory('alwarraq-investigations');
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}>
+                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
+                                <span className="p-1 bg-amber-950 text-amber-400 rounded border border-amber-950 text-[10px]">02</span>
+                                <span className="text-[10px] font-mono font-black uppercase text-amber-400 tracking-tight">RESERVE VAULTS</span>
+                              </div>
+                              <h4 className="text-xs font-bold text-white group-hover/item:text-amber-400 transition-colors line-clamp-1">
+                                {isAr ? 'احتياطي الذهب السيادي' : 'Central Gold Telemetry'}
+                              </h4>
+                            </div>
+
+                            <div className="bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 p-3 rounded transition-all group/item cursor-pointer"
+                                 onClick={() => {
+                                   setSelectedDossierId('beirut-exchange');
+                                   setActiveCategory('alwarraq-investigations');
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}>
+                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
+                                <span className="p-1 bg-emerald-950 text-emerald-400 rounded border border-emerald-950 text-[10px]">03</span>
+                                <span className="text-[10px] font-mono font-black uppercase text-amber-400 tracking-tight">MARKET CORNER</span>
+                              </div>
+                              <h4 className="text-xs font-bold text-white group-hover/item:text-amber-400 transition-colors line-clamp-1">
+                                {isAr ? 'صراع بورصة بيروت والأسهم' : 'Stock Takeover Proxies'}
+                              </h4>
+                            </div>
+                          </div>
                         </div>
 
-                        {/* Right: Instant Gateway Button */}
-                        <div className="w-full lg:w-80 flex flex-col justify-center items-stretch bg-amber-100/60 p-4 border-2 border-black shrink-0 self-center text-center">
-                          <span className="font-mono text-xxs font-black text-amber-900 block mb-2 uppercase tracking-widest">
-                            {isAr ? 'الوصول الاستقصائي الحر' : 'UNRESTRICTED CITATION JOURNAL'}
-                          </span>
+                        {/* Interactive Dossier Terminal Panel (4 Columns) */}
+                        <div className="lg:col-span-4 bg-zinc-900/90 border-2 border-amber-500/30 p-5 rounded flex flex-col justify-between items-stretch text-center relative shadow-[6px_6px_20px_0px_rgba(0,0,0,0.4)]">
+                          <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-amber-500 via-red-500 to-amber-500"></div>
                           
-                          <button
-                            onClick={() => {
-                              setActiveCategory('alwarraq-investigations');
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }}
-                            className="w-full bg-black hover:bg-zinc-850 text-white font-mono text-xs font-black py-3 px-4 uppercase border-2 border-black tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[4px_4px_0px_0px_rgba(217,119,6,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:translate-x-1 active:translate-y-1"
-                          >
-                            <Compass size={15} className="animate-spin-slow text-amber-400" />
-                            <span>
-                              {isAr ? 'تصفح التحقيقات والرسوم ➜' : 'VIEW SPECIAL REPORTS ➜'}
-                            </span>
-                          </button>
+                          <div className="space-y-4">
+                            <div>
+                              <span className="font-mono text-[9px] font-black text-amber-400 block uppercase tracking-widest mb-1">
+                                {isAr ? 'بوابة التشفير والفك' : 'CLASSIFIED VAULT GATEWAY'}
+                              </span>
+                              <p className="text-[10px] text-zinc-400 font-mono">
+                                {isAr ? 'مستند تصريح الوراق رقم ٧' : 'CITIZEN REPORTING LEVEL 4'}
+                              </p>
+                            </div>
 
-                          <button
-                            onClick={() => setIsPrintingDossier(true)}
-                            className="w-full mt-2.5 bg-red-900 hover:bg-red-950 text-white font-mono text-xs font-black py-2.5 px-4 uppercase border-2 border-black tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:translate-x-1 active:translate-y-1 animate-pulse"
-                            title={isAr ? `تصدير ملف التحقيق المختار (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) كـ PDF` : `Export selected dossier (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) as formatted PDF`}
-                          >
-                            <Download size={14} className="text-amber-300" />
-                            <span>
-                              {isAr 
-                                ? `تحميل ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'الملف'} PDF ⤓` 
-                                : `DOWNLOAD ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'DOSSIER'} PDF ⤓`}
-                            </span>
-                          </button>
+                            <div className="border-t border-b border-zinc-800 py-3 my-2 space-y-1 text-right rtl:text-right ltr:text-left">
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'حالة البث:' : 'Stream status:'}</span>
+                                <span className="text-emerald-400 font-bold flex items-center gap-1">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                  {isAr ? 'متصل' : 'ONLINE'}
+                                </span>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'الملف الحالي:' : 'Active dossier:'}</span>
+                                <span className="text-white font-extrabold truncate max-w-[120px]" title={DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}>
+                                  {DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
                           
-                          <p className="text-[10px] text-zinc-600 mt-3 font-mono">
-                            {isAr ? 'شامل الرسوم البيانية ومقارنات الحدود السيادية' : 'Includes interactive timeline matrices'}
+                          <div className="space-y-2 mt-4 lg:mt-0">
+                            <button
+                              onClick={() => {
+                                setActiveCategory('alwarraq-investigations');
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }}
+                              className="w-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans text-xs font-black py-3 px-4 uppercase border border-amber-400 tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5 rounded-sm"
+                            >
+                              <Compass size={15} className="animate-spin-slow text-zinc-950" />
+                              <span>
+                                {isAr ? 'تصفح كافة التحقيقات ➜' : 'ENTER VAULT ROOM ➜'}
+                              </span>
+                            </button>
+
+                            <button
+                              onClick={() => setIsPrintingDossier(true)}
+                              className="w-full bg-zinc-850 hover:bg-zinc-800 text-white font-mono text-xxs font-bold py-2 px-3 uppercase border border-zinc-700 tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-xs"
+                              title={isAr ? `تصدير ملف التحقيق المختار (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) كـ PDF` : `Export selected dossier (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) as formatted PDF`}
+                            >
+                              <Download size={12} className="text-amber-400" />
+                              <span>
+                                {isAr 
+                                  ? `تنزيل ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'الملف'} PDF` 
+                                  : `EXPORT ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'DOSSIER'} PDF`}
+                              </span>
+                            </button>
+                          </div>
+                          
+                          <p className="text-[9px] text-zinc-500 mt-3 font-mono leading-none">
+                            {isAr ? 'مستند رسمي محمي بحقوق الملكية الفكرية للوراق' : 'Official dossier seal & cryptographic logs'}
                           </p>
                         </div>
                       </div>
 
                       {/* Summary points of all 7 available investigations */}
-                      <div className="border-t border-zinc-200/60 mt-6 pt-6 text-right rtl:text-right ltr:text-left">
+                      <div className="border-t border-zinc-800 mt-6 pt-6 text-right rtl:text-right ltr:text-left">
                         <h3 className="font-sans font-bold text-xs uppercase tracking-wider text-amber-900 mb-4 font-mono">
                           {isAr ? 'فهرس التحقيقات الاستقصائية المتاحة (٧ تحقيقات نشطة):' : 'CATALOGUE OF ALL AVAILABLE INVESTIGATIONS (7 ACTIVE DOSSIERS):'}
                         </h3>
