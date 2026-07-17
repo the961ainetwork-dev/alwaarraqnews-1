@@ -8,13 +8,20 @@ import {
   Calendar, 
   RefreshCw, 
   Tag, 
-  Compass,
-  ArrowUpDown,
-  BookOpen,
-  MessageCircle,
-  Printer
+  Compass, 
+  ArrowUpDown, 
+  BookOpen, 
+  MessageCircle, 
+  Printer,
+  Copy,
+  Check,
+  Share2,
+  FileText,
+  Shield,
+  Clock
 } from 'lucide-react';
 import { DOSSIER_DESKTOP_META } from './AlWarraqInvestigations';
+import { Article } from '../types';
 
 interface NewswireItem {
   id: string;
@@ -146,15 +153,13 @@ const NEWSWIRES: NewswireItem[] = [
     dateAr: "١٤ يونيو ٢٠٢٦",
     category: "techno-politics",
     categoryAr: "سياسة تكنولوجية",
-    headlineEn: "THE 60-DAY ACCORD DRAFTS: LEAKING WASHINGTON’S PROPOSED STABILITY Blueprints",
+    headlineEn: "THE 60-DAY ACCORD DRAFTS: LEAKING WASHINGTON’S PROPOSED STABILITY BLUEPRINTS",
     headlineAr: "تسريبات بروتوكول الـ 60 يوماً: النواة الدبلوماسية للهدنة المتقطعة",
     synopsisEn: "Qatar and Pakistan backchannel logs show rigorous regional investments offered in exchange for a full maritime freeze in Persian waters.",
     synopsisAr: "مسودات دبلوماسية مسربة في الدوحة تكشف عن رغبة غربية لتمويل خطط توسع اقتصادي طموح مقابل تفكيك كلي لحقول الألغام البحرية وهدنة مستدامة.",
     url: "https://alwarraqnews.com/section/editor-desk"
   }
 ];
-
-import { Article } from '../types';
 
 interface InCaseYouMissedItProps {
   language: 'ar' | 'en';
@@ -176,6 +181,7 @@ export default function InCaseYouMissedIt({
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const categoryNameMap: Record<string, { en: string, ar: string }> = {
     'all': { en: 'All Categories', ar: 'جميع الأقسام' },
@@ -318,74 +324,79 @@ export default function InCaseYouMissedIt({
     });
   }, [combinedNewswires, searchTerm, selectedCategory, sortOrder]);
 
+  // Copy to clipboard helper
+  const handleCopyToClipboard = (text: string, id: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
+    }).catch(() => {});
+  };
+
+  const entirePageUrl = `${window.location.origin}/section/in-case-you-missed-it`;
+
   return (
     <div 
       id="in-case-you-missed-it-section"
-      className="border-4 border-black p-4 md:p-8 bg-zinc-50 text-zinc-900 select-text font-sans relative my-4 space-y-6 md:space-y-8"
+      className="border-4 border-black p-4 md:p-8 bg-[#fbfbfa] text-zinc-900 select-text relative my-4 space-y-8 print:border-none print:bg-white print:p-0"
       dir={isAr ? 'rtl' : 'ltr'}
     >
-      {/* Decorative Stamp */}
-      <div className="absolute top-4 right-4 md:right-8 opacity-10 select-none hidden md:block">
-        <Bookmark size={120} className="text-zinc-900" />
-      </div>
+      {/* Newspaper Top Header / Title Block */}
+      <div className="border-b-4 border-black pb-2 text-center space-y-3 relative print:border-b-2">
+        <div className="flex justify-between items-center text-[10px] font-mono tracking-widest text-zinc-500 uppercase border-b border-zinc-200 pb-1.5 print:hidden">
+          <span>{isAr ? 'تأشيرة أمنية: سرية للغاية' : 'SECURITY LEVEL: RESTRICTED'}</span>
+          <span className="font-bold">{isAr ? 'ديوان ورّاق للرصد الاستخباري' : 'AL-WARRAQ INTELLIGENCE REGISTRY'}</span>
+          <span>{isAr ? 'طبعة جيو-سياسية ٢٠٢٦' : 'GEOPOLITICAL EDITION 2026'}</span>
+        </div>
 
-      {/* Header Grid */}
-      <div className="border-b-4 border-black pb-4 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
-        <div className="space-y-2">
-          <div className="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-800 border border-amber-500/30 px-3 py-1 text-[10px] font-mono tracking-wider uppercase font-extrabold rounded-sm">
-            <BookOpen size={11} className="text-amber-700 animate-pulse" />
-            <span>{isAr ? 'برقيات سيادية ورصد ميداني' : 'SOVEREIGN FEED & GROUND INTEL'}</span>
-          </div>
-          <h2 className="font-sans font-black text-2xl md:text-4xl text-black tracking-tight uppercase leading-none">
-            {isAr ? 'في حال فاتك' : 'In Case You Missed It'}
-          </h2>
-          <p className="text-xs md:text-sm text-zinc-600 max-w-2xl">
+        {/* Vintage Printed Banner */}
+        <div className="py-2">
+          <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl text-zinc-900 tracking-tight leading-none uppercase">
+            {isAr ? 'برقيات الوارّاق الاستباقية' : 'Al-Warraq Daily Telegrams'}
+          </h1>
+          <p className="font-mono text-xxs sm:text-xs tracking-wider uppercase text-zinc-500 mt-2">
             {isAr 
-              ? 'الأرشيف الميداني المتكامل لبرقيات تيلكس والتحقيقات الجيوسياسية مرتبة من الأحدث إلى الأقدم لقراءات استثنائية مكثفة.' 
-              : 'Chronological telemetry and deep field telegram briefs. Your essential logbook of missed critical updates and tactical intelligence.'}
+              ? 'الأرشيف الميداني الجامع لملفات التيلكس والتحقيقات الجيوسياسية المفقودة'
+              : 'The comprehensive field archive of missed telex reports & tactical geopolitics'}
           </p>
         </div>
 
-        <button 
-          onClick={() => {
-            setSearchTerm('');
-            setSelectedCategory('all');
-            setSortOrder('desc');
-          }}
-          className="font-mono text-xxs font-black bg-white hover:bg-zinc-100 border-2 border-black px-3 py-1.5 cursor-pointer uppercase transition-all flex items-center gap-1.5 self-stretch md:self-auto justify-center"
-        >
-          <RefreshCw size={11} />
-          <span>{isAr ? 'تصفير الفلاتر' : 'RESET FILTERS'}</span>
-        </button>
+        {/* Traditional Printed Newspaper Double Borders and Issue Line */}
+        <div className="border-t-4 border-b border-zinc-900 py-1.5 flex flex-wrap justify-between items-center text-xxs font-mono font-black tracking-widest text-zinc-700 uppercase">
+          <span>{isAr ? 'السنة الرابعة • العدد ٤٢٨٠٠' : 'VOLUME IV • ISSUE 42,800'}</span>
+          <span className="bg-zinc-900 text-white px-2 py-0.5 animate-pulse rounded-none print:bg-black">
+            {isAr ? 'تحديث حي ومباشر' : 'LIVE FEED ACTIVE'}
+          </span>
+          <span>{isAr ? '١٧ يوليو ٢٠٢٦' : 'JULY 17, 2026'}</span>
+        </div>
       </div>
 
-      {/* Filter and Search Bar */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_#000]">
+      {/* Control Panel (Filter and Search Bar) */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 bg-[#f4f3f0] border-2 border-black p-4 shadow-[4px_4px_0px_0px_#000] print:hidden">
         
         {/* Search */}
         <div className="md:col-span-4 relative">
-          <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-zinc-400">
+          <div className={`absolute inset-y-0 flex items-center pointer-events-none text-zinc-400 ${isAr ? 'right-3' : 'left-3'}`}>
             <Search size={14} />
           </div>
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder={isAr ? 'ابحث في البرقيات...' : 'Search telegrams...'}
-            className="w-full pl-9 pr-4 py-2 border-2 border-zinc-200 focus:border-black focus:ring-0 outline-none font-sans text-xs transition-colors rounded-none"
+            placeholder={isAr ? 'ابحث في البرقيات والملفات...' : 'Search telegram archives...'}
+            className={`w-full py-2 border-2 border-zinc-300 focus:border-black focus:ring-0 outline-none font-sans text-xs transition-colors rounded-none bg-white ${isAr ? 'pr-9 pl-4' : 'pl-9 pr-4'}`}
           />
         </div>
 
         {/* Category selector */}
         <div className="md:col-span-5 flex items-center gap-2">
-          <span className="font-mono text-xxs font-bold text-zinc-500 flex items-center gap-1 whitespace-nowrap">
-            <Filter size={11} />
+          <span className="font-mono text-xxs font-bold text-zinc-600 flex items-center gap-1 whitespace-nowrap">
+            <Filter size={12} />
             {isAr ? 'القسم:' : 'Category:'}
           </span>
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full py-2 px-3 border-2 border-zinc-200 focus:border-black outline-none font-sans text-xs rounded-none bg-white cursor-pointer"
+            className="w-full py-2 px-3 border-2 border-zinc-300 focus:border-black outline-none font-sans text-xs rounded-none bg-white cursor-pointer"
           >
             {categoriesList.map(cat => (
               <option key={cat} value={cat}>
@@ -395,57 +406,83 @@ export default function InCaseYouMissedIt({
           </select>
         </div>
 
-        {/* Sort Order */}
-        <div className="md:col-span-3 flex items-center justify-end gap-2">
-          <span className="font-mono text-xxs font-bold text-zinc-500 whitespace-nowrap">
-            {isAr ? 'الترتيب:' : 'Sort:'}
-          </span>
+        {/* Sort and Reset controls */}
+        <div className="md:col-span-3 flex items-center gap-2">
           <button
             onClick={() => setSortOrder(prev => prev === 'desc' ? 'asc' : 'desc')}
-            className="w-full py-2 px-3 border-2 border-zinc-200 hover:border-black transition-colors font-mono text-xxs font-black uppercase flex items-center justify-between bg-white cursor-pointer"
+            className="flex-1 py-2 px-3 border-2 border-zinc-300 hover:border-black transition-colors font-mono text-xxs font-black uppercase flex items-center justify-between bg-white cursor-pointer"
           >
-            <span>{sortOrder === 'desc' ? (isAr ? 'الأحدث أولاً' : 'NEWEST FIRST') : (isAr ? 'الأقدم أولاً' : 'OLDEST FIRST')}</span>
-            <ArrowUpDown size={12} className="text-zinc-600" />
+            <span className="truncate">{sortOrder === 'desc' ? (isAr ? 'الأحدث أولاً' : 'NEWEST') : (isAr ? 'الأقدم أولاً' : 'OLDEST')}</span>
+            <ArrowUpDown size={12} className="text-zinc-600 shrink-0" />
+          </button>
+
+          <button 
+            onClick={() => {
+              setSearchTerm('');
+              setSelectedCategory('all');
+              setSortOrder('desc');
+            }}
+            className="py-2 px-2 bg-white hover:bg-zinc-100 border-2 border-black cursor-pointer transition-all shrink-0"
+            title={isAr ? 'تصفير الفلاتر' : 'Reset Filters'}
+          >
+            <RefreshCw size={13} className="text-zinc-800" />
           </button>
         </div>
       </div>
 
-      {/* Consolidated Executive Summary Section */}
-      <div className="border-4 border-black p-6 bg-zinc-900 text-white shadow-[6px_6px_0px_0px_#000] relative overflow-hidden my-6">
-        {/* watermark/stamp in background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none font-sans font-black text-6xl md:text-8xl tracking-widest uppercase pointer-events-none rotate-12">
-          {isAr ? 'ملخص سيادي' : 'SOVEREIGN BRIEF'}
+      {/* Whole Summary Box / Consolidated Executive Summary Section */}
+      <div className="border-4 border-black p-6 bg-zinc-900 text-white shadow-[6px_6px_0px_0px_#000] relative overflow-hidden print:border-2 print:shadow-none print:text-black print:bg-white">
+        {/* Background Watermark stamp */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] select-none font-sans font-black text-6xl md:text-9xl tracking-widest uppercase pointer-events-none rotate-12 print:hidden">
+          {isAr ? 'ملخص سيادي للجريدة' : 'AL-WARRAQ REGISTER'}
         </div>
 
-        <div className="relative z-10 space-y-4">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-zinc-700 pb-3">
+        <div className="relative z-10 space-y-5">
+          {/* Header Row */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-zinc-700 pb-3 print:border-zinc-300">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse" />
-              <span className="font-mono text-xxs font-black tracking-wider uppercase text-red-500">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse print:hidden" />
+              <span className="font-mono text-xxs font-black tracking-wider uppercase text-red-500 print:text-black">
                 {isAr ? 'الموجز الاستخباري والسياسي الموحد' : 'CONSOLIDATED INTELLIGENCE DISPATCH'}
               </span>
             </div>
-            <div className="font-mono text-[10px] text-zinc-400">
-              {isAr ? 'بتوقيت بيروت ونيويورك: ١٧ يوليو ٢٠٢٦' : 'BEIRUT & NY TIME: JULY 17, 2026'}
+            <div className="font-mono text-[10px] text-zinc-400 print:text-zinc-600">
+              {isAr ? 'بتوقيت بيروت الميداني: ١٧ يوليو ٢٠٢٦' : 'BEIRUT GROUND TIME: JULY 17, 2026'}
             </div>
           </div>
 
-          <div className="space-y-2">
-            <h3 className="text-xl md:text-2xl font-black tracking-tight text-amber-400 font-sans">
+          {/* Title and Summary Text */}
+          <div className="space-y-3">
+            <h3 className="text-xl md:text-2xl font-serif font-black tracking-tight text-amber-400 print:text-black">
               {isAr 
                 ? 'التقرير الجامع للبرقيات الاستباقية: مسارات الالتفاف البديلة، ديون السيادة، وطوق الموارد' 
                 : 'CONSOLIDATED EXECUTIVE BRIEFING: Parallel Squeezes, Sovereign Debt, & Resource Blocks'}
             </h3>
             
-            <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-sans">
+            <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-sans font-medium print:text-zinc-800">
               {isAr 
                 ? 'يشهد ميزان القوى الجيوسياسي تحولات متسارعة مع اشتداد الخناق الأميركي على طهران وانهيار تفاهمات المياه الإقليمية. يكشف تتبع البرقيات الميدانية عن تحركات محمومة من الفجيرة والخطوط الحديدية السعودية لتأسيس ممرات طاقة بديلة تتجاوز مضيق هرمز كلياً. بالتوازي، يعاد رسم خرائط البنية التحتية والمدفوعات الأهلية؛ بدءاً من شبكات الأقمار ميكروية المدار في سماء لبنان لتجاوز انقطاع كوابل الأعماق، وصولاً لتشغيل شبكات السداد الرقمية المدعومة بالبلوكشين للتغلب على شلل السيولة ومصير سندات اليوروبوندز اللبنانية عند مستوى ٢٢ سنتاً.'
                 : 'A major geopolitical shift is accelerating under intense sanctions and the breakdown of regional water-way pacts. Ground telemetry reveals intense coordinate maneuvers: UAE and Saudi Arabia are rapid-scaling East Coast pipelines and overland rail passes to bypass Strait of Hormuz choking points. Simultaneously, critical communication and domestic financial networks are being re-engineered—ranging from micro-satellite LEO constellations to secure sovereign data in Lebanese skies, to localized offline blockchain ledgers designed to settle neighborhood food trades in the face of distressed debt write-downs and Eurobonds captured in a 22-cent spiral.'}
             </p>
           </div>
 
-          {/* Buttons for Whole Summary */}
-          <div className="pt-4 flex flex-wrap items-center gap-3 border-t border-zinc-800">
+          {/* Interactive Source URL for the entire summary */}
+          <div className="bg-zinc-800 border border-zinc-700 p-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 print:bg-zinc-50 print:border-zinc-300">
+            <div className="space-y-0.5">
+              <span className="font-mono text-[9px] text-zinc-400 uppercase tracking-widest block">{isAr ? 'رابط الملف الشامل المصدر:' : 'CONSOLIDATED REGISTRY SOURCE URL:'}</span>
+              <span className="font-mono text-xs text-amber-400 break-all select-all font-semibold print:text-zinc-800">{entirePageUrl}</span>
+            </div>
+            <button
+              onClick={() => handleCopyToClipboard(entirePageUrl, 'entire-summary')}
+              className="px-3 py-1 bg-zinc-700 hover:bg-zinc-600 text-white font-mono text-xxs font-bold uppercase transition-colors shrink-0 flex items-center gap-1 border border-zinc-600 cursor-pointer rounded-none print:hidden"
+            >
+              {copiedId === 'entire-summary' ? <Check size={11} className="text-green-400 animate-bounce" /> : <Copy size={11} />}
+              <span>{copiedId === 'entire-summary' ? (isAr ? 'تم النسخ!' : 'COPIED!') : (isAr ? 'نسخ الرابط' : 'COPY URL')}</span>
+            </button>
+          </div>
+
+          {/* Toolbar for Whole Summary */}
+          <div className="pt-4 flex flex-wrap items-center gap-3 border-t border-zinc-800 print:hidden">
             {/* CTA Button */}
             <button
               onClick={() => {
@@ -453,49 +490,47 @@ export default function InCaseYouMissedIt({
                   onNavigateToSection('premium-pricing');
                 }
               }}
-              className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
+              className="px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-black font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
             >
               <BookOpen size={12} />
-              <span>{isAr ? 'اشتراك في برقيات التيلكس الحية' : 'SUBSCRIBE TO DIRECT TELEX ALERTS'}</span>
+              <span>{isAr ? 'اشترك في برقيات التيلكس الحية' : 'SUBSCRIBE TO DIRECT TELEX ALERTS'}</span>
             </button>
 
             {/* WhatsApp Share Button */}
             <a
               href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
                 isAr 
-                  ? `*الموجز الاستخباري الجامع من ديوان الورّاق (١٧ يوليو ٢٠٢٦)*\n\nتحولات متسارعة تشهدها المنطقة مع إعادة هيكلة ممرات الطاقة والاتصالات الموازية.\n\nاقرأ التقرير كاملاً:\n👉 ${window.location.origin}/section/in-case-you-missed-it`
-                  : `*Al-Warraq Consolidated Executive Briefing (July 17, 2026)*\n\nRapid strategic shifts in energy pipelines, micro-satellites and sovereign debt restructurings.\n\nRead the full telemetry:\n👉 ${window.location.origin}/section/in-case-you-missed-it`
+                  ? `*الموجز الاستخباري الموحد من صحيفة الورّاق (١٧ يوليو ٢٠٢٦)*\n\nتحولات متسارعة تشهدها المنطقة مع إعادة هيكلة ممرات الطاقة والاتصالات الموازية.\n\nاقرأ التقرير والبرقيات كاملة عبر موقعنا:\n👉 ${entirePageUrl}`
+                  : `*Al-Warraq Consolidated Executive Briefing (July 17, 2026)*\n\nRapid strategic shifts in energy pipelines, micro-satellites, and sovereign debt restructurings.\n\nRead the full telemetry:\n👉 ${entirePageUrl}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
+              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
             >
               <MessageCircle size={12} />
-              <span>{isAr ? 'مشاركة عبر واتساب' : 'SHARE BRIEF VIA WHATSAPP'}</span>
+              <span>{isAr ? 'مشاركة عبر واتساب' : 'SHARE VIA WHATSAPP'}</span>
             </a>
 
             {/* PDF Export Button */}
             <button
-              onClick={() => {
-                window.print();
-              }}
-              className="px-4 py-2 bg-zinc-700 hover:bg-zinc-800 text-white font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
+              onClick={() => window.print()}
+              className="px-4 py-2.5 bg-zinc-700 hover:bg-zinc-800 text-white font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
             >
               <Printer size={12} />
-              <span>{isAr ? 'تصدير الملخص كملف PDF' : 'EXPORT BRIEF AS PDF'}</span>
+              <span>{isAr ? 'تصدير الملخص كملف PDF' : 'EXPORT AS PDF'}</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Main Through-Reading Feed Layout */}
-      <div className="space-y-6">
+      <div className="space-y-8">
         {filteredNewswires.length === 0 ? (
-          <div className="border-4 border-black bg-white p-12 text-center text-zinc-400 font-serif italic text-sm shadow-[4px_4px_0px_0px_#000]">
+          <div className="border-2 border-black bg-white p-12 text-center text-zinc-400 font-serif italic text-sm shadow-[4px_4px_0px_0px_#000]">
             {isAr ? 'لا توجد برقيات تطابق شروط البحث والفلاتر المحددة.' : 'No newswire updates found matching your filter criteria.'}
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6">
+          <div className="space-y-10">
             {filteredNewswires.map((item, index) => {
               const categoryMapped = categoryNameMap[item.category] 
                 ? (isAr ? categoryNameMap[item.category].ar : categoryNameMap[item.category].en) 
@@ -535,90 +570,109 @@ export default function InCaseYouMissedIt({
                 }
               };
 
+              // Determine color themes for categories to elevate visual design
+              const isUrgent = item.isInvestigation || item.category === 'sovereign-intel' || item.category === 'cyber-finance';
+
               return (
                 <div 
                   key={item.id}
-                  className="border-2 border-black p-6 bg-white shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#b91c1c] hover:border-[#b91c1c] transition-all duration-200 flex flex-col justify-between gap-4 relative group"
+                  className={`border-2 border-black p-6 bg-white shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#222] transition-all duration-200 flex flex-col justify-between gap-5 relative group print:border-b print:border-zinc-300 print:shadow-none print:p-4`}
                 >
-                  {/* Story Index Stamp */}
-                  <div className="absolute top-4 left-4 font-mono text-[9px] font-black text-zinc-300 select-none group-hover:text-red-200 transition-colors">
-                    {(index + 1).toString().padStart(2, '0')} / {filteredNewswires.length}
-                  </div>
+                  {/* Category Border Highlight Indicator */}
+                  <div className={`absolute top-0 bottom-0 w-1.5 ${isAr ? 'right-0' : 'left-0'} ${isUrgent ? 'bg-red-700' : 'bg-zinc-800'} group-hover:w-2 transition-all`} />
 
-                  <div className="space-y-3">
-                    {/* Metadata Row */}
-                    <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono text-zinc-500">
-                      <span className="inline-flex items-center gap-1 text-zinc-500 font-bold">
-                        <Calendar size={11} />
-                        <span>{isAr ? item.dateAr : item.date}</span>
-                      </span>
-                      <span className="text-zinc-300">•</span>
-                      <span className="font-extrabold text-red-700 uppercase tracking-wide">
-                        #{item.id.toUpperCase()}
-                      </span>
-                      <span className="text-zinc-300">•</span>
-                      <span className="inline-flex items-center gap-1 font-black uppercase px-1.5 py-0.5 bg-zinc-100 text-zinc-700 text-[9px] border border-zinc-200 rounded-sm">
-                        <Tag size={9} />
-                        {categoryMapped}
+                  {/* Top Header details inside the block */}
+                  <div className="space-y-3 pl-3 pr-3">
+                    {/* Index Stamp and Category Row */}
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-100 pb-2 text-[10px] font-mono text-zinc-500">
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-black text-red-700 uppercase tracking-wider">
+                          {isAr ? `نشرة رقم: № ${item.id.toUpperCase()}` : `№ ${item.id.toUpperCase()}`}
+                        </span>
+                        <span className="text-zinc-300">•</span>
+                        <span className="inline-flex items-center gap-1 font-bold">
+                          <Calendar size={11} className="text-zinc-400" />
+                          <span>{isAr ? item.dateAr : item.date}</span>
+                        </span>
+                        <span className="text-zinc-300">•</span>
+                        <span className="inline-flex items-center gap-1 font-black uppercase px-2 py-0.5 bg-zinc-100 text-zinc-700 text-[9px] border border-zinc-200">
+                          <Tag size={9} className="text-zinc-500" />
+                          {categoryMapped}
+                        </span>
+                      </div>
+
+                      {/* Display Index stamp */}
+                      <span className="text-[10px] font-mono font-bold text-zinc-300 select-none group-hover:text-zinc-500">
+                        {(index + 1).toString().padStart(2, '0')} / {filteredNewswires.length}
                       </span>
                     </div>
 
                     {/* Headline */}
                     <h4 
                       onClick={handleNavigation}
-                      className="font-sans font-black text-base md:text-xl text-zinc-900 hover:text-[#b91c1c] transition-colors leading-snug cursor-pointer hover:underline"
+                      className="font-serif font-black text-lg md:text-2xl text-zinc-900 hover:text-red-700 transition-colors leading-snug cursor-pointer hover:underline"
                       style={{ textAlign: isAr ? 'right' : 'left' }}
                     >
                       {isAr ? item.headlineAr : item.headlineEn}
                     </h4>
 
-                    {/* Reference Link row */}
-                    <div className="flex flex-wrap items-center gap-1.5" style={{ direction: 'ltr', justifyContent: isAr ? 'flex-start' : 'flex-start' }}>
-                      <span className="font-mono text-xxs font-bold text-zinc-400">SOURCE URL:</span>
-                      <a 
-                        href={realUrl}
-                        onClick={handleNavigation}
-                        className="font-mono text-[10px] text-red-700 hover:text-black font-semibold bg-zinc-50 border border-zinc-200 hover:border-black px-2 py-0.5 transition-colors flex items-center gap-1"
+                    {/* Reference and Copy Source Link block */}
+                    <div className="bg-[#fcfcfb] border border-zinc-200 p-2.5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 print:border-zinc-100">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <span className="font-mono text-[9px] font-black text-zinc-400 uppercase tracking-widest">{isAr ? 'رمز المعرّف والمستند:' : 'DOCUMENT SOURCE PATH:'}</span>
+                        <a 
+                          href={realUrl}
+                          onClick={handleNavigation}
+                          className="font-mono text-[10px] text-red-700 hover:text-black hover:underline font-bold bg-zinc-50 border border-zinc-200 px-2 py-0.5 transition-all flex items-center gap-1.5 truncate max-w-xs md:max-w-md"
+                        >
+                          <span>{relativeUrlPath}</span>
+                          <ExternalLink size={9} />
+                        </a>
+                      </div>
+                      <button
+                        onClick={() => handleCopyToClipboard(realUrl, item.id)}
+                        className="px-2 py-0.5 bg-white hover:bg-zinc-100 text-zinc-700 font-mono text-[9px] font-extrabold uppercase transition-colors border border-zinc-300 flex items-center gap-1 cursor-pointer rounded-none print:hidden shrink-0"
+                        title={isAr ? 'نسخ رابط الخبر' : 'Copy link'}
                       >
-                        <span>{relativeUrlPath}</span>
-                        <ExternalLink size={9} />
-                      </a>
+                        {copiedId === item.id ? <Check size={10} className="text-green-500 animate-bounce" /> : <Copy size={10} />}
+                        <span>{copiedId === item.id ? (isAr ? 'تم!' : 'COPIED!') : (isAr ? 'نسخ' : 'COPY')}</span>
+                      </button>
                     </div>
 
                     {/* Synopsis */}
-                    <p 
-                      className="text-xs md:text-sm text-zinc-600 leading-relaxed font-sans font-medium"
+                    <div 
+                      className="text-xs md:text-sm text-zinc-700 leading-relaxed font-sans font-medium"
                       style={{ textAlign: isAr ? 'right' : 'left' }}
                     >
                       {isAr ? item.synopsisAr : item.synopsisEn}
-                    </p>
+                    </div>
                   </div>
 
                   {/* Story Action Buttons Toolbar */}
-                  <div className="pt-3 border-t border-zinc-100 flex flex-wrap items-center gap-2 text-xxs font-mono">
-                    {/* CTA: Read Full Story */}
+                  <div className="pt-4 border-t border-zinc-100 flex flex-wrap items-center gap-2.5 text-xxs font-mono pl-3 pr-3 print:hidden">
+                    {/* CTA Button: Read Full Dispatch */}
                     <button
                       onClick={handleNavigation}
-                      className="px-3 py-1.5 bg-black hover:bg-zinc-800 text-white font-extrabold transition-colors cursor-pointer rounded-none uppercase flex items-center gap-1"
+                      className="px-3.5 py-2 bg-zinc-900 hover:bg-zinc-800 text-white font-black transition-all cursor-pointer rounded-none uppercase flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000] hover:shadow-none"
                     >
                       <BookOpen size={11} />
-                      <span>{isAr ? 'اقرأ كامل البرقية' : 'READ FULL DISPATCH'}</span>
+                      <span>{isAr ? 'اقرأ كامل البرقية والاستخبارات' : 'READ FULL DISPATCH'}</span>
                     </button>
 
                     {/* WhatsApp share story */}
                     <a
                       href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
                         isAr 
-                          ? `*برقية سيادية من ديوان الورّاق:*\n\n*${item.headlineAr}*\n\n${item.synopsisAr}\n\n👉 اقرأ التفاصيل الكاملة:\n${realUrl}`
+                          ? `*برقية من ديوان الورّاق:*\n\n*${item.headlineAr}*\n\n${item.synopsisAr}\n\n👉 اقرأ التحليل الكامل بالرابط المتضمن:\n${realUrl}`
                           : `*Sovereign Dispatch from Al-Warraq:*\n\n*${item.headlineEn}*\n\n${item.synopsisEn}\n\n👉 Read full details:\n${realUrl}`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold transition-colors cursor-pointer rounded-none uppercase flex items-center gap-1"
+                      className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black transition-colors cursor-pointer rounded-none uppercase flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000] hover:shadow-none"
                       title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
                     >
                       <MessageCircle size={11} />
-                      <span>{isAr ? 'مشاركة' : 'SHARE'}</span>
+                      <span>{isAr ? 'مشاركة واتساب' : 'SHARE'}</span>
                     </a>
 
                     {/* PDF Download story */}
@@ -640,11 +694,11 @@ export default function InCaseYouMissedIt({
                           window.print();
                         }, 300);
                       }}
-                      className="px-3 py-1.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-extrabold transition-colors border border-zinc-300 cursor-pointer rounded-none uppercase flex items-center gap-1"
+                      className="px-3.5 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold transition-colors border border-zinc-300 cursor-pointer rounded-none uppercase flex items-center gap-1.5"
                       title={isAr ? 'حفظ بصيغة PDF' : 'Save as PDF'}
                     >
                       <Printer size={11} />
-                      <span>PDF</span>
+                      <span>{isAr ? 'ملف PDF' : 'PRINT PDF'}</span>
                     </button>
                   </div>
                 </div>
@@ -654,11 +708,11 @@ export default function InCaseYouMissedIt({
         )}
       </div>
 
-      {/* Retro bottom dispatch note */}
-      <div className="border-2 border-zinc-300 bg-zinc-100 p-4 text-center font-mono text-[10px] text-zinc-500 uppercase font-bold tracking-wider">
+      {/* Retro bottom printed footer note */}
+      <div className="border-2 border-zinc-300 bg-zinc-100 p-4 text-center font-mono text-[10px] text-zinc-500 uppercase font-bold tracking-wider print:border-none print:bg-white">
         {isAr 
-          ? 'تم إصدار هذه المصفوفة التاريخية لـ "فاتك قراءته" وفق نظام حوكمة البيانات المعتمد بموجب طبعة ٢٠٢٦.' 
-          : 'Historic matrices compiled under the authority guidelines of Al-Warraq news registry systems.'}
+          ? 'تم تفويض وأرشفة هذه المصفوفة الميدانية لـ "فاتك قراءته" طبقاً لمنشورات ديوان الوراق المستقل.' 
+          : 'Historic telemetry compiled under the legal and professional guidelines of Al-Warraq registry systems.'}
       </div>
     </div>
   );
