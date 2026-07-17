@@ -2,6 +2,124 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'infrastructure-war-gcc-iran-2026',
+    slug: 'infrastructure-war-gcc-iran-2026',
+    focusKeyword: 'حرب-البنى-التحتية-الخليج-إيران',
+    category: 'exclusives',
+    categories: ['exclusives', 'middle-east', 'economy', 'instats', 'lebanon'],
+    titleAr: 'الملف الخامس عشر: حرب البنى التحتية: شريان الحياة في مرمى النيران بين الخليج وإيران',
+    titleEn: 'Dossier XV: The Infrastructure War: Critical Lifelines in the Line of Fire',
+    summaryAr: 'لقد تجاوزت الصراعات الأخيرة القواعد التقليدية للاشتباك، وباتت ترتكز على استراتيجية "الإنهاك الاقتصادي المتبادل" عبر تدمير البنية التحتية الحرجة في الخليج وإيران.',
+    summaryEn: 'Recent conflicts have bypassed traditional engagement rules, focusing instead on a mutual economic attrition strategy targeting critical infrastructure across the GCC and Iran.',
+    excerptAr: 'رصد دقيق وشامل للنقاط المستهدفة، والإحصائيات، والأضرار المسجلة لقطاعات الملاحة والنفط والغاز والمطارات والفضاء السيبراني حتى يوليو 2026.',
+    excerptEn: 'An in-depth geopolitical intelligence brief detailing targeted critical hubs, damages, and systemic infrastructure casualties across GCC and Iran up to July 2026.',
+    author: {
+      nameAr: 'مكتب البحوث الجيوسياسية',
+      nameEn: 'Geopolitical Research Desk',
+      titleAr: 'كبير محللي شؤون الطاقة والدفاع',
+      titleEn: 'Senior Energy & Defense Analyst',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-17',
+    readTimeAr: '١٥ دقيقة قراءة',
+    readTimeEn: '15 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 42800,
+    tags: ['الخليج', 'إيران', 'حرب_البنى_التحتية', 'أرامكو', 'مضيق_هرمز', 'الهجمات_السيبرانية', 'Assaluyeh', 'Hormuz', 'GCC', 'Iran', 'Cyber_Warfare', 'Energy_Security'],
+    hashtags: ['InfrastructureWar', 'EnergySecurity', 'HormuzBlockade', 'CyberAttack2026'],
+    contentAr: `### حرب البنى التحتية: شريان الحياة في مرمى النيران
+    
+لقد تجاوزت الصراعات الأخيرة القواعد التقليدية للاشتباك، وباتت ترتكز على استراتيجية "الإنهاك الاقتصادي المتبادل" عبر تدمير البنية التحتية الحرجة. إليك رصدٌ دقيق وشامل للنقاط المستهدفة، والإحصائيات، والأضرار المسجلة حتى يوليو 2026 وفق برقيات رصد شبكة ACLED وتحليلات ديوان الورّاق.
+
+---
+
+### أولاً: البنية التحتية المستهدفة في دول مجلس التعاون الخليجي (GCC)
+استهدفت إيران وفصائلها المقرّبة دول الخليج بذريعة "تسهيل العمليات الأمريكية-الإسرائيلية"، مركّزةً على ضرب خطط التنويع الاقتصادي (السياحة، الطيران، واللوجستيات) وشرايين الطاقة العالمية.
+
+#### 1. قطاع الممرات المائية والموانئ (المستهدفة والمنكوبة)
+* **مضيق هرمز وجنوب الخليج:** يمثل العصب الحيوي الذي يمر عبره أكثر من 20% من النفط والغاز العالمي. فرضت إيران إغلاقاً بحرياً واقعياً عليه عبر استهداف السفن التجارية ومحاولة تحصيل رسوم عبور قسرية. *(المصدر: S&P Global)*
+* **ميناء الفجيرة ومستودعات التخزين (الإمارات):** يقع خارج المضيق مباشرة، ويمثل نقطة استراتيجية لتصدير النفط الإماراتي عبر خط أنابيب حبشان-الفجيرة. تعرضت خزاناته لتهديدات ومحاولات استهداف مستمرة بطائرات مسيرة لتعطيل هذا البديل الملاحي.
+* **ميناء الرويس الصناعي (الإمارات):** هدف استراتيجي حساس كونه يضم مجمع أدنوك لتوسعة الغاز الطبيعي المسال (LNG). *(المصدر: Arab Center Washington DC)*
+* **مضيق باب المندب (البحر الأحمر):** عاد كجبهة مشتعلة بواسطة الحوثيين في اليمن بناءً على توجيهات طهران، حيث هددوا بفرض إغلاق كامل عليه ورفع أسعار النفط إلى 200 دولار للبرميل في حال تم استهداف شبكة الكهرباء الإيرانية. *(المصدر: ARAB NEWS)*
+
+#### 2. المنشآت النفطية ومصانع الغاز
+* **مجمع رأس تنورة (السعودية):** أكبر منشأة لتكرير وشحن النفط في العالم ومحور شركة أرامكو. تعرض لضربات مباشرة بالصواريخ الباليستية والمسيرات الإيرانية في موجات التصعيد (خاصة في مارس 2026)، مما أدى إلى تذبذب كبير في أسواق الطاقة العالمية.
+* **مجمع رأس لفان الصناعي (قطر):** عصب إنتاج الغاز الطبيعي المسال (LNG) الأكبر عالمياً. تعرض لهجمات بمسيرات إيرانية، مما دفع شركة "قطر للطاقة" لإعلان تعليق مؤقت للإنتاج حينها، وهو ما تسبب في قفزة تاريخية بأسعار الغاز في أوروبا وآسيا. *(المصدر: The Soufan Center)*
+
+#### 3. قطاع الطيران والمطارات الدولية
+تم استهداف المطارات لشل حركة التجارة والسياحة وإظهار الأجواء الخليجية كمنطقة غير آمنة: *(المصدر: ACLED)*
+* **مطار أبوظبي الدولي ومطار دبي الدولي (الإمارات):** تعرضا لضربات صاروخية وهجمات بمسيرات ألحقت أضراراً مادية بالبنية التحتية والممرات، إلى جانب تفعيل جبهة سيبرانية لتعطيل أنظمة الملاحة والخدمات.
+* **مطارات البحرين والشارقة والكويت:** تم استهدافها حركياً وسيبرانياً، مما أدى لتعليق مؤقت للرحلات وتراجع حاد في عوائد الطيران والسياحة الخليجية.
+
+---
+
+### ثانياً: البنية التحتية المستهدفة داخل إيران
+تلقّت إيران ضربات كاسحة ركزت على شل قدرة النظام على القيادة والسيطرة، وتدمير المنشآت العسكرية والنووية، وحرمانها من عوائد تصدير الطاقة.
+
+#### 1. بنية الاتصالات والفضاء الرقمي (الأكثر تضرراً)
+* **شبكة الإنترنت والخدمات الحكومية الإيرانية:** تعرضت لأكبر هجوم سيبراني في التاريخ بالتزامن مع الضربات العسكرية (مثل عملية Epic Fury في فبراير 2026)، مما أدى إلى انهيار سعة الإنترنت في إيران لتصل إلى ما بين 1% إلى 4% فقط، وشلل تام في المعاملات المصرفية والخدمات الحكومية وتوزيع الوقود. *(المصدر: EclecticIQ Blog)*
+
+#### 2. قطاع الطاقة والغاز
+* **مجمع عسلوية للغاز (Assaluyeh):** يضم منشآت معالجة حقل "جنوب فارس" العملاق. تعرض المجمع لضربات قاسية (منها هجمات بطائرات مسيرة إسرائيلية) ألحقت أضراراً جسيمة بمحطات معالجة وتكرير الغاز، ما انعكس سلباً على الاستهلاك المحلي الإيراني وقدراتها التصديرية. *(المصدر: Arab Center Washington DC)*
+* **محطات ومصافي النفط في جزيرة خارك وجزيرة قشم:** نقاط التصدير الرئيسية للنفط الإيراني في الخليج؛ تعرضت لضربات أمريكية وإسرائيلية متكررة لشل الاقتصاد الإيراني.
+* **شبكة الكهرباء الوطنية:** باتت الهدف الاستراتيجي الأبرز المطروح على طاولة الضربات الأمريكية مؤخراً، مما جعل إيران تهدد بقطع ملاحة البحر الأحمر كلياً رداً على هذا التهديد.
+
+#### 3. البنية التحتية العسكرية والنووية
+* **الحرس الثوري الإيراني (IRGC):** ضربات مركزة استهدفت المجمعات القيادية للحرس الثوري ومنشآت تخصيب اليورانيوم والصواريخ في طهران، وأصفهان، وقم، وكرج، وكرمانشاه. *(المصدر: CloudSEK)*
+
+---
+
+### الخلاصة الاستقصائية لعام 2026
+تثبت "حرب البنى التحتية" في عام 2026 أن التفوق العسكري التقليدي لم يعد الحاسم الوحيد؛ بل إن القدرة على "حماية الشرايين اللوجستية وتأمين الفضاء السيبراني" هي من تحدد الصمود. وبينما نجحت دول الخليج بفضل استثماراتها الدفاعية والسيبرانية الاستباقية في استيعاب الصدمات وإعادة تشغيل منشآتها سريعاً، تسببت الضربات في عزل إيران رقمياً واقتصادياً، مما دفعها لفتح جبهات انتحارية في الممرات المائية الحيوية (هرمز وباب المندب) كأوراق ضغط أخيرة.`,
+    contentEn: `### The Infrastructure War: Critical Lifelines in the Line of Fire
+    
+Recent conflicts have bypassed traditional rules of engagement, focusing instead on a mutual economic attrition strategy targeting critical infrastructure. Below is a detailed, comprehensive brief mapping targeted hubs, damages, and systemic infrastructure casualties across GCC and Iran up to July 2026, compiled from ACLED tracking databases and Al-Warraq analytical reports.
+
+---
+
+### I. Targeted Infrastructure in the Gulf Cooperation Council (GCC)
+Iran and its allied factions have targeted GCC assets under the pretext of "facilitating US-Israeli operations," systematically aiming at economic diversification programs (tourism, aviation, logistics) and global energy routes.
+
+#### 1. Maritime Corridors & Sea Ports (Targeted & Impacted)
+* **Strait of Hormuz & Southern Gulf:** The crucial global artery carrying over 20% of global oil and gas. Iran has enforced a de facto blockade by targeting commercial vessels and attempting to levy arbitrary transit fees. *(Source: S&P Global)*
+* **Port of Fujairah & Storage Terminals (UAE):** Positioned immediately outside the Strait of Hormuz, this is the strategic egress point for UAE crude via the Habshan-Fujairah pipeline. Its storage farms faced constant drone threat vectors seeking to disable this maritime bypass.
+* **Ruwais Industrial Port (UAE):** A highly sensitive target housing the ADNOC LNG expansion infrastructure. *(Source: Arab Center Washington DC)*
+* **Bab al-Mandab Strait (Red Sea):** Reactivated as a volatile front by Houthi forces under Tehran's directives, threatening a complete blockade to drive oil prices to $200/barrel if Iran's power grid is targeted. *(Source: ARAB NEWS)*
+
+#### 2. Oil Refineries & Gas Plants
+* **Ras Tanura Complex (Saudi Arabia):** The world's largest oil refining and shipping hub, and the core of Saudi Aramco. Hit directly by ballistic missiles and Iranian drone waves during peak escalations (notably in March 2026), sparking high volatility across global energy markets.
+* **Ras Laffan Industrial City (Qatar):** The global nerve center for Liquified Natural Gas (LNG). Hit by drone incursions, forcing QatarEnergy to declare a temporary halt in operations, triggering a historic surge in European and Asian gas benchmarks. *(Source: The Soufan Center)*
+
+#### 3. Civil Aviation & International Airports
+Airports were targeted to disrupt commerce, isolate tourism, and project Gulf airspace as high-risk zones: *(Source: ACLED)*
+* **Abu Dhabi International & Dubai International Airports (UAE):** Suffered direct rocket/drone impacts damaging tarmac/infrastructure, accompanied by targeted DDoS operations disrupting air navigation services.
+* **Bahrain, Sharjah, & Kuwait Airports:** Subjected to kinetic and cyber disruption, causing temporary flight suspensions and a severe downturn in aviation yields.
+
+---
+
+### II. Targeted Infrastructure Inside Iran
+Iran suffered systemic, deep-penetrating strikes targeting regime command networks, military/nuclear facilities, and energy export arteries.
+
+#### 1. Digital & Telecommunications Space (Severely Degraded)
+* **Iranian Internet Backbone & Gov Services:** Hit by the largest coordinated cyber offensive in history parallel to military operations (such as Operation Epic Fury in February 2026), dropping Iran's total connectivity to between 1% and 4%, completely paralyzing digital payments, fuel distribution, and municipal registries. *(Source: EclecticIQ Blog)*
+
+#### 2. Energy & Gas Sector
+* **Assaluyeh Gas Complex:** Houses the processing utilities for the giant South Pars field. Suffered heavy degradation (including Israeli drone vectors), knocking out processing trains and severely impacting domestic gas distribution. *(Source: Arab Center Washington DC)*
+* **Kharg Island & Qeshm Island Crude Terminals:** Major export hubs in the Gulf; repeatedly targeted by US/Israeli strikes to sever Iran's hard currency flow.
+* **National Power Grid:** Now stands as the primary target on the US operational menu, prompting Iran's threat to cut off Red Sea navigation in response.
+
+#### 3. Military & Nuclear Infrastructure
+* **IRGC Command Facilities:** Coordinated strikes targeted Islamic Revolutionary Guard Corps command centers, missile depots, and uranium enrichment sites in Tehran, Isfahan, Qom, Karaj, and Kermanshah. *(Source: CloudSEK)*
+
+---
+
+### Geopolitical Synthesis (2026)
+The "Infrastructure War" of 2026 proves that classical military superiority is no longer the sole arbiter of conflict; rather, the capacity to shield logistical arteries and secure the cyber domain defines modern state resilience. While Gulf nations successfully absorbed shocks and restored utility operations swiftly due to proactive defense assets, strikes on Iran have digitally and economically quarantined the state, forcing it to open suicidal choke-point fronts in Hormuz and Bab al-Mandab as desperate leverage options.`
+  },
+  {
     id: 'syria-terror-list-removal-2026',
     slug: 'syria-terror-list-removal-2026',
     focusKeyword: 'سوريا-شطب-الإرهاب-إعادة-الإعمار',

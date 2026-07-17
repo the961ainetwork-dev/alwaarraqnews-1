@@ -62,6 +62,7 @@ import { FuelProfiteeringInfographic } from './FuelProfiteeringInfographic';
 import { BdlSalamehInfographic } from './BdlSalamehInfographic';
 import { USSPRReleaseInfographic } from './USSPRReleaseInfographic';
 import { SyriaReconstructionInfographic } from './SyriaReconstructionInfographic';
+import { InfrastructureWarInfographic } from './InfrastructureWarInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -182,6 +183,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XIV: Unshackling - Removing Syria from Terror Lists & Transition to Reconstruction',
     descAr: 'تحقيق خاص يستكشف تداعيات شطب سوريا من قائمة الدول الراعية للإرهاب وفتح الأبواب لتدفق رؤوس الأموال والتمويلات الخليجية.',
     descEn: 'An in-depth investigation on the consequences of removing Syria from the US State Sponsors of Terrorism list and opening Gulf investment lanes.'
+  },
+  'infrastructure-war-gcc-iran-2026': {
+    fileId: 'AW-FILE-15',
+    badge: 'GEOPOLITICAL INTEL',
+    titleAr: 'الملف الخامس عشر: حرب البنى التحتية: شريان الحياة في مرمى النيران بين الخليج وإيران',
+    titleEn: 'Dossier XV: The Infrastructure War: Critical Lifelines in the Line of Fire',
+    descAr: 'رصد دقيق وشامل للنقاط المستهدفة، والإحصائيات، والأضرار المسجلة لقطاعات الملاحة والنفط والغاز والمطارات والفضاء السيبراني حتى يوليو 2026.',
+    descEn: 'An in-depth geopolitical intelligence brief detailing targeted critical hubs, damages, and systemic infrastructure casualties across GCC and Iran up to July 2026.'
   }
 };
 
@@ -253,7 +262,8 @@ export default function AlWarraqInvestigations({
       article.id === 'fuel-profiteering-cartel-2026' ||
       article.id === 'bdl-versus-salameh-2026' ||
       article.id === 'us-spr-release-172m-2026' ||
-      article.id === 'syria-terror-list-removal-2026'
+      article.id === 'syria-terror-list-removal-2026' ||
+      article.id === 'infrastructure-war-gcc-iran-2026'
     );
   });
 
@@ -854,6 +864,10 @@ export default function AlWarraqInvestigations({
                   ) : activeDossier.id === 'syria-terror-list-removal-2026' ? (
                     <div className="p-1 relative overflow-hidden rounded-md">
                       <SyriaReconstructionInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'infrastructure-war-gcc-iran-2026' ? (
+                    <div className="p-1 relative overflow-hidden rounded-md">
+                      <InfrastructureWarInfographic language={language} />
                     </div>
                   ) : null}
                 </div>
