@@ -2309,6 +2309,110 @@ Here lies the historic challenge: How can Iraq maintain balance while acting as 
 By a twist of historical irony, Baghdad stands today in a position unimaginable to the most optimistic Pentagon planners of 2003. The state dismantled under the banner of importing democracy has become the most critical diplomatic gravity center to de-escalate regional wars.
 
 President Trump trusts Al-Zaidi because he speaks the language of investments and numbers, seeing an opportunity to extract America from direct military entanglements through a self-funding business-and-anti-corruption formula. However, the success of this Iraqi gamble depends entirely on Baghdad's capacity to defuse the militia fuse before the late September deadline, without triggering a civil war that would burn everything, including the newly retrieved gold from the gutters of corruption.`
+  },
+  {
+    id: 'annahar-lebanon-destruction-2026',
+    slug: 'annahar-lebanon-destruction-2026',
+    focusKeyword: 'الجنوب-لبنان-تدمير-الخيام-بنت-جبيل-النهار',
+    category: 'lebanon',
+    categories: ['lebanon', 'instats', 'exclusives'],
+    titleAr: 'واقع البلدات الحدودية الجنوبية تحت وطأة التدمير الممنهج - تقرير صحفي مكتوب بقلم عباس صباغ في النهار',
+    titleEn: 'Southern Border Towns under the Weight of Systematic Destruction - An-Nahar Report by Abbas Sabagh',
+    summaryAr: 'خلاصة المشهد: تستمر العمليات العسكرية وجرافات الاحتلال في مسح وتفجير البلدات الحدودية في جنوب لبنان، على الرغم من إعلانات وقف إطلاق النار المتكررة منذ 17 نيسان الفائت. المعطيات الميدانية تشير لتدمير 15-20 ألف وحدة سكنية وتغيير جغرافيا المنطقة.',
+    summaryEn: 'An investigative report by Abbas Sabagh published in An-Nahar, examining the field reality of targeted towns and cities and the consequences of systematic infrastructure destruction in Southern Lebanon with 15,000 to 20,000 homes leveled.',
+    excerptAr: 'تقرير استقصائي لصحيفة النهار بقلم عباس صباغ يكشف حجم الكارثة في بلدات الجنوب اللبناني وخاصة الخيام وبنت جبيل وبيت ياحون وحولا والناقورة.',
+    excerptEn: 'An investigative report for An-Nahar by Abbas Sabagh revealing the scale of devastation in southern Lebanese towns, notably Khiyam, Bint Jbeil, Beit Yahoun, Houla, and Naqoura.',
+    author: {
+      nameAr: 'عباس صباغ',
+      nameEn: 'Abbas Sabagh',
+      titleAr: 'مراسل صحيفة النهار اللبنانية',
+      titleEn: 'An-Nahar Lebanon Correspondent',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-16',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    tags: ['الجنوب_اللبناني', 'التدمير_الممنهج', 'عباس_صباغ', 'النهار', 'الخيام', 'بنت_جبيل', 'بيت_ياحون', 'South_Lebanon', 'Annahar_Report', 'Abbas_Sabagh', 'Khiyam_Destruction', 'Bint_Jbeil'],
+    hashtags: ['SouthLebanon', 'Annahar', 'Khiyam', 'BintJbeil', 'BorderDevastation'],
+    views: 14210,
+    contentAr: `### خلاصة المشهد
+
+تستمر العمليات العسكرية وجرافات الاحتلال في مسح وتفجير البلدات الحدودية في جنوب لبنان، على الرغم من إعلانات وقف إطلاق النار المتكررة منذ 17 نيسان/ أبريل الفائت. وتُشير المعطيات الميدانية إلى أن عدد المنازل المدمرة بات يتراوح بين 15 و20 ألف وحدة سكنية، مما غيّر المعالم العمرانية والجغرافية للمنطقة كلياً.
+
+---
+
+### الواقع الميداني للبلدات والمدن المستهدفة
+
+#### 1. مدينة الخيام وبلدات القطاع الشرقي
+* **حجم التدمير**: شهدت مدينة الخيام تدميراً واسعاً وممنهجاً غيّر معالمها بالكامل، وتجاوزت نسبة الدمار في وسط المدينة وأطرافها 80%.
+* **المرافق الصحية والحيوية**: طاول القصف والتفجير مستشفى ميس الجبل الحكومي ومستشفى مرجعيون، إلى جانب تدمير شبكات ومحطات تكرير المياه، ومحولات الكهرباء، وشبكات الاتصال.
+* **المؤسسات والأسواق**: تدمير المدارس الرسمية والخاصة، المهنيات، وأكثر من 1500 مؤسسة تجارية وسوقاً تاريخياً في المنطقة.
+* **القطاع الزراعي**: جُرفت مساحات شاسعة من الأراضي الزراعية وحقول الزيتون والمساحات الخضراء بنسبة قاربت 80%، فضلاً عن نفوق آلاف الماشية.
+
+#### 2. مدينة بنت جبيل (عاصمة القضاء)
+* **الشقق المدمرة**: تُقدر الشقق المدمرة والمنسوفة بحوالي 6500 شقة سكنية.
+* **المعالم التاريخية والإدارية**: مسحت الجرافات السراي الحكومي القديم، ومبنى هيئة "أوجيرو"، ومجمع المدارس الرسمية، والأسواق التجارية القديمة التي تضم أكثر من 1000 محل تجاري ومؤسسة.
+
+#### 3. بلدة بيت ياحون
+* **التدمير الكامل**: بلغت نسبة التدمير في البلدة 100%.
+* **الواقع الحالي**: لم يعد هناك أي مبنى سكني، أو مدرسة، أو مركز زراعي وصحي قائم؛ حيث مُسحت البلدة بالكامل وتضررت طبيعتها البيئية والبيولوجية بشكل كلي.
+
+#### 4. بلدات حولا، مروحين، وأم التوت
+* **مروحين وأم التوت**: تدمير أكثر من 660 وحدة سكنية بالكامل، واستهداف مباشر لخزانات المياه الأساسية وشبكات الطاقة الشمسية البديلة.
+* **بلدة حولا**: شهدت عمليات تفجير لمربعات سكنية كاملة واستهداف المعالم الحيوية والدينية فيها.
+
+#### 5. الناقورة والبلدات الساحلية والحدودية
+* **خط النار الساحلي**: امتدت عمليات التجريف الممنهج من الناقورة صعوداً باتجاه القرى المجاورة مثل علما الشعب، يارين، والضهيرة.
+* **بلدات أخرى تحت القصف**: سُجل دمار هائل وشامل في بلدات عيتا الشعب، ميس الجبل، مركبا، عديسة، كفركلا، والوزاني.
+
+---
+
+### أبرز تداعيات التدمير الممنهج
+
+* **استهداف البنية التحتية الحيوية**: تركزت العمليات على تدمير محطات ضخ المياه، ومولدات البلدات، وشبكات الألياف البصرية لمنع عودة الحياة السريعة للأهالي.
+* **المعالم الدينية والأثرية**: لم تسلم المساجد، والكنائس، والحسينيات التاريخية، والمقامات الدينية في مختلف البلدات من عمليات التفجير المباشر.
+* **التهجير السكاني القسري**: تحولت القرى الحدودية إلى مناطق غير قابلة للسكن على المدى المنظور بسبب انعدام مقومات الحياة الأساسية، وصعوبة التنقل جراء تراكم الركام وتدمير الطرق الرئيسية بأسلوب تعسفي وممنهج.`,
+    contentEn: `### Field Summary
+
+Military operations and occupational bulldozers continue to level and detonate border towns in Southern Lebanon, despite repeated ceasefire declarations since last April 17. Field data indicates that the number of destroyed houses now ranges between 15,000 and 20,000 residential units, completely altering the urban and geographical features of the region.
+
+---
+
+### Field Reality of Targeted Towns and Cities
+
+#### 1. Khiyam City & Eastern Sector Towns
+* **Scale of Destruction**: Khiyam experienced massive, systematic destruction that completely altered its features, with the destruction rate in the city center and its outskirts exceeding 80%.
+* **Health & Critical Facilities**: Bombing and detonations hit Mays El-Jabal Governmental Hospital and Marjayoun Hospital, alongside the destruction of water treatment networks and stations, power transformers, and telecom networks.
+* **Institutions & Markets**: Public and private schools, technical vocational schools, and more than 1,550 commercial enterprises and historical markets in the region were destroyed.
+* **Agricultural Sector**: Vast areas of agricultural land, olive groves, and green spaces were bulldozed by nearly 80%, alongside the death of thousands of livestock.
+
+#### 2. Bint Jbeil City (District Capital)
+* **Destroyed Apartments**: Destroyed and demolished apartments are estimated at approximately 6,500 residential units.
+* **Historical & Administrative Landmarks**: Bulldozers leveled the old Government Serail, the Ogero telecom building, the public schools complex, and the old commercial markets, which house more than 1,000 shops and institutions.
+
+#### 3. Beit Yahoun Town
+* **Total Destruction**: The destruction rate in the town reached 100%.
+* **Current Reality**: No residential building, school, or agricultural/health center remains standing. The town has been completely wiped out, and its ecological and biological nature has been entirely devastated.
+
+#### 4. Houla, Marwahin, and Oum Al-Tout Towns
+* **Marwahin & Oum Al-Tout**: Destruction of more than 660 residential units entirely, alongside direct targeting of essential water reservoirs and alternative solar energy grids.
+* **Houla Town**: Witnessed the detonation of entire residential blocks and the targeting of vital and religious landmarks.
+
+#### 5. Naqoura & Coastal/Border Towns
+* **Coastal Fireline**: Systematic bulldozing extended from Naqoura upwards toward neighboring villages such as Alma El-Shaab, Yarin, and Al-Dhayra.
+* **Other Towns Under Fire**: Massive and comprehensive destruction was recorded in the towns of Ayta El-Shaab, Mays El-Jabal, Markaba, Adeisseh, Kafr Kila, and Al-Wazzani.
+
+---
+
+### Key Repercussions of Systematic Destruction
+
+* **Targeting Critical Infrastructure**: Operations focused on destroying water pumping stations, town generators, and fiber-optic networks to prevent a swift return of residents.
+* **Religious & Historical Landmarks**: Mosques, churches, historical Husseiniyas, and religious shrines in various towns did not escape direct detonation operations.
+* **Forced Population Displacement**: Border villages have turned into uninhabitable areas for the foreseeable future due to the absence of basic life necessities and the difficulty of movement caused by the accumulation of rubble and the arbitrary, systematic destruction of main roads.`
   }
 ];
 

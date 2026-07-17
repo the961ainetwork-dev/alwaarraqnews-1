@@ -12,7 +12,7 @@ interface InStatsProps {
 export default function InStats({ language, layoutMode, onSelectArticle }: InStatsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
-  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost'>('bdl-budget');
+  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction'>('bdl-budget');
   const [activeInsight, setActiveInsight] = useState<number | null>(1);
   const [isArticleExpanded, setIsArticleExpanded] = useState<boolean>(false);
 
@@ -144,11 +144,19 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
           </button>
           <button
             onClick={() => setActiveTab('us-iran-war-cost')}
-            className={`px-3 py-1 cursor-pointer transition-colors ${
+            className={`px-3 py-1 cursor-pointer transition-colors border-r border-black ${
               activeTab === 'us-iran-war-cost' ? 'bg-black text-white' : 'hover:bg-zinc-100 text-zinc-700'
             }`}
           >
             {isAr ? 'تكلفة حرب إيران' : 'Iran War Cost'}
+          </button>
+          <button
+            onClick={() => setActiveTab('lebanon-destruction')}
+            className={`px-3 py-1 cursor-pointer transition-colors ${
+              activeTab === 'lebanon-destruction' ? 'bg-black text-white' : 'hover:bg-red-50 text-red-750'
+            }`}
+          >
+            {isAr ? 'دمار الجنوب (النهار)' : 'Southern Devastation (An-Nahar)'}
           </button>
         </div>
       </div>
@@ -1373,6 +1381,202 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
             >
               <BookMarked size={16} />
               <span>{isAr ? 'مطالعة التقرير والمصدر' : 'Read Full Investigation'}</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Tab Panel 8: LEBANON DESTRUCTION (AN-NAHAR BY ABBAS SABAGH) */}
+      {activeTab === 'lebanon-destruction' && (
+        <div className="space-y-8 animate-fade-in text-right rtl:text-right ltr:text-left select-text">
+          {/* Top Panel Grid: Metrics */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Column: Key Destruction Metrics */}
+            <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
+              <div className="border border-black p-4 bg-red-50/50 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'المنازل والوحدات السكنية المدمرة' : 'TOTAL DESTROYED HOUSING UNITS'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-red-700">15K - 20K</span>
+                  <span className="text-xs text-red-650 font-bold flex items-center gap-0.5">
+                    <TrendingUp size={14} /> Units
+                  </span>
+                </div>
+                <p className="text-[12px] text-zinc-600 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'تستمر العمليات العسكرية وجرافات الاحتلال في مسح وتفجير البلدات الحدودية الجنوبية، مما غيّر المعالم الجغرافية للمنطقة كلياً حتى بعد إعلان وقف إطلاق النار.'
+                    : 'Military operations and bulldozers continue to detonate and raze southern border villages, completely altering the region\'s geographical features.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-4 bg-zinc-50 relative overflow-hidden">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                  {isAr ? 'تدمير عاصمة القضاء (بنت جبيل)' : 'BINT JBEIL URBAN TOLL'}
+                </span>
+                <div className="flex items-baseline gap-2 mt-1.5" dir="ltr">
+                  <span className="text-3xl font-black font-mono text-zinc-800">~6,500</span>
+                  <span className="text-xs text-zinc-600 font-bold flex items-center gap-0.5">
+                    Apartments Razed
+                  </span>
+                </div>
+                <p className="text-[12px] text-zinc-600 mt-2 leading-relaxed font-sans">
+                  {isAr 
+                    ? 'تقديرات الشقق المنسوفة والمدمرة تتجاوز ٦٥٠٠ شقة، مع جرف معالم حيوية مثل السراي الحكومي ومبنى أوجيرو ومجمع المدارس والأسواق القديمة.'
+                    : 'Destroyed and demolished apartments are estimated at ~6,500 units, with vital landmarks like the old Serail, Ogero, and historic souks completely leveled.'}
+                </p>
+              </div>
+
+              <div className="border border-black p-3 text-[10px] font-mono font-bold flex justify-between bg-black text-white items-center">
+                <span>{isAr ? 'بلدة بيت ياحون (نسبة التدمير):' : 'Beit Yahoun Destruction Rate:'}</span>
+                <span className="text-red-400">100% {isAr ? 'تدمير كامل ومسح شامل' : 'Completely Wiped Out'}</span>
+              </div>
+            </div>
+
+            {/* Center Column: Town Destruction Chart */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200 font-sans">
+                  {isAr ? 'مستويات التدمير التقريبية في البلدات المستهدفة' : 'Estimated Destruction Rates by Border Location'}
+                </span>
+
+                <div className="space-y-3.5 mt-4 font-mono">
+                  {[
+                    { nameAr: 'بلدة بيت ياحون (مسح كامل)', nameEn: 'Beit Yahoun (Wiped Out)', val: 100, pct: 'w-[100%]', color: 'bg-red-800' },
+                    { nameAr: 'مدينة الخيام والقطاع الشرقي', nameEn: 'Khiyam & Eastern Sector', val: 80, pct: 'w-[80%]', color: 'bg-red-700' },
+                    { nameAr: 'مدينة بنت جبيل (عاصمة القضاء)', nameEn: 'Bint Jbeil (District Capital)', val: 65, pct: 'w-[65%]', color: 'bg-amber-600' },
+                    { nameAr: 'مروحين وأم التوت (وحدات سكنية)', nameEn: 'Marwahin & Oum Al-Tout', val: 60, pct: 'w-[60%]', color: 'bg-zinc-700' },
+                    { nameAr: 'حولا وعيتا الشعب وميس الجبل', nameEn: 'Houla, Ayta, Mays & Others', val: 55, pct: 'w-[55%]', color: 'bg-zinc-500' }
+                  ].map((s, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+                        <span className="font-sans text-zinc-700 truncate max-w-[190px]">{isAr ? s.nameAr : s.nameEn}</span>
+                        <span>{s.val}%</span>
+                      </div>
+                      <div className="w-full h-2.5 bg-zinc-100 border border-zinc-200">
+                        <div className={`h-full ${s.color} ${s.pct}`}></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-[10px] text-zinc-500 text-center font-mono font-medium pt-3 border-t border-zinc-100 mt-4 leading-relaxed">
+                <span>{isAr ? 'المصدر والتقرير الميداني: صحيفة النهار اللبنانية • عباس صباغ' : 'Source & Field Investigation: An-Nahar Newspaper • Abbas Sabagh'}</span>
+              </div>
+            </div>
+
+            {/* Right Column: Key Repercussions */}
+            <div className="lg:col-span-4 border border-zinc-300 p-4 font-sans">
+              <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-200">
+                {isAr ? 'تداعيات التدمير الممنهج للبنية التحتية' : 'Systematic Infrastructure Repercussions'}
+              </span>
+
+              <div className="space-y-4 mt-4 text-[12px] font-sans">
+                <div className="border-b border-zinc-100 pb-2.5">
+                  <h5 className="font-bold text-red-800 mb-0.5">{isAr ? 'استهداف البنية التحتية الحيوية:' : 'Targeting Critical Infrastructure:'}</h5>
+                  <p className="text-zinc-600 text-[11px] leading-snug">
+                    {isAr 
+                      ? 'تركيز القصف والتفجير على محطات ضخ وتكرير المياه، مولدات الطاقة، ومحولات الكهرباء، وشبكات الألياف البصرية لمنع عودة الأهالي السريعة.'
+                      : 'Focused destruction of water pumping/treatment stations, electricity transformers, generators, and fiber-optic cables to prevent residents from returning.'}
+                  </p>
+                </div>
+
+                <div className="border-b border-zinc-100 pb-2.5">
+                  <h5 className="font-bold text-zinc-900 mb-0.5">{isAr ? 'المعالم التاريخية والدينية والأثرية:' : 'Historical & Religious Landmarks:'}</h5>
+                  <p className="text-zinc-600 text-[11px] leading-snug">
+                    {isAr 
+                      ? 'تعرض المساجد، الكنائس، الحسينيات والمقامات التاريخية لعمليات تفجير وتجريف مباشر مسحت هويتها التراثية وعمرها الممتد لمئات السنين.'
+                      : 'Direct demolition of mosques, churches, historic Husseiniyas, and shrines, wiping out cultural identity stretching back hundreds of years.'}
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="font-bold text-zinc-900 mb-0.5">{isAr ? 'التهجير السكاني القسري الطويل:' : 'Long-term Forced Displacement:'}</h5>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="text-2xl font-black font-mono text-red-650">80%+</span>
+                    <p className="text-zinc-600 text-[11px] leading-tight font-sans">
+                      {isAr 
+                        ? 'تدمير الأراضي الزراعية ونفوق آلاف الماشية، وتحويل القرى الحدودية لمناطق غير صالحة للسكن بسبب انعدام مقومات الحياة وتراكم الركام.'
+                        : '80% of agricultural lands and olive groves bulldozed. Towns are rendered uninhabitable due to destroyed roads, debris, and life scarcity.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Table: Town-by-Town Breakdown */}
+          <div className="border border-zinc-300 p-4">
+            <span className="text-xs font-black uppercase text-black block pb-2 border-b border-zinc-250 font-sans mb-4">
+              {isAr ? 'البيانات التفصيلية للبلدات والقطاعات المستهدفة حسب تقرير النهار' : 'Detailed Field Metrics by Sector (An-Nahar Investigation)'}
+            </span>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-zinc-200 text-xs md:text-sm font-sans">
+                <thead className="bg-zinc-50">
+                  <tr className="text-zinc-700 font-bold">
+                    <th className="px-4 py-2.5 text-right rtl:text-right ltr:text-left">{isAr ? 'البلدة / القطاع' : 'Location / Sector'}</th>
+                    <th className="px-4 py-2.5 text-center">{isAr ? 'معدل الدمار' : 'Destruction Est.'}</th>
+                    <th className="px-4 py-2.5 text-right rtl:text-right ltr:text-left">{isAr ? 'أبرز الأضرار والتفجيرات الحيوية' : 'Key Damage & Targets'}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-150 text-zinc-600">
+                  <tr className="hover:bg-zinc-50 transition-colors">
+                    <td className="px-4 py-2.5 font-bold text-zinc-900">{isAr ? 'الخيام والقطاع الشرقي' : 'Khiyam & Eastern Sector'}</td>
+                    <td className="px-4 py-2.5 text-center font-bold text-red-750">&gt; 80%</td>
+                    <td className="px-4 py-2.5">{isAr ? 'مسح وسط المدينة، استهداف مستشفيي ميس الجبل ومرجعيون، تدمير شبكات المياه والمحولات والمدارس و١٥٠٠ مؤسسة وتجريف ٨٠٪ من الأراضي.' : 'Widespread leveling, hospital attacks (Mays El-Jabal & Marjayoun), water/telecom grids, public/private schools, 1,500 commercial shops, 80% agriculture razed.'}</td>
+                  </tr>
+                  <tr className="hover:bg-zinc-50 transition-colors">
+                    <td className="px-4 py-2.5 font-bold text-zinc-900">{isAr ? 'بنت جبيل (عاصمة القضاء)' : 'Bint Jbeil (District Capital)'}</td>
+                    <td className="px-4 py-2.5 text-center font-bold text-amber-700">6,500 {isAr ? 'شقة' : 'units'}</td>
+                    <td className="px-4 py-2.5">{isAr ? 'نسف وتدمير حوالي ٦٥٠٠ شقة، تجريف السراي الحكومي القديم، مبنى أوجيرو، مجمع المدارس الرسمية والأسواق القديمة (١٠٠٠ محل تجاري).' : '6,500 units detonated, bulldozing of the old Serail, Ogero building, public schools, and ancient commercial souks (>1,000 shops).'}</td>
+                  </tr>
+                  <tr className="hover:bg-zinc-50 transition-colors">
+                    <td className="px-4 py-2.5 font-bold text-zinc-900">{isAr ? 'بيت ياحون' : 'Beit Yahoun'}</td>
+                    <td className="px-4 py-2.5 text-center font-bold text-red-800">100%</td>
+                    <td className="px-4 py-2.5">{isAr ? 'مسح شامل وكامل للبلدة بنسبة ١٠٠٪. لا توجد أي مدرسة أو مركز صحي أو زراعي قائم، إبادة بيولوجية وبيئية كاملة.' : 'Wiped out 100%. Zero schools, residential, agricultural or health facilities left. Complete ecological devastation.'}</td>
+                  </tr>
+                  <tr className="hover:bg-zinc-50 transition-colors">
+                    <td className="px-4 py-2.5 font-bold text-zinc-900">{isAr ? 'حولا، مروحين، وأم التوت' : 'Houla, Marwahin & Oum Al-Tout'}</td>
+                    <td className="px-4 py-2.5 text-center font-bold text-zinc-850">&gt; 660 {isAr ? 'وحدة' : 'units'}</td>
+                    <td className="px-4 py-2.5">{isAr ? 'تدمير أكثر من ٦٦٠ وحدة سكنية بالكامل في مروحين وأم التوت، واستهداف خزانات المياه وشبكات الطاقة الشمسية. تفجير مربعات سكنية في حولا.' : 'Over 660 houses razed in Marwahin & Oum Al-Tout, water storage and solar grids hit. Large housing blocks detonated in Houla.'}</td>
+                  </tr>
+                  <tr className="hover:bg-zinc-50 transition-colors">
+                    <td className="px-4 py-2.5 font-bold text-zinc-900">{isAr ? 'الناقورة والبلدات الساحلية' : 'Naqoura & Coastal Belt'}</td>
+                    <td className="px-4 py-2.5 text-center font-bold text-zinc-700">{isAr ? 'دمار واسع' : 'Massive Devastation'}</td>
+                    <td className="px-4 py-2.5">{isAr ? 'تجريف ممنهج من الناقورة وصعوداً إلى علما الشعب ويارين والضهيرة وعيتا الشعب وميس الجبل ومركبا وعديسة وكفركلا والوزاني.' : 'Systematic bulldozing on the coastal line from Naqoura to Alma El-Shaab, Yarin, Dhayra, Ayta El-Shaab, Mays El-Jabal, Markaba, Adeisseh, Kafr Kila, and Wazzani.'}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Bottom Callout & Click-Through Report Trigger */}
+          <div className="max-w-5xl mx-auto border-2 border-black p-5 bg-red-50/20 flex flex-col md:flex-row justify-between items-center gap-6 rounded-lg mt-6">
+            <div className="space-y-1.5 flex-1">
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-100 border border-red-200 px-2.5 py-0.5 rounded-full">
+                {isAr ? 'تحقيق استقصائي حصري - صحيفة النهار اللبنانية' : 'EXCLUSIVE FIELD INVESTIGATION - AN-NAHAR NEWSPAPER'}
+              </span>
+              <h4 className="font-sans font-black text-base text-zinc-900 leading-snug">
+                {isAr ? 'واقع البلدات الحدودية الجنوبية تحت وطأة التدمير الممنهج - بقلم عباس صباغ' : 'Southern Border Towns under the Weight of Systematic Destruction - By Abbas Sabagh'}
+              </h4>
+              <p className="text-xs text-zinc-600 font-sans leading-relaxed">
+                {isAr 
+                  ? 'التقرير الصحفي الكامل المنشور في صحيفة النهار الذي يسلط الضوء على تدمير ١٥ إلى ٢٠ ألف وحدة سكنية وجرف المعالم التاريخية والتداعيات البيئية والتهجير القسري الممنهج لأهالي الجنوب.'
+                  : 'The complete report published in An-Nahar detailing the destruction of 15,000 to 20,000 housing units, bulldozing of historic towns, and severe socio-economic and ecological devastation.'}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                if (onSelectArticle) {
+                  const art = INITIAL_ARTICLES.find(a => a.id === 'annahar-lebanon-destruction-2026');
+                  if (art) onSelectArticle(art);
+                }
+              }}
+              className="w-full md:w-auto px-5 py-3 bg-black text-white hover:bg-zinc-800 transition-colors font-sans font-black text-xs uppercase tracking-wider border-2 border-black hover:shadow-[4px_4px_0_0_rgba(185,28,28,1)] flex items-center justify-center gap-2 rounded cursor-pointer"
+            >
+              <BookMarked size={16} />
+              <span>{isAr ? 'مطالعة التحقيق بالكامل' : 'Read Full Investigation'}</span>
             </button>
           </div>
         </div>
