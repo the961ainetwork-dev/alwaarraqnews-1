@@ -10,7 +10,9 @@ import {
   Tag, 
   Compass,
   ArrowUpDown,
-  BookOpen
+  BookOpen,
+  MessageCircle,
+  Printer
 } from 'lucide-react';
 import { DOSSIER_DESKTOP_META } from './AlWarraqInvestigations';
 
@@ -408,181 +410,246 @@ export default function InCaseYouMissedIt({
         </div>
       </div>
 
-      {/* Main Responsive Columns Table */}
-      <div className="border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] overflow-hidden">
+      {/* Consolidated Executive Summary Section */}
+      <div className="border-4 border-black p-6 bg-zinc-900 text-white shadow-[6px_6px_0px_0px_#000] relative overflow-hidden my-6">
+        {/* watermark/stamp in background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none font-sans font-black text-6xl md:text-8xl tracking-widest uppercase pointer-events-none rotate-12">
+          {isAr ? 'ملخص سيادي' : 'SOVEREIGN BRIEF'}
+        </div>
+
+        <div className="relative z-10 space-y-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-zinc-700 pb-3">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse" />
+              <span className="font-mono text-xxs font-black tracking-wider uppercase text-red-500">
+                {isAr ? 'الموجز الاستخباري والسياسي الموحد' : 'CONSOLIDATED INTELLIGENCE DISPATCH'}
+              </span>
+            </div>
+            <div className="font-mono text-[10px] text-zinc-400">
+              {isAr ? 'بتوقيت بيروت ونيويورك: ١٧ يوليو ٢٠٢٦' : 'BEIRUT & NY TIME: JULY 17, 2026'}
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xl md:text-2xl font-black tracking-tight text-amber-400 font-sans">
+              {isAr 
+                ? 'التقرير الجامع للبرقيات الاستباقية: مسارات الالتفاف البديلة، ديون السيادة، وطوق الموارد' 
+                : 'CONSOLIDATED EXECUTIVE BRIEFING: Parallel Squeezes, Sovereign Debt, & Resource Blocks'}
+            </h3>
+            
+            <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-sans">
+              {isAr 
+                ? 'يشهد ميزان القوى الجيوسياسي تحولات متسارعة مع اشتداد الخناق الأميركي على طهران وانهيار تفاهمات المياه الإقليمية. يكشف تتبع البرقيات الميدانية عن تحركات محمومة من الفجيرة والخطوط الحديدية السعودية لتأسيس ممرات طاقة بديلة تتجاوز مضيق هرمز كلياً. بالتوازي، يعاد رسم خرائط البنية التحتية والمدفوعات الأهلية؛ بدءاً من شبكات الأقمار ميكروية المدار في سماء لبنان لتجاوز انقطاع كوابل الأعماق، وصولاً لتشغيل شبكات السداد الرقمية المدعومة بالبلوكشين للتغلب على شلل السيولة ومصير سندات اليوروبوندز اللبنانية عند مستوى ٢٢ سنتاً.'
+                : 'A major geopolitical shift is accelerating under intense sanctions and the breakdown of regional water-way pacts. Ground telemetry reveals intense coordinate maneuvers: UAE and Saudi Arabia are rapid-scaling East Coast pipelines and overland rail passes to bypass Strait of Hormuz choking points. Simultaneously, critical communication and domestic financial networks are being re-engineered—ranging from micro-satellite LEO constellations to secure sovereign data in Lebanese skies, to localized offline blockchain ledgers designed to settle neighborhood food trades in the face of distressed debt write-downs and Eurobonds captured in a 22-cent spiral.'}
+            </p>
+          </div>
+
+          {/* Buttons for Whole Summary */}
+          <div className="pt-4 flex flex-wrap items-center gap-3 border-t border-zinc-800">
+            {/* CTA Button */}
+            <button
+              onClick={() => {
+                if (onNavigateToSection) {
+                  onNavigateToSection('premium-pricing');
+                }
+              }}
+              className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
+            >
+              <BookOpen size={12} />
+              <span>{isAr ? 'اشتراك في برقيات التيلكس الحية' : 'SUBSCRIBE TO DIRECT TELEX ALERTS'}</span>
+            </button>
+
+            {/* WhatsApp Share Button */}
+            <a
+              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                isAr 
+                  ? `*الموجز الاستخباري الجامع من ديوان الورّاق (١٧ يوليو ٢٠٢٦)*\n\nتحولات متسارعة تشهدها المنطقة مع إعادة هيكلة ممرات الطاقة والاتصالات الموازية.\n\nاقرأ التقرير كاملاً:\n👉 ${window.location.origin}/section/in-case-you-missed-it`
+                  : `*Al-Warraq Consolidated Executive Briefing (July 17, 2026)*\n\nRapid strategic shifts in energy pipelines, micro-satellites and sovereign debt restructurings.\n\nRead the full telemetry:\n👉 ${window.location.origin}/section/in-case-you-missed-it`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
+            >
+              <MessageCircle size={12} />
+              <span>{isAr ? 'مشاركة عبر واتساب' : 'SHARE BRIEF VIA WHATSAPP'}</span>
+            </a>
+
+            {/* PDF Export Button */}
+            <button
+              onClick={() => {
+                window.print();
+              }}
+              className="px-4 py-2 bg-zinc-700 hover:bg-zinc-800 text-white font-mono text-xxs font-black uppercase transition-all shadow-[2px_2px_0px_0px_#fff] hover:shadow-none cursor-pointer flex items-center gap-1.5 rounded-none"
+            >
+              <Printer size={12} />
+              <span>{isAr ? 'تصدير الملخص كملف PDF' : 'EXPORT BRIEF AS PDF'}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Through-Reading Feed Layout */}
+      <div className="space-y-6">
         {filteredNewswires.length === 0 ? (
-          <div className="p-12 text-center text-zinc-400 font-serif italic text-sm">
+          <div className="border-4 border-black bg-white p-12 text-center text-zinc-400 font-serif italic text-sm shadow-[4px_4px_0px_0px_#000]">
             {isAr ? 'لا توجد برقيات تطابق شروط البحث والفلاتر المحددة.' : 'No newswire updates found matching your filter criteria.'}
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse table-auto">
-              <thead>
-                <tr className="bg-zinc-950 text-white font-mono text-[10px] md:text-xs tracking-widest uppercase border-b-4 border-black">
-                  <th className="py-4 px-4 text-center w-28 border-r border-zinc-800">
-                    {isAr ? 'التاريخ والرمز' : 'DATE & INDEX'}
-                  </th>
-                  <th className="py-4 px-4">
-                    {isAr ? 'البرقية والخلاصة والتحليل' : 'TELEGRAM BRIEF & SYNOPSIS'}
-                  </th>
-                  <th className="py-4 px-4 w-36 text-center border-l border-zinc-800">
-                    {isAr ? 'القسم' : 'CATEGORY'}
-                  </th>
-                  <th className="py-4 px-4 w-32 text-center border-l border-zinc-800">
-                    {isAr ? 'رابط الإحالة' : 'DESTINATION'}
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-300 font-sans">
-                {filteredNewswires.map((item, index) => {
-                  const categoryMapped = categoryNameMap[item.category] 
-                    ? (isAr ? categoryNameMap[item.category].ar : categoryNameMap[item.category].en) 
-                    : item.category.toUpperCase();
+          <div className="grid grid-cols-1 gap-6">
+            {filteredNewswires.map((item, index) => {
+              const categoryMapped = categoryNameMap[item.category] 
+                ? (isAr ? categoryNameMap[item.category].ar : categoryNameMap[item.category].en) 
+                : item.category.toUpperCase();
 
-                  const sectionId = item.isInvestigation ? 'alwarraq-investigations' : (item.url?.split('/').pop()?.split('?')[0] || 'all');
+              const sectionId = item.isInvestigation ? 'alwarraq-investigations' : (item.url?.split('/').pop()?.split('?')[0] || 'all');
+              
+              const realUrl = item.isInvestigation 
+                ? `${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`
+                : item.isArticleObject
+                  ? `${window.location.origin}/?article=${item.id}`
+                  : `${window.location.origin}/section/${sectionId}`;
                   
-                  const realUrl = item.isInvestigation 
-                    ? `${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`
-                    : item.isArticleObject
-                      ? `${window.location.origin}/?article=${item.id}`
-                      : `${window.location.origin}/section/${sectionId}`;
-                      
-                  const relativeUrlPath = item.isInvestigation
-                    ? `/section/alwarraq-investigations?dossier=${item.id}`
-                    : item.isArticleObject
-                      ? `/?article=${item.id}`
-                      : `/section/${sectionId}`;
+              const relativeUrlPath = item.isInvestigation
+                ? `/section/alwarraq-investigations?dossier=${item.id}`
+                : item.isArticleObject
+                  ? `/?article=${item.id}`
+                  : `/section/${sectionId}`;
 
-                  const handleNavigation = (e: React.MouseEvent) => {
-                    e.preventDefault();
-                    if (item.isInvestigation) {
-                      if (onSelectDossier) {
-                        onSelectDossier(item.id);
-                      }
-                      if (onNavigateToSection) {
-                        onNavigateToSection('alwarraq-investigations');
-                      }
-                    } else if (item.isArticleObject && item.articleObject) {
-                      if (onSelectArticle) {
-                        onSelectArticle(item.articleObject);
-                      }
-                    } else {
-                      if (onNavigateToSection) {
-                        onNavigateToSection(sectionId);
-                      }
-                    }
-                  };
+              const handleNavigation = (e: React.MouseEvent) => {
+                e.preventDefault();
+                if (item.isInvestigation) {
+                  if (onSelectDossier) {
+                    onSelectDossier(item.id);
+                  }
+                  if (onNavigateToSection) {
+                    onNavigateToSection('alwarraq-investigations');
+                  }
+                } else if (item.isArticleObject && item.articleObject) {
+                  if (onSelectArticle) {
+                    onSelectArticle(item.articleObject);
+                  }
+                } else {
+                  if (onNavigateToSection) {
+                    onNavigateToSection(sectionId);
+                  }
+                }
+              };
 
-                  return (
-                    <tr 
-                      key={item.id} 
-                      className="hover:bg-amber-500/5 transition-colors group align-top"
+              return (
+                <div 
+                  key={item.id}
+                  className="border-2 border-black p-6 bg-white shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#b91c1c] hover:border-[#b91c1c] transition-all duration-200 flex flex-col justify-between gap-4 relative group"
+                >
+                  {/* Story Index Stamp */}
+                  <div className="absolute top-4 left-4 font-mono text-[9px] font-black text-zinc-300 select-none group-hover:text-red-200 transition-colors">
+                    {(index + 1).toString().padStart(2, '0')} / {filteredNewswires.length}
+                  </div>
+
+                  <div className="space-y-3">
+                    {/* Metadata Row */}
+                    <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono text-zinc-500">
+                      <span className="inline-flex items-center gap-1 text-zinc-500 font-bold">
+                        <Calendar size={11} />
+                        <span>{isAr ? item.dateAr : item.date}</span>
+                      </span>
+                      <span className="text-zinc-300">•</span>
+                      <span className="font-extrabold text-red-700 uppercase tracking-wide">
+                        #{item.id.toUpperCase()}
+                      </span>
+                      <span className="text-zinc-300">•</span>
+                      <span className="inline-flex items-center gap-1 font-black uppercase px-1.5 py-0.5 bg-zinc-100 text-zinc-700 text-[9px] border border-zinc-200 rounded-sm">
+                        <Tag size={9} />
+                        {categoryMapped}
+                      </span>
+                    </div>
+
+                    {/* Headline */}
+                    <h4 
+                      onClick={handleNavigation}
+                      className="font-sans font-black text-base md:text-xl text-zinc-900 hover:text-[#b91c1c] transition-colors leading-snug cursor-pointer hover:underline"
+                      style={{ textAlign: isAr ? 'right' : 'left' }}
                     >
-                      {/* Column 1: Date & ID */}
-                      <td className="py-5 px-4 text-center border-r border-zinc-200 bg-zinc-50/50 font-mono text-[10px] space-y-1">
-                        <div className="flex items-center justify-center gap-1 text-zinc-500">
-                          <Calendar size={11} />
-                          <span>{isAr ? item.dateAr : item.date}</span>
-                        </div>
-                        <div className="font-extrabold text-red-700 tracking-wider">
-                          #{item.id.toUpperCase()}
-                        </div>
-                        <div className="text-[9px] text-zinc-400 font-medium">
-                          {(index + 1).toString().padStart(2, '0')} / {filteredNewswires.length}
-                        </div>
-                      </td>
+                      {isAr ? item.headlineAr : item.headlineEn}
+                    </h4>
 
-                      {/* Column 2: Headline & Synopsis */}
-                      <td className="py-5 px-5 space-y-2">
-                        <h4 
-                          onClick={handleNavigation}
-                          className="font-sans font-black text-sm md:text-base text-zinc-900 group-hover:text-red-700 transition-colors leading-snug cursor-pointer hover:underline"
-                          style={{ textAlign: isAr ? 'right' : 'left' }}
-                        >
-                          {isAr ? item.headlineAr : item.headlineEn}
-                        </h4>
-                        <p 
-                          className="text-xs md:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium"
-                          style={{ textAlign: isAr ? 'right' : 'left' }}
-                        >
-                          {isAr ? item.synopsisAr : item.synopsisEn}
-                        </p>
+                    {/* Reference Link row */}
+                    <div className="flex flex-wrap items-center gap-1.5" style={{ direction: 'ltr', justifyContent: isAr ? 'flex-start' : 'flex-start' }}>
+                      <span className="font-mono text-xxs font-bold text-zinc-400">SOURCE URL:</span>
+                      <a 
+                        href={realUrl}
+                        onClick={handleNavigation}
+                        className="font-mono text-[10px] text-red-700 hover:text-black font-semibold bg-zinc-50 border border-zinc-200 hover:border-black px-2 py-0.5 transition-colors flex items-center gap-1"
+                      >
+                        <span>{relativeUrlPath}</span>
+                        <ExternalLink size={9} />
+                      </a>
+                    </div>
 
-                        {/* Quick Action Share Row for Investigations */}
-                        {item.isInvestigation && (
-                          <div className="pt-2.5 flex flex-wrap items-center gap-1.5 text-[9px] font-mono select-none" onClick={(e) => e.stopPropagation()}>
-                            <span className="text-zinc-400 font-black uppercase tracking-wider">{isAr ? 'بث سريع:' : 'TRANSMIT:'}</span>
-                            
-                            {/* WhatsApp */}
-                            <a
-                              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تقرير استقصائي سيادي من الورّاق:\n\n' : 'Classified investigation dossier from Al-Warraq:\n\n'}*${isAr ? item.headlineAr : item.headlineEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`)}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="px-2 py-0.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold transition-colors uppercase rounded-none cursor-pointer"
-                              title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
-                            >
-                              WA
-                            </a>
+                    {/* Synopsis */}
+                    <p 
+                      className="text-xs md:text-sm text-zinc-600 leading-relaxed font-sans font-medium"
+                      style={{ textAlign: isAr ? 'right' : 'left' }}
+                    >
+                      {isAr ? item.synopsisAr : item.synopsisEn}
+                    </p>
+                  </div>
 
-                            {/* Copy Link */}
-                            <button
-                              onClick={() => {
-                                const shareUrl = `${window.location.origin}/?category=alwarraq-investigations&dossier=${item.id}`;
-                                navigator.clipboard.writeText(shareUrl).then(() => {
-                                  alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
-                                });
-                              }}
-                              className="px-2 py-0.5 bg-zinc-800 hover:bg-black text-white font-bold transition-colors border border-black cursor-pointer rounded-none"
-                            >
-                              LINK
-                            </button>
+                  {/* Story Action Buttons Toolbar */}
+                  <div className="pt-3 border-t border-zinc-100 flex flex-wrap items-center gap-2 text-xxs font-mono">
+                    {/* CTA: Read Full Story */}
+                    <button
+                      onClick={handleNavigation}
+                      className="px-3 py-1.5 bg-black hover:bg-zinc-800 text-white font-extrabold transition-colors cursor-pointer rounded-none uppercase flex items-center gap-1"
+                    >
+                      <BookOpen size={11} />
+                      <span>{isAr ? 'اقرأ كامل البرقية' : 'READ FULL DISPATCH'}</span>
+                    </button>
 
-                            {/* PDF Download */}
-                            <button
-                              onClick={() => {
-                                if (onSelectDossier) {
-                                  onSelectDossier(item.id);
-                                }
-                                if (onNavigateToSection) {
-                                  onNavigateToSection('alwarraq-investigations');
-                                }
-                                setTimeout(() => {
-                                  window.print();
-                                }, 300);
-                              }}
-                              className="px-2 py-0.5 bg-red-900 hover:bg-red-950 text-white font-bold transition-colors border border-red-950 cursor-pointer rounded-none"
-                              title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
-                            >
-                              PDF
-                            </button>
-                          </div>
-                        )}
-                      </td>
+                    {/* WhatsApp share story */}
+                    <a
+                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                        isAr 
+                          ? `*برقية سيادية من ديوان الورّاق:*\n\n*${item.headlineAr}*\n\n${item.synopsisAr}\n\n👉 اقرأ التفاصيل الكاملة:\n${realUrl}`
+                          : `*Sovereign Dispatch from Al-Warraq:*\n\n*${item.headlineEn}*\n\n${item.synopsisEn}\n\n👉 Read full details:\n${realUrl}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold transition-colors cursor-pointer rounded-none uppercase flex items-center gap-1"
+                      title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
+                    >
+                      <MessageCircle size={11} />
+                      <span>{isAr ? 'مشاركة' : 'SHARE'}</span>
+                    </a>
 
-                      {/* Column 3: Category */}
-                      <td className="py-5 px-4 text-center border-l border-zinc-200">
-                        <span className="inline-flex items-center gap-1 font-mono text-[10px] font-black uppercase px-2.5 py-1 bg-zinc-100 text-zinc-800 border border-zinc-300 rounded-sm">
-                          <Tag size={9} className="text-zinc-500" />
-                          {categoryMapped}
-                        </span>
-                      </td>
-
-                      {/* Column 4: URL */}
-                      <td className="py-5 px-4 text-center border-l border-zinc-200 bg-zinc-50/50">
-                        <a
-                          href={realUrl}
-                          onClick={handleNavigation}
-                          className="inline-flex items-center gap-1.5 font-mono text-xxs font-black text-red-700 hover:text-black hover:underline transition-colors uppercase border border-red-200 hover:border-black bg-white px-2.5 py-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-                        >
-                          <span>{relativeUrlPath}</span>
-                          <ExternalLink size={10} className="shrink-0" />
-                        </a>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                    {/* PDF Download story */}
+                    <button
+                      onClick={() => {
+                        if (item.isInvestigation) {
+                          if (onSelectDossier) {
+                            onSelectDossier(item.id);
+                          }
+                          if (onNavigateToSection) {
+                            onNavigateToSection('alwarraq-investigations');
+                          }
+                        } else if (item.isArticleObject && item.articleObject) {
+                          if (onSelectArticle) {
+                            onSelectArticle(item.articleObject);
+                          }
+                        }
+                        setTimeout(() => {
+                          window.print();
+                        }, 300);
+                      }}
+                      className="px-3 py-1.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-extrabold transition-colors border border-zinc-300 cursor-pointer rounded-none uppercase flex items-center gap-1"
+                      title={isAr ? 'حفظ بصيغة PDF' : 'Save as PDF'}
+                    >
+                      <Printer size={11} />
+                      <span>PDF</span>
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
