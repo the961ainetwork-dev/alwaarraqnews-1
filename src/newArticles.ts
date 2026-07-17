@@ -2433,7 +2433,7 @@ Military operations and occupational bulldozers continue to level and detonate b
       titleEn: 'Head of Parliamentary Affairs',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: '',
     date: '2026-07-17',
     readTimeAr: '٨ دقائق قراءة',
     readTimeEn: '8 min read',
