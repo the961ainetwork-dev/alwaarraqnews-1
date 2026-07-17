@@ -28,7 +28,7 @@ interface FrameworkAgreementInfographicProps {
 
 export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfographicProps> = ({ language }) => {
   const isAr = language === 'ar';
-  const [activeSubTab, setActiveSubTab] = useState<'timeline' | 'gains-losses' | 'bilingual-text' | 'secret-annex' | 'investigative-report'>('timeline');
+  const [activeSubTab, setActiveSubTab] = useState<'timeline' | 'gains-losses' | 'bilingual-text' | 'secret-annex' | 'investigative-report'>('bilingual-text');
   const [selectedArticleIdx, setSelectedArticleIdx] = useState<number>(0);
   const [showFullTextSideBySide, setShowFullTextSideBySide] = useState<boolean>(false);
 
@@ -416,7 +416,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
   ];
 
   return (
-    <div className="border-4 border-double border-amber-800 p-5 md:p-6 bg-[#fdfbf7] text-black relative my-8 shadow-[6px_6px_0px_0px_rgba(180,83,9,1)]">
+    <div className="border-4 border-double border-amber-800 p-5 md:p-6 bg-[#fdfbf7] text-black relative my-8 shadow-[6px_6px_0px_0px_rgba(180,83,9,1)] font-['Cairo']" style={{ fontFamily: "'Cairo', sans-serif" }}>
       {/* Top Banner Ribbon */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-amber-700"></div>
 
@@ -439,10 +439,10 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
           <Languages size={14} />
           <span>{isAr ? 'وثيقة ثنائية اللغة: العربية والإنجليزية' : 'Bilingual Document: Arabic & English'}</span>
         </div>
-        <h3 className="text-xl md:text-2xl font-black text-stone-900 font-sans tracking-tight">
+        <h3 className="text-xl md:text-2xl font-black text-stone-900 tracking-tight">
           {isAr ? 'واقع جيولوجي غير مبشر وجيوسياسي متفجر' : 'An Unpromising Geology & Explosive Geopolitics'}
         </h3>
-        <p className="text-xs md:text-sm text-stone-600 max-w-2xl font-serif leading-relaxed">
+        <p className="text-xs md:text-sm text-stone-600 max-w-2xl leading-relaxed">
           {isAr 
             ? 'يقدم هذا القسم تشريحاً تفاعلياً لاتفاق الإطار الثلاثي المبرم في واشنطن في ٢٦ حزيران ٢٠٢٦، متضمناً تحليلاً للأبعاد الاقتصادية واللوجستية والبنود الكاملة والملحق السري.'
             : 'This section provides an interactive, detailed breakdown of the Washington Trilateral Framework signed on June 26, 2026, comparing sovereign gains, physical realities, treaty articles, and the leaked annex.'}
@@ -453,7 +453,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
       <div className="flex flex-wrap items-center gap-1 border-b border-zinc-200 mb-6 pb-px overflow-x-auto">
         <button
           onClick={() => setActiveSubTab('timeline')}
-          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+          className={`px-4 py-2 text-xs md:text-sm font-bold cursor-pointer transition-all border-b-2 ${
             activeSubTab === 'timeline'
               ? 'border-amber-800 text-amber-850 bg-amber-50/50'
               : 'border-transparent text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
@@ -463,7 +463,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
         </button>
         <button
           onClick={() => setActiveSubTab('gains-losses')}
-          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+          className={`px-4 py-2 text-xs md:text-sm font-bold cursor-pointer transition-all border-b-2 ${
             activeSubTab === 'gains-losses'
               ? 'border-amber-850 text-amber-850 bg-amber-50/50'
               : 'border-transparent text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
@@ -473,17 +473,17 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
         </button>
         <button
           onClick={() => setActiveSubTab('bilingual-text')}
-          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+          className={`px-4 py-2 text-sm md:text-base font-black cursor-pointer transition-all border-b-2 ${
             activeSubTab === 'bilingual-text'
-              ? 'border-amber-850 text-amber-850 bg-amber-50/50'
-              : 'border-transparent text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50'
+              ? 'border-amber-850 text-amber-950 bg-amber-50'
+              : 'border-transparent text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100'
           }`}
         >
           📜 {isAr ? 'تصفح بنود الاتفاق الـ ١٤ حرفياً' : 'Examine the 14 Treaty Clauses Literally'}
         </button>
         <button
           onClick={() => setActiveSubTab('secret-annex')}
-          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+          className={`px-4 py-2 text-xs md:text-sm font-bold cursor-pointer transition-all border-b-2 ${
             activeSubTab === 'secret-annex'
               ? 'border-red-600 text-red-600 bg-red-50/30'
               : 'border-transparent text-zinc-500 hover:text-red-600 hover:bg-red-50/10'
@@ -493,7 +493,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
         </button>
         <button
           onClick={() => setActiveSubTab('investigative-report')}
-          className={`px-4 py-2 text-xs md:text-sm font-bold font-sans cursor-pointer transition-all border-b-2 ${
+          className={`px-4 py-2 text-xs md:text-sm font-bold cursor-pointer transition-all border-b-2 ${
             activeSubTab === 'investigative-report'
               ? 'border-amber-700 text-amber-800 bg-amber-50/40'
               : 'border-transparent text-zinc-500 hover:text-amber-800 hover:bg-amber-50/10'
@@ -535,7 +535,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <h4 className="text-base font-black text-zinc-900">
                       {isAr ? event.titleAr : event.titleEn}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-650 leading-relaxed font-serif">
+                    <p className="text-xs md:text-sm text-zinc-650 leading-relaxed font-sans">
                       {isAr ? event.descAr : event.descEn}
                     </p>
                     <div className="pt-2 border-t border-zinc-100 flex items-center justify-between text-[11px] font-bold text-zinc-500 font-mono">
@@ -582,7 +582,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <span className="w-1.5 h-1.5 bg-emerald-600 inline-block"></span>
                     {isAr ? gain.titleAr : gain.titleEn}
                   </h5>
-                  <p className="text-xs text-zinc-750 font-serif leading-relaxed">
+                  <p className="text-xs text-zinc-750 font-sans leading-relaxed">
                     {isAr ? gain.descAr : gain.descEn}
                   </p>
                 </div>
@@ -611,7 +611,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <span className="w-1.5 h-1.5 bg-red-600 inline-block"></span>
                     {isAr ? reality.titleAr : reality.titleEn}
                   </h5>
-                  <p className="text-xs text-zinc-750 font-serif leading-relaxed">
+                  <p className="text-xs text-zinc-750 font-sans leading-relaxed">
                     {isAr ? reality.descAr : reality.descEn}
                   </p>
                 </div>
@@ -624,7 +624,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
       {/* Tab 3: Bilingual Text Examiner */}
       {activeSubTab === 'bilingual-text' && (
         <div className="space-y-4">
-          <div className="bg-amber-50 border border-amber-200 p-4 text-xs font-serif text-amber-950 leading-relaxed space-y-1">
+          <div className="bg-amber-50 border border-amber-200 p-4 text-xs font-sans text-amber-950 leading-relaxed space-y-1">
             <p className="font-bold">
               ℹ️ {isAr 
                 ? 'النص الحرفي لبنود اتفاق الإطار الثلاثي الذي وقعه كل من لبنان والولايات المتحدة وإسرائيل في واشنطن يوم الجمعة ٢٦ حزيران ٢٠٢٦ متاح بالكامل أدناه.'
@@ -693,7 +693,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <h4 className="font-sans font-black text-sm text-zinc-950 border-r-2 border-amber-800 pr-2">
                       {articlesData[selectedArticleIdx].titleAr}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-800 font-serif leading-relaxed whitespace-pre-line bg-amber-50/20 p-3 border border-amber-100">
+                    <p className="text-xs md:text-sm text-zinc-800 font-sans leading-relaxed whitespace-pre-line bg-amber-50/20 p-3 border border-amber-100">
                       {articlesData[selectedArticleIdx].ar}
                     </p>
                   </div>
@@ -703,7 +703,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <h4 className="font-sans font-black text-sm text-zinc-950 border-l-2 border-amber-850 pl-2">
                       {articlesData[selectedArticleIdx].titleEn}
                     </h4>
-                    <p className="text-xs md:text-sm text-zinc-850 font-serif leading-relaxed whitespace-pre-line bg-zinc-50 p-3 border border-zinc-200">
+                    <p className="text-xs md:text-sm text-zinc-850 font-sans leading-relaxed whitespace-pre-line bg-zinc-50 p-3 border border-zinc-200">
                       {articlesData[selectedArticleIdx].en}
                     </p>
                   </div>
@@ -759,7 +759,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <h5 className="font-sans font-bold text-sm text-amber-850">
                       البند {article.num}: {article.titleAr}
                     </h5>
-                    <p className="text-xs md:text-sm text-zinc-800 font-serif leading-relaxed">
+                    <p className="text-xs md:text-sm text-zinc-800 font-sans leading-relaxed">
                       {article.ar}
                     </p>
                     {renderStoryActions(
@@ -783,7 +783,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                     <h5 className="font-sans font-bold text-sm text-amber-850">
                       Article {article.num}: {article.titleEn}
                     </h5>
-                    <p className="text-xs md:text-sm text-zinc-800 font-serif leading-relaxed">
+                    <p className="text-xs md:text-sm text-zinc-800 font-sans leading-relaxed">
                       {article.en}
                     </p>
                     {renderStoryActions(
@@ -814,7 +814,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
             <h4 className="text-lg font-black font-sans leading-tight">
               {isAr ? 'أسرار الملحق الأمني الإسرائيلي مع قائد الجيش جوزيف عون' : 'What the Israeli-Joseph Aoun Secret Security Annex Reveals'}
             </h4>
-            <p className="text-xs text-red-200 font-serif leading-relaxed">
+            <p className="text-xs text-red-200 font-sans leading-relaxed">
               {isAr 
                 ? 'إن الملحق الأمني السري بين إسرائيل ولبنان، في حال الكشف عنه، سيهز الأوساط السياسية لأنه يرفع الغطاء عن الهيكل الحقيقي المخفي وراء الاتفاق العلني. بينما يتحدث الاتفاق المعلن عن السيادة والانسحاب، يقلب الملحق المفاهيم رأساً على عقب ليعيد تصميم منظومة القرار الأمني اللبناني.'
                 : 'The secret Israel-Lebanon security annex, if revealed as expected, will shake Lebanon because it exposes the real architecture hidden behind the public framework. The public agreement speaks of sovereignty, withdrawal and reconstruction. The annex, however, appears to turn these words upside down.'}
@@ -834,7 +834,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               <h5 className="font-sans font-black text-sm text-white">
                 {isAr ? 'انعدام الجدول الزمني والانسحاب كـ"مكافأة"' : 'No Timetable: Withdrawal as a Reward'}
               </h5>
-              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed">
                 {isAr 
                   ? 'إسرائيل وحدها تحدد نطاق "المناطق التجريبية". لا توجد أي جداول زمنية محددة أو انسحاب تلقائي. كل خطوة معلقة حتى ينفذ لبنان جميع المطالب المفروضة؛ ليصبح الانسحاب الإسرائيلي مجرد مكافأة تُمنح بناءً على الرضا الفردي لتل أبيب.'
                   : 'Israel alone determines the scope of the so-called "pilot zones." It accepts no fixed timetable and no automatic withdrawal. Israeli redeployment becomes a reward granted only when Israel decides that Lebanon has performed satisfactorily.'}
@@ -852,7 +852,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               <h5 className="font-sans font-black text-sm text-white">
                 {isAr ? 'المنطقة الأمنية وصلاحية تدمير القرى' : 'Security Zones & IDF Access'}
               </h5>
-              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed">
                 {isAr 
                   ? 'إسرائيل تحدد المنطقة الأمنية وما يجب على الجيش اللبناني فعله داخلها. ويحتفظ جيش الاحتلال بحرية الحركة والتوغل العسكري الكامل في جميع أنحاء المنطقة تحت ذريعة مواجهة التهديدات، وهي صيغة تبرر الاستمرار في تدمير القرى بذريعة الأمن.'
                   : 'Israel defines the security zone, decide which areas are included, and what the Lebanese army must do inside them. The Israeli army keeps complete freedom of movement throughout the area under the pretext of confronting threat vectors.'}
@@ -870,7 +870,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               <h5 className="font-sans font-black text-sm text-white">
                 {isAr ? 'قوائم أهداف إسرائيلية والتحقق الميداني' : 'Israeli Target Lists & Verification'}
               </h5>
-              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed">
                 {isAr 
                   ? 'يتلقى الجيش اللبناني خرائط وإحداثيات وقوائم أهداف أعدتها إسرائيل وتمررها الولايات المتحدة. ويشرف فريق عسكري أمريكي على الأرض على التنفيذ، بل وترافق قوة عسكرية إسرائيلية الفريق الأمريكي في تفتيش الأراضي اللبنانية للتحقق ميدانياً.'
                   : 'The Lebanese army is expected to act on maps, coordinates, and target lists prepared by Israel and transmitted by the US. A US military team on soil supervises the process, potentially accompanied by Israeli military inspectors.'}
@@ -888,7 +888,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               <h5 className="font-sans font-black text-sm text-white">
                 {isAr ? 'ربط عودة السكان المدنيين بالرضا الأمني' : 'No Civil Return Without Approval'}
               </h5>
-              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed">
                 {isAr 
                   ? 'عودة المدنيين اللبنانيين وقرار بدء إعادة الإعمار ليسا حقوقاً سيادية تلقائية، بل هما مشروطان بمصادقة إسرائيل ورضاها عن التطبيق الفعلي للمطالب عبر الآلية الأمريكية المشتركة. تحول الإعمار إلى أداة ضغط سياسي واقتصادي باهظ.'
                   : 'The return of Lebanese civilians and the beginning of reconstruction are made conditional on this process. Residents cannot return before Israel is satisfied with the implementation, turning reconstruction into a tool of political pressure.'}
@@ -906,7 +906,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               <h5 className="font-sans font-black text-sm text-white">
                 {isAr ? 'غربلة واستبعاد الضباط بناء على ملفات استخباراتية' : 'Purging LAF Ranks Under Intel Lists'}
               </h5>
-              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed">
                 {isAr 
                   ? 'تقوم آلية بإشراف أمريكي بفحص الجيش اللبناني من الداخل لتحديد الضباط والجنود المتهمين إسرائيلياً بالوقوع تحت تأثير حزب الله. الدولة اللبنانية ملزمة قانوناً بفصل أي ضابط يرفض التعاون، مع إمكانية عزل قيادة الجيش بالكامل عند مخالفتها التوجيهات.'
                   : 'A US-supervised mechanism will examine the Lebanese army from within, using Israeli intelligence files to list and dismiss officers and soldiers suspected of Hezbollah links or refusal to comply with full-scale target audits.'}
@@ -924,7 +924,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
               <h5 className="font-sans font-black text-sm text-white">
                 {isAr ? 'صندوق رقابة أمريكي وفتح ملفات التحويلات' : 'Sovereign Financial Auditing Registry'}
               </h5>
-              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed">
                 {isAr 
                   ? 'يلتزم لبنان بملاحقة التحويلات المالية لحزب الله وحظر أموال الإعمار والتعافي إذا شابتها أي شكوك. يوصى الملحق بإنشاء صندوق مالي تحت سلطة لبنانية لكن بإشراف ورقابة أمريكية تامة لتدقيق تدفقات الأموال وضمان حرمان الشبكات الشيعية منها.'
                   : 'Lebanon is required to block money transfers and block funds justified as reconstruction support if suspected of benefiting Hezbollah. A financial fund under Lebanese authority but American supervision is established to audit flows.'}
@@ -949,7 +949,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                 <h5 className="font-sans font-black text-lg text-[#b91c1c] border-r-4 border-red-700 pr-3">
                   مضمون الملحق الأمني السري بين إسرائيل ولبنان
                 </h5>
-                <div className="text-xs md:text-sm text-zinc-800 font-serif leading-relaxed space-y-4 whitespace-pre-line bg-red-50/10 p-4 border border-red-100">
+                <div className="text-xs md:text-sm text-zinc-800 font-sans leading-relaxed space-y-4 whitespace-pre-line bg-red-50/10 p-4 border border-red-100">
                   {`إن الملحق الأمني السري بين إسرائيل ولبنان، في حال الكشف عنه كما هو متوقع، سيهز لبنان لأنه يرفع الغطاء عن الهيكل الحقيقي المخفي وراء الاتفاق العلني. الاتفاق المعلن يتحدث عن السيادة والانسحاب وإعادة الإعمار، لكن الملحق يقلب هذه المفاهيم رأساً على عقب.
 
 إسرائيل وحدها هي من يحدد نطاق ما يسمى "المناطق التجريبية" (Pilot Zones)، وهي لا تقبل بجدول زمني محدد أو انسحاب تلقائي. كل شيء يبقى معلقاً حتى ينفذ لبنان جميع المطالب المفروضة عليه. بالتالي، فإن إعادة انتشار القوات الإسرائيلية ليس التزاماً قانونياً، بل مكافأة تُمنح فقط عندما تقرر إسرائيل أن الأداء اللبناني كان مرضياً.
@@ -975,7 +975,7 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                 <h5 className="font-sans font-black text-lg text-zinc-900 border-l-4 border-zinc-800 pl-3">
                   What the Israel-Lebanon Secret Security Annex Reveals
                 </h5>
-                <div className="text-xs md:text-sm text-zinc-700 font-serif leading-relaxed space-y-4 whitespace-pre-line bg-zinc-50 p-4 border border-zinc-200">
+                <div className="text-xs md:text-sm text-zinc-700 font-sans leading-relaxed space-y-4 whitespace-pre-line bg-zinc-50 p-4 border border-zinc-200">
                   {`The secret Israel-Lebanon security annex, if revealed as expected, will shake Lebanon because it exposes the real architecture hidden behind the public framework. The public agreement speaks of sovereignty, withdrawal and reconstruction. The annex, however, appears to turn these words upside down.
 
 Israel alone determines the scope of the so-called “pilot zones.” It accepts no fixed timetable and no automatic withdrawal. Everything remains open until Lebanon carries out all the demands imposed on it. Israeli redeployment is therefore not a legal obligation. It becomes a reward granted only when Israel decides that Lebanon has performed satisfactorily.
@@ -1025,7 +1025,7 @@ If this document is made public, the earthquake in Lebanon will not come from su
             
             {/* Arabic Column */}
             <div className="space-y-6 text-right" dir="rtl">
-              <div className="bg-amber-50/50 p-5 border border-amber-100 font-serif text-sm text-zinc-800 leading-relaxed space-y-4">
+              <div className="bg-amber-50/50 p-5 border border-amber-100 font-sans text-sm text-zinc-800 leading-relaxed space-y-4">
                 <p className="font-bold text-zinc-950 text-base leading-relaxed">
                   بعد مرور أيام قليلة على توقيع "الاتفاق الإطاري الثلاثي" في واشنطن (26 حزيران 2026) بين لبنان وإسرائيل برعاية أمريكية، يترقب الشارع اللبناني والأوساط العسكرية ما إذا كان هذا الأسبوع سيحمل أولى علامات الترجمة الميدانية للاتفاق عبر انسحاب القوات الإسرائيلية من نقاط محددة. إلا أن المؤشرات الميدانية والتسريبات الدبلوماسية المرافقة لاجتماعات "آلية التنسيق" تكشف عن عقبات حَرِجة قد تحوّل "الاختبار الأول" إلى مواجهة سياسية وعسكرية معقدة.
                 </p>
@@ -1102,7 +1102,7 @@ If this document is made public, the earthquake in Lebanon will not come from su
 
                 <div className="border-t-4 border-amber-800 pt-4 bg-amber-50 p-4 border border-amber-200">
                   <h4 className="text-base font-black font-sans text-amber-950">الخلاصة الاستقصائية:</h4>
-                  <p className="text-xs font-serif text-zinc-900 font-medium">
+                  <p className="text-xs font-sans text-zinc-900 font-medium">
                     عملياً، يقع "اتفاق واشنطن" هذا الأسبوع في المنطقة الرمادية؛ فالخرائط جاهزة والنقاط محددة بدقة (زوطر وفرون)، لكن قرار الانسحاب الإسرائيلي بات رهينة صراع الإرادات حول "من يبدأ أولاً": انتشار الجيش اللبناني وتفكيك البنية التحتية المسلحة، أم وقف العمليات الحربية الإسرائيلية والانسحاب العسكري الشامل. وبناءً على المعطيات الحالية، فإن التراجع الإسرائيلي عن التنفيذ الفوري يرجّح بقاء التعبئة الميدانية على حالها طيلة الأيام المقبلة بانتظار بلورة آلية الرقابة الثلاثية.
                   </p>
                 </div>
@@ -1111,7 +1111,7 @@ If this document is made public, the earthquake in Lebanon will not come from su
 
             {/* English Column */}
             <div className="space-y-6 text-left" dir="ltr">
-              <div className="bg-zinc-50 p-5 border border-zinc-200 font-serif text-sm text-zinc-800 leading-relaxed space-y-4">
+              <div className="bg-zinc-50 p-5 border border-zinc-200 font-sans text-sm text-zinc-800 leading-relaxed space-y-4">
                 <p className="font-bold text-zinc-950 text-base leading-relaxed">
                   A few days after the signing of the trilateral "Framework Agreement" in Washington (June 26, 2026) between Lebanon and Israel under US mediation, the Lebanese street and military circles are closely watching whether this week will carry the first signs of practical translation of the agreement through the withdrawal of Israeli forces from specific points. However, field indicators and diplomatic leaks accompanying the meetings of the "coordination mechanism" reveal critical obstacles that may turn the "first test" into a complex political and military confrontation.
                 </p>
@@ -1188,7 +1188,7 @@ If this document is made public, the earthquake in Lebanon will not come from su
 
                 <div className="border-t-4 border-zinc-800 pt-4 bg-zinc-100 p-4 border border-zinc-200">
                   <h4 className="text-base font-black font-sans text-zinc-950">Investigative Summary:</h4>
-                  <p className="text-xs font-serif text-zinc-900 font-medium">
+                  <p className="text-xs font-sans text-zinc-900 font-medium">
                     Practically, the "Washington Agreement" is suspended in a gray zone this week; the maps are drawn and coordinates (Zoutar and Froun) are highly precise, but the Israeli withdrawal remains hostage to a battle of wills over "who begins first": the LAF's deployment and disarmament of armed structures, or the complete cessation of Israeli military operations and full-scale withdrawal. Based on current parameters, Tel Aviv's immediate implementation delays suggest that military mobilization is likely to persist in the coming days pending the final formulation of the trilateral monitoring body.
                   </p>
                 </div>
