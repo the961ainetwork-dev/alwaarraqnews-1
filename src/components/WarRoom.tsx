@@ -1085,6 +1085,104 @@ Despite the severity of the scenario, the probability remains moderate-to-low fo
   *Source: Al Jazeera*
 * **International Military Response**: A complete closure of Bab-el-Mandeb represents a red line for the United States, EU countries, and China (which has a military base in Djibouti). Any attempt at a full blockade would be met with an immediate, massive international military response to protect freedom of navigation.
 * **Drone and Missile Warfare (Effective Blockade)**: The most realistic probability—instances of which have already occurred—is an economic blockade via a "fire lock." Local forces (such as the Houthis) using anti-ship missiles and drones can make passage suicidal for commercial operators, achieving the effect of a closure without needing full naval control.`
+  },
+  {
+    id: 'ny-time-ruin-betrayal-2026',
+    codeName: 'NEW YORK DESPATCH',
+    titleAr: 'بتوقيت نيويورك والخراب: حين تصبح "خيانة" الحلفاء خبراً يوازي في أهميته تغطية مجازر الحروب!',
+    titleEn: 'New York Time & Ruin: When "Betrayal" of Allies Rivals War Massacre Coverage!',
+    summaryAr: 'قراءة استثنائية في المقال الافتتاحي لصحيفة وول ستريت جورنال حول التصويت الدراماتيكي في الكابيتول لحظر الأسلحة عن إسرائيل وتداعياته التاريخية والسياسية المشابهة لسيناريو فيتنام.',
+    summaryEn: 'An exceptional read of the Wall Street Journal editorial on the dramatic Capitol vote to block arms to Israel, its historical implications, and its eerie similarity to the Vietnam War finale.',
+    threatLevel: 'HIGH',
+    regionAr: 'الولايات المتحدة / الكابيتول / واشنطن - نيويورك',
+    regionEn: 'United States / Capitol / Washington - New York',
+    coordinates: '40.71° N, 74.00° W',
+    dateAr: '١٧ يوليو ٢٠٢٦',
+    dateEn: 'July 17, 2026',
+    sourceAr: 'بقلم: معن برازي - رئيس التحرير',
+    sourceEn: 'By: Maan Barazy - Editor-in-Chief',
+    contentAr: `### افتتاحية رئيس التحرير: بتوقيت نيويورك والخراب
+
+نقلت صحيفة "وول ستريت جورنال" (WSJ) قراءةً "مفجعة" -بالمعايير السياسية الأميركية- تكاد من فرط دلالاتها توازي في الأهمية التغطيات الميدانية الساخنة القادمة من خطوط النار وجبهات الحروب المشتعلة. المقال الافتتاحي للصحيفة جاء مشحوناً بسخرية سوداء وذهول مريب من تحوّل دراماتيكي داخل أروقة الكابيتول؛ حيث صوّت 103 نواب ديمقراطيين يوم الأربعاء لصالح مشروع قانون يهدف إلى حظر الأسلحة الأميركية عن إسرائيل وهي تخوض "حرباً متعددة الجبهات". الصحيفة اعتبرت خطوتهم هذه بمثابة "تخلٍّ صادم عن حليف"، وعلامة فارقة على السقوط السريع للحزب الديمقراطي في قبضة جناحه المناهض لإسرائيل، في استعادةٍ درامية لسيناريو خيانة أخرى جرت قبل نصف قرن.. في فيتنام!
+
+المفارقة الساخرة أن هذا المشروع الراديكالي -الذي يهدف لتجريد إسرائيل من كافة أشكال الدعم، بما في ذلك المساعدات الإنسانية والعسكرية، الدفاعية والهجومية على حد سواء- لم يكن من صنيعة الديمقراطيين أصلاً، بل طرحه النائب الجمهوري "الانعزالي" توماس ماسي (من ولاية كنتاكي). وكان هو الجمهوري الوحيد الذي صوّت لصالحه، ليسقط المشروع في النهاية بأغلبية 314 صوتاً مقابل 104.
+
+---
+
+### الصدمة الحقيقية: انقسام ديمقراطي حاد
+
+لكن "الصدمة" الحقيقية التي تستحق مانشيتات الحروب، تكمن في أن نصف الديمقراطيين تقريباً صوّتوا مع المشروع! ولم يكن هؤلاء مجرد نواب هامشيين، بل شملت القائمة رئيسة مجلس النواب السابقة نانسي بيلوسي، والرجل الثاني في قيادة الحزب كاثرين كلارك (من ماساتشوستس)، في حين فضّل 10 نواب آخرين التصويت بـ "ممتنع" في استعراض "شجاع" لعدم اتخاذ موقف! كلارك بررت موقفها قبل التصويت معلنةً بجرأة: "من الواضح أن الوضع الحالي غير قابل للاستمرار.. لا ينبغي لنا تقديم شيك على بياض لأي دولة لا تمتثل للقوانين والمصالح والقيم الأميركية، وحكومة بنيامين نتنياهو فشلت في تلبية هذا المعيار".
+
+بالطبع، تعقب "وول ستريت جورنال" بنبرة متهكمة: إسرائيل لم تنتهك أي قانون أميركي نعلمه. أما عن "المصالح الأميركية"، فإسرائيل تقاتل جنباً إلى جنب مع الولايات المتحدة ضد إيران، وتقاتل بمفردها وكلاء إيران الذين قتلوا أميركيين. إن الشراكة الدفاعية مع إسرائيل هي ميزة عسكرية أميركية تحافظ على التفوق التكنولوجي لواشنطن في مواجهة الخصوم. وعندما يصوّت الديمقراطيون للتخلي حتى عن منظومة "القبة الحديدية" الدفاعية، فإن هذا لا يعدو كونه "تخريباً ذاتياً" مدفوعاً بعداء أعمى لإسرائيل.
+
+---
+
+### استدعاء شبح فيتنام والانهيار التاريخي
+
+إن معارضة سياسات ترامب تجاه إيران شيء، أما اتخاذ خطوة راديكالية بقطع الحبل عن حليف صامد فشيء آخر تماماً. كيف أصبحت "القيم" الأميركية تفرض تجريد حليف من السلاح وهو يقاتل أعداء يطلقون الصواريخ على بلدات مدنية؟
+
+كل هذا المشهد يعيد إلى الأذهان النهاية الحزينة لحرب فيتنام، عندما قاتل الديمقراطيون لسنوات لقطع التمويل عن فيتنام الجنوبية, وقيدوا المساعدات، ورفضوا استغاثاتها في عام 1975، مما سمح للهجوم الشيوعي الفيتنامي الشمالي باجتياح الجنوب، ودفع بأكثر من مليون من "سكان القوارب" (اللاجئين) إلى عرض المحيط.
+
+هذا هو المنحدر الذي يبدو أن الحزب الديمقراطي -وبعض أطراف اليمين المتطرف- يتجهون نحوه بسرعة. ولعل الإشارة الأكثر تعبيراً هنا هي أن نائباً مثل سيث مولتون، الذي طالما اتسم بالعقلانية في السياسة الخارجية، صوّت لتجريد إسرائيل من السلاح لمجرد أنه ينافس في الانتخابات التمهيدية لمجلس الشيوخ الديمقراطي في ماساتشوستس؛ ما يعني أن القواعد الشعبية للحزب أصبحت هناك تماماً.
+
+---
+
+### الخلاصة الجيوسياسية: انزياح أيديولوجي عميق
+
+\`\`\`
+                         الخريطة الأيديولوجية للتصويت في الكابيتول
+                                            │
+               ┌────────────────────────────┴────────────────────────────┐
+               ▼                                                         ▼
+       الحزب الديمقراطي                                          الحزب الجمهوري
+   انقسام حاد (١٠٣ نواب مع الحظر)                           تماسك شبه تام ضد الحظر
+   نانسي بيلوسي وكاثرين كلارك مع الحظر                       (النائب توماس ماسي الاستثناء الوحيد)
+\`\`\`
+
+قد يقلل البعض من أهمية هذا التصويت البرلماني بحجة أن الجميع كان يعلم أن مشروع "ماسي" سيسقط لا محالة. لكن الخطأ الفادح يكمن في الاعتقاد بأن هذه مجرد حادثة عابرة. إن الزخم السياسي المناهض لإسرائيل ينمو ويتصاعد، وحتى لو أطاح الإسرائيليون برئيس الوزراء نتنياهو في انتخابات تشرين الأول (أكتوبر) المقبلة، فإن هذه الحركة الأيديولوجية ترى في إسرائيل "شراً مطلقاً" وفي الإرهابيين الفلسطينيين "ضحايا".
+
+باختصار؛ إن الحزب الذي أسسه هاري ترومان، الذي اعترف بإسرائيل في لحظة أزمة تأسيسها، يتحول اليوم بسرعة وبسخرية القدر إلى حزب "زهران ممداني" (الاشتكي الديمقراطي الراديكالي). إنها، بلا شك، خيانة للتاريخ.. خيانة تاريخية بكل المقاييس.`,
+    contentEn: `### Editor-in-Chief Editorial: New York Time & Ruin
+
+The Wall Street Journal (WSJ) published a "devastating" analysis—by American political standards—whose implications run so deep that they rival the heat of live battlefield coverage from active war zones. The journal's editorial was charged with dark irony and a sense of shock at a dramatic shift within the halls of Capitol Hill; on Wednesday, 103 Democratic representatives voted in favor of a bill aimed at banning U.S. weapons from Israel as it fights a "multi-front war." The Journal deemed their move a "shocking abandonment of an ally," marking a milestone in the Democratic Party’s swift descent into the grip of its anti-Israel wing, echoing a historic betrayal from half a century ago in Vietnam.
+
+The ultimate irony is that this radical bill—which targeted the stripping of all forms of support, including humanitarian, military, defensive, and offensive aid alike—was not even a Democratic creation. It was introduced by the "isolationist" Republican Representative Thomas Massie of Kentucky, who was the sole Republican to support it, leading the bill to fail in a final 314-104 vote.
+
+---
+
+### The Real Shock: A Deep Democratic Fracture
+
+However, the real shockworthy development is that nearly half of the House Democrats voted for the bill. These were not marginal backbenchers; the list included former House Speaker Nancy Pelosi and the second-ranking House Democrat Katherine Clark of Massachusetts, while 10 other Democrats chose to vote "present" in a "courageous" display of avoiding taking a stance. Before the vote, Clark boldly justified her position: "It is clear that the status quo is unsustainable... we should not write a blank check to any nation that does not align with American laws, interests, and values—and Benjamin Netanyahu’s government has failed to meet that standard."
+
+The Wall Street Journal reacted with biting sarcasm: Israel has not violated any American law that we know of. As for "American interests," Israel is fighting side-by-side with the United States against Iran, fighting alone against Iranian proxies who have killed Americans. The defense partnership with Israel is a military asset for the U.S. that maintains Washington's technological edge against adversaries. For Democrats to vote to abandon even the defensive "Iron Dome" system is nothing short of "self-sabotage" driven by blind hostility.
+
+---
+
+### Summoning the Ghost of Vietnam and Historical Collapse
+
+Opposing Trump's policy toward Iran is one thing; taking a radical step to cut the cord on a resilient ally is entirely another. How have American "values" come to dictate stripping an ally of weapons as they battle adversaries firing missiles at civilian towns?
+
+This entire spectacle recalls the sad end of the Vietnam War, when Democrats fought for years to cut off funding for South Vietnam, restricted aid, and ignored its desperate pleas in 1975, paving the way for the North Vietnamese communist offensive to overrun the South and driving more than a million "boat people" refugees into the ocean.
+
+This is the precipice toward which the Democratic Party—and some far-right factions—appear to be rapidly heading. The most telling sign is that a representative like Seth Moulton, historically known for rational foreign policy views, voted to disarm Israel simply because he is competing in a Democratic primary for the U.S. Senate in Massachusetts. This suggests the party's grassroots base has moved entirely to that corner.
+
+---
+
+### Geopolitical Summary: A Deep Ideological Shift
+
+\`\`\`
+                        Ideological Map of the Capitol Vote
+                                         │
+             ┌───────────────────────────┴───────────────────────────┐
+             ▼                                                       ▼
+      Democratic Party                                       Republican Party
+   Deep split (103 votes for ban)                         Near-total cohesion against ban
+   Nancy Pelosi & Katherine Clark supported ban            (Rep. Thomas Massie sole exception)
+\`\`\`
+
+Some might downplay this parliamentary vote, arguing that everyone knew the Massie bill was bound to fail. But the fatal error lies in believing this is just a passing anomaly. The anti-Israel political momentum is growing and escalating. Even if Israelis oust Prime Minister Netanyahu in the upcoming October elections, this ideological movement views Israel as an "absolute evil" and Palestinian terrorists as "victims."
+
+In short, the party founded by Harry Truman, who recognized Israel at the critical moment of its birth, is rapidly and ironically transforming into the party of Zohran Mamdani (the radical democratic socialist). It is, without a doubt, a historic betrayal—by all measures.`
   }
 ];
 
