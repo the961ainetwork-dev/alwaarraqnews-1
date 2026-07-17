@@ -941,6 +941,150 @@ Since the Red Sea / Bab-el-Mandeb corridor simultaneously faces choking or runs 
 * **The Long Detour**: Commercial container and tanker traffic must reroute around the Cape of Good Hope (South Africa), adding 10 to 14 days of extra transit time. This freezes billions in capital and imposes emergency shipping surcharges across all major global lines.
 * **Container Crunch**: The crisis trapped millions of empty containers inside closed Arabian Gulf hubs (like Jebel Ali), disrupting global equipment rotation and slowing down high-tech hardware supply chains worldwide.
 * **Agricultural Threat**: The Arabian Gulf produces about one-third of the world's internationally traded urea and ammonia. The disruption of fertilizer shipments through Hormuz threatens to reduce global agricultural crop yields by the next harvest cycle, transforming a naval war into a structural global food pricing issue.`
+  },
+  {
+    id: 'bab-el-mandeb-closure-2026',
+    codeName: 'GATE OF TEARS ANALYSIS',
+    titleAr: 'مضيق باب المندب وتداعيات الإغلاق الكامل في عام 2026',
+    titleEn: 'The Bab-el-Mandeb Strait and the Consequences of a Complete Closure in 2026',
+    summaryAr: 'دراسة جيوسياسية واستخبارية استثنائية حول تضاعف الأهمية الاستراتيجية لباب المندب كحلقة وصل بديلة وحرجة للتجارة العالمية، والأبعاد الاقتصادية والإنسانية الكارثية المترتبة على سيناريو الإغلاق الكامل.',
+    summaryEn: 'An exceptional intelligence and geopolitical study on the doubled strategic importance of the Bab-el-Mandeb Strait as an alternative maritime node, outlining the catastrophic economic and humanitarian impacts of a potential full closure scenario.',
+    threatLevel: 'HIGH',
+    regionAr: 'البحر الأحمر / مضيق باب المندب / القرن الإفريقي',
+    regionEn: 'Red Sea / Bab-el-Mandeb Strait / Horn of Africa',
+    coordinates: '12.58° N, 43.32° E',
+    dateAr: '١٧ يوليو ٢٠٢٦',
+    dateEn: 'July 17, 2026',
+    sourceAr: 'وحدة الرصد الجيوسياسي واللوجستي بالورّاق',
+    sourceEn: 'Al-Warraq Geopolitical & Logistical Monitoring Desk',
+    contentAr: `### الإطار الجغرافي: "بوابة الدموع"
+
+يُعد مضيق باب المندب، المعروف تاريخياً بـ "بوابة الدموع"، أحد أهم الشرايين الجيوسياسية والاقتصادية في العالم. يربط المضيق البحر الأحمر بخليج عدن والمحيط الهندي، ويمثل البوابة الجنوبية لقناة السويس. في ظل الاضطرابات الإقليمية المستمرة والحرب الإيرانية وتأثر مضيق هرمز في عام 2026، تضاعفت الأهمية الاستراتيجية لباب المندب كحلقة وصل بديلة وحرجة للتجارة العالمية.
+
+*المصدر: Al Jazeera + 2*
+
+---
+
+### أولاً: الأهمية الحالية بالأرقام والإحصائيات
+
+* **حجم التجارة العالمية**: يمر عبر المضيق ما بين 10% إلى 12% من إجمالي التجارة البحرية العالمية سنوياً، بقيمة تتجاوز 1 تريليون دولار.  
+  *المصدر: horn review*
+* **حركة الحاويات**: يستوعب المضيق وقناة السويس حوالي 30% من حركة نقل الحاويات عالمياً، وهو الرابط الأساسي لسلع آسيا المتجهة إلى الأسواق الأوروبية.
+* **إمدادات الطاقة**: يتدفق عبر المضيق حوالي 4.2 إلى 4.9 مليون برميل من النفط الخام والمنتجات البترولية يومياً، بالإضافة إلى شحنات ضخمة من الغاز الطبيعي المسال (LNG) المتجهة لأوروبا.  
+  *المصدر: Council on Foreign Relations*
+* **السلع الاستهلاكية والغذائية**: يعبر المضيق ثلث واردات أوروبا، بما في ذلك 13% من السيارات وأجزائها، والعديد من السلع الأساسية والمواد الزراعية كالقمح والأسمدة.  
+  *المصدر: Observer Research Foundation Middle East*
+
+---
+
+### ثانياً: سيناريو الإغلاق الكامل وتأثيره المباشر
+
+إذا أُغلق مضيق باب المندب بشكل كامل نتيجة تصعيد عسكري (مثل توسع هجمات جماعة أنصار الله "الحوثيين" أو زرع الألغام البحرية)، فإن التداعيات ستكون كارثية فوراً:  
+*المصدر: Al Jazeera*
+
+#### 1. الصدمة المزدوجة للطاقة والتجارة (معضلة هرمز وباب المندب)
+في ظل الإغلاق الفعلي الفترات السابقة لمضيق هرمز في عام 2026، فإن إغلاق باب المندب بالتزامن معه يعني شل ما يقرب من 25% من إمدادات النفط والغاز العالمية. هذا السيناريو قد يدفع بأسعار النفط (خام برنت) للقفز فوراً لتتجاوز حاجز 150 إلى 200 دولار للبرميل.
+
+#### 2. سلاسل الإمداد العالمية والبديل الإفريقي
+إغلاق المضيق يعني حظر الملاحة عبر قناة السويس تلقائياً. ستضطر السفن إلى الدوران حول إفريقيا عبر طريق رأس الرجاء الصالح. هذا البديل يفرض الأعباء التالية:  
+*المصدر: Observer Research Foundation Middle East + 2*
+
+* **زيادة في مسافة الرحلة**: زيادة في المسافة بنسبة تصل إلى 48%.
+* **زيادة زمن الشحن**: إضافة 10 إلى 14 يوماً إضافية لزمن الشحن.
+* **كلفة الوقود والـتأمين**: زيادة تكاليف الوقود بمقدار 1.2 إلى 1.8 مليون دولار لكل رحلة ذهاب وإياب، فضلاً عن قفزات في أقساط التأمين ضد مخاطر الحرب بنسب تتجاوز 1000%.
+
+---
+
+### ثالثاً: الأثر الاقتصادي والإنساني على المنطقة (الشرق الأوسط وإفريقيا)
+
+\`\`\`
+                       أثر إغلاق باب المندب على المنطقة
+                                      │
+         ┌────────────────────────────┼────────────────────────────┐
+         ▼                            ▼                            ▼
+   مصر (قناة السويس)          القرن الإفريقي واليمن          دول الخليج العربي
+  خسارة خطيرة للإيرادات        تفاقم المجاعة والأزمات        شلل موانئ البحر الأحمر
+   التي تدعم الموازنة           بسبب توقف استيراد           وتعطل خطوط الأنابيب البديلة
+  والاحتياطي النقدي.            المواد الغذائية والقمح.      (مثل خط شرق-غرب السعودي).
+\`\`\`
+
+* **مصر وقناة السويس**: تُعد مصر المتضرر الأكبر المباشر؛ حيث إن شل حركة باب المندب يُترجم مباشرة إلى توقف شبه تام لعوائد قناة السويس، وهي مصدر رئيسي للنقد الأجنبي للبلاد، مما يهدد الاستقرار المالي الإجمالي.
+* **اليمن ودول القرن الإفريقي (جيبوتي، إريتريا، الصومال)**: يعتمد القرن الإفريقي واليمن بشكل شبه كامل على المساعدات والواردات البحرية. إغلاق المضيق سيتسبب في أزمة أمن غذائي حادة، وتشير تقديرات الأمم المتحدة إلى احتمالية دفع 45 مليون شخص إضافي نحو انعدام الأمن الغذائي الحاد في المنطقة.
+* **المملكة العربية السعودية ودول الخليج**: رغم امتلاك السعودية لخط أنابيب "شرق-غرب" لنقل النفط إلى الموانئ على البحر الأحمر (ينبع) لتفادي أزمة هرمز، إلا أن إغلاق باب المندب يجعل موانئ البحر الأحمر محاصرة من الجنوب، مما يعطل استراتيجية الالتفاف التصديرية تماماً ويشل موانئ تجارية عملاقة كـ "ميناء جدة الإسلامي".
+
+---
+
+### رابعاً: ميزان الاحتماليات (هل الإغلاق الكامل ممكن؟)
+
+رغم خطورة السيناريو، فإن الاحتمالية تظل متوسطة إلى منخفضة للإغلاق الفيزيائي الكامل الطويل، ولكنه مرتفع جداً من حيث التعطيل العملياتي المستمر، وذلك للأسباب التالية:
+
+* **التعقيد الجغرافي**: يبلغ عرض المضيق 29 كم، وهو مقسوم بجزيرة "بريم" (ميون) اليمنيّة إلى قنوات ملاحة. تسيطر قوى مختلفة على ضفتيه (اليمن من الشرق، وجيبوتي وإريتريا من الغرب). لا تستطيع دولة واحدة إغلاقه قانونياً أو فيزيائياً بسهولة.  
+  *المصدر: Al Jazeera*
+* **الرد الدولي العسكري**: الإغلاق الكامل لباب المندب يمثل خطاً أحمر للولايات المتحدة، دول الاتحاد الأوروبي، والصين (التي تمتلك قاعدة عسكرية في جيبوتي). أي محاولة للإغلاق الشامل ستجابه برد عسكري دولي عنيف وفوري لحماية حرية الملاحة.
+* **سلاح المسيرات والصواريخ (الإغلاق الفعلي)**: الاحتمال الأقرب للواقع —والذي حدثت نماذج منه بالفعل— هو الإغلاق الاقتصادي بفرض حظر ناري؛ حيث تستطيع القوى المحلية (كالحوثيين) عبر الصواريخ المضادة للسفن والمسيرات جعل المرور انتحارياً للشركات التجارية، وهو ما يحقق تأثير الإغلاق دون الحاجة لسيطرة عسكرية بحرية كاملة.`,
+    contentEn: `### Geographical Framework: The "Gate of Tears"
+
+The Bab-el-Mandeb Strait, historically known as the "Gate of Tears," is one of the most critical geopolitical and economic arteries in the world. Connecting the Red Sea to the Gulf of Aden and the Indian Ocean, it represents the southern gateway to the Suez Canal. In light of ongoing regional conflicts, the Iranian war, and the disruption of the Strait of Hormuz in 2026, the strategic importance of Bab-el-Mandeb has doubled as an alternative and highly critical link for global trade.  
+*Source: Al Jazeera + 2*
+
+---
+
+### I. Current Importance in Numbers and Statistics
+
+* **Global Trade Volume**: Between 10% and 12% of total global maritime trade passes through the strait annually, with a value exceeding $1 trillion.  
+  *Source: horn review*
+* **Container Traffic**: The strait and the Suez Canal accommodate approximately 30% of global container shipping movement, serving as the primary link for Asian goods heading to European markets.
+* **Energy Supplies**: Around 4.2 to 4.9 million barrels of crude oil and petroleum products flow through the strait daily, alongside massive shipments of Liquefied Natural Gas (LNG) bound for Europe.  
+  *Source: Council on Foreign Relations*
+* **Consumer and Agricultural Goods**: The strait carries one-third of Europe's imports, including 13% of vehicles and automotive parts, as well as essential commodities and agricultural materials such as wheat and fertilizers.  
+  *Source: Observer Research Foundation Middle East*
+
+---
+
+### II. Full Closure Scenario and Immediate Impact
+
+If the Bab-el-Mandeb Strait is completely closed due to military escalation (such as expanded attacks by the Ansar Allah "Houthi" group or maritime mining), the consequences would be immediately catastrophic:  
+*Source: Al Jazeera*
+
+#### 1. The Double Energy and Trade Shock (The Hormuz & Bab-el-Mandeb Dilemma)
+In light of the effective closure of the Strait of Hormuz during previous periods in 2026, a simultaneous closure of Bab-el-Mandeb would paralyze nearly 25% of global oil and gas supplies. This scenario could push crude oil prices (Brent) to instantly surge past $150 to $200 per barrel.
+
+#### 2. Global Supply Chains and the African Alternative
+Closing the strait automatically blocks navigation through the Suez Canal. Vessels would be forced to circumnavigate Africa via the Cape of Good Hope. This alternative imposes severe burdens:  
+*Source: Observer Research Foundation Middle East + 2*
+* **Route Distance Increase**: A journey distance increase of up to 48%.
+* **Transit Delay**: Adding an extra 10 to 14 days of shipping time.
+* **Fuel and Insurance Costs**: An increase of $1.2M to $1.8M in fuel costs per round trip, alongside war risk insurance premium surges exceeding 1000%.
+
+---
+
+### III. Economic and Humanitarian Impact on the Region (Middle East & Africa)
+
+\`\`\`
+                     Impact of Bab-el-Mandeb Closure on the Region
+                                          │
+             ┌────────────────────────────┼────────────────────────────┐
+             ▼                            ▼                            ▼
+      Egypt (Suez Canal)           Horn of Africa & Yemen         Gulf Arab States
+    Severe revenue losses         Exacerbated famine & crisis    Red Sea ports paralyzed
+    supporting budget & forex     due to halting of food         and bypass pipelines (like
+    reserves stability.           and wheat imports.             Saudi East-West) blocked.
+\`\`\`
+
+* **Egypt and the Suez Canal**: Egypt would be the most direct major victim. Paralyzing Bab-el-Mandeb translates directly into a near-complete shutdown of Suez Canal revenues—a key source of foreign currency for the country, threatening overall fiscal stability.
+* **Yemen and the Horn of Africa (Djibouti, Eritrea, Somalia)**: The Horn of Africa and Yemen rely almost entirely on maritime imports and aid. A closure would trigger an acute food security crisis, with UN estimates predicting that an additional 45 million people could be pushed into severe food insecurity.
+* **Saudi Arabia and the Gulf States**: Although Saudi Arabia possesses the "East-West" pipeline to transport oil to Red Sea ports (Yanbu) to bypass a Hormuz crisis, the closure of Bab-el-Mandeb blockades the Red Sea ports from the south. This completely disrupts the export bypass strategy and paralyzes massive commercial hubs like the "Jeddah Islamic Port."
+
+---
+
+### IV. Balance of Probabilities (Is a Complete Closure Likely?)
+
+Despite the severity of the scenario, the probability remains moderate-to-low for a prolonged physical closure, but highly elevated for continuous operational disruption, due to:
+
+* **Geographical Complexity**: The strait is 29 km wide, split by Yemen's Perim (Mayun) Island into shipping channels. Different powers control its shores (Yemen on the east, Djibouti and Eritrea on the west). No single nation can easily block it legally or physically.  
+  *Source: Al Jazeera*
+* **International Military Response**: A complete closure of Bab-el-Mandeb represents a red line for the United States, EU countries, and China (which has a military base in Djibouti). Any attempt at a full blockade would be met with an immediate, massive international military response to protect freedom of navigation.
+* **Drone and Missile Warfare (Effective Blockade)**: The most realistic probability—instances of which have already occurred—is an economic blockade via a "fire lock." Local forces (such as the Houthis) using anti-ship missiles and drones can make passage suicidal for commercial operators, achieving the effect of a closure without needing full naval control.`
   }
 ];
 
