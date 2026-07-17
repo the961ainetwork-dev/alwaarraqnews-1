@@ -2543,6 +2543,152 @@ The executive branch did not escape the crossfire. Minister of Education Rima Ka
 ### Geopolitical Summary
 
 The sabotage of this legislative session proves once again that prisoners and their families, the national university, and reformist laws are nothing more than hostages in the market of Lebanese political blackmail.`
+  },
+  {
+    id: 'trump-squeeze-iran-economy-2026',
+    slug: 'trump-squeeze-iran-economy-2026',
+    focusKeyword: 'عقوبات-إيران-النفط-اقتصاد-ترامب',
+    category: 'lebanon',
+    categories: ['lebanon', 'middle-east', 'economy', 'instats'],
+    titleAr: 'تشديد الخناق الأميركي على إيران يضاعف آلام اقتصادها المترنّح',
+    titleEn: 'Trump’s Tightening Squeeze on Iran Will Heap More Pain on Its Battered Economy',
+    summaryAr: 'واشنطن تتحرك لحرمان طهران من إيراداتها الحيوية، مما يضاعف الضغوط المعيشية على شعبٍ يرزح تحت وطأة الأزمة والجمود المدمّر.',
+    summaryEn: 'Washington moves to deprive Tehran of much-needed revenue, raising pressure on a suffering population amid a destructive stalemate.',
+    excerptAr: 'تحقيق استقصائي حول قرار ترامب إعادة تشديد الحصار النفطي على إيران وتداعياته المعيشية والسياسية والسيناريوهات المحتملة للجمود المائي.',
+    excerptEn: 'An in-depth analysis of President Trump\'s decision to tighten the oil blockade on Iran, its socioeconomic fallout, and water-way stalemates.',
+    author: {
+      nameAr: 'ترجمات ديوان تحريات الورّاق',
+      nameEn: 'Al-Warraq Translations Desk',
+      titleAr: 'قسم الشؤون الدولية',
+      titleEn: 'International Affairs Desk',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: '',
+    date: '2026-07-16',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: false,
+    isFeatured: false,
+    isPremium: true,
+    tags: ['إيران', 'عقوبات_أميركية', 'دونالد_ترامب', 'مضيق_هرمز', 'أسعار_النفط', 'التضخم', 'Iran', 'US_Sanctions', 'Donald_Trump', 'Strait_of_Hormuz', 'Oil_Prices', 'Inflation_Iran'],
+    hashtags: ['IranEconomy', 'USSanctions', 'TrumpIranBlockade', 'MiddleEastEnergy'],
+    views: 14210,
+    contentAr: `### تشديد الخناق الأميركي على إيران يضاعف آلام اقتصادها المترنّح
+
+راهن الرئيس الأميركي دونالد ترامب على أن إعادة فرض الحصار المالي والنفطي على إيران، وإلغاء حقها في بيع النفط، سيؤدي إلى خنق اقتصاد النظام وإجباره على التخلي عن سيطرته على مضيق هرمز. وفي المقابل، تراهن طهران على قدرتها على الصمود والمقاومة.
+
+لكن الخطر الأكيد، على المدى القصير على الأقل، هو أن الضغوط الاقتصادية المتجددة ستلحق ضرراً بالغاً بالمواطنين الإيرانيين العاديين، وتخلق حالة من الجمود المدمّر في الممر المائي الاستراتيجي.
+
+وكانت القيادة المركزية الأميركية قد أعلنت عن توجيه ضربات لأهداف إيرانية لليوم السادس على التوالي يوم الخميس. وقد أدى انهيار اتفاق يونيو (حزيران) الرامي إلى إنهاء القتال إلى تراجع المكاسب الاقتصادية المؤقتة التي حظيت بها إيران، ليعود الخناق ويشتد مجدداً على الأسر الإيرانية التي باتت تشتري السلع الغذائية الأساسية بالدين (الائتمان). ومن المتوقع أن تتضاءل إيرادات النفط بسرعة، وستؤجل الشركات مجدداً استثماراتها، بينما ستخفض الأسر معدلات إنفاقها بشكل أكبر.
+
+لكن القادة الإيرانيين أثبتوا تاريخياً استعدادهم لفرض تكاليف باهظة للغاية على الشعب بدلاً من الرضوخ للمطالب الأميركية التي يرون أنها تهدد بقاء النظام واستمراره.
+
+وفي هذا الصدد، تقول إيلي جيرانمايه، الخبيرة في الشؤون الإيرانية لدى المجلس الأوروبي للعلاقات الخارجية: "إيران مستعدة لدفع ثمن باهظ جداً، بما في ذلك استمرار الحصار الأميركي، للحفاظ على سيطرتها على مضيق هرمز وتأمينها في المستقبل. في العقلية الإيرانية، الأمر يتعلق ببساطة بالبقاء يوماً آخر، ثم يوماً آخر".
+
+وأشار دبلوماسي إيراني إلى وجود انقسام متزايد داخل أروقة النظام بين البراغماتيين الذين يخشون أن يؤدي عودة الحصار إلى تفاقم الأوضاع الاقتصادية المتدهورة أصلاً، والصقور (المتشددين) الذين يرغبون في فرض السيطرة الكاملة على المضيق باعتباره ورقة ضغط قوية ومصيرية في مواجهة الولايات المتحدة الأميركية.
+
+---
+
+### تصاعد الضغوط وتراجع العائدات النفطية
+
+ومع ذلك، فإن الضغوط آخذة في التصاعد. ويقدر بعض المحللين أن استمرار الحصار لمدة تتراوح بين أربعة إلى خمسة أشهر كفيل بخفض عائدات النفط الإيرانية إلى ما يقارب الصفر، مما يحرم النظام من مصدره الرئيسي للنقد الأجنبي.
+
+ويخشى القادة الأكثر براغماتية في طهران أن يؤدي هذا التآكل الاقتصادي المتسارع إلى زعزعة استقرار النظام كما حدث في مطلع العام، وهو ما أطلق شرارة حملة قمع دموية ساهمت في اتخاذ ترامب لقرار خوض الحرب.
+
+وعلى أقل تقدير، تتزايد مخاطر الدخول في حالة جمود مدمّرة؛ حيث تفرض واشنطن آلاماً اقتصادية شديدة تفشل في ترجمتها سريعاً إلى تنازلات إيرانية ملموسة بشأن هرمز، بينما تترأس طهران مجتمعاً يزداد فقراً وضعفاً.
+
+ويوضح هادي كحال زاده، الخبير الاقتصادي والمسؤول السابق في مؤسسة الضمان الاجتماعي الإيرانية: "إن الحصار المتجدد سيكثف من هذه المصاعب ويغذي المزيد من تدهور قيمة العملة المحلية، والارتفاع الحاد في معدلات التضخم، ونقص السلع الأساسية، وإغلاق المصانع، وفقدان الوظائف. ولعل العامل الاقتصادي الأكثر تدميراً هو غياب أي أفق موثوق للاستقرار وحالة الضياع والترقب السائدة".
+
+---
+
+### لغة الأرقام وشحنات النفط العابرة
+
+في الأسابيع الأربعة التي تلت توقيع الولايات المتحدة وإيران لاتفاقهما الأولي، شحنت طهران ما يقرب من 70 مليون برميل من النفط تبلغ قيمتها التقديرية ما بين 5 إلى 6 مليارات دولار، وفقاً لبيانات مؤسسة "كيبلر" (Kpler) لتتبع السفن والشحنات.
+
+كما تمتلك إيران حوالي 100 مليون برميل من النفط المخزن في عرض البحر خارج منطقة الحصار. وستسمح هذه الإمدادات التي نجحت في عبور الطوق لإيران بالتخفيف من الصدمة الأولى للحصار. ومع ذلك، سيجبر الحصار طهران في نهاية المطاف على تخزين نفطها، وحينما تمتلئ صهاريج التخزين بالكامل، ستضطر إلى وقف عمليات الإنتاج كلياً.
+
+ويقول همايون فلكشاهي، كبير محللي النفط الخام لدى "كيبلر": "تأثير الحصار سيكون مشابهاً للحصار الأميركي المفروض في أبريل الماضي؛ حيث سينخفض الإنتاج، وتمتلئ المخازن بالكامل".
+
+---
+
+### معضلة التضخم والغذاء اليومي للمواطن
+
+يرزح الاقتصاد الإيراني بالفعل تحت الأعباء المشتركة لسنوات من العقوبات والتضخم المتصاعد. وقد أدت الحرب إلى تكثيف هذه الضغوط عبر تدمير المصانع، وتعطيل التجارة والمدفوعات الدولية، وقطع خدمة الإنترنت، وإضعاف العملة المحلية بشكل غير مسبوق.
+
+ووفقاً للإحصاءات الرسمية، ارتفعت أسعار المستهلكين في شهر يونيو بنسبة 88.6% مقارنة بالعام السابق. وفي الأيام القليلة الأولى من شهر يوليو وحده، ارتفع سعر طبق البيض في طهران بنسبة 40% ليصل إلى ما يعادل 3.30 دولار، وفقاً لوكالة أنباء "فارس" الإيرانية المقربة من الحرس الثوري الإيراني.
+
+ومن المتوقع أن ينكمش الناتج المحلي الإجمالي الإيراني بنسبة 5.4% هذا العام، وفقاً لتوقعات صندوق النقد الدولي (IMF) التي تم إعدادها قبل التصاعد الأخير في حدة القتال الساخن.
+
+ووفقاً لحسابات كحال زاده، فإن 3% فقط من الأسر الإيرانية قادرة على تحمل تكلفة السلة الغذائية الكاملة الموصى بها من قبل مسؤولي الصحة الإيرانيين. وتشتري العديد من العائلات المواد الغذائية الأساسية مثل الأرز واللحوم والمعكرونة بالدين عبر برنامج حكومي خاص. بينما قامت عائلات أخرى بإلغاء اللحوم تماماً من وجباتها وشراء المواد الأساسية بشكل تدريجي ومجتزأ نظراً لفقدان أجورهم لقيمتها الشرائية بشكل مستمر.
+
+ويقول مواطن يبلغ من العمر 41 عاماً يعيش في طهران متحدثاً عن واقعه المأساوي: "إنني أكافح لتأمين لقمة العيش فحسب".
+
+---
+
+### أزمة الدواء والكهرباء والكهوف المظلمة
+
+وتقول أستاذة فنون جامعية تبلغ من العمر 38 عاماً في طهران إن أسعار المستلزمات التي تحتاجها لعملها، مثل الفرش والدهانات واللوحات، تضاعفت منذ شهر مارس الماضي، ورغم أن العائلات لا تزال تشتري الأساسيات مثل الخبز وأنواع الجبن الأرخص ثمناً، إلا أنها تفعل ذلك تحت ضغوط مالية ونفسية خانقة.
+
+لكن خوفها الأكبر يكمن في طفلها الصغير المريض الذي يعتمد على جهاز الأكسجين الكهربائي والذي يهدده الانقطاع المستمر والمتكرر للتيار الكهربائي. وتقول بنبرة ملؤها القلق: "أخشى باستمرار أن تنقطع الكهرباء فجأة ويتوقف جهاز الأكسجين الخاص بطفلي عن العمل".
+
+والآن، يهدد الحصار الأميركي بتعميق هذا الضيق الخانق عبر استهداف المصدر الرئيسي للنقد الأجنبي الذي تحتاجه إيران لتمويل الواردات ودعم عملتها المحلية. فمع انخفاض الصادرات النفطية، تدخل دولارات أقل إلى الاقتصاد، مما يجعل أسعار الأغذية والأدوية والمكونات الصناعية المستوردة أكثر كلفة وندرة.
+
+ونتيجة لذلك، يقوم المصنعون الذين يواجهون تكاليف مرتفعة ونقصاً حاداً في المواد الأولية بخفض مستويات الإنتاج والاستغناء عن العمالة، مما يغذي حلقة مفرغة يعزز فيها الركود والتضخم بعضهما البعض. ويقدر كحال زاده أن الحرب ستؤدي إلى خسارة ما لا يقل عن 2 إلى 3 ملايين وظيفة في إيران.
+
+ورغم ذلك، تصر إيران على قدرتها على مواصلة بيع نفطها؛ حيث صرح وزير النفط الإيراني محسن باك نجاد يوم الثلاثاء بأن إيران نشرت واستخدمت منذ سنوات أنظمة وآليات مكنتها من الالتفاف على العقوبات الأميركية القاسية. وفي المقابل، كثفت وزارة الخزانة الأميركية من حملتها الصارمة لاستهداف ما يُعرف بـ "أسطول الظل" من السفن الناقلة، والشركات الواجهة، والمشترين الدوليين الذين يسهلون مبيعات النفط الإيراني.
+
+ومع ذلك، أظهر حصار أبريل الماضي مدى السرعة التي يمكن أن تنهار بها هذه التدفقات المالية؛ حيث تراجعت صادرات الخام الإيراني بشكل حاد قبل أن يسمح الاتفاق المؤقت باستئناف الشحنات النفطية في شهر يونيو الماضي.`,
+    contentEn: `### Editor-in-Chief Editorial: Trump's Tightening Squeeze on Iran
+
+President Trump is betting that reimposing the blockade on Iran and revoking its right to sell oil will throttle the regime’s economy and convince it to release its hold on the Strait of Hormuz. Tehran is betting it can hold out. 
+
+The danger is, in the short term at least, that the renewed economic pressure hurts ordinary Iranians and leaves a destructive stalemate in the waterway.
+
+U.S. Central Command announced strikes on Iranian targets for a sixth straight day on Thursday. The collapse of the June deal to end the fighting has reversed economic relief for Iran, putting the squeeze on households already buying groceries on credit. Oil revenues are likely to dwindle, businesses will again delay investment and households will cut spending even further.
+
+Iran’s leaders have historically proved willing to impose enormous costs on the population rather than accept demands they see as threatening the regime’s survival.
+
+“Iran is prepared to pay a very, very high cost, including the continued blockade by the American side, in order to retain and sustain this control over the Strait of Hormuz going forward,” said Ellie Geranmayeh, an Iran expert at the European Council on Foreign Relations. “In the Iranian mentality, it’s just about surviving another day, and then another day.”
+
+An Iranian diplomat said there is a deepening fracture in the regime between pragmatists who worry the return of the blockade will worsen the ailing economy and hard-liners who want to aggressively assert control of the strait as a powerful point of leverage over the U.S.
+
+But the pressure will mount. Some analysts estimate a blockade that lasts four to five months could reduce Iran’s oil revenues to close to zero, depriving the regime of its main source of hard currency. 
+
+Tehran’s most pragmatic leaders fear the economic erosion risks shaking the regime as it did at the start of the year, triggering a deadly crackdown that contributed to Trump’s decision to start the war. 
+
+At minimum, the risk is rising of an increasingly damaging stalemate where Washington inflicts severe economic pain that fails to translate quickly into Iranian concessions over the strait, while Tehran presides over a poorer and more precarious society.
+
+“The renewed blockade would intensify this hardship and feed into further currency depreciation, inflation, shortages, factory closures and employment losses,” said Hadi Kahalzadeh, an economist and former official in Iran’s Social Security Organization. “Perhaps the most damaging economic factor is the absence of a credible horizon for stabilization and the state of limbo.”
+
+In the four weeks since the U.S. and Iran signed their preliminary deal, Tehran shipped almost 70 million barrels of oil worth an estimated $5 billion to $6 billion, according to data provider Kpler. 
+
+Iran also had around 100 million barrels of oil already at sea outside the blockade zone. Supplies that have made it past the blockade will let Iran cushion its impact. Eventually, though, the blockade will force Iran to store its oil and, when its tanks fill up, shut in production.
+
+“The impact of the blockade will be similar to the U.S. blockade in April,” said Homayoun Falakshahi, head of crude oil analysis at Kpler. “Production will drop, inventories will fill up.” 
+
+Iran’s economy is already buckling under the combined weight of years of sanctions and soaring inflation. The conflict has intensified those pressures by damaging factories, disrupting trade and payments, shutting down internet access and further weakening the currency.
+
+Consumer prices in June were up 88.6% from a year earlier, according to official statistics. Just in the first few days of July, the price of a tray of eggs in Tehran shot up by 40%, to the equivalent of $3.30, according to Iran’s Fars news agency, which is close to the paramilitary Islamic Revolutionary Guard Corps.
+
+Iran’s gross domestic product is expected to shrink by 5.4% this year, according to forecasts by the International Monetary Fund prepared before the recent uptick in fighting. 
+
+According to Kahalzadeh’s calculations, only the top 3% of Iranian households are able to afford the full food basket recommended by Iranian health officials. Many families are buying basic groceries like rice, meat and pasta on credit via a government program. Others are eliminating meat from meals and purchasing staples one at a time as their wages lose value.
+
+“I’m struggling,” said one 41-year-old man in Tehran.
+
+People shopping at a market in Tehran in May.
+A market in Tehran in May. Atta Kenare/Agence France-Presse/Getty Images
+A 38-year-old university arts professor in Tehran said prices for supplies she needs for her work such as brushes, paints and canvases had doubled since March and although families were still buying essentials such as bread and cheaper varieties of cheese, they were doing so under intense pressure. 
+
+But her biggest fear is for her sick young child, who depends on an oxygen machine powered by unreliable electricity supply. “I am constantly worried that the power might go out and the child’s oxygen machine won’t work,” she said. 
+
+Now the blockade threatens to deepen that squeeze by attacking the principal source of the foreign exchange Iran needs to finance imports and support its currency. When oil exports decline, fewer dollars enter the economy, making imported food, medicine and industrial components more expensive. 
+
+Manufacturers facing higher costs and shortages then cut production and jobs, feeding a cycle in which recession and inflation reinforce each other. Kahalzadeh estimates that the war would lead to the loss of at least 2 million to 3 million jobs in Iran. 
+
+Iran insists that it can continue selling oil. Oil Minister Mohsen Paknejad said Tuesday that Iran has deployed systems for years that have enabled it to skirt U.S. sanctions. The U.S. Treasury has mounted a tougher crackdown on so-called shadow fleet ships, front companies and buyers that facilitate Iran’s oil sales.
+
+Still, the April blockade showed how abruptly those flows can collapse. Iranian crude exports fell sharply before the temporary agreement allowed shipments to resume in June.`
   }
 ];
 

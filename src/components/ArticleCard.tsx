@@ -48,6 +48,12 @@ export default function ArticleCard({
       'iran-frozen-assets-2026'
     ].includes(article.id);
 
+  const isLebanonBureau = 
+    article.category === 'lebanon' || 
+    article.categories?.includes('lebanon');
+
+  const shouldHideImage = hideImage || isLebanonBureau;
+
   const [copied, setCopied] = React.useState(false);
 
   const getShareUrl = () => `https://www.alwarraqnews.com/?article=${article.id}`;
@@ -314,7 +320,7 @@ export default function ArticleCard({
         }`}
       >
         <div className="flex flex-col lg:flex-row gap-6">
-          {!isInvestigative && !hideImage && (
+          {!isInvestigative && !shouldHideImage && (
             <div className="lg:w-7/12 relative overflow-hidden">
               <img
                 src={article.imageUrl}
@@ -430,7 +436,7 @@ export default function ArticleCard({
             : 'bg-white rounded-md border-2 border-black h-full hover:bg-zinc-50'
         }`}
       >
-        {!isInvestigative && !hideImage && (
+        {!isInvestigative && !shouldHideImage && (
           <div className="relative overflow-hidden aspect-video border-b border-black">
             <img
               src={article.imageUrl}

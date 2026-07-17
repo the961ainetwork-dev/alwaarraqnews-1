@@ -925,7 +925,7 @@ export default function ArticleViewer({
                   onSelectArticle={onSelectArticle || (() => {})} 
                 />
               </div>
-            ) : isInvestigative ? null : (
+            ) : (isInvestigative || article.category === 'lebanon' || article.categories?.includes('lebanon')) ? null : (
               <div className="relative overflow-hidden rounded-lg shadow-sm">
                 <img 
                   src={article.imageUrl} 
@@ -1435,7 +1435,7 @@ export default function ArticleViewer({
                         className="group flex flex-col border border-zinc-200 hover:border-[#b91c1c] bg-white p-3 transition-all cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5 duration-150"
                       >
                         {/* Compact thumbnail image */}
-                        {!isInvestigativeArticle(recArt) && (
+                        {!isInvestigativeArticle(recArt) && recArt.category !== 'lebanon' && !recArt.categories?.includes('lebanon') && (
                           <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
                             <img
                               src={recArt.imageUrl}
@@ -1510,7 +1510,7 @@ export default function ArticleViewer({
                         className="group flex flex-col border border-zinc-200 bg-white hover:border-[#b91c1c] active:border-black p-3 transition-all cursor-pointer shadow-sm hover:shadow-md"
                       >
                         {/* Compact thumbnail image */}
-                        {!isInvestigativeArticle(relArt) && (
+                        {!isInvestigativeArticle(relArt) && relArt.category !== 'lebanon' && !relArt.categories?.includes('lebanon') && (
                           <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
                             <img
                               src={relArt.imageUrl}
