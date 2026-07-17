@@ -2413,6 +2413,136 @@ Military operations and occupational bulldozers continue to level and detonate b
 * **Targeting Critical Infrastructure**: Operations focused on destroying water pumping stations, town generators, and fiber-optic networks to prevent a swift return of residents.
 * **Religious & Historical Landmarks**: Mosques, churches, historical Husseiniyas, and religious shrines in various towns did not escape direct detonation operations.
 * **Forced Population Displacement**: Border villages have turned into uninhabitable areas for the foreseeable future due to the absence of basic life necessities and the difficulty of movement caused by the accumulation of rubble and the arbitrary, systematic destruction of main roads.`
+  },
+  {
+    id: 'parliamentary-amnesty-charade-2026',
+    slug: 'parliamentary-amnesty-charade-2026',
+    focusKeyword: 'العفو-العام-مجلس-النواب-لبنان-القوات',
+    category: 'lebanon',
+    categories: ['lebanon', 'exclusives', 'instats'],
+    titleAr: 'سرحيّة "العفو" البرلمانية وسقوط الأقنعة.. المزايدات تطير بالنصاب وبقوانين البلاد',
+    titleEn: 'The Parliamentary "Amnesty" Charade and the Fall of Masks: How Bid-Warring Blew Quorum and Blocked Laws',
+    summaryAr: 'جاءت الجلسة التشريعية الأخيرة لتؤكد المؤكد؛ فالطبقة السياسية في لبنان لا تزال تمارس هوايتها المفضلة في "حوار الطرشان" وإدارة الظهر لملفات حقوقية وإنسانية بالغة الحساسية، محوّلة القوانين المصيرية إلى مجرد أوراق للمقايضة والابتزاز السياسي.',
+    summaryEn: 'The latest legislative session in Lebanon has once again proven the obvious: the Lebanese political class continues to play its favorite game of "the dialogue of the deaf," turning its back on sensitive humanitarian and civil rights files.',
+    excerptAr: 'تحقيق استقصائي حول تفجير الجلسة التشريعية ومناورات التعطيل التي طيرت النصاب وحرمت مئات الموقوفين وعائلاتهم من العفو العام وعرقلت الجامعة اللبنانية.',
+    excerptEn: 'An investigative report on the disruption of the legislative session and the political maneuvers that blew the quorum, blocking the general amnesty and Lebanese University reforms.',
+    author: {
+      nameAr: 'مكتب التحقيقات بالورّاق',
+      nameEn: 'Al-Warraq Investigative Desk',
+      titleAr: 'رئيس قسم الشؤون البرلمانية',
+      titleEn: 'Head of Parliamentary Affairs',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-17',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    tags: ['العفو_العام', 'مجلس_النواب', 'سمير_جعجع', 'نواف_سلام', 'أحمد_الأسير', 'الجامعة_اللبنانية', 'Amnesty_Law', 'Lebanese_Parliament', 'Samir_Geagea', 'Nawaf_Salam', 'Lebanese_University'],
+    hashtags: ['AmnestyLebanon', 'ParliamentCharade', 'LebanesePolitics', 'SectarianBazaar'],
+    views: 18940,
+    contentAr: `### تفجير الجلسة التشريعية ومناورات التعطيل
+
+جاءت الجلسة التشريعية الأخيرة لتؤكد المؤكد؛ فالطبقة السياسية في لبنان لا تزال تمارس هوايتها المفضلة في "حوار الطرشان" وإدارة الظهر لملفات حقوقية وإنسانية بالغة الحساسية، محوّلة القوانين المصيرية إلى مجرد أوراق للمقايضة والابتزاز السياسي. ما كان متوقعاً حصل بالفعل؛ فقد تم تفجير الجلسة التشريعية قبل مناقشة اقتراحي قانوني العفو العام وإلغاء عقوبة الإعدام، ليتأكد بالعين المجردة أن حزب «القوات اللبنانية» يفعل تماماً خلاف ما يقول، مضحّياً بوعوده الإنسانية والسياسية على مذبح الحسابات الفئوية الضيقة.
+
+فمن نافذة الوعود التي أغدقها مسؤولوه -وعلى رأسهم رئيس الحزب سمير جعجع شخصياً قبل أيام- على النواب السُنّة بمساندتهم في إطلاق سراح «الموقوفين الإسلاميين»، انزلقت كتلة «الجمهورية القوية» في الربع الساعة الأخير من المدة المسائية للجلسة نحو خيار الانسحاب. خطوة مدروسة أدت إلى فقدان النصاب القانوني، وبالتالي ترحيل ملف العفو العام إلى موعد آخر غير مسمى، مكرّسةً عمق "النوايا المبيتة" التي طالما تحصّنت خلف شعارات الشفافية والالتزام.
+
+---
+
+### سيناريو التعطيل: كيف طار النصاب؟
+
+بدأ مشهد الانهيار الفعلي مع الوصول إلى بند اقتراح قانون إلغاء عقوبة الإعدام. استعرض رئيس لجنة حقوق الإنسان، النائب ميشال موسى، الاقتراح، وتبعه رئيس كتلة «القوات»، النائب جورج عدوان، الذي أسهب في مطالعة حول ما أُنجز على صعيد إلغاء العقوبة، لينتهي بالمطالبة بإرجاء البحث إلى جلسة أخرى؛ حيث تبين أن المقاربة القواتية تريد التصويت على اقتراح قانون العفو العام أولاً، قبل المساس بعقوبة الإعدام.
+
+هذه المناورة جابهت اعتراضاً فورياً من النائب نبيل بدر الذي طلب الكلام معترضاً بشدة على تأجيل التصويت، فما كان من نواب «الجمهورية القوية» إلا أن بدأوا بالانسحاب الجماعي من القاعة، فارضين واقع العطالة التشريعية ومطيرين النصاب.
+
+---
+
+### ما وراء الكواليس: الصفقات المبتورة وخلفيات البازار السياسي
+
+هذا التفجير للجلسة أطاح بتفاهمات عريضة كانت قد صُبغت خلف الكواليس عبر اتصالات مكثفة قادها نواب سُنّة بدعم ومباركة من رئيس الحكومة نواف سلام. وكانت باكورة هذه الحراكات اجتماعاً تنسيقياً عُقد في مكتب نائب رئيس مجلس النواب، إلياس بو صعب، وحضره النواب: علي حسن خليل، ونبيل بدر، وعماد الحوت، وإيهاب مطر، وبموافقة ضمنية من النائبين وليد البعريني وبلال الحشيمي، بهدف تذليل العقبات قبل الخروج إلى التصويت العلني.
+
+في هذا الاجتماع، تم صياغة تسوية قانونية دقيقة تلائم كافة الأطراف، وشملت:
+1. **تعديل عقوبة الإعدام**: حذف عبارة «مشددة» من عقوبة الأشغال الشاقة المؤبدة البديلة، وعدم اعتبار المحكومين بأحكام ابتدائية ومُحالة إلى التمييز من محكومي الإعدام.
+2. **تخفيض العقوبات فعلياً**: تحديد عقوبة الإعدام بالحبس قرابة 21 سنة و7 أشهر فعلية، واستبدال عقوبة المؤبد بقرابة 12 سنة و7 أشهر فعلية.
+3. **توسيع مروحة العفو العام**: إدخال تعديلات تتيح للموقوفين أو المحكومين بادعاءات شخصية الاستفادة من تخفيض السنوات السجنية، مع استثناء جرائم شائنة كالاغتصاب والقتل العمدي.
+
+**الأثر الإنساني المجهض**: هذه الصيغة التسووية كانت كفيلة بإطلاق سراح أكثر من 80 شخصاً من «الموقوفين الإسلاميين» فوراً، والإفراج عن البقية خلال العامين الماضيين، ومن بينهم الشيخ أحمد الأسير. ورغم الوعود الهاتفيّة التي تلقاها المجتمعون من نواب قواتيين بالالتزام بالتصويت لصالح تعديلات العفو مع التحفظ على بنود الإعدام، إلا أن كل هذا الكلام "طار في الهواء" بمجرد صدور أمر العمليات من معراب.
+
+---
+
+### فوضى برلمانية وتصفية حسابات طائفية وتربوية
+
+لم تكن أروقة الجلسة أفضل حالاً؛ إذ سادتها فوضى عارمة تجاوزت ضوابط البرلمان والأصول اللياقية، مما استدعى تدخلات متكررة من رئيس المجلس نبيه بري للإمساك بزمام الأمور، فيما جهد النائب حسن خليل لتبريد الأجواء المتوترة وتخفيف الاحتقان الناتج عن السجالات العالية السقف والأخذ والرد حول اقتراحات نُوقشت سابقاً وضيعت وقت الجلسة. في المقابل، بدا لافتاً ومخزياً غياب عدد لا بأس به من الوزراء عن النقاشات، ليتضح عدم اطلاعهم أصلاً على تفاصيل البنود المطروحة على جدول الأعمال.
+
+وفي الوقت الذي خاض فيه نواب «القوات» معارك خاسرة بدعم من رئيس حزب الكتائب سامي الجميل، كان رئيس التيار الوطني الحر جبران باسيل أكثر هدوءاً ودبلوماسية في تمرير مواقفه وخوض معاركه بالتنسيق الهادئ مع الكتل الأخرى.
+
+أقوى المواجهات برزت في ملف تعديل قانون تنظيم الجامعة اللبنانية، الذي فُصّل للسماح لرئيس الجامعة الحالي بالترشح لولاية ثانية (وهو ما كان ممنوعاً سابقاً)، رابطاً التمديد باستكمال تشكيل مجلس الجامعة وإعادة انتظام هيئاتها القيادية. وبموجب الصيغة التي أُقرت، مُنحت الحكومة مهلة ستة أشهر لاستكمال التعيينات المطلوبة متزامنة مع تعيين مجلس الجامعة. هذا البند شهد اصطفافاً طائفياً حاداً؛ حيث عارضه نواب القوات والكتائب شرساً، بينما تمسّك به نواب «الثنائي الشيعي»، لتمر التعديلات في النهاية بالتصويت كما أراد فريق بري تماماً.
+
+---
+
+### السقوط الأخلاقي في لغة الخطاب
+
+ولم تخلُ الجلسة من انحدار لغوي يعكس أزمة الخطاب السياسي؛ فعند مناقشة بند السماح للضباط بالتعليم في المعاهد الدراسية العليا، خرج النائب سامي الجميل عن الأصول منتقداً النائب جهاد الصمد بالقول: "ما بنزل لهيك مستوى"، ليرد عليه الصمد بقسوة: "صحيح، مستواك أوطى من هيك يا واطي".
+
+ولم تسلم السلطة التنفيذية من الشظايا؛ إذ واجهت وزيرة التربية، ريما كرامي، انتقادات حادة ومطالبات بالاعتذار بعد وصفها بعض النواب بـ«الغوغائيين». هذا الجو المشحون دفع النائبة بولا يعقوبيان لمطالبة وزير الدفاع، ميشال منسى، بالاعتذار منها على خلفية بيان سابق له اعتبرته خارجاً عن الأصول، إلا أن المفاجأة الكوميدية-السياسية تمثلت في خروج النائب المقرب منها، فراس حمدان، ليوجه تحية لوزير الدفاع على "ذوقه"، في مشهد يختصر حجم التشرذم والتناقض حتى داخل الصف الواحد.
+
+---
+
+### الخلاصة الاستقصائية
+
+إن تفجير الجلسة التشريعية يثبت مجدداً أن الموقوفين وعائلاتهم، والجامعة الوطنية، والقوانين الإصلاحية، ليست سوى رهائن في بازار الابتزاز السياسي اللبناني.`,
+    contentEn: `### Derailment of the Legislative Session & Obstruction Maneuvers
+
+The latest legislative session in Lebanon has once again proven the obvious: the Lebanese political class continues to play its favorite game of "the dialogue of the deaf," turning its back on sensitive humanitarian and civil rights files. Crucial laws are transformed into mere bargaining chips for political blackmail. What was expected has indeed happened; the session was detonated before discussing the proposed bills on General Amnesty and the Abolition of the Death Penalty. This exposed how the Lebanese Forces (LF) party acts contrary to its public claims, sacrificing its humanitarian and political promises on the altar of narrow factional interests.
+
+Despite the lavish promises made by LF officials—led by party leader Samir Geagea himself just days ago—to Sunni MPs to support them in securing the release of the "Islamist detainees," the "Strong Republic" bloc opted for a sudden withdrawal in the final quarter-hour of the evening session. This calculated move shattered the legal quorum, indefinitely shelving the general amnesty file and cementing the "premeditated intentions" hidden behind slogans of transparency and commitment.
+
+---
+
+### The Disruption Scenario: How the Quorum Vanished
+
+The actual breakdown began when the session reached the proposal to abolish the death penalty. The Chairman of the Human Rights Committee, MP Michel Moussa, presented the proposal. He was followed by the head of the LF bloc, MP Georges Adwan, who expounded at length on what had been accomplished regarding the abolition of the penalty, only to conclude by requesting a postponement of the debate to another session. It became clear that the LF approach was designed to force a vote on the General Amnesty bill first, before touching the death penalty.
+
+This maneuver faced immediate objection from MP Nabil Bader, who strongly protested postponing the vote. In response, the MPs of the "Strong Republic" bloc launched a collective exit from the chamber, imposing a legislative vacuum and blowing the quorum.
+
+---
+
+### Behind the Scenes: Aborted Deals and Political Bazaar
+
+This session explosion destroyed broad agreements that had been crafted behind closed doors through intense contacts led by Sunni MPs, backed by Prime Minister Nawaf Salam. The seed of these efforts was a coordination meeting held in the office of Deputy Speaker Elias Bou Saab. It was attended by MPs Ali Hassan Khalil, Nabil Bader, Imad Hout, and Ihab Matar, with implicit approval from MPs Walid Al-Baarini and Bilal Al-Hushaimi, aiming to clear obstacles before a public vote.
+
+In this meeting, a precise legal compromise was drafted to satisfy all parties, which included:
+1. **Amending the Death Penalty**: Deleting the term "aggravated" from the alternative life hard labor sentence, and ensuring that those with primary sentences pending appeal are not treated as death row inmates.
+2. **Effective Sentence Reduction**: Capping the death sentence at approximately 21 years and 7 months of actual imprisonment, and replacing life sentences with approximately 12 years and 7 months of actual time.
+3. **Broadening General Amnesty**: Introducing amendments allowing detainees or those convicted under personal claims to benefit from sentence reductions, while excluding heinous crimes such as rape and premeditated murder.
+
+**The Aborted Humanitarian Impact**: This compromise formula would have immediately released over 80 "Islamist detainees" and freed the rest over the last two years, including Sheikh Ahmad Al-Assir. Despite receiving telephonic assurances from LF MPs promising to vote in favor of the amnesty amendments (while reserving judgment on the death penalty clauses), all these verbal commitments evaporated as soon as instructions were issued from Maarab.
+
+---
+
+### Parliamentary Chaos and Sectarian-Educational Scores
+
+The atmosphere inside the chamber was no better. It was dominated by chaos that violated parliamentary rules and decorum, prompting repeated interventions by Speaker Nabih Berri to restore order. Meanwhile, MP Hassan Khalil scrambled to cool tempers and defuse the high-pitched arguments that wasted precious session time. On the other hand, the absence of a significant number of ministers from the debates was both striking and shameful, making it obvious that they had not even read the details of the items on the agenda.
+
+While LF MPs fought losing battles with the backing of Kataeb Party leader Samy Gemayel, Free Patriotic Movement leader Gebran Bassil was calmer and more diplomatic, passing his positions and fighting his battles through quiet coordination with other blocs.
+
+The fiercest confrontation emerged over the amendment of the Lebanese University Organization Law. The amendment was tailored to allow the current university president to run for a second term (which was previously prohibited), linking the extension to completing the formation of the university council and restoring its leadership bodies. Under the approved formula, the government was granted a six-month deadline to complete the necessary appointments. This clause witnessed a sharp sectarian alignment: it was fiercely opposed by LF and Kataeb MPs, while the "Shiite Duo" MPs clung to it, eventually passing the amendments as Berri's team desired.
+
+---
+
+### Ethical Degradation in Political Discourse
+
+The session was also marred by verbal degradation reflecting the deep crisis in Lebanese political discourse. During the discussion on allowing military officers to teach in higher education institutes, MP Samy Gemayel broke decorum, criticizing MP Jihad Al-Samad by saying: "I will not descend to such a level." Al-Samad retaliated harshly: "Indeed, your level is far lower than that, you lowly person."
+
+The executive branch did not escape the crossfire. Minister of Education Rima Karami faced sharp criticism and demands for an apology after she described some MPs as "demagogic." This highly charged atmosphere prompted MP Paula Yacoubian to demand an apology from Minister of Defense Michel Menassa over a previous statement she deemed improper. However, in a tragicomic twist, MP Firas Hamdan, who is close to her, took the floor to salute the Defense Minister for his "politeness," epitomizing the fragmentation and contradictions even within the same political camp.
+
+---
+
+### Geopolitical Summary
+
+The sabotage of this legislative session proves once again that prisoners and their families, the national university, and reformist laws are nothing more than hostages in the market of Lebanese political blackmail.`
   }
 ];
 
