@@ -157,6 +157,14 @@ const DESK_METADATA: Record<string, {
     subAr: 'تسجيل الاشتراكات واستعراض النشرات الاستراتيجية المؤرشفة',
     subEn: 'Subscribe to classified reports and browse past archives'
   },
+  'world-of-ai': {
+    taglineAr: 'عالم الذكاء الاصطناعي',
+    taglineEn: 'World of AI',
+    subAr: 'تحليل سيادي لنماذج الذكاء الاصطناعي الصينية وهندسة التكاليف والجيوبوليتيك الرقمي',
+    subEn: 'Sovereign assessment of Chinese neural models, cost structures, and digital geopolitics',
+    badge: 'AI',
+    badgeColor: 'bg-indigo-900/85 text-indigo-100 border-indigo-700 animate-pulse'
+  },
 
   // Sports & Wellness Desk
   'fifa-2026': {
@@ -288,6 +296,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       case 'economy': return <TrendingUp size={13} />;
       case 'markets': return <BarChart2 size={13} />;
       case 'telecom-internet': return <Cpu size={13} />;
+      case 'world-of-ai': return <Sparkles size={13} className="text-indigo-400" />;
       case 'research-reports': return <BookOpen size={13} />;
       case 'sports': return <Award size={13} />;
       case 'wellness-lifestyle': return <Heart size={13} />;
@@ -320,7 +329,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'الرأي والتفاعل',
       icon: <MessageSquare size={13} />,
       labelEn: 'Opinion & Risk Sandboxes',
-      tabIds: ['editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter'],
+      tabIds: ['editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter', 'world-of-ai'],
       descAr: 'أعمدة رئيس التحرير، سيناريوهات محاكاة المخاطر الرياضية ورصد المشاعر العامة',
       descEn: 'Editorial columns, mathematical scenario simulations, and AI public mood tracking models.'
     },

@@ -2059,7 +2059,14 @@ export default function App() {
 
                 {/* THE WORLD OF ARTIFICIAL INTELLIGENCE SECTION */}
                 {activeCategory === 'all' && !searchQuery && (
-                  <WorldOfAI language={language} />
+                  <WorldOfAI 
+                    language={language} 
+                    mode="excerpt" 
+                    onNavigate={() => {
+                      setActiveCategory('world-of-ai');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }} 
+                  />
                 )}
 
                 {/* HERO SLIDER AND TRENDING SIDEBAR SECTION - REDESIGNED AS VERTICAL NEWS MENU */}

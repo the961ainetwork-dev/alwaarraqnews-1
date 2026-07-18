@@ -31,12 +31,145 @@ import {
 
 interface WorldOfAIProps {
   language: 'ar' | 'en';
+  mode?: 'excerpt' | 'full';
+  onNavigate?: () => void;
 }
 
-export default function WorldOfAI({ language }: WorldOfAIProps) {
+export default function WorldOfAI({ language, mode = 'full', onNavigate }: WorldOfAIProps) {
   const isAr = language === 'ar';
   const [activeRoom, setActiveRoom] = useState<string>('pink-floyd');
   const [isPlayingMusic, setIsPlayingMusic] = useState<string | null>(null);
+
+  // If in excerpt mode, render a highly polished teaser card
+  if (mode === 'excerpt') {
+    return (
+      <div 
+        id="world-of-ai-excerpt" 
+        className="border-4 border-black p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[8px_8px_0px_0px_rgba(99,102,241,1)] overflow-hidden transition-all duration-300 hover:shadow-[12px_12px_0px_0px_rgba(129,140,248,1)]"
+        dir={isAr ? 'rtl' : 'ltr'}
+      >
+        {/* Dynamic Glowing Accent Line */}
+        <div className="absolute top-0 left-0 right-0 h-2.5 bg-gradient-to-r from-indigo-500 via-purple-600 to-cyan-500 animate-gradient-xy"></div>
+        
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-25 pointer-events-none"></div>
+
+        <div className="relative z-10 space-y-6">
+          {/* Header & Badges */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-zinc-800 pb-5">
+            <div className="space-y-1.5 text-right rtl:text-right ltr:text-left">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 bg-indigo-500 rounded-none animate-ping shrink-0" />
+                <span className="w-2.5 h-2.5 bg-indigo-500 rounded-none absolute shrink-0" />
+                <span className="font-mono text-xxs font-black tracking-widest text-indigo-400 uppercase select-none">
+                  {isAr ? 'عالم الذكاء الاصطناعي — ملخص سيادي خاص' : 'WORLD OF AI — SOVEREIGN DOSSIER EXCERPT'}
+                </span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black font-sans text-white tracking-tight leading-tight">
+                {isAr ? 'شركة "مونشوت إيه آي" (Moonshot AI)' : 'Moonshot AI: The Sovereign Neural Dragon'}
+              </h3>
+              <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                {isAr ? 'واجهة الذكاء الاصطناعي الصيني الصاعد والبديل الأبرز لـ ChatGPT' : 'Chinas rising AI champion and the ultimate challenger to Silicon Valley'}
+              </p>
+            </div>
+
+            <div className="bg-indigo-950/80 text-indigo-300 font-mono text-[9px] font-black px-3.5 py-1.5 border border-indigo-800/60 uppercase tracking-widest flex items-center gap-1.5 select-none self-start md:self-auto">
+              <Cpu size={12} className="text-cyan-400 animate-pulse" />
+              <span>{isAr ? 'الوجه المظلم للقمر' : 'DARK SIDE OF THE MOON'}</span>
+            </div>
+          </div>
+
+          {/* Core Visual Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            {/* Teaser Description */}
+            <div className="md:col-span-7 space-y-4 text-right rtl:text-right ltr:text-left">
+              <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed text-justify">
+                {isAr ? (
+                  <>
+                    تأسست شركة <strong>"مونشوت إيه آي" (Moonshot AI)</strong> في عام 2023 لتصبح في فترة وجيزة للغاية البديل الأبرز والأكثر شعبية لتطبيق <strong>ChatGPT</strong> داخل السوق الصيني عبر مساعدها الذكي <strong>"كيمي" (Kimi)</strong>. 
+                    يقف خلف الشركة الأستاذ السابق في جامعة تسينغهوا، <strong>يانغ تشيلين</strong>، متبنياً فلسفة برمجية تجمع بين عمق العلوم وهوس فرق الروك الكلاسيكية مثل <strong>بينك فلويد</strong>.
+                  </>
+                ) : (
+                  <>
+                    Founded in early 2023 by former Tsinghua professor <strong>Yang Zhilin</strong>, <strong>Moonshot AI</strong> quickly rose as the premier domestic competitor to <strong>ChatGPT</strong> in China via its popular conversational agent, <strong>Kimi Chat</strong>. Driven by a rare blend of hard academic rigor and vintage progressive rock philosophy, the startup is shaking the global AI value chain.
+                  </>
+                )}
+              </p>
+
+              <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                {isAr ? (
+                  'هل ترغب في استكشاف كواليس المكاتب المصممة على طراز بينك فلويد وراديوهيد؟ وتحليل هندسة التكاليف الفائقة التي تتيح معالجة ٢٠٠ ألف كلمة بأسعار تكسيرية مقارنة بـ Anthropic و OpenAI؟'
+                ) : (
+                  'Do you want to step inside the rock-themed meeting rooms, explore the disruptive model-cost arbitrage, and view our interactive Recharts cost comparison comparing Kimi with Claude and DeepSeek?'
+                )}
+              </p>
+            </div>
+
+            {/* Micro Bento KPIs */}
+            <div className="md:col-span-5 grid grid-cols-2 gap-3">
+              <div className="bg-zinc-900 border border-zinc-800 p-3.5 flex flex-col justify-between">
+                <div>
+                  <span className="font-mono text-[8px] font-black text-zinc-500 uppercase block mb-1">
+                    {isAr ? 'القيمة السوقية' : 'VALUATION'}
+                  </span>
+                  <div className="text-xl md:text-2xl font-black font-sans text-cyan-400">
+                    $20.0B
+                  </div>
+                </div>
+                <span className="text-[9px] text-zinc-500 mt-1 block">
+                  {isAr ? 'صعود مالي متسارع' : 'Hyper-growth tier'}
+                </span>
+              </div>
+
+              <div className="bg-zinc-900 border border-zinc-800 p-3.5 flex flex-col justify-between">
+                <div>
+                  <span className="font-mono text-[8px] font-black text-zinc-500 uppercase block mb-1">
+                    {isAr ? 'النافذة السياقية' : 'CONTEXT WINDOW'}
+                  </span>
+                  <div className="text-xl md:text-2xl font-black font-sans text-indigo-400">
+                    10M+
+                  </div>
+                </div>
+                <span className="text-[9px] text-zinc-500 mt-1 block">
+                  {isAr ? 'رموز سياقية فائقة' : 'Extreme token processing'}
+                </span>
+              </div>
+
+              <div className="bg-zinc-900 border border-zinc-800 p-3.5 flex flex-col justify-between col-span-2">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="font-mono text-[8px] font-black text-zinc-500 uppercase block mb-0.5">
+                      {isAr ? 'مؤشر كفاءة التشغيل' : 'COST EFFICIENCY'}
+                    </span>
+                    <span className="text-xs font-bold text-white">
+                      {isAr ? 'تفوق حاسم ضد Claude' : '88% cheaper than Anthropic'}
+                    </span>
+                  </div>
+                  <TrendingUp size={16} className="text-emerald-500 animate-pulse shrink-0" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Footer Button */}
+          <div className="flex flex-col sm:flex-row justify-between items-center pt-4 border-t border-zinc-800 gap-4">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-500">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+              <span>DOCKET ID: #AI-MOONSHOT-2026</span>
+            </div>
+
+            <button
+              onClick={onNavigate}
+              className="w-full sm:w-auto bg-white hover:bg-zinc-100 text-black rounded-none text-xs font-black px-6 py-3 cursor-pointer uppercase transition-all duration-200 hover:shadow-[4px_4px_0px_0px_rgba(99,102,241,1)] border border-white flex items-center justify-center gap-2 group/btn"
+            >
+              <span>{isAr ? 'اقرأ الدراسة والتقرير السيادي الكامل' : 'READ THE FULL SOVEREIGN DOSSIER'}</span>
+              <ChevronRight size={14} className="transition-transform duration-150 group-hover/btn:translate-x-1" />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // Model cost comparison data (standard task cost in USD)
   const costData = [
@@ -180,8 +313,54 @@ export default function WorldOfAI({ language }: WorldOfAIProps) {
         </div>
       </div>
 
+      {/* 1.5 Section Navigation Menu */}
+      <div className="bg-zinc-50 border-2 border-black p-3 mb-8 flex flex-col md:flex-row gap-3 items-center justify-between font-mono text-[10px] font-black uppercase select-none">
+        <div className="flex items-center gap-1.5 text-zinc-500">
+          <Layers size={12} className="text-zinc-600 animate-pulse shrink-0" />
+          <span>{isAr ? 'فهرس فصول الدراسة السيادية:' : 'Sovereign Dossier Chapters:'}</span>
+        </div>
+        <div className="flex flex-wrap gap-1.5 justify-center md:justify-end">
+          <button 
+            onClick={() => {
+              const el = document.getElementById('ai-kpi-bento');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
+            className="px-2.5 py-1.5 bg-white border border-zinc-250 hover:border-black hover:bg-black hover:text-white transition-all cursor-pointer text-zinc-800"
+          >
+            {isAr ? '١. المؤشرات الاستراتيجية' : '1. Strategic KPIs'}
+          </button>
+          <button 
+            onClick={() => {
+              const el = document.getElementById('ai-cost-arbitrage');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
+            className="px-2.5 py-1.5 bg-white border border-zinc-250 hover:border-black hover:bg-black hover:text-white transition-all cursor-pointer text-zinc-800"
+          >
+            {isAr ? '٢. تحليل مقارنة التكاليف' : '2. Cost Comparison'}
+          </button>
+          <button 
+            onClick={() => {
+              const el = document.getElementById('ai-rock-rooms');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
+            className="px-2.5 py-1.5 bg-white border border-zinc-250 hover:border-black hover:bg-black hover:text-white transition-all cursor-pointer text-zinc-800"
+          >
+            {isAr ? '٣. غرف موسيقى الروك' : '3. Rock Music Rooms'}
+          </button>
+          <button 
+            onClick={() => {
+              const el = document.getElementById('ai-ip-friction');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
+            className="px-2.5 py-1.5 bg-white border border-zinc-250 hover:border-black hover:bg-black hover:text-white transition-all cursor-pointer text-zinc-800"
+          >
+            {isAr ? '٤. نزاعات الملكية الفكرية' : '4. IP Conflicts'}
+          </button>
+        </div>
+      </div>
+
       {/* 2. Core Financial and Strategic KPIs (Bento Layout) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div id="ai-kpi-bento" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         
         {/* KPI 1 */}
         <div className="bg-zinc-50 border-2 border-zinc-200 p-4 relative flex flex-col justify-between group hover:border-black transition-all">
@@ -250,7 +429,7 @@ export default function WorldOfAI({ language }: WorldOfAIProps) {
       </div>
 
       {/* 3. Main Narrative split in 2 columns: Report content vs. Interactive Cost Infographic */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
+      <div id="ai-cost-arbitrage" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
         
         {/* Left Column: Comprehensive Report Text (7/12) */}
         <div className="lg:col-span-7 space-y-6">
@@ -421,7 +600,7 @@ export default function WorldOfAI({ language }: WorldOfAIProps) {
       </div>
 
       {/* 4. Rock Music & Culture Interactive Module */}
-      <div className="border-2 border-black p-5 bg-zinc-950 text-white rounded-none relative overflow-hidden mb-8" id="music-culture-interactive">
+      <div className="border-2 border-black p-5 bg-zinc-950 text-white rounded-none relative overflow-hidden mb-8" id="ai-rock-rooms">
         
         {/* Background visual graphics */}
         <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial from-indigo-950/40 to-transparent pointer-events-none"></div>
@@ -578,7 +757,7 @@ export default function WorldOfAI({ language }: WorldOfAIProps) {
       </div>
 
       {/* 5. Geopolitical Confrontation, "Distillation" Accusations & UX Gap */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div id="ai-ip-friction" className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         
         {/* Card A: Knowledge Distillation Accusations */}
         <div className="bg-red-50/30 border-2 border-red-200 p-5 space-y-3 relative">
