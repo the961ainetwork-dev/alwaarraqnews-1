@@ -65,6 +65,66 @@ interface TacticalDossier {
 
 const TACTICAL_DOSSIERS: TacticalDossier[] = [
   {
+    id: 'iranian-escalation-jordan-iraq-2026',
+    codeName: 'OPERATION DOMINO CONVERGENCE',
+    titleEn: 'Unprecedented Iranian Escalation: Jordan Enters the Line of Confrontation',
+    titleAr: 'تصعيد إيراني غير مسبوق (ودخول الأردن خط المواجهة)',
+    summaryEn: 'Iran is no longer content with pulling the strings of the game through traditional regional proxies. Direct, unprecedented attacks have spanned multiple regional fronts, dragging Jordan into direct interception, turning Iraq into an active missile launchpad, and pushing Turkey and Syria into critical defense balances.',
+    summaryAr: 'لم تعد إيران تكتفي بتحريك خيوط اللعبة عبر وكلائها التقليديين في المنطقة فحسب، بل كثفت وهجماتها بشكل مباشر وغير مسبوق طالت عدة جبهات إقليمية، واضعةً الأردن والعراق وتركيا وسوريا أمام معادلات أمنية وسيادية بالغة الحرج والتعقيد.',
+    contentEn: `### Unprecedented Iranian Escalation: The Spark of Regional Expansion
+
+Iran is no longer content with pulling the strings of the geopolitical game through its traditional proxies. Instead, Tehran has intensified its direct, unprecedented strikes across multiple regional theaters, threatening a catastrophic chain reaction.
+
+---
+
+### 1. Targeting Jordan for the First Time: A Dangerous Strategic Shift
+In a perilous strategic transformation, Jordan has found itself directly or indirectly targeted by drones and missiles violating its airspace, coupled with systematic attempts to destabilize its internal security and flood its borders with illegal weapons. This development thrusts Jordan—a vital strategic ally of the West—straight into the heart of direct confrontation, threatening its historical role as a regional buffer zone.
+
+### 2. The New Iraqi Role: An Open Launchpad for Operations
+Iraq has shifted from a mere theater for political score-settling to a primary launchpad for active military operations. Armed factions within Iraq now possess an advanced arsenal of ballistic missiles and long-range drones, which they deploy to strike regional targets across borders. This new role puts the Iraqi government in an extremely critical position, where the state finds itself unable to control decisions of war and peace, threatening to drag Iraq completely into the furnace of an all-out war.
+
+### 3. Turkey: Critical Balance and Regional Ambitions
+Ankara finds itself forced to reposition its security posture in this highly complex regional conflict. While Turkey seeks to safeguard its national security—particularly in northern Syria and Iraq against Kurdish organizations—it simultaneously strives to play the role of a "strong mediator" or assert its influence to block full Iranian hegemony on its southern borders. This makes Turkey a major player prepared for direct military intervention to secure its interests if the regional architecture collapses.
+
+### 4. Syria: The Central Theater of Global Confrontation
+Syria remains the most complex front and the most combustible spark for a broader conflagration. Syrian territory has transformed into an open stage for proxy wars and direct clashes involving Iran, Israel, the United States, and Russia. The complete absence of state sovereignty has turned Syria into a critical supply line and launchpad for missile strikes, ensuring that any wider regional war will have Syria as its inevitable strategic epicenter.
+
+---
+
+### Conclusion: The Domino Effect
+The convergence of these active fronts—from Baghdad to Damascus, and Ankara to Amman and Tehran—demonstrates that the region is no longer facing isolated local disputes. We are witnessing a sequence of moving dominoes that could redefine global maps, alliances, and spheres of influence for decades to come.`,
+    contentAr: `### تصعيد إيراني غير مسبوق: اشتعال جبهات التماس الإقليمية
+
+لم تعد إيران تكتفي بتحريك خيوط اللعبة عبر وكلائها التقليديين في المنطقة فحسب، بل كثفت وهجماتها بشكل مباشر وغير مسبوق طالت عدة جبهات إقليمية، مما يمهد لانفجار برميل البارود الإقليمي بالكامل.
+
+---
+
+### ١. استهداف الأردن لأول مرة: تحول استراتيجي خطير
+في تحول استراتيجي خطير، انخرطت الأردن لأول مرة في دائرة الاستهداف المباشر أو غير المباشر عبر الطائرات المسيرة والصواريخ التي تنتهك أجوائها، أو من خلال محاولات زعزعة استقرارها الداخلي وتدفق السلاح عبر حدودها. هذا التطور يضع الأردن (الحليف الاستراتيجي للغرب) في قلب الصراع المباشر، ويهدد بنسف التوازن التاريخي الذي حافظت عليه عمان كحلقة وصل هادئة.
+
+### ٢. الدور العراقي الجديد: ساحة مفتوحة ومنطلق للعمليات
+تحول العراق من مجرد ساحة لتصفية الحسابات السياسية التقليدية إلى منطلق رئيسي للعمليات العسكرية العابرة للحدود. الفصائل المسلحة داخل العراق باتت تمتلك ترسانة صاروخية وطائرات مسيرة متطورة تستخدمها لشن هجمات مباشرة باتجاه أهداف إقليمية حساسة. هذا الدور الجديد يضع الحكومة العراقية في موقف حرج للغاية، حيث تجد الدولة نفسها عاجزة تماماً عن ضبط قرار السلم والحرب، مما يهدد بجرف بلاد الرافدين بالكامل إلى أتون مواجهة شاملة ومدمرة.
+
+### ٣. تركيا: التوازن الحرِج والطموحات الإقليمية
+تجد تركيا نفسها مجبرة على إعادة تموضعها العسكري والأمني في هذا الصراع الإقليمي المعقد. تسعى أنقرة بكل قوتها لحماية أمنها القومي، لا سيما في الشمال السوري والعراقي، ضد التنظيمات الكردية والتهديدات الأمنية المتزايدة. وفي الوقت نفسه، تحاول تركيا لعب دور "الوسيط القوي" أو فرض نفوذها كقوة إقليمية كبرى لمنع تمدد النفوذ الإيراني الكامل على حدودها الجنوبية، مما يجعلها طرفاً مستعداً للتدخل العسكري المباشر لحماية مصالحها السيادية الجيوسياسية إذا انفجرت الأوضاع بشكل كامل.
+
+### ٤. سوريا: الساحة المركزية للصراع الدولي
+تظل سوريا الجبهة الأكثر تعقيداً والشرارة المهيأة لتفجير الصراع الأكبر في الشرق الأوسط. تحولت الأراضي السورية إلى مسرح مفتوح للحروب بالوكالة والمواجهات المباشرة والضربات المتبادلة بين إيران وإسرائيل، والولايات المتحدة وروسيا. غياب السيادة الكاملة للدولة السورية جعل من أراضيها خط إمداد رئيسي ومنصة إطلاق للهجمات المباشرة، مما يعني أن أي حرب إقليمية واسعة ستكون سوريا مركزها الإستراتيجي والجغرافي المحتوم.
+
+---
+
+### خلاصة: أحجار دومينو يعاد ترتيبها
+إن تداخل هذه الجبهات — من بغداد إلى دمشق، ومن أنقرة إلى عمان وطهران — يوضح بشكل جلي أن المنطقة لم تعد تواجه نزاعات محلية معزولة أو اشتباكات تكتيكية بسيطة، بل نحن أمام أحجار دومينو تتحرك لتشكل ملامح صراع إقليمي كوني قد يعيد رسم خارطة العالم والنفوذ من جديد.`,
+    threatLevel: 'CRITICAL',
+    regionEn: 'Jordan / Iraq / Syria / Turkey / Iran',
+    regionAr: 'الأردن / العراق / سوريا / تركيا / إيران',
+    coordinates: '31.95° N, 35.91° E',
+    dateEn: 'July 18, 2026',
+    dateAr: '١٨ يوليو ٢٠٢٦',
+    sourceEn: 'Al-Warraq Strategic Analysis Desk & Border Control Units',
+    sourceAr: 'ديوان الوراق للتحليل الاستراتيجي ووحدات مراقبة الحدود'
+  },
+  {
     id: 'strait-of-fire-2026',
     codeName: 'OPERATION FIRE STRAIT',
     titleEn: 'Strait of Fire: The Collapse of the Ceasefire and Ignition of the Spark',

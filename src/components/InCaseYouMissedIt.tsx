@@ -40,6 +40,18 @@ interface NewswireItem {
 // Pre-seeded list of daily newswires, ordered newest to oldest
 const NEWSWIRES: NewswireItem[] = [
   {
+    id: "nw-10",
+    date: "2026-07-18",
+    dateAr: "١٨ يوليو ٢٠٢٦",
+    category: "sovereign-intel",
+    categoryAr: "استخبارات سيادية",
+    headlineEn: "UNPRECEDENTED IRANIAN ESCALATION: JORDAN ENTERS CONFRONTATION LINE, IRAQ BECOMES OPEN LAUNCHPAD",
+    headlineAr: "تصعيد إيراني غير مسبوق (ودخول الأردن خط المواجهة وتنامي الدور العراقي والتركي السوري)",
+    synopsisEn: "Tehran shifts from quiet proxy control to active multi-front strikes. Jordan intercepts airspace violations as a Western strategic ally, Iraq turns into a rocket launchpad, Turkey positions for border defenses, and Syria remains the combustible epicenter of proxy war.",
+    synopsisAr: "لم تعد إيران تكتفي بتحريك خيوط اللعبة عبر وكلائها التقليديين فحسب، بل كثفت وهجماتها بشكل مباشر وغير مسبوق طالت عدة جبهات إقليمية، واضعةً الأردن في قلب الاستهداف، والعراق كمنطلق للعمليات، واستنفر دفاعات تركيا وسوريا.",
+    url: "https://alwarraqnews.com/section/sovereign-intel"
+  },
+  {
     id: "nw-09",
     date: "2026-06-17",
     dateAr: "١٧ يونيو ٢٠٢٦",
