@@ -2807,6 +2807,132 @@ Manufacturers facing higher costs and shortages then cut production and jobs, fe
 Iran insists that it can continue selling oil. Oil Minister Mohsen Paknejad said Tuesday that Iran has deployed systems for years that have enabled it to skirt U.S. sanctions. The U.S. Treasury has mounted a tougher crackdown on so-called shadow fleet ships, front companies and buyers that facilitate Iran’s oil sales.
 
 Still, the April blockade showed how abruptly those flows can collapse. Iranian crude exports fell sharply before the temporary agreement allowed shipments to resume in June.`
+  },
+  {
+    id: 'silicon-valley-chips-earthquake-2026',
+    slug: 'silicon-valley-chips-earthquake-2026',
+    focusKeyword: 'زلزال-وادي-السيليكون-الرقائق',
+    category: 'urgent-release',
+    categories: ['urgent-release', 'markets', 'economy', 'telecom-internet'],
+    titleAr: 'زلزال في وادي السيليكون: أسهم الرقائق تهبط 20% وتدخل "السوق الهابطة" وسط شكوك حول طفرة الذكاء الاصطناعي',
+    titleEn: 'Silicon Valley Earthquake: Semiconductor Stocks Plunge 20% to Enter "Bear Market" Amid Skepticism on AI Boom',
+    summaryAr: 'تسارعت موجة البيع الكثيف التي تضرب قطاع التكنولوجيا العالمي، لتجرف معها أسهم شركات أشباه الموصلات والرقائق الإلكترونية وتدفع بالقطاع رسمياً إلى منطقة "السوق الهابطة".',
+    summaryEn: 'The massive sell-off hitting the global tech sector has accelerated, dragging down semiconductor and chip stocks and officially pushing the sector into "Bear Market" territory.',
+    excerptAr: 'تغطية عاجلة للانهيار المفاجئ في أسهم التكنولوجيا ومخاوف فائض المعالجات وصعود منافسة الذكاء الاصطناعي الصيني وتأثر أسعار النفط بالتوترات الجيوسياسية.',
+    excerptEn: 'Urgent coverage of the sudden crash in tech stocks, concerns over chip oversupply, the rise of Chinese AI competition, and oil prices impacted by geopolitical tensions.',
+    author: {
+      nameAr: 'مكتب التحليل المالي والأسواق',
+      nameEn: 'Financial & Market Analysis Desk',
+      titleAr: 'كبير محللي وول ستريت والأسواق العالمية',
+      titleEn: 'Senior Wall Street & Global Markets Analyst',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-18',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 95400,
+    tags: ['السيليكون', 'الرقاقات', 'الذكاء_الاصطناعي', 'وول_ستريت', 'Nvidia', 'TSMC', 'Silicon_Valley', 'AI_Bubble', 'Bear_Market', 'Stocks_Crash'],
+    hashtags: ['SiliconValleyCrash', 'AIBubble', 'ChipStocks', 'BearMarket2026'],
+    contentAr: `### زلزال في وادي السيليكون: أسهم الرقائق تهبط 20% وتدخل "السوق الهابطة" وسط شكوك حول طفرة الذكاء الاصطناعي
+
+**نيويورك —**
+تسارعت موجة البيع الكثيف التي تضرب قطاع التكنولوجيا العالمي، لتجرف معها أسهم شركات أشباه الموصلات والرقائق الإلكترونية — التي قادت مكاسب الأسواق التاريخية هذا العام — وتدفع بالقطاع رسمياً إلى منطقة "السوق الهابطة" (Bear Market) بعد هبوطه بنسبة 20% عن ذروته القياسية الأخيرة.
+
+تأتي هذه الانهيارات المتتالية مدفوعة بتنامي الشكوك لدى المستثمرين والمؤسسات المالية الكبرى حول الجدوى الاقتصادية الفورية للإنفاق الرأسمالي الضخم على بنيات الذكاء الاصطناعي التوليدي، ومخاوف من تشكل "فقاعة" جديدة، تزامناً مع تصاعد التوترات الجيوسياسية والعسكرية في الشرق الأوسط.
+
+---
+
+### أسبوع أسود للرقائق.. الأسوأ منذ ربيع 2025
+سجل مؤشر قطاع أشباه الموصلات الرئيسي أداءً هو الأسوأ له منذ اضطرابات الرسوم الجمركية في أبريل 2025. ولم تقتصر الخسائر على قطاع التكنولوجيا؛ حيث امتدت التراجعات إلى الأسواق الأوسع ليخسر مؤشر "ناسداك 100" نحو 1.5% من قيمته في جلسة واحدة.
+
+#### محركات التصحيح العنيف وتراجع الحماس:
+
+1. **مخاوف الفائض والمنافسة:** تتزايد التوقعات بحدوث فائض في الطاقة الإنتاجية مستقبلاً مع تسابق الدول والشركات لبناء مصانع رقائق جديدة، ما قد يؤدي إلى حرب أسعار وتراجع الهوامش الربحية للشركات الكبرى مثل "إنفيديا" و"AMD" و"TSMC".
+
+2. **المفاجأة الصينية (Moonshot AI):** أثار الإنجاز التقني الأخير لشركة الذكاء الاصطناعي الصينية الناشئة "مونشوت" قلق الأسواق الغربية؛ إذ يرى محللون أن الصعود الصاروخي للشركات الصينية وقدرتها على الابتكار برأس مال أقل وبدائل محلية، قد يهدد الهيمنة الأمريكية المطلقة على هذا القطاع، ويسرّع من وتيرة المنافسة الشرسة.
+
+3. **الضغط الجيوسياسي وأسعار النفط:** لم تكن الأسواق بمعزل عن المشهد السياسي؛ إذ قفزت أسعار النفط بشكل حاد إثر تجدد الهجمات المتبادلة بين الولايات المتحدة وإيران، مما عزز حالة النفور من المخاطرة ودفع المستثمرين لتسييل أصولهم التكنولوجية لصالح الملاذات الآمنة والسلع.
+
+---
+
+### معضلة المستثمرين: فرصة للشراء أم هروب جماعي؟
+كان الطلب القياسي على خوادم الذكاء الاصطناعي قد قاد هذا القطاع لتحقيق أفضل أداء فصلي في تاريخه. لكن بحلول يوليو الحالي، تبخر هذا الحماس ليحل محله القلق بشأن "العائد على الاستثمار" (ROI).
+
+وفي هذا السياق، يرى ديفيد موريسون، المحلل لدى "تريد نيشن" (Trade Nation)، أن المشكلة لا تكمن في ضعف الأرباح الحالية، بل في استدامة هذا النمو:
+
+> "رغم استمرار قوة الأرباح والطلب، فإن موجة جني الأرباح العنيفة تعكس تشكيكاً عميقاً في قدرة القطاع على الحفاظ على وتيرة النمو الجنونية الحالية لفترة طويلة. السؤال الوجودي الآن: هل هذه التراجعات هي مجرد فرصة جديدة لشراء الانخفاضات (Buy the Dip)، أم أنها بداية لهروب جماعي يتدافع فيه الجميع نحو بوابات الخروج في وقت واحد؟"
+
+---
+
+### مرحلة النضج.. وليست انهياراً فوضوياً
+في المقابل، تبدو بعض بيوت الخبرة في وول ستريت أكثر عقلانية في تقييم المشهد، حيث تُجمع عدة تحليلات على أن ما يحدث هو "تصحيح صحي" ودورة انتقال طبيعية للسيولة:
+
+#### 1. نضج تقني وتنوع مطلوب
+يرى أنجيلو كوركافاس، الاستراتيجي لدى "إدوارد جونز" (Edward Jones)، أن زيادة تذبذب أسهم الذكاء الاصطناعي تنبع من رغبة المستثمرين في رؤية عوائد مالية أسرع ملموسة في القوائم المالية، مؤكداً أن نتائج الشركات لم تظهر حتى الآن أي تباطؤ حقيقي في الطلب.
+
+وأضاف: "القطاع يمر بمرحلة نضج طبيعية للتقنيات التحولية، وليس مرحلة انهيار. ننصح المستثمرين بالحفاظ على مراكزهم في التكنولوجيا مع تنويع المحافظ عبر ضخ السيولة في القطاعات الدورية، وأسهم القيمة، والأسهم العالمية لتخفيف حدة المخاطر".
+
+#### 2. اتساع نطاق الصعود (Market Rotation)
+من جانبها، تفسر بياتا مانثي، الاستراتيجية لدى "سيتي غروب"، هذا الهبوط العنيف لأسهم التكنولوجيا بأنه تحول ضروري وصحي لبقية السوق. وقالت في مقابلة مع تلفزيون بلومبرغ:
+
+> "بدأت الأسواق تراهن على اتساع طال انتظاره في نطاق المكاسب لتشمل قطاعات أخرى غير التكنولوجيا. ولتحقيق هذا التوازن، لا بد من حدوث تحولات حادة في السيولة بين القطاعات (Sector Rotation)، وهذه التحولات تكون أحياناً عنيفة ومؤمنة على المدى القصير، لكنها تعكس انتقالاً في الاهتمام وليس انهياراً صريحاً للسوق".
+
+---
+
+### المشهد الجيوسياسي: الصين تتحدى الاحتكار
+يتزامن هذا التراجع مع تحركات سياسية دولية لافتة لقادة قطاع التكنولوجيا؛ حيث تقود الصين حالياً تحالفاً دولياً جديداً للذكاء الاصطناعي. وكان الرئيس الصيني شي جين بينغ قد صرح بوضوح بأن هذه التكنولوجيا "لا ينبغي أن تكون حكراً على دولة واحدة"، مما يعكس رغبة بكين في كسر الهيمنة الأمريكية، وهو أمر يزيد من الضغوط التنظيمية والسياسية على شركات الرقائق الأمريكية التي باتت محاصرة بين قيود التصدير وتصاعد المنافسة الآسيوية.` ,
+    contentEn: `### Silicon Valley Earthquake: Chip Stocks Plunge 20% to Enter "Bear Market" Amid Skepticism on AI Boom
+
+**NEW YORK —**
+The massive sell-off hitting the global tech sector accelerated, dragging down semiconductor and chip stocks—the drivers of this year's historic market gains—and officially pushing the sector into "Bear Market" territory after a 20% decline from its recent record peak.
+
+These consecutive collapses are fueled by growing skepticism among investors and major financial institutions regarding the immediate economic return on massive capital expenditure (CapEx) for generative AI infrastructure, alongside fears of a new bubble forming, coinciding with escalating geopolitical and military tensions in the Middle East.
+
+---
+
+### A Black Week for Chips.. The Worst Since Spring 2025
+The main semiconductor index recorded its worst performance since the tariff-related disruptions of April 2025. The losses were not limited to tech; broader market indexes fell, with the Nasdaq 100 losing approximately 1.5% in a single session.
+
+#### Drivers of the Violent Correction:
+
+1. **Concerns of Oversupply and Competition:** Expectations of future oversupply are rising as countries and companies race to build new chip fabs, which could lead to a price war and squeeze profit margins for industry giants like Nvidia, AMD, and TSMC.
+
+2. **The Chinese Surprise (Moonshot AI):** The recent technological breakthrough by Chinese AI startup "Moonshot" raised concerns in Western markets. Analysts believe the meteoric rise of Chinese firms and their ability to innovate with less capital and local alternatives could threaten absolute American dominance, accelerating fierce competition.
+
+3. **Geopolitical Pressure and Oil Prices:** Markets were not isolated from geopolitical shifts; crude oil prices jumped sharply following renewed retaliatory attacks between the US and Iran, amplifying risk aversion and prompting investors to liquidate tech positions in favor of safe havens and commodities.
+
+---
+
+### Investor Dilemma: "Buy the Dip" or Mass Exodus?
+Record demand for AI servers had driven this sector to its best quarterly performance in history. However, by July 2026, this enthusiasm vanished, replaced by deep concern over return on investment (ROI).
+
+David Morrison, analyst at Trade Nation, noted that the problem is not weak current earnings, but the sustainability of growth:
+
+> "Despite continued strong earnings and demand, the aggressive profit-taking reflects deep skepticism about the sector's ability to maintain its insane growth rate long-term. The existential question is: is this crash a new buying opportunity (Buy the Dip), or the beginning of a mass panic with everyone rushing for the exit at once?"
+
+---
+
+### A Stage of Maturity.. Not a Chaotic Collapse
+In contrast, some Wall Street institutions offer a more rational view, agreeing that this is a "healthy correction" and a natural rotation of market liquidity:
+
+#### 1. Tech Maturity and Needed Diversification
+Angelo Kourkafas, strategist at Edward Jones, believes that the heightened volatility of AI stocks stems from investors wanting to see faster, tangible financial returns in balance sheets, stressing that company results have yet to show any real slowdown in demand.
+
+He added: "The sector is undergoing a natural maturity stage for transformative technologies, not a collapse. We advise investors to hold tech positions while diversifying portfolios across cyclical sectors, value stocks, and international equities to mitigate risks."
+
+#### 2. Broadening the Ascent (Market Rotation)
+Beata Manthey, strategist at Citigroup, explained this steep drop in tech stocks as a necessary and healthy shift for the rest of the market. She commented in a Bloomberg TV interview:
+
+> "Markets are beginning to price in a long-awaited broadening of gains to other sectors beyond technology. To achieve this balance, sharp shifts in sector liquidity (Sector Rotation) are inevitable, and these transitions can be violent and painful in the short-term, but they reflect a rotation of interest rather than an outright market collapse."
+
+---
+
+### Geopolitical Scene: China Challenges the Monopoly
+This downturn coincides with notable geopolitical moves by technology leaders; China is currently spearheading a new international AI alliance. Chinese President Xi Jinping stated clearly that this technology "should not be monopolized by any single country," reflecting Beijing's intent to break American dominance, compounding the political and regulatory pressure on US chipmakers caught between export controls and rising Asian competition.`
   }
 ];
 

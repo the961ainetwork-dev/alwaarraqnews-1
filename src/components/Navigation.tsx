@@ -24,7 +24,8 @@ import {
   X,
   Sparkles,
   Flame,
-  Megaphone
+  Megaphone,
+  AlertCircle
 } from 'lucide-react';
 
 const DESK_METADATA: Record<string, {
@@ -415,6 +416,22 @@ export default function Navigation({ language, activeCategory, setActiveCategory
               </button>
             </li>
 
+            {/* Direct Link: Urgent Release */}
+            <li>
+              <button
+                id="nav-tab-urgent-release"
+                onClick={() => selectTab('urgent-release')}
+                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
+                  activeCategory === 'urgent-release'
+                    ? 'bg-red-700 text-white font-black border-b-2 border-white'
+                    : 'text-red-400 hover:text-red-300 hover:bg-red-950/20 border border-red-900/30'
+                }`}
+              >
+                <AlertCircle size={13} className="text-red-500 animate-pulse animate-duration-1000" />
+                <span className="font-extrabold uppercase">{isAr ? 'إصدار عاجل' : 'Urgent Release'}</span>
+              </button>
+            </li>
+
             {/* 2. Structured Group Dropdowns */}
             {menuGroups.map((group) => {
               const isOpen = activeDropdown === group.id;
@@ -746,6 +763,20 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                 >
                   <Grid size={13} />
                   <span>{isAr ? 'الرئيسية (طبعة اليوم الكاملة)' : 'Home (Today\'s Issue)'}</span>
+                </button>
+
+                {/* Urgent Release Mobile Link */}
+                <button
+                  onClick={() => selectTab('urgent-release')}
+                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
+                    activeCategory === 'urgent-release'
+                      ? 'bg-red-950/80 text-white font-extrabold border-r-4 border-red-500'
+                      : 'text-red-400 hover:text-red-300 bg-red-950/10 border border-red-900/25'
+                  }`}
+                  style={{ textAlign: isAr ? 'right' : 'left' }}
+                >
+                  <AlertCircle size={13} className="text-red-500 animate-pulse" />
+                  <span>{isAr ? 'إصدار عاجل' : 'Urgent Release'}</span>
                 </button>
 
                 {/* Standalone War Room Link */}

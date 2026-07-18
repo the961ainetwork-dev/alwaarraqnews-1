@@ -3,6 +3,7 @@ import { NEW_ARTICLES } from './newArticles';
 
 export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'all', labelAr: 'الرئيسية', labelEn: 'Home' },
+  { id: 'urgent-release', labelAr: 'إصدار عاجل', labelEn: 'Urgent Release' },
   { id: 'in-case-you-missed-it', labelAr: 'في حال فاتك', labelEn: 'In Case You Missed It' },
   { id: 'alwarraq-investigations', labelAr: 'التحقيقات الاستقصائية للورّاق', labelEn: 'AlWarraq Investigative Reporting' },
   { id: 'war-room', labelAr: 'غرفة الحرب الجيوسياسية', labelEn: 'War Room Intel' },

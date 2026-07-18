@@ -29,6 +29,7 @@ import { LebanonTelecomFinanceDashboard } from './components/LebanonTelecomFinan
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
+import UrgentRelease from './components/UrgentRelease';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
@@ -1220,6 +1221,51 @@ export default function App() {
               searchQuery={searchQuery}
             />
 
+            {/* Spectacular "Urgent Release" Hero Section at the top of all pages */}
+            {activeCategory !== 'urgent-release' && activeCategory !== 'admin' && !selectedArticle && (
+              <div className="bg-red-950/10 border-2 border-red-600 rounded p-5 md:p-6 mb-8 relative overflow-hidden backdrop-blur-xs flex flex-col md:flex-row items-center gap-6 shadow-md transition-all hover:border-red-500 text-right md:text-right rtl:text-right ltr:text-left">
+                {/* Decorative pulse line */}
+                <div className="absolute top-0 bottom-0 left-0 w-2 bg-red-600 animate-pulse" />
+                
+                {/* Content */}
+                <div className="flex-grow space-y-3 z-10">
+                  <div className="flex items-center gap-2 text-red-600 font-sans text-xs font-black uppercase tracking-widest">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping inline-block shrink-0" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-600 absolute inline-block shrink-0" />
+                    <span>{isAr ? 'إصدار عاجل حاسم' : 'CRITICAL URGENT RELEASE'}</span>
+                  </div>
+                  
+                  <h2 className="text-xl md:text-2xl font-sans font-black text-zinc-950 tracking-tight leading-tight">
+                    {isAr 
+                      ? 'زلزال في وادي السيليكون: أسهم الرقائق تهبط 20% وتدخل "السوق الهابطة" وسط شكوك حول طفرة الذكاء الاصطناعي' 
+                      : 'Silicon Valley Earthquake: Semiconductor Stocks Plunge 20% to Enter "Bear Market" Amid Skepticism on AI Boom'
+                    }
+                  </h2>
+                  
+                  <p className="text-xs md:text-sm text-zinc-600 font-serif leading-relaxed line-clamp-2">
+                    {isAr 
+                      ? 'تسارعت موجة البيع الكثيف التي تضرب قطاع التكنولوجيا العالمي، لتجرف معها أسهم شركات أشباه الموصلات والرقائق الإلكترونية وتدفع بالقطاع رسمياً إلى منطقة "السوق الهابطة" (Bear Market)...' 
+                      : 'The massive sell-off hitting the global tech sector has accelerated, dragging down semiconductor and chip stocks and officially pushing the sector into "Bear Market" territory...'
+                    }
+                  </p>
+                </div>
+
+                {/* Action Button */}
+                <div className="shrink-0 z-10 w-full md:w-auto">
+                  <button
+                    onClick={() => {
+                      setActiveCategory('urgent-release');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white font-sans font-black text-xs px-5 py-3 rounded tracking-wide shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap uppercase"
+                  >
+                    <span>{isAr ? 'عرض الملف الاستقصائي الكامل' : 'EXAMINE FULL DOSSIER'}</span>
+                    {isAr ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
+                  </button>
+                </div>
+              </div>
+            )}
+
             {/* Conditionally render AdminPanel, PulseOfTheStreet, or standard categories */}
             {activeCategory === 'admin' ? (
               <AdminPanel
@@ -1316,6 +1362,19 @@ export default function App() {
                   setShowQrOverlay(true);
                 }}
                 latestBreaking={latestBreaking}
+              />
+            ) : activeCategory === 'urgent-release' ? (
+              <UrgentRelease
+                language={language}
+                onNavigateToSection={(sectionId) => {
+                  setActiveCategory(sectionId);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onSelectArticle={(article) => {
+                  setSelectedArticle(article);
+                }}
+                savedArticleIds={savedArticleIds}
+                onToggleSaveArticle={handleToggleSaveArticle}
               />
             ) : activeCategory === 'press-releases' ? (
               <PressReleases
