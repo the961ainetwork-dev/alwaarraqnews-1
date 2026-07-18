@@ -22,6 +22,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'markets', labelAr: 'أسواق المال', labelEn: 'Sovereign Markets' },
   { id: 'arab-markets', labelAr: 'الأسواق العربية', labelEn: 'Arab Markets Indicators' },
   { id: 'telecom-internet', labelAr: 'الاتصالات والإنترنت', labelEn: 'Telecom & Internet' },
+  { id: 'world-of-ai', labelAr: 'عالم الذكاء الاصطناعي', labelEn: 'World of AI' },
   { id: 'research-reports', labelAr: 'أبحاث ودراسات', labelEn: 'Research & Reports' },
   { id: 'sports', labelAr: 'رياضة', labelEn: 'Sports' },
   { id: 'wellness-lifestyle', labelAr: 'الصحة', labelEn: 'Curae News' },

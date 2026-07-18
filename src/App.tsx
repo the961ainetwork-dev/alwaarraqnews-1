@@ -31,6 +31,7 @@ import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
 import UrgentRelease from './components/UrgentRelease';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
+import WorldOfAI from './components/WorldOfAI';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
 import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode } from 'lucide-react';
@@ -1128,7 +1129,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai';
 
   return (
     <div
@@ -1319,6 +1320,10 @@ export default function App() {
               <WhatIfSimulator
                 language={language}
                 layoutMode={layoutMode}
+              />
+            ) : activeCategory === 'world-of-ai' ? (
+              <WorldOfAI
+                language={language}
               />
             ) : activeCategory === 'alwarraq-investigations' ? (
               <AlWarraqInvestigations
@@ -2050,6 +2055,11 @@ export default function App() {
                     articles={allArticles}
                     onSelectArticle={(article) => setSelectedArticle(article)}
                   />
+                )}
+
+                {/* THE WORLD OF ARTIFICIAL INTELLIGENCE SECTION */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <WorldOfAI language={language} />
                 )}
 
                 {/* HERO SLIDER AND TRENDING SIDEBAR SECTION - REDESIGNED AS VERTICAL NEWS MENU */}
