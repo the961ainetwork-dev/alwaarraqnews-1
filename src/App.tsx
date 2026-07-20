@@ -33,6 +33,7 @@ import UrgentRelease from './components/UrgentRelease';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import WorldOfAI from './components/WorldOfAI';
 import { IraqUSInvestmentDossier } from './components/IraqUSInvestmentDossier';
+import { Sparkline } from './components/Sparkline';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
 import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode } from 'lucide-react';
@@ -2121,19 +2122,24 @@ export default function App() {
                                   <span className={`font-mono text-[11px] font-black shrink-0 mt-0.5 ${isSelected ? 'text-red-900' : 'text-zinc-400'}`}>
                                     {String(idx + 1).padStart(2, '0')}.
                                   </span>
-                                  <div className="space-y-1 min-w-0">
-                                    <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-red-900' : 'text-zinc-950'}`}>
-                                      {isAr ? story.titleAr : story.titleEn}
-                                    </h4>
-                                    <div className="flex flex-wrap gap-1.5 items-center">
-                                      <span className="text-[9px] font-mono uppercase bg-zinc-200/60 px-1.5 py-0.2 text-zinc-500 font-bold">
-                                        {isAr ? story.categoryAr || 'عام' : story.category.toUpperCase()}
-                                      </span>
-                                      {isDossier && (
-                                        <span className="text-[9px] font-mono font-black text-red-800 bg-red-100/50 px-1.5 py-0.2 uppercase border border-red-200/20">
-                                          {isAr ? 'تحقيق سيادي' : 'DOSSIER'}
+                                  <div className="flex-1 flex items-center justify-between gap-3 min-w-0">
+                                    <div className="space-y-1 min-w-0 flex-1 text-right rtl:text-right ltr:text-left">
+                                      <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-red-900' : 'text-zinc-950'}`}>
+                                        {isAr ? story.titleAr : story.titleEn}
+                                      </h4>
+                                      <div className="flex flex-wrap gap-1.5 items-center">
+                                        <span className="text-[9px] font-mono uppercase bg-zinc-200/60 px-1.5 py-0.2 text-zinc-500 font-bold">
+                                          {isAr ? story.categoryAr || 'عام' : story.category.toUpperCase()}
                                         </span>
-                                      )}
+                                        {isDossier && (
+                                          <span className="text-[9px] font-mono font-black text-red-800 bg-red-100/50 px-1.5 py-0.2 uppercase border border-red-200/20">
+                                            {isAr ? 'تحقيق سيادي' : 'DOSSIER'}
+                                          </span>
+                                        )}
+                                      </div>
+                                    </div>
+                                    <div className="shrink-0">
+                                      <Sparkline storyId={story.id} language={language} />
                                     </div>
                                   </div>
                                 </button>
