@@ -32,6 +32,7 @@ import WarRoom from './components/WarRoom';
 import UrgentRelease from './components/UrgentRelease';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import WorldOfAI from './components/WorldOfAI';
+import { IraqUSInvestmentDossier } from './components/IraqUSInvestmentDossier';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
 import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode } from 'lucide-react';
@@ -1129,7 +1130,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
 
   return (
     <div
@@ -1394,6 +1395,10 @@ export default function App() {
                   setActiveCategory('all');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
+              />
+            ) : activeCategory === 'iraq-us-dossier' ? (
+              <IraqUSInvestmentDossier
+                language={language}
               />
             ) : activeCategory === 'workspace' ? (
               <GoldenPrimeWorkspace

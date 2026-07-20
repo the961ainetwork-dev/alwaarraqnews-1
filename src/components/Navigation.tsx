@@ -123,6 +123,14 @@ const DESK_METADATA: Record<string, {
     subAr: 'أبحاث مائية شاملة وخطط الأمن الغذائي المستقبلي',
     subEn: 'Hydrological reports, agricultural audit, and demographics'
   },
+  'iraq-us-dossier': {
+    taglineAr: 'وثائق سيادية استثنائية',
+    taglineEn: 'Sovereign Intel Room',
+    subAr: 'تحقيقات ودراسات خاصة تشمل الممرات الاستثمارية وأزمات إمدادات الطاقة العالمية',
+    subEn: 'Bilateral investment corridor evaluations and global energy chokepoint dossiers',
+    badge: 'SOVEREIGN',
+    badgeColor: 'bg-amber-950/90 text-amber-100 border-amber-600 animate-pulse'
+  },
 
   // Strategic Opinion & Simulation
   'what-if-simulator': {
@@ -296,6 +304,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       case 'economy': return <TrendingUp size={13} />;
       case 'markets': return <BarChart2 size={13} />;
       case 'telecom-internet': return <Cpu size={13} />;
+      case 'iraq-us-dossier': return <Landmark size={13} className="text-emerald-400" />;
       case 'world-of-ai': return <Sparkles size={13} className="text-indigo-400" />;
       case 'research-reports': return <BookOpen size={13} />;
       case 'sports': return <Award size={13} />;
@@ -320,7 +329,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'المال والاقتصاد',
       labelEn: 'Geo-Finance & Data',
       icon: <TrendingUp size={13} />,
-      tabIds: ['economy', 'markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports'],
+      tabIds: ['economy', 'markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports', 'iraq-us-dossier'],
       descAr: 'مؤشرات التداول العربي وسندات الخزينة وسلاسل الإمداد ومؤشرات البيانات العقارية',
       descEn: 'Sovereign bond curves, GCC market indexes, subsea cables, and transactional land registries.'
     },
