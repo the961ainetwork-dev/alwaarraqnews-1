@@ -12,6 +12,7 @@ import { FifaPolymarketInfographic } from './FifaPolymarketInfographic';
 import { FrameworkAgreementInfographic } from './FrameworkAgreementInfographic';
 import { SolidereInfographic } from './SolidereInfographic';
 import { FifaWorldCupReport } from './FifaWorldCupReport';
+import { HormuzCrisisReport } from './HormuzCrisisReport';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
 
@@ -917,6 +918,10 @@ export default function ArticleViewer({
             ) : article.id === 'fifa-world-cup-profits-2026' ? (
               <div className="mb-6">
                 <FifaWorldCupReport language={activeLang} />
+              </div>
+            ) : article.id === 'mees-hormuz-crisis-oil-sales-2026' ? (
+              <div className="mb-6">
+                <HormuzCrisisReport language={activeLang} />
               </div>
             ) : article.id === 'lebanon-framework-agreement-analysis-2026' ? (
               <div className="mb-6">

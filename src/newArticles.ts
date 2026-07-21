@@ -2,6 +2,272 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'mees-hormuz-crisis-oil-sales-2026',
+    slug: 'mees-hormuz-crisis-oil-sales-2026',
+    focusKeyword: 'أزمة-هرمز-هيكلية-مبيعات-النفط-ميس',
+    category: 'translations',
+    categories: ['translations', 'middle-east', 'economy', 'iraq-us-dossier'],
+    titleAr: 'دراسة MEES المترجمة: أزمة هرمز تُغيّر هيكلية مبيعات النفط في الشرق الأوسط',
+    titleEn: 'MEES Translation: Hormuz Crisis Changes The Structure Of Middle East Oil Sales',
+    summaryAr: 'ترجمة كاملة وموثقة لدراسة مؤسسة الشرق الأوسط للمسح الاقتصادي (MEES) التي أعدها المحلل الجيوسياسي أحمد مهدي حول تفكك نموذج البيع التقليدي على ظهر السفينة (FOB) وصعود ترتيبات النقل المكوكي والتسليم الفعلي بعد الهجمات المتبادلة في مضيق هرمز.',
+    summaryEn: 'Full translation of the MEES op-ed by geopolitical expert Ahmed Mehdi, highlighting how the traditional FOB pricing cycle in the Persian Gulf is unravelling in favor of shuttle systems and delivered optionality.',
+    excerptAr: 'ترجمة حصرية لدراسة MEES حول تفكك قواعد تسعير النفط الخام التقليدية بالشرق الأوسط، وزوال نموذج FOB مع تزايد مخاطر التحوط والتحميل وتغيير مسار خطوط الأنابيب.',
+    excerptEn: 'An exclusive translation of the seminal MEES investigation exploring the decline of pure FOB contracts and how delivery resilience is defining the new crude trading landscape.',
+    author: {
+      nameAr: 'أحمد مهدي (ترجمة أسرة التحرير)',
+      nameEn: 'Ahmed Mehdi (Editorial Translation)',
+      titleAr: 'العضو المنتدب لشركة رينيسانس لأبحاث الطاقة (REA)',
+      titleEn: 'Managing Director of Renaissance Energy Advisors (REA)',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-20',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 45290,
+    tags: ['أوبك', 'مضيق_هرمز', 'أدنوك', 'أرامكو', 'البصرة', 'تسعير_النفط', 'MEES', 'OPEC', 'Hormuz_Crisis', 'ADNOC', 'Aramco', 'Basrah', 'FOB_Sales'],
+    hashtags: ['HormuzCrisis', 'MEESTranslation', 'OilMarkets', 'EnergySecurity'],
+    contentAr: `### أزمة هرمز تُغيّر هيكلية مبيعات النفط في الشرق الأوسط
+**مؤسسة الشرق الأوسط للمسح الاقتصادي (MEES)**  
+**٧ يوليو ٢٠٢٦ | العدد: ٦٩ / ٢٩**  
+**بقلم: أحمد مهدي***
+
+إن القواعد التقليدية لدورة تسعير النفط الخام في الشرق الأوسط آخذة في التفكك، ومن المستبعد العودة إلى النموذج القديم المعتمد بالكامل على البيع على ظهر السفينة (FOB). في هذا الواقع التجاري الجديد، أصبحت مرونة خيارات التسليم هي المقياس الرئيسي للقدرة التنافسية للمنتجين.
+
+---
+
+### البيئة الجيوسياسية المتوترة ومأزق المضيق
+
+أدى استئناف الهجمات المتبادلة بين الولايات المتحدة وإيران إلى تآكل ثقة السوق في تطبيع تدفقات النفط عبر مضيق هرمز. وجيوسياسياً، يظل السؤال الأكبر هو الأكثر أهمية وتأثيراً: **من سيسيطر على مستقبل مضيق هرمز؟**
+
+في الوقت الحالي، فإن حالة الجمود المستمرة تبقي الأسواق في حالة ترقب وقلق:
+* ترى إيران في الانتخابات الأمريكية المقبلة فرصة لتعظيم نفوذها ووضع الشروط الحدودية المستقبلية للملاحة عبر مضيق هرمز.
+* تظل أهداف إسرائيل القصوى غير محققة.
+* يواجه الاقتصاد العالمي أسوأ أزمة للمشتقات النفطية في التاريخ، مع وصول الفوارق السعرية (cracks) إلى مستويات قياسية - مما يذكرنا بأن أزمة مضيق هرمز هي أزمة مشتقات نفطية بقدر ما هي أزمة نفط خام.
+
+وبغض النظر عن كيفية انتهاء هذه اللعبة الجيوسياسية، فإن العودة إلى نظام ما قبل الحرب لمبيعات وتسعير النفط الخام تبدو بعيدة المنال. فالقناعة باستقرار التدفقات عبر مضيق هرمز كانت تمثل جوهر آليات ما قبل الحرب، ولكنها تضررت الآن بشكل لا يمكن إصلاحه.
+
+في الوقت الحالي، أدت مخاطر التحميل إلى اعتماد ترتيبات مؤقتة مثل المبيعات المكوكية وعمليات نقل الشحنات من سفينة إلى أخرى (STS) في خليج عمان. وقد أصبحت استراتيجيات التحوط أكثر صعوبة في التنفيذ بعد أن زاد التفاوت بين تواريخ التداول وتواريخ التحميل الفعلي من حدة الفوضى.
+
+إن التآكل المستمر لنموذج مبيعات التسليم على ظهر السفينة (FOB) في المنطقة يبدو مكتملاً الآن، سواء تم التوصل إلى حل واضح في مضيق هرمز أم لا. ومع استمرار تسارع وتيرة الأحداث، ما الذي يمكننا قوله عن مستقبل نظام تداول النفط الخام في الشرق الأوسط؟
+
+---
+
+### موت نموذج الـ FOB (Free on Board)
+
+من الناحية الجيوسياسية، لا تزال معركة السيطرة المادية على مضيق هرمز مستمرة. فمنذ انهيار مذكرة التفاهم بين الولايات المتحدة وإيران في منتصف يونيو، هاجمت إيران السفن التي تعبر المياه العمانية، كما وُجهت ضربات ضد الكويت والبحرين وقطر وعُمان، وفي مؤشر إضافي على التصعيد، تم استهداف سفن "النقل المكوكية" التابعة لدولة الإمارات العربية المتحدة.
+
+وعلى الرغم من أن المسار المستقبلي للأحداث لا يزال غير واضح، فإن العودة إلى دورة تسعير ما قبل الحرب في الشرق الأوسط تبدو مستبعدة للغاية.
+
+#### نظام التسعير والتحوط التقليدي قبل الحرب:
+1. **أرامكو كمرجع أساسي:** كانت الدورة النموذجية تبدأ أولاً بقيام شركة أرامكو السعودية بإصدار أسعار البيع الرسمية (OSP) في مطلع الشهر للتحميل في الشهر التالي، مع توجيه الفارق السعري بناءً على التحولات في منحنى دبي الآجل، وأساسيات العرض والطلب، وفروق الجودة، وهوامش التكرير. وكان التسعير القائم على صيغة أرامكو يمثل دليلاً للآخرين تقريباً، حيث يحدد الصيغ السعرية لمنتجين رئيسيين مثل العراق. وضمن هذا النظام عدم تسعير شحنات العقود الآجلة بشكل خاطئ، وعدم ترك الشركاء المستخرجين (equity lifters) في مأزق تسعيري. وكان للجدولة والتحميل غير القابلين للمقاطعة دوراً أساسياً في دعم هذا النظام، مما أتاح لكل منتج تقييم القيمة العادلة بالنظر إلى المنتجين الآخرين.
+2. **دور نافذة بلاتس دبي:** ومما دعم نموذج تسعير صيغة OSP أيضاً التحولات في السوق الفورية المرجعية للشحنات التي يتم تحميلها قبل شهرين. وكانت ساحة هذا النشاط عادةً هي نافذة بلاتس دبي (Platts Dubai window)، حيث تمثل الخامات القابلة للتسليم "ذخيرة" السوق للدفاع عن القيمة العادلة وإدارة مراكز التحوط والمراكز الورقية في أسواق المشتقات السائلة.
+3. **تطابق تواريخ التداول والتحميل:** كان التفاوت بين تواريخ التداول والتحميل نادراً: فالشحنة التي يتم تسعيرها اليوم تُحمّل بعد شهرين، مما يضمن عدم انقطاع الروابط بين الأسواق الفعلية والورقية. وخارج هذه النافذة، كان يتم شراء وبيع الشحنات الفورية الفعلية المتداولة في سلاسل العقود الثنائية خارج المقصورة (OTC) عدة مرات قبل وصولها إلى وجهة التسليم النهائية.
+
+ومع كون أزمة مضيق هرمز في نهاية المطاف أزمة تحميل، تُطرح تساؤلات حول ما إذا كان نموذج FOB في المنطقة يتفكك الآن، وما إذا كانت التدابير التكيفية ستتحول إلى سمات هيكلية دائمية في مشهد المبيعات والتسعير الجديد.
+
+---
+
+### نموذج النقل المكوكي من أدنوك ومرونة خيارات الشحن
+
+ويعكس نموذج "الشحن المكوكي" (shuttle model)، الذي تستخدمه شركة أدنوك بنشاط كبير، الواقع التجاري الجديد داخل مضيق هرمز.
+
+فمنذ يونيو، باعت أدنوك حوالي 75 إلى 80 مليون برميل من النفط الخام البحري عبر مناقصات، وكانت معظم المبيعات للتسليم الفوري. ومما دعم سرعة مبيعات أدنوك هو استخدامها لسفن مملوكة لها أو تدار من قبلها لنقل الشحنات مكوكياً من المحطات البحرية إلى مواقع نقل الشحنات من سفينة إلى أخرى (STS) مثل الفجيرة.
+
+وبالإضافة إلى السفن المملوكة لها بالفعل، أضافت صفقات الاستئجار الزمني (time-charter) التي أبرمتها أدنوك مع عمالقة الشحن مثل "سينوكور" (Sinokor) ميزة خيارات التسليم الإضافية التي ساعدت في دعم مبيعات النفط الخام البحري، والذي كان يُحتفظ به سابقاً كمخزون غير مباع مخصص أساساً للمشترين بعقود آجلة في ذروة الأزمة.
+
+وفي حين أن الهجمات الأخيرة على السفن الإماراتية من قبل إيران تبقي الأسواق في حيرة وتساؤل حول مدى استدامة نموذج أدنوك المكوكي، إلا أن هذا الترتيب المؤقت ساعد في تعافي عمليات الإنتاج بالدولة، مما أتاح لمشتري العقود الآجلة لأدنوك اللحاق بالركب والحصول على الشحنات التي لم يتمكنوا من استلامها في ذروة الصراع خلال شهري أبريل ومايو.
+
+وقد أشارت مصادر السوق إلى أنه بموجب عقود أدنوك الآجلة مع المشترين، إذا لم يتمكن المشتري من استلام الشحنة، يحق لأدنوك إعادة بيعها في دورة التسليم التالية على أساس فوري. ويتعين على مشتري العقد الآجل تعويض أدنوك عن الفارق إذا تم بيع الشحنة الفورية بسعر أقل من السعر الآجل المعروض خلال شهر التحميل المقرر أصلاً.
+
+* على سبيل المثال، شحنة خام "زاكوم العلوي" المقررة للتحميل في مايو كانت لتجلب حوالي 110 دولارات للبرميل. وإذا تم بيع هذه الشحنة في يونيو مقابل خام دبي، فإن الفارق سيصل إلى حوالي 30 دولاراً للبرميل. وبشكل حاسم، يتم إسقاط هذا الشرط الجزائي إذا شارك مشتري العقد الآجل نفسه في المناقصة، مما يلغي التزاماته تجاه أدنوك. وكان الأثر الصافي لذلك هو خلق تهافت من قبل مشتري العقود الآجلة لأدنوك لتقليص مخاطرهم واللحاق بالركب لتلقي كمياتهم.
+
+---
+
+### معضلة العراق وافتقار المرونة اللوجستية
+
+وبالإضافة إلى مساهمة "خدمة الشحن المكوكي" لأدنوك في دفع عجلة التعافي في إنتاج النفط الخام الإماراتي، فإن مرونة الشحن التي تتمتع بها توفر أيضاً بعض الفرص التجارية داخل مضيق هرمز. ويمثل العراق نموذجاً واضحاً في هذا الصدد.
+
+فنظراً لعدم امتلاكه لناقلات خاصة به، تعين على العراق تقديم خصومات كبيرة على أسعار البيع الرسمية (OSP) لتصريف شحناته. ومن المثير للاهتمام، تردد أنباء عن بيع شحنة تبلغ مليوني برميل من خام "البصرة المتوسط" مقرر تحميلها في يوليو إلى شركة أدنوك للتجارة بخصم قدره 14 دولاراً للبرميل عن سعر البيع الرسمي، وبيعت لاحقاً لشركة "فورموزا" (Formosa) بعلاوة قدرها 3 دولارات للبرميل فوق سعر دبي عبر عملية نقل من سفينة إلى أخرى (STS) في الفجيرة.
+
+وتتعرض قوة تسعير FOB للعراق لمزيد من التآكل بسبب تجنب مشتري العقود والشركاء المخاطر المتعلقة بالتحميل من مرفأ البصرة النفطي (BOT). وعلى الرغم من حدوث بعض التعافي في الإنتاج في يونيو، فإن الإحجام المستمر من جانب عملاء العراق عن التحميل يخلق حلقة مفرغة تبطئ تعافي الإنتاج، لاسيما في ظل تعقيدات الآبار، وقيود التخزين، وافتقار البلاد إلى المرونة الهيكلية واللوجستية.
+
+وقد أوجد هذا فرصاً كبرى لعدد محدود من شركات التجارة المستعدة لاستغلال نموذج البيع على ظهر السفينة (FOB) البحت؛ حيث أشارت مصادر السوق إلى أن شركة "أدنوك للتجارة" تستخدم سعتها الفائضة من السفن للتفاوض على خصومات مع العراق، وانضم إليها لاعبون آخرون مثل ميركوريا (Mercuria)، وتوتسا (Totsa)، وفيتول (Vitol) - والأخيرة تعد من الرواد الأوائل في تقديم الخدمات المكوكية لنقل شحنات البصرة إلى مواقع STS في ذروة أزمة مضيق هرمز.
+
+---
+
+### نقل الشحنات من سفينة إلى أخرى والتسليم الفعلي: هل يصبح ترتيباً دائماً؟
+
+وعلى الرغم من أن أدنوك تنظر إلى نموذج نقل الشحنات من سفينة إلى أخرى (STS) كترتيب مؤقت، لاسيما وأن دولة الإمارات تسير على الطريق الصحيح لتوسيع قدرتها التصديرية عبر الفجيرة إلى 3.3 مليون برميل يومياً بحلول منتصف عام 2027، إلا أن نموذج STS قد يتحول إلى سمة هيكلية أكثر ديمومة في مبيعات الخام للمنتجين المعتمدين بالكامل على نموذج FOB.
+
+وحتى في ظل سيناريو متفائل بإنهاء الأزمة في الوقت المناسب، فمن المرجح أن يستمر التفاوت في مؤشر "worldscale" لأسعار الشحن البحري داخل مضيق هرمز وخارجه. كما ستستغرق فرق الامتثال التابعة لأذرع الشحن في شركات النفط العالمية (IOCs) التي تمتلك حصصاً أو عقوداً في المنطقة وقتاً للتكيف. ونتيجة لذلك، قد يصبح نموذج STS الأداة القياسية لنقل المخاطر مستقبلاً.
+
+وعلى الرغم من أن دولة الإمارات في طريقها لتوسيع قدرة خط الأنابيب إلى الفجيرة بحلول منتصف عام 2027، فإن المتداولين يتداولون مقترحات تدعو وكالة "بلاتس" - الجهة المسؤولة عن مؤشر دبي - إلى تضمين سعر تسليم مخلص الرسوم والتأمين والشحن (CIF) لخام "زاكوم العلوي" على أساس STS الفجيرة في تقييم المؤشر المرجعي، كإجراء احترازي على الأقل. حيث يمكن تطبيق عامل تعديل الشحن (FAF) على هذا الخام وتحويله إلى سعر FOB، تماماً كما يحدث مع خام غرب تكساس الوسيط (WTI Midland) في مؤشر برنت المرجعي.
+
+وإلى جانب نموذج STS، يظل علامة الاستفهام الكبرى الأخرى لمبيعات نفط المنطقة متمثلة في الدور المستقبلي لأسعار التسليم الفعلي المخلص (delivered pricing).
+
+تقوم كل من "أدنوك للإمداد والخدمات"، وشركة "البحري" السعودية، وشركة ناقلات النفط الكويتية (KOTC) بتوسيع أساطيل ناقلاتها. فقد وسعت البحري استئجارها لناقلات النفط العملاقة (VLCCs)، وهناك شائعات عن طموحها لشراء المزيد منها هذا العام. ويأتي ذلك كجزء من الاستراتيجية الأوسع للمملكة العربية السعودية لتعزيز المرونة إلى جانب توسيع مرافق تخزين النفط الخام والمشتقات داخل المملكة، وتحديث خط أنابيب شرق-غرب لإتاحة مرونة أكبر في تداول مختلف الخامات وتوسيع مرافئ التصدير.
+
+وقد نمت كميات المبيعات الفورية بنموذج التسليم الفعلي من أرامكو في الأسابيع الأخيرة. ففي أوائل يوليو، باعت أرامكو شحنة تبلغ مليوني برميل من الخام "العربي المتوسط" لشركة "شينغهونغ" (Shenghong) على أساس التسليم الفعلي المخلص. وبالمثل، رشح العملاء الصينيون كميات منخفضة قياسية من خام أرامكو للتحميل في أغسطس (المباع على أساس FOB)، حيث فضل مشترون مثل يونيبيك (Unipec) ورونغشنغ (Rongsheng) الشحنات الفورية القائمة على التسليم الفعلي المخلص.
+
+ومع أنه من المرجح أن تزداد أهمية المبيعات الفورية والمناقصات بنموذج التسليم الفعلي مستقبلاً في سوق الخام بالشرق الأوسط، إلا أنه من المستبعد أن ينتقل التسعير بسرعة إلى هذا نموذج - فأسعار FOB الفعلية تعكس منحنى دبي وتتيح ممارسات تحوط فعالة. وفيما يتعلق بالشحن، تظل السيولة الآجلة مشكلة تثير تساؤلات حول كيفية قيام منتج مثل أرامكو بالتحوط من مخاطر أسعار الشحن في تسعير التسليم المخلص. وبدلاً من ذلك، يرجح أن تصبح المفاوضات الثنائية، حيث تتفاوض فرق الاستئجار الزمني مباشرة على الأسعار، هي القاعدة السائدة - إلى حين نشوء نظام بيئي أكثر نضجاً لتسعير مشتقات الشحن.
+
+---
+
+### إعادة بناء الثقة المتبادلة
+
+وبغض النظر عن مسار الأحداث في الشرق الأوسط، يظل العنوان الأبرز للمنتجين ثابتاً: **المرونة وإعادة بناء الثقة.**
+
+فقد تسببت أزمة مضيق هرمز بالفعل في دعاوى قضائية، وتوترات بين الشركاء المستخرجين والمنتجين، ومعارك قضائية بين بيوت التجارة وجهات مقابلة وبورصات أخرى. ولم يكن الأثر الارتدادي لصدمة التحميل الهائلة مقتصراً على فقدان الشحنات الفعلية فحسب، بل شمل أيضاً خسارة المراكز الورقية بمليارات الدولارات التي تدعمها.
+
+* **في الإمارات:** على سبيل المثال، في ذروة الأزمة في أبريل ومايو، خفضت أدنوك مخصصات شركائها المستخرجين. ولم يكن الأثر مقتصراً على خسارة الكميات الفعلية فحسب، بل شمل خسائر ورقية أيضاً، حيث يتم تخصيص شحنات أدنوك على أساس سعر البيع الرسمي (OSP) ويتم التحوط لها باستخدام عقود مبادلة دبي (Dubai swaps) التي بلغت مستويات قياسية. وكانت التداعيات المتتالية شديدة للغاية.
+* **في العراق:** برزت توترات مماثلة في العراق أيضاً. فعلى سبيل المثال، في ذروة الأزمة في مايو، قدمت شركة "سومو" لمشتري العقود الآجلة خصماً بقيمة 33 دولاراً للبرميل عن سعر OSP لشحنات تحميل مايو، بينما حددت سعر البصرة المتوسط للشركاء المستخرجين عند سعر OSP الرسمي البالغ +17.3 دولار للبرميل - وهو تفاوت فرضه حاجة العراق الماسة لتأمين السيولة النقدية الفورية واستعادة التدفقات المالية أثناء الأزمة. ونتيجة لذلك، تم دفع الشركاء المستخرجين إلى مؤخرة الطابور. وتكرر وضع مماثل في يونيو حيث بلغ الخصم لخام البصرة المتوسط 20 دولاراً للبرميل عن OSP لمشتري العقود الآجلة، بينما أُعطي الشركاء المستخرجون سعر OSP بقيمة +4.3 دولار للبرميل. ولم يتم تصحيح هذا الوضع إلا في يوليو بعد شكاوى واحتجاجات واسعة من الشركاء المستخرجين.
+
+مستقبلاً، سيكون الحفاظ على هذا التوازن الدقيق بين عملاء العقود والشركاء المستخرجين أمراً بالغ الأهمية. وبالفعل، تبدو بعض المؤشرات متجهة في هذا المسار.
+
+وكجزء من طموحات الإمارات لتوسيع قدراتها الإنتاجية في عام 2027، عقدت أدنوك اجتماعات مع عملائها للتفاوض على الكميات. وضمن هذا الجهد، تم تقديم طلبات لإعادة صياغة معادلة تسعير OSP للخامات البحرية لتستند مجدداً إلى مؤشر دبي، بدلاً من تسعيرها كفارق عن مؤشر خام مربان في بورصة "إيفاد" (IFAD Murban).
+
+ولماذا عُد ذلك إجراءً لإعادة بناء الثقة؟ يرجع جزء من السبب إلى أن فارق خام "زاكوم العلوي" عن مربان بورصة إيفاد لم يكن متوافقاً دائماً مع هيكلية دبي (M1-M3)، مما أدى لاتهامات بأن حساب الأرباح والخسائر (PnL) لـ 15 شحنة تسبب في تسعير خاطئ لأكثر من 200 شحنة. وستظل التوترات قائمة دوماً بين عملاء العقود والمنتجين حول تسعير OSP، ولكن في مشهد نفط أكثر تقلباً بالشرق الأوسط - لاسيما المشهد الذي أصبح التحوط فيه أكثر صعوبة - فإن خفض مخاطر الفروقات والتحميل بات مصدراً رئيسياً لإعادة بناء الثقة. وتسلط هذه الحادثة الضوء على التحديات التي يواجهها المنتج عندما يحاول القيام بكل شيء في آن واحد: المنتج، والمتداول، وموفر المؤشر المرجعي.
+
+---
+
+### الخلاصة والآفاق المستقبلية
+
+في النهاية، يبدو التكوين الجيوسياسي المستقبلي للشرق الأوسط في حالة من السيولة الدائمة. ومن المستبعد التوصل إلى حل كامل ومنظم، وبغض النظر عما إذا كان هناك وقف إطلاق نار مؤقت آخر، فإن مخاطر التحميل أصبحت واقعاً هيكلياً في المنطقة.
+
+كما باتت مرونة خيارات التسليم والمرونة اللوجستية والهيكلية هي المقاييس الجديدة للقدرة التنافسية. وفي هذا السياق:
+* تمضي أرامكو قدماً في خططها لتوسيع التحميل من ينبع.
+* تسير أدنوك بثبات نحو توسيع قدرة خط الأنابيب المؤدي للفجيرة.
+* ناقش العراق إنشاء خطوط أنابيب جديدة من البصرة إلى حديثة ومن ثم إلى مرافئ التصدير في سوريا أو غيرها، إلا أن سجله التاريخي في التنفيذ لا يزال بعيداً عن الكفاءة المطلوبة.
+
+وفي ظل هذا الواقع التجاري الجديد، لم يعد تحسين سعة ناقلات النفط ترفاً بل أصبح ضرورة ملحة. وفي شرق أوسط متعدد السرعات، لم يعد بإمكان منتجين مثل العراق استقاء إشارات التسعير من السعودية، لكون مخاطر تحميل FOB باتت تعمل من قواعد منطلقات متباينة بين البلدين.
+
+كما ستزداد ضبابية المنطقة مستقبلاً: حيث يتم إغلاق أنظمة تحديد الهوية التلقائية (AIS)، وتتزايد أهمية المناقصات الفورية، وتصبح المفاوضات الثنائية حول تكاليف الشحن هي القاعدة - لاسيما مع تعاظم دور نموذج التسليم المخلص.
+
+---
+*\* أحمد مهدي هو العضو المنتدب لشركة رينيسانس لأبحاث الطاقة (REA).*`,
+    contentEn: `### Hormuz Crisis Changes The Structure Of Middle East Oil Sales
+**Middle East Economic Survey (MEES)**  
+**7 July 2026 | Issue: 69 / 29**  
+**By: Ahmed Mehdi***
+
+The traditional rules of the Middle East crude pricing cycle are unravelling and a return to the legacy FOB pure-play model is unlikely. In this new trading reality, delivery optionality has become the key metric of producer competitiveness.
+
+---
+
+### The Geopolitical Stalemate
+
+The resumption of tit-for-tat attacks between the US and Iran has eroded market confidence in a normalization of flows through the Strait of Hormuz (SoH). Geopolitically, the biggest question remains the most consequential: **who will gain control over the future of the Strait of Hormuz?**
+
+For now, the ongoing stalemate is keeping markets on edge:
+* Iran sees upcoming US elections as its window to maximize leverage and set the future boundary conditions for navigation via the SoH.
+* Israel’s maximalist goals remain unfulfilled.
+* The global economy is confronting its worst oil products crisis in history, with cracks now at record levels – a reminder that the SoH crisis is as much a products problem as a crude one.
+
+Regardless of how the geopolitical endgame unfolds, a return to the pre-war system for crude sales and pricing looks remote. Confidence in the stability of flows through the SoH lay at the heart of the pre-war mechanisms but has now been shattered.
+
+For now, loading risk has ushered in temporary arrangements such as shuttle sales and STS deliveries in the Gulf of Oman. Hedging strategies have become more difficult to execute as mismatches between trading and loading dates have added to the chaos.
+
+The steady erosion of the region’s FOB (Free on Board) sales model now looks complete, with or without a clear resolution in the SoH. While events remain in flux, what can we say about the future of the Middle East crude trading system?
+
+---
+
+### The Death of FOB
+
+Geopolitically, the battle for physical control over the SoH continues. Since the breakdown of the mid-June US-Iran MoU, Iran has attacked vessels traversing Omani waters, strikes have been levelled against Kuwait, Bahrain, Qatar and Oman and in a further sign of escalation, UAE “shuttle” vessels have been targeted.
+
+While the future trajectory of events remains unclear, a return to the Middle East’s pre-war pricing cycle looks highly unlikely.
+
+#### Pre-War Pricing Cycles:
+1. **Saudi Aramco as the Anchor:** Pre-war, a typical cycle would first involve Saudi Aramco issuing its official selling prices (OSP) early in the month for month-ahead loading, with the differential guided by shifts in the shape of the Dubai forward curve, supply and demand fundamentals, quality spreads and refining margins. Aramco’s formula pricing was almost always the guide for others, dictating the formula prices of key producers such as Iraq. This ensured that term cargoes were not mispriced and equity lifters were not left in a pricing rut. Uninterruptable scheduling and loading underpinned the system, allowing one producer to look at another to assess fair value.
+2. **The Platts Dubai Window:** Also underpinning the OSP formula pricing model were shifts in the reference spot market for cargoes loading two months ahead. The playground for this activity has typically been the Platts Dubai window, where deliverable grades are the market’s “bullets” to defend fair value and maintain management of hedging and paper positions held in liquid derivative markets.
+3. **Trading & Loading Synchronicity:** Mismatches in trading and loading dates were also rare: a cargo priced today would load two months ahead, ensuring no disruption to the linkages between physical and paper markets. Outside the window, physical spot cargoes trading in chains in bilateral OTC (over the counter) contracts would be bought and sold multiple times before reaching final delivery.
+
+With the SoH crisis ultimately a loading crisis, questions are being raised over whether the region’s FOB model is now coming undone and whether adaptive measures evolve into structural features of a new sales and pricing landscape.
+
+---
+
+### ADNOC’s Shuttle Model & Shipping Flexibility
+
+Reflecting the new trading realities inside the SoH remains the shuttle model, most actively being used by Adnoc.
+
+Since June, Adnoc has sold around 75-80mn barrels of offshore crude via tenders, with most sales for prompt delivery. Underpinning Adnoc’s sales velocity has been its use of vessels either owned or managed by Adnoc to “shuttle” cargoes from offshore terminals to STS locations such as Fujairah.
+
+Beyond vessels it already owns, Adnoc’s time-charter deals with shipping heavyweights such as Sinokor have added a layer of delivery optionality that has helped support sales of offshore crude, previously held in inventory as unsold crude originally intended for term lifters at the height of the crisis.
+
+While recent vessel attacks against the UAE by Iran continue to keep the market guessing on whether Adnoc’s “shuttle” model is sustainable, the temporary arrangement has helped the UAE’s upstream recovery, allowing Adnoc’s term lifters to play “catch-up” with cargoes they couldn’t collect at the height of the conflict in April-May.
+
+Market sources have noted that under Adnoc’s term contract with buyers, if a lifter can’t take delivery, Adnoc has the right to resell the cargo in the next delivery cycle on a spot basis. The term buyer then must compensate Adnoc for the difference if the spot cargo sells for less than the term price offered during the originally scheduled loading month.
+
+* For example, a May-loading Upper Zakum cargo would have fetched around $110/B. If that cargo was sold in June against Dubai, the difference would amount to around $30/B. Critically, this clause is waived if that same term buyer participates in the tender, offsetting their liability to Adnoc. The net effect of this has been to create a rush by Adnoc’s term buyers to offset their exposure and play “catch-up” in taking delivery of their volumes.
+
+---
+
+### The Iraqi Bottleneck
+
+Beyond Adnoc’s “shuttle service” helping drive a recovery in UAE crude production, its shipping flexibility is also providing some trading opportunities inside the SoH. Iraq provides a case in point.
+
+With no tankers of its own, Iraq has had to provide aggressive discounts to its OSP to shift cargoes. Interestingly, a 2mn barrel July-loading Basrah Medium cargo was heard to have sold to Adnoc Trading at a discount of $14/B to the OSP and later sold to Formosa at a $3/B premium to Dubai via Fujairah STS.
+
+Iraq’s FOB pricing power is being further eroded by the risk-aversion of term and equity lifters to load from Basrah Oil Terminal (BOT). Despite seeing some recovery in its upstream production in June, ongoing reluctance by Iraq’s term and equity customers to lift is creating an on-off feedback loop which slows its production recovery, particularly given wellbore complexities, storage constraints and the country’s lack of infrastructural flex.
+
+This has created major opportunities for a select number of trading houses ready to exploit the FOB pure play model: market sources have noted that Adnoc Trading is using excess tonnage to negotiate discounts with Iraq, joined by players such as Mercuria, Totsa and Vitol – the latter an early pioneer of the shuttle service to move Basrah cargoes to STS locations at the height of the SoH crisis.
+
+---
+
+### STS & Delivered Pricing: A Permanent Fixture?
+
+Although Adnoc will see the STS model as temporary as the UAE is on target to expand export capacity via Fujairah to 3.3mn b/d by mid-2027, the STS model could become a more structural feature of crude sales for FOB pure play producers.
+
+Even under an optimistic scenario whereby there is a timely resolution to the crisis, a discrepancy between worldscale values for freight rates inside versus outside the SoH will likely persist. The compliance teams of shipping arms of IOCs who hold equity or term cargoes in the region will also take time to adjust. As a result, STS could become the measure of risk transfer going forward.
+
+Despite the UAE being on track to expand pipeline capacity to Fujairah by mid-2027, traders are circulating ideas suggesting that Platts – the custodian of the Dubai benchmark – should include a CIF (Cost, Insurance and Freight) Upper Zakum price based on STS Fujairah in the benchmark assessment, even if only as a precautionary measure. A freight adjustment factor (FAF) can be applied to the grade and converted to a FOB price, as occurs with WTI Midland in the Brent benchmark.
+
+Alongside STS, the other big question mark for the region’s oil sales remains the future role of delivered pricing.
+
+Adnoc’s shipping arm, Adnoc L&S, Saudi Arabia’s Bahri and Kuwait’s KOTC are all expanding their tanker tonnage. Bahri has expanded its lease of VLCCs, and there are rumours that it has ambitions to purchase more VLCCs this year. This falls under Saudi Arabia’s wider strategy of increasing resilience alongside expanding in-kingdom crude and product storage facilities, upgrading the East-West pipeline to allow for greater grade flexibility and export terminal expansions.
+
+Aramco’s volume of delivered spot sales has grown in recent weeks. In early July, Aramco sold a 2mn barrel cargo of Arab Medium to Shenghong on a delivered basis. Likewise, Chinese term customers nominated record low volumes of Aramco crude for August-loading (sold on a FOB basis) as buyers such as Unipec and Rongsheng preferred delivered spot cargoes.
+
+While delivered spot sales and tenders are likely to grow in importance in the future Middle East crude market, it remains doubtful that pricing can move so swiftly to a delivered model – FOB physical prices mirror the Dubai curve and allow for efficient hedging practices. For freight, forward liquidity remains an issue, raising questions as to how a producer such as Aramco can hedge its freight exposure for delivered pricing. Instead, bilateral negotiations where time charter teams negotiate prices directly will likely become the norm – until a more mature ecosystem around freight derivative pricing emerges.
+
+---
+
+### Rebuilding Trust
+
+Regardless of where events move next in the Middle East, the overarching theme for producers remains constant: **resilience and rebuilding trust.**
+
+The SoH crisis has already triggered lawsuits, tensions between equity lifters and producers and court battles between trading houses with other counterparties and exchanges. The ricochet effect of such a massive loading shock is not simply a loss of physical cargoes but also the multi-billion-dollar paper positions which underpin them.
+
+* **In the UAE:** For example, at the height of the crisis in April and May, Adnoc cut its equity lifters. The impact was not only a loss of physical volume but also paper losses as Adnoc cargoes are allocated on an OSP basis and hedged using Dubai swaps which reached record levels. The cascading effects have been severe.
+* **In Iraq:** Similar tensions have also surfaced in Iraq. For example, at the height of the crisis in May, Somo offered its term lifters a $33/B discount v OSP for May-loading cargoes but for equity lifters, the Basrah Medium price was Somo’s official May-loading OSP set at +$17.3/B – a divergence driven by Iraq’s need to book cash immediately and restore cash flows amid the crisis. As a result, equity lifters got pushed to the back of the queue. A similar situation happened in June where the discount for Basrah Medium was $20/B v OSP for term customers, but equity lifters were given the OSP of +$4.3/B. Only in July was the situation rectified after significant complaints by equity lifters.
+
+Going forward, rebuilding the delicate balance between term and equity customers will be key. Already, some signs appear to be pointing in that direction.
+
+As part of the UAE’s ambitions to expand production capacity in 2027, Adnoc has held meetings with its term customers to negotiate volumes. As part of that exercise, requests were made to shift OSP pricing formulae for offshore grades back to a Dubai basis, instead of being priced as a differential to IFAD Murban.
+
+Why was this a rebuilding trust measure? Part of the reason rests with the Upper Zakum differential to IFAD Murban not always being aligned with Dubai M1-M3 structure, which led to accusations that the PnL (profit and loss) of 15 cargoes were mispricing over 200 cargoes. Tensions will always exist between term customers and producers over OSP pricing but in a more volatile Middle East crude landscape – especially one where hedging has become more difficult – reducing basis and loading risk has become a key source of re-establishing trust. The episode also highlights the challenges of a producer trying to be all things at once: a producer, trader, and benchmark provider.
+
+---
+
+### Rebuilding Infrastructure & Competitiveness
+
+Ultimately, the future geopolitical configuration of the Middle East is in flux. A neat outcome looks unlikely and regardless of whether another temporary ceasefire emerges, loading risk has become a structural reality for the region.
+
+Delivery optionality and infrastructural flexibility are the new metrics of competitiveness in the region:
+* Aramco is advancing plans to expand Yanbu loading.
+* Adnoc is on track to expand Fujairah pipeline capacity.
+* While Iraq has discussed new pipelines from Basrah to Haditha and on to export terminals in Syria or elsewhere, its historical track record on execution has been far from stellar.
+
+In this new trading reality, optimizing tanker tonnage is no longer a luxury but a necessity. In this multi-speed Middle East, producers such as Iraq can no longer take their cues on pricing from Saudi Arabia as FOB loading risk is operating from different baselines. The region also becomes more opaque going forward: AIS signalling shuts down, tenders grow in importance and bilateral negotiations around freight become the norm – especially as delivered pricing grows in importance.
+
+---
+*\* Ahmed Mehdi is Managing Director of Renaissance Energy Advisors (REA).*`
+  },
+  {
     id: 'fifa-world-cup-profits-2026',
     slug: 'fifa-world-cup-profits-2026',
     focusKeyword: 'أرباح-فيفا-كأس-العالم-٢٠٢٦',
