@@ -2080,11 +2080,15 @@ export default function App() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     {/* Left Column (8/12) - Vertical News Menu Layout */}
                     <div className="lg:col-span-8 w-full">
-                      <section className="relative overflow-hidden border-4 border-double border-black p-4 bg-white" id="home-vertical-news-hero">
+                      <section className="relative overflow-hidden border-4 border-amber-500/30 p-6 bg-zinc-950 text-white shadow-[10px_10px_0px_0px_rgba(185,28,28,0.9)] rounded-sm" id="home-vertical-news-hero">
+                        {/* Sovereign Grid Background Watermark */}
+                        <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.015)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+                        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
                         {/* Share Button in Top-Right Corner */}
                         <button
                           onClick={() => setShowQrOverlay(true)}
-                          className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1 bg-black hover:bg-zinc-800 text-white text-[10px] font-mono font-black py-1 px-1.5 md:py-1.5 md:px-2.5 border border-black uppercase tracking-wider transition-all cursor-pointer select-none active:translate-y-0.5"
+                          className="absolute top-4 right-4 z-20 flex items-center gap-1.5 bg-zinc-900 hover:bg-zinc-800 text-white text-[10px] font-mono font-black py-1.5 px-2.5 border border-zinc-800 uppercase tracking-wider transition-all cursor-pointer select-none active:translate-y-0.5"
                           title={isAr ? 'مشاركة عبر رمز الاستجابة السريعة' : 'Share via QR Code'}
                           id="home-hero-share-btn"
                         >
@@ -2093,19 +2097,19 @@ export default function App() {
                         </button>
 
                         {/* Section header indicator */}
-                        <div className="flex justify-between items-center pb-2.5 mb-4 border-b border-zinc-200 pr-12 sm:pr-24">
+                        <div className="flex justify-between items-center pb-3 mb-5 border-b border-zinc-900 pr-12 sm:pr-24">
                           <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 bg-red-950 rounded-none inline-block animate-pulse"></span>
-                            <span className="font-mono text-xxs tracking-widest font-black uppercase">
+                            <span className="w-2.5 h-2.5 bg-red-600 rounded-none inline-block animate-pulse"></span>
+                            <span className="font-mono text-xxs tracking-widest font-black uppercase text-amber-400">
                               {isAr ? 'منصة التحقيقات الكبرى والأخبار السيادية' : 'AL-WARRAQ CENTRAL INVESTIGATIVE WIRE'}
                             </span>
                           </div>
                         </div>
 
                         {/* Split Menu & Excerpt Layout */}
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
                           {/* Column 1: Vertical News Menu Index (5/12) */}
-                          <div className="md:col-span-5 border-l border-zinc-200 pl-3 space-y-2 max-h-[480px] overflow-y-auto pr-1 rtl:border-l-0 rtl:pl-0 rtl:border-r rtl:pr-3 rtl:pl-1">
+                          <div className="md:col-span-5 border-l border-zinc-900 pl-3 space-y-2.5 max-h-[480px] overflow-y-auto pr-1 rtl:border-l-0 rtl:pl-0 rtl:border-r rtl:border-zinc-900 rtl:pr-3 rtl:pl-1">
                             {sliderSlides.map((story, idx) => {
                               const isSelected = currentSlide === idx;
                               const isDossier = !!DOSSIER_DESKTOP_META[story.id];
@@ -2113,26 +2117,26 @@ export default function App() {
                                 <button
                                   key={story.id}
                                   onClick={() => setCurrentSlide(idx)}
-                                  className={`w-full text-right rtl:text-right ltr:text-left p-2.5 border transition-all duration-150 cursor-pointer flex gap-2 items-start select-none rounded-none ${
+                                  className={`w-full text-right rtl:text-right ltr:text-left p-3 border transition-all duration-200 cursor-pointer flex gap-2.5 items-start select-none rounded-none ${
                                     isSelected
-                                      ? 'bg-amber-50/70 text-red-950 font-bold border-black border-l-4 rtl:border-r-4 rtl:border-l'
-                                      : 'bg-stone-50 hover:bg-stone-100 text-zinc-800 border-zinc-200 hover:border-zinc-400'
+                                      ? 'bg-amber-950/40 text-amber-400 font-bold border-amber-500 border-l-4 rtl:border-r-4 rtl:border-l'
+                                      : 'bg-zinc-900/60 hover:bg-zinc-900 text-zinc-300 border-zinc-900 hover:border-zinc-850'
                                   }`}
                                 >
-                                  <span className={`font-mono text-[11px] font-black shrink-0 mt-0.5 ${isSelected ? 'text-red-900' : 'text-zinc-400'}`}>
+                                  <span className={`font-mono text-[11px] font-black shrink-0 mt-0.5 ${isSelected ? 'text-amber-400' : 'text-zinc-500'}`}>
                                     {String(idx + 1).padStart(2, '0')}.
                                   </span>
                                   <div className="flex-1 flex items-center justify-between gap-3 min-w-0">
-                                    <div className="space-y-1 min-w-0 flex-1 text-right rtl:text-right ltr:text-left">
-                                      <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-red-900' : 'text-zinc-950'}`}>
+                                    <div className="space-y-1.5 min-w-0 flex-1 text-right rtl:text-right ltr:text-left">
+                                      <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-amber-300' : 'text-zinc-100'}`}>
                                         {isAr ? story.titleAr : story.titleEn}
                                       </h4>
                                       <div className="flex flex-wrap gap-1.5 items-center">
-                                        <span className="text-[9px] font-mono uppercase bg-zinc-200/60 px-1.5 py-0.2 text-zinc-500 font-bold">
+                                        <span className="text-[9px] font-mono uppercase bg-zinc-800 text-zinc-400 px-1.5 py-0.2 font-bold">
                                           {isAr ? story.categoryAr || 'عام' : story.category.toUpperCase()}
                                         </span>
                                         {isDossier && (
-                                          <span className="text-[9px] font-mono font-black text-red-800 bg-red-100/50 px-1.5 py-0.2 uppercase border border-red-200/20">
+                                          <span className="text-[9px] font-mono font-black text-red-400 bg-red-950/60 px-1.5 py-0.2 uppercase border border-red-900/30">
                                             {isAr ? 'تحقيق سيادي' : 'DOSSIER'}
                                           </span>
                                         )}
@@ -2152,12 +2156,12 @@ export default function App() {
                             <div className="space-y-3">
                               {/* Meta Info */}
                               <div className="flex justify-between items-center text-xxs font-mono">
-                                <span className="text-zinc-500 font-extrabold uppercase tracking-widest block">
+                                <span className="text-zinc-400 font-extrabold uppercase tracking-widest block">
                                   {activeSlide.category === 'editor-desk'
                                     ? (isAr ? 'هيئة تحرير صحيفة الوارّاق' : 'Al-Warraq Editorial Board')
                                     : (isAr ? `تغطية برئاسة: ${activeSlide.author?.nameAr || ''}` : `Filed by: ${activeSlide.author?.nameEn || ''}`)}
                                 </span>
-                                <span className="font-mono font-black text-red-850 animate-pulse uppercase">
+                                <span className="font-mono font-black text-red-400 animate-pulse uppercase">
                                   ● {isAr ? 'خلاصة مفرج عنها' : 'DECLASSIFIED EXCERPT'}
                                 </span>
                               </div>
@@ -2173,7 +2177,7 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="relative h-[160px] md:h-[210px] overflow-hidden border border-black cursor-pointer group/img shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                                className="relative h-[160px] md:h-[210px] overflow-hidden border border-zinc-800 cursor-pointer group/img shadow-[4px_4px_12px_rgba(0,0,0,0.4)]"
                               >
                                 <img 
                                   src={activeSlide.imageUrl} 
@@ -2186,7 +2190,7 @@ export default function App() {
                                   className="w-full h-full object-cover bw-image transition-transform duration-500 group-hover/img:scale-102"
                                 />
                                 {activeSlide.isBreaking && (
-                                  <span className="absolute top-3 right-3 bg-red-950 text-white text-[8px] font-black tracking-widest px-2 py-0.5 uppercase border border-white font-mono animate-pulse">
+                                  <span className="absolute top-3 right-3 bg-red-950/80 text-red-300 text-[8px] font-black tracking-widest px-2 py-0.5 uppercase border border-red-800 font-mono animate-pulse">
                                     {isAr ? 'عاجل وحصري' : 'EXCLUSIVE WIRE'}
                                   </span>
                                 )}
@@ -2203,19 +2207,19 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="text-base md:text-lg font-black text-black leading-snug tracking-tight hover:underline cursor-pointer font-sans"
+                                className="text-base md:text-lg font-black text-white hover:text-amber-400 leading-snug tracking-tight hover:underline cursor-pointer font-sans transition-colors"
                               >
                                 {isAr ? activeSlide.titleAr : activeSlide.titleEn}
                               </h3>
 
                               {/* Excerpt Summary */}
-                              <p className="text-zinc-700 font-serif text-xs leading-relaxed line-clamp-3 bg-stone-50 border-r-2 border-red-900 p-2.5 rtl:border-r-2 rtl:border-l-0 ltr:border-l-2 ltr:border-r-0 rounded-none shadow-[1px_1px_0px_0px_rgba(0,0,0,0.05)]">
+                              <p className="text-zinc-300 font-serif text-xs leading-relaxed line-clamp-3 bg-zinc-900/50 border-amber-500/40 p-2.5 border-r-2 rtl:border-r-2 rtl:border-l-0 ltr:border-l-2 ltr:border-r-0 rounded-none shadow-[1px_1px_0px_0px_rgba(0,0,0,0.05)]">
                                 {isAr ? activeSlide.summaryAr : activeSlide.summaryEn}
                               </p>
                             </div>
 
                             {/* Actions and Socials Panel */}
-                            <div className="border-t border-zinc-200 pt-3.5 flex flex-wrap items-center justify-between gap-3 select-none">
+                            <div className="border-t border-zinc-900 pt-3.5 flex flex-wrap items-center justify-between gap-3 select-none">
                               {/* Read Button */}
                               <button 
                                 onClick={() => {
@@ -2227,7 +2231,7 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="bg-black hover:bg-zinc-800 text-white font-black text-[11px] px-4 py-2 uppercase cursor-pointer transition-colors flex items-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]"
+                                className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-black text-[11px] px-4 py-2 uppercase cursor-pointer transition-colors flex items-center gap-1 shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5"
                               >
                                 <span>{isAr ? 'طالع التحقيق بالكامل ➜' : 'Read Full Investigation ➜'}</span>
                               </button>
@@ -2239,7 +2243,7 @@ export default function App() {
                                   href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تحقيق سيادي مفرج عنه من جريدة الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? activeSlide.titleAr : activeSlide.titleEn}*\n\n👉 ${window.location.origin}/?article=${activeSlide.id}`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="px-2 py-1 bg-emerald-700 hover:bg-emerald-800 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer"
+                                  className="px-2 py-1 bg-emerald-800/80 hover:bg-emerald-800 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer"
                                   title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
                                 >
                                   <Send size={9} />
@@ -2255,7 +2259,7 @@ export default function App() {
                                       alert(isAr ? 'تم نسخ الرابط المباشر للمادة!' : 'Direct article link copied!');
                                     });
                                   }}
-                                  className="px-2 py-1 bg-zinc-800 hover:bg-black text-white flex items-center gap-1 transition-colors font-bold uppercase border border-zinc-900 rounded-none cursor-pointer"
+                                  className="px-2 py-1 bg-zinc-900 hover:bg-zinc-850 text-white flex items-center gap-1 transition-all font-bold uppercase border border-zinc-800 rounded-none cursor-pointer"
                                 >
                                   <Link size={9} />
                                   <span>{isAr ? 'نسخ الرابط' : 'COPY'}</span>
@@ -2264,7 +2268,7 @@ export default function App() {
                                 {/* PDF Download / Print */}
                                 <button
                                   onClick={() => window.print()}
-                                  className="px-2 py-1 bg-red-900 hover:bg-red-950 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer border border-red-950"
+                                  className="px-2 py-1 bg-red-950 hover:bg-red-900 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer border border-red-900/50"
                                   title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
                                 >
                                   <Download size={9} />
