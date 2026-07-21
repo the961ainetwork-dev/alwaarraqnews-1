@@ -13,6 +13,7 @@ import { FrameworkAgreementInfographic } from './FrameworkAgreementInfographic';
 import { SolidereInfographic } from './SolidereInfographic';
 import { FifaWorldCupReport } from './FifaWorldCupReport';
 import { HormuzCrisisReport } from './HormuzCrisisReport';
+import { EgyptGasCrisisReport } from './EgyptGasCrisisReport';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
 
@@ -922,6 +923,10 @@ export default function ArticleViewer({
             ) : article.id === 'mees-hormuz-crisis-oil-sales-2026' ? (
               <div className="mb-6">
                 <HormuzCrisisReport language={activeLang} />
+              </div>
+            ) : article.id === 'egypt-lebanon-syria-gas-crisis-2026' ? (
+              <div className="mb-6">
+                <EgyptGasCrisisReport language={activeLang} />
               </div>
             ) : article.id === 'lebanon-framework-agreement-analysis-2026' ? (
               <div className="mb-6">

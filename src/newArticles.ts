@@ -2,6 +2,136 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'egypt-lebanon-syria-gas-crisis-2026',
+    slug: 'egypt-lebanon-syria-gas-crisis-2026',
+    focusKeyword: 'مفارقة-أزمة-الغاز-مصر-لبنان-سوريا',
+    category: 'middle-east',
+    categories: ['middle-east', 'economy', 'research-reports'],
+    titleAr: 'مفارقة أزمة الغاز.. لماذا توقّع مصر مذكّرات تفاهم لتزويد لبنان وسوريا بينما تعاني هي من شحّ حاد؟',
+    titleEn: 'The Gas Crisis Paradox: Why Egypt Signs MoUs to Supply Lebanon and Syria Despite Acute Domestic Shortages',
+    summaryAr: 'شهد الملف الإقليمي للطاقة مفارقة مثيرة للجدل؛ حيث وقّعت مصر مذكّرتي تفاهم لتزويد لبنان وسوريا بالغاز الطبيعي، في وقت يمر فيه إنتاجها المحلي بأسوأ أزمة منذ تسع سنوات وتستورد فيه الغاز المسال لمواجهة العجز.',
+    summaryEn: 'In a paradoxical geopolitical shift, Egypt signed separate natural gas agreements with Lebanon and Syria despite suffering its worst domestic gas production deficit in nine years, relying heavily on LNG imports.',
+    excerptAr: 'تحليل استقصائي حول لغز مذكرات تفاهم الغاز الموقعة بين مصر ولبنان وسوريا: هل هي مجرد حبر على ورق أم مناورة جيوسياسية ذكية تعتمد على آليات العبور والمبادلة للغاز الإسرائيلي والقبرصي؟',
+    excerptEn: 'An investigative analysis into the puzzle of the gas MoUs between Egypt, Lebanon, and Syria: Is it mere political ink on paper or a calculated geopolitical maneuver leveraging transit, swaps, and East Med infrastructure?',
+    author: {
+      nameAr: 'قسم تحقيقات الاقتصاد الإقليمي',
+      nameEn: 'Regional Economy Investigations Desk',
+      titleAr: 'محلل جيوسياسي أول في شؤون الطاقة',
+      titleEn: 'Senior Geopolitical Energy Analyst',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1413882353014-734d7a6a3ae3?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-20',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 38410,
+    tags: ['أزمة_الغاز', 'مصر', 'لبنان', 'سوريا', 'خط_الغاز_العربي', 'شرق_المتوسط', 'Gas_Crisis', 'Egypt', 'Lebanon', 'Syria', 'Arab_Gas_Pipeline', 'East_Med'],
+    hashtags: ['GasCrisis', 'EgyptGas', 'LebanonEnergy', 'EastMedGas'],
+    contentAr: `### مفارقة أزمة الغاز.. لماذا توقّع مصر مذكّرات تفاهم لتزويد لبنان وسوريا بينما تعاني هي من شحّ حاد؟
+
+شهد الملف الإقليمي للطاقة مفارقة مثيرة للجدل؛ حيث وقّعت مصر مذكّرتي تفاهم منفصلتين لتزويد كل من لبنان وسوريا بالغاز الطبيعي.
+
+تأتي هذه الخطوات في وقت يمر فيه لبنان بنقصٍ تام في الإنتاج المحلي معتمداً بالكامل على الاستيراد، وتسعى فيه سوريا لإنعاش إنتاجها المتهالك البالغ نحو 7 ملايين متر مكعب يومياً (247 مليون قدم مكعبة يومياً) عبر استقدام شركات أجنبية.
+
+لكن السؤال الاستقصائي الأبرز الذي يطرح نفسه: **كيف تتعهد القاهرة بإمداد جيرانها بالغاز في وقت يمر فيه إنتاجها المحلي بأسوأ أزمة منذ تسع سنوات؟**
+
+---
+
+### ١. مشهد الأرقام: انكماش مصري وشلل لبناني-سوري
+
+للكشف عن أبعاد هذه المعادلة المعقدة، يجب النظر في واقع الأرقام الهيدروكربونية للدول الثلاث:
+
+* **مصر:** هبط الإنتاج المحلي إلى أدنى مستوياته في 9 سنوات ليصل إلى 4.20 مليار قدم مكعبة يومياً، مما اضطر الحكومة إلى استيراد شحنات قياسية من الغاز المسال (LNG) لتعويض العجز المحلّي، إضافة إلى رفع كميات الغاز المستوردة عبر الأنابيب من إسرائيل.
+* **لبنان:** صفر إنتاج محلي. تعثرت عمليات الاستكشاف في المياه الإقليمية (مثل حقل قانا)، وأصبح قطاع الكهرباء يعتمد على ساعات تغذية لا تتعدى أصابع اليد الواحدة يومياً.
+* **سوريا:** إنتاج يتراوح بين 7 و9 ملايين متر مكعب يومياً فقط، وهو ما يغطي نحو نصف الاحتياجات الأدنى لمحطات توليد الكهرباء بعد سنوات طويلة من استنزاف البنية التحتية وتدميرها.
+
+---
+
+### ٢. اللغز التحقيقي: كيف تفي مصر بوعودها؟
+
+يكشف التحليل الفني والسياسي لصفقات الغاز الإقليمية عن ثلاثة مسارات تُفسر تحرك القاهرة رغم أزمتها الداخلية:
+
+#### أ. آلية "المرور والعبور" (Swap & Transit)
+المذكرات الموقعة مع لبنان (لتغذية معمل دير عمار) ومع سوريا لا تعني بالضرورة ضخ غاز من الحقول المصرية المستنزفة. بدلاً من ذلك، تعتمد الآلية على:
+* **إعادة ضخ الغاز المستورد:** إعادة توجيه جزء من الغاز المورد للقاهرة (من الاحتياطات أو من إسرائيل عبر الشبكة المصرية) نحو الشمال.
+* **مبادلة الشحنات:** استغلال الخط العربي للغاز لتمرير غاز مستورد لصالح طرف ثالث أو تحويل شحنات الغاز المسال المستوردة عبر الموانئ الأردنية/المصرية.
+
+#### ب. التثبيت الجيوسياسي لمركز الطاقة الإقليمي (Regional Energy Hub)
+لم تتخلَّ مصر عن طموحها الاستراتيجي في التحول إلى مركز إقليمي لتداول وتجارة الغاز في شرق المتوسط. وتستند في ذلك إلى:
+* امتلاكها محطات إسالة في إدكو ودمياط.
+* شبكة خطوط أنابيب مترابطة مع دول الجوار.
+* تطلعها للعب دور الوسيط والناقل لغاز شرق المتوسط (المستورد من إسرائيل أو المستقبلي من قبرص) وتصديره أو إعادة توزيعه عربياً وأوروبياً.
+
+#### ج. Services الهندسية وصيانة البنية التحتية
+جزء جوهري من المذكرات الموقعة لا يقتصر على بيع جزيئات الغاز، بل يمتد إلى بيع الخدمات الهندسية والفنية؛ حيث تتولى شركات قطاع البترول المصري تأهيل الأنابيب ومحطات القياس والضغط داخل الأراضي اللبنانية والسورية لإعدادها تقنياً لخطط التدفق المستقبلي.
+
+**خلاصة التحقيق:**  
+التوقيع المصري على مذكرات التفاهم ليس التزاماً بتقديم "فائض غاز محلي" غير موجود بالأساس، بل هو استثمار سياسي وفني لإبقاء شبكات الربط الإقليمية (خط الغاز العربي) حيّة، تمهيداً لتداول غاز إعادة التصدير فور اكتمال ترتيبات التمويل والتأهيل الفني.
+
+---
+
+### ٣. العوائق التي قد تجعل الصفقة مجرد "حبر على ورق"
+
+رغم الزخم السياسي، تواجه هذه التفاهمات تحديات هيكلية قد تؤجل تنفيذها العملي:
+
+* **أزمة التمويل:** يتطلب تنفيذ صفقات الغاز ضمانات مالية وتغطية من مؤسسات دولية (مثل البنك الدولي)، وهو أمر يرتبط بتنفيذ إصلاحات هيكلية في قطاع الطاقة اللبناني.
+* **الجاهزية الفنية للأنبوب العربي:** تحتاج أجزاء واسعة من شبكة الأنابيب داخل الأراضي السورية واللبنانية لمراحل صيانة وتأهيل تستغرق أشهراً قبل استقبال أية تدفقات فعلية.
+* **الأولويات الداخلية للمصانع المصرية:** تواجه الحكومة المصرية ضغوطاً متزايدة لتوفير الغاز للمصانع الثقيلة ومحطات الكهرباء المحلية للحد من الانقطاعات، مما يجعل أي تصدير للخارج تحت المجهر والشعبية المحلية.`,
+    contentEn: `### The Gas Crisis Paradox: Why Does Egypt Sign MoUs to Supply Lebanon and Syria While Suffering from an Acute Domestic Shortage?
+
+The regional energy dossier has witnessed a controversial paradox: Egypt signed two separate memoranda of understanding to supply natural gas to both Lebanon and Syria.
+
+These steps come at a time when Lebanon is suffering from a complete blackout in local power generation, relying entirely on energy imports, and Syria is trying to revive its crumbling domestic production (currently hovering around 7 million cubic meters per day, or 247 million cubic feet per day) by courting foreign investments.
+
+But the most pressing investigative question is: **How can Cairo pledge to supply its neighbors with gas when its own domestic production is undergoing its worst crisis in nine years?**
+
+---
+
+### 1. The Data Landscape: Egyptian Contraction and Lebanese-Syrian Paralyzation
+
+To dissect this complex equation, we must first examine the hard hydrocarbon data of the three nations:
+
+* **Egypt:** Domestic production has plummeted to its lowest level in 9 years, falling to 4.20 billion cubic feet per day. This sharp decline has forced the government to import record-breaking shipments of Liquefied Natural Gas (LNG) to cover the domestic deficit, in addition to increasing pipeline imports from Israel.
+* **Lebanon:** Zero domestic production. Exploration efforts in territorial waters (such as the Qana field) have stalled, and the state power grid has collapsed to just a few hours of electricity per day.
+* **Syria:** Production ranges between only 7 and 9 million cubic meters per day, which covers barely half of the absolute minimum required to feed its power plants, following years of systemic infrastructure degradation.
+
+---
+
+### 2. The Investigative Mystery: How Will Egypt Fulfill Its Pledges?
+
+A technical and political analysis of these regional gas agreements reveals three primary avenues explaining Cairo’s moves despite its internal supply crunch:
+
+#### A. "Swap & Transit" Mechanisms
+The MoUs signed with Lebanon (to supply the Deir Ammar power plant) and Syria do not necessarily imply pumping gas directly from depleted Egyptian fields. Instead, the mechanism relies on:
+* **Re-routing Imported Gas:** Re-directing a portion of the gas supplied to Cairo (from pipelines or Israel via the Egyptian grid) northward.
+* **Cargo Swaps:** Utilizing the Arab Gas Pipeline (AGP) to transmit imported gas on behalf of a third party, or shifting imported LNG shipments through Jordanian/Egyptian terminals.
+
+#### B. Geopolitical Consolidation of the "Regional Energy Hub"
+Egypt has not abandoned its strategic ambition to transform into a premier regional hub for natural gas trading and transit in the Eastern Mediterranean. This is anchored by:
+* Owning state-of-the-art liquefaction terminals in Idku and Damietta.
+* An interconnected pipeline network with neighboring nations.
+* Its aspiration to play the role of mediator and shipper for East Med gas (imported from Israel or potentially Cyprus in the future) and re-exporting it regionally and to Europe.
+
+#### C. Engineering Services and Infrastructure Maintenance
+A substantial part of the signed agreements is not limited to selling gas molecules, but extends to the commercial sale of engineering and technical services. Egyptian petroleum sector companies are tasked with rehabilitating pipelines, compression stations, and metering systems inside Lebanese and Syrian territories to prepare them technically for future flows.
+
+**Investigation Summary:**  
+The Egyptian signatures on these MoUs are not a binding commitment to supply a "domestic gas surplus" that does not exist in the first place. Rather, they represent a calculated political and technical investment to keep regional interconnectivity networks (namely, the Arab Gas Pipeline) alive, paving the way for transit and re-export trade once financing and technical rehabilitation arrangements are finalized.
+
+---
+
+### 3. Obstacles That Might Render the Deals "Mere Ink on Paper"
+
+Despite the geopolitical momentum, these agreements face deep structural hurdles that could delay practical execution:
+
+* **The Financial Crisis:** Executing these gas transactions requires solid financial guarantees and coverage from international institutions (such as the World Bank), which is strictly tied to implementing structural reforms in the Lebanese electricity sector.
+* **Technical Readiness of the Arab Gas Pipeline:** Large segments of the pipeline network inside Syria and Lebanon require months of maintenance and rehabilitation before receiving any actual flows.
+* **Domestic Priorities of Egyptian Industries:** The Egyptian government faces mounting pressure to prioritize domestic gas allocation for heavy industries and local power stations to curb rolling blackouts, putting any foreign export under intense public scrutiny.`
+  },
+  {
     id: 'mees-hormuz-crisis-oil-sales-2026',
     slug: 'mees-hormuz-crisis-oil-sales-2026',
     focusKeyword: 'أزمة-هرمز-هيكلية-مبيعات-النفط-ميس',
