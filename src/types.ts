@@ -108,3 +108,17 @@ export interface DynamicWidget {
   isActive: boolean;
 }
 
+export interface PublishedPodcast {
+  id: string;
+  articleId?: string;
+  titleAr: string;
+  titleEn: string;
+  audioUrl?: string;
+  transcriptAr?: string;
+  transcriptEn?: string;
+  publisherAr?: string;
+  publisherEn?: string;
+  publishedAt: string;
+}
+
+

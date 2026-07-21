@@ -4,13 +4,14 @@ import {
   Lock, KeyRound, Check, Plus, Trash2, Edit3, Save, RotateCcw, 
   Send, Layers, Newspaper, Users, Mail, UserCheck, AlertCircle, FileEdit, Network,
   Palette, LayoutGrid, ShieldCheck, SlidersHorizontal, RefreshCw, UploadCloud, FileUp, Tag, Sparkles,
-  Instagram, BarChart3
+  Instagram, BarChart3, AudioLines
 } from 'lucide-react';
 import { SEO_SILOS } from '../seoData';
 import ArticleCurator from './ArticleCurator';
 import DeploymentManager from './DeploymentManager';
 import SocialInfographicCreator from './SocialInfographicCreator';
 import AdminDashboardStats from './AdminDashboardStats';
+import AdminPodcastManager from './AdminPodcastManager';
 
 interface AdminPanelProps {
   language: 'ar' | 'en';
@@ -47,7 +48,7 @@ export default function AdminPanel({
   const [passError, setPassError] = useState('');
 
   // Primary active tab inside authorized Admin Panel
-  type SubTabType = 'stories-list' | 'add-story' | 'manage-sections' | 'newsletter' | 'design-preset' | 'widgets-components' | 'data-validator' | 'article-curator' | 'slider-editor' | 'subscribers-mgmt' | 'live-deploy' | 'social-infographics' | 'analytics-stats';
+  type SubTabType = 'stories-list' | 'add-story' | 'manage-sections' | 'newsletter' | 'design-preset' | 'widgets-components' | 'data-validator' | 'article-curator' | 'slider-editor' | 'subscribers-mgmt' | 'live-deploy' | 'social-infographics' | 'analytics-stats' | 'podcast-manager';
   const [activeSubTab, setActiveSubTab] = useState<SubTabType>('stories-list');
 
   // Live production deployment states
@@ -1180,6 +1181,19 @@ export default function AdminPanel({
             <UploadCloud size={14} className="text-[#b91c1c]" />
             <span className="font-extrabold">{isAr ? 'المزامنة والنشر السحابي' : 'Deployment & Sync'}</span>
             <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-red-100 px-1 text-[#b91c1c] font-black">LIVE</span>
+          </button>
+
+          <button
+            onClick={() => setActiveSubTab('podcast-manager')}
+            className={`w-full text-left rtl:text-right px-4 py-2.5 text-xs font-black uppercase flex items-center gap-2.5 border-2 ${
+              activeSubTab === 'podcast-manager' 
+                ? 'bg-black text-white border-black' 
+                : 'bg-neutral-50 hover:bg-neutral-100 text-[#b91c1c] border-transparent'
+            }`}
+          >
+            <AudioLines size={14} className="text-[#b91c1c]" />
+            <span className="font-extrabold">{isAr ? 'مدير ونشر البودكاست' : 'Podcast Dispatch'}</span>
+            <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-red-100 px-1 text-[#b91c1c] font-black">PODCAST</span>
           </button>
         </div>
 
@@ -4118,6 +4132,11 @@ export default function AdminPanel({
               <DeploymentManager language={language} articles={articles} />
 
             </div>
+          )}
+
+          {/* TAB 9: PODCAST MANAGER WORKFLOW */}
+          {activeSubTab === 'podcast-manager' && (
+            <AdminPodcastManager language={language} articles={articles} />
           )}
 
           {/* Business Logic Methods */}
