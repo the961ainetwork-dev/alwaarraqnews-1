@@ -25,7 +25,7 @@ export default function BreakingBar({ language, latestBreaking, onSelectArticle,
         {/* Grayscale monochrome عاجل badge */}
         <div className="bg-white text-black px-3 py-1 rounded-sm text-xs font-black tracking-wide uppercase min-w-max flex items-center gap-1 shadow-none font-sans border border-black animate-pulse">
           <Megaphone size={12} className="text-black" />
-          <span>{isAr ? 'بث عاجــل' : 'FLASH WIRE'}</span>
+          <span>{isAr ? 'يحدث الآن' : 'HAPPENING NOW'}</span>
         </div>
 
         {/* Ticking Marquee Text */}

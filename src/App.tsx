@@ -952,7 +952,7 @@ export default function App() {
 
   // Find breaking news to populate the top ticker strip
   const latestBreaking = useMemo(() => {
-    return allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
+    return allArticles.find(story => story.id === 'joseph-aoun-washington-visit-2026') || allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
   }, [allArticles]);
 
   // Handle Search queries across translated titles and summaries
@@ -1224,47 +1224,63 @@ export default function App() {
               searchQuery={searchQuery}
             />
 
-            {/* Spectacular "Urgent Release" Hero Section at the top of all pages */}
+            {/* Spectacular "Happening Now" Hero Section at the top of all pages */}
             {activeCategory !== 'urgent-release' && activeCategory !== 'admin' && !selectedArticle && (
-              <div className="bg-red-950/10 border-2 border-red-600 rounded p-5 md:p-6 mb-8 relative overflow-hidden backdrop-blur-xs flex flex-col md:flex-row items-center gap-6 shadow-md transition-all hover:border-red-500 text-right md:text-right rtl:text-right ltr:text-left">
-                {/* Decorative pulse line */}
-                <div className="absolute top-0 bottom-0 left-0 w-2 bg-red-600 animate-pulse" />
+              <div className="bg-zinc-950 border-t-4 border-b-4 border-double border-red-600 text-white p-6 md:p-8 mb-10 relative overflow-hidden shadow-xl transition-all text-right md:text-right rtl:text-right ltr:text-left select-text">
+                {/* Visual watermark pattern overlay */}
+                <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial-gradient from-red-600/10 to-transparent pointer-events-none" />
                 
-                {/* Content */}
-                <div className="flex-grow space-y-3 z-10">
-                  <div className="flex items-center gap-2 text-red-600 font-sans text-xs font-black uppercase tracking-widest">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping inline-block shrink-0" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-600 absolute inline-block shrink-0" />
-                    <span>{isAr ? 'إصدار عاجل حاسم' : 'CRITICAL URGENT RELEASE'}</span>
+                <div className="flex flex-col md:flex-row items-stretch gap-6 relative z-10">
+                  {/* Left Accent indicator */}
+                  <div className="hidden md:flex flex-col justify-between items-center px-4 border-l border-zinc-800 select-none">
+                    <span className="text-[10px] font-sans font-black tracking-widest text-red-600 rotate-180 uppercase [writing-mode:vertical-lr]">
+                      AL-WARRAQ INTEL
+                    </span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse my-2" />
+                    <span className="text-[10px] font-sans font-black tracking-widest text-zinc-600 uppercase [writing-mode:vertical-lr]">
+                      CONFIDENTIAL
+                    </span>
                   </div>
-                  
-                  <h2 className="text-xl md:text-2xl font-sans font-black text-zinc-950 tracking-tight leading-tight">
-                    {isAr 
-                      ? 'زلزال في وادي السيليكون: أسهم الرقائق تهبط 20% وتدخل "السوق الهابطة" وسط شكوك حول طفرة الذكاء الاصطناعي' 
-                      : 'Silicon Valley Earthquake: Semiconductor Stocks Plunge 20% to Enter "Bear Market" Amid Skepticism on AI Boom'
-                    }
-                  </h2>
-                  
-                  <p className="text-xs md:text-sm text-zinc-600 font-serif leading-relaxed line-clamp-2">
-                    {isAr 
-                      ? 'تسارعت موجة البيع الكثيف التي تضرب قطاع التكنولوجيا العالمي، لتجرف معها أسهم شركات أشباه الموصلات والرقائق الإلكترونية وتدفع بالقطاع رسمياً إلى منطقة "السوق الهابطة" (Bear Market)...' 
-                      : 'The massive sell-off hitting the global tech sector has accelerated, dragging down semiconductor and chip stocks and officially pushing the sector into "Bear Market" territory...'
-                    }
-                  </p>
-                </div>
 
-                {/* Action Button */}
-                <div className="shrink-0 z-10 w-full md:w-auto">
-                  <button
-                    onClick={() => {
-                      setActiveCategory('urgent-release');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white font-sans font-black text-xs px-5 py-3 rounded tracking-wide shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap uppercase"
-                  >
-                    <span>{isAr ? 'عرض الملف الاستقصائي الكامل' : 'EXAMINE FULL DOSSIER'}</span>
-                    {isAr ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
-                  </button>
+                  {/* Content block */}
+                  <div className="flex-grow space-y-4">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="bg-red-700 text-white text-[9px] font-sans font-black px-2 py-0.5 rounded uppercase tracking-wider animate-pulse">
+                        {isAr ? 'يحدث الآن' : 'HAPPENING NOW'}
+                      </span>
+                      <span className="text-zinc-500 font-mono text-[10px]">
+                        {isAr ? 'تغطية تحليلية فورية لأحدث الملفات والزيارات الرسمية' : 'Real-Time Strategic Coverage of Critical Diplomatic Movements'}
+                      </span>
+                    </div>
+                    
+                    <h2 className="text-2xl md:text-4xl font-sans font-black text-white tracking-tight leading-none select-text">
+                      {isAr 
+                        ? 'تحقيق خاص: زيارة جوزيف عون إلى واشنطن.. اختبار السيادة بين ضغوط نزع السلاح ومخاوف الاحتكاك الإسرائيلي' 
+                        : "Special Investigation: Joseph Aoun's Visit to Washington.. Sovereignty Test Between Disarmament Pressures and Israeli Friction Fears"
+                      }
+                    </h2>
+                    
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed line-clamp-3 md:line-clamp-2 max-w-4xl select-text">
+                      {isAr 
+                        ? 'تأتي زيارة الرئيس اللبناني جوزيف عون الرسمية إلى واشنطن ولقائه بالرئيس الأمريكي دونالد ترامب ووزير خارجيته ماركو روبيو كحدث استثنائي؛ فهو أول رئيس لبناني يزور البيت الأبيض منذ نحو 17 عاماً في طيات اختبار حاسم لحيادية وسيادة المؤسسة العسكرية.' 
+                        : 'The official visit of Lebanese President Joseph Aoun to Washington and his meeting with US President Donald Trump and Secretary of State Marco Rubio comes as an extraordinary event; he is the first Lebanese president to visit the White House in nearly 17 years in a critical test for military sovereignty.'
+                      }
+                    </p>
+                  </div>
+
+                  {/* Action Block */}
+                  <div className="flex flex-col justify-center shrink-0 w-full md:w-auto border-t md:border-t-0 md:border-r border-zinc-800 pt-4 md:pt-0 md:pr-6 select-none">
+                    <button
+                      onClick={() => {
+                        setActiveCategory('urgent-release');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white font-sans font-black text-xs px-6 py-3.5 rounded tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap uppercase border border-red-500/20 hover:scale-[1.02]"
+                    >
+                      <span>{isAr ? 'طالع التفاصيل والتحليلات الحية' : 'VIEW LIVE INSIGHTS & INTEL'}</span>
+                      {isAr ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

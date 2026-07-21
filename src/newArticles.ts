@@ -2,6 +2,128 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'joseph-aoun-washington-visit-2026',
+    slug: 'joseph-aoun-washington-visit-2026',
+    focusKeyword: 'زيارة-جوزيف-عون-واشنطن',
+    category: 'lebanon',
+    categories: ['lebanon', 'exclusives', 'middle-east'],
+    titleAr: 'تحقيق خاص: زيارة جوزيف عون إلى واشنطن.. اختبار السيادة بين ضغوط نزع السلاح ومخاوف الاحتكاك الإسرائيلي',
+    titleEn: "Special Investigation: Joseph Aoun's Visit to Washington.. Sovereignty Test Between Disarmament Pressures and Israeli Friction Fears",
+    summaryAr: 'تأتي زيارة الرئيس اللبناني جوزيف عون الرسمية إلى واشنطن ولقائه بالرئيس الأمريكي دونالد ترامب ووزير خارجيته ماركو روبيو كحدث استثنائي؛ فهو أول رئيس لبناني يزور البيت الأبيض منذ نحو 17 عاماً. تأتي هذه الزيارة الحساسة في أعقاب مفاوضات غير مباشرة وبرعاية أمريكية بين لبنان وإسرائيل توصلت إلى "اتفاق إطاري" يتعلق بتثبيت وقف إطلاق النار، وتجعل لبنان على خط التماس بين الشروط الدولية المتمثلة في إنهاء سلاح حزب الله وبين مخاطر الانزلاق إلى صدام داخلي.',
+    summaryEn: "The official visit of Lebanese President Joseph Aoun to Washington and his meeting with US President Donald Trump and Secretary of State Marco Rubio comes as an extraordinary event; he is the first Lebanese president to visit the White House in nearly 17 years. This highly sensitive visit follows indirect, US-sponsored negotiations between Lebanon and Israel that reached a 'framework agreement' for establishing a ceasefire, placing Lebanon on the front lines between international demands for disarmament of Hezbollah and the risks of slipping into domestic conflict.",
+    excerptAr: 'تغطية تحليلية موسعة لزيارة رئيس الجمهورية اللبنانية جوزيف عون التاريخية للبيت الأبيض والكونغرس: بين ملف تسليح الجيش وفرض السيادة، ومطالب نزع سلاح حزب الله والتخوف من الانزلاق لصدام داخلي.',
+    excerptEn: "Detailed analytical coverage of Lebanese President Joseph Aoun's historic visit to the White House and Congress: Between army empowerment, sovereignty enforcement, and disarmament demands.",
+    author: {
+      nameAr: 'هيئة التحرير الاستقصائية',
+      nameEn: 'Editorial Investigative Board',
+      titleAr: 'محلل الشؤون السيادية والعسكرية',
+      titleEn: 'Senior Sovereign & Military Analyst',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-20',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 42100,
+    tags: ['جوزيف_عون', 'زيارة_واشنطن', 'نزع_السلاح', 'الجيش_اللبناني', 'اتفاق_الإطار', 'Joseph_Aoun', 'Washington_Visit', 'Disarmament', 'Lebanese_Army'],
+    hashtags: ['JosephAoun', 'LebaneseSovereignty', 'WashingtonVisit', 'LebaneseArmy'],
+    contentAr: `### تحقيق خاص: زيارة جوزيف عون إلى واشنطن.. اختبار السيادة بين ضغوط نزع السلاح ومخاوف الاحتكاك الإسرائيلي
+
+تأتي زيارة الرئيس اللبناني جوزيف عون الرسمية إلى واشنطن ولقائه بالرئيس الأمريكي دونالد ترامب ووزير خارجيته ماركو روبيو كحدث استثنائي؛ فهو أول رئيس لبناني يزور البيت الأبيض منذ نحو 17 عاماً.
+
+تأتي هذه الزيارة الحساسة في أعقاب مفاوضات غير مباشرة وبرعاية أمريكية بين لبنان وإسرائيل توصلت إلى "اتفاق إطاري" يتعلق بتثبيت وقف إطلاق النار، وتجعل لبنان على خط التماس بين الشروط الدولية المتمثلة في إنهاء سلاح حزب الله وبين مخاطر الانزلاق إلى صدام داخلي.
+
+---
+
+### ١. أجندة واشنطن: البحث عن مخرج بين الانسحاب ونزع السلاح
+
+تسعى الرئاسة اللبنانية خلال هذه المحادثات للتركيز على ملفات أساسية:
+
+* **الضغط على إسرائيل للانسحاب:** إقناع الإدارة الأمريكية بالضغط على تل أبيب للانسحاب الكامل من المناطق التي احتلتها في الجنوب والتوقف عن الخروقات المستمرة.
+* **تطبيق اتفاق "المناطق التجريبية" (Pilot Zones):** المضي قدماً في خطة انتشار الجيش اللبناني في مناطق الجنوب تدريجياً لملء الفراغ مع انسحاب القوات الإسرائيلية.
+* **تفكيك سلاح حزب الله:** يواجه الرئيس عون مطالب واضحة بوضع جدول زمني لتسليم سلاح المقاومة، وهو الشرط الرئيسي الذي تصر عليه إسرائيل وواشنطن قبل إتمام أي انسحاب أو تقديم مساعدات لإعادة الإعمار.
+* **دعم الجيش والإنعاش الاقتصادي:** طلب الدعم اللوجستي والمالي للجيش اللبناني لتمكينه من ضبط الحدود والمناطق الجنوبية، إضافة لبحث وضع قوات "اليونيفيل" في الجنوب.
+
+---
+
+### ٢. معضلة الأطياف السياسية اللبنانية: انقسام حاد وتخوف من المواجهة
+
+أثارت هذه الزيارة ومندرجات "اتفاق الإطار" جدلاً واسعاً وانقساماً عميقاً المشهد السياسي اللبناني:
+
+#### أ. معسكر الثنائي الشيعي وحلفائه
+يرى هذا التيار أن اشتراط نزع السلاح والحديث عن ترتيبات أمنية مع إسرائيل هو "إملاء أمريكي-إسرائيلي" يهدف إلى تجريد لبنان من أدوات قوته ودفعه نحو التطبيع غير المباشر. كما يحذرون من أن الدفع بالجيش اللبناني لدخول في مواجهة مع عناصر المقاومة لتجريدهم من السلاح في الجنوب قد يفجر "فتنة داخلية" ويهدد السلم الأهلي.
+
+#### ب. القوى السيادية والمعارضة (المسيحيون والسنة والدروز)
+تعتبر هذه القوى أن الزيارة خطوة تاريخية لاستعادة "حصريّة السلاح بيد الدولة" وإظهار الشرعية اللبنانية كطرف أصيل في المفاوضات بدلاً من الارتهان للأجندات الإقليمية. وتطالب هذه القوى بضرورة الحزم في تطبيق القرارات الدولية وتفادي التردد لتجنب استمرار الاحتلال أو إبقاء لبنان في حالة حرب دائمة.
+
+#### ج. هواجس المؤسسة العسكرية والرئاسة
+يقف الرئيس عون والقيادة العسكرية أمام معضلة معقدة؛ فالجيش يحتاج للغطاء الأمريكي والدعم التسليحي المالي، لكنه يرفض في الوقت نفسه الخضوع لضغط يتحول بموجبه إلى طرف في صراع أهلي مسلح مع مكون لبناني واسع.
+
+---
+
+### ٣. حقيقة اللقاءات المفترضة مع مسؤولين إسرائيليين
+
+تناقلت وسائل إعلام وتكهنات سياسية شائعات حول إمكانية عقد لقاءات مباشرة أو عبر قنوات خلفية (Backchanneling) بين الوفد اللبناني ومسؤولين إسرائيليين على هامش اجتماعات واشنطن.
+
+* **الموقف الرسمي اللبناني:** تنفي الدولة اللبنانية جملة وتفصيلاً وجود أي اتصالات أو لقاءات مباشرة مع إسرائيل، وتؤكد أن كافة المحادثات تجري عبر الوسيط الأمريكي ووفق الأطر التي تم اعتمادها في جولات المفاوضات العسكرية الأخيرة (مثل جولات روما).
+* **الضغط الأمريكي والواقع الميداني:** تسعى واشنطن للتقريب بين الطرفين وتثبيت آليات الاتصال الثلاثية (لبنان، إسرائيل، والولايات المتحدة) لضمان عدم انهيار التهدئة. ورغم عدم وجود لقاءات علنية مباشر بين الرئيس عون ومسؤولين إسرائيليين، فإن القبول اللبناني بآليات التفاوض الإطارية تحت الرعاية الأمريكية يُقرأ من قِبل معارضي الاتفاق كخطوة متقدمة نحو التعامل السياسي غير المباشر مع تل أبيب.
+
+---
+
+### الخلاصة:
+
+يجد الرئيس جوزيف عون نفسه في واشنطن يحاول السير على حبل مشدود: تحقيق انسحاب إسرائيلي وضمان مساعدات دولية دون الوقوع في شباك فتنة داخلية تسعى للصدام المسلح بين الجيش وحزب الله.`,
+    contentEn: `### Special Investigation: Joseph Aoun's Visit to Washington.. Sovereignty Test Between Disarmament Pressures and Israeli Friction Fears
+
+The official visit of Lebanese President Joseph Aoun to Washington and his meeting with US President Donald Trump and Secretary of State Marco Rubio comes as an extraordinary event; he is the first Lebanese president to visit the White House in nearly 17 years.
+
+This highly sensitive visit follows indirect, US-sponsored negotiations between Lebanon and Israel that reached a 'framework agreement' for establishing a ceasefire, placing Lebanon on the front lines between international demands for disarmament of Hezbollah and the risks of slipping into domestic conflict.
+
+---
+
+### 1. Washington's Agenda: Seeking a Exit Between Withdrawal and Disarmament
+
+The Lebanese presidency seeks during these talks to focus on core files:
+
+* **Pressuring Israel to withdraw:** Persuading the US administration to pressure Tel Aviv for a complete withdrawal from occupied southern areas and halting continuous violations.
+* **Implementing the "Pilot Zones" agreement:** Moving forward with the gradual deployment plan of the Lebanese Army in the south to fill the vacuum as Israeli forces withdraw.
+* **Dismantling Hezbollah's arms:** President Aoun faces clear demands to establish a timeline for handing over resistance weapons, a key condition insisted upon by Israel and Washington before completing any withdrawal or providing reconstruction aid.
+* **Supporting the army and economic recovery:** Requesting logistical and financial support for the Lebanese Army to enable border and southern control, alongside discussing the status of UNIFIL forces in the south.
+
+---
+
+### 2. The Lebanese Political Spectrum Dilemma: Deep Division and Fear of Confrontation
+
+This visit and the terms of the "framework agreement" sparked wide debate and deep divisions in the Lebanese political scene:
+
+#### A. The Shia Duo Camp and Allies
+This current views the pre-condition of disarmament and talks of security arrangements with Israel as a "US-Israeli dictation" aimed at stripping Lebanon of its leverage and nudging it toward indirect normalization. They also warn that pushing the Lebanese Army to enter into a confrontation with resistance elements in the south could trigger "domestic strife" and threaten civil peace.
+
+#### B. Sovereign and Opposition Forces (Christians, Sunnis, and Druze)
+These forces view the visit as a historic step toward reclaiming the "exclusivity of arms under the state" and presenting Lebanese legitimacy as a primary negotiating partner rather than being dependent on regional agendas. They demand firm implementation of international resolutions to avoid persistent occupation or keeping Lebanon in a permanent state of war.
+
+#### C. Apprehensions of the Military Institution and the Presidency
+President Aoun and the military command face a complex dilemma; the army requires American cover and financial/arms support, yet strictly refuses to submit to pressure that would turn it into a party in an armed civil conflict with a major Lebanese constituency.
+
+---
+
+### 3. The Truth About Supposed Meetings with Israeli Officials
+
+Media outlets and political speculations circulated rumors regarding potential direct or backchannel meetings between the Lebanese delegation and Israeli officials on the sidelines of the Washington meetings.
+
+* **Official Lebanese Position:** The Lebanese state categorically denies any direct contacts or meetings with Israel, affirming that all talks take place via the US mediator and according to the established frameworks in recent military negotiation rounds (such as the Rome rounds).
+* **US Pressure and Field Reality:** Washington seeks to bridge the gap between both sides and establish trilateral communication mechanisms (Lebanon, Israel, and the United States) to prevent the collapse of the truce. Although no public, direct meetings have taken place between President Aoun and Israeli officials, the Lebanese acceptance of the framework negotiation mechanisms under US sponsorship is interpreted by opponents of the agreement as an advanced step toward indirect political engagement with Tel Aviv.
+
+---
+
+### Conclusion:
+
+President Joseph Aoun finds himself in Washington walking a tightrope: achieving an Israeli withdrawal and securing international aid without falling into the traps of internal strife that seeks an armed confrontation between the Army and Hezbollah.`
+  },
+  {
     id: 'egypt-lebanon-syria-gas-crisis-2026',
     slug: 'egypt-lebanon-syria-gas-crisis-2026',
     focusKeyword: 'مفارقة-أزمة-الغاز-مصر-لبنان-سوريا',

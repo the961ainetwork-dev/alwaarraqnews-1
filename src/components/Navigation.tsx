@@ -446,7 +446,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                 }`}
               >
                 <AlertCircle size={13} className="text-red-500 animate-pulse animate-duration-1000" />
-                <span className="font-extrabold uppercase">{isAr ? 'إصدار عاجل' : 'Urgent Release'}</span>
+                <span className="font-extrabold uppercase">{isAr ? 'يحدث الآن' : 'Happening Now'}</span>
               </button>
             </li>
 
@@ -794,7 +794,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                   style={{ textAlign: isAr ? 'right' : 'left' }}
                 >
                   <AlertCircle size={13} className="text-red-500 animate-pulse" />
-                  <span>{isAr ? 'إصدار عاجل' : 'Urgent Release'}</span>
+                  <span>{isAr ? 'يحدث الآن' : 'Happening Now'}</span>
                 </button>
 
                 {/* Standalone War Room Link */}

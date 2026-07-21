@@ -55,9 +55,9 @@ export default function UrgentRelease({
   const [pdfProgress, setPdfProgress] = useState(0);
   const [pdfStatusMsg, setPdfStatusMsg] = useState('');
 
-  // Find the Silicon Valley chip story
+  // Find the Joseph Aoun Washington visit story
   const mainArticle = useMemo(() => {
-    return NEW_ARTICLES.find(a => a.id === 'silicon-valley-chips-earthquake-2026') || NEW_ARTICLES[0];
+    return NEW_ARTICLES.find(a => a.id === 'joseph-aoun-washington-visit-2026') || NEW_ARTICLES[0];
   }, []);
 
   // Define the Iraq-US $60 Billion Sovereign Investment Package Special Report
@@ -199,15 +199,15 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
     setPdfProgress(5);
     
     const chipStatusesAr = [
-      'جاري استخراج مستندات التحليل المالي...',
-      'رسم الخرائط والبيانات التكتيكية لوادي السيليكون...',
-      'تضمين تحليلات جني الأرباح ونضج الأسواق العالمية...',
+      'جاري استخراج مستندات التحليل السياسي...',
+      'رسم الخرائط العسكرية والانتشار في الجنوب...',
+      'تضمين تحليلات القوى السياسية واتفاقيات نزع السلاح...',
       'تأمين خطوط الاتصال وتصدير ملف الاستخبارات السيادية (PDF)...'
     ];
     const chipStatusesEn = [
-      'Extracting financial intelligence dockets...',
-      'Mapping technical semiconductor telemetry...',
-      'Compiling profit-taking and global market indicators...',
+      'Extracting political intelligence dockets...',
+      'Mapping southern military deployment plans...',
+      'Compiling factional analyses and disarmament agreements...',
       'Securing transmission and exporting final intelligence brief (PDF)...'
     ];
 
@@ -264,13 +264,11 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
 
   // Market metrics representing the "Bear Market" drop
   const chipStocksData = [
-    { name: 'NVIDIA (NVDA)', change: '-24.5%', status: 'down', color: 'text-red-500' },
-    { name: 'TSMC (TSM)', change: '-18.2%', status: 'down', color: 'text-red-500' },
-    { name: 'AMD (AMD)', change: '-21.0%', status: 'down', color: 'text-red-500' },
-    { name: 'Intel (INTC)', change: '-15.8%', status: 'down', color: 'text-red-500' },
-    { name: 'ASML (ASML)', change: '-22.4%', status: 'down', color: 'text-red-500' },
-    { name: 'Nasdaq 100', change: '-8.5%', status: 'down', color: 'text-red-400' },
-    { name: 'Brent Crude Oil', change: '+12.4%', status: 'up', color: 'text-emerald-500' },
+    { name: isAr ? 'دعم الجيش اللبناني' : 'Lebanese Army Support', change: isAr ? '٤٠٠ مليون $' : '$400 Million', status: 'up', color: 'text-emerald-600 font-extrabold' },
+    { name: isAr ? 'تطبيق المناطق التجريبية' : 'Pilot Zones Plan', change: isAr ? 'نشط' : 'Active', status: 'up', color: 'text-emerald-500 font-extrabold' },
+    { name: isAr ? 'جدول تسليم السلاح' : 'Disarmament Timeline', change: isAr ? 'قيد التفاوض' : 'Negotiating', status: 'neutral', color: 'text-amber-600' },
+    { name: isAr ? 'الغطاء الدبلوماسي الأمريكي' : 'US Diplomatic Cover', change: isAr ? 'مرتفع' : 'High', status: 'up', color: 'text-emerald-500' },
+    { name: isAr ? 'الانسحاب الإسرائيلي المتبادل' : 'Israeli Withdrawal', change: isAr ? 'تثبيت الإطار' : 'Framework Bound', status: 'neutral', color: 'text-zinc-700' },
   ];
 
   const iraqTelemetryData = [
@@ -374,16 +372,16 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
         <div className="flex items-center justify-center md:justify-start gap-2 mb-2 select-none">
           <AlertCircle size={16} className="text-red-600 animate-pulse" />
           <span className="text-[11px] font-sans font-extrabold text-red-600 tracking-widest uppercase animate-pulse">
-            {isAr ? 'برقية عاجلة — طبعة طارئة' : 'URGENT RELEASE WIRE — FLASH BRIEFING'}
+            {isAr ? 'يحدث الآن — بث حي ومباشر' : 'HAPPENING NOW — LIVE & DIRECT BROADCAST'}
           </span>
         </div>
         <h1 className="text-3xl md:text-5xl font-sans font-black text-zinc-950 tracking-tight leading-none uppercase select-text">
-          {isAr ? 'الإصدارات والبرقيات العاجلة' : 'Urgent Releases & Bulletins'}
+          {isAr ? 'يحدث الآن' : 'Happening Now'}
         </h1>
         <p className="text-xs md:text-sm text-zinc-500 mt-2.5 font-serif italic max-w-3xl select-text">
           {isAr 
-            ? 'تغطية استثنائية فورية للأحداث الطارئة والتحولات الاستراتيجية الكبرى التي تمس الاقتصاد السياسي العالمي والأمن القومي.' 
-            : 'Immediate, high-frequency intelligence coverage of major strategic disruptions, macro market shocks, and national security developments.'}
+            ? 'تغطية استثنائية فورية للأحداث الطارئة والزيارات الرسمية والتحولات الاستراتيجية الكبرى التي تمس السيادة الوطنية والأمن القومي.' 
+            : 'Immediate, high-frequency intelligence coverage of major strategic disruptions, high-level diplomatic visits, and national sovereignty developments.'}
         </p>
       </div>
 
@@ -403,9 +401,9 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
             <Cpu size={16} className={selectedDocket === 'chips' ? 'text-red-600' : 'text-zinc-400 group-hover:text-zinc-600 transition-colors'} />
           </div>
           <h3 className={`text-xs md:text-sm font-black ${selectedDocket === 'chips' ? 'text-zinc-950' : 'text-zinc-600 group-hover:text-zinc-800'}`}>
-            {isAr ? 'برقية عاجلة: زلزال أشباه الموصلات العالمي' : 'Urgent Release: Global Chip Stock Crash'}
+            {isAr ? 'تحقيق خاص: زيارة جوزيف عون إلى واشنطن' : "Special Investigation: Joseph Aoun's Washington Visit"}
           </h3>
-          <span className="text-[9px] font-mono text-zinc-400 block mt-1">JULY 18, 2026 | SILICON VALLEY</span>
+          <span className="text-[9px] font-mono text-zinc-400 block mt-1">JULY 20, 2026 | WASHINGTON</span>
           {selectedDocket === 'chips' && <div className="absolute right-0 top-0 bottom-0 w-1 bg-red-600" />}
         </button>
 
@@ -450,15 +448,15 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
               <Activity size={16} className="animate-pulse" />
               <h4 className="text-xs font-sans font-black uppercase tracking-wider">
                 {selectedDocket === 'chips' 
-                  ? (isAr ? 'لوحة رصد الانهيار التكنولوجي' : 'TECH COLLAPSE TELEMETRY')
+                  ? (isAr ? 'مؤشرات الضغط والواقع الميداني' : 'FIELD REALITY & SOVEREIGN TELEMETRY')
                   : (isAr ? 'مؤشرات الشراكة العراقية الأمريكية' : 'IRAQ-US INVESTMENT TELEMETRY')}
               </h4>
             </div>
             <p className="text-xs text-zinc-600 leading-relaxed font-serif">
               {selectedDocket === 'chips'
                 ? (isAr 
-                  ? 'مؤشرات قطاع أشباه الموصلات العالمي تسجل هبوطاً تراكمياً يتجاوز ٢٠٪ من القمة الأخيرة، لتدخل رسمياً منطقة "السوق الهابطة" وسط شكوك حول عائد استثمارات الذكاء الاصطناعي التوليدي.' 
-                  : 'Global semiconductor indices record a cumulative plunge of 20%+ from peak, entering a technical "Bear Market" as CapEx returns on generative AI face severe skepticism.')
+                  ? 'رصد متكامل للضغوط الإقليمية ومحاور النقاش حول الانسحاب ونزع السلاح، وتوزيع الأدوار الأمنية في مناطق الجنوب اللبناني.' 
+                  : 'A mapping of regional diplomatic pressures, disarmament debates, and army deployment plans in southern Lebanon.')
                 : (isAr
                   ? 'رصد متكامل للاستثمارات السيادية المتبادلة وعقود الامتياز الكبرى وحزم التمويل الموقعة لتحديث قطاع الطاقة العراقي وبناء مسارات الإمداد البديلة.'
                   : 'A real-time mapping of bilateral sovereign agreements, concession sizes, and pipeline financing routes designed to overhaul Iraq energy infrastructures.')}
@@ -466,8 +464,8 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
 
             <div className="border-t border-red-200/50 pt-4 space-y-2">
               <div className="flex justify-between items-center text-[10px] font-sans font-bold text-zinc-500">
-                <span>{selectedDocket === 'chips' ? (isAr ? 'الشركة / المؤشر' : 'EQUITY / INDEX') : (isAr ? 'البند / الشريك الاستراتيجي' : 'DOCKET / STRATEGIC PARTNER')}</span>
-                <span>{selectedDocket === 'chips' ? (isAr ? 'التغير الفوري' : 'FLASH INTRA-DAY') : (isAr ? 'حجم التعاقد / المؤشر' : 'VOLUME / INDICATOR')}</span>
+                <span>{selectedDocket === 'chips' ? (isAr ? 'المؤشر السيادي' : 'SOVEREIGN METRIC') : (isAr ? 'البند / الشريك الاستراتيجي' : 'DOCKET / STRATEGIC PARTNER')}</span>
+                <span>{selectedDocket === 'chips' ? (isAr ? 'الحالة الحالية' : 'CURRENT STATUS') : (isAr ? 'حجم التعاقد / المؤشر' : 'VOLUME / INDICATOR')}</span>
               </div>
               
               <div className="divide-y divide-red-200/30">
@@ -490,8 +488,8 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
             <p className="text-[11px] leading-relaxed text-zinc-600 font-serif italic">
               {selectedDocket === 'chips'
                 ? (isAr 
-                  ? 'تراجع أسهم الرقائق لا يعبر عن فشل الذكاء الاصطناعي بل عن انتقال حاد للسيولة لمستويات نضج مالي أعلى، بالتوازي مع تفوق الصين المتسارع وارتفاع مخاطر الحرب النفطية الإقليمية.' 
-                  : 'The chip stocks slide marks a structural sector rotation rather than an absolute failure of AI, compounding with rapid Chinese local designs and regional petro-geopolitical risk.')
+                  ? 'تمثل زيارة الرئيس عون نقطة فاصلة؛ فالمؤسسة العسكرية اللبنانية تسعى جاهدة للحصول على التمويل والغطاء الدولي للانتشار دون الانزلاق لصدام داخلي مسلح مع القوى المحلية.' 
+                  : 'President Aoun’s visit marks a critical juncture; the Lebanese military seeks international funding and cover to deploy southern forces without triggering an armed domestic conflict.')
                 : (isAr
                   ? 'اتفاق كركوك يمثل عودة استباقية لشركات النفط الأمريكية الكبرى بهدف حماية تدفقات الطاقة العالمية وإنهاء النفوذ الإقليمي لغاز طهران كشرط مسبق لرفع الإنتاج إلى ٧ ملايين برميل.'
                   : 'The Kirkuk concession marks a preemptive return of US majors to insulate global energy lifelines, while eliminating Iranian gas dependence as a precondition to unleash 7M BPD capacity.')}
@@ -569,8 +567,8 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
               <p className="text-[11px] text-zinc-400 leading-relaxed font-serif">
                 {selectedDocket === 'chips'
                   ? (isAr 
-                    ? 'سجّل رقمك أو بريدك للحصول على تنبيهات عاجلة مخصصة لمدراء الصناديق والمستثمرين فور صدور تحركات عسكرية أو تدهور أسهم الرقائق.' 
-                    : 'Receive high-frequency flash warnings sent directly to your screen regarding trade lockups, Middle East escalation, and chip supply chains.')
+                    ? 'سجّل رقمك أو بريدك للحصول على تنبيهات عاجلة مخصصة للمحللين الدبلوماسيين والمسؤولين فور صدور أي مستجدات حول المفاوضات في واشنطن والجنوب اللبناني.' 
+                    : 'Receive high-frequency flash warnings sent directly to your screen regarding Washington negotiations, southern deployment, and Middle East security updates.')
                   : (isAr
                     ? 'اشترك في قائمة المستثمرين الاستثنائية للحصول على إشعارات الصفقات، وملخصات مشاريع التسييل والغاز، ومذكرات الاستثمار في الفاو.'
                     : 'Subscribe to our VIP investor channel to secure live updates on sovereign projects, Exxon gas capture yields, and Al-Faw dockets.')}
@@ -642,8 +640,8 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
                   </span>
                   <span className="text-zinc-400 font-sans text-xs font-bold">
                     {selectedDocket === 'chips' 
-                      ? (isAr ? 'وول ستريت / وادي السيليكون' : 'WALL STREET / SILICON VALLEY')
-                      : (isAr ? 'الشرق الأوسط / واشنطن' : 'MIDDLE EAST / WASHINGTON')} | {isAr ? '١٨ يوليو ٢٠٢٦' : 'July 18, 2026'}
+                      ? (isAr ? 'الشرق الأوسط / واشنطن' : 'MIDDLE EAST / WASHINGTON')
+                      : (isAr ? 'الشرق الأوسط / واشنطن' : 'MIDDLE EAST / WASHINGTON')} | {isAr ? '٢٠ يوليو ٢٠٢٦' : 'July 20, 2026'}
                   </span>
                 </div>
                 <div className="text-[10px] font-mono bg-red-50 text-red-700 px-2.5 py-0.5 rounded border border-red-200/50">
@@ -713,8 +711,9 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
 
                 <button
                   onClick={triggerPdfGeneration}
+                  disabled={pdfCompiling}
                   title={isAr ? 'تنزيل كملف PDF' : 'Download PDF Document'}
-                  className="p-2 bg-red-50 hover:bg-red-100 text-red-700 rounded transition-colors flex items-center gap-1.5 text-xxs font-sans font-black cursor-pointer border border-red-200/40"
+                  className="p-2 bg-red-50 hover:bg-red-100 text-red-700 rounded transition-colors flex items-center gap-1.5 text-xxs font-sans font-black cursor-pointer border border-red-200/40 disabled:opacity-55"
                 >
                   <Download size={14} />
                   <span className="hidden sm:inline">PDF</span>
@@ -750,7 +749,7 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 text-white text-xxs font-sans font-semibold bg-black/60 px-3 py-1.5 rounded backdrop-blur-sm inline-block">
                 {selectedDocket === 'chips' 
-                  ? (isAr ? 'رسم تخطيطي لصناعة الموصلات الفائقة وخطوط الإنتاج العالمية' : 'Conceptual representation of global semiconductor foundries and supply chains')
+                  ? (isAr ? 'خريطة الانتشار العسكري المقترحة والمناطق التجريبية للجيش اللبناني في الجنوب' : 'Proposed military deployment map and pilot zones for the Lebanese Army in the south')
                   : (isAr ? 'موقع مجمع تصفية النفط والغاز بمدينة الطاقة في شبه جزيرة الفاو' : 'Site view of the integrated refining and gas capture complex at Al-Faw Energy City')}
               </div>
             </div>
@@ -785,19 +784,19 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
                   <div className="flex items-center gap-1.5 text-red-700">
                     <ShieldAlert size={16} className="animate-pulse" />
                     <span className="text-[10px] font-sans font-black uppercase tracking-wider">
-                      {selectedDocket === 'chips' ? (isAr ? 'مكتب الأبحاث والتحوط الجيوسياسي' : 'HEDGE & MACRO DESK ADVISORY') : (isAr ? 'مكتب الشراكات والاستثمار السيادي' : 'SOVEREIGN CORRIDOR desk')}
+                      {selectedDocket === 'chips' ? (isAr ? 'مكتب الأبحاث والتحوط الجيوسياسي' : 'GEOPOLITICAL & SOVEREIGN DESK ADVISORY') : (isAr ? 'مكتب الشراكات والاستثمار السيادي' : 'SOVEREIGN CORRIDOR desk')}
                     </span>
                   </div>
                   <h4 className="text-base md:text-lg font-sans font-black text-zinc-900">
                     {selectedDocket === 'chips'
-                      ? (isAr ? 'كيف تحمي محفظتك المالية وتتحوط ضد "فقاعة الذكاء الاصطناعي"؟' : 'How to insulate your tech assets against the Bear Market correction?')
+                      ? (isAr ? 'كيف تؤثر ترتيبات واشنطن الأمنية على السيادة اللبنانية؟' : 'How do Washington’s security arrangements affect Lebanese sovereignty?')
                       : (isAr ? 'طلب الدليل الاستثماري التفصيلي لاتفاقيات الـ 60 مليار دولار' : 'Request the Bilateral Funding Prospectus for the $60B Energy Pact')}
                   </h4>
                   <p className="text-xs text-zinc-600 font-serif leading-relaxed max-w-2xl">
                     {selectedDocket === 'chips'
                       ? (isAr 
-                        ? 'يقوم خبراء مكتب الأبحاث بالورّاق بإصدار دليلاً استقصائياً دورياً يتضمن بدائل استثمارية آمنة، وخرائط توزيع السيولة للشركات الصينية الناشئة مثل Moonshot AI، بالإضافة لخطط التحوط لأسهم TSMC وإنفيديا.' 
-                        : 'Our strategic analysts provide monthly high-grade briefs detailing safe havens, Chinese capital shifts, and custom portfolio hedging guides to bypass global semiconductor turbulence.')
+                        ? 'يقوم خبراء مكتب الأبحاث بالورّاق بإصدار تقارير دورية تشتمل على سيناريوهات التهدئة، خطوط التماس العسكرية، وهيكل التمويل المخصص لتوسيع انتشار الجيش اللبناني.' 
+                        : 'Our geopolitical analysts provide comprehensive advisory briefs detailing regional de-escalation scenarios, buffer zone boundaries, and international funding frameworks for the Lebanese military.')
                       : (isAr
                         ? 'احصل على الكراس التفصيلي للمشروعات السيادية بمدينة الفاو للطاقة، وعقود امتياز كركوك الموقعة، وخطط كونوكو فيليبس وإكسون لجمع الغاز وتجنب الإمدادات الإيرانية.'
                         : 'Our investment desk provides comprehensive prospectuses detailing capital structuring, Al-Faw Energy City assets, BP-Conoco concessions, and Chevron pipeline financing protocols.')}
