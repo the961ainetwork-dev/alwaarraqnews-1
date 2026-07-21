@@ -2310,6 +2310,170 @@ export default function App() {
                   </div>
                 )}
 
+                {/* NEW INVESTIGATIVE REPORT BANNER: THE REGION IN THE HORMUZ NEW ORDER */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <div className="border-4 border-red-700 p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] overflow-hidden rounded-sm group/hormuz" id="hormuz-new-order-report-banner">
+                    {/* Grid overlay background */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+                    <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    {/* Internal accent frame */}
+                    <div className="absolute top-2 right-2 bottom-2 left-2 border border-red-500/15 pointer-events-none"></div>
+
+                    <div className="relative z-10">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        
+                        {/* Main info side */}
+                        <div className="lg:col-span-8 flex flex-col justify-between space-y-6 text-right rtl:text-right ltr:text-left">
+                          <div className="space-y-4">
+                            {/* Badges row */}
+                            <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
+                              <span className="bg-red-700 text-white text-[10px] font-mono font-black px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 border border-red-600">
+                                <Sparkles size={11} className="animate-pulse text-amber-300" />
+                                {isAr ? 'تقرير استقصائي خاص عاجل' : 'SPECIAL INVESTIGATIVE DISPATCH'}
+                              </span>
+                              <span className="bg-zinc-900 text-amber-400 text-[10px] font-mono px-3 py-1 font-bold border border-zinc-800 inline-flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                                {isAr ? 'ملف صراع المعابر وسلاسل الإمداد ٢٠٢٦' : 'CORRIDOR WARS & SUPPLY CHAIN INTEL'}
+                              </span>
+                            </div>
+
+                            {/* Main Title */}
+                            <h2 className="text-2xl md:text-3xl lg:text-4.5xl font-black tracking-tight text-white font-sans leading-tight">
+                              {isAr 
+                                ? 'الإقليم في ظل النظام الجديد لمضيق هرمز' 
+                                : 'The Region in the Hormuz New Order'}
+                              <span className="text-red-500">.</span>
+                            </h2>
+
+                            {/* Subtitle / Excerpt */}
+                            <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed">
+                              {isAr 
+                                ? 'تحليل جيوسياسي ومالي موسّع يدمج بين إدارة الأزمات المالية وحروب الممرات البحرية، وطموحات الذكاء الاصطناعي السيادية الخليجية المدعومة بالثروة السيادية، وتوقعات النمو الاقتصادي لعام ٢٠٢٦.' 
+                                : 'An expansive geopolitical and financial investigation merging maritime choke point crises, sovereign AI ambitions in the Gulf backed by trillions in wealth assets, and updated growth forecasts for 2026.'}
+                            </p>
+                          </div>
+
+                          {/* Preview of the two main stories inside */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-zinc-900">
+                            {/* Story 1 */}
+                            <div className="bg-zinc-900/40 border border-zinc-900 p-4 rounded-sm hover:bg-zinc-900/70 transition-all cursor-pointer"
+                                 onClick={() => {
+                                   const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
+                                   if (art) {
+                                     setSelectedArticle(art);
+                                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                                   }
+                                 }}>
+                              <span className="text-[9px] font-mono font-bold text-red-400 uppercase tracking-widest block mb-1">
+                                {isAr ? 'المسار الأول' : 'TRACK ONE'}
+                              </span>
+                              <h4 className="text-xs font-bold text-white mb-1.5 line-clamp-1">
+                                {isAr ? 'إدارة الأزمات وتأمين سلاسل الإمداد' : 'Crisis Management & Supply Chains'}
+                              </h4>
+                              <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
+                                {isAr 
+                                  ? 'ارتفاع أقساط التأمين البحري بـ ١٠ أضعاف، وتحديات الديون السيادية، والانضباط المالي والتنويع غير النفطي.' 
+                                  : 'Maritime insurance premiums surging tenfold, sovereign debt pressure, and GCC non-oil resilience.'}
+                              </p>
+                            </div>
+
+                            {/* Story 2 */}
+                            <div className="bg-zinc-900/40 border border-zinc-900 p-4 rounded-sm hover:bg-zinc-900/70 transition-all cursor-pointer"
+                                 onClick={() => {
+                                   const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
+                                   if (art) {
+                                     setSelectedArticle(art);
+                                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                                   }
+                                 }}>
+                              <span className="text-[9px] font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
+                                {isAr ? 'المسار الثاني' : 'TRACK TWO'}
+                              </span>
+                              <h4 className="text-xs font-bold text-white mb-1.5 line-clamp-1">
+                                {isAr ? 'التحول التكنولوجي والثروة السيادية' : 'Technological Leap & Sovereign Wealth'}
+                              </h4>
+                              <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
+                                {isAr 
+                                  ? 'استثمارات تفوق ٦٦ مليار دولار في الذكاء الاصطناعي وبناء البنية التحتية لمراكز البيانات والقدرات الحسابية.' 
+                                  : 'Over $66 billion deployed toward AI computing grids and hyperscale data centers.'}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Interactive Side Action Terminal */}
+                        <div className="lg:col-span-4 bg-zinc-900/80 border-2 border-red-500/20 p-5 rounded-sm flex flex-col justify-between items-stretch text-center relative shadow-[6px_6px_20px_0px_rgba(0,0,0,0.4)]">
+                          <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-red-600 via-amber-500 to-red-600"></div>
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <span className="font-mono text-[9px] font-black text-red-400 block uppercase tracking-widest mb-1">
+                                {isAr ? 'مستند استراتيجي عاجل' : 'CLASSIFIED REPORT FILE'}
+                              </span>
+                              <p className="text-[10px] text-zinc-500 font-mono">
+                                {isAr ? 'ملف التحريات السيادية رقم هرمز-٢٦' : 'REF: HOR-ORDER-2026'}
+                              </p>
+                            </div>
+
+                            {/* Mini Stats box */}
+                            <div className="border-t border-b border-zinc-850 py-3 my-2 space-y-2 text-right rtl:text-right ltr:text-left">
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'معدل النمو الإقليمي:' : 'MENA GDP Growth:'}</span>
+                                <span className="text-red-400 font-extrabold">1.6% (Revised)</span>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'صناديق الثروة الخليجية:' : 'GCC SWF Assets:'}</span>
+                                <span className="text-amber-400 font-extrabold">$6+ Trillion</span>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'الاستثمار التكنولوجي:' : 'AI CapEx Target:'}</span>
+                                <span className="text-emerald-400 font-extrabold">$66+ Billion</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2 mt-4 lg:mt-0">
+                            <button
+                              onClick={() => {
+                                const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
+                                if (art) {
+                                  setSelectedArticle(art);
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                              }}
+                              className="w-full bg-red-700 hover:bg-red-600 text-white font-sans text-xs font-black py-3.5 px-4 uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5 rounded-sm"
+                            >
+                              <BookOpen size={15} className="text-white" />
+                              <span>
+                                {isAr ? 'طالع الملف الاستقصائي الكامل ➜' : 'READ FULL DISPATCH ➜'}
+                              </span>
+                            </button>
+
+                            <button
+                              onClick={() => {
+                                window.print();
+                              }}
+                              className="w-full bg-zinc-850 hover:bg-zinc-800 text-white font-mono text-xxs font-bold py-2.5 px-3 uppercase border border-zinc-700 tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-xs"
+                              title={isAr ? 'طباعة التقرير الاستقصائي كـ PDF' : 'Print investigative report as PDF'}
+                            >
+                              <Download size={12} className="text-red-400" />
+                              <span>
+                                {isAr ? 'تصدير التقرير PDF' : 'EXPORT REPORT PDF'}
+                              </span>
+                            </button>
+                          </div>
+                          
+                          <p className="text-[9px] text-zinc-500 mt-3 font-mono leading-none">
+                            {isAr ? 'تحليل حصري ومحمي بموجب امتياز مجلس الإعلام' : 'Licensed under Council of Strategic Media'}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* STANDALONE WAR ROOM INTRO SECTION UNDER SLIDER */}
                 {activeCategory === 'all' && !searchQuery && (
                   <div className="my-8 border-4 border-double border-red-600 bg-zinc-950 p-6 text-white shadow-[6px_6px_0px_rgba(220,38,38,0.15)] relative overflow-hidden" id="war-room-introduction-banner">

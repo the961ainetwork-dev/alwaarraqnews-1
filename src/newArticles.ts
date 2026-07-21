@@ -3777,6 +3777,218 @@ Beata Manthey, strategist at Citigroup, explained this steep drop in tech stocks
 
 ### Geopolitical Scene: China Challenges the Monopoly
 This downturn coincides with notable geopolitical moves by technology leaders; China is currently spearheading a new international AI alliance. Chinese President Xi Jinping stated clearly that this technology "should not be monopolized by any single country," reflecting Beijing's intent to break American dominance, compounding the political and regulatory pressure on US chipmakers caught between export controls and rising Asian competition.`
+  },
+  {
+    id: 'region-hormuz-new-order-2026',
+    slug: 'region-hormuz-new-order-2026',
+    focusKeyword: 'النظام-الجديد-مضيق-هرمز',
+    category: 'middle-east',
+    categories: ['middle-east', 'editor-desk', 'war-room'],
+    titleAr: 'الإقليم في ظل النظام الجديد لمضيق هرمز: صراع المعابر وإعادة هيكلة سلاسل الإمداد والاستقرار الرقمي لعام 2026',
+    titleEn: 'The Region in the Hormuz New Order: Crossing Wars, Supply Chain Restructuring, and Digital Stability in 2026',
+    summaryAr: 'يفكك هذا التقرير الاستقصائي مسارين متوازيين يحكمان الإقليم: إدارة الأزمات المالية وتأمين سلاسل الإمداد من جهة، والتحول التكنولوجي وبناء مراكز بيانات الذكاء الاصطناعي المدعومة بصناديق الثروة السيادية الخليجية من جهة أخرى، مع تحليل مفصل لأرقام النمو المتوقعة لعام 2026 ومآلات الممرات البحرية.',
+    summaryEn: 'This investigative report dismantles two parallel tracks governing the region: crisis management and supply chain security on one side, and state-backed technology transitions driven by Gulf sovereign wealth funds on the other, featuring detailed growth forecasts for 2026 and maritime choke point analyses.',
+    excerptAr: 'تحليل استقصائي مالي وجيوسياسي يدمج بين إدارة الأزمات المالية وحروب الممرات البحرية، وطموحات الذكاء الاصطناعي السيادية الخليجية، وتوقعات النمو الاقتصادي لعام 2026.',
+    excerptEn: 'An in-depth financial and geopolitical analysis integrating maritime choke point wars, sovereign AI ambitions in the Gulf, and economic growth forecasts for 2026.',
+    author: {
+      nameAr: 'هيئة التحرير الاستراتيجية',
+      nameEn: 'Strategic Editorial Desk',
+      titleAr: 'التحريات الجيوسياسية والمالية',
+      titleEn: 'Geopolitical & Financial Investigations',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-21',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 24300,
+    tags: ['مضيق_هرمز', 'سلاسل_الإمداد', 'صناديق_سيادية', 'النمو_الاقتصادي_2026', 'Strait_of_Hormuz', 'Supply_Chains', 'Sovereign_Wealth', '2026_Growth_Forecast'],
+    hashtags: ['HormuzNewOrder', 'MENA2026', 'AIGulf', 'SovereignWealth'],
+    contentAr: `### الإقليم في ظل النظام الجديد لمضيق هرمز: المشهد الاقتصادي والنمو الجيوسياسي لعام 2026
+
+بقلم: هيئة التحريات المالية والاستراتيجية
+
+#### المشهد الاقتصادي في المنطقة: إدارة الأزمات المالية وتأمين سلاسل الإمداد من جهة والتحول التكنولوجي من جهة أخرى
+
+ينقسم المشهد الاقتصادي في المنطقة إلى مسارين متوازيين: إدارة الأزمات المالية وتأمين سلاسل الإمداد من جهة، والتحول التكنولوجي المدعوم بصناديق الثروة السيادية من جهة أخرى. عند التمعن في هذا الانقسام الثنائي، نجد أن كل مسار محكوم بأرقام وتدفقات مالية ضخمة تعكس حجم الفجوة بين الأزمات الهيكلية في أجزاء من المنطقة والطموح التكنولوجي المتسارع في أجزاء أخرى.
+
+---
+
+### أولاً: إدارة الأزمات المالية وتأمين سلاسل الإمداد
+
+يتجلى هذا المسار في الضغوط الانكماشية وارتفاع تكاليف المديونية وتأمين التجارة البحرية، وهو ما يظهر جلياً في الأرقام التالية:
+
+* **تكاليف الملاحة والشحن:** أدّت التوترات الجيوسياسية واضطرابات طرق الشحن الرئيسية (مثل البحر الأحمر ومضيق هرمز) إلى ارتفاع أقساط التأمين ضد مخاطر الحرب على الناقلات البحرية بـ 10 أضعاف (أكثر من 1000%) في بعض الفترات الحساسة، مما رفع تكلفة شحن الحاوية الواحدة بين آسيا والشرق الأوسط وأوروبا بنسب تراوحت بين 200% و 300%.
+* **التضخم والضغط على العملات:** يسجل متوسط معدل التضخم في منطقة الشرق الأوسط مستويات مرتفعة تتجاوز 14% وفقاً لتقديرات صندوق النقد الدولي، مدفوعاً بـ "التضخم المستورد" في أسعار الأغذية والأسمدة ومدخلات الطاقة.
+* **عبء الدين العام:** تعاني الاقتصادات غير النفطية والمجهدة من مستويات دين سيادي تتجاوز في بعض الدول 80% إلى 150% من الناتج المحلي الإجمالي، مما يلتهم أكثر من 30% إلى 40% من الإيرادات الحكومية لمجرد خدمة الفوائد والديون، ويجبرها على الدخول في برامج إصلاح صارمة مع صندوق النقد الدولي لتفادي التعثر.
+
+#### 1. تقلبات أسعار الطاقة وأزمات سلاسل الإمداد
+تتركز أكبر قضية اقتصادية كليّة حول أمن التجارة البحرية وأسواق الطاقة العالمية:
+* **مضيق هرمز وممرات البحر الأحمر:** أدت الاضطرابات في خطوط الملاحة الرئيسية إلى ارتفاع أقساط تأمين الناقلات بمعدلات قياسية، مما تسبب في ضغوط على إمدادات الطاقة المحلية وارتفاع حاد في تكاليف الشحن.
+* **تفاوت أسعار التعادل المالي:** في حين أن ارتفاع أسعار النفط الخام يساهم مؤقتاً في مساعدة الدول المصدرة في الخليج على تحقيق أهداف ميزانياتها، إلا أن التقلبات الشديدة تفرض تحديات على التخطيط المالي طويل الأجل لشركات الطاقة الوطنية التي توازن بين حصص "أوبك+" والحفاظ على حصتها السوقية.
+
+#### 2. الديون السيادية، تراجع العملات، والاقتصادات المجهدة
+بالنسبة للدول غير النفطية والاقتصادات المثقلة بالديون، يكمن التركيز الأساسي في إدارة التضخم وضمان الاستقرار المالي:
+* **ضغوط أسعار الصرف وإصلاحات صندوق النقد الدولي:** تواجه الدول المستوردة ارتفاعاً في تكاليف الاقتراض، وانخفاضاً في قيم عملاتها الوطنية، إلى جانب الشروط الصارمة المرتبطة ببرامج الإنقاذ الدولية.
+* **التضخم المستورد:** يتسبب ارتفاع تكاليف مصادر الطاقة، والشحن العالمي، والأسمدة الزراعية المستوردة في تآكل القدرة الشرائية للأسر وتوسيع عجز الموازنات السيادية.
+
+#### 3. التنويع الاقتصادي غير النفطي في الخليج والانضباط المالي
+على عكس الضغوط العالمية، تمضي اقتصادات دول مجلس التعاون الخليجي قدماً في تسريع استراتيجيات التنويع الاقتصادي:
+* **إعادة تدوير رؤوس الأموال:** تحول التركيز في صناديق الثروة السيادية الخليجية من الاستثمارات الخارجية الهادئة إلى تمويل التوطين الصناعي، المشاريع العملاقة، والبنية التحتية المحلية.
+* **ازدهار الطروحات الأولية (IPOs) وعمق أسواق المال:** يسهم الإقبال المتزايد على إدراج الأصول المملوكة للدولة والشركات الخاصة في جذب التدفقات المؤسسية وتعميق أسواق الأسهم الإقليمية.
+
+---
+
+### ثانياً: التحول التكنولوجي والذكاء الاصطناعي المدعوم بالثروة السيادية
+
+في المقابل، تستغل دول مجلس التعاون الخليجي الأصول التراكمية لصناديقها السيادية لبناء اقتصاد ما بعد النفط:
+
+* **ثقل الأصول السيادية:** تسيطر صناديق الثروة السيادية الخليجية (مثل PIF السعودي، ADIA وMGX في الإمارات، وQIA القطرية) على أصول تتجاوز 6 تريليون دولار، وهي تشكل نحو 40% من إجمالي أصول الصناديق السيادية عالمياً.
+* **الاستثمار القياسي في الذكاء الاصطناعي:** وجهت الصناديق الخليجية أكثر من 66 مليار دولار نحو قطاعات الذكاء الاصطناعي والبنية التحتية الرقمية والتكنولوجيا متقدمة.
+* **البنية التحتية ومراكز البيانات:** يُتوقع أن يتجاوز حجم الاستثمار في مراكز بيانات الذكاء الاصطناعي في دول الخليج 5 إلى 7 مليارات دولار سنوياً، مع خطط استثمارية معلنة تتجاوز 30 مليار دولار بحلول عام 2030 لإنشاء قدرات حسابية فائقة وسلسلة إمداد للرقائق الإلكترونية (GPUs) بالشراكة مع عمالقة التقنية العالميين مثل Microsoft وNVIDIA.
+* **نمو سوق الذكاء الاصطناعي الإقليمي:** يُقدر حجم سوق الذكاء الاصطناعي في دول الخليج بأكثر من 6.2 مليار دولار، متجهاً نحو مضاعفة هذا الرقم عدة مرات ليتجاوز 23 مليار دولار بحلول منتصف العقد القادم بمعدل نمو سنوي مركّب يقارب 15%.
+
+#### 4. التنافس التكنولوجي الأمريكي-الصيني وطموحات الذكاء الاصطناعي
+برزت المنطقة كساحة محورية للمنافسة التكنولوجية العالمية:
+* **الوصول إلى رقائق أشباه الموصلات والقدرات الحسابية:** تعمل المراكز التكنولوجية الإقليمية على إبرام شراكات كبرى لبناء بنية تحتية ومراكز بيانات متطورة للذكاء الاصطناعي، مع الموازنة بين قيود التصدير الصارمة واستقلالية القرار التكنولوجي بين الولايات المتحدة والصين.
+* **منظومات المبادرة والشركات الناشئة:** يتجه تمويل المراحل المبكرة بشكل متزايد نحو تطبيقات الذكاء الاصطناعي الموطّنة، أتمة الأعمال، وحلول التكنولوجيا المالية (Fintech) المخصصة للتجارة البينية في منطقة الشرق الأوسط وشمال أفريقيا.
+
+---
+
+### ثالثاً: توقعات النمو لعام 2026: تباين جوهري ومحركات جديدة
+
+تظهر توقعات النمو الاقتصادي وأرقام الناتج المحلي الإجمالي في منطقة الشرق الأوسط وشمال أفريقيا (MENA) ودول مجلس التعاون الخليجي لعام 2026 تبايناً ملحوظاً، نتيجة للتطورات الجيوسياسية المتسارعة، واضطرابات الملاحة والتجارة البحرية، وتعديلات مسارات إنتاج النفط.
+
+ورغم أن التقديرات السابقة الصادرة عن المؤسسات المالية الدولية (مثل صندوق النقد والبنك الدوليين) كانت وتتوقع تعافياً أكثر قوة، فقد جرى تعديل التوقعات الأساسية لتعكس أثر أزمات سلاسل الإمداد، وارتفاع أقساط مخاطر الشحن، وتفاوت الهوامش والاحتياطيات المالية بين الدول.
+
+#### 1. جدول توقعات النمو لعام 2026
+
+* **إجمالي منطقة الشرق الأوسط وشمال أفريقيا:** نمو متوقع من ~0.7% إلى 1.6% (تراجعاً من تقديرات سابقة قاربت 3.3%). المحركات الرئيسية هي تباطؤ عام ناتج عن اختناقات الممرات البحرية (مثل مضيق هرمز والبحر الأحمر)، وتقلبات أسعار الطاقة، وارتفاع تكاليف الاقتراض للدول المستوردة.
+* **دول مجلس التعاون الخليجي:** نمو متوقع من ~0.0% إلى 1.8%. المحركات الرئيسية هي تباين واضح نتيجة ضغط قيود إنتاج النفط واختناقات التصدير البحري على الناتج الإجمالي، في حين يستمر القطاع غير النفطي في تحقيق نمو قوي.
+* **الدول النامية المستوردة للنفط:** نمو متوقع من ~2.8% إلى 3.4%. تضخم مستورد في أسعار الطاقة والسلع، يوازنه جزئياً نشاط مستقر في قطاعي الخدمات والسياحة.
+
+---
+
+### رابعاً: الاقتصادات الخليجية الرئيسية: النمو الكلي مقابل واقع القطاع غير النفطي
+
+تعكس الاقتصادات الخليجية مفارقة واضحة بين الناتج المحلي الإجمالي الكلي (المرتبط بشرائح إنتاج النفط ولوجستيات التصدير) والناتج المحلي الإجمالي غير النفطي (المدعوم بالإنفاق الاستثماري الحكومي والمشاريع الوطنية):
+
+* **المملكة العربية السعودية:** تتراوح توقعات نمو الناتج المحلي الكلي لعام 2026 بين 1.5% و2.2%. ورغم التحديات التي تواجه صادرات القطاع النفطي، تواصل مؤشرات مديري المشتريات (PMI) للقطاع غير النفطي التوسع الملحوظ (>52.5) بفضل الإنفاق الحكومي المستمر على مشاريع التوطين الصناعي، السياحة، والبنية التحتية.
+* **الإمارات العربية المتحدة:** يُتوقع أن يتراوح النمو بين 2.0% و2.8%. وتستمر الإمارات في إظهار أعلى درجات المرونة الهيكلية في المنطقة، مدعومة بتدفقات الاستثمار الأجنبي في العقارات، البنية التحتية للذكاء الاصطناعي ومراكز البيانات، والخدمات المالية.
+* **قطر وعُمان:** يتراوح النمو المتوقع بين 1.8% و2.5%، مدعوماً بمشاريع توسعة التصدير في قطاع الغاز الطبيعي المسال (LNG) والوفورات المالية التي توفر حماية ضد تقلبات التجارة العالمية.
+* **الكويت والبحرين:** مسار نمو أكثر اعتدالاً يتراوح بين 0.5% و1.2%، متأثراً بسقوف الإنتاج النفطي وتباطؤ وتيرة الإصلاحات الهيكلية.
+
+---
+
+### خامساً: دول الشرق الأوسط وشمال أفريقيا غير الخليجية
+
+تتسم باقي دول المنطقة بتباين واسع في إدارتها المالية وضغوطها الاقتصادية:
+
+* **جمهورية مصر العربية:** تتراوح توقعات نمو الناتج المحلي الإجمالي بين 3.2% و3.8%. يأتي هذا النمو مدفوعاً بإصلاحات صندوق النقد الدولي واستثمارات التدفق الأجنبي المباشر، رغم استمرار ضغوط التضخم المستورد في السلع الأساسية.
+* **شمال أفريقيا (المغرب وتونس):** بمتوسط نمو يتراوح بين 2.5% و3.2%. يستفيد المغرب من نمو الصادرات التصنيعية (السيارات والطيران) ومشاريع البنية التحتية، رغم ارتفاع فاتورة استيراد الطاقة.
+* **الاقتصادات المجهدة والمثقلة بالديون:** تواجه انكماشات أو تراجعاً حاداً في مستويات النمو نتيجة تراجع قيم العملات الوطنية، تضرر البنية التحتية، واختناقات طرق الترانزيت على طول ممرات الطاقة الحيوية.
+
+---
+
+### سادساً: العوامل المحورية المؤثرة في نتائج عام 2026
+
+1. **اختناقات ممرات الطاقة البحرية:** أدى ارتفاع أقساط تأمين الناقلات وتغيير مسارات الشحن إلى زيادة الفجوة بين الأسعار الاسمية للنفط والإيرادات الفعلية المحصلة.
+2. **خدمة الدين العام:** تواصل الفوائد المرتفعة الاستنزاف المباشر للموازنات الحكومية في الدول غير النفطية.
+3. **استقلالية القطاع غير النفطي:** نجحت الاقتصادات الخليجية، بفضل ملاءة صناديقها السيادية، في فصل أداء قطاعاتها المحلية غير النفطية عن الدورات القصيرة لأسعار السلع الأساسية.`,
+    contentEn: `### The Region in the Hormuz New Order: Economic Dynamics & Geopolitical Shocks in 2026
+
+Written by: Financial & Strategic Investigations Desk
+
+#### The Regional Economic Landscape: Financial Crisis Management and Supply Chain Security vs. Sovereign-Backed Technological Transformation
+
+The economic landscape of the region is splitting into two parallel tracks: crisis management and supply chain security on one side, and state-backed technology transitions driven by sovereign wealth funds on the other. Analyzing this duality reveals massive financial flows that emphasize the widening gap between structural crises in parts of the region and accelerated tech ambitions in others.
+
+---
+
+### I. Financial Crisis Management & Supply Chain Protection
+
+This track manifests in deflationary pressures, skyrocketing debt servicing costs, and maritime trade security, as clearly indicated by the following figures:
+
+* **Shipping & Maritime Cost Surges:** Geopolitical tensions and maritime route disruptions (especially in the Red Sea and Strait of Hormuz) led to a tenfold increase (over 1000%) in war risk insurance premiums for tankers during sensitive periods, pushing Asia-to-Europe container rates up by 200% to 300%.
+* **Inflation & Currency Stress:** Middle East inflation averages over 14% according to IMF estimates, driven by "imported inflation" in food, fertilizers, and energy inputs.
+* **Sovereign Debt Burden:** Non-oil, highly stressed economies struggle with public debt exceeding 80% to 150% of GDP, eating up 30% to 40% of government revenues solely for debt service and interest. This forces governments into rigorous IMF reform programs to avert default.
+
+#### 1. Energy Price Volatility & Supply Chain Fractures
+The main macroeconomic issue centers on the security of maritime corridors and energy markets:
+* **The Strait of Hormuz & Red Sea Passages:** Disruptions in critical maritime choke points triggered record high insurance rates, straining local energy supplies and elevating shipping costs.
+* **Fiscal Breakeven Divergence:** While higher oil prices temporarily assist GCC exporters in meeting budgetary targets, extreme volatility disrupts long-term financial planning for national oil companies balancing OPEC+ production quotas with market-share maintenance.
+
+#### 2. Sovereign Debt, Devaluations & Strained Economies
+For non-oil countries and debt-laden nations, the key concern remains inflation control and fiscal stabilization:
+* **Exchange Rate Pressures & IMF Reforms:** Oil-importing nations face elevated borrowing costs, sharp devaluations of national currencies, and strict policy conditionalities linked to international bailout packages.
+* **Imported Inflation:** Increasing prices of energy imports, global transport, and agricultural inputs erode household purchasing power and expand sovereign fiscal deficits.
+
+#### 3. Non-Oil Diversification & Fiscal Discipline in the Gulf
+In stark contrast to global pressures, GCC economies continue to accelerate their non-oil diversification strategies:
+* **Capital Recycling:** The strategic focus of Gulf sovereign wealth funds (SWFs) has shifted from passive external investments toward financing domestic industrialization, mega-projects, and localized infrastructure.
+* **IPO Booms & Capital Market Expansion:** Robust listings of state-owned and private entities attract institutional capital and deepen regional stock exchanges.
+
+---
+
+### II. Technological Leap & Sovereign-Backed AI Infrastructure
+
+Concurrently, Gulf Cooperation Council nations are leveraging accumulated sovereign assets to build a post-oil knowledge economy:
+
+* **Unprecedented Sovereign Capital:** Gulf sovereign wealth funds (such as Saudi Arabia's PIF, UAE's ADIA and MGX, and Qatar's QIA) control assets exceeding $6 trillion, representing nearly 40% of global sovereign wealth assets.
+* **Record-Breaking AI Investments:** GCC funds directed more than $66 billion toward artificial intelligence, advanced computing, and digital infrastructure.
+* **Hyperscale Data Center Infrastructure:** AI data center investments in the Gulf are projected to exceed $5 to $7 billion annually, with declared capital expenditure exceeding $30 billion by 2030 to construct supercomputing clusters and secure semiconductor supplies (GPUs) in partnership with global tech giants like Microsoft and NVIDIA.
+* **Regional AI Market Growth:** The GCC AI market is valued at over $6.2 billion, on track to quadruple and exceed $23 billion by the middle of the next decade, maintaining a compound annual growth rate (CAGR) of approximately 15%.
+
+#### 4. US-China Tech Competition & Sovereign Tech Ambitions
+The region has emerged as a key arena for global technology competition:
+* **Semiconductor Access & Supercomputing Power:** Regional tech hubs are negotiating major partnerships to build advanced AI computing grids and data centers, while carefully balancing stringent export curbs and preserving technological sovereignty between the US and China.
+* **Startup Ecosystems:** Early-stage funding is increasingly focused on localized AI models, business automation, and fintech solutions customized for cross-border MENA trade.
+
+---
+
+### III. 2026 Growth Projections: Divergent Prospects
+
+MENA and GCC economic growth forecasts for 2026 reflect clear divergence due to accelerating geopolitical shifts, maritime trade shocks, and oil production quota adjustments.
+
+While earlier international estimates predicted a more robust recovery, baseline projections have been revised down to capture the compounding impacts of supply chain stress, elevated risk premiums, and varying fiscal buffers.
+
+#### 1. 2026 GDP Growth Baseline
+
+* **Total MENA Region:** Expected growth ranges from ~0.7% to 1.6% (revised down from prior estimates of ~3.3%). Primary drivers include general slowdowns due to maritime choke point bottlenecks (Strait of Hormuz and Red Sea), energy price fluctuations, and elevated borrowing rates for importing nations.
+* **GCC Bloc:** Expected growth ranges from ~0.0% to 1.8%. Oil production ceilings and maritime export bottlenecks squeeze overall GDP, whereas non-oil sectors continue their strong expansion.
+* **Oil-Importing Developing Economies:** Expected growth of ~2.8% to 3.4%. High imported inflation in commodities is partially offset by stable services and tourism performance.
+
+---
+
+### IV. Major Gulf Economies: Aggregate vs. Non-Oil Reality
+
+Gulf economies exhibit a distinct divergence between headline GDP (tied to oil quotas and export logistics) and non-oil GDP (boosted by state investments):
+
+* **Saudi Arabia:** GDP growth is projected between 1.5% and 2.2% for 2026. Despite oil export headwinds, the non-oil Purchasing Managers' Index (PMI) remains expansionary (>52.5) driven by government funding of industrialization, tourism, and gigaprojects.
+* **United Arab Emirates:** Growth is projected at 2.0% to 2.8%. The UAE displays the region's highest structural resilience, backed by foreign direct investment in real estate, AI supercomputing grids, and financial services.
+* **Qatar and Oman:** Projected growth of 1.8% to 2.5%, fueled by LNG export expansions and fiscal surpluses that buffer against global shipping volatility.
+* **Kuwait and Bahrain:** A more modest trajectory ranging from 0.5% to 1.2%, constrained by oil quotas and slower structural reforms.
+
+---
+
+### V. Non-GCC MENA Economies
+
+Other regional economies exhibit diverse fiscal conditions and pressures:
+
+* **Egypt:** Projected growth ranges from 3.2% to 3.8%. Driven by IMF-mandated structural reforms and foreign direct investment inflows, despite persistent imported inflation on basic foodstuffs.
+* **North Africa (Morocco & Tunisia):** Averaging growth between 2.5% and 3.2%. Morocco benefits from automotive/aerospace manufacturing exports and infrastructure projects, despite elevated energy import bills.
+* **Stressed & Conflict-Affected Nations:** Facing economic contractions or severe growth deceleration due to currency devaluations, damaged infrastructure, and disrupted transit lines along energy corridors.
+
+---
+
+### VI. Core Decisive Factors for 2026
+
+1. **Maritime Corridors & Choke Points:** Skyrocketing maritime insurance premiums and cargo re-routing widened the spread between nominal oil benchmarks and net-back revenues.
+2. **Sovereign Debt Servicing:** High interest rates continue to drain public budgets in non-oil countries.
+3. **Non-Oil Insulation:** Gulf nations have successfully insulated domestic non-oil performance from short-term commodity price cycles, courtesy of deep sovereign wealth funds.`
   }
 ];
 
