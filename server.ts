@@ -5,7 +5,7 @@ import fs from "fs";
 import https from "https";
 import { fileURLToPath } from "url";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { exec } from "child_process";
 import { INITIAL_ARTICLES } from "./src/data";
 
@@ -960,6 +960,47 @@ Respond with a single raw JSON object matching this schema:
       globalSentimentScore: 68,
       topicsCloud: mockTopics
     });
+  }
+});
+
+// API Endpoint for Gemini Text-to-Speech Generation
+app.get("/api/podcast/tts", async (req, res) => {
+  const text = req.query.text as string;
+  const voice = (req.query.voice as string) || "Kore";
+
+  if (!text) {
+    return res.status(400).send("Text parameter is required");
+  }
+
+  try {
+    const ai = getGeminiClient();
+    const response = await ai.models.generateContent({
+      model: "gemini-3.1-flash-tts-preview",
+      contents: [{ parts: [{ text }] }],
+      config: {
+        responseModalities: [Modality.AUDIO],
+        speechConfig: {
+          voiceConfig: {
+            prebuiltVoiceConfig: { voiceName: voice },
+          },
+        },
+      },
+    });
+
+    const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+    const mimeType = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.mimeType || "audio/mp3";
+
+    if (!base64Audio) {
+      throw new Error("No audio data returned from Gemini TTS model");
+    }
+
+    const audioBuffer = Buffer.from(base64Audio, "base64");
+    res.setHeader("Content-Type", mimeType);
+    res.setHeader("Content-Length", audioBuffer.length);
+    res.send(audioBuffer);
+  } catch (error: any) {
+    console.error("Gemini TTS Error:", error);
+    res.status(500).send("TTS generation failed: " + error.message);
   }
 });
 

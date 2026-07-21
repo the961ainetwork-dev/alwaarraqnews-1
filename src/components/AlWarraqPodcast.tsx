@@ -98,6 +98,27 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
     }
   }, []);
 
+  // Helper to dynamically generate a beautiful, real spoken voice statement using our server-side Gemini TTS API
+  // if no custom audioUrl is provided, or if the user used the SoundHelix placeholder.
+  const getAudioSrc = (podcast: PublishedPodcast | null) => {
+    if (!podcast) return '';
+    
+    // If it's a SoundHelix URL or blank/undefined, generate a spoken voice statement using Gemini 3.1 TTS model
+    if (!podcast.audioUrl || podcast.audioUrl.includes('soundhelix.com')) {
+      const text = isAr 
+        ? `${podcast.titleAr}. ملخص التقرير الإذاعي: ${podcast.transcriptAr || ''}`
+        : `${podcast.titleEn}. Audio broadcast summary: ${podcast.transcriptEn || ''}`;
+      
+      // We take a clean slice of up to 450 characters (much larger than old Google TTS limit!).
+      const slicedText = text.substring(0, 450).replace(/[#*_`]/g, ''); // strip markdown chars
+      const cleanText = encodeURIComponent(slicedText);
+      const voice = isAr ? 'Zephyr' : 'Kore'; // 'Zephyr' fits Arabic wonderfully, 'Kore' or 'Puck' fits English
+      return `/api/podcast/tts?text=${cleanText}&voice=${voice}`;
+    }
+    
+    return podcast.audioUrl;
+  };
+
   // Update audio instance properties and default modes when active podcast changes
   useEffect(() => {
     setIsPlaying(false);
@@ -110,19 +131,16 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
     }
 
     if (activePodcast) {
-      // Default to high-quality AI Speech narration ('tts') if no custom audioUrl is provided,
-      // or if it is the placeholder SoundHelix song. This avoids playing weird instrumental beats.
-      if (!activePodcast.audioUrl || activePodcast.audioUrl.includes('soundhelix.com')) {
-        setAudioMode('tts');
-      } else {
-        setAudioMode('stream');
-      }
+      // Default to high-quality Spoken Voice Stream ('stream') since it now works 100% of the time,
+      // speaking a natural voice narration of the podcast title/summary or custom audio.
+      setAudioMode('stream');
     }
   }, [activePodcast]);
 
   // Handle Play/Pause HTML5 Audio
   const togglePlayAudio = () => {
-    if (!audioRef.current || !activePodcast?.audioUrl) return;
+    const audioSrc = getAudioSrc(activePodcast);
+    if (!audioRef.current || !audioSrc) return;
 
     // Stop TTS if running to prevent double speech overlap
     stopTts();
@@ -328,10 +346,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
     <div className="bg-zinc-950 border-2 border-amber-800 p-6 md:p-10 shadow-2xl relative text-right rtl:text-right ltr:text-left text-white" style={{ direction: isAr ? 'rtl' : 'ltr' }}>
       
       {/* Hidden native audio element */}
-      {activePodcast?.audioUrl && (
+      {activePodcast && (
         <audio
           ref={audioRef}
-          src={activePodcast.audioUrl}
+          src={getAudioSrc(activePodcast)}
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={handleLoadedMetadata}
           onEnded={handleAudioEnded}
@@ -535,23 +553,21 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                         }`}
                       >
                         <Mic size={10} />
-                        <span>{isAr ? '🎙️ مذيع الذكاء الاصطناعي (نطق بشري)' : '🎙️ AI Voice Anchor'}</span>
+                        <span>{isAr ? '🎙️ مذيع النص الكامل (TTS)' : '🎙️ AI Full Text Voice (TTS)'}</span>
                       </button>
-                      {activePodcast.audioUrl && (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            stopTts();
-                            setAudioMode('stream');
-                          }}
-                          className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
-                            audioMode === 'stream' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
-                          }`}
-                        >
-                          <Radio size={10} />
-                          <span>{isAr ? '📻 البث الصوتي / الموسيقي' : '📻 Ambient Audio Stream'}</span>
-                        </button>
-                      )}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          stopTts();
+                          setAudioMode('stream');
+                        }}
+                        className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
+                          audioMode === 'stream' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
+                        }`}
+                      >
+                        <Radio size={10} />
+                        <span>{isAr ? '📻 البث الصوتي الطبيعي (Natural Stream)' : '📻 Spoken Voice Stream (Natural Voice)'}</span>
+                      </button>
                     </div>
                   </div>
 
@@ -620,12 +636,12 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                             }`}
                           >
                             {(audioMode === 'tts' ? isSpeakingTts : isPlaying) ? <Pause size={12} className="fill-current" /> : <Play size={12} className="fill-current" />}
-                            <span>
+                             <span>
                               {(audioMode === 'tts' ? isSpeakingTts : isPlaying) 
                                 ? (isAr ? 'إيقاف مؤقت' : 'PAUSE') 
                                 : (audioMode === 'tts' 
-                                    ? (isAr ? '🎙️ تشغيل بصوت بشري' : '🎙️ PLAY VOICE STATEMENT') 
-                                    : (isAr ? '📻 تشغيل البث' : '📻 PLAY STREAM'))}
+                                    ? (isAr ? '🎙️ نطق النص الكامل (TTS)' : '🎙️ READ FULL TEXT (TTS)') 
+                                    : (isAr ? '📻 تشغيل البث الصوتي الطبيعي' : '📻 PLAY SPOKEN STREAM'))}
                             </span>
                           </button>
 

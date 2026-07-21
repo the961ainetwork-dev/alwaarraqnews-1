@@ -2,6 +2,286 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'maan-barazy-fallacy-silent-central-banking',
+    slug: 'maan-barazy-fallacy-silent-central-banking',
+    focusKeyword: 'مغالطة-المصرفية-المركزية-الصامتة',
+    category: 'opinion',
+    categories: ['opinion', 'markets', 'economy', 'translations'],
+    titleAr: 'مغالطة "المصرفية المركزية الصامتة": لماذا يهدد تحول وارش الاتصالي استقرار الديون السيادية؟',
+    titleEn: 'The Fallacy of Silent Central Banking: Why Warsh’s Communication Shift Threatens Sovereign Debt Stability',
+    summaryAr: 'إن النقاش الأخير الذي صاغته صحيفة "فاينانشال تايمز" حول مساعي رئيس الفيدرالي الجديد كيفين وارش للقضاء على "التوجيه المستقبلي" يكشف عن سوء فهم منهجي لآليات السياسة النقدية الحديثة. إليكم تحليلاً لمخاطر الصمت الاستراتيجي.',
+    summaryEn: 'The latest debate framed by the Financial Times over incoming Federal Reserve Chair Kevin Warsh’s crusade against "forward guidance" exposes a deep, systemic misunderstanding of modern monetary transmission mechanisms.',
+    excerptAr: 'تحليل خاص بقلم معن برازي يفند طموح كيفين وارش للعودة لعهد الغموض والسرية البنكية، محذراً من أن الصمت الاستراتيجي للفيدرالي يهدد استقرار أسواق السندات وتكلفة الاقتراض العالمي.',
+    excerptEn: 'An exclusive opinion piece by Maan Barazy exploring how abandoning forward guidance in a highly leveraged, debt-saturated global economy is a recipe for engineered volatility.',
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس التحرير والمدير العام - كاتب ومحلل اقتصادي',
+      titleEn: 'Editor-in-Chief & Economic Analyst',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-21',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: false,
+    isFeatured: false,
+    isPremium: true,
+    views: 9840,
+    tags: ['معن_برازي', 'الفيدرالي', 'السياسة_النقدية', 'الديون_السيادية', 'المصرفية_الصامتة', 'Maan_Barazy', 'Central_Banking', 'Kevin_Warsh', 'Sovereign_Debt'],
+    hashtags: ['MaanBarazy', 'FedReserve', 'MarketsOpinion', 'DebtStability'],
+    contentAr: `*(مقال رأي وتحليل خاص بقلم معن برازي - رئيس التحرير)*
+
+### مغالطة "المصرفية المركزية الصامتة": لماذا يهدد تحول وارش الاتصالي استقرار الديون السيادية؟
+**بقلم: معن برازي**
+
+إن النقاش الأخير الذي صاغته صحيفة "فاينانشال تايمز" (Financial Times) حول الحملة التي يشنها رئيس مجلس الاحتياطي الفيدرالي القادم، كيفين وارش، ضد "التوجيه المستقبلي" (Forward Guidance) يكشف عن سوء فهم عميق ومنهجي لآليات انتقال السياسة النقدية الحديثة. إن طموح وارش للعودة إلى عهد ما قبل برنانكي من الغموض التقديري ليس مجرد تراجع نوستالجي إلى غياهب "الغموض والسرية البنكية"؛ بل يمثل، في ظل الهيكل المالي المعقد اليوم، خطأً أساسياً في حساب المخاطر الهيكلية للسوق.
+
+وبصفتي محللاً للديون السيادية، وديناميكيات فخاخ السيولة، وميزانيات البنوك المركزية في الاقتصادات الهشة والناشئة، فإن هناك حقيقة واحدة تظل ثابتة: عندما تتوقف البنوك المركزية عن تثبيت التوقعات، فإن المشاركين في السوق لا يعودون إلى التحليل الأساسي الرصين — بل يتحولون مباشرة نحو الذعر المضاربي.
+
+فيما يلي قراءة تحليلية مفصلة تشرح لماذا يعتبر موقف وارش المناهض للتوجيه المستقبلي مقامرة عالية المخاطر على الاستقرار الكلي للاقتصاد العالمي:
+
+---
+
+### ١. مفارقة المرآة مقابل فراغ المعلومات (The Mirror Paradox vs. The Information Vacuum)
+
+لقد نجح وارش في تحديد علّة حقيقية في كواليس السياسة النقدية: وهي "حلقة التغذية المرتدة" حيث يجد البنك المركزي نفسه مجبراً على الاستجابة لتوقعات السوق التي صنعها هو بنفسه مسبقاً، مما يحول السياسة النقدية إلى مجرد مرآة عاكسة بدلاف من بوصلة اقتصادية مستقلة.
+
+ومع ذلك، فإن العلاج المقترح منه — والمتمثل في حجب الإشارات التوجيهية المستقبلية — يخلق ظاهرة أكثر خطورة بكثير: وهي **فراغ المعلومات**.
+
+في سوق السندات الأمريكية البالغ حجمها ٢٨ تريليون دولار، لا تتشكل الأسعار في معزل عن البيانات الاقتصادية الخام. فمن دون توجيه صريح ومقيد، يضطر الفاعلون في السوق إلى تسعير "علاوات مخاطر" مرتفعة للغاية (Term Premia) لحماية أنفسهم من ضبابية البنك المركزي. وبدلاً من إجبار الأسواق على النظر إلى الاقتصاد الحقيقي، فإن "المصرفية المركزية الصامتة" ستجبر المتداولين على الانخراط في رصد ومراقبة فائقة الحساسية لتحركات الفيدرالي (Fed-watching)، مما يضخم الضوضاء قصيرة الأجل على حساب التخصيص الرشيد لرأس المال على المدى الطويل.
+
+---
+
+### ٢. الرافعات المالية العالية والتصفيات غير المنسقة
+
+يختلف هيكل سوق السندات العالمية اليوم جوهرياً عما كان عليه في أواخر التسعينيات أو أوائل القرن الحادي والعشرين. إن الارتفاع الهائل في الديون العامة إلى مستويات قياسية تماثل مرحلة ما بعد الحرب العالمية الثانية لم يتم استيعابه من قبل مستثمري المؤسسات التقليدية (الذين يشترون ويحتفظون بالسندات)، بل تم امتصاصه عبر وسطاء ماليين غير مصرفيين يعتمدون على روافع مالية ضخمة وصناديق تحوط تستخدم صفقات الفروق السعرية (Basis Trades) وتمويلات إعادة الشراء قصيرة الأجل (Repo).
+
+*   **حلقة تغذية التقلبات المرتدة:** تعتمد المراكز المالية ذات الروافع العالية على نطاقات أسعار فائدة يمكن التنبؤ بها وتوقع حركتها. وعندما يصبح مسار السياسة النقدية غامضاً، تجبر نماذج "القيمة المعرضة للمخاطر" (VaR) الصناديق على إجراء تصفيات وإغلاق مراكز تلقائياً.
+*   **شلالات البيع الهستيري المتتالية (Fire-Sale Cascades):** كما شهدنا خلال أزمة المصارف الإقليمية في عام ٢٠٢٣ والاختناقات المتكررة للسيولة في سوق السندات، فإن التحولات المفاجئة في السياسة دون إشارات مسبقة تؤدي إلى موجات بيع غير منسقة للأصول للتخلص منها بأي ثمن.
+*   **تناقض التدخل الاضطراري:** إن البنك المركزي الذي يرفض التواصل بوضوح لتهدئة توقعات منحنى العائد، سيجد نفسه في نهاية المطاف مجبراً على التدخل كـ "مقرض ومشتري ملاذ أخير" لوقف تجمد السيولة — وهو ما يقوض تماماً عقيدته المناهضة للتدخل في الأسواق.
+
+---
+
+### ٣. كلفة الاقتصاد الحقيقي لعلاوة رأس المال
+
+لا تعمل السياسة النقدية فقط من خلال أسعار الفائدة القياسية لليلة واحدة؛ بل تؤثر من خلال منحنى العائد بأكمله، وهو الذي يحدد تكلفة اقتراض الشركات، وتسعير القروض العقارية، وخدمة الديون السيادية.
+
+*   **التوجيه المستقبلي الشفاف:** صياغة توقعات الفائدة طويلة الأجل دون الحاجة للتوسع الفوري في الميزانية العمومية. يؤدي ذلك إلى خفض علاوات المخاطر، تثبيت خطط الاستثمار للشركات، وترسيخ توقعات التضخم.
+*   **الغموض والتحفظ التقديري (وارش):** توليد حالة من عدم اليقين في منحنى الفائدة، مما يؤدي لقفزات حادة متقلبة في العوائد. يرفع ذلك علاوات المخاطر، ويجبر المشاريع كثيفة رأس المال (مثل الطاقة، التكنولوجيا، والبنية التحتية) على تسعير معدلات عائد أعلى بكثير للموافقة عليها وتفعيلها.
+
+---
+
+### الخلاصة
+
+إن مصداقية البنوك المركزية تُبنى على القدرة على التنبؤ والمسؤولية المؤسساتية، وليس على مباغتة الأسواق المالية وصدمها. وفي حين أن نقد وارش لسياسة "توجيه الأسواق خطوة بخطوة" يحمل تحذيراً وجيهاً ضد المخاطر الأخلاقية (Moral Hazard)، فإن التخلي التام عن التوجيه المستقبلي في اقتصاد عالمي مشبع بالديون ومعزز بالرافعات المالية هو وصفة مثالية لتقلبات مصنوعة ومفتعلة.
+
+في عالم يعاني من صدمات جانب العرض والعجز المالي المتفاقم، فإن استبدال وضوح السياسة بالصمت الاستراتيجي لا يفرض الانضباط على الأسواق — بل يزعزع استقرارها بالكامل.`,
+    contentEn: `*(Opinion & analysis piece by Maan Barazy - Editor-in-Chief)*
+
+### The Fallacy of Silent Central Banking: Why Warsh’s Communication Shift Threatens Sovereign Debt Stability
+**By: Maan Barazy**
+
+The latest debate framed by the Financial Times over incoming Federal Reserve Chair Kevin Warsh’s crusade against "forward guidance" exposes a deep, systemic misunderstanding of modern monetary transmission mechanisms. Warsh’s ambition to return to a pre-Bernanke era of discretionary ambiguity is not merely a nostalgic retreat to central bank mysticism; in today’s financial architecture, it represents a fundamental miscalculation of structural market risk.
+
+Having analyzed sovereign debt restructurings, liquidity trap dynamics, and central bank balance sheets across fragile and emerging economies, one reality remains constant: when central banks stop anchoring expectations, market participants do not return to fundamental analysis—they pivot to speculative panic.
+
+Here is an analytical breakdown of why Warsh’s anti-guidance stance is a high-risk gamble for global macro stability:
+
+---
+
+### 1. The Mirror Paradox vs. The Information Vacuum
+
+Warsh correctly identifies a real ailment in monetary policy: the feedback loop where central banks react to market expectations that they themselves created, transforming policy into a mirror rather than an independent economic compass.
+
+However, his proposed remedy—withholding forward-looking policy signals—creates a far more dangerous phenomenon: an information vacuum.
+
+In a $28 trillion U.S. Treasury market, prices do not exist in a vacuum of raw economic data. Without explicit guidance, market actors are forced to price in extreme "term premia" to protect against central bank opacity. Instead of forcing markets to look at the real economy, silent central banking forces traders to engage in hyper-speculative "Fed-watching"—amplifying short-term noise over long-term capital allocation.
+
+---
+
+### 2. High Leverage and Uncoordinated Unwindings
+
+The structure of the global bond market today is fundamentally different from the late 1990s or early 2000s. The surge in public debt to post-WWII highs has been absorbed not by buy-and-hold institutional investors, but by highly leveraged non-bank financial intermediaries and hedge funds utilizing basis trades and short-term repo funding.
+
+*   **The Volatility Feedback Loop:** Highly leveraged positions rely on predictable interest rate corridors. When policy trajectory becomes opaque, VaR (Value at Risk) models force automated liquidations.
+*   **Fire-Sale Cascades:** As witnessed during the 2023 regional banking stress and repeated liquidity snags in the Treasury market, sudden policy shifts without prior signaling trigger uncoordinated asset sales.
+*   **The Intervention Parity:** A central bank that refuses to communicate transparently to smooth yield curve expectations will inevitably be forced to step in as a lender (or buyer) of last resort to halt liquidity freezes—effectively undermining its own anti-interventionist doctrine.
+
+---
+
+### 3. The Real Economy Cost of Capital Premium
+
+Monetary policy does not operate solely through overnight benchmark rates; it operates through the entire yield curve, which dictates corporate borrowing, mortgage pricing, and sovereign debt servicing.
+
+*   **Transparent Forward Guidance:** Shapes long-term rate expectations without immediate balance sheet expansion. Lowers risk premia, stabilizes corporate planning, anchors inflation expectations.
+*   **Discretionary Opacity (Warsh):** Generates rate curve uncertainty and volatile yield spikes. Elevates risk premia, forces capital-intensive projects (energy, tech, infrastructure) to price in higher hurdle rates.
+
+---
+
+### The Bottom Line
+
+Central bank credibility is built on predictability and institutional accountability, not on catching financial markets by surprise. While Warsh’s critique of "hand-holding" contains a valid warning against moral hazard, abandoning forward guidance in a highly leveraged, debt-saturated global economy is a recipe for engineered volatility.
+
+In a world plagued by supply-side shocks and fiscal deficits, replacing policy clarity with strategic silence does not discipline the markets—it merely destabilizes them.`
+  },
+  {
+    id: 'fed-warsh-reticence-rattles-markets',
+    slug: 'fed-warsh-reticence-rattles-markets',
+    focusKeyword: 'تحفظ-الفيدرالي-الجديد-سوق-السندات',
+    category: 'translations',
+    categories: ['translations', 'markets', 'economy', 'us-politics'],
+    titleAr: 'تحفظ رئيس "الفيدرالي" الجديد قد يربك الأسواق',
+    titleEn: "The New Fed Chairman's Reticence Could Rattle Sovereign Markets",
+    summaryAr: 'وارش متردد في إرسال إشارات مسبقة حول تحركات أسعار الفائدة المستقبلية. كيف سيتعامل صندوق الدين الذي يبلغ حجمه 28 تريليون دولار، والخاص بالسندات الأمريكية، مع هذا النهج الذي يتسم بالتحفظ في وقت يتسم بالتقلبات الشديدة؟',
+    summaryEn: 'Kevin Warsh is reluctant to send pre-emptive signals on interest rates. How will the $28 trillion U.S. Treasury market handle his tight-lipped approach in highly volatile times?',
+    excerptAr: 'تحفظ رئيس الفيدرالي الجديد كيفين وارش وتجنبه التوجيهات المسبقة قد يزيد من تقلبات سوق السندات الأمريكية البالغة ٢٨ تريليون دولار.',
+    excerptEn: 'The new Federal Reserve Chair Kevin Warsh’s reticence and avoidance of forward guidance could exacerbate volatility in the $28 trillion U.S. Treasury market.',
+    author: {
+      nameAr: 'كلير جونز، وكرس جايلز، وكيث دوجويد',
+      nameEn: 'Claire Jones, Chris Giles, and Keith Duguid',
+      titleAr: 'مترجم لجريدة الوراق عن Financial Times (FT.com)',
+      titleEn: 'Translated for Al-Warraq from Financial Times (FT.com)',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-21',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 14200,
+    tags: ['الفيدرالي', 'سوق_السندات', 'أسعار_الفائدة', 'FT_com', 'ترجمات_الوراق', 'Federal_Reserve', 'Treasury_Market', 'Interest_Rates', 'Kevin_Warsh'],
+    hashtags: ['FedReserve', 'TreasuryBonds', 'FinancialTimes', 'AlWarraqTranslation'],
+    contentAr: `*(مترجم حصرياً لجريدة الوراق عن صحيفة فاينانشال تايمز - FT.com)*
+
+### تحفظ رئيس "الفيدرالي" الجديد قد يربك الأسواق
+**بقلم: كلير جونز، وكرس جايلز، وكيث دوجويد**
+
+لا يمكن للانقطاع عن التقاليد أن يأتي بشكل أكثر سرعة ومباشرة؛ فبعد أكثر من عقد كامل أخذ فيه أهم بنك مركزي في العالم على عاتقه إعطاء إشارات مسبقة فائقة الدقة تحسباً لأي تحرك قادم — خشية إحداث شلل في الأسواق وتغييرات مفاجئة — أوضح رئيس الفيدرالي الجديد، كيفين وارش، أنه يتجه نحو عهد جديد أكثر تحفظاً وإيجازاً.
+
+فبعد أقل من 20 دقيقة على ظهوره الأول كصانع قرار، أوضح وارش أنه ينوي تقليص الإفصاحات المستقبلية حول خططه لأحد أهم المتغيرات الاقتصادية في العالم: أسعار الفائدة الأمريكية. والحديث اليوم يدور حول ما إذا كان نهجه المحافظ سيهدئ من تقلبات سوق السندات التي تحدد تكلفة رأس المال عالمياً، أم أنه سيزيد من اشتعالها.
+
+يعتقد الذين يعرفون وارش جيداً أن سياسته القاضية بتقديم إشارات أقل بكثير مقارنة بأسلافه كانت مخططة منذ فترة طويلة؛ فمنذ أن أنهى فترته الأولى في الفيدرالي قبل 15 عاماً، انتقد بضراوة ما يسمى بـ "التوجيه المستقبلي" (Forward Guidance) — وهو عرف تقديم بنوك مركزية لإشارات مسيرة الفائدة المستقبلية للمتعاملين مسبقاً.
+
+لكن العديد من المتابعين والخبراء في سوق السندات يحذرون من أن هذا التحول يأتي في وقت غير مناسب؛ حيث إن تقلبات أسعار السندات تعود بالأساس إلى الارتفاع الهائل في الديون الحكومية والتنظيمات المالية الصارمة، إلى جانب الدور المتزايد لصناديق التحوط.
+
+ويؤكد المقربون من وارش أنه يعتقد أن البنوك المركزية وقعت في فخ المراقبة المفرطة للأسواق بدلاً من التركيز على الالتزامات الأساسية البحتة؛ إذ صرح سابقاً بأن "أسعار الأسواق المالية هي ربما أهم مصدر للمعلومات المتاحة لإرشاد البنوك المركزية".
+
+في أول مؤتمر صحفي له شهر مارس الماضي، قال وارش: "عندما تركز كافة الأسواق المالية على ما نقوله، فإننا نكون كمن ينظر في المرآة بدلاً من النظر إلى الاقتصاد الحقيقي. لا أحد يعلم تماماً ما يخبئه الاقتصاد."
+
+وقد أيده في ذلك أجاي راجاجاكشا، رئيس أبحاث الأسواق في بنك باركليز، قائلاً: "الأسواق تتابع الفيدرالي، والفيدرالي يتابع الأسواق. وفي النهاية لا أحد يتابع الاقتصاد الحقيقي بشكل فعلي."
+
+"في الواقع، فإن غياب التوجيه المستقبلي الواضح يجعل كل شيء يحدث فجأة."
+
+---
+
+### بوصلة "أوديسية"
+
+تعود جذور هذا الجدل إلى الأزمة المالية العالمية عام 2008.
+
+ففي عهد بن بيرنانكي، استخدم الفيدرالي التوجيه المستقبلي لتهدئة الأسواق المذعورة بعد سقوط بنك ليمان براذرز. وكان التزام بيرنانكي بإبقاء أسعار الفائدة منخفضة لفترة طويلة ضخاً للسيولة في النظام المالي، مما ساعد في تجنب كساد أعمق عبر طمأنة الأسواق والشركات والأفراد بإمكانية الاقتراض بتكاليف منخفضة.
+
+لكن تلك السياسة قلصت أيضاً من قدرة الفيدرالي على تغيير مسار أسعار الفائدة في الفترات اللاحقة. ويرى وارش، الذي عمل عن قرب مع بيرنانكي، أن استراتيجيات البنوك المركزية لم تعد بالفاعلية المطلوبة بعد خروج الاقتصاد من أزمة 2008.
+
+ويرى وارش وحلفاؤه أن محاولة الطمأنة الدائمة للأسواق تجعل المحافظ الاستثمارية تخاطر بشكل أكبر، مما يقلل من التقلبات قصيرة الأجل لكنه يراكم صدمات أكبر للمستقبل.
+
+ويزداد هذا الجدل أهمية في ظل الخلفية الحالية: ارتفاع الاقتراض الحكومي لأعلى مستوياته منذ عقدين. وفي وقت لاحق من هذا العقد، من المتوقع أن يتجاوز الدين العام الأمريكي مستوياته القياسية التي سجلها في أعقاب الحرب العالمية الثانية، لتتضاعف تكلفة خدمة الدين خلال السنوات العشر القادمة.
+
+كما تغيرت هيكلية سوق السندات نفسها؛ فبينما ظلت حيازات صناديق المعاشات وشركات التأمين ثابته نسبياً، حلّت محلها صناديق التحوط التي تعتمد على الاقتراض السريع للاستثمار والتداول في الفروقات السعرية الصغيرة لسندات الخزانة الأمريكية.
+
+وتشير تقديرات الفيدرالي إلى أن حيازات صناديق التحوط الكبيرة لسندات الخزانة الأمريكية تضاعفت بين عامي 2023 و2025 لتصل إلى 2.8 تريليون دولار.
+
+---
+
+### الضغوط العالمية وردود الفعل
+
+يحذر بنك التسويات الدولية (BIS) من أن هذه التغيرات قد تجبر البنوك المركزية على التدخل في أسواق السندات بشكل أسرع مما متوقع عند حدوث أي اضطرابات.
+
+ويقول تورستين سلوك، كبير الاقتصانيين في شركة أبولو: "بدون توجيه مستقبلي واضح، هناك احتمال أكبر لحدوث سيناريو المبيعات الهستيرية (Fire Sales) في الأسواق، حيث يدفع التغير المفاجئ في النظرة المستقبلية الجميع للبيع في نفس الوقت، مما يتسبب في أزمة سيولة."
+
+ويتفق مسؤولون في بنوك مركزية أخرى مع فكرة أن التوجيه المفرط قد يربك الأسواق، إلا أن رئيسة البنك المركزي الأوروبي كريستين لاجارد ومحافظ بنك إنجلترا أندرو بيلي أشارا إلى التزامهما بتقديم إشارات موجهة ومحددة.
+
+ويرى بعض المحللين أن تجربة عام 2023 مع إفلاس بنك سيلكون فاليه (SVB) أثبتت أن استجابة الفيدرالي للتقلبات المتزايدة تحتاج إلى درجة عالية من الوضوح والتنسيق لمنع انتشار المخاطر النظامية.
+
+ويقول كريس والين، وهو رئيس شركة استشارات مالية: "إذا لم توضح الأسواق المسار بشكل جيد، فإن الاستجابة الفجائية قد تزيد من حدة الذعر."
+
+---
+
+### انقسام داخل الفيدرالي
+
+داخل أروقة مجلس الفيدرالي نفسه، بدأت وجهات النظر تتصارع حول طريقة تعامل وارش؛ حيث صرحت ميشيل بومان (عضو المجلس) بأن تقديم إشارات ضبابية أو تقليل الإفصاحات قد يعقد من عملية استيعاب الأسواق لقرارات الفيدرالي، مشددة على أهمية الشفافية وتقديم التوقعات النقطية (Dot Plots) بشكل دوري.
+
+بينما يرى آخرون أن التكتم وتقليل التصريحات العلنية اليومية من شأنه إعادة الهيبة لقرارات السياسة النقدية الرسمية، وتخفيف الضوضاء الإعلامية التي تحيط بكبار المسؤولين في البنك.
+
+ختاماً، يلخص أحد المسؤولين سابقاً في الفيدرالي المشهد بقوله:
+"لا أتوقع أن يتحول التغيير في التواصل إلى غموض وتخفي للحقائق، بل الهدف هو إعطاء الصورة الصحيحة في الوقت المناسب دون المبالغة في توجيه السوق."`,
+    contentEn: `*(Exclusive translation for Al-Warraq from Financial Times - FT.com)*
+
+### The New Fed Chairman's Reticence Could Rattle Sovereign Markets
+**By: Claire Jones, Chris Giles, and Keith Duguid**
+
+The break with tradition could not have been more swift or direct. After more than a decade in which the world’s most crucial central bank took it upon itself to provide highly precise forward guidance before any impending move—fearing market paralysis and sudden adjustments—the new Federal Reserve Chair, Kevin Warsh, made it clear that he is steering toward a quieter, more reticent era.
+
+Less than 20 minutes into his debut as policymaker, Warsh clarified his intention to scale back future disclosures regarding plans for one of the world's most vital economic variables: U.S. interest rates. Today, the debate centers on whether his conservative approach will soothe volatility in the bond market that determines the cost of global capital, or if it will spark further turbulence.
+
+Those who know Warsh well believe that his policy of providing significantly fewer signals than his predecessors was planned long ago. Since ending his first term at the Fed 15 years ago, he has fiercely criticized what is known as "Forward Guidance"—the convention of central banks signaling future interest rate paths to market participants in advance.
+
+However, many bond market observers and experts warn that this shift comes at an inopportune moment. Volatility in Treasury prices is primarily driven by a massive surge in government debt, strict financial regulations, and the expanding role of hedge funds.
+
+Those close to Warsh emphasize that he believes central banks have fallen into the trap of over-monitoring financial markets instead of focusing purely on core structural obligations. He previously stated that "financial market prices are perhaps the most important source of available information to guide central banks."
+
+In his first press conference last March, Warsh remarked: "When all financial markets focus on what we say, we end up looking in the mirror instead of looking at the real economy. No one truly knows what the economy holds."
+
+Ajay Rajadhyaksha, head of macro research at Barclays, agreed, saying: "The markets watch the Fed, and the Fed watches the markets. In the end, no one is actually watching the real economy."
+
+"In reality, the absence of clear forward guidance makes everything happen suddenly."
+
+---
+
+### An 'Odyssean' Compass
+
+The roots of this debate date back to the 2008 global financial crisis.
+
+Under Ben Bernanke, the Fed used forward guidance to calm panicked markets after the collapse of Lehman Brothers. Bernanke's commitment to keeping interest rates low for an extended period injected liquidity into the financial system, helping avoid a deeper depression by reassuring markets, businesses, and individuals that borrowing costs would remain low.
+
+But that policy also restricted the Fed's ability to shift interest rates in subsequent periods. Warsh, who worked closely with Bernanke, believes that central bank strategies lost their intended efficacy once the economy emerged from the 2008 crisis.
+
+Warsh and his allies argue that attempting to constantly reassure markets encourages investment portfolios to take greater risks, reducing short-term volatility but accumulating much larger shocks for the future.
+
+This debate takes on heightened significance against the current backdrop: government borrowing rising to its highest level in two decades. Later this decade, U.S. public debt is projected to surpass the record levels set in the wake of World War II, doubling the cost of debt service over the next ten years.
+
+The structure of the bond market itself has also shifted. While holdings of pension funds and insurance companies have remained relatively flat, they have been replaced by hedge funds that rely on fast-paced leverage to trade and invest in minor price differentials of U.S. Treasuries.
+
+Fed estimates show that major hedge fund holdings of U.S. Treasury securities doubled between 2023 and 2025, reaching $2.8 trillion.
+
+---
+
+### Global Pressures and Reactions
+
+The Bank for International Settlements (BIS) warns that these structural shifts could force central banks to intervene in bond markets much faster than expected in the event of any disruption.
+
+Torsten Slok, chief economist at Apollo, says: "Without clear forward guidance, there is a higher probability of a fire sale scenario in markets, where a sudden shift in outlook prompts everyone to sell at once, causing a liquidity squeeze."
+
+Officials at other central banks agree that excessive guidance can confuse markets, though European Central Bank President Christine Lagarde and Bank of England Governor Andrew Bailey have indicated their commitment to providing tailored, specific guidance.
+
+Some analysts point out that the 2023 experience with the collapse of Silicon Valley Bank (SVB) proved that the Fed's response to escalating volatility requires a high level of clarity and coordination to prevent systemic contagion.
+
+Chris Whalen, head of a financial advisory firm, says: "If markets do not understand the path well, abrupt responses can exacerbate panic."
+
+---
+
+### Division Within the Fed
+
+Within the Federal Reserve Board itself, conflicting views have emerged regarding Warsh's approach. Michelle Bowman (Board Governor) argued that providing vague signals or reducing disclosures could complicate markets' digestion of Fed decisions, emphasizing the importance of transparency and the regular release of "Dot Plots".
+
+Others argue that silence and reducing daily public statements would restore authority to official monetary policy decisions and minimize the media noise surrounding senior central bank officials.
+
+In conclusion, a former Fed official sums up the situation:
+"I do not expect the shift in communication to turn into obscurity and concealment of facts. Rather, the goal is to provide the correct picture at the right time without over-steering the market."`
+  },
+  {
     id: 'open-war-of-attrition-us-iran-2026',
     slug: 'open-war-of-attrition-us-iran-2026',
     focusKeyword: 'حرب-الاستنزاف-أمريكا-إيران',
