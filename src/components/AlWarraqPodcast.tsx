@@ -61,9 +61,15 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
   const [isMuted, setIsMuted] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
 
-  // Text-To-Speech (SpeechSynthesis) assistant states
+  // Audio Mode Selector: 'tts' (Default AI Narrator voice) or 'stream' (Ambient Audio MP3 URL)
+  const [audioMode, setAudioMode] = useState<'tts' | 'stream'>('tts');
+
+  // Text-To-Speech (SpeechSynthesis) assistant states and simulated timers
   const [isSpeakingTts, setIsSpeakingTts] = useState(false);
   const [ttsSpeed, setTtsSpeed] = useState(1);
+  const [ttsCurrentTime, setTtsCurrentTime] = useState(0);
+  const [ttsDuration, setTtsDuration] = useState(0);
+  const ttsTimerRef = useRef<number | null>(null);
   const ttsUtteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   // Decorative Audio spectrum simulation
@@ -92,7 +98,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
     }
   }, []);
 
-  // Update audio instance properties when active podcast changes
+  // Update audio instance properties and default modes when active podcast changes
   useEffect(() => {
     setIsPlaying(false);
     setCurrentTime(0);
@@ -101,6 +107,16 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.load();
+    }
+
+    if (activePodcast) {
+      // Default to high-quality AI Speech narration ('tts') if no custom audioUrl is provided,
+      // or if it is the placeholder SoundHelix song. This avoids playing weird instrumental beats.
+      if (!activePodcast.audioUrl || activePodcast.audioUrl.includes('soundhelix.com')) {
+        setAudioMode('tts');
+      } else {
+        setAudioMode('stream');
+      }
     }
   }, [activePodcast]);
 
@@ -143,9 +159,13 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseFloat(e.target.value);
-    if (audioRef.current) {
-      audioRef.current.currentTime = val;
-      setCurrentTime(val);
+    if (audioMode === 'tts') {
+      setTtsCurrentTime(val);
+    } else {
+      if (audioRef.current) {
+        audioRef.current.currentTime = val;
+        setCurrentTime(val);
+      }
     }
   };
 
@@ -173,9 +193,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
     }
   };
 
-  // Waveform Spectrum animation loop when music is playing
+  // Waveform Spectrum animation loop when music or speech is playing
   useEffect(() => {
-    if (isPlaying) {
+    const isPlaybackActive = isPlaying || isSpeakingTts;
+    if (isPlaybackActive) {
       waveIntervalRef.current = window.setInterval(() => {
         setWaveHeights(Array(24).fill(0).map(() => Math.floor(Math.random() * 85) + 15));
       }, 100);
@@ -191,9 +212,9 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
         clearInterval(waveIntervalRef.current);
       }
     };
-  }, [isPlaying]);
+  }, [isPlaying, isSpeakingTts]);
 
-  // Text to Speech (SpeechSynthesis) logic
+  // Text to Speech (SpeechSynthesis) logic with simulated progress timer
   const togglePlayTts = () => {
     if (typeof window === 'undefined' || !window.speechSynthesis) {
       alert(isAr ? 'ميزة النطق الصوتي غير مدعومة في متصفحك الحالي.' : 'Text-to-Speech is not supported in this browser.');
@@ -229,17 +250,36 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
       utterance.voice = targetVoice;
     }
 
+    // Calculate simulated timeline duration
+    const wordCount = transcript.split(/\s+/).length;
+    // Reading speed approx 2.5 words/sec at 1x speed
+    const estimatedDuration = Math.max(10, Math.ceil(wordCount / (2.5 * ttsSpeed)));
+    setTtsDuration(estimatedDuration);
+    setTtsCurrentTime(0);
+
     utterance.onend = () => {
-      setIsSpeakingTts(false);
+      stopTts();
     };
 
     utterance.onerror = () => {
-      setIsSpeakingTts(false);
+      stopTts();
     };
 
     ttsUtteranceRef.current = utterance;
     setIsSpeakingTts(true);
     window.speechSynthesis.speak(utterance);
+
+    // Start progress timer
+    if (ttsTimerRef.current) clearInterval(ttsTimerRef.current);
+    ttsTimerRef.current = window.setInterval(() => {
+      setTtsCurrentTime(prev => {
+        if (prev >= estimatedDuration - 1) {
+          if (ttsTimerRef.current) clearInterval(ttsTimerRef.current);
+          return estimatedDuration;
+        }
+        return prev + 1;
+      });
+    }, 1000);
   };
 
   const stopTts = () => {
@@ -247,6 +287,10 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
       window.speechSynthesis.cancel();
     }
     setIsSpeakingTts(false);
+    if (ttsTimerRef.current) {
+      clearInterval(ttsTimerRef.current);
+      ttsTimerRef.current = null;
+    }
   };
 
   useEffect(() => {
@@ -466,15 +510,49 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                 )}
               </div>
 
-              {/* SECTION: AUDIO PLAYER DECK (If has audio URL) */}
-              {activePodcast.audioUrl ? (
+              {/* SECTION: AUDIO PLAYER DECK */}
+              {activePodcast && (
                 <div className="border border-zinc-800 bg-zinc-900/60 p-5 space-y-4">
-                  <div className="flex justify-between items-center border-b border-zinc-850 pb-2">
-                    <span className="text-[10px] font-mono font-bold text-amber-500 uppercase tracking-widest flex items-center gap-1">
+                  <div className="flex flex-wrap gap-4 justify-between items-center border-b border-zinc-850 pb-3">
+                    <span className="text-[10px] font-mono font-bold text-amber-500 uppercase tracking-widest flex items-center gap-1.5">
                       <Headphones size={12} />
-                      {isAr ? 'لوحة التحكم الصوتي والتردد' : 'AUDIO MASTER CONTROL PANEL'}
+                      {isAr ? 'لوحة التحكم الصوتي والتردد الإذاعي' : 'AUDIO MASTER CONTROL PANEL'}
                     </span>
-                    <span className="text-xxs font-mono text-zinc-500">{isPlaying ? 'TRANSMITTING' : 'IDLE'}</span>
+                    
+                    {/* Audio Mode Selectors */}
+                    <div className="flex border border-zinc-800 p-0.5 bg-zinc-950 select-none">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (isPlaying) {
+                            audioRef.current?.pause();
+                            setIsPlaying(false);
+                          }
+                          setAudioMode('tts');
+                        }}
+                        className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
+                          audioMode === 'tts' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
+                        }`}
+                      >
+                        <Mic size={10} />
+                        <span>{isAr ? '🎙️ مذيع الذكاء الاصطناعي (نطق بشري)' : '🎙️ AI Voice Anchor'}</span>
+                      </button>
+                      {activePodcast.audioUrl && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            stopTts();
+                            setAudioMode('stream');
+                          }}
+                          className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
+                            audioMode === 'stream' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
+                          }`}
+                        >
+                          <Radio size={10} />
+                          <span>{isAr ? '📻 البث الصوتي / الموسيقي' : '📻 Ambient Audio Stream'}</span>
+                        </button>
+                      )}
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
@@ -482,8 +560,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                     {/* Animated Waveform simulated bars (Md: 4 cols) */}
                     <div className="md:col-span-4 bg-zinc-950 border border-zinc-850 h-24 p-4 flex flex-col justify-between relative overflow-hidden">
                       <div className="flex justify-between items-center text-[8px] font-mono text-zinc-500 uppercase">
-                        <span>{isAr ? 'محلل المدى الصوتي' : 'Spectrum Spectrum'}</span>
-                        <span className="text-amber-500">{isPlaying ? 'LIVE' : 'STANDBY'}</span>
+                        <span>{isAr ? 'محلل المدى الصوتي' : 'Spectrum Analyzer'}</span>
+                        <span className="text-amber-500">{(audioMode === 'tts' ? isSpeakingTts : isPlaying) ? 'LIVE' : 'STANDBY'}</span>
                       </div>
                       
                       {/* Vertical bars */}
@@ -492,14 +570,20 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                           <div
                             key={idx}
                             style={{ height: `${h}%` }}
-                            className={`w-[2.5px] rounded-t-sm transition-all duration-100 ${isPlaying ? 'bg-amber-500' : 'bg-zinc-800'}`}
+                            className={`w-[2.5px] rounded-t-sm transition-all duration-100 ${
+                              (audioMode === 'tts' ? isSpeakingTts : isPlaying) ? 'bg-amber-500' : 'bg-zinc-800'
+                            }`}
                           />
                         ))}
                       </div>
 
                       <div className="flex justify-between items-center text-[9px] font-mono text-zinc-400">
-                        <span className="text-amber-500 font-extrabold">{formatTime(currentTime)}</span>
-                        <span>{formatTime(duration)}</span>
+                        <span className="text-amber-500 font-extrabold">
+                          {formatTime(audioMode === 'tts' ? ttsCurrentTime : currentTime)}
+                        </span>
+                        <span>
+                          {formatTime(audioMode === 'tts' ? ttsDuration : duration)}
+                        </span>
                       </div>
                     </div>
 
@@ -511,8 +595,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                         <input
                           type="range"
                           min={0}
-                          max={duration || 0}
-                          value={currentTime}
+                          max={(audioMode === 'tts' ? ttsDuration : duration) || 0}
+                          value={audioMode === 'tts' ? ttsCurrentTime : currentTime}
                           onChange={handleSeek}
                           className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
                         />
@@ -524,18 +608,40 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                         {/* Play speed and main play */}
                         <div className="flex items-center gap-2">
                           <button
-                            onClick={togglePlayAudio}
+                            onClick={() => {
+                              if (audioMode === 'tts') {
+                                togglePlayTts();
+                              } else {
+                                togglePlayAudio();
+                              }
+                            }}
                             className={`py-2 px-5 flex items-center gap-2 font-bold text-xs uppercase tracking-wider transition-all border border-black shadow-[2px_2px_0_0_rgba(255,255,255,1)] active:translate-y-0.5 active:shadow-none hover:shadow-none cursor-pointer ${
-                              isPlaying ? 'bg-amber-500 text-zinc-950' : 'bg-zinc-800 text-white'
+                              (audioMode === 'tts' ? isSpeakingTts : isPlaying) ? 'bg-amber-500 text-zinc-950' : 'bg-zinc-800 text-white'
                             }`}
                           >
-                            {isPlaying ? <Pause size={12} className="fill-current" /> : <Play size={12} className="fill-current" />}
-                            <span>{isPlaying ? (isAr ? 'إيقاف مؤقت' : 'PAUSE') : (isAr ? 'تشغيل البث' : 'PLAY AUDIO')}</span>
+                            {(audioMode === 'tts' ? isSpeakingTts : isPlaying) ? <Pause size={12} className="fill-current" /> : <Play size={12} className="fill-current" />}
+                            <span>
+                              {(audioMode === 'tts' ? isSpeakingTts : isPlaying) 
+                                ? (isAr ? 'إيقاف مؤقت' : 'PAUSE') 
+                                : (audioMode === 'tts' 
+                                    ? (isAr ? '🎙️ تشغيل بصوت بشري' : '🎙️ PLAY VOICE STATEMENT') 
+                                    : (isAr ? '📻 تشغيل البث' : '📻 PLAY STREAM'))}
+                            </span>
                           </button>
 
                           {/* Quick reset */}
                           <button
-                            onClick={() => { if (audioRef.current) audioRef.current.currentTime = 0; }}
+                            onClick={() => {
+                              if (audioMode === 'tts') {
+                                setTtsCurrentTime(0);
+                                if (isSpeakingTts) {
+                                  stopTts();
+                                  setTimeout(togglePlayTts, 50);
+                                }
+                              } else {
+                                if (audioRef.current) audioRef.current.currentTime = 0;
+                              }
+                            }}
                             className="p-2 border border-zinc-700 bg-zinc-800 hover:border-amber-500 text-zinc-400 hover:text-white cursor-pointer"
                             title={isAr ? 'إعادة البداية' : 'Rewind to start'}
                           >
@@ -548,8 +654,22 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                           { [1, 1.25, 1.5, 2].map(speed => (
                             <button
                               key={speed}
-                              onClick={() => handleSpeedChange(speed)}
-                              className={`px-1.5 py-0.5 ${playbackRate === speed ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white'}`}
+                              onClick={() => {
+                                if (audioMode === 'tts') {
+                                  setTtsSpeed(speed);
+                                  if (isSpeakingTts) {
+                                    stopTts();
+                                    setTimeout(togglePlayTts, 50);
+                                  }
+                                } else {
+                                  handleSpeedChange(speed);
+                                }
+                              }}
+                              className={`px-1.5 py-0.5 ${
+                                (audioMode === 'tts' ? ttsSpeed === speed : playbackRate === speed) 
+                                  ? 'bg-amber-500 text-zinc-950 font-black' 
+                                  : 'text-zinc-400 hover:text-white'
+                              }`}
                             >
                               {speed}x
                             </button>
@@ -578,7 +698,7 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
 
                   </div>
                 </div>
-              ) : null}
+              )}
 
               {/* SECTION: WRITTEN TRANSCRIPT & TEXT DOSSIER ASSIST */}
               {(activePodcast.transcriptAr || activePodcast.transcriptEn) ? (

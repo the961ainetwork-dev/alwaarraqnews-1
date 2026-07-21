@@ -42,6 +42,59 @@ export interface PressReleaseItem {
 
 export const PRESS_RELEASES: PressReleaseItem[] = [
   {
+    id: 'alwarraq-milestone-record-2026',
+    titleEn: 'Al-Warraq News Achieves Historic Milestone, Topping Digital News and Analytical Outlets in Lebanon',
+    titleAr: '"جريدة الورق" تحقق إنجازاً استثنائياً وتتصدر قائمة المواقع الإخبارية والتحليلية في لبنان',
+    categoryEn: 'COMPANY UPDATE & MILESTONE',
+    categoryAr: 'إعلان الشركة والإنجازات',
+    dateEn: 'July 21, 2026',
+    dateAr: '٢١ يوليو ٢٠٢٦',
+    locationEn: 'Beirut, Lebanon',
+    locationAr: 'بيروت، لبنان',
+    excerptEn: 'Al-Warraq News announces unprecedented record readership and engagement figures in Lebanon and the region, driven by specialized sovereign investigations, SEO optimization, and human-in-the-loop AI workflows.',
+    excerptAr: 'أعلنت إدارة منصة "جريدة الورق" اليوم عن تحقيق أرقام قياسية غير مسبوقة ونسب تفاعل هي الأعلى بين المواقع الصحفية الرقمية في لبنان والمنطقة بحسب مؤشرات لوحة التحكم المباشرة.',
+    contentEn: `**BEIRUT, LEBANON — July 21, 2026** — The management of "Al-Warraq News" platform (alwarraqnews.com) today announced unprecedented record figures and the highest engagement rates among digital journalism sites in Lebanon and the region, according to the latest indicators from the site's live dashboard and analytics.
+
+### Figures & Indicators Leading the Digital Media Scene
+Operational data from the readership observatory and site traffic recorded qualitative leaps in all core indicators:
+*   **Total Article Views:** Passed the 1.29 million view mark (1,290,186) during a record period, with a weekly growth rate of +12.4%.
+*   **Unique Verified Visitors:** Reached 838,621 visitors, reflecting a +8.1% monthly growth.
+*   **Reader Retention:** Achieved an excellent Bounce Rate of 47.4%, proving deep reader immersion and longer engagement times with extensive analyses and reports.
+*   **Reading Index:** Recorded an advanced average reading and analysis index of 9,925 per article.
+
+### Secret to Success: Editorial Excellence, Special Investigations, and Optimized AI
+This continuous rise is directly linked to four pillars:
+1.  **Uniqueness of Reports & Investigations:** The platform's reliance on exclusive investigative journalism and carefully written editorials, away from repetitive news aggregation.
+2.  **Complete & Diverse Sections:** Comprehensive coverage across specialized sections, including Economy & Finance, Lebanese & Regional Affairs, Geopolitical War Room, Opinion & Interaction, Press Releases, and Exclusive Translations.
+3.  **Innovative Integration of AI & Human Editing:** Utilizing advanced AI algorithms via the "Sorting & Editing Diwan" to generate, classify, and proofread content linguistically and journalistically at rapid speeds while guaranteeing strict originality and text quality.
+4.  **SEO & Geographic Targeting (GEO & Google Ranking):** Applying top SEO standards and smart geographic connection, making "Al-Warraq News" top Arabic search results on Google, becoming the first trusted source for investors, decision-makers, and the general public.
+
+### About Al-Warraq News (Al-Warraq News):
+A leading digital news, economic, and political platform dedicated to offering deep analytical coverage, verified investigative reporting, and market & geopolitical indices in Lebanon and the Middle East, supported by state-of-the-art smart newsroom technologies.
+
+*   To visit the platform and view live coverage: www.alwarraqnews.com`,
+    contentAr: `**بيروت، لبنان — ٢١ يوليو ٢٠٢٦** — أعلنت إدارة منصة "جريدة الورق" (alwarraqnews.com) اليوم عن تحقيق أرقام قياسية غير مسبوقة ونسب تفاعل هي الأعلى بين المواقع الصحفية الرقمية في لبنان والمنطقة، بحسب أحدث المؤشرات الصادرة عن لوحة التحكم والتحليلات المباشرة للموقع.
+
+### أرقام ومؤشرات تقود المشهد الإعلامي الرقمي
+أظهرت البيانات التشغيلية الصادرة عن مرصد القراءة ومعدلات حركة الموقع تسجيل قفزات نوعية في كافة المؤشرات الأساسية:
+*   **إجمالي مشاهدات المقالات:** تجاوز حاجز 1.29 مليون مشاهدة (1,290,186) خلال فترة قياسية، بنسبة نمو أسبوعي بلغت 12.4%+.
+*   **الزوار الفريدون:** وصول عدد الزوار الفريدين الموثقين إلى 838,621 زائرًا، بنمو شهري قدره 8.1%+.
+*   **معدل الارتداد (Bounce Rate):** تحقيق معدل ارتداد ممتاز بلغت نسبته 47.4%، مما يثبت مدى انغماس القارئ في المحتوى واستغراقه أوقاتاً أطول في قراءة التحليلات والتقارير.
+*   **مؤشر القراءة والتحليل:** تسجيل متوسط قراءة واطلاع متقدم بلغ 9,925 مؤشر قراءة وتحليل لكل مقال.
+
+### سر النجاح: التميز التحريري، التحقيقات الخاصة، والذكاء الاصطناعي المُحسّن
+إن هذا الارتفاع المتواصل في التقييمات والأرقام لا يأتي من فراغ، بل يرتبط ارتباطاً وثيقاً بـ:
+1.  **فرادة التقارير والتحقيقات:** اعتماد المنصة على التحقيقات الاستقصائية الخاصة والافتتاحيات المكتوبة بعناية، بعيداً عن التكرار والتجميع التقليدي للأنباء.
+2.  **تنوع الأقسام واكتمالها:** تغطية شاملة ودقيقة تتوزع على أقسام متخصصة تشمل: مال واقتصاد، الشأن اللبناني والإقليمي، غرفة الحرب الجيوسياسية، الرأي والتفاعل، البيانات الصحفية، والترجمات الحصرية.
+3.  **الدمج المبتكر بين الذكاء الاصطناعي والتعديل التحريري البشرى:** استخدام خوارزميات الذكاء الاصطناعي المتقدمة (AI) عبر "ديوان الفرز والتحرير" لتوليد وتصنيف وتدقيق المحتوى بلغوياً وصحفياً بشكل آلي وسريع، مع ضمان أصلية النص وجودته الصارمة.
+4.  **التصدر في محركات البحث والتغطية الجغرافية الذكية (GEO & Google Ranking):** تطبيق أفضل معايير تحسين محركات البحث (SEO) والربط الجغرافي الذكي، ما جعل "جريدة الورق" تتصدر نتائج البحث باللغة العربية على محرك Google وتصبح المصدر الأول الموثوق للمستثمرين، صناع القرار، والجمهور العام.
+
+### عن جريدة الورق (Al-Warraq News)
+منصة إخبارية واقتصادية وسياسية رقمية رائدة تُعنى بتقديم التغطية التحليلية المعمقة، التقارير الاستقصائية الموثقة، ومؤشرات الأسواق والجيوسياسة في لبنان والشرق الأوسط، مدعومة بأحدث تقنيات غرفة الأخبار الذكية.
+
+*   لزيارة المنصة الاطلاع على التغطيات الحية: www.alwarraqnews.com`
+  },
+  {
     id: 'investigations-and-timeline-update-2026',
     titleEn: 'Al-Warraq Gazette Publishes Comprehensive Investigations Suite on Lebanon Ceasefire & Launches Interactive Chronological Timeline',
     titleAr: 'صحيفة الوراق تنشر حزمة تحقيقات شاملة حول وقف إطلاق النار وتطلق جدولاً زمنياً تتبعياً للمفاوضات',
@@ -202,7 +255,7 @@ This press release serves as an official notice for financial markets and bankin
 
 export default function PressReleases({ language }: PressReleasesProps) {
   const isAr = language === 'ar';
-  const [selectedReleaseId, setSelectedReleaseId] = useState<string>('investigations-and-timeline-update-2026');
+  const [selectedReleaseId, setSelectedReleaseId] = useState<string>('alwarraq-milestone-record-2026');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const activeRelease = PRESS_RELEASES.find(r => r.id === selectedReleaseId) || PRESS_RELEASES[0];
