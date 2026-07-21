@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   Activity, ArrowLeft, ArrowRight, MapPin, TrendingUp, AlertTriangle, 
-  FileText, Landmark, Users, DollarSign, ArrowUpRight, BarChart3, HelpCircle 
+  FileText, Landmark, Users, DollarSign, ArrowUpRight, BarChart3, HelpCircle, Shield 
 } from 'lucide-react';
 
 interface PulseOfTheStreetProps {
@@ -81,21 +81,10 @@ export default function PulseOfTheStreet({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-8 space-y-5 text-sm md:text-base leading-relaxed">
-              <div className="border border-current overflow-hidden">
-                <img 
-                  src="/pulse_displaced_father.png" 
-                  alt={isAr ? "أب نازح يطعم طفله الرضيع في مركز إيواء مؤقت" : "A displaced father feeds his infant baby in a shelter encampment"} 
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80";
-                  }}
-                  className="w-full h-[250px] md:h-[450px] object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-300 contrast-110"
-                />
-                <div className="p-2 border-t border-current text-xxs font-mono opacity-80 bg-black/5 dark:bg-white/5 flex justify-between">
-                  <span>{isAr ? 'خطوط الإيواء، ٢٠٢٦ - الأبوة الصامدة وسط الكارثة والنزوح' : 'Sovereign lines, 2026 - Fatherhood and survival amidst displacement.'}</span>
-                  <span className="font-bold">TELEX INTEL PHOTO</span>
+              <div className="border border-current p-4 bg-zinc-50 flex items-center gap-3">
+                <Shield size={18} className="text-zinc-600 animate-pulse shrink-0" />
+                <div className="text-xs font-mono opacity-90 select-none">
+                  <span>{isAr ? 'خطوط الإيواء، ٢٠٢٦ - الأبوة الصامدة وسط الكارثة والنزوح [رصد برقي]' : 'Sovereign lines, 2026 - Fatherhood and survival amidst displacement [TELEX INTEL]'}</span>
                 </div>
               </div>
 
@@ -508,22 +497,14 @@ export default function PulseOfTheStreet({
         
         {/* Story 1 Excerpt & Photo (8 columns) */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="border border-current overflow-hidden">
-            <img 
-              src="/pulse_displaced_father.png" 
-              alt={isAr ? "أب نازح يطعم طفله الرضيع في مركز إيواء" : "A displaced father feeds his infant baby in a temporary shelter"} 
-              referrerPolicy="no-referrer"
-              loading="lazy"
-              decoding="async"
-              onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80";
-              }}
-              className="w-full h-[200px] md:h-[350px] object-cover filter grayscale opacity-95 hover:grayscale-0 transition-all duration-300 contrast-110"
-            />
-            <div className="p-2 border-t border-current text-xxs font-mono opacity-80 flex justify-between bg-black/5 dark:bg-white/5">
-              <span>{isAr ? 'النزوح القسري، ٢٠٢٦ - أب يطعم رضيعه في مركز إيواء مؤقت' : 'Sovereign Displacements, 2026 - A father feeds his infant baby in a temporary shelter.'}</span>
-              <span>Code: DIS-FATHER-26</span>
+          <div className="border border-current p-4 bg-zinc-50 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <Shield size={18} className="text-zinc-600 animate-pulse shrink-0" />
+              <div className="text-xs font-mono opacity-90 select-none">
+                <span>{isAr ? 'النزوح القسري، ٢٠٢٦ - أب يطعم رضيعه في مركز إيواء مؤقت [رصد برقي]' : 'Sovereign Displacements, 2026 - A father feeds his infant baby [TELEX DISPATCH]'}</span>
+              </div>
             </div>
+            <span className="text-xxs font-mono text-zinc-400 select-none hidden sm:inline">Code: DIS-FATHER-26</span>
           </div>
 
           <div className="space-y-4">

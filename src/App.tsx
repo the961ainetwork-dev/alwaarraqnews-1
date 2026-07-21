@@ -2182,7 +2182,7 @@ export default function App() {
                                 </span>
                               </div>
 
-                              {/* Clickable Image Preview */}
+                              {/* Clickable Card/Doc Preview (instead of image) */}
                               <div 
                                 onClick={() => {
                                   if (DOSSIER_DESKTOP_META[activeSlide.id]) {
@@ -2193,20 +2193,21 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="relative h-[160px] md:h-[210px] overflow-hidden border border-zinc-800 cursor-pointer group/img shadow-[4px_4px_12px_rgba(0,0,0,0.4)]"
+                                className="relative h-[80px] md:h-[100px] bg-zinc-900 border border-zinc-800 cursor-pointer p-4 flex items-center justify-between group shadow-[4px_4px_12px_rgba(0,0,0,0.4)] hover:bg-zinc-850"
                               >
-                                <img 
-                                  src={activeSlide.imageUrl} 
-                                  alt="dossier preview" 
-                                  referrerPolicy="no-referrer"
-                                  loading="lazy"
-                                  onError={(e) => {
-                                    e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
-                                  }}
-                                  className="w-full h-full object-cover bw-image transition-transform duration-500 group-hover/img:scale-102"
-                                />
+                                <div className="flex items-center gap-3">
+                                  <BookOpen className="text-amber-500 animate-pulse" size={24} />
+                                  <div className="text-left rtl:text-right">
+                                    <span className="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider">
+                                      {isAr ? 'وثيقة مفرجة وموثقة' : 'CLASSIFIED DOSSIER LOG'}
+                                    </span>
+                                    <span className="text-xs font-sans font-extrabold text-zinc-200">
+                                      {isAr ? 'التحليلات الاستقصائية للوراق' : 'AlWarraq Strategic Intelligence'}
+                                    </span>
+                                  </div>
+                                </div>
                                 {activeSlide.isBreaking && (
-                                  <span className="absolute top-3 right-3 bg-red-950/80 text-red-300 text-[8px] font-black tracking-widest px-2 py-0.5 uppercase border border-red-800 font-mono animate-pulse">
+                                  <span className="bg-red-950/80 text-red-300 text-[8px] font-black tracking-widest px-2 py-1 uppercase border border-red-800 font-mono animate-pulse">
                                     {isAr ? 'عاجل وحصري' : 'EXCLUSIVE WIRE'}
                                   </span>
                                 )}

@@ -48,11 +48,7 @@ export default function ArticleCard({
       'iran-frozen-assets-2026'
     ].includes(article.id);
 
-  const isLebanonBureau = 
-    article.category === 'lebanon' || 
-    article.categories?.includes('lebanon');
-
-  const shouldHideImage = hideImage || isLebanonBureau;
+  const shouldHideImage = true;
 
   const [copied, setCopied] = React.useState(false);
 

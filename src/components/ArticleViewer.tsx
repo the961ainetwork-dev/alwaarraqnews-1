@@ -601,14 +601,9 @@ export default function ArticleViewer({
 
               {/* Bio Header card */}
               <div className="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-right md:rtl:text-right">
-                <img
-                  src={activeAuthorProfile.avatar}
-                  alt={activeAuthorProfile.nameEn}
-                  className="w-24 h-24 rounded-full object-cover border-2 border-black shrink-0"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80";
-                  }}
-                />
+                <div className="w-24 h-24 rounded-full bg-zinc-100 border-4 border-black flex items-center justify-center font-sans font-black text-3xl text-zinc-900 select-none shrink-0">
+                  {activeLang === 'ar' ? 'ت' : (activeAuthorProfile.nameEn?.[0] || 'ED')}
+                </div>
                 <div className="space-y-2 flex-1">
                   <h3 className="font-sans font-black text-2xl text-zinc-900 border-b border-zinc-200 pb-1">
                     {activeLang === 'ar' ? activeAuthorProfile.nameAr : activeAuthorProfile.nameEn}
@@ -835,18 +830,10 @@ export default function ArticleViewer({
                   className="flex items-center gap-3 group text-left cursor-pointer select-none bg-zinc-50 hover:bg-zinc-100 p-2 border border-zinc-200 transition-all duration-150 rounded-xs"
                   title={activeLang === 'ar' ? 'عرض ميثاق المهنية والخبرة E-E-A-T لهذا الصحفي' : 'Verify Journalist E-E-A-T Credentials'}
                 >
-                  {article.author?.avatar && (
-                    <img 
-                      src={article.author.avatar} 
-                      alt={authorName} 
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80";
-                      }}
-                      className="w-10 h-10 rounded-full object-cover border-2 border-black group-hover:scale-105 transition-transform" 
-                    />
+                  {article.author && (
+                    <div className="w-10 h-10 rounded-full bg-zinc-100 border-2 border-black flex items-center justify-center font-sans font-black text-xs text-zinc-900 select-none shrink-0 group-hover:scale-105 transition-transform">
+                      {activeLang === 'ar' ? 'ت' : (article.author.nameEn?.[0] || 'ED')}
+                    </div>
                   )}
                   <div>
                     <h5 className="font-bold text-gray-900 text-sm flex items-center gap-1 group-hover:text-[#b91c1c] transition-colors">
@@ -940,24 +927,7 @@ export default function ArticleViewer({
                   onSelectArticle={onSelectArticle || (() => {})} 
                 />
               </div>
-            ) : (isInvestigative || article.category === 'lebanon' || article.categories?.includes('lebanon')) ? null : (
-              <div className="relative overflow-hidden rounded-lg shadow-sm">
-                <img 
-                  src={article.imageUrl} 
-                  alt={title} 
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80";
-                  }}
-                  className="w-full h-[280px] md:h-[420px] object-cover" 
-                />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent p-3 text-white text-xxs text-right font-sans">
-                  {activeLang === 'ar' ? 'صورة تعبيرية من الأرشيف لخدمة الشرق الأوسط الإخبارية' : 'Illustrative Archive Photo for Asharq Al-Awsat wire services.'}
-                </div>
-              </div>
-            )}
+            ) : null}
 
             {/* INTEGRATED STORY BLUEPRINT, HASHTAGS & TOPIC NETWORK */}
             <div className="border-2 border-black bg-[#faf9f6] p-4 font-sans space-y-4 my-6 shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-right rtl:text-right ltr:text-left select-none">
@@ -1449,25 +1419,12 @@ export default function ArticleViewer({
                         onClick={() => handleSelectRelated(recArt)}
                         className="group flex flex-col border border-zinc-200 hover:border-[#b91c1c] bg-white p-3 transition-all cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5 duration-150"
                       >
-                        {/* Compact thumbnail image */}
-                        {!isInvestigativeArticle(recArt) && recArt.category !== 'lebanon' && !recArt.categories?.includes('lebanon') && (
-                          <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
-                            <img
-                              src={recArt.imageUrl}
-                              alt={recTitle}
-                              loading="lazy"
-                              decoding="async"
-                              referrerPolicy="no-referrer"
-                              onError={(e) => {
-                                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=850&q=80";
-                              }}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute top-1 left-1 bg-black text-white text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold">
-                              {recCategoryLabel}
-                            </div>
-                          </div>
-                        )}
+                        {/* Category badge */}
+                        <div className="mb-2 select-none">
+                          <span className="bg-zinc-100 border border-zinc-200 text-zinc-800 text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold rounded-xs">
+                            {recCategoryLabel}
+                          </span>
+                        </div>
 
                         {/* Title text */}
                         <h5 className="font-sans font-black text-xs text-zinc-900 group-hover:text-red-700 transition-colors line-clamp-2 mt-0.5 leading-snug">
@@ -1524,25 +1481,12 @@ export default function ArticleViewer({
                         onClick={() => handleSelectRelated(relArt)}
                         className="group flex flex-col border border-zinc-200 bg-white hover:border-[#b91c1c] active:border-black p-3 transition-all cursor-pointer shadow-sm hover:shadow-md"
                       >
-                        {/* Compact thumbnail image */}
-                        {!isInvestigativeArticle(relArt) && relArt.category !== 'lebanon' && !relArt.categories?.includes('lebanon') && (
-                          <div className="relative aspect-video w-full overflow-hidden border border-zinc-100 bg-zinc-50 shrink-0 mb-2">
-                            <img
-                              src={relArt.imageUrl}
-                              alt={relTitle}
-                              loading="lazy"
-                              decoding="async"
-                              referrerPolicy="no-referrer"
-                              onError={(e) => {
-                                e.currentTarget.src = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=850&q=80";
-                              }}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute top-1 left-1 bg-black text-white text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold">
-                              {relCategoryLabel}
-                            </div>
-                          </div>
-                        )}
+                        {/* Category badge */}
+                        <div className="mb-2 select-none">
+                          <span className="bg-zinc-100 border border-zinc-200 text-zinc-800 text-[8px] font-mono px-1.5 py-0.5 uppercase tracking-wider font-bold rounded-xs">
+                            {relCategoryLabel}
+                          </span>
+                        </div>
 
                         {/* Title text */}
                         <h5 className="font-sans font-black text-xs text-zinc-900 group-hover:text-red-700 transition-colors line-clamp-2 mt-0.5 leading-snug">

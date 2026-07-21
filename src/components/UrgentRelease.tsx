@@ -23,7 +23,8 @@ import {
   Mail,
   Phone,
   ShieldAlert,
-  Send
+  Send,
+  Shield
 } from 'lucide-react';
 import { Article } from '../types';
 import { NEW_ARTICLES } from '../newArticles';
@@ -656,11 +657,9 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
               {/* Author / Desk Badge & Live Weather Telemetry widget */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 pb-2 border-t border-zinc-100 mt-2 select-none">
                 <div className="flex items-center gap-3">
-                  <img 
-                    src={currentArticle.author.avatar} 
-                    alt={isAr ? currentArticle.author.nameAr : currentArticle.author.nameEn} 
-                    className="w-10 h-10 rounded-full border border-zinc-200 object-cover animate-fade-in"
-                  />
+                  <div className="w-10 h-10 rounded-full bg-zinc-100 border-2 border-black flex items-center justify-center font-sans font-black text-xs text-zinc-900 select-none shrink-0">
+                    {isAr ? 'ت' : (currentArticle.author.nameEn?.[0] || 'ED')}
+                  </div>
                   <div>
                     <span className="text-xs font-sans font-black text-zinc-900 block leading-tight">
                       {isAr ? currentArticle.author.nameAr : currentArticle.author.nameEn}
@@ -738,16 +737,32 @@ To achieve total energy self-sufficiency, Iraq is targeting a short-term crude c
               </div>
             </div>
 
-            {/* Banner Image */}
-            <div className="relative h-64 md:h-96 rounded overflow-hidden border border-zinc-200 animate-fade-in" key={selectedDocket}>
-              <img 
-                src={currentArticle.imageUrl} 
-                alt={isAr ? currentArticle.titleAr : currentArticle.titleEn} 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3 text-white text-xxs font-sans font-semibold bg-black/60 px-3 py-1.5 rounded backdrop-blur-sm inline-block">
+            {/* Elegant schematic mockup instead of an image */}
+            <div className="relative h-64 md:h-96 rounded overflow-hidden border border-zinc-350 bg-zinc-950 flex flex-col items-center justify-center p-6 text-center select-none animate-fade-in" key={selectedDocket}>
+              {/* Radial or Grid Background pattern */}
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]" />
+              <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] [background-size:24px_24px]" />
+              
+              <div className="z-10 flex flex-col items-center gap-3">
+                <div className="w-12 h-12 rounded-full border border-amber-500/30 flex items-center justify-center bg-amber-500/5 text-amber-500 animate-pulse">
+                  <Shield size={24} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-amber-500 font-bold block uppercase tracking-widest mb-1">
+                    {isAr ? '● وثيقة مخطط استراتيجي' : '● STRATEGIC SCHEMATIC BLUEPRINT'}
+                  </span>
+                  <h3 className="text-sm md:text-base font-sans font-black text-white max-w-md leading-snug">
+                    {selectedDocket === 'chips' 
+                      ? (isAr ? 'خارطة الانتشار العملياتي المقترحة والمناطق الأمنية - قيادة الجنوب' : 'Proposed Operational Deployment & Security Zones - Southern Command')
+                      : (isAr ? 'مخطط التكامل اللوجستي وتصفية الغاز - شبه جزيرة الفاو' : 'Logistical Integration & Gas Capture Blueprint - Al-Faw Peninsula')}
+                  </h3>
+                  <p className="text-[9px] font-mono text-zinc-500 mt-1 max-w-sm">
+                    {isAr ? 'المستوى الأمني: سري للغاية // نظام التوثيق العسكري الوراق' : 'SECURITY LEVEL: TOP SECRET // AL-WARRAQ MILITARY DOCUMENTATION SYSTEM'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="absolute bottom-3 left-3 right-3 text-white text-xxs font-sans font-semibold bg-black/80 px-3 py-1.5 rounded backdrop-blur-sm inline-block border border-zinc-800">
                 {selectedDocket === 'chips' 
                   ? (isAr ? 'خريطة الانتشار العسكري المقترحة والمناطق التجريبية للجيش اللبناني في الجنوب' : 'Proposed military deployment map and pilot zones for the Lebanese Army in the south')
                   : (isAr ? 'موقع مجمع تصفية النفط والغاز بمدينة الطاقة في شبه جزيرة الفاو' : 'Site view of the integrated refining and gas capture complex at Al-Faw Energy City')}

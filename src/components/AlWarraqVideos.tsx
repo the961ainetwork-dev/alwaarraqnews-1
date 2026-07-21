@@ -614,12 +614,9 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
                       
                       {/* Television desk virtual portrait */}
                       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-zinc-700 overflow-hidden bg-zinc-800 relative shadow-inner group">
-                        <img 
-                          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" 
-                          alt="Anchor Profile"
-                          className="w-full h-full object-cover opacity-100 transition-all duration-300"
-                          referrerPolicy="no-referrer"
-                        />
+                        <div className="w-full h-full bg-zinc-950 flex items-center justify-center font-sans font-black text-xl text-zinc-300 select-none">
+                          MB
+                        </div>
                         {/* Audio equalizer overlaid on anchor view */}
                         <div className="absolute bottom-0 inset-x-0 h-6 bg-black/70 flex items-end justify-center gap-0.5 pb-1 px-2">
                           {[...Array(6)].map((_, idx) => (
@@ -695,13 +692,10 @@ export default function AlWarraqVideos({ language, allArticles, currentUser }: A
                     </span>
 
                     <div className="flex items-center justify-center gap-4 mb-3">
-                      <div className="w-12 h-12 rounded-full border-2 border-red-650 overflow-hidden bg-zinc-800">
-                        <img 
-                          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200" 
-                          alt="Anchor Thumbnail"
-                          className="w-full h-full object-cover"
-                          referrerPolicy="no-referrer"
-                        />
+                      <div className="w-12 h-12 rounded-full border-2 border-red-650 overflow-hidden bg-zinc-800 flex items-center justify-center select-none">
+                        <div className="w-full h-full bg-zinc-950 flex items-center justify-center font-sans font-black text-sm text-zinc-300">
+                          MB
+                        </div>
                       </div>
                       <div className="text-left">
                         <h4 className="font-sans font-black text-xs text-white">

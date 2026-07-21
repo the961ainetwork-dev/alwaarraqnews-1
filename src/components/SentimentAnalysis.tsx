@@ -298,11 +298,9 @@ export default function SentimentAnalysis({ language, layoutMode }: SentimentAna
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-3.5 border-t border-zinc-200">
               <div className="flex items-center gap-3">
-                <img 
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=80"
-                  className="w-10 h-10 rounded-full border border-black object-cover animate-fade-in" 
-                  alt="Maan Barazy"
-                />
+                <div className="w-10 h-10 rounded-full bg-zinc-100 border-2 border-black flex items-center justify-center font-sans font-black text-xs text-zinc-900 select-none shrink-0">
+                  MB
+                </div>
                 <div>
                   <span className="font-sans font-black text-[14px] text-black block leading-none">
                     {isAr ? 'معن برازي' : 'Maan Barazy'}
