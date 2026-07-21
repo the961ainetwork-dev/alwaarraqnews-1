@@ -11,6 +11,7 @@ import { SolidereStockInfographic } from './SolidereStockInfographic';
 import { FifaPolymarketInfographic } from './FifaPolymarketInfographic';
 import { FrameworkAgreementInfographic } from './FrameworkAgreementInfographic';
 import { SolidereInfographic } from './SolidereInfographic';
+import { FifaWorldCupReport } from './FifaWorldCupReport';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
 
@@ -912,6 +913,10 @@ export default function ArticleViewer({
             ) : article.id === 'fifa-polymarket-struggle-2026' ? (
               <div className="mb-6">
                 <FifaPolymarketInfographic language={activeLang} />
+              </div>
+            ) : article.id === 'fifa-world-cup-profits-2026' ? (
+              <div className="mb-6">
+                <FifaWorldCupReport language={activeLang} />
               </div>
             ) : article.id === 'lebanon-framework-agreement-analysis-2026' ? (
               <div className="mb-6">

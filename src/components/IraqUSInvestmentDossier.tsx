@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HormuzCrisisReport } from './HormuzCrisisReport';
+import { FifaWorldCupReport } from './FifaWorldCupReport';
 import { 
   FileText, 
   MapPin, 
@@ -51,7 +52,7 @@ export const IraqUSInvestmentDossier: React.FC<IraqUSInvestmentDossierProps> = (
   const [activeDossierTab, setActiveDossierTab] = useState<'telemetry' | 'infographics' | 'treaty-text' | 'financials'>('telemetry');
   const [selectedNode, setSelectedNode] = useState<string>('washington');
   const [compareCostModel, setCompareCostModel] = useState<boolean>(false);
-  const [activeReport, setActiveReport] = useState<'iraq-us' | 'hormuz-crisis'>('iraq-us');
+  const [activeReport, setActiveReport] = useState<'iraq-us' | 'hormuz-crisis' | 'fifa-profits'>('iraq-us');
 
   // 1. Sovereign Telemetry Data
   const telemetryMetrics = useMemo(() => [
@@ -424,11 +425,11 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
   return (
     <div 
       id="iraq-us-investment-dossier" 
-      className={`border-4 border-black p-5 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[8px_8px_0px_0px_rgba(${activeReport === 'iraq-us' ? '16,185,129,1' : '245,158,11,1'})] overflow-hidden`}
+      className={`border-4 border-black p-5 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[8px_8px_0px_0px_rgba(${activeReport === 'iraq-us' ? '16,185,129,1' : activeReport === 'fifa-profits' ? '245,158,11,1' : '239,68,68,1'})] overflow-hidden`}
       dir={isAr ? 'rtl' : 'ltr'}
     >
       {/* Dynamic Top Grid Line Accent */}
-      <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${activeReport === 'iraq-us' ? 'from-emerald-500 via-teal-600 to-cyan-500' : 'from-amber-500 via-orange-600 to-red-500'} animate-pulse`}></div>
+      <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${activeReport === 'iraq-us' ? 'from-emerald-500 via-teal-600 to-cyan-500' : activeReport === 'fifa-profits' ? 'from-amber-500 via-yellow-650 to-emerald-600' : 'from-amber-500 via-orange-650 to-red-600'} animate-pulse`}></div>
 
       {/* Decorative Grid Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#14532d_1px,transparent_1px),linear-gradient(to_bottom,#14532d_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-25 pointer-events-none"></div>
@@ -438,7 +439,7 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
         {/* Sovereign Special Reports Toggle Bar */}
         <div className="border-b border-zinc-800 pb-4 mb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <Layers className={`${activeReport === 'iraq-us' ? 'text-emerald-500' : 'text-amber-500'} animate-pulse shrink-0`} size={18} />
+            <Layers className={`${activeReport === 'iraq-us' ? 'text-emerald-500' : activeReport === 'fifa-profits' ? 'text-amber-500' : 'text-red-500'} animate-pulse shrink-0`} size={18} />
             <div>
               <h3 className="font-sans font-black text-xs text-zinc-400 uppercase tracking-widest">
                 {isAr ? 'غرفة التقارير الجيوسياسية الخاصة' : 'SOVEREIGN SPECIAL REPORTS DESK'}
@@ -449,10 +450,10 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
             </div>
           </div>
           
-          <div className="flex border border-zinc-800 p-1 bg-zinc-900/60 rounded-none self-start">
+          <div className="flex flex-wrap border border-zinc-800 p-1 bg-zinc-900/60 rounded-none self-start">
             <button
               onClick={() => setActiveReport('iraq-us')}
-              className={`px-4 py-1.5 font-sans font-black text-xs uppercase cursor-pointer transition-all ${
+              className={`px-3 py-1.5 font-sans font-black text-xs uppercase cursor-pointer transition-all ${
                 activeReport === 'iraq-us'
                   ? 'bg-emerald-950 text-emerald-400 border border-emerald-800 shadow-[2px_2px_0px_0px_rgba(16,185,129,1)]'
                   : 'text-zinc-400 hover:text-white border border-transparent'
@@ -463,19 +464,32 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
             
             <button
               onClick={() => setActiveReport('hormuz-crisis')}
-              className={`px-4 py-1.5 font-sans font-black text-xs uppercase cursor-pointer transition-all ${
+              className={`px-3 py-1.5 font-sans font-black text-xs uppercase cursor-pointer transition-all ${
                 activeReport === 'hormuz-crisis'
+                  ? 'bg-red-950 text-red-400 border border-red-800 shadow-[2px_2px_0px_0px_rgba(239,68,68,1)]'
+                  : 'text-zinc-400 hover:text-white border border-transparent'
+              }`}
+            >
+              {isAr ? '٢. أزمة مبيعات نفط هرمز' : '2. Hormuz Oil'}
+            </button>
+
+            <button
+              onClick={() => setActiveReport('fifa-profits')}
+              className={`px-3 py-1.5 font-sans font-black text-xs uppercase cursor-pointer transition-all ${
+                activeReport === 'fifa-profits'
                   ? 'bg-amber-950 text-amber-400 border border-amber-800 shadow-[2px_2px_0px_0px_rgba(245,158,11,1)]'
                   : 'text-zinc-400 hover:text-white border border-transparent'
               }`}
             >
-              {isAr ? '٢. أزمة مبيعات نفط هرمز' : '2. Hormuz Oil Sales'}
+              {isAr ? '٣. أرباح فيفا كأس العالم ٢٠٢٦' : '3. FIFA World Cup'}
             </button>
           </div>
         </div>
 
         {activeReport === 'hormuz-crisis' ? (
           <HormuzCrisisReport language={language} />
+        ) : activeReport === 'fifa-profits' ? (
+          <FifaWorldCupReport language={language} />
         ) : (
           <>
             {/* Document Header */}

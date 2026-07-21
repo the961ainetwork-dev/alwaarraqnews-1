@@ -2,6 +2,138 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'fifa-world-cup-profits-2026',
+    slug: 'fifa-world-cup-profits-2026',
+    focusKeyword: 'أرباح-فيفا-كأس-العالم-٢٠٢٦',
+    category: 'sports',
+    categories: ['sports', 'exclusives', 'fifa-2026', 'iraq-us-dossier'],
+    titleAr: 'أرباح "فيفا" والتكاليف الهيكلية لكأس العالم ٢٠٢٦ ومهرجان إنفانتينو الانتخابي لعام ٢٠٢٧',
+    titleEn: 'FIFA World Cup 2026 Profits, Structural Cost Model & Infantino’s 2027 Electoral Strategy',
+    summaryAr: 'شهدت بطولة كأس العالم 2026، التي استضافتها الولايات المتحدة والمكسيك وكندا، تحولاً تاريخياً في النموذج الاقتصادي والمالي للاتحاد الدولي لكرة القدم (FIFA). فقد نجحت البطولة في تحقيق أرقام قياسية غير مسبوقة على صعيد الإيرادات الإجمالية والصافية مقارنة بجميع النسخ السابقة، لتتحول إلى مهرجان استثماري يمهد الطريق لانتخابات جياني إنفانتينو الرئاسية لعام 2027.',
+    summaryEn: 'The 2026 World Cup hosted by the US, Mexico, and Canada witnessed a historic shift in the economic and financial model of FIFA. The tournament generated record-shattering direct and net revenues compared to all previous editions, serving as a powerful financial engine that guarantees Gianni Infantino’s uncontested re-election in 2027.',
+    excerptAr: 'تحليل هيكلي استقصائي في أرباح الاتحاد الدولي لكرة القدم (FIFA) وكيف تم تحويل كافة النفقات الرأسمالية إلى المدن المستضيفة مقابل حصد الفيفا لأكثر من ١٥ مليار دولار في دورة ٢٠٢٦.',
+    excerptEn: 'An in-depth structural investigation into FIFAs record $15B cash flow, exploring how capital liabilities were shifted onto local host cities while the central body captured the pure commercial upside.',
+    author: {
+      nameAr: 'مكتب التحقيقات الرياضية والمالية',
+      nameEn: 'Sports & Financial Investigations Desk',
+      titleAr: 'محلل أول في الاقتصاد الجيوسياسي الرياضي',
+      titleEn: 'Senior Sports Geopolitical Economist',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-20',
+    readTimeAr: '١٠ دقائق قراءة',
+    readTimeEn: '10 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 64120,
+    tags: ['فيفا', 'كأس_العالم_٢٠٢٦', 'جياني_إنفانتينو', 'الاستثمار_الرياضي', 'أدنوك', 'SOMO', 'FIFA', 'WorldCup2026', 'Gianni_Infantino', 'Sports_Investment', 'Sovereign_Finance'],
+    hashtags: ['FIFA2026', 'WorldCupProfits', 'Infantino2027', 'SportsFinance'],
+    contentAr: `### أرباح "فيفا" والتكاليف الهيكلية لكأس العالم ٢٠٢٦
+    
+مهرجان استثماري تاريخي تمهيداً لانتخابات جياني إنفانتينو لرئاسة الفيفا المقررة في عام ٢٠٢٧:
+إجمالي إيرادات الدورة الماليّة (٢٠٢٣–٢٠٢٦) تخطت حاجز الـ ١٥ مليار دولار أمريكي.
+
+---
+
+### ١. الملخص التنفيذي والإطار المالي العام
+
+شهدت بطولة كأس العالم ٢٠٢٦، التي استضافتها الولايات المتحدة والمكسيك وكندا، تحولاً تاريخياً في النموذج الاقتصادي والمالي للاتحاد الدولي لكرة القدم (FIFA). فقد نجحت البطولة في تحقيق أرقام قياسية غير مسبوقة على صعيد الإيرادات الإجمالية والصافية مقارنة بجميع النسخ السابقة.
+
+* **إجمالي الإيرادات:** تخطى حاجز الـ ١٥ مليار دولار أمريكي (مقارنة بـ ٧.٥ مليار دولار في دورة قطر ٢٠٢٢).
+* **صافي الأرباح المباشرة للفيفا:** يُقدّر بين ٣.٥ إلى ٤.٥ مليار دولار أمريكي بعد استقطاع كافة المصاريف التشغيلية والجوائز الممنوحة للاتحادات.
+* **العائد على الاستثمار الفيدرالي:** حقق الفيفا هامش ربح تشغيلي هو الأعلى في تاريخه نتيجة للنموذج الهيكلي الجديد لتوزيع التكاليف.
+
+---
+
+### ٢. التقديرات المالية المباشرة (القواعد الجديدة)
+
+أثمر التعديل الهيكلي لعدد المباريات ونظام البطولة الجديد عن زيادة هائلة في قنوات الدخل المباشرة:
+
+1. **زيادة عدد المباريات إلى ١٠٤ مباريات (بمشاركة ٤٨ منتخباً):** سمح هذا التوسع بزيادة عدد حزم التذاكر المتاحة ومبيعات حقوق البث بنسبة تفوق ٦٠٪.
+2. **مبيعات التذاكر والضيافة (Hospitality):** بلغت عائداتها المقدرة ما يقارب ٣.٠ مليار دولار أمريكي (نمو مذهل مقارنة بـ ٩٥٠ مليون دولار في قطر ٢٠٢٢)، نظراً للطاقة الاستيعابية الفائقة للملاعب الأمريكية الكبرى.
+3. **حقوق البث التلفزيوني:** تجاوزت الـ ٤.٢ مليار دولار أمريكي بفضل فارق التوقيت المثالي لأسواق البث في أمريكا الشمالية وأوروبا.
+4. **الرعاية والتسويق التجاري:** تخطى حاجز الـ ٢.٨ مليار دولار أمريكي نتيجة عقود الشراكة الإستراتيجية الجديدة مع كبرى الشركات التقنية والمالية.
+
+---
+
+### ٣. مقارنة التكاليف الهيكلية (الاستثمارات الرأسمالية)
+
+يكمن السر في الأرباح الاستثنائية للفيفا في هذه الدورة في تحويل عبء الإنفاق الرأسمالي بالكامل إلى الحكومات المحلية والولايات والمقاطعات المستضيفة، بينما يحتفظ الاتحاد الدولي بصافي الإيرادات التجارية:
+
+* **تكلفة البنية التحتية والملاعب:** لم تتجاوز التكلفة المباشرة للفيفا في تحديث الملاعب ١.٠ مليار دولار أمريكي، حيث اعتمدت البطولة على ملاعب عملاقة قائمة وجاهزة مسبقاً (ملاعب NFL)، مقارنة بـ ٢٢٠ مليار دولار استثمرتها قطر لبناء بنية تحتية وملاعب جديدة بالكامل.
+* **التكاليف التشغيلية المحلية:** تحملت المدن المستضيفة (مثل نيويورك، لوس أنجلوس، تورونتو، مكسيكو سيتي) تكاليف الأمن، النقل، وإدارة الحشود التي تراوحت بين ١٠٠ إلى ٢٠٠ مليون دولار لكل مدينة، بتمويل من دافعي الضرائب المحليين وبدون أي مساهمة تذكر من الفيفا.
+* **مجموع الجوائز المالية:** تم رصد ٦٥٥ مليون دولار لتوزيعها على المنتخبات المشاركة (بحيث يحصل الفائز باللقب على ٥٠ مليون دولار)، مقارنة بـ ٤٤٠ مليون دولار في دورة ٢٠٢٢.
+
+---
+
+### ٤. الاستراتيجية السياسية وتأمين الأصوات الانتخابية لعام ٢٠٢٧
+
+ترتبط هذه التدفقات النقدية الضخمة بشكل مباشر بالاستراتيجية السياسية لجياني إنفانتينو لتأمين ولاية رئاسية جديدة بالتزكية في انتخابات الفيفا المقررة عام ٢٠٢٧:
+
+* **برنامج FIFA Forward 3.0:** تم رصد ميزانية غير مسبوقة تبلغ ٢.٧ مليار دولار أمريكي للفترة من ٢٠٢٣-٢٠٢٦ لتوزيعها كمنح تطويرية على الاتحادات الوطنية الـ ٢١١ الأعضاء في الفيفا (بزيادة قدرها ٨ أضعاف عما كان يوزع قبل عقد من الزمن).
+* **شراء الولاء الانتخابي:** يضمن التوزيع السخي لهذه المنح (حيث يحصل كل اتحاد وطني على ما يصل إلى ٨ ملايين دولار لدعم كرة القدم المحلية) تأييداً شبه إجماعي من اتحادات أفريقيا وآسيا والكاريبي لإنفانتينو، مما يمنع ظهور أي مرشح منافس حقيقي في عام ٢٠٢٧.
+
+---
+
+### ٥. الخاتمة والتوصيات الاقتصادية للشرق الأوسط
+
+* **تحول الفيفا إلى آلة تجارية خالصة خالية من المخاطر المالية:** يثبت نموذج ٢٠٢٦ أن الفيفا نجح في خصخصة الأرباح الهائلة وتأميم الخسائر والتكاليف الهيكلية على الحكومات المحلية المستضيفة.
+* **درس للدول العربية والشرق الأوسط:** عند استضافة الفعاليات الرياضية الكبرى مستقبلاً (مثل ملف السعودية ٢٠٣٤)، يجب إعادة تفاوض الحكومات على نسب تقاسم مبيعات التذاكر والضيافة المحلية لضمان عدم تحمل الخزائن العامة لكافة التكاليف التشغيلية مقابل استئثار الفيفا بكامل العوائد التجارية الفورية.`,
+    contentEn: `### FIFA Profits & Structural Cost Model for World Cup 2026
+
+An investment festival of historic proportions in preparation for Gianni Infantino's FIFA Presidential re-election campaign scheduled for 2027.
+The total financial cycle revenues (2023–2026) have officially crossed the $15 billion threshold.
+
+---
+
+### 1. Executive Summary & Financial Framework
+
+The 2026 FIFA World Cup, hosted across the United States, Mexico, and Canada, marks a historic paradigm shift in the economic and commercial architecture of the International Federation of Association Football (FIFA). The tournament has secured record-shattering gross and net yields compared to all prior iterations.
+
+* **Total Revenues:** Surpassed $15.0 Billion USD (representing a massive leap from the $7.5 Billion generated during the Qatar 2022 cycle).
+* **FIFA Net Direct Profits:** Projected between $3.5 Billion and $4.5 Billion USD after subtracting central administrative expenses, operating outlays, and national association prize allocations.
+* **Return on Sovereign Investment:** FIFA has captured its highest operating margin in the history of sports governance, enabled by an aggressive cost-shifting framework.
+
+---
+
+### 2. Direct Financial Estimates (The Expanded Format Model)
+
+The deliberate formatting expansion to 48 competing national teams playing 104 matches has dramatically widened central revenue streams:
+
+1. **Tournament Expansion (104 Matches):** The addition of forty matches over the historic format expanded broadcast licensing, corporate hospitality, and commercial stadium inventories by over 60%.
+2. **Ticketing & Premium Hospitality:** Secured an unprecedented $3.0 Billion USD (growing exponentially from $950 Million in Qatar 2022), leveraging the immense seating capacities of North American NFL mega-arenas.
+3. **Broadcasting Rights:** Crossed $4.2 Billion USD, capitalizing on ideal commercial broadcasting time slots tailored for lucrative European and North American consumer bases.
+4. **Sponsorships & Corporate Partnerships:** Exceeded $2.8 Billion USD, fueled by strategic long-term alignments with premier tech, payment infrastructure, and banking giants.
+
+---
+
+### 3. Structural Capital Expenditure Disparities (Host Liabilities)
+
+The secret to FIFAs unprecedented financial performance in 2026 lies in the near-total shifting of capital outlays and depreciation costs onto municipal, state, and provincial authorities, while the federation retains pure, tax-exempt commercial flows:
+
+* **Stadium & Regional Upgrades:** FIFAs direct stadium outlays did not exceed $1.0 Billion USD. The tournament successfully capitalized on existing high-specification NFL venues, avoiding the $220 Billion systemic infrastructure build-out shouldered by Qatar in 2022.
+* **Host Municipality Operating Outlays:** Major metropolitan hosts (including New York, Los Angeles, Toronto, and Mexico City) absorbed between $100 Million and $200 Million each in security, public transit operations, and localized logistics. These costs were borne directly by regional taxpayers with zero cash subsidies from central FIFA.
+* **Prize Pools:** Allocated $655 Million USD in total team prize allocations (including a $50 Million purse for the tournament champion) compared to $440 Million distributed in 2022.
+
+---
+
+### 4. Geopolitical Influence & 2027 Presidential Consolidation
+
+These colossal reserve gains directly feed President Gianni Infantino's political apparatus, ensuring an unchallenged route to re-election in the 2027 FIFA Presidential Elections:
+
+* **FIFA Forward 3.0 Program:** Has deployed an unprecedented $2.7 Billion USD development budget for the 2023–2026 cycle to be channeled as direct localized development grants to the 211 Member Associations (an 8-fold increase over the grants distributed a decade ago).
+* **Consolidating Voting Blocks:** This generous allocation model, awarding up to $8 Million USD to every member nation, effectively secures absolute voting allegiance from national boards across Asia, Africa, and the Caribbean, completely neutralizing the emergence of any rival presidency campaign for 2027.
+
+---
+
+### 5. Key Lessons for Middle Eastern Planners
+
+* **Privatizing Yield, Socializing Cost:** The 2026 model stands as an absolute masterclass in commercial de-risking, wherein FIFA effectively privatized the massive commercial upsides while socializing operational liabilities onto host taxpayers.
+* **Sovereign Negotiating Models for Future Hosts:** As Middle Eastern nations position themselves for future bids (such as Saudi Arabia 2034), sovereign negotiators must establish stricter parameters on ticketing and local hospitality revenue-sharing to ensure that public treasuries do not assume 100% of the operational risk while the governing body walks away with the entire immediate commercial upside.`
+  },
+  {
     id: 'infrastructure-war-gcc-iran-2026',
     slug: 'infrastructure-war-gcc-iran-2026',
     focusKeyword: 'حرب-البنى-التحتية-الخليج-إيران',
