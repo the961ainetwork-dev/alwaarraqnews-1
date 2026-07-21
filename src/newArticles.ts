@@ -2,6 +2,200 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'open-war-of-attrition-us-iran-2026',
+    slug: 'open-war-of-attrition-us-iran-2026',
+    focusKeyword: 'حرب-الاستنزاف-أمريكا-إيران',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'war-room', 'middle-east'],
+    titleAr: 'حرب الاستنزاف المفتوحة: هل انزلق الصراع الأمريكي-الإيراني إلى معركة كسر إرادات بلا نهاية؟',
+    titleEn: 'The Open War of Attrition: Has the US-Iranian Conflict Slipped into an Endless Battle of Wills?',
+    summaryAr: 'تجاوزت المواجهة العسكرية المحتدمة بين الولايات المتحدة الأمريكية وإيران أطر الضربات التكتيكية المحدودة أو الاستعراض الردعي، لتتحول رسميًا إلى "حرب استنزاف هجينة وشاملة". وبعد انهيار "مذكرة التفاهم" وإعلان إلغاء وقف إطلاق النار، دخل الطرفان مرحلة جديدة عنوانها الأساسي: استهداف الشرايين الحيوية وإعادة تعريف قواعد الاشتباك.',
+    summaryEn: 'The escalating military confrontation between the United States and Iran has bypassed tactical strikes or deterrent posturing, officially morphing into a "hybrid and comprehensive war of attrition." Following the collapse of the "Memorandum of Understanding" and the termination of the ceasefire, both sides have entered a new phase centered on targeting critical arteries and redefining rules of engagement.',
+    excerptAr: 'تحليل استقصائي يفكك طبيعة حرب الاستنزاف المفتوحة بين واشنطن وطهران، التكتيكات المستحدثة، استراتيجية القيادة الفسيفسائية، شل الحركة اللوجستية، وآليات تقييم أضرار البنية التحتية.',
+    excerptEn: 'An investigative analysis dismantling the open war of attrition between Washington and Tehran, newly developed tactics, mosaic command, and regional infrastructure damage assessment.',
+    author: {
+      nameAr: 'هيئة التحرير',
+      nameEn: 'The Editorial Board',
+      titleAr: 'رأي التحرير الاستراتيجي',
+      titleEn: 'Editorial Strategic Opinion',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-21',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 18900,
+    tags: ['حرب_الاستنزاف', 'إيران_وأمريكا', 'البنية_التحتية', 'قواعد_الاشتباك', 'War_of_Attrition', 'US_Iran', 'Infrastructure_Damage', 'Strategic_Assessment'],
+    hashtags: ['WarOfAttrition', 'USIranConflict', 'MiddleEastStrategic', 'AlWarraqEditorial'],
+    contentAr: `### حرب الاستنزاف المفتوحة: هل انزلق الصراع الأمريكي-الإيراني إلى معركة كسر إرادات بلا نهاية؟
+بقلم: هيئة التحرير
+
+تجاوزت المواجهة العسكرية المحتدمة بين الولايات المتحدة الأمريكية وإيران أطر الضربات التكتيكية المحدودة أو الاستعراض الردعي، لتتحول رسميًا إلى "حرب استنزاف هجينة وشاملة". وبعد انهيار "مذكرة التفاهم" وإعلان إلغاء وقف إطلاق النار، دخل الطرفان مرحلة جديدة عنوانها الأساسي: استهداف الشرايين الحيوية وإعادة تعريف قواعد الاشتباك.
+
+هذا التحليل الاستقصائي يفكك طبيعة هذه الحرب، والتكتيكات العسكرية المستحدثة لدى الطرفين، وآليات تقييم أضرار البنية التحتية، مع رؤية تحليليّة لمسارات التحلل والاستقرار في المنطقة.
+
+---
+
+### أولاً: هل هي حرب استنزاف؟ (المفهوم والديناميات)
+
+نعم، يعيش الطرفان الآن حالة حرب استنزاف استراتيجية (War of Attrition)؛ حيث أدرك الجانبان عدم إمكانية تحقيق "حسم عسكري حاسم وسريع" دون تكاليف كارثية:
+
+* **الرهان الإيراني:** الصمود أمام كثافة القصف الجوي، وفرض كلفة اقتصادية وسياسية باهظة على الولايات المتحدة ودول المنطقة، مستغلة العامل الزمني واستنزاف المخزون الأمريكي/الدولي من مخزونات الدفاع الجوي.
+* **الرهان الأمريكي:** شل قدرة الدولة الإيرانية تشغيليًا، وتفكيك خطوط الإمداد اللوجستي، وإحداث "فراغ قيادي وإداري" يدفع النظام إلى القبول بشروط تفاوضية صقورية أو الانهيار من الداخل.
+
+---
+
+### ثانياً: التكتيكات الجديدة للطرفين
+
+شهدت الأسابيع والأشهر الأخيرة تحولاً نوعياً في العقائد القتالية والأساليب الميدانية:
+
+#### ١. التكتيكات الأمريكية: "سلم التصعيد" وتقطيع الأوصال
+
+* **تقطيع الأوصال اللوجستية (Interdiction):** الانتقال من استهداف القواعد إلى تدمير الجسور الرئيسية والبنى التحتية الحاكمة (مثل تقطيع الطرق والجسور المحيطة بمنطقة "بندر عباس" وبندر خَمير) لعزل المراكز الساحلية عن الداخل.
+* **خلق الفراغ المؤسسي:** تركيز الضربات الجوية على المقرات الإدارية والأمنية ومقرات التخطيط السيادي لتفتيت القدرة على اتخاذ القرار المركزي.
+* **الحصار البحري الخانق:** فرض طوق على الموانئ الإيرانية وإعادة توجيه حركة الملاحة بعيداً عن السيطرة الإيرانية، مع استخدام حاملات الطائرات والقواعد الإقليمية للتحكم بالمسارات البحرية.
+
+#### ٢. التكتيكات الإيرانية: "الاستراتيجية الفسيفسائية" والحرب الهجينة
+
+* **الالقيادة اللامركزية ("الفسيفسائية"):** تفويض صلاحيات اتخاذ قرار الرد والقتال إلى مناطق عسكرية منفصلة ومستقلة لوجستياً عن طهران؛ ما يحمي القدرة الدفاعية من الشلل في حال استهداف القيادات المركزية.
+* **إستراتيجية "استنزاف الصوارخ الاعتراضية":** إغراق منظومات الدفاع الجوي المعادية بمسيّرات رخيصة التكلفة وصواريخ من جيل قديم لإجبار الخصم على استهلاك صواريخ الدفاع الجوي المكلفة، تمهيداً لاستخدام الصواريخ الدقيقة في مراحل لاحقة.
+* **سلاح الشرايين الاقتصادية:** نقل الصراع إلى الملاحة البحرية ومضيق هرمز، وتوسيع بنك الأهداف ليشمل محطات الطاقة وتحلية المياه والموانئ في الإقليم لرفع الكلفة على الأسواق العالمية.
+
+---
+
+### ثالثاً: كيف يتم تقييم أضرار البنية التحتية؟ (MDA Framework)
+
+تعتمد مراكز الفكر والاستخبارات الدولية على منظومة متكاملة لتقييم حجم الدمار الذي لحق بالبنية التحتية الإيرانية والإقليمية:
+
+\`\`\`text
+                  ┌─────────────────────────────────────────┐
+                  │    مراحل تقييم أضرار البنية التحتية     │
+                  └────────────────────┬────────────────────┘
+                                       │
+         ┌─────────────────────────────┼─────────────────────────────┐
+         ▼                             ▼                             ▼
+┌──────────────────┐          ┌──────────────────┐          ┌──────────────────┐
+│ 1. الصور الفضائية│          │ 2. بيانات الطاقة │          │ 3. الاستشعار الميداني│
+│ (SAR & Optical)  │          │    والملاحة      │          │ (OSINT & Signals)│
+└────────┬─────────┘          └────────┬─────────┘          └────────┬─────────┘
+         │                             │                             │
+         └─────────────────────────────┼─────────────────────────────┘
+                                       ▼
+                  ┌─────────────────────────────────────────┐
+                  │      نمذجة الأثر الاقتصادي والإنساني     │
+                  └─────────────────────────────────────────┘
+\`\`\`
+
+#### الاستشعار الفضائي (RFI & SAR Satellites):
+
+* **الرادار ذي الفتحة الاصطناعية (SAR):** استخدام الرادار ذي الفتحة الاصطناعية لتصوير معالم الأرض عبر السحب والدخان في أوقات الليل للتحقق من سلامة الجسور، الموانئ، ومستودعات النفط.
+* **البصمات الحرارية (Infrared Thermal Data):** رصد البصمات الحرارية لمعرفة المحطات الحرارية والغازية التي خرجت عن الخدمة.
+
+#### تحليل الشرايين الاقتصادية (AIS & Energy Data):
+
+* **تتبع نظام التعرف التلقائي للفسن (AIS):** تحديد الشلل في خطوط الشحن البحري عبر مضيق هرمز وموانئ خليج عمان.
+* **مراقبة التدفقات:** رصد انبعاثات وتدفقات أنابيب الغاز ومحطات تحلية المياه لتقييم النقص في الإمدادات المدنية والعسكرية.
+
+#### الاستخبارات المفتوحة المصدر (OSINT) والبيانات الميدانية:
+
+* **التثبيت الجغرافي (Geolocation):** تقييم الصور ومقاطع الفيديو المتداولة محليًا بعد إخضاعها للتثبيت الجغرافي للتحقق من طبيعة المنشأة المستهدفة (مدنية أم عسكرية مزدوجة الاستخدام).
+
+---
+
+### رابعاً: كلمة التحرير (Editorial Assessment)
+
+إن الخطر الأكبر في حرب الاستنزاف الراهنة بين واشنطن وطهران ليس فقط في الخسائر المباشرة للبنية التحتية، بل في حقيقة أن الجانبين يسيران على "سلك مشدود" بلا كوابح سياسية.
+
+إن استهداف الشرايين الاقتصادية والخدمية (الماء، الكهرباء، والجسور) يضع المنطقة أمام أزمة إنسانية واقتصادية متفجرة تتجاوز حدود الجغرافيا الإيرانية. ومع غياب القنوات الدبلوماسية المباشرة واقتصار الاتصالات على الرسائل التفجيرية، فإن احتمال "الخطأ في التقدير" (Miscalculation) يزداد خطورة يومًا بعد يوم.
+
+إن المعادلة الحالية قاسية: إما العودة إلى مسار تفاوضي واقعي يعترف بالتوازنات الإقليمية، أو الانزلاق إلى انهيار اقتصادي وأمني شامل للشرق الأوسط لا يخرج منه أي طرف منتصراً.`,
+    contentEn: `### The Open War of Attrition: Has the US-Iranian Conflict Slipped into an Endless Battle of Wills?
+By the Editorial Board
+
+The intense military confrontation between the United States and Iran has transcended the framework of limited tactical strikes or deterrent displays, officially transforming into a "hybrid and comprehensive war of attrition." Following the collapse of the "Memorandum of Understanding" and the declaration of the end of the ceasefire, both parties have entered a new phase whose primary theme is: targeting vital arteries and redefining the rules of engagement.
+
+This investigative analysis dismantles the nature of this war, the newly developed military tactics of both sides, and the mechanisms for assessing infrastructure damage, alongside an analytical vision of the pathways of decay and stability in the region.
+
+---
+
+### I. Is This a War of Attrition? (Concept and Dynamics)
+
+Yes, both sides are currently experiencing a state of strategic war of attrition; both sides have realized the impossibility of achieving a "swift and decisive military victory" without catastrophic costs:
+
+* **The Iranian Bet:** Enduring the intensity of air strikes while imposing heavy economic and political costs on the United States and regional states, exploiting the time factor and exhausting the US/international stockpile of air defense interceptors.
+* **The American Bet:** Operationally paralyzing the Iranian state's capabilities, dismantling logistical supply lines, and creating a "leadership and administrative vacuum" that forces the regime to accept hawkish negotiating conditions or collapse from within.
+
+---
+
+### II. New Tactics of Both Parties
+
+Recent weeks and months have witnessed a qualitative shift in combat doctrines and battlefield methods:
+
+#### 1. American Tactics: "The Escalation Ladder" and Logistical Interdiction
+
+* **Logistical Interdiction:** Shifting from targeting bases to destroying key bridges and critical governing infrastructure (such as severing roads and bridges surrounding the "Bandar Abbas" and "Bandar Khamir" regions) to isolate coastal hubs from the interior.
+* **Institutional Vacuum Creation:** Concentrating airstrikes on administrative, security, and sovereign planning headquarters to fracture central decision-making capabilities.
+* **Suffocating Naval Blockade:** Imposing a cordon on Iranian ports and rerouting maritime traffic away from Iranian control, while using aircraft carriers and regional bases to control maritime passages.
+
+#### 2. Iranian Tactics: "The Mosaic Strategy" and Hybrid Warfare
+
+* **Decentralized ("Mosaic") Command:** Delegating the authority of response and combat decisions to separate, logistically independent military districts away from Tehran; this protects defensive capabilities from paralysis if central command hubs are targeted.
+* **Interceptor Drain Strategy:** Overwhelming hostile air defense systems with low-cost drones and older-generation missiles to force the adversary to deplete expensive air defense missiles, paving the way for precise ballistic missile strikes in later phases.
+* **Economic Artery Weaponization:** Exporting the conflict to maritime shipping lanes and the Strait of Hormuz, and expanding the target list to include power plants, water desalination stations, and regional ports to drive up costs for global markets.
+
+---
+
+### III. How is Infrastructure Damage Assessed? (MDA Framework)
+
+International think tanks and intelligence agencies rely on an integrated system to assess the scale of destruction inflicted on Iranian and regional infrastructure:
+
+\`\`\`text
+                  ┌─────────────────────────────────────────┐
+                  │    Stages of Infrastructure Assessment  │
+                  └────────────────────┬────────────────────┘
+                                       │
+         ┌─────────────────────────────┼─────────────────────────────┐
+         ▼                             ▼                             ▼
+┌──────────────────┐          ┌──────────────────┐          ┌──────────────────┐
+│ 1. Satellite     │          │ 2. Energy &      │          │ 3. Field         │
+│ Imagery (SAR/Opt)│          │    Navigation Data  │          │ Sensors (OSINT)  │
+└────────┬─────────┘          └────────┬─────────┘          └────────┬─────────┘
+         │                             │                             │
+         └─────────────────────────────┼─────────────────────────────┘
+                                       ▼
+                  ┌─────────────────────────────────────────┐
+                  │     Economic & Human Impact Modeling    │
+                  └─────────────────────────────────────────┘
+\`\`\`
+
+#### Satellite Sensing (RFI & SAR Satellites):
+
+* **Synthetic Aperture Radar (SAR):** Utilized to image through clouds and smoke at night to verify the structural integrity of bridges, ports, and fuel depots.
+* **Thermal Footprints (Infrared):** Tracking heat emissions to identify which power and gas stations have gone offline.
+
+#### Economic Artery Analysis (AIS & Energy Data):
+
+* **Automatic Identification System (AIS):** Tracking shipping signals to identify paralysis in maritime routes across the Strait of Hormuz and ports in the Gulf of Oman.
+* **Flow Monitors:** Checking gas pipeline emissions and desalination plant operations to evaluate civil and military supply deficits.
+
+#### Open Source Intelligence (OSINT) & Field Data:
+
+* **Geolocation Analysis:** Verifying locally circulated videos and photographs to geolocate target sites and confirm if the hit facilities are civilian, military, or dual-use.
+
+---
+
+### IV. Editorial Assessment
+
+The greatest danger in the current war of attrition between Washington and Tehran is not merely the immediate physical destruction of infrastructure, but rather that both parties are walking a high-wire without political brakes.
+
+Targeting economic and service arteries (water, electricity, and bridges) places the entire region on the edge of an explosive humanitarian and economic crisis that transcends Iranian borders. With the total absence of direct diplomatic channels and communications restricted to kinetic signaling, the risk of miscalculation grows more critical by the day.
+
+The current equation is stark: either return to a realistic negotiation path that acknowledges regional balances of power, or slide into a total economic and security collapse for the Middle East, from which no victor will emerge.`
+  },
+  {
     id: 'joseph-aoun-washington-visit-2026',
     slug: 'joseph-aoun-washington-visit-2026',
     focusKeyword: 'زيارة-جوزيف-عون-واشنطن',
