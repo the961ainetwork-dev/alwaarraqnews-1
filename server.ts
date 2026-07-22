@@ -963,6 +963,55 @@ Respond with a single raw JSON object matching this schema:
   }
 });
 
+// Helper function to prepend a 44-byte WAV header to raw PCM audio bytes.
+// This allows modern browsers' HTML5 <audio> tags to play the raw PCM stream natively.
+function createWavHeader(pcmLength: number, sampleRate = 24000, numChannels = 1, bitsPerSample = 16): Buffer {
+  const header = Buffer.alloc(44);
+  
+  // 1-4: "RIFF" marker
+  header.write("RIFF", 0);
+  
+  // 5-8: Total file size minus 8 bytes (36 + dataSize)
+  header.writeUInt32LE(36 + pcmLength, 4);
+  
+  // 9-12: "WAVE" format
+  header.write("WAVE", 8);
+  
+  // 13-16: "fmt " subchunk identifier
+  header.write("fmt ", 12);
+  
+  // 17-20: Size of fmt subchunk (16 for PCM)
+  header.writeUInt32LE(16, 16);
+  
+  // 21-22: Audio format code (1 = uncompressed PCM)
+  header.writeUInt16LE(1, 20);
+  
+  // 23-24: Number of channels (1 = Mono)
+  header.writeUInt16LE(numChannels, 22);
+  
+  // 25-28: Sample rate (usually 24000 Hz for Gemini TTS output)
+  header.writeUInt32LE(sampleRate, 24);
+  
+  // 29-32: Byte rate: SampleRate * NumChannels * BitsPerSample/8
+  const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
+  header.writeUInt32LE(byteRate, 28);
+  
+  // 33-34: Block align: NumChannels * BitsPerSample/8
+  const blockAlign = numChannels * (bitsPerSample / 8);
+  header.writeUInt16LE(blockAlign, 32);
+  
+  // 35-36: Bits per sample (16)
+  header.writeUInt16LE(bitsPerSample, 34);
+  
+  // 37-40: "data" chunk identifier
+  header.write("data", 36);
+  
+  // 41-44: Number of bytes in the data chunk (pcmLength)
+  header.writeUInt32LE(pcmLength, 40);
+  
+  return header;
+}
+
 // API Endpoint for Gemini Text-to-Speech Generation
 app.get("/api/podcast/tts", async (req, res) => {
   const text = req.query.text as string;
@@ -988,14 +1037,28 @@ app.get("/api/podcast/tts", async (req, res) => {
     });
 
     const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-    const mimeType = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.mimeType || "audio/mp3";
+    const mimeType = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.mimeType || "audio/pcm;rate=24000";
 
     if (!base64Audio) {
       throw new Error("No audio data returned from Gemini TTS model");
     }
 
-    const audioBuffer = Buffer.from(base64Audio, "base64");
-    res.setHeader("Content-Type", mimeType);
+    const rawPcmBuffer = Buffer.from(base64Audio, "base64");
+
+    // Detect sample rate from response mimeType dynamically, or default to 24000
+    let sampleRate = 24000;
+    if (mimeType.includes("rate=")) {
+      const match = mimeType.match(/rate=(\d+)/);
+      if (match) {
+        sampleRate = parseInt(match[1], 10);
+      }
+    }
+
+    // Since the model returns raw PCM, we prepend a 44-byte WAV header so browsers can decode and play it.
+    const wavHeader = createWavHeader(rawPcmBuffer.length, sampleRate, 1, 16);
+    const audioBuffer = Buffer.concat([wavHeader, rawPcmBuffer]);
+
+    res.setHeader("Content-Type", "audio/wav");
     res.setHeader("Content-Length", audioBuffer.length);
     res.send(audioBuffer);
   } catch (error: any) {

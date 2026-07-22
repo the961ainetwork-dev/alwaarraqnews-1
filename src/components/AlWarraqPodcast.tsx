@@ -353,6 +353,16 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={handleLoadedMetadata}
           onEnded={handleAudioEnded}
+          onError={(e) => {
+            console.warn("Audio stream load/playback error, falling back to local browser TTS:", e);
+            if (audioMode === 'stream') {
+              setAudioMode('tts');
+              setIsPlaying(false);
+              setTimeout(() => {
+                togglePlayTts();
+              }, 150);
+            }
+          }}
         />
       )}
 

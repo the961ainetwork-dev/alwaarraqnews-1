@@ -1255,8 +1255,8 @@ export default function App() {
                     
                     <h2 className="text-2xl md:text-4xl font-sans font-black text-white tracking-tight leading-none select-text">
                       {isAr 
-                        ? 'تحقيق خاص: زيارة جوزيف عون إلى واشنطن.. اختبار السيادة بين ضغوط نزع السلاح ومخاوف الاحتكاك الإسرائيلي' 
-                        : "Special Investigation: Joseph Aoun's Visit to Washington.. Sovereignty Test Between Disarmament Pressures and Israeli Friction Fears"
+                        ? 'عون إلى واشنطن..  السيادة بين ضغوط نزع السلاح والاحتكاك الإسرائيلي' 
+                        : "Aoun to Washington.. Sovereignty Between Disarmament Pressures and Israeli Friction"
                       }
                     </h2>
                     
