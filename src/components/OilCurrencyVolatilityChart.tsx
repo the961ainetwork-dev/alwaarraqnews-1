@@ -585,42 +585,42 @@ export const OilCurrencyVolatilityChart: React.FC<Props> = ({ language = 'ar' })
 
         {/* FLOATING HOVER TOOLTIP CARD */}
         {hoveredData && (
-          <div className="absolute top-4 left-4 right-4 md:left-auto md:right-4 z-20 bg-zinc-900/95 border border-amber-500/50 p-3 md:p-4 rounded-xl shadow-2xl backdrop-blur-md max-w-sm space-y-2 pointer-events-none animate-in fade-in duration-200">
+          <div className="absolute top-4 left-4 right-4 md:left-auto md:right-4 z-20 bg-zinc-950/95 border-2 border-black p-3 md:p-4 rounded-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] backdrop-blur-md max-w-sm space-y-2.5 pointer-events-none animate-in fade-in duration-150 font-mono text-zinc-100">
             <div className="flex items-center justify-between border-b border-zinc-800 pb-2">
-              <span className="font-mono font-bold text-amber-400 text-sm flex items-center gap-1.5">
-                <Calendar size={14} />
+              <span className="font-mono font-bold text-amber-400 text-xs md:text-sm flex items-center gap-1.5 uppercase tracking-wider">
+                <Calendar size={13} />
                 <span>{isAr ? hoveredData.labelAr : hoveredData.labelEn}</span>
               </span>
-              <span className="text-xxs font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">
+              <span className="text-[10px] font-mono font-bold bg-zinc-900 text-amber-300 px-2 py-0.5 border border-black uppercase tracking-widest">
                 {hoveredData.date}
               </span>
             </div>
 
             <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-              <div className="bg-zinc-950/80 p-2 rounded border border-amber-500/30">
-                <span className="text-zinc-400 text-xxs block">{isAr ? 'خام برنت' : 'Brent Crude'}</span>
-                <span className="text-amber-400 font-bold text-sm">${hoveredData.brent} / bbl</span>
+              <div className="bg-zinc-900/90 p-2 border border-black space-y-0.5">
+                <span className="text-zinc-400 text-[10px] block font-mono uppercase tracking-wider">{isAr ? 'خام برنت' : 'Brent Crude'}</span>
+                <span className="text-amber-400 font-bold text-xs md:text-sm font-mono">${hoveredData.brent} / bbl</span>
               </div>
-              <div className="bg-zinc-950/80 p-2 rounded border border-blue-500/30">
-                <span className="text-zinc-400 text-xxs block">{isAr ? 'خام نايمكس' : 'WTI Crude'}</span>
-                <span className="text-blue-400 font-bold text-sm">${hoveredData.wti} / bbl</span>
+              <div className="bg-zinc-900/90 p-2 border border-black space-y-0.5">
+                <span className="text-zinc-400 text-[10px] block font-mono uppercase tracking-wider">{isAr ? 'خام نايمكس' : 'WTI Crude'}</span>
+                <span className="text-blue-400 font-bold text-xs md:text-sm font-mono">${hoveredData.wti} / bbl</span>
               </div>
-              <div className="bg-zinc-950/80 p-2 rounded border border-rose-500/30">
-                <span className="text-zinc-400 text-xxs block">{isAr ? 'مؤشر العملة / الصرف' : 'FX Stress Index'}</span>
-                <span className="text-rose-400 font-bold text-sm">
+              <div className="bg-zinc-900/90 p-2 border border-black space-y-0.5">
+                <span className="text-zinc-400 text-[10px] block font-mono uppercase tracking-wider">{isAr ? 'مؤشر العملة / الصرف' : 'FX Stress Index'}</span>
+                <span className="text-rose-400 font-bold text-xs md:text-sm font-mono">
                   {currencyMetric === 'egp' ? `${hoveredData.egpFx} EGP` : `${hoveredData.currencyIndex} pts`}
                 </span>
               </div>
-              <div className="bg-zinc-950/80 p-2 rounded border border-purple-500/30">
-                <span className="text-zinc-400 text-xxs block">{isAr ? 'علاوة التأمين البحري' : 'War Risk Premium'}</span>
-                <span className="text-purple-400 font-bold text-sm">+{hoveredData.warRiskPremium}%</span>
+              <div className="bg-zinc-900/90 p-2 border border-black space-y-0.5">
+                <span className="text-zinc-400 text-[10px] block font-mono uppercase tracking-wider">{isAr ? 'علاوة التأمين البحري' : 'War Risk Premium'}</span>
+                <span className="text-purple-400 font-bold text-xs md:text-sm font-mono">+{hoveredData.warRiskPremium}%</span>
               </div>
             </div>
 
             {hoveredData.eventAr && (
-              <div className="pt-2 border-t border-zinc-800/80 text-xxs text-amber-300 font-sans flex items-start gap-1.5 bg-amber-500/10 p-2 rounded border border-amber-500/30">
+              <div className="pt-2 border-t border-zinc-800 text-[11px] text-amber-300 font-mono flex items-start gap-1.5 bg-amber-950/40 p-2 border border-black">
                 <ShieldAlert size={14} className="text-amber-400 shrink-0 mt-0.5" />
-                <span className="leading-tight font-semibold">
+                <span className="leading-tight font-medium">
                   {isAr ? hoveredData.eventAr : hoveredData.eventEn}
                 </span>
               </div>
