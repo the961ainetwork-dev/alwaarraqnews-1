@@ -63,6 +63,7 @@ import { BdlSalamehInfographic } from './BdlSalamehInfographic';
 import { USSPRReleaseInfographic } from './USSPRReleaseInfographic';
 import { SyriaReconstructionInfographic } from './SyriaReconstructionInfographic';
 import { InfrastructureWarInfographic } from './InfrastructureWarInfographic';
+import { SpMiddleEastWarGCCInfographic } from './SpMiddleEastWarGCCInfographic';
 
 export const DOSSIER_DESKTOP_META: Record<string, {
   fileId: string;
@@ -191,6 +192,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XV: The Infrastructure War: Critical Lifelines in the Line of Fire',
     descAr: 'رصد دقيق وشامل للنقاط المستهدفة، والإحصائيات، والأضرار المسجلة لقطاعات الملاحة والنفط والغاز والمطارات والفضاء السيبراني حتى يوليو 2026.',
     descEn: 'An in-depth geopolitical intelligence brief detailing targeted critical hubs, damages, and systemic infrastructure casualties across GCC and Iran up to July 2026.'
+  },
+  'sp-gcc-corporate-war-risk-2026': {
+    fileId: 'AW-FILE-16',
+    badge: 'S&P GLOBAL RATINGS',
+    titleAr: 'الملف السادس عشر: تقرير ستاندرد آند بورز العالمي: تحليل الحساسية والسيناريوهات - حرب الشرق الأوسط تخلق مخاطر غير متكافئة لقطاعات الشركات الخليجية',
+    titleEn: 'Dossier XVI: S&P Global Ratings: Middle East War Creates Uneven Risk For GCC Corporate Sectors',
+    descAr: 'دراسة استقصائية وتقييم ائتماني رسمي من وكالة ستاندرد آند بورز يحلل الحساسية والمخاطر الهيكلية عبر ١٥ قطاعاً اقتصادياً في دول الخليج.',
+    descEn: 'Official credit rating analysis by S&P Global Ratings evaluating scenario sensitivity and credit risk across 15 GCC corporate sectors.'
   }
 };
 
@@ -868,6 +877,10 @@ export default function AlWarraqInvestigations({
                   ) : activeDossier.id === 'infrastructure-war-gcc-iran-2026' ? (
                     <div className="p-1 relative overflow-hidden rounded-md">
                       <InfrastructureWarInfographic language={language} />
+                    </div>
+                  ) : activeDossier.id === 'sp-gcc-corporate-war-risk-2026' ? (
+                    <div className="p-1 relative overflow-hidden rounded-md">
+                      <SpMiddleEastWarGCCInfographic language={language} />
                     </div>
                   ) : null}
                 </div>

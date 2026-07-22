@@ -4443,6 +4443,173 @@ Other regional economies exhibit diverse fiscal conditions and pressures:
 1. **Maritime Corridors & Choke Points:** Skyrocketing maritime insurance premiums and cargo re-routing widened the spread between nominal oil benchmarks and net-back revenues.
 2. **Sovereign Debt Servicing:** High interest rates continue to drain public budgets in non-oil countries.
 3. **Non-Oil Insulation:** Gulf nations have successfully insulated domestic non-oil performance from short-term commodity price cycles, courtesy of deep sovereign wealth funds.`
+  },
+  {
+    id: 'sp-gcc-corporate-war-risk-2026',
+    slug: 'sp-gcc-corporate-war-risk-2026',
+    focusKeyword: 'تقرير-ستاندرد-آند-بورز-مخاطر-شركات-الخليج-حرب-الشرق-الأوسط',
+    category: 'exclusives',
+    categories: ['exclusives', 'middle-east', 'economy', 'instats', 'investigations'],
+    titleAr: 'الملف السادس عشر: تقرير ستاندرد آند بورز العالمي: تحليل الحساسية والسيناريوهات - حرب الشرق الأوسط تخلق مخاطر غير متكافئة لقطاعات الشركات الخليجية',
+    titleEn: 'Dossier XVI: S&P Global Ratings: Middle East War Creates Uneven Risk For GCC Corporate Sectors',
+    summaryAr: 'دراسة استقصائية وتقييم ائتماني رسمي من وكالة ستاندرد آند بورز العالمية يحلل الحساسية والمخاطر الهيكلية عبر ١٥ قطاعاً اقتصادياً في دول مجلس التعاون الخليجي في ظل سيناريوهين أساسي وتنازلي.',
+    summaryEn: 'Official credit rating analysis by S&P Global Ratings evaluating scenario sensitivity and credit risk across 15 GCC corporate sectors amid prolonged Middle East war disruptions.',
+    excerptAr: 'تقرير شامل يتضمن جداول المخاطر والتحليلات الائتمانية التفصيلية لقطاعات الفندقة، العقارات، الطيران، اللوجستيات، النفط والغاز، البتروكيماويات، المعادن، والمرافق العامة.',
+    excerptEn: 'In-depth credit report featuring risk matrix scoreboards and detailed sector breakdowns for hospitality, real estate, aviation, logistics, energy, chemicals, and utilities.',
+    author: {
+      nameAr: 'وكالة ستاندرد آند بورز العالمية (S&P Global Ratings)',
+      nameEn: 'S&P Global Ratings Emerging Markets Research',
+      titleAr: 'فريق أبحاث الأسواق الناشئة وائتمان الشركات',
+      titleEn: 'Emerging Markets Research & Corporate Ratings',
+      avatar: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-22',
+    readTimeAr: '٢٠ دقيقة قراءة',
+    readTimeEn: '20 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 51200,
+    tags: ['ستاندرد_آند_بورز', 'SP_Global', 'الخليج', 'حرب_الشرق_الأوسط', 'مضيق_هرمز', 'التصنيف_الائتماني', 'GCC_Corporates', 'Dubai_Real_Estate', 'Hospitality', 'Credit_Ratings', 'Energy_Sector', 'Aviation'],
+    hashtags: ['SPGlobalRatings', 'GCCCorporateRisk', 'HormuzDisruption', 'CreditRating2026'],
+    contentAr: `### تحليل الحساسية والسيناريوهات: حرب الشرق الأوسط تخلق مخاطر غير متكافئة لقطاعات الشركات في دول مجلس التعاون الخليجي
+*(ملاحظة التحرير: تعتقد وكالة ستاندرد آند بورز العالمية S&P Global Ratings أن هناك درجة عالية من عدم اليقين بشأن مدة ونطاق حرب الشرق الأوسط وتأثيرها المحتمل على أسعار السلع الأساسية، وسلاسل الإمداد، والاقتصادات، والظروف الائتمانية. بناءً عليه، تحمل توقعاتنا الأساسية قدراً كبيراً من عدم اليقين. ومع تطور الأوضاع، سنقيس مدى الأهمية الكلية والائتمانية للتحولات المحتملة ونعيد تقييم توجيهاتنا وفقاً لذلك. لا يشكل هذا التقرير إجراء تصنيف ائتماني مباشر).*
+
+---
+
+### أهم النقاط الرئيسية (Key Takeaways)
+
+1. **انكشاف غير متكافئ وتحول المخاطر:** تتعرض قطاعات الشركات في دول مجلس التعاون الخليجي لانكشاف غير متكافئ لمخاطر حرب الشرق الأوسط، حيث تتحول المخاطر من اضطراب تشغيلي فوري إلى حالة من عدم اليقين الممتد التي قد تضعف الثقة، وتؤخر الاستثمار، وتبطئ التعافي إلى مستويات ما قبل الحرب.
+2. **تراجع الربحية وبطء الإنفاق الرأسمالي:** بالنسبة لغالبية شركات الخليج، نتوقع انخفاض الربحية بحلول نهاية عام ٢٠٢٦ بسبب ارتفاع التكاليف اللوجستية، كما نتوقع ضعف الإنفاق الرأسمالي الاختياري وانخفاض أحجام إصدارات الديون في أسواق رأس المال.
+3. **تداعيات السيناريو التنازلي:** في سيناريونا التنازلي (Downside Scenario)، تواجه جميع قطاعات الشركات الخليجية تقريباً تأثيرات شديدة، رغم أن الأثر على الجودة الائتمانية سيعتمد بدرجة أقل على قوة الميزانيات العمومية وبدرجة أكبر على قدرة الشركات على استدامة الثقة، ومواصلة الاستثمار، والتفافها على اختناقات اللوجستيات.
+4. **تفاوت الجودة الائتمانية بين القطاعات:** يؤدي استمرار عدم اليقين المرتبط بصراع الشرق الأوسط وتداعياته إلى آثار متباينة للغاية على الجدارة الائتمانية لقطاعات الشركات الخليجية.
+
+تتوقع ستاندرد آند بورز أن تواصل القطاعات الأكثر دفاعية، بما في ذلك المرافق العامة والاتصالات، إثبات صمودها. غير أن ضغوط الجودة الائتمانية باتت جلية بالفعل في القطاعات ذات الانكشاف المباشر الأكبر للصراع (بما في ذلك الاضطراب المستمر في مضيق هرمز) وتراجع ثقة مجتمع الأعمال وتباطؤ النشاط الاستثماري، وهو ما سيزداد مع طول فترة عدم اليقين. وتشمل هذه القطاعات: الضيافة والفندقة، الطيران، العقارات، النقل، اللوجستيات، السلع الاستهلاكية الترفيهية، والطاقة. ونتوقع انخفاض الربحية عبر جميع القطاعات تقريباً في عام ٢٠٢٦ بسبب زيادة التكاليف اللوجستية، وإعادة تقييم الإنفاق الرأسمالي، وانخفاض أحجام إصدار أدوات الدين.
+
+تختلف توقعاتنا للجودة الائتمانية لقطاع الشركات عن رؤيتنا للسياديات الخليجية، والتي نعتبرها مستقرة بشكل عام بفضل الأصول الصافية القوية والمصدات المالية السائلة. ومع ذلك، نرى مجالاً لنتائج متغيرة عبر السياديات؛ حيث تحافظ الإمارات، السعودية، الكويت، وقطر على قدرة قوية على امتصاص الصدمات، بينما تبدو البحرين وعُمان أكثر عرضة للصدمات بسبب مصداتهما المالية الأصغر.
+
+---
+
+### مقارنة السيناريو الأساسي والسيناريو التنازلي
+
+#### أ. السيناريو الأساسي (Base Case): تقلبات قصيرة الأجل يليها تعافٍ قوي
+يفترض سيناريونا الأساسي أن اضطرابات الإمدادات في مضيق هرمز ستخف حدتها في النصف الثاني من عام ٢٠٢٦. ونتوقع أن يبلغ متوسط شحنات النفط خلال تلك الفترة نحو ٧٥٪ من أحجام ما قبل الحرب، وأن يبلغ متوسط سعر خام برنت ١١٠ دولارات للبرميل للمتبقي من عام ٢٠٢٦ و٨٠ دولاراً للبرميل لعام ٢٠٢٧. وفي ظل هذا السيناريو، نتوقع انخفاض الناتج المحلي الإجمالي الحقيقي لمنطقة الخليج بنسبة ٣٪ بمتوسط عام ٢٠٢٦، مع توقع نمو السعودية (+٢٫٦٪)، وعُمان (+١٫٦٪)، والإمارات (+١٫٥٪).
+
+#### ب. السيناريو التنازلي (Downside Scenario): صراع ممتد وتآكل هيكلي
+يتضمن سيناريونا التنازلي اشتباكات متقطعة متعددة السنوات أو تجدد الحرب بما يمنع تطبيع التجارة، مما يؤدي إلى تآكل دائم في الإمدادات والثقة. وقد تتجاوز أسعار برنت افتراضات السيناريو الأساسي بشكل كبير، خاصة خلال فترات الاضطراب الحاد. وبحلول عام ٢٠٢٧، قد ينخفض الطلب العالمي على النفط بنحو ١٠٪ عن مستويات عام ٢٠٢٥ وسط نقص الإمدادات والركود الاقتصادي العالمي. ويزداد خطر الركود بسبب الضغط غير المتماثل والكبير على النشاط الاقتصادي مقارنة بسيناريونا الأساسي، مما ينتج عنه خسائر أوسع في الناتج عبر القطاعات كثيفة استخدام الطاقة والمكشوفة تجارياً. كما أن الاستمرار في النقص وارتفاع علاوات المخاطر يبقي التضخم مرتفعاً، مما يستوجب سياسة نقدية "أكثر تشدداً لفترة أطول".
+
+---
+
+### إجراءات التصنيف المباشرة الصادرة حتى الآن
+
+منذ بداية حرب الشرق الأوسط، وضعت ستاندرد آند بورز تصنيفات ثلاث شركات على قائمة المراجعة ذات النظرة المستقبلية السلبية:
+1. **FIVE Holdings:** تعديل النظرة المستقبلية للتصنيف طويل الأجل 'BB-' إلى سلبية من مستقرة بسبب الضغوط على قطاع السياحة والضيافة في دبي جراء عدم اليقين بشأن مدة الصراع وكثافته.
+2. **PNC Investments LLC (Sobha):** تعديل النظرة المستقبلية للتصنيف طويل الأجل 'BB' إلى سلبية من مستقرة نظراً لتراكم الديون الأخير وضرورة تحقيق مسار لتقليل المديونية.
+3. **Omniyat Holdings:** تعديل النظرة المستقبلية للتصنيف طويل الأجل 'BB-' إلى سلبية من مستقرة بسبب الضغوط المتزايدة وعدم اليقين في القطاع العقاري السكني بدبي.
+
+---
+
+### الأثر التفصيلي على القطاعات الاقتصادية الخليجية
+
+#### 1. الضيافة والفندقة: من أشد القطاعات تضرراً
+انخفض الإشغال الفندقي بشكل حاد منذ بداية الصراع. وفقاً لبيانات CoStar، بلغت نسبة إشغال فنادق دبي نحو ٣٣٪ في مارس ٢٠٢٦، هبوطاً من ٨٤٫٧٪ في فبراير. وانخفض الإشغال على مستوى الإمارات إلى ٣٦٫٢٪ (مقابل ٨٤٫٧٪) خلال نفس الفترة. وقامت العديد من الفنادق بإغلاق أبوابها للتجديد أو مؤقتاً، حيث تم سحب نحو ٥,٤٠٠ غرفة من العرض في أبريل ٢٠٢٦ لتتدرج في العودة حتى أواخر ٢٠٢٦ و٢٠٢٧.
+
+#### 2. المطورون العقاريون: الأثر الكامل لم يظهر بعد
+انخفض متوسط صفقات بيع العقارات الشهرية في دبي إلى ١٢,٨٨٧ صفقة بين مارس ونهاية يونيو ٢٠٢٦ (مقارنة بـ ١٧,١٩٨ في يناير وفبراير). وستضيف دبي نحو ٢٠٪ وحدات إضافية بحلول عام ٢٠٢٨ وفق أبحاث JLL، مما سيزيد من الضغط على المبيعات المسبقة. وفي المقابل، تتمتع أبوظبي والسعودية وعُمان بمصدات سكانية ومحلية تخفف المخاطر الائتمانية.
+
+#### 3. مطورو العقارات الفاخرة للغاية: حساسية أعلى لعدم الاستقرار
+سجلت دبي ٢٩٦ صفقة بيع عقارات سكنية تجاوزت قيمة كل منها ١٠ ملايين دولار خلال النصف الأول من عام ٢٠٢٦ بإجمالي ٥٫١ مليار دولار (+١٤٪ عن ٢٠٢٥). لكن المكاتب العائلية والأفراد ذوي الملاءة المالية العالية (HNWIs) أكثر حساسية وتقلباً، وفي السيناريو التنازلي قد يعيدون توجيه رؤوس الأموال خارج المنطقة.
+
+#### 4. قطاع الطيران: ثقة العائلات والشركات هي مفتاح التعافي
+سجل مطار دبي ١٨٫٦ مليون مسافر في الربع الأول من عام ٢٠٢٦ (-٢٠٫٦٪ سنوياً) وهبط حجم الشحن بـ ٢٢٫٧٪ جراء إغلاق الممرات الجوية. وفي السيناريو التنازلي، نتوقع انخفاض حركة المسافرين، والضغط على أرباح المبيعات، مع بقاء التكاليف التشغيلية ووقود الطيران والتأمين مرتفعة.
+
+#### 5. النقل والخدمات اللوجستية: ارتفاع التكاليف وتأخير الشحنات
+هبط عدد السفن العابرة لمضيق هرمز من ١٢٠-١٤٠ سفينة يومياً قبل الحرب إلى أقل من ٢٠-٤٠ سفينة أثناء الصراع. وارتفعت أقساط التأمين ضد مخاطر الحرب (War Risk) من ٠٫٢٥٪ إلى ما بين ٣٪ و٤٪ من قيمة السفينة.
+
+#### 6. الشركات العقارية المؤجرة: انخفاض العوائد
+انخفضت الإيجارات السكنية في دبي بنسبة ٥٪ إلى ١٥٪ منذ بداية الصراع. بينما تبدو الإيجارات التجارية والشركات أكثر استقراراً بفضل العقود طويلة الأجل (٣ إلى ١٠ سنوات).
+
+#### 7. البناء والمقاولات: تصاعد التكاليف وانكماش هوامش الأرباح
+ترتفع تكاليف البناء في الإمارات بنسبة ٧٪ إلى ١٢٪ في عام ٢٠٢٦ (مقابل ١٫٨٪ في ٢٠٢٥)، وفي السعودية بـ ٥٪ إلى ٨٪ (مقابل ٢٫١٪). وهو ما يضغط بقوة على هوامش المقاولين بعقود الأسعار الثابتة.
+
+#### 8. قطاع التجزئة والسلع الاستهلاكية الترفيهية وغير الأساسية
+ضعف الدخل المتاح والقدرة الشرائية يهدد هوامش أرباح السلع الفاخرة والسيارات، لا سيما في الأسواق المعتمدة على الوافدين والسياحة.
+
+#### 9. الأغذية والسلع الأساسية (غير الترفيهية): طلب صامد
+صمود الطلب على الأغذية، مع ارتفاع مؤشر دروري لشحن الحاويات بـ ١٤٤٪ (من ١,٨٩٩ إلى ٤,٦٣٩ دولاراً للحاوية). وتضمن الحكومات الخليجية برامج الأمن الغذائي.
+
+#### 10. النفط والغاز والبتروكيماويات والمعادن
+تراكم إغلاق وإنتاج محتجز لنحو ١٫٣ مليار برميل نفط. وتأثرت مجمعات البتروكيماويات في قطر والكويت، بينما استفادت السعودية والإمارات من خطوط أنابيب شرق-غرب وحبشان. وفي الألومنيوم، أدى تضرر مصهرين بالإمارات والبحرين إلى خروج ٣ ملايين طن متري من السعة الإنتاجية العالمية.
+
+#### 11. القطاعات الدفاعية والصامدة (المرافق، الاتصالات، الصحة)
+تستمر المرافق العامة (الكهرباء والماء) والاتصالات والرعاية الصحية في إثبات أعلى درجات الصمود والصلابة الائتمانية بفضل العقود الحكومية غير المرنة والطلب الأساسي المستقر.`,
+    contentEn: `Scenario and Sensitivity Analysis: Middle East War Creates Uneven Risk For GCC Corporate Sectors
+Sector: Governments, Financial Institutions, Insurance, Infrastructure, Project Finance, Corporates
+Topic: Debt Markets In Transition, Trade, Tariffs, & Policy, Emerging Markets Research
+Region: Americas, EMEA, APAC
+S&P Global Ratings Emerging Markets Research
+
+(Editor's Note: S&P Global Ratings believes there is a high degree of unpredictability around the duration and scale of the Middle East war and its potential effect on commodity prices, supply chains, economies, and credit conditions. As a result, our baseline forecasts carry a significant amount of uncertainty. As situations evolve, we will gauge the macro and credit materiality of potential shifts and reassess our guidance accordingly. This report does not constitute a rating action.)
+
+---
+
+### Key Takeaways
+1. Corporate sectors in Gulf Cooperation Council (GCC) countries are unevenly exposed to Middle East war risks that are shifting from immediate operational disruption to prolonged uncertainty that could weaken confidence, delay investment, and slow the recovery to pre-war economic levels.
+2. For most GCC corporates, we expect profitability will decline by end-2026 due to higher logistics costs, and we anticipate weaker discretionary capital expenditure and lower capital market debt issuance volumes.
+3. In our downside scenario, almost all GCC corporate sectors face severe impacts, though the effect on credit quality will depend less on companies' balance sheet strength and more on their ability to sustain confidence, continue investment, and circumvent logistics bottlenecks.
+4. Ongoing uncertainty relating to the Middle East conflict and its fallout promises increasingly heterogeneous effects on the creditworthiness of Gulf Cooperation Council (GCC) corporate sectors.
+
+S&P Global Ratings expects more defensive industries, including utilities and telecommunications, will continue to prove resilient. Yet credit quality pressures are already evident in sectors with greater direct exposure to the conflict (including the ongoing disruption to the Strait of Hormuz) and the weakened business confidence and delayed investment activity, which will increase with prolonged uncertainty. These sectors include hospitality, aviation, real estate, transport, logistics, consumer discretionary, and energy. We expect profitability across almost all sectors will decline in 2026 owing to higher logistics costs. We also expect a reassessment of discretionary capital expenditure, and lower volumes of capital market debt issuance.
+
+Our expectations for corporate sector credit quality differs from our views on GCC sovereigns, which we generally consider to be stable, due largely to robust net asset positions and liquid fiscal buffers. Yet we still see scope for variable outcomes across sovereigns, with the UAE, Saudi Arabia, Kuwait, and Qatar maintaining strong capacity to absorb shocks, while Bahrain and Oman appear more vulnerable due to their smaller financial buffers.
+
+---
+
+### Base Case vs Downside Scenario
+
+#### Base Case: Short-term volatility followed by a strong recovery
+Our base case assumes that supply disruptions in the Strait of Hormuz will ease in the second half of 2026. We expect oil shipments during that period will average about 75% of the pre-war volumes and that Brent crude will average $110 per barrel (/bbl) for the remainder of 2026 and $80/bbl for 2027. Under this scenario, we expect the GCC region's real GDP to fall 3% on average in 2026, with Saudi Arabia (2.6%), Oman (1.6%), and UAE (1.5%) projected to grow.
+
+#### Downside Scenario: Persistent conflict and structural erosion
+Our downside scenario includes multi-year intermittent clashes or renewed war that prevent trade normalization, leading to a permanent erosion of supply and confidence. Brent prices could significantly exceed our base case assumption, particularly during periods of acute disruption. By 2027, global oil demand could fall about 10% from 2025 levels amid supply shortages and a global economic downturn.
+
+---
+
+### Direct Rating Actions Taken So Far
+
+Since the start of the Middle East war, we have placed three corporate ratings on negative outlook:
+1. **FIVE Holdings:** Outlook on 'BB-' long-term rating revised to Negative from Stable due to pressures on Dubai's tourism and hospitality sector.
+2. **PNC Investments LLC (Sobha):** Outlook on 'BB' long-term rating revised to Negative from Stable given recent debt buildup.
+3. **Omniyat Holdings:** Outlook on 'BB-' long-term rating revised to Negative from Stable due to increased uncertainty in Dubai's residential real estate sector.
+
+---
+
+### Detailed Impact Across GCC Corporate Sectors
+
+#### 1. Hospitality: One of the most affected sectors
+Hotel occupancy fell precipitously. Dubai hotel occupancy was about 33% in March 2026, down from 84.7% in February. About 5,400 rooms were removed from supply in April 2026 and will gradually return through late 2026 and 2027. Full recovery to pre-war levels is unlikely until the end of 2027.
+
+#### 2. Real Estate Developers: Full impact not yet visible
+Dubai monthly real estate sale transactions fell to 12,887 between March and end-June 2026, down from 17,198 in Jan-Feb. Dubai will add about 20% more units through 2028. Consequently, developer presales will decline.
+
+#### 3. Luxury Real Estate: Higher sensitivity to regional instability
+Dubai tallied 296 residential sales priced above $10M per unit in H1 2026 ($5.1B total value, up 14% YoY). However, ultra-luxury developers face high sensitivity if HNWIs reallocate capital away from the region in a downside scenario.
+
+#### 4. Aviation: Confidence is key to recovery
+Dubai airport recorded 18.6 million passengers in Q1 2026, down 20.6% YoY, while cargo fell 22.7% YoY. Operating costs, jet fuel, and war risk insurance remain high.
+
+#### 5. Transportation and Logistics: Higher costs and delays
+Ships crossing the Strait of Hormuz dropped from 120-140/day to under 20-40/day. War risk insurance premiums spiked from 0.25% to between 3% and 4% of vessel value.
+
+#### 6. Construction and Contracting: Cost escalations
+Building costs in the UAE will likely increase 7% to 12% in 2026 (vs 1.8% in 2025), and 5% to 8% in KSA (vs 2.1% in 2025), compressing contractor margins under fixed-price contracts.
+
+#### 7. Oil & Gas, Petrochemicals & Metals
+Trapped crude and shut-ins total ~1.3 billion barrels. In metals, two aluminum smelters in UAE & Bahrain were damaged, removing 3 million metric tons of capacity.
+
+#### 8. Defensive Sectors (Utilities, Telecom, Healthcare, Staples)
+Utilities, telecom, healthcare, and food staples continue to prove resilient backed by inelastic demand, sovereign off-take agreements, and essential public priority status.`
   }
 ];
 
