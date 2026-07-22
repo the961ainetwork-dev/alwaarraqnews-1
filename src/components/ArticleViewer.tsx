@@ -15,6 +15,7 @@ import { FifaWorldCupReport } from './FifaWorldCupReport';
 import { HormuzCrisisReport } from './HormuzCrisisReport';
 import { EgyptGasCrisisReport } from './EgyptGasCrisisReport';
 import { SpMiddleEastWarGCCInfographic } from './SpMiddleEastWarGCCInfographic';
+import { RegionalOilEnergyMapInfographic } from './RegionalOilEnergyMapInfographic';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
 
@@ -931,6 +932,10 @@ export default function ArticleViewer({
             ) : article.id === 'sp-gcc-corporate-war-risk-2026' ? (
               <div className="mb-6">
                 <SpMiddleEastWarGCCInfographic language={activeLang} />
+              </div>
+            ) : article.id === 'regional-oil-energy-map-2026' ? (
+              <div className="mb-6">
+                <RegionalOilEnergyMapInfographic language={activeLang} />
               </div>
             ) : null}
 

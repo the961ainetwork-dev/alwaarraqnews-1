@@ -99,6 +99,12 @@ const DESK_METADATA: Record<string, {
     subAr: 'سندات الخزينة، سلاسل إمداد القمح والمعادن',
     subEn: 'Sovereign yields, shipping grain supplies, and precious metal indexes'
   },
+  'oil-energy': {
+    taglineAr: 'أسواق النفط والطاقة',
+    taglineEn: 'Oil & Energy Focus',
+    subAr: 'تحولات الطاقة والنفط، خريطة الاحتياطيات وصناعة القرار الجيوسياسي',
+    subEn: 'Global crude markets, proven reserves map, OPEC+ and geopolitical energy shifts'
+  },
   'arab-markets': {
     taglineAr: 'البورصات العربية',
     taglineEn: 'Regional Exchanges',
@@ -329,7 +335,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'المال والاقتصاد',
       labelEn: 'Geo-Finance & Data',
       icon: <TrendingUp size={13} />,
-      tabIds: ['economy', 'markets', 'arab-markets', 'instats', 'telecom-internet', 'research-reports', 'iraq-us-dossier'],
+      tabIds: ['economy', 'markets', 'oil-energy', 'arab-markets', 'instats', 'telecom-internet', 'research-reports', 'iraq-us-dossier'],
       descAr: 'مؤشرات التداول العربي وسندات الخزينة وسلاسل الإمداد ومؤشرات البيانات العقارية',
       descEn: 'Sovereign bond curves, GCC market indexes, subsea cables, and transactional land registries.'
     },

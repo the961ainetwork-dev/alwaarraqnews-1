@@ -4610,6 +4610,186 @@ Trapped crude and shut-ins total ~1.3 billion barrels. In metals, two aluminum s
 
 #### 8. Defensive Sectors (Utilities, Telecom, Healthcare, Staples)
 Utilities, telecom, healthcare, and food staples continue to prove resilient backed by inelastic demand, sovereign off-take agreements, and essential public priority status.`
+  },
+  {
+    id: 'regional-oil-energy-map-2026',
+    slug: 'regional-oil-energy-map-2026',
+    focusKeyword: 'خريطة-الطاقة-النفط-الرابحون-والخاسرون-2026',
+    category: 'oil-energy',
+    categories: ['oil-energy', 'markets', 'economy', 'middle-east', 'exclusives', 'investigations'],
+    titleAr: 'خريطة الطاقة الإقليمية والدولية — الرابحون والخاسرون وسط تحولات الأسعار وصناعة القرار',
+    titleEn: 'Regional and International Energy Map — Winners and Losers Amid Price Shifts and Decision-Making',
+    summaryAr: 'دراسة استقصائية حول إعادة تشكّل أسواق النفط العالمية والإقليمية، وتوزيع الاحتياطيات المؤكدة، وتحليل القوى الفائزة والخاسرة مع تركيز خاص على الملف الفنزويلي وتحصيل واشنطن لـ ١٣ مليار دولار من عائداته.',
+    summaryEn: 'An investigative report on the geopolitical and economic reshaping of global and regional oil markets, proven reserve distribution, winners vs losers, and FT details on Venezuelan oil revenues.',
+    excerptAr: 'تحليل شامل لخريطة النفط والطاقة الإقليمية والدولية، مع جدول الاحتياطيات العظمى وتوزيع المكاسب بين أمريكا والخليج مقابل خسائر إيران والمستوردين الصافيين.',
+    excerptEn: 'In-depth analysis of global energy markets featuring proven oil reserve rankings, OPEC+ strategies, US-Venezuela oil dynamics, and regional winner/loser matrices.',
+    author: {
+      nameAr: 'فريق أبحاث النفط والطاقة والأسواق السيادية',
+      nameEn: 'Energy & Sovereign Markets Desk',
+      titleAr: 'قسم الاستشارات والتحليلات الجيواقتصادية',
+      titleEn: 'Geoeconomic & Energy Intelligence Group',
+      avatar: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-22',
+    readTimeAr: '١٥ دقيقة قراءة',
+    readTimeEn: '15 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 42800,
+    tags: ['النفط_والطاقة', 'أسواق_المال', 'أوبك_بلس', 'الاحتياطيات_النفطية', 'أمريكا_وفنزويلا', 'الشرق_الأوسط', 'أسعار_النفط', 'Oil_Energy', 'OPEC', 'Oil_Reserves', 'Venezuela_Oil'],
+    hashtags: ['OilAndEnergy2026', 'EnergyGeopolitics', 'GlobalOilMap', 'OpecPlus', 'VenezuelaCrude'],
+    contentAr: `### خريطة الطاقة الإقليمية والدولية — الرابحون والخاسرون وسط تحولات الأسعار وصناعة القرار
+
+تشهد أسواق النفط العالمية والإقليمية حالة من إعادة التشكل الجيوسياسي والاقتصادي السريع. وبين تذبذبات الطلب العالمي، وتخفيضات الإنتاج الطوعية التي تقودها منظمة "أوبك+"، والتغيرات الهيكلية في إدارة الأصول النفطية في العالم، تتبلور خارطة جديدة تقسم القوى الإقليمية والدولية بين رابح يجمع المكاسب ويسيطر على التدفقات، وخاسر يعاني من انكماش العائدات وضغوط العقوبات.
+
+---
+
+### 1. مشهد العرض والطلب: ديناميكيات السوق الإقليمي والدولي
+
+* **جانب الطلب:** تشهد أسواق الطاقة حالة من التباين؛ حيث تباطأ نمو الطلب التقليدي في الأسواق الآسيوية الكبرى (وعلى رأسها الصين) بفعل التوسع في الطاقة المتجددة والمركبات الكهربائية، بينما يظل الطلب حيوياً ومستقراً في الشرق الأوسط وبعض اقتصاديات جنوب آسيا للوفاء بمتطلبات النمو المحلي والتصنيع.
+* **جانب المعروض:** تتبع دول "أوبك+" استراتيجية "إدارة المعروض" للحفاظ على توازن الأسعار وضمان استقرار الإيرادات، في حين تواصل الولايات المتحدة وبعض منتجي خارج أوبك (مثل البرازيل وغيانا) الضخ بمستويات قياسية لتعويض أي نقص ولزيادة حصصهم السوقية.
+
+---
+
+### 2. الاحتياطيات المؤكدة: من يملك "مخزون الثروة"؟
+
+تُمثّل الاحتياطيات النفطية المؤكدة أدوات النفوذ الإقليمي والدولي الأكثر تأثيراً:
+
+| الدولة / الإقليم | الاحتياطي المؤكد (بليون برميل) | النسبة من الاحتياطي العالمي (تقريبياً) |
+| :--- | :--- | :--- |
+| **فنزويلا** | ~303 | ~17% (الأكبر عالمياً) |
+| **المملكة العربية السعودية** | ~267 | ~15% |
+| **إيران** | ~208 | ~12% |
+| **العراق** | ~145 | ~9% |
+| **الإمارات العربية المتحدة** | ~113 | ~7% |
+| **الكويت** | ~101 | ~6% |
+| **روسيا** | ~80 | ~5% |
+| **الولايات المتحدة** | ~55 | ~3.5% |
+
+---
+
+### 3. الرابحون والخاسرون: من يبيع ومن يكسب أو يخسر؟
+
+#### الرابحون (Winners)
+
+* **الولايات المتحدة الأمريكية:**
+  * **الموقع:** المنتجة الأكبر والخيار الأول كمصدر بديل للطاقة.
+  * **المكاسب:** تواصل المجموعات الأمريكية الكبرى تحصين حصصها السوقية وزيادة نفوذها على سلاسل التوريد العالمية.
+
+* **دول الخليج العربي (السعودية، الإمارات، الكويت):**
+  * **الموقع:** بائعة رئيسية للنفط والغاز المسال للأسواق الآسيوية والأوروبية.
+  * **المكاسب:** رغم الخفض الطوعي للإنتاج، تمتلك هذه الدول أقل تكلفة استخراج عالمياً (تحت 10-15 دولار للبرميل)، مما يضمن لها هوامش ربح مرتفعة وتوليد سيادية قوية عبر صناديقها الثروية.
+
+* **شركات الوساطة والتكرير المستقلة:**
+  * **المكاسب:** تحقق مكاسب قياسية من خلال إدارة لوجستيات الخامات وإعادة توجيه المسارات البحرية للتغلب على اضطرابات سلاسل التوريد.
+
+#### الخاسرون (Losers)
+
+* **إيران:**
+  * **الوضع:** تواجه ضغوطاً متزايدة جراء تضييق الخناق على مبيعاتها النفطية وضغوط العقوبات وإمكانية السيطرة أو التأثير على منافذ تصديرها الحيويّة.
+
+* **فنزويلا (على الصعيد المحلي/الرسمي):**
+  * **الوضع:** رغم ملكيتها لأكبر احتياطي عالمي، تحولت الإيرادات ومنافذ البيع إلى أوراق سياسية ومالية تُدار بآليات خارجية مع تهميش شركة النفط الوطنية (PDVSA) وتراجع البنية التحتية.
+
+* **الدول المستوردة الصافية للنفط بالمنطقة (مصر، تونس، الأردن، لبنان):**
+  * **الوضع:** تتكبد موازناتها خسائر فادحة جراء فاتورة الاستيراد وارتفاع تكاليف الشحن والتأمين البحري، مما يزيد من الضغوط التضخمية والدين العام.
+
+---
+
+### 4. ملف النفط الفنزويلي: السيطرة والعوائد الضخمة
+
+تجسد الحالة الفنزويلية أحد أكثر التحولات إثارة في صناعة النفط العالمية، حيث تحولت السيطرة على حركة التصدير والعائدات المالية إلى الإدارة الأمريكية بعد أحداث وتغييرات سياسية وعسكرية سريعة في كاراكاس.
+
+* **صحيفة "فايننشال تايمز":** الإدارة الأمريكية جمعت أكثر من 13 مليار دولار من عائدات مبيعات النفط الفنزويلي هذا العام.
+* **تفاصيل الآلية والتدفقات المالية:** كشفت صحيفة Financial Times في تقاريرها الحصرية أن الإدارة الأمريكية، عقب فرض سيطرتها وتنظيم عمليات بيع النفط الفنزويلي عبر إعفاءات وآليات خاصة، نجحت في تحصيل أكثر من 13 مليار دولار من عائدات النفط.
+* **طبيعة السيطرة:** يتم توجيه الصادرات الفنزويلية بشكل مكثف نحو المصافي الأمريكية على ساحل الخليج وشركات تجارة النفط العالمية، مع وضع الإيرادات في حسابات وتحت آليات تنشئها وتديرها واشنطن.
+* **الاستثمار المستقبلي:** في الوقت نفسه، تبحث واشنطن عن إدخال عمالقة النفط الأمريكيين (مثل إكسون موبيل وشيفرون) باستثمارات قد تصل إلى 100 مليار دولار لإعادة بناء البنية التحتية المتهالكة لقطاع الطاقة الفنزويلي للاستفادة القصوى من الاحتياطي الضخم.
+
+---
+
+### 5. خلاصة واستشراف التحديات القادمة
+
+إن الصراع الراهن في سوق النفط الإقليمي والدولي لم يعد مجرد معادلة عرض وطلب، بل تحول إلى حروب نفوذ على الموارد والحصص:
+
+* **السيادة المالية للطاقة:** تتجه القوى العظمى إلى استخدام أداة السيطرة على صادرات النفط وعائداته المباشرة كعنصر ضغط جيوسياسي ومورد مالي حيوي.
+* **استقرار الإمدادات:** تظل منطقة الشرق الأوسط مركز الثقل الاستراتيجي للإنتاج والتصدير، إلا أن استمرار الاضطرابات الجيوسياسية يدفع الخارطة نحو تحالفات جديدة وإعادة هندسة شاملة لأنابيب وخطوط شحن النفط عالمياً.`,
+    contentEn: `### Regional and International Energy Map — Winners and Losers Amid Price Shifts and Decision-Making
+
+Global and regional oil markets are undergoing a rapid geopolitical and economic realignment. Caught between global demand fluctuations, voluntary production cuts led by OPEC+, and structural shifts in global energy asset management, a new landscape is emerging that divides regional and international powers into clear winners and losers.
+
+---
+
+### 1. Supply and Demand Dynamics: Regional and International Market Overview
+
+* **Demand Side:** Energy markets show a stark divergence. Traditional demand growth in major Asian markets (led by China) has slowed due to the expansion of renewables and electric vehicles, whereas demand remains robust in the Middle East and parts of South Asia to fulfill local growth and industrialization.
+* **Supply Side:** OPEC+ producers maintain a "supply management" policy to balance prices and safeguard revenue, while the US and non-OPEC producers (such as Brazil and Guyana) pump at record levels to fill shortfalls and capture market share.
+
+---
+
+### 2. Proven Crude Reserves: Who Holds the Wealth Inventory?
+
+Proven oil reserves remain the most potent tools of regional and international leverage:
+
+| Country / Region | Proven Reserves (Billion Barrels) | Share of Global Reserves (Approx.) |
+| :--- | :--- | :--- |
+| **Venezuela** | ~303 | ~17% (World's Largest) |
+| **Saudi Arabia** | ~267 | ~15% |
+| **Iran** | ~208 | ~12% |
+| **Iraq** | ~145 | ~9% |
+| **United Arab Emirates** | ~113 | ~7% |
+| **Kuwait** | ~101 | ~6% |
+| **Russia** | ~80 | ~5% |
+| **United States** | ~55 | ~3.5% |
+
+---
+
+### 3. Winners and Losers: Market Dynamics and Revenues
+
+#### Winners
+
+* **United States of America:**
+  * **Position:** Top producer and primary alternative energy supplier.
+  * **Gains:** Major US energy conglomerates continue securing market share and strengthening supply chain leverage.
+
+* **GCC Nations (Saudi Arabia, UAE, Kuwait):**
+  * **Position:** Dominant sellers of crude and LNG to Asia and Europe.
+  * **Gains:** Despite voluntary supply cuts, GCC producers maintain the world's lowest extraction costs (under $10-15/barrel), preserving high profit margins and sovereign wealth buffer generation.
+
+* **Independent Trading & Refining Firms:**
+  * **Gains:** Capturing record spreads by managing crude logistics, rerouting maritime corridors, and resolving supply chain bottlenecks.
+
+#### Losers
+
+* **Iran:**
+  * **Status:** Facing intensified pressure from tighter oil sale monitoring, sanction enforcement, and export terminal vulnerabilities.
+
+* **Venezuela (Domestic/Official Sector):**
+  * **Status:** Despite possessing the world's largest reserves, domestic revenues and export channels have been externalized under international mechanisms, marginalizing state-owned PDVSA.
+
+* **Regional Net Energy Importers (Egypt, Tunisia, Jordan, Lebanon):**
+  * **Status:** Budgets are severely strained by import bills, elevated maritime freight rates, and war risk insurance, fueling inflation and public debt.
+
+---
+
+### 4. The Venezuelan Oil File: Control and Massive Revenue Flows
+
+Venezuela represents one of the most dramatic shifts in global energy history, with export management and financial revenues redirected under US administrative control following political developments in Caracas.
+
+* **Financial Times Reports:** The US administration collected over **$13 billion** from Venezuelan oil sales this year.
+* **Financial Mechanisms:** According to exclusive Financial Times reporting, Washington established special license mechanisms and controlled financial channels to capture and manage Venezuelan crude sales.
+* **Flow Orientation:** Venezuelan crude is heavily routed to US Gulf Coast refineries and global trading houses, with revenues held in US-managed accounts.
+* **Future Capital Rebuilding:** Washington is exploring introducing US energy giants (such as ExxonMobil and Chevron) with up to $100 billion in potential infrastructure investment to rebuild Venezuela's aging production base.
+
+---
+
+### 5. Key Takeaways & Strategic Outlook
+
+The global oil conflict is no longer a simple supply-and-demand calculation, but a geopolitical contest over market share and energy financial sovereignty:
+
+* **Energy Financial Sovereignty:** Great powers increasingly use direct control over oil exports and revenues as strategic leverage.
+* **Supply Security:** The Middle East remains the strategic centerpiece of global production, but persistent conflict is driving a structural re-engineering of global pipeline and maritime supply routes.`
   }
 ];
 

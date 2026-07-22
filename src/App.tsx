@@ -760,7 +760,7 @@ export default function App() {
     const KNOWN_CATEGORIES = [
       'all', 'in-case-you-missed-it', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street',
       'sentiment-analysis', 'fifa-2026', 'exclusives', 'editor-desk', 'translations', 'lebanon',
-      'instats', 'videos', 'podcast', 'middle-east', 'economy', 'markets', 'arab-markets',
+      'instats', 'videos', 'podcast', 'middle-east', 'economy', 'markets', 'oil-energy', 'arab-markets',
       'telecom-internet', 'research-reports', 'sports', 'wellness-lifestyle', 'what-if-simulator',
       'press-releases', 'newsletter', 'premium-pricing', 'section'
     ];
@@ -1065,6 +1065,10 @@ export default function App() {
     return searchFilteredArticles.filter(story => story.category === 'markets' || (story.categories && story.categories.includes('markets')));
   }, [searchFilteredArticles]);
 
+  const oilEnergyArticles = useMemo(() => {
+    return searchFilteredArticles.filter(story => story.category === 'oil-energy' || (story.categories && story.categories.includes('oil-energy')));
+  }, [searchFilteredArticles]);
+
   const telecomArticles = useMemo(() => {
     return searchFilteredArticles.filter(story => story.category === 'telecom-internet' || (story.categories && story.categories.includes('telecom-internet')));
   }, [searchFilteredArticles]);
@@ -1114,6 +1118,10 @@ export default function App() {
     return activeCategory === 'all' ? marketsArticles.slice(0, 8) : marketsArticles;
   }, [marketsArticles, activeCategory]);
 
+  const displayedOilEnergy = useMemo(() => {
+    return activeCategory === 'all' ? oilEnergyArticles.slice(0, 8) : oilEnergyArticles;
+  }, [oilEnergyArticles, activeCategory]);
+
   const displayedTelecom = useMemo(() => {
     return activeCategory === 'all' ? telecomArticles.slice(0, 8) : telecomArticles;
   }, [telecomArticles, activeCategory]);
@@ -1131,7 +1139,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'markets' || activeCategory === 'oil-energy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
 
   return (
     <div
@@ -3373,6 +3381,54 @@ export default function App() {
                       className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
                     >
                       <span>{isAr ? 'طالع كامل صفحات حركة الأسواق ←' : 'Read More in Markets & Indices →'}</span>
+                    </button>
+                  </div>
+                )}
+              </section>
+            )}
+
+            {/* SECTION 5.5: OIL & ENERGY (النفط والطاقة) */}
+            {(activeCategory === 'all' || activeCategory === 'oil-energy' || activeCategory === 'markets') && oilEnergyArticles.length > 0 && (
+              <section className="space-y-5 my-8">
+                <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
+                  <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
+                    <Flame size={18} className="text-amber-600 shrink-0 animate-pulse" />
+                    <span>{isAr ? 'النفط والطاقة' : 'Oil & Energy'}</span>
+                  </h3>
+                  <span className="font-mono text-xxs font-bold text-zinc-500">
+                    {isAr ? 'أسواق الخام العالمية والاحتياطيات' : 'Global Crude & Energy Geopolitics'}
+                  </span>
+                </div>
+
+                {/* 4 Cards in a Row masonry style */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {displayedOilEnergy.map((story) => (
+                    <div key={story.id} className="break-inside-avoid">
+                      <ArticleCard
+                        article={story}
+                        layoutMode={layoutMode}
+                        language={language}
+                        variant="standard"
+                        onSelect={(article) => setSelectedArticle(article)}
+                        isSaved={savedArticleIds.includes(story.id)}
+                        onToggleSave={handleToggleSaveArticle}
+                        onTagClick={handleTagClick}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* REDIRECT READ MORE */}
+                {activeCategory === 'all' && oilEnergyArticles.length > 0 && (
+                  <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
+                    <button
+                      onClick={() => {
+                        setActiveCategory('oil-energy');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
+                    >
+                      <span>{isAr ? 'طالع كامل تقارير النفط والطاقة ←' : 'Read All Energy Reports →'}</span>
                     </button>
                   </div>
                 )}

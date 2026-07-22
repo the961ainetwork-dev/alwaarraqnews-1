@@ -20,6 +20,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'middle-east', labelAr: 'شؤون الشرق الأوسط', labelEn: 'Middle East Core' },
   { id: 'economy', labelAr: 'الاقتصاد', labelEn: 'Economy' },
   { id: 'markets', labelAr: 'أسواق المال', labelEn: 'Sovereign Markets' },
+  { id: 'oil-energy', labelAr: 'النفط والطاقة', labelEn: 'Oil & Energy' },
   { id: 'arab-markets', labelAr: 'الأسواق العربية', labelEn: 'Arab Markets Indicators' },
   { id: 'telecom-internet', labelAr: 'الاتصالات والإنترنت', labelEn: 'Telecom & Internet' },
   { id: 'world-of-ai', labelAr: 'عالم الذكاء الاصطناعي', labelEn: 'World of AI' },

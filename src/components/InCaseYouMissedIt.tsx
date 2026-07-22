@@ -207,6 +207,7 @@ export default function InCaseYouMissedIt({
     'lebanon': { en: 'Lebanon News', ar: 'أخبار لبنان' },
     'middle-east': { en: 'Middle East Core', ar: 'شؤون الشرق الأوسط' },
     'markets': { en: 'Sovereign Markets', ar: 'أسواق المال' },
+    'oil-energy': { en: 'Oil & Energy', ar: 'النفط والطاقة' },
     'arab-markets': { en: 'Arab Markets Indicators', ar: 'الأسواق العربية' },
     'exclusives': { en: 'Investigations', ar: 'التحقيقات الصحفية' },
     'economy': { en: 'Economy', ar: 'الاقتصاد' }

@@ -16,6 +16,8 @@ export const PARENT_CHILD_RELATIONS: Record<string, string> = {
   'lebanon': 'middle-east',
   'exclusives': 'middle-east',
   'translations': 'middle-east',
+  'markets': 'economy',
+  'oil-energy': 'markets',
   'arab-markets': 'markets',
   'instats': 'markets',
   'research-reports': 'telecom-internet',
