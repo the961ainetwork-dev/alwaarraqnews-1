@@ -447,6 +447,11 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
             ? 'يقدم هذا القسم تشريحاً تفاعلياً لاتفاق الإطار الثلاثي المبرم في واشنطن في ٢٦ حزيران ٢٠٢٦، متضمناً تحليلاً للأبعاد الاقتصادية واللوجستية والبنود الكاملة والملحق السري.'
             : 'This section provides an interactive, detailed breakdown of the Washington Trilateral Framework signed on June 26, 2026, comparing sovereign gains, physical realities, treaty articles, and the leaked annex.'}
         </p>
+        {renderStoryActions(
+          isAr ? 'واقع جيولوجي غير مبشر وجيوسياسي متفجر: تشريح اتفاق الإطار الثلاثي' : 'An Unpromising Geology & Explosive Geopolitics: Trilateral Framework Analysis',
+          isAr ? 'تشريح تفاعلي لاتفاق الإطار الثلاثي المبرم في واشنطن، متضمناً تحليلاً للأبعاد الاقتصادية واللوجستية والبنود الكاملة والملحق السري.' : 'Interactive breakdown of the Washington Trilateral Framework signed on June 26, 2026.',
+          isAr ? 'ملف خاص: اتفاق الإطار' : 'Special Dossier: Framework Agreement'
+        )}
       </div>
 
       {/* Tabs Selector Bar */}
@@ -585,6 +590,11 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   <p className="text-xs text-zinc-750 font-sans leading-relaxed">
                     {isAr ? gain.descAr : gain.descEn}
                   </p>
+                  {renderStoryActions(
+                    isAr ? `مكسب سيادي: ${gain.titleAr}` : `Sovereign Gain: ${gain.titleEn}`,
+                    isAr ? gain.descAr : gain.descEn,
+                    isAr ? 'ميزان الأثر: المكاسب السيادية' : 'Impact Balance: Sovereign Gains'
+                  )}
                 </div>
               ))}
             </div>
@@ -614,6 +624,11 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   <p className="text-xs text-zinc-750 font-sans leading-relaxed">
                     {isAr ? reality.descAr : reality.descEn}
                   </p>
+                  {renderStoryActions(
+                    isAr ? `واقع معطل: ${reality.titleAr}` : `Physical Reality: ${reality.titleEn}`,
+                    isAr ? reality.descAr : reality.descEn,
+                    isAr ? 'ميزان الأثر: الواقع الاقتصادي والمنطقة' : 'Impact Balance: Economic & Security Bottlenecks'
+                  )}
                 </div>
               ))}
             </div>
@@ -819,6 +834,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                 ? 'إن الملحق الأمني السري بين إسرائيل ولبنان، في حال الكشف عنه، سيهز الأوساط السياسية لأنه يرفع الغطاء عن الهيكل الحقيقي المخفي وراء الاتفاق العلني. بينما يتحدث الاتفاق المعلن عن السيادة والانسحاب، يقلب الملحق المفاهيم رأساً على عقب ليعيد تصميم منظومة القرار الأمني اللبناني.'
                 : 'The secret Israel-Lebanon security annex, if revealed as expected, will shake Lebanon because it exposes the real architecture hidden behind the public framework. The public agreement speaks of sovereignty, withdrawal and reconstruction. The annex, however, appears to turn these words upside down.'}
             </p>
+            {renderStoryActions(
+              isAr ? 'أسرار الملحق الأمني السري المسرب' : 'Secret Security Annex Leaks',
+              isAr ? 'إن الملحق الأمني السري بين إسرائيل ولبنان يرفع الغطاء عن الهيكل الحقيقي المخفي وراء الاتفاق العلني.' : 'The secret security annex exposes the real architecture hidden behind the public framework.',
+              isAr ? 'الملحق الأمني السري' : 'Leaked Security Annex',
+              undefined, undefined, true
+            )}
           </div>
 
           {/* Interactive Bento Breakdown of the 6 Key Structural Shocks */}
@@ -839,6 +860,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   ? 'إسرائيل وحدها تحدد نطاق "المناطق التجريبية". لا توجد أي جداول زمنية محددة أو انسحاب تلقائي. كل خطوة معلقة حتى ينفذ لبنان جميع المطالب المفروضة؛ ليصبح الانسحاب الإسرائيلي مجرد مكافأة تُمنح بناءً على الرضا الفردي لتل أبيب.'
                   : 'Israel alone determines the scope of the so-called "pilot zones." It accepts no fixed timetable and no automatic withdrawal. Israeli redeployment becomes a reward granted only when Israel decides that Lebanon has performed satisfactorily.'}
               </p>
+              {renderStoryActions(
+                isAr ? 'الملحق السري - صدمة 1: مناطق تجريبية مشروطة' : 'Leaked Annex Shock #1: Conditional Pilot Zones',
+                isAr ? 'إسرائيل وحدها تحدد نطاق "المناطق التجريبية" بلا جدول زمني، والانسحاب يتحول لمكافأة مشروطة.' : 'Israel determines pilot zones with no fixed timetable; withdrawal becomes a conditional reward.',
+                isAr ? 'الملحق السري' : 'Leaked Security Annex',
+                undefined, undefined, true
+              )}
             </div>
 
             {/* Shock 2 */}
@@ -857,6 +884,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   ? 'إسرائيل تحدد المنطقة الأمنية وما يجب على الجيش اللبناني فعله داخلها. ويحتفظ جيش الاحتلال بحرية الحركة والتوغل العسكري الكامل في جميع أنحاء المنطقة تحت ذريعة مواجهة التهديدات، وهي صيغة تبرر الاستمرار في تدمير القرى بذريعة الأمن.'
                   : 'Israel defines the security zone, decide which areas are included, and what the Lebanese army must do inside them. The Israeli army keeps complete freedom of movement throughout the area under the pretext of confronting threat vectors.'}
               </p>
+              {renderStoryActions(
+                isAr ? 'الملحق السري - صدمة 2: حرية الحركة والتغيير' : 'Leaked Annex Shock #2: Freedom of Movement',
+                isAr ? 'إسرائيل تحدد المنطقة الأمنية وتتذرع بالتهديدات للاحتفاظ بحرية الحركة وتدمير القرى.' : 'Israel defines the security zone and keeps full freedom of military movement.',
+                isAr ? 'الملحق السري' : 'Leaked Security Annex',
+                undefined, undefined, true
+              )}
             </div>
 
             {/* Shock 3 */}
@@ -875,6 +908,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   ? 'يتلقى الجيش اللبناني خرائط وإحداثيات وقوائم أهداف أعدتها إسرائيل وتمررها الولايات المتحدة. ويشرف فريق عسكري أمريكي على الأرض على التنفيذ، بل وترافق قوة عسكرية إسرائيلية الفريق الأمريكي في تفتيش الأراضي اللبنانية للتحقق ميدانياً.'
                   : 'The Lebanese army is expected to act on maps, coordinates, and target lists prepared by Israel and transmitted by the US. A US military team on soil supervises the process, potentially accompanied by Israeli military inspectors.'}
               </p>
+              {renderStoryActions(
+                isAr ? 'الملحق السري - صدمة 3: إملاء الخرائط والأهداف' : 'Leaked Annex Shock #3: Target Lists & Maps',
+                isAr ? 'يتلقى الجيش اللبناني إحداثيات وأهداف إسرائيلية عبر أمريكا مع دورية تفتيش ميدانية مشتركة.' : 'LAF receives Israeli target lists supervised on soil by US/Israeli inspectors.',
+                isAr ? 'الملحق السري' : 'Leaked Security Annex',
+                undefined, undefined, true
+              )}
             </div>
 
             {/* Shock 4 */}
@@ -893,6 +932,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   ? 'عودة المدنيين اللبنانيين وقرار بدء إعادة الإعمار ليسا حقوقاً سيادية تلقائية، بل هما مشروطان بمصادقة إسرائيل ورضاها عن التطبيق الفعلي للمطالب عبر الآلية الأمريكية المشتركة. تحول الإعمار إلى أداة ضغط سياسي واقتصادي باهظ.'
                   : 'The return of Lebanese civilians and the beginning of reconstruction are made conditional on this process. Residents cannot return before Israel is satisfied with the implementation, turning reconstruction into a tool of political pressure.'}
               </p>
+              {renderStoryActions(
+                isAr ? 'الملحق السري - صدمة 4: الإعمار والعودة كأداة ضغط' : 'Leaked Annex Shock #4: Reconstruction as Leverage',
+                isAr ? 'عودة السكان وإعادة الإعمار مشروطان بموافقة إسرائيلية مسبقة ورضاها الأمني.' : 'Civil return and reconstruction conditioned on explicit Israeli approval.',
+                isAr ? 'الملحق السري' : 'Leaked Security Annex',
+                undefined, undefined, true
+              )}
             </div>
 
             {/* Shock 5 */}
@@ -911,6 +956,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   ? 'تقوم آلية بإشراف أمريكي بفحص الجيش اللبناني من الداخل لتحديد الضباط والجنود المتهمين إسرائيلياً بالوقوع تحت تأثير حزب الله. الدولة اللبنانية ملزمة قانوناً بفصل أي ضابط يرفض التعاون، مع إمكانية عزل قيادة الجيش بالكامل عند مخالفتها التوجيهات.'
                   : 'A US-supervised mechanism will examine the Lebanese army from within, using Israeli intelligence files to list and dismiss officers and soldiers suspected of Hezbollah links or refusal to comply with full-scale target audits.'}
               </p>
+              {renderStoryActions(
+                isAr ? 'الملحق السري - صدمة 5: غربلة وتطهير قيادة الجيش' : 'Leaked Annex Shock #5: LAF Vetting & Purging',
+                isAr ? 'آلية أمريكية تفحص ضباط الجيش اللبناني لاستبعاد المغضوب عليهم إسرائيلياً.' : 'US mechanism audits LAF officers against Israeli intelligence blacklists.',
+                isAr ? 'الملحق السري' : 'Leaked Security Annex',
+                undefined, undefined, true
+              )}
             </div>
 
             {/* Shock 6 */}
@@ -929,6 +980,12 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
                   ? 'يلتزم لبنان بملاحقة التحويلات المالية لحزب الله وحظر أموال الإعمار والتعافي إذا شابتها أي شكوك. يوصى الملحق بإنشاء صندوق مالي تحت سلطة لبنانية لكن بإشراف ورقابة أمريكية تامة لتدقيق تدفقات الأموال وضمان حرمان الشبكات الشيعية منها.'
                   : 'Lebanon is required to block money transfers and block funds justified as reconstruction support if suspected of benefiting Hezbollah. A financial fund under Lebanese authority but American supervision is established to audit flows.'}
               </p>
+              {renderStoryActions(
+                isAr ? 'الملحق السري - صدمة 6: رقابة مالية وصندوق أمريكي' : 'Leaked Annex Shock #6: Financial Control',
+                isAr ? 'فرض صندوق تدقيق أمريكي لملاحقة التحويلات المالية وحظر أموال إعادة الإعمار المشبوهة.' : 'US financial auditing fund monitors all reconstruction and banking transfers.',
+                isAr ? 'الملحق السري' : 'Leaked Security Annex',
+                undefined, undefined, true
+              )}
             </div>
           </div>
 
@@ -968,6 +1025,11 @@ export const FrameworkAgreementInfographic: React.FC<FrameworkAgreementInfograph
 
 إذا تم الإعلان عن هذه الوثيقة، فإن الزلزال في لبنان لن يأتِ من المفاجأة، بل من الإدراك التام بأن الإطار المعلن لم يكن سوى غطاء دبلوماسي، في حين دُفنت التنازلات الحقيقية والجوهرية في الملحق الأمني السري.`}
                 </div>
+                {renderStoryActions(
+                  'التقرير الاستقصائي الكامل للملحق الأمني المسرّب (بالعربية)',
+                  'مضمون الملحق الأمني السري بين إسرائيل ولبنان وآلياته التنفيذية والرقابية.',
+                  'الملحق السري المسرّب'
+                )}
               </div>
 
               {/* English original */}
@@ -994,6 +1056,11 @@ This is not a security annex. It is a mechanism for placing Lebanese sovereignty
 
 If this document is made public, the earthquake in Lebanon will not come from surprise. It will come from recognition: the public framework was only the diplomatic cover. The real concessions were buried in the secret security annex.`}
                 </div>
+                {renderStoryActions(
+                  'Full Investigative Report on Secret Security Annex (English)',
+                  'Full analysis revealing what the Israel-Lebanon secret security annex exposes.',
+                  'Leaked Security Annex'
+                )}
               </div>
             </div>
           </div>
@@ -1018,6 +1085,12 @@ If this document is made public, the earthquake in Lebanon will not come from su
             <div className="text-sm font-mono text-amber-300 font-medium">
               {isAr ? 'تقرير استقصائي خاص — بيروت (تموز ٢٠٢٦)' : 'Special Investigative Report — Beirut (July 2026)'}
             </div>
+            {renderStoryActions(
+              isAr ? '«المناطق التجريبية» في مهب الشروط المتبادلة: تقرير استقصائي' : 'Special Investigation: "Pilot Zones" in the Grip of Mutual Conditions',
+              isAr ? 'هل يشهد الجنوب انسحاباً إسرائيلياً هذا الأسبوع أم نكسة مبكرة لـ«اتفاق واشنطن»؟' : 'Will the South witness an Israeli withdrawal this week or an early setback?',
+              isAr ? 'تقرير استقصائي خاص' : 'Special Investigative Report',
+              undefined, undefined, true
+            )}
           </div>
 
           {/* Side-by-Side Dual Column View */}
@@ -1044,6 +1117,11 @@ If this document is made public, the earthquake in Lebanon will not come from su
                   <p className="bg-red-50 p-3 border-r-4 border-red-600 text-red-950 text-xs font-sans">
                     <strong>العقبة الراهنة:</strong> أعلنت هيئة البث الإسرائيلية الرسمية أن تل أبيب قررت تأجيل البدء في إخلاء هذه القرى هذا الأسبوع، مشترطةً التوصل أولاً إلى آلية رقابة مشتركة صارمة (تشمل غرفة عمليات افتراضية بإشراف أمريكي) تضمن خلو هذه المناطق مسبقاً من أي وجود مسلح، في حين يرفض الجيش اللبناني أي تنسيق عسكري مباشر مع تل أبيب ويشترش وقفاً كاملاً وشاملاً للغارات الجوية لبدء انتشاره.
                   </p>
+                  {renderStoryActions(
+                    'خلفية المشهد: معادلة "الأمن مقابل الانسحاب"',
+                    'ربط الانسحاب التدريجي لجيش الاحتلال الإسرائيلي ببسط الجيش اللبناني سيادته والتراجع عن الإخلاء واشترط الآليات الثلاثية.',
+                    'التقرير الاستقصائي - خلفية'
+                  )}
                 </div>
 
                 <div className="border-t-2 border-amber-800/20 pt-4 space-y-4">
@@ -1067,6 +1145,11 @@ If this document is made public, the earthquake in Lebanon will not come from su
                     <p className="text-xs">
                       <strong>الأهمية العسكرية:</strong> تصنف التقارير الاستخبارية الإسرائيلية زوطر الغربية كواحدة من أهم خطوط الإمداد اللوجستي والعملياتي تاريخياً نحو عمق القطاع الأوسط. وتتواجد في هذه البلدة حالياً وحدات ومدرعات إسرائيلية يتعين عليها الانسحاب وإخلاء مواقعها بموجب الترتيبات المقترحة.
                     </p>
+                    {renderStoryActions(
+                      'المنطقة التجريبية الأولى: زوطر الغربية (شمال الليطاني)',
+                      'زوطر الغربية تشرف على وادي الحجير والمجرى الشمالي لليطاني وتعد خط إمداد استراتيجي يتوجب إخلاؤه.',
+                      'جغرافية الاختبار الميداني'
+                    )}
                   </div>
 
                   {/* Zone 2 Card */}
@@ -1081,6 +1164,11 @@ If this document is made public, the earthquake in Lebanon will not come from su
                     <p className="text-xs">
                       <strong>الأهمية العسكرية:</strong> تخلو فرون حالياً من أي وجود عسكري إسرائيلي مباشر على الأرض، وهو ما يفسر سبب اختيارها من قِبل تل أبيب؛ إذ ترغب في تحويلها إلى "مختبر ميداني مكشوف" لمراقبة مدى قدرة وصلاحية وحدات الجيش اللبناني في منع أي مظاهر مسلحة وحظر وجود عناصر حزب الله فيها بشكل مسبق وفوري.
                     </p>
+                    {renderStoryActions(
+                      'المنطقة التجريبية الثانية: فرون (جنوب الليطاني)',
+                      'بلدة فرون تشرف على محاور قتالية بين القطاعين الأوسط والغربي وتم اختيارها كمختبر ميداني لمراقبة انتشار الجيش.',
+                      'جغرافية الاختبار الميداني'
+                    )}
                   </div>
                 </div>
 
@@ -1098,13 +1186,23 @@ If this document is made public, the earthquake in Lebanon will not come from su
                   <p className="text-xs">
                     <strong>الانقسام الداخلي اللبناني:</strong> يواجه الاتفاق معارضة شرسة من حزب الله وحلفائه، حيث وصفه نواب الحزب بأنه "صك استسلام" وتجاوز للخطوط الحمراء، بالتزامن مع إشارات إيرانية تفيد بأن طهران ترفض إبرام تسوية نهائية تفصل مسار لبنان عن المفاوضات الإقليمية الأوسع مع واشنطن في جنيف.
                   </p>
+                  {renderStoryActions(
+                    'سيناريوهات الأسبوع الحالي: الشروط الإسرائيلية والموقف الداخلي',
+                    'انقسام سياسي وشروط إسرائيلية مسبقة تحوّل الانسحاب إلى أداة ضغط وتعرقل التطبيق الميداني.',
+                    'التقرير الاستقصائي - سيناريوهات'
+                  )}
                 </div>
 
-                <div className="border-t-4 border-amber-800 pt-4 bg-amber-50 p-4 border border-amber-200">
+                <div className="border-t-4 border-amber-800 pt-4 bg-amber-50 p-4 border border-amber-200 space-y-2">
                   <h4 className="text-base font-black font-sans text-amber-950">الخلاصة الاستقصائية:</h4>
                   <p className="text-xs font-sans text-zinc-900 font-medium">
                     عملياً، يقع "اتفاق واشنطن" هذا الأسبوع في المنطقة الرمادية؛ فالخرائط جاهزة والنقاط محددة بدقة (زوطر وفرون)، لكن قرار الانسحاب الإسرائيلي بات رهينة صراع الإرادات حول "من يبدأ أولاً": انتشار الجيش اللبناني وتفكيك البنية التحتية المسلحة، أم وقف العمليات الحربية الإسرائيلية والانسحاب العسكري الشامل. وبناءً على المعطيات الحالية، فإن التراجع الإسرائيلي عن التنفيذ الفوري يرجّح بقاء التعبئة الميدانية على حالها طيلة الأيام المقبلة بانتظار بلورة آلية الرقابة الثلاثية.
                   </p>
+                  {renderStoryActions(
+                    'الخلاصة الاستقصائية: اتفاق واشنطن في المنطقة الرمادية',
+                    'الخرائط جاهزة والنقاط محددة في زوطر وفرون لكن قرار الانسحاب رهينة صراع الإرادات من يبدأ أولاً.',
+                    'التقرير الاستقصائي - خلاصة'
+                  )}
                 </div>
               </div>
             </div>
@@ -1130,6 +1228,11 @@ If this document is made public, the earthquake in Lebanon will not come from su
                   <p className="bg-red-50/50 p-3 border-l-4 border-red-600 text-red-950 text-xs font-sans">
                     <strong>The Current Obstacle:</strong> The official Israeli Broadcasting Corporation announced that Tel Aviv decided to postpone the start of evacuating these villages this week, conditioning it on first reaching a strict joint monitoring mechanism (including a virtual operations room supervised by the US) that ensures these areas are pre-cleared of any armed presence. Meanwhile, the Lebanese Army rejects any direct military coordination with Tel Aviv and conditions a complete cessation of air raids to begin its deployment.
                   </p>
+                  {renderStoryActions(
+                    'Background: Security for Withdrawal Equation',
+                    'Linking Israeli withdrawal to LAF deployment and disarmament, as Tel Aviv conditions evacuation on US supervision.',
+                    'Investigation Background'
+                  )}
                 </div>
 
                 <div className="border-t-2 border-zinc-200 pt-4 space-y-4">
@@ -1153,6 +1256,11 @@ If this document is made public, the earthquake in Lebanon will not come from su
                     <p className="text-xs">
                       <strong>Military Significance:</strong> Israeli intelligence reports classify Zoutar al-Gharbiyyeh as historically one of the most important logistical and operational supply lines towards the depth of the central sector. Currently, Israeli units and armor are located in this town and are slated to withdraw under the proposed arrangements.
                     </p>
+                    {renderStoryActions(
+                      'Pilot Zone 1: Zoutar al-Gharbiyyeh (North Litani)',
+                      'Zoutar al-Gharbiyyeh overlooks Wadi al-Hujair and serves as a key logistical supply route slated for evacuation.',
+                      'Field Test Geography'
+                    )}
                   </div>
 
                   {/* Zone 2 Card */}
@@ -1167,6 +1275,11 @@ If this document is made public, the earthquake in Lebanon will not come from su
                     <p className="text-xs">
                       <strong>Military Significance:</strong> Froun is currently free of any direct Israeli military presence on the ground, which explains its selection by Tel Aviv. They wish to turn it into an "exposed field laboratory" to monitor the ability of the Lebanese Army to prevent any armed manifestations and block Hezbollah elements proactively and immediately.
                     </p>
+                    {renderStoryActions(
+                      'Pilot Zone 2: Froun (South Litani)',
+                      'Froun overlooks central-western combat axes, chosen as a test lab to monitor LAF deployment capabilities.',
+                      'Field Test Geography'
+                    )}
                   </div>
                 </div>
 
@@ -1184,13 +1297,23 @@ If this document is made public, the earthquake in Lebanon will not come from su
                   <p className="text-xs">
                     <strong>Internal Lebanese Fracture:</strong> The agreement faces fierce opposition from Hezbollah and its allies, whose lawmakers described it as an "act of surrender" violating red lines, synchronized with Iranian indications that Tehran rejects any final settlement that decouples Lebanon from broader regional talks with Washington in Geneva.
                   </p>
+                  {renderStoryActions(
+                    'Current Week Scenarios: Israeli Demands vs Lebanese Politics',
+                    'Internal political divide and Israeli preconditions delay physical withdrawal in coming days.',
+                    'Investigation Scenarios'
+                  )}
                 </div>
 
-                <div className="border-t-4 border-zinc-800 pt-4 bg-zinc-100 p-4 border border-zinc-200">
+                <div className="border-t-4 border-zinc-800 pt-4 bg-zinc-100 p-4 border border-zinc-200 space-y-2">
                   <h4 className="text-base font-black font-sans text-zinc-950">Investigative Summary:</h4>
                   <p className="text-xs font-sans text-zinc-900 font-medium">
                     Practically, the "Washington Agreement" is suspended in a gray zone this week; the maps are drawn and coordinates (Zoutar and Froun) are highly precise, but the Israeli withdrawal remains hostage to a battle of wills over "who begins first": the LAF's deployment and disarmament of armed structures, or the complete cessation of Israeli military operations and full-scale withdrawal. Based on current parameters, Tel Aviv's immediate implementation delays suggest that military mobilization is likely to persist in the coming days pending the final formulation of the trilateral monitoring body.
                   </p>
+                  {renderStoryActions(
+                    'Investigative Summary: Washington Agreement in Gray Zone',
+                    'Maps and coordinates are ready for Zoutar & Froun, but withdrawal is held hostage to a battle of wills.',
+                    'Investigation Summary'
+                  )}
                 </div>
               </div>
             </div>

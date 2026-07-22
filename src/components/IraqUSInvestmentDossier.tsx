@@ -54,6 +54,19 @@ export const IraqUSInvestmentDossier: React.FC<IraqUSInvestmentDossierProps> = (
   const [compareCostModel, setCompareCostModel] = useState<boolean>(false);
   const [activeReport, setActiveReport] = useState<'iraq-us' | 'hormuz-crisis' | 'fifa-profits'>('iraq-us');
 
+  const handleWhatsAppShare = () => {
+    const title = isAr
+      ? 'الورّاق للإعلام الاستقصائي: تقرير كشف الاتفاق الاستثماري العراقي الأمريكي بـ 60 مليار دولار'
+      : 'Al-Warraq Exclusive: Landmark $60B Iraq-US Sovereign Investment Corridor Dossier';
+    const summary = isAr
+      ? 'تحليل استثنائي لعودة الشركات الأمريكية العملاقة، تطوير حقول كركوك، خط أنابيب المتوسط الاستراتيجي، ونزع سلاح الفصائل.'
+      : 'Comprehensive analysis of US energy majors reentry, Kirkuk field redevelopment, Mediterranean bypass pipeline, and arms monopoly.';
+    const shareUrl = window.location.href;
+    const text = `🚨 *${isAr ? 'برقية سيادية عاجلة - شبكة الورّاق' : 'AL-WARRAQ SOVEREIGN DISPATCH'}*\n\n*${title}*\n\n${summary}\n\n📲 ${isAr ? 'تابع القراءة والمؤشرات بالتفصيل عبر الرابط:' : 'Read full dossier & quantitative metrics:'}\n${shareUrl}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   // 1. Sovereign Telemetry Data
   const telemetryMetrics = useMemo(() => [
     {
@@ -517,6 +530,17 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
             </div>
             
             <button
+              onClick={handleWhatsAppShare}
+              className="bg-emerald-600 hover:bg-emerald-500 text-white rounded-none p-1.5 cursor-pointer text-xs flex items-center gap-1.5 transition-all active:scale-95 border border-emerald-500 shadow-[2px_2px_0px_0px_rgba(16,185,129,1)]"
+              title={isAr ? 'مشاركة عبر واتساب' : 'Share via WhatsApp'}
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.013-5.112-2.86-6.961C16.628 1.936 14.15 1.921 11.515 1.921 6.08 1.921 1.657 6.341 1.653 11.78c-.001 1.637.43 3.235 1.252 4.636l-.993 3.633 3.735-.98l1.002.585zM17.65 14.537c-.31-.155-1.833-.905-2.115-1.008-.282-.103-.487-.155-.69.155-.203.31-.787.98-.966 1.185-.179.205-.359.231-.669.076-.31-.155-1.309-.483-2.495-1.541-.923-.824-1.546-1.841-1.727-2.15-.18-.31-.02-.477.136-.631.14-.139.31-.36.465-.54.155-.18.205-.31.31-.515.103-.205.052-.385-.026-.54-.078-.155-.69-1.662-.945-2.277-.249-.599-.501-.518-.69-.527-.179-.008-.385-.01-.591-.01-.205 0-.54.077-.822.385-.282.31-1.077 1.053-1.077 2.569 0 1.516 1.103 2.981 1.257 3.187.154.205 2.17 3.313 5.257 4.646.734.317 1.307.506 1.753.648.739.235 1.412.202 1.944.123.593-.088 1.833-.749 2.09-1.474.256-.725.256-1.346.179-1.474-.076-.128-.282-.205-.591-.361z" />
+              </svg>
+              <span className="font-mono text-[10px] font-bold">{isAr ? 'واتساب' : 'WhatsApp'}</span>
+            </button>
+
+            <button
               onClick={() => triggerPdfGeneration(
                 isAr ? 'اتفاقيات الـ 60 مليار دولار: ممر الاستثمار العراقي الأمريكي' : 'Landmark $60 Billion Corridor: Iraq-US Sovereign Package',
                 isAr ? iraqDetailedReportAr : iraqDetailedReportEn,
@@ -935,7 +959,17 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
                   <span>{isAr ? 'مرجع الوثيقة: #SPECIAL-DOCKET-IRAQ-2026' : 'DOCUMENT CLASSIFICATION: #SPECIAL-DOCKET-IRAQ-2026'}</span>
                 </div>
 
-                <div className="flex gap-2 w-full sm:w-auto">
+                <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+                  <button
+                    onClick={handleWhatsAppShare}
+                    className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 border border-emerald-500 text-white font-bold rounded-none px-4 py-2 cursor-pointer flex items-center justify-center gap-1.5 transition-all shadow-[2px_2px_0px_0px_rgba(16,185,129,1)]"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.013-5.112-2.86-6.961C16.628 1.936 14.15 1.921 11.515 1.921 6.08 1.921 1.657 6.341 1.653 11.78c-.001 1.637.43 3.235 1.252 4.636l-.993 3.633 3.735-.98l1.002.585zM17.65 14.537c-.31-.155-1.833-.905-2.115-1.008-.282-.103-.487-.155-.69.155-.203.31-.787.98-.966 1.185-.179.205-.359.231-.669.076-.31-.155-1.309-.483-2.495-1.541-.923-.824-1.546-1.841-1.727-2.15-.18-.31-.02-.477.136-.631.14-.139.31-.36.465-.54.155-.18.205-.31.31-.515.103-.205.052-.385-.026-.54-.078-.155-.69-1.662-.945-2.277-.249-.599-.501-.518-.69-.527-.179-.008-.385-.01-.591-.01-.205 0-.54.077-.822.385-.282.31-1.077 1.053-1.077 2.569 0 1.516 1.103 2.981 1.257 3.187.154.205 2.17 3.313 5.257 4.646.734.317 1.307.506 1.753.648.739.235 1.412.202 1.944.123.593-.088 1.833-.749 2.09-1.474.256-.725.256-1.346.179-1.474-.076-.128-.282-.205-.591-.361z" />
+                    </svg>
+                    <span>{isAr ? 'مشاركة عبر واتساب' : 'Share via WhatsApp'}</span>
+                  </button>
+
                   <button
                     onClick={() => {
                       const textToShare = isAr 
@@ -948,7 +982,7 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
                     className="w-full sm:w-auto bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-white hover:text-emerald-400 rounded-none px-4 py-2 cursor-pointer flex items-center justify-center gap-1.5 transition-all"
                   >
                     <Share2 size={12} />
-                    <span>{isAr ? 'مشاركة الدراسة' : 'Share Dossier'}</span>
+                    <span>{isAr ? 'نسخ الرابط' : 'Copy Link'}</span>
                   </button>
                 </div>
               </div>
@@ -1013,6 +1047,30 @@ Strategically, PM Ali Al-Zaidy has used the Washington platform to announce two 
                     </div>
                   </li>
                 </ul>
+              </div>
+
+              {/* WhatsApp Tactical Dispatches Channel Box */}
+              <div className="border-2 border-emerald-600 bg-emerald-950/40 p-4 space-y-3">
+                <div className="flex items-center gap-2 text-emerald-400 font-mono text-xxs font-black uppercase">
+                  <svg className="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.013-5.112-2.86-6.961C16.628 1.936 14.15 1.921 11.515 1.921 6.08 1.921 1.657 6.341 1.653 11.78c-.001 1.637.43 3.235 1.252 4.636l-.993 3.633 3.735-.98l1.002.585zM17.65 14.537c-.31-.155-1.833-.905-2.115-1.008-.282-.103-.487-.155-.69.155-.203.31-.787.98-.966 1.185-.179.205-.359.231-.669.076-.31-.155-1.309-.483-2.495-1.541-.923-.824-1.546-1.841-1.727-2.15-.18-.31-.02-.477.136-.631.14-.139.31-.36.465-.54.155-.18.205-.31.31-.515.103-.205.052-.385-.026-.54-.078-.155-.69-1.662-.945-2.277-.249-.599-.501-.518-.69-.527-.179-.008-.385-.01-.591-.01-.205 0-.54.077-.822.385-.282.31-1.077 1.053-1.077 2.569 0 1.516 1.103 2.981 1.257 3.187.154.205 2.17 3.313 5.257 4.646.734.317 1.307.506 1.753.648.739.235 1.412.202 1.944.123.593-.088 1.833-.749 2.09-1.474.256-.725.256-1.346.179-1.474-.076-.128-.282-.205-.591-.361z" />
+                  </svg>
+                  <span>{isAr ? 'قناة التنبيهات العاجلة عبر واتساب' : 'WHATSAPP SOVEREIGN DISPATCHES'}</span>
+                </div>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                  {isAr 
+                    ? 'احصل على البرقيات والتحليلات السيادية الاستثنائية بملف العراق والاستثمار الأمريكي فور صدورها مباشرة على واتساب.'
+                    : 'Receive real-time sovereign dispatches and strategic updates on the Iraq-US corridor straight to your WhatsApp.'}
+                </p>
+                <button
+                  onClick={handleWhatsAppShare}
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs py-2.5 px-3 rounded-none flex items-center justify-center gap-2 cursor-pointer transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.013-5.112-2.86-6.961C16.628 1.936 14.15 1.921 11.515 1.921 6.08 1.921 1.657 6.341 1.653 11.78c-.001 1.637.43 3.235 1.252 4.636l-.993 3.633 3.735-.98l1.002.585zM17.65 14.537c-.31-.155-1.833-.905-2.115-1.008-.282-.103-.487-.155-.69.155-.203.31-.787.98-.966 1.185-.179.205-.359.231-.669.076-.31-.155-1.309-.483-2.495-1.541-.923-.824-1.546-1.841-1.727-2.15-.18-.31-.02-.477.136-.631.14-.139.31-.36.465-.54.155-.18.205-.31.31-.515.103-.205.052-.385-.026-.54-.078-.155-.69-1.662-.945-2.277-.249-.599-.501-.518-.69-.527-.179-.008-.385-.01-.591-.01-.205 0-.54.077-.822.385-.282.31-1.077 1.053-1.077 2.569 0 1.516 1.103 2.981 1.257 3.187.154.205 2.17 3.313 5.257 4.646.734.317 1.307.506 1.753.648.739.235 1.412.202 1.944.123.593-.088 1.833-.749 2.09-1.474.256-.725.256-1.346.179-1.474-.076-.128-.282-.205-.591-.361z" />
+                  </svg>
+                  <span>{isAr ? 'انضم لمجتمع الواتساب السيادي' : 'Join WhatsApp Dispatch Group'}</span>
+                </button>
               </div>
 
             </div>
