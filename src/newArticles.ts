@@ -2,6 +2,150 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'trump-approves-saudi-nuclear-deal-2026',
+    slug: 'trump-approves-saudi-nuclear-deal-2026',
+    focusKeyword: 'الاتفاق-النووي-السعودي-الأمريكي-ترامب',
+    category: 'middle-east',
+    categories: ['middle-east', 'translations', 'us-politics', 'exclusives'],
+    titleAr: 'تغطية خاصة: ترامب يقر اتفاقاً نووياً تاريخياً مع السعودية يتيح تخصيب اليورانيوم بضمانات أمريكية',
+    titleEn: 'Special Coverage: Trump Approves Landmark Civilian Nuclear Deal With Saudi Arabia Allowing Uranium Enrichment',
+    summaryAr: 'وافق الرئيس الأمريكي دونالد ترامب رسمياً على اتفاق نووي مدني تاريخي مع المملكة العربية السعودية يمتد لـ 30 عاماً وتتجاوز قيمته عشرات المليارات. يمنح الاتفاق الشركات الأمريكية دوراً رئيسياً لبناء مفاعلات وتأسيس منشأة لتخصيب اليورانيوم بترتيب "الصندوق الأسود" السرّي تحت إشراف أمريكي، مما أثار جدلاً بالكونغرس ومخاوف الانتشار النووي بالشرق الأوسط.',
+    summaryEn: 'U.S. President Donald Trump has formally approved a landmark 30-year civilian nuclear deal with Saudi Arabia worth tens of billions of dollars. The agreement grants U.S. firms a central role in constructing reactors and a potential black-box uranium enrichment facility, sparking intense Congressional scrutiny and regional proliferation debates.',
+    excerptAr: 'ترجمة خاصة لصحيفة وول ستريت جورنال: ترامب يمنح الرياض الضوء الأخضر لبرنامج نووي مدني مدته 30 عاماً يفتح الباب لتخصيب اليورانيوم بشركات أمريكية ويستبعد الصين وروسيا.',
+    excerptEn: 'WSJ Translation & Analysis: President Trump greenlights a 30-year civilian nuclear deal with Saudi Arabia, granting U.S. companies exclusive rights to develop reactors and potential uranium enrichment infrastructure.',
+    author: {
+      nameAr: 'مايكل ر. غوردون وستيفن كالين (وول ستريت جورنال)',
+      nameEn: 'Michael R. Gordon & Stephen Kalin (WSJ)',
+      titleAr: 'صحافة دولية مترجمة - وول ستريت جورنال',
+      titleEn: 'WSJ International Defense & Diplomacy',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-22',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 34200,
+    tags: ['السعودية', 'ترامب', 'الاتفاق_النووي', 'تخصيب_اليورانيوم', 'الشرق_الأوسط', 'وول_ستريت_جورنال', 'Saudi_Arabia', 'Trump', 'Nuclear_Deal', 'Uranium_Enrichment', 'WSJ'],
+    hashtags: ['SaudiNuclearDeal', 'TrumpSaudi', 'MiddleEastNuclear', 'WSJExclusives'],
+    contentAr: `### ترامب يقر اتفاقاً نووياً تاريخياً مع السعودية في مكسب ضخم للمملكة
+
+**ترجمة خاصة عن صحيفة وول ستريت جورنال (بقلم: مايكل ر. غوردون وستيفن كالين)**  
+*تحديث: 21 يوليو 2026 - الساعة 9:36 مساءً بتوقيت شرق أمريكا*
+
+وافق الرئيس الأمريكي **دونالد ترامب** رسمياً على اتفاقية تاريخية مع المملكة العربية السعودية تُزود بموجبها المملكة ببرنامج نووي مدني، وتفتح الباب أمام إمكانية تخصيب اليورانيوم داخل الأراضي السعودية، وفقاً لمسؤولين في الإدارة الأمريكية.
+
+ومن المقدر أن تبلغ قيمة الاتفاقية الجديدة، التي تمتد لـ **30 عاماً**، عشرات المليارات من الدولارات. وتهدف إلى منح الشركات الأمريكية دوراً محورياً في تطوير البنية التحتية النواوية للسعودية، مع إغلاق الباب أمام المنافسين الأجانب مثل روسيا والصين.
+
+---
+
+### أبرز بنود الاتفاقية وآلية "الصندوق الأسود"
+
+1. **إمكانية بناء منشأة تخصيب بترتيب سرّي:**
+   * ينص بند رئيسي في الاتفاق الجديد على أن تقوم الشركات الأمريكية ببناء منشأة لتخصيب اليورانيوم في السعودية إذا خلُصت دراسة أمريكية-سعودية مشتركة تستغرق عامين إلى أن هذه الخطوة مبررة واقتصادية.
+   * تمنح هذه الآلية الولايات المتحدة نفوذاً كبيراً على البرنامج النووي السعودي، وتوفر للواشنطن — وفقاً لمسؤولي إدارة ترامب — وسيلة لمنع الاستخدام غير المدني أو العسكري للبرنامج.
+   * تُشغل المنشأة بترتيب حماية سرّي يُعرف بـ **"الصندوق الأسود" (Black Box)**، يمنع نقل تكنولوجيا التخصيب الحساسة إلى الرياض بشكل مباشر، ويشرف عليه الأمريكيون لضمان عدم تحويل اليورانيوم المخصب أو إعادة معالجة الوقود المستهلك لصنع أسلحة.
+
+2. **قيود السنوات العشر عند الاعتراض:**
+   * إذا اعترضت الولايات المتحدة على المضي قدماً في التخصيب بعد انتهاء الدراسة المشتركة، فلن يُسمح للمملكة بإجراء التخصيب بمفردها أو مع أي شريك أجنبي آخر لمدة **10 سنوات**.
+
+3. **مكتسبات الشركات الأمريكية ومفاعل "وستنجهاوس":**
+   * ستكون شركة **"وستنجهاوس إلكتريك" (Westinghouse Electric)** ومفاعلها من طراز **AP1000** من أكبر الرابحين من الصفقة. ينتج مفاعل AP1000 نحو 1100 ميجاوات من الكهرباء — وهو ما يكفي لتغذية مدينة متوسطة الحجم أو مراكز بيانات ضخمة للذكاء الاصطناعي.
+
+---
+
+### جدول التوقيع والموقف في الكونغرس
+
+* **موعد التوقيع الرسمي:**
+  من المقرر أن يوقع الاتفاقية يوم الأربعاء وزير الطاقة الأمريكي **كريس رايت** ونظيره السعودي وزير الطاقة الأمير **عبد العزيز بن سلمان**. وكان رايت قد بحث خطوط الاتفاق العريضة خلال أول جولة خارجية له بالمنطقة في أبريل 2025.
+
+* **تحديات المراجعة البرلمانية (الكونغرس):**
+  من المؤكد أن يُثير الاتفاق جدلاً واسعاً بين المشرعين الأمريكيين الرافضين لانتشار التكنولوجيا النواوية في منطقة الشرق الأوسط المشتعلة. إلا أن تعطيل الصفقة في الكونغرس سيكون معقداً للغاية، إذ يتطلب قراراً مشتركاً بأغلبية الثلثين لتجاوز فيتو أولي محتمل من الرئيس ترامب.
+
+---
+
+### مواقف المحللين ومخاوف الانتشار النووي
+
+* **رأي روبرت أينهورن (مستشار وزارة الخارجية السابق لشؤون عدم الانتشار):**
+  > "يمكن للاتفاقية أن تساعد في إحياء الصناعة النواوية الأمريكية، وتعزيز الروابط بين واشنطن والرياض، وحرمان روسيا والصين من دور استراتيجي في البرنامج السعودي. لكن ما لم تتضمن قيوداً كافية، بما في ذلك على التخصيب، فإنها قد تزيد من مخاطر الانتشار النووي في الشرق الأوسط وما بعده."
+
+* **الرفض السعودي لـ "المعيار الذهبي" والبروتوكول الإضافي:**
+  يرى النقاد أن تزويد السعودية ببرنامج نووي مع قدرة تخصيب يورانيوم يمثل تراجعاً عن الضوابط التاريخية. فبخلاف دولة الإمارات، رفضت السعودية الالتزام بـ "المعيار الذهبي" (Gold Standard) الذي يتضمن تعهداً بعدم تخصيب اليورانيوم أو إعادة معالجة الوقود. كما رفضت الرياض التوقيع على "البروتوكول الإضافي" للوكالة الدولية للطاقة الذرية الذي يمنح مفتشي الوكالة صلاحيات تفتيش صارمة ومفاجئة.
+
+* **تحذير هنري سوكولسكي (المدير التنفيذي لمجلس تعليم سياسات عدم الانتشار):**
+  > "حيثما تذهب السعودية، ستتبعها الإمارات وتركيا ومصر. إن الفكرة القائلة بأن هذا الأمر سينتهي بنهاية سعيدة هي فكرة وهمية."
+
+---
+
+### الأبعاد السياسية والإقليمية للاتفاق
+
+1. **الفصل عن مسار التطبيع مع إسرائيل:**
+   كانت إدارة بايدن السابقة قد اشترطت التوصل إلى اتفاق تعاون نووي مع الرياض بموافقة السعودية على تطبيع العلاقات مع إسرائيل. ورغم حث ترامب للرياض على الانضمام لـ "اتفاقيات أبراهام"، إلا أنه **لم يشترط إقامة علاقات مع إسرائيل** لمنح المملكة التكنولوجيا النواوية وإطلاق برنامجها المدني.
+
+2. **التزامن مع مواجهة برنامج إيران النووي:**
+   يأتي الاتفاق السعودي في وقت تواصل فيه واشنطن ممارسة ضغوط قصوى وحرباً عسكرية ضد إيران لتقليص برنامجها النووي والتخلي عن يورانيومها المخصب بدرجات عالية. ويرى نقاد أن هذا يضع إدارة ترامب في موقف متناقض بإصرارها على شروط صارمة ضد طهران بينما تمهد لتخصيب سعودي. ورد وزير الطاقة الأمريكي كريس رايت بالقول:
+   > "اطمئنوا، هذه الاتفاقيات تلتزم بأعلى معايير الأمان النووي وعدم الانتشار، مع الاعتماد على أفضل التكنولوجيا والعلماء في العالم. بفضل الرئيس ترامب، فإن النهضة النواوية الأمريكية قد بدأت وسوف تحقق منافع طويلة الأمد للشعبين الأمريكي والسعودي."`,
+    contentEn: `### Trump Approves Landmark Nuclear Deal With Saudi Arabia in Big Win for Kingdom
+
+**By Michael R. Gordon and Stephen Kalin (The Wall Street Journal)**  
+*Updated July 21, 2026 9:36 pm ET*
+
+President Trump has formally approved a landmark agreement with Saudi Arabia that will provide the country with a civilian nuclear program and potentially open the door to uranium enrichment in the kingdom’s territory, according to administration officials.
+
+The new deal, which would last 30 years, is estimated to be worth tens of billions of dollars. It is designed to give American companies a central role in developing Saudi Arabia’s nuclear infrastructure while shutting out other foreign competitors like Russia and China.
+
+---
+
+### Key Provisions & The "Black Box" Enrichment Mechanism
+
+1. **Indigenous Enrichment Option:**
+   * A key provision of the new accord would have American companies build a uranium enrichment facility in Saudi Arabia if a joint 2-year U.S.-Saudi study determines such a step is warranted and commercially viable.
+   * That stipulation gives the U.S. leverage over the Saudi nuclear program and, Trump administration officials argue, a way to prevent it from being misused for military purposes.
+   * The facility would operate under a secretive **"black box"** arrangement managed by U.S. personnel, which precludes the transfer of sensitive enrichment technology to Riyadh and ensures spent reactor fuel cannot be reprocessed into bomb material.
+
+2. **Ten-Year Prohibition Clause:**
+   * If the U.S. objects to proceeding with enrichment following the joint study, the kingdom would not be permitted to carry out enrichment on its own or with another foreign partner for **10 years**.
+
+3. **Commercial Impact & Westinghouse AP1000 Reactors:**
+   * **Westinghouse Electric** and its AP1000 reactor are set to be among the biggest beneficiaries. Each AP1000 reactor generates approximately 1,100 megawatts of electricity—enough to power a midsize city or a major AI data center.
+
+---
+
+### Signing Schedule & Congressional Scrutiny
+
+* **Formal Signing:**
+  The accord is expected to be signed Wednesday by U.S. Energy Secretary Chris Wright—who discussed the deal during his first overseas trip to the region in April 2025—and his Saudi counterpart, Energy Minister Prince Abdulaziz bin Salman.
+
+* **Congressional Approval Hurdles:**
+  The agreement will face intense debate in Congress among lawmakers concerned about nuclear technology proliferation in the Middle East. However, blocking the deal will be an uphill battle, as it requires a joint resolution passed by a veto-proof two-thirds majority in both houses.
+
+---
+
+### Expert Analysis & Proliferation Concerns
+
+* **Robert Einhorn (Former State Department Senior Nonproliferation Advisor):**
+  > "The agreement could help revitalize the U.S. nuclear industry, strengthen U.S.-Saudi ties and deny Russia and China a strategically important role in the Saudi nuclear program. But unless it contains adequate constraints, including on enrichment, it could increase nuclear proliferation risks in the Middle East and beyond."
+
+* **Rejection of Gold Standard & IAEA Additional Protocol:**
+  Critics emphasize that unlike the United Arab Emirates, Saudi Arabia rejected the so-called "gold standard"—a legally binding pledge never to enrich uranium or reprocess spent fuel at home. Furthermore, Riyadh has rejected the IAEA’s "Additional Protocol," which provides more rigorous unannounced inspection regimes.
+
+* **Henry Sokolski (Executive Director, Nonproliferation Policy Education Center):**
+  > "Whither goes Saudi Arabia, so goes the United Arab Emirates, Turkey and Egypt. The idea that this will have a happy ending is delusional."
+
+---
+
+### Geopolitical Realignment & Foreign Policy Context
+
+1. **Uncoupling from Israel Normalization:**
+   While the previous Biden administration conditioned nuclear cooperation on Saudi Arabia normalizing diplomatic ties with Israel, President Trump is not making Israeli normalization a prerequisite for purchasing U.S. nuclear technology and launching its civil power grid.
+
+2. **Contrast with Iran Nuclear Policy:**
+   The deal arrives while the White House is actively engaged in military conflict and sanctions against Iran over its nuclear enrichment program. In response to criticism regarding a potential double standard, Energy Secretary Chris Wright stated:
+   > "Rest assured, these agreements uphold the highest standards of nuclear safety and nonproliferation, while relying on the world’s best nuclear technology and scientists, designed right here in the United States. Thanks to President Trump, the American nuclear renaissance is underway and will deliver long-term benefits to the American and Saudi people."`
+  },
+  {
     id: 'maan-barazy-fallacy-silent-central-banking',
     slug: 'maan-barazy-fallacy-silent-central-banking',
     focusKeyword: 'مغالطة-المصرفية-المركزية-الصامتة',

@@ -65,6 +65,78 @@ interface TacticalDossier {
 
 const TACTICAL_DOSSIERS: TacticalDossier[] = [
   {
+    id: 'hegseth-iran-war-cost-37billion-2026',
+    codeName: 'OPERATION FISCAL AUDIT 37B',
+    titleEn: 'Hegseth Estimates Cost of Iran War at $37.5 Billion in Senate Hearing',
+    titleAr: 'وزير الدفاع الأمريكي هيجسيث يقدر تكلفة حرب إيران بـ 37.5 مليار دولار أمام مجلس الشيوخ',
+    summaryEn: 'Defense Secretary Pete Hegseth estimated the cost of the Iran war at $37.5 billion during a Senate Appropriations Committee hearing—$9 billion higher than the Pentagon’s previous update. The figure covers operational, maintenance, and personnel costs through early September, amid sharp congressional debate over war strategy, Strait of Hormuz blockades, and emergency supplemental funding.',
+    summaryAr: 'قدر وزير الدفاع الأمريكي بيت هيجسيث التكلفة الإجمالية لحرب إيران بـ 37.5 مليار دولار خلال جلسة استماع أمام لجنة الاعتمادات بمجلس الشيوخ، بزيادة قدرها 9 مليارات دولار عن أرقام البنتاغون السابقة. وتغطي التقديرات التكاليف التشغيلية والصيانة والرواتب العسكرية حتى سبتمبر، وسط مساجلات حادة بالكونغرس حول استراتيجية الملاحة في مضيق هرمز ومستقبل الحصار والطلب التمويلي الطارئ.',
+    contentEn: `### Hegseth Estimates Cost of Iran War at $37.5 Billion
+
+During a Senate Appropriations Committee hearing, Defense Secretary Pete Hegseth gave an updated estimate for the costs of the war with Iran at **$37.5 billion**—a figure $9 billion higher than the Pentagon’s previous calculation presented in May.
+
+---
+
+### Key Points from the Senate Testimony
+
+1. **Scope and Timeline of Costs:**
+   * Secretary Hegseth stated the estimate covers operations, maintenance, and military pay from the outbreak of hostilities on **Feb. 28, 2026**, through today, as well as anticipated expenses extending into early September.
+   * This figure surpasses the earlier $29 billion estimate provided in May by Pentagon comptroller nominee Jules Hurst, which did not account for physical damage to U.S. military bases and equipment.
+   * Independent assessments by the Center for Strategic and International Studies (CSIS) put the total war toll near **$40 billion**, citing between $2.2 billion and $5.1 billion in structural damage to U.S. installations across the region.
+
+2. **Mounting Casualties and Intense Conflict:**
+   * The hearing comes amid escalating combat that recently claimed the lives of three U.S. servicemembers: two killed in a drone attack on a Jordanian air base that struck troop housing units, and a third killed in Iraq during a controlled detonation of an Iranian attack drone.
+
+3. **Battle for the Strait of Hormuz & "Project Freedom":**
+   * Committee members pressed Hegseth and Gen. Dan Caine, Chairman of the Joint Chiefs of Staff, regarding the U.S. strategy to clear the Strait of Hormuz—the vital chokepoint through which 20% of global petroleum flows.
+   * Hegseth disclosed that under **"Project Freedom"** (the military operation escorting commercial shipping), the U.S. guided between 400 million and 500 million barrels of oil through the waterway before Iranian missile attacks forced a reimposed blockade of Iranian ports.
+   * In a heated exchange, Senator John Kennedy (R., La.) demanded straight answers on the long-term consequences of halting the blockade. Gen. Caine responded that stopping the blockade would be a political decision, warning that "Iran will continue to be a challenge moving forward."
+
+4. **Emergency Supplemental Funding Request ($87.6 Billion):**
+   * Hegseth utilized the hearing to advocate for an urgent **$67 billion** military funding package (part of a broader $87.6 billion emergency supplemental request to Congress that includes disaster relief and agricultural aid).
+   * Gen. Caine warned that failing to secure the supplemental funding would jeopardize operational readiness, maintenance, and troop pay, while acknowledging that the military continues to formulate all potential options—and noting he could not rule out ground troop deployments in Iran if conditions demand.
+
+5. **Political Friction and War Powers Debates:**
+   * Democratic lawmakers, including Sen. Jon Ossoff (D., Ga.) and Sen. Kirsten Gillibrand (D., N.Y.), sharply challenged Hegseth's previous declarations that "Operation Epic Fury was a historic military victory that decimated Iran’s military," noting the reality of continued combat and contradictory public messaging.
+   * Hegseth acknowledged ongoing constitutional debates regarding congressional authorization, referencing the White House letter sent to Congress on July 10 following the resumption of hostilities on July 7, which restarted the 60-day War Powers resolution clock.`,
+    contentAr: `### هيجسيث يقدم شهادته أمام الشيوخ: 37.5 مليار دولار تكلفة الحرب مع إيران
+
+قدم وزير الدفاع الأمريكي **بيت هيجسيث**، خلال جلسة استماع أمام لجنة الاعتمادات بمجلس الشيوخ، حكماً مالياً ومراجعة شاملة لتكاليف الحرب المستمرة مع إيران، متوقعاً أن تصل الفاتورة العسكرية إلى **37.5 مليار دولار** — وهو رقم يزيد بمقدار 9 مليارات دولار عن آخر تقديرات أعلنها البنتاغون في مايو الماضي.
+
+---
+
+### أبرز محاور ومخرجات جلسة الاستماع في الكونغرس
+
+#### ١. تفكيك الأرقام وتغطية الفاتورة المالية
+* **النطاق الزمني والتغطية:** أوضح هيجسيث أن هذا التقدير يغطي النفقات التشغيلية، وأعمال الصيانة، ورواتب أفراد الجيش الأمريكي منذ اندلاع الحرب في **28 فبراير 2026**، وصولاً إلى التكاليف المتوقعة حتى مطلع سبتمبر المقبل.
+* **الفارق عن التقديرات السابقة:** يتجاوز هذا التقدير المبلغ السابق البالغ 29 مليار دولار الذي قدمه مرشح البنتاغون لمنصب المالي العام جولز هيرست، والذي لم يكن يتضمن الأضرار المادية التي لحقت بالقواعد العسكرية والمعدات الأمريكية.
+* **تقارير مراكز الأبحاث المستقلة:** تشير تقييمات مركز الدراسات الاستراتيجية والدولية (CSIS) إلى أن التكلفة الإجمالية للحرب تقترب من **40 مليار دولار**، منها ما بين 2.2 و5.1 مليار دولار خسائر وأضرار مباشرة لحقت بالبنية التحتية والمباني في القواعد الأمريكية بالمنطقة.
+
+#### ٢. حصيلة الإصابات والتصعيد الميداني
+* تأتي هذه الشهادة بالتزامن مع اشتداد وتيرة القتال ومقتل ثلاثة من عناصر الجيش الأمريكي مؤخراً: اثنان في هجوم بمسيّرة إيرانية استهدف وحدات سكنية مسبقة الصنع في قاعدة جوية بالأردن، وثالث في العراق أثناء عملية تفجير متحكم بها لمسيّرة إيرانية تم إسقاطها.
+
+#### ٣. معركة مضيق هرمز ومشروع "الحرية" (Project Freedom)
+* وجه أعضاء اللجنة أسئلة حادة لهيجسيث ورئيس هيئة الأركان المشتركة اللواء **دان كين** حول استراتيجية البنتاغون لإعادة فتح مضيق هرمز، الشريان المائي الحاسم الذي يمر عبره نحو 20% من إمدادات النفط العالمية.
+* كشف هيجسيث أنه في إطار **"مشروع الحرية"** (الجهد العسكري الأمريكي لتسيير ومرافقة السفن التجارية)، نجحت القوات الأمريكية في حماية وتسيير ما بين 400 إلى 500 مليون برميل نفط عبر المضيق قبل أن يستأنف الجانب الإيراني استهداف السفن بالصواريخ عقب انهيار اتفاق الهدنة، مما دفع واشنطن لإعادة فرض الحصار على الموانئ الإيرانية.
+* وفي سجال محتدم، طالب السيناتور الجمهوري جون كينيدي بإجابات مباشرة حول تبعات إنهاء الحصار الأمريكي، ليرد اللواء كين بأن ذلك "قرار سياسي"، مؤكداً أن "إيران ستظل تشكل تحدياً مستمراً في المستقبل".
+
+#### ٤. طلب التمويل الطارئ (87.6 مليار دولار)
+* استغل هيجسيث الجلسة للمطالبة بتمويل عسكري إضافي وطارئ بقيمة **67 مليار دولار** (ضمن حزمة تمويل إضافية طارئة تطلبها الإدارة الأمريكية من الكونغرس بقيمة إجمالية تبلغ 87.6 مليار دولار وتتضمن مساعدات للكوارث والقطاع الزراعي).
+* حذر اللواء كين من أن عدم إقرار هذا التمويل الطارئ سيؤثر مباشرة على رواتب الجنود، وعمليات الصيانة، والجاهزية المستقبلية، ولم يستبعد فرضية خيارات انتشار قوات برية أمريكية إذا تطلبت الظروف الميدانية ذلك.
+
+#### ٥. المساءلة السياسية وصلاحيات الحرب (War Powers)
+* واجه هيجسيث انتقادات حادة من أعضاء الديمقراطيين، وفي مقدمتهم السيناتور جون أوسوف والسيناتورة كيرستن جيليبراند، بشأن تصريحاته التفاؤلية السابقة في أبريل التي وصف فيها "عملية الغضب الملحمي" (Epic Fury) بأنها "نصر عسكري ساحق دمر قدرات إيران لسنين قادمة"، مشيرين إلى التناقض بين تلك التصريحات وواقع القتال المستمر.
+* أقرت الإدارة الأمريكية بتصاعد الجدل القانوني حول صلاحيات الحرب، مشيرة إلى الرسالة التي وجهها البيت الأبيض للكونغرس في 10 يوليو لإبلاغه باستئناف العمليات العسكرية ضد إيران في 7 يوليو، وهو ما يعيد إطلاق مهلة الـ 60 يوماً المشروطة بموجب قانون صلاحيات الحرب للحصول على موافقة الكونغرس الرسمية.`,
+    threatLevel: 'CRITICAL',
+    regionEn: 'Washington D.C. / USA / Persian Gulf / Iran',
+    regionAr: 'واشنطن / الولايات المتحدة / الخليج العربي / إيران',
+    coordinates: '38.89° N, 77.00° W',
+    dateEn: 'July 21, 2026',
+    dateAr: '٢١ يوليو ٢٠٢٦',
+    sourceEn: 'US Senate Appropriations Hearing & WSJ Analysis',
+    sourceAr: 'جلسة الاعتمادات بمجلس الشيوخ الأمريكي وتحليل وول ستريت جورنال'
+  },
+  {
     id: 'iranian-escalation-jordan-iraq-2026',
     codeName: 'OPERATION DOMINO CONVERGENCE',
     titleEn: 'Unprecedented Iranian Escalation: Jordan Enters the Line of Confrontation',
