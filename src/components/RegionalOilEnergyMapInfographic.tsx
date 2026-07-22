@@ -16,8 +16,10 @@ import {
   ArrowUpRight, 
   ArrowDownRight,
   Database,
-  Briefcase
+  Briefcase,
+  Activity
 } from 'lucide-react';
+import OilCurrencyVolatilityChart from './OilCurrencyVolatilityChart';
 
 interface Props {
   language?: 'ar' | 'en';
@@ -25,7 +27,7 @@ interface Props {
 
 export const RegionalOilEnergyMapInfographic: React.FC<Props> = ({ language = 'ar' }) => {
   const isAr = language === 'ar';
-  const [activeTab, setActiveTab] = useState<'reserves' | 'matrix' | 'dynamics' | 'venezuela'>('reserves');
+  const [activeTab, setActiveTab] = useState<'volatility' | 'reserves' | 'matrix' | 'dynamics' | 'venezuela'>('volatility');
   const [copied, setCopied] = useState(false);
   const [selectedWinner, setSelectedWinner] = useState<number | null>(null);
 
@@ -188,6 +190,18 @@ export const RegionalOilEnergyMapInfographic: React.FC<Props> = ({ language = 'a
       {/* Tabs Navigation */}
       <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-zinc-800/80 pb-3">
         <button
+          onClick={() => setActiveTab('volatility')}
+          className={`px-4 py-2 rounded-lg text-xs md:text-sm font-sans font-bold transition-all flex items-center gap-2 cursor-pointer ${
+            activeTab === 'volatility'
+              ? 'bg-amber-500 text-zinc-950 font-black shadow-lg shadow-amber-500/20'
+              : 'bg-zinc-800/80 text-zinc-300 hover:bg-zinc-700 hover:text-white'
+          }`}
+        >
+          <Activity size={16} className="text-amber-400 animate-pulse" />
+          <span>{isAr ? 'مؤشر تذبذب الأسعار والعملات (D3.js)' : 'Crude & Currency Volatility (D3 Chart)'}</span>
+        </button>
+
+        <button
           onClick={() => setActiveTab('reserves')}
           className={`px-4 py-2 rounded-lg text-xs md:text-sm font-sans font-bold transition-all flex items-center gap-2 cursor-pointer ${
             activeTab === 'reserves'
@@ -196,7 +210,7 @@ export const RegionalOilEnergyMapInfographic: React.FC<Props> = ({ language = 'a
           }`}
         >
           <Database size={16} />
-          <span>{isAr ? 'الاحتياطيات المؤكدة (الترتيب العالمي)' : 'Proven Crude Reserves'}</span>
+          <span>{isAr ? 'الاحتياطيات المؤكدة' : 'Proven Crude Reserves'}</span>
         </button>
 
         <button
@@ -220,7 +234,7 @@ export const RegionalOilEnergyMapInfographic: React.FC<Props> = ({ language = 'a
           }`}
         >
           <Layers size={16} />
-          <span>{isAr ? 'ديناميكيات العرض والطلب (OPEC+ vs US)' : 'Supply & Demand Dynamics'}</span>
+          <span>{isAr ? 'ديناميكيات العرض والطلب' : 'Supply & Demand'}</span>
         </button>
 
         <button
@@ -232,9 +246,16 @@ export const RegionalOilEnergyMapInfographic: React.FC<Props> = ({ language = 'a
           }`}
         >
           <DollarSign size={16} />
-          <span>{isAr ? 'الملف الفنزويلي (13 مليار$ واشنطن)' : 'Venezuela File ($13B FT Report)'}</span>
+          <span>{isAr ? 'الملف الفنزويلي (13B$)' : 'Venezuela File ($13B)'}</span>
         </button>
       </div>
+
+      {/* TAB 0: D3 VOLATILITY CHART */}
+      {activeTab === 'volatility' && (
+        <div className="space-y-4">
+          <OilCurrencyVolatilityChart language={language} />
+        </div>
+      )}
 
       {/* TAB 1: RESERVES CHART */}
       {activeTab === 'reserves' && (

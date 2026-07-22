@@ -34,6 +34,7 @@ import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import WorldOfAI from './components/WorldOfAI';
 import { IraqUSInvestmentDossier } from './components/IraqUSInvestmentDossier';
 import { Sparkline } from './components/Sparkline';
+import { OilCurrencyVolatilityChart } from './components/OilCurrencyVolatilityChart';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
 import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode } from 'lucide-react';
@@ -3399,6 +3400,13 @@ export default function App() {
                     {isAr ? 'أسواق الخام العالمية والاحتياطيات' : 'Global Crude & Energy Geopolitics'}
                   </span>
                 </div>
+
+                {/* D3.js VOLATILITY CHART FEATURE IN DEDICATED VIEW */}
+                {activeCategory === 'oil-energy' && (
+                  <div className="mb-6">
+                    <OilCurrencyVolatilityChart language={language} />
+                  </div>
+                )}
 
                 {/* 4 Cards in a Row masonry style */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
