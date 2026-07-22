@@ -559,6 +559,16 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
               {/* SECTION: AUDIO PLAYER DECK */}
               {activePodcast && (
                 <div className="border border-zinc-800 bg-zinc-900/60 p-5 space-y-4">
+                  {/* HTML5 Audio Tag */}
+                  <audio
+                    ref={audioRef}
+                    src={getAudioSrc(activePodcast)}
+                    onTimeUpdate={handleTimeUpdate}
+                    onLoadedMetadata={handleLoadedMetadata}
+                    onEnded={handleAudioEnded}
+                    preload="metadata"
+                  />
+
                   <div className="flex flex-wrap gap-4 justify-between items-center border-b border-zinc-850 pb-3">
                     <span className="text-[10px] font-mono font-bold text-amber-500 uppercase tracking-widest flex items-center gap-1.5">
                       <Headphones size={12} />
