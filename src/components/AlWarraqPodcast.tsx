@@ -20,7 +20,7 @@ const DEFAULT_PODCASTS: PublishedPodcast[] = [
     articleId: 'joseph-aoun-washington-visit-2026',
     titleAr: 'ديوان تحريات الوراق: كواليس الاتفاق الأمني والمناطق التجريبية في الجنوب',
     titleEn: 'Al-Warraq Podcast: Inside the Security Agreement & South Lebanon Pilot Zones',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    audioUrl: '',
     publishedAt: '2026-07-21T00:00:00.000Z',
     publisherAr: 'هيئة التحرير العسكرية',
     publisherEn: 'Military Desk Editor',
@@ -32,7 +32,7 @@ const DEFAULT_PODCASTS: PublishedPodcast[] = [
     articleId: 'open-war-of-attrition-us-iran-2026',
     titleAr: 'بث الورّاق: سيناريوهات حرب الاستنزاف المفتوحة بين أمريكا وإيران',
     titleEn: 'Al-Warraq Special: Scenarios of the Open War of Attrition between the US and Iran',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+    audioUrl: '',
     publishedAt: '2026-07-20T12:00:00.000Z',
     publisherAr: 'رأي التحرير الاستراتيجي',
     publisherEn: 'Strategic Editorial Counsel',
@@ -52,6 +52,21 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
   // Selected active podcast
   const [activePodcast, setActivePodcast] = useState<PublishedPodcast | null>(null);
 
+  // ElevenLabs & Voice Engine Settings State
+  const [elevenLabsKey, setElevenLabsKey] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('alwarraq_elevenlabs_key') || '';
+    }
+    return '';
+  });
+  const [elevenLabsVoiceId, setElevenLabsVoiceId] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('alwarraq_elevenlabs_voice_id') || '21m00Tcm4TlvDq8ikWAM';
+    }
+    return '21m00Tcm4TlvDq8ikWAM';
+  });
+  const [showVoiceModal, setShowVoiceModal] = useState<boolean>(false);
+
   // Audio player refs and states
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -61,8 +76,8 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
   const [isMuted, setIsMuted] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
 
-  // Audio Mode Selector: 'tts' (Default AI Narrator voice) or 'stream' (Ambient Audio MP3 URL)
-  const [audioMode, setAudioMode] = useState<'tts' | 'stream'>('tts');
+  // Audio Mode Selector: 'tts' (Browser SpeechSynthesis voice), 'stream' (Gemini / ElevenLabs Voice Stream)
+  const [audioMode, setAudioMode] = useState<'tts' | 'stream'>('stream');
 
   // Text-To-Speech (SpeechSynthesis) assistant states and simulated timers
   const [isSpeakingTts, setIsSpeakingTts] = useState(false);
@@ -103,17 +118,20 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
   const getAudioSrc = (podcast: PublishedPodcast | null) => {
     if (!podcast) return '';
     
-    // If it's a SoundHelix URL or blank/undefined, generate a spoken voice statement using Gemini 3.1 TTS model
+    // If blank/undefined or soundhelix URL, generate spoken voice stream via server TTS endpoint
     if (!podcast.audioUrl || podcast.audioUrl.includes('soundhelix.com')) {
       const text = isAr 
         ? `${podcast.titleAr}. ملخص التقرير الإذاعي: ${podcast.transcriptAr || ''}`
         : `${podcast.titleEn}. Audio broadcast summary: ${podcast.transcriptEn || ''}`;
       
-      // We take a clean slice of up to 450 characters (much larger than old Google TTS limit!).
-      const slicedText = text.substring(0, 450).replace(/[#*_`]/g, ''); // strip markdown chars
+      const slicedText = text.substring(0, 450).replace(/[#*_`]/g, '');
       const cleanText = encodeURIComponent(slicedText);
-      const voice = isAr ? 'Zephyr' : 'Kore'; // 'Zephyr' fits Arabic wonderfully, 'Kore' or 'Puck' fits English
-      return `/api/podcast/tts?text=${cleanText}&voice=${voice}`;
+      const voice = isAr ? 'Zephyr' : 'Kore';
+      let url = `/api/podcast/tts?text=${cleanText}&voice=${voice}`;
+      if (elevenLabsKey) {
+        url += `&elevenLabsKey=${encodeURIComponent(elevenLabsKey)}&voiceId=${encodeURIComponent(elevenLabsVoiceId || '21m00Tcm4TlvDq8ikWAM')}`;
+      }
+      return url;
     }
     
     return podcast.audioUrl;
@@ -547,39 +565,124 @@ export const AlWarraqPodcast: React.FC<AlWarraqPodcastProps> = ({ language, allA
                       {isAr ? 'لوحة التحكم الصوتي والتردد الإذاعي' : 'AUDIO MASTER CONTROL PANEL'}
                     </span>
                     
-                    {/* Audio Mode Selectors */}
-                    <div className="flex border border-zinc-800 p-0.5 bg-zinc-950 select-none">
+                    {/* Audio Mode Selectors & ElevenLabs Plugin Config */}
+                    <div className="flex flex-wrap items-center gap-2">
                       <button
                         type="button"
-                        onClick={() => {
-                          if (isPlaying) {
-                            audioRef.current?.pause();
-                            setIsPlaying(false);
-                          }
-                          setAudioMode('tts');
-                        }}
-                        className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
-                          audioMode === 'tts' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
+                        onClick={() => setShowVoiceModal(true)}
+                        className={`px-2.5 py-1 text-[9px] font-mono uppercase font-bold tracking-wider transition-all border flex items-center gap-1 ${
+                          elevenLabsKey ? 'border-amber-600 bg-amber-950/60 text-amber-400' : 'border-zinc-800 bg-zinc-950 text-zinc-400 hover:text-white'
                         }`}
                       >
-                        <Mic size={10} />
-                        <span>{isAr ? '🎙️ مذيع النص الكامل (TTS)' : '🎙️ AI Full Text Voice (TTS)'}</span>
+                        <Sliders size={10} />
+                        <span>{isAr ? 'إعدادات ElevenLabs / الصوت' : 'ElevenLabs Engine'}</span>
                       </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          stopTts();
-                          setAudioMode('stream');
-                        }}
-                        className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
-                          audioMode === 'stream' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
-                        }`}
-                      >
-                        <Radio size={10} />
-                        <span>{isAr ? '📻 البث الصوتي الطبيعي (Natural Stream)' : '📻 Spoken Voice Stream (Natural Voice)'}</span>
-                      </button>
+
+                      <div className="flex border border-zinc-800 p-0.5 bg-zinc-950 select-none">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (isPlaying) {
+                              audioRef.current?.pause();
+                              setIsPlaying(false);
+                            }
+                            setAudioMode('tts');
+                          }}
+                          className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
+                            audioMode === 'tts' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
+                          }`}
+                        >
+                          <Mic size={10} />
+                          <span>{isAr ? '🎙️ مذيع المتصفح' : '🎙️ Browser WebSpeech'}</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            stopTts();
+                            setAudioMode('stream');
+                          }}
+                          className={`px-3 py-1 text-[9px] font-mono uppercase font-black tracking-wider transition-all flex items-center gap-1 ${
+                            audioMode === 'stream' ? 'bg-amber-500 text-zinc-950 font-black' : 'text-zinc-400 hover:text-white bg-transparent'
+                          }`}
+                        >
+                          <Radio size={10} />
+                          <span>{isAr ? (elevenLabsKey ? '⚡ صوت ElevenLabs' : '📻 البث الذكي Gemini') : (elevenLabsKey ? '⚡ ElevenLabs AI Stream' : '📻 Gemini AI Voice')}</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
+
+                  {/* ElevenLabs Configuration Modal */}
+                  {showVoiceModal && (
+                    <div className="bg-zinc-950 border border-amber-600 p-4 space-y-3 my-3">
+                      <div className="flex justify-between items-center border-b border-zinc-800 pb-2">
+                        <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400">
+                          <Sliders size={14} />
+                          <span>{isAr ? 'إعدادات محرك الصوت المتقدم (ElevenLabs Integration)' : 'ElevenLabs Voice Engine Configuration'}</span>
+                        </div>
+                        <button
+                          onClick={() => setShowVoiceModal(false)}
+                          className="text-zinc-400 hover:text-white text-xs font-mono font-bold px-2 py-0.5 border border-zinc-800 bg-zinc-900"
+                        >
+                          ✕
+                        </button>
+                      </div>
+
+                      <p className="text-xs text-zinc-300 leading-relaxed">
+                        {isAr
+                          ? 'يمكنك هنا إدخال مفتاح ElevenLabs API الخاص بك ومعرّف الصوت (Voice ID) للحصول على نبرة صوتية واقعية للغاية للبودكاست. في حال عدم إدخال المفتاح، سينتقل النظام تلقائياً للذكاء الاصطناعي الخاص بـ Gemini أو القارئ الصوتي المحلي.'
+                          : 'Enter your custom ElevenLabs API Key and Voice ID for hyper-realistic podcast voice synthesis. If empty, the studio automatically uses Gemini AI Voice or browser fallback.'}
+                      </p>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="space-y-1">
+                          <label className="text-[10px] font-mono text-zinc-400 uppercase block">
+                            {isAr ? 'مفتاح ElevenLabs API Key' : 'ElevenLabs API Key'}
+                          </label>
+                          <input
+                            type="password"
+                            placeholder="xi-api-key..."
+                            value={elevenLabsKey}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              setElevenLabsKey(val);
+                              localStorage.setItem('alwarraq_elevenlabs_key', val);
+                            }}
+                            className="w-full bg-zinc-900 border border-zinc-700 text-xs p-2 text-white outline-none focus:border-amber-500 font-mono"
+                          />
+                        </div>
+
+                        <div className="space-y-1">
+                          <label className="text-[10px] font-mono text-zinc-400 uppercase block">
+                            {isAr ? 'معرّف الصوت (Voice ID)' : 'Voice ID'}
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="21m00Tcm4TlvDq8ikWAM"
+                            value={elevenLabsVoiceId}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              setElevenLabsVoiceId(val);
+                              localStorage.setItem('alwarraq_elevenlabs_voice_id', val);
+                            }}
+                            className="w-full bg-zinc-900 border border-zinc-700 text-xs p-2 text-white outline-none focus:border-amber-500 font-mono"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-center pt-2">
+                        <span className="text-[10px] font-mono text-amber-500">
+                          {elevenLabsKey ? (isAr ? '✓ تم تفعيل محرك ElevenLabs بنجاح' : '✓ ElevenLabs Active') : (isAr ? '● يعمل محرك Gemini AI تلقائياً' : '● Gemini AI Active')}
+                        </span>
+                        <button
+                          onClick={() => setShowVoiceModal(false)}
+                          className="bg-amber-600 hover:bg-amber-500 text-zinc-950 px-4 py-1.5 text-xs font-bold font-mono uppercase"
+                        >
+                          {isAr ? 'حفظ وإغلاق' : 'Save & Close'}
+                        </button>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
                     
