@@ -2,6 +2,129 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'washington-tehran-escalation-hormuz-2026',
+    slug: 'washington-tehran-escalation-hormuz-2026',
+    focusKeyword: 'تصعيد-واشنطن-طهران-مضيق-هرمز-الموساد',
+    category: 'urgent-release',
+    categories: ['urgent-release', 'war-room', 'middle-east', 'exclusives'],
+    titleAr: 'عاجل: تصعيد ميداني وسياسي بين واشنطن وطهران، وصد خلية أمنية للموساد في المنطقة',
+    titleEn: 'URGENT: Field & Political Escalation Between Washington and Tehran, Mossad Foils Iranian Security Cell',
+    summaryAr: 'تشهد المنطقة تصعيداً خطيراً وتطورات متسارعة على مختلف الجبهات الميدانية والدبلوماسية والأمنية، حيث تتداخل العمليات العسكرية المباشرة في مضيق هرمز مع تهديدات ترامب باستهداف البنية التحتية الإيرانية، وإعلان الموساد عن تفكيك خلية عملياتية إيرانية كانت تخطط لاغتيالات داخل إسرائيل.',
+    summaryEn: 'A dangerous field and political escalation unfolds across the region as direct military ops in the Strait of Hormuz intersect with Trump’s threats to target Iranian infrastructure, and Mossad’s announcement of dismantling an Iranian intelligence cell inside Israel.',
+    excerptAr: 'تغطية عاجلة للحروب الإقليمية والعمليات البحرية والأمنية: تهديدات ترامب بضرب جسور ومحطات طهران، إحباط مخطط اغتيالات للموساد، وارتفاع خام برنت متجاوزاً 93 دولاراً للبرميل.',
+    excerptEn: 'Breaking coverage: Trump threatens Iranian power grids & bridges, Mossad foils assassination cell, and Brent crude surges past $93/bbl.',
+    author: {
+      nameAr: 'غرفة التحليلات العسكرية للورّاق',
+      nameEn: 'Al-Warraq Military Intel Desk',
+      titleAr: 'مكتب المتابعة الميدانية والأمن الجيوسياسي',
+      titleEn: 'Field Intelligence & Geopolitical Security Desk',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-23',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 48900,
+    tags: [
+      'واشنطن', 'طهران', 'ترامب', 'مضيق_هرمز', 'الموساد', 'نفط_برنت', 'الشرق_الأوسط',
+      'Tehran', 'Washington', 'Trump', 'Hormuz', 'Mossad', 'Brent'
+    ],
+    hashtags: ['HormuzCrisis', 'TehranEscalation', 'TrumpIran', 'BreakingNews'],
+    contentAr: `### تصعيد ميداني وسياسي بين واشنطن وطهران، وصد خلية أمنية في المنطقة
+
+تشهد المنطقة تصعيداً خطيراً وتطورات متسارعة على مختلف الجبهات الميدانية والدبلوماسية والأمنية، حيث تتداخل العمليات العسكرية المباشرة في مضيق هرمز مع تهديدات غير مسبوقة بضرب البنية التحتية الإيرانية، إلى جانب إعلان إسرائيلي عن اختراق أمني جديد.
+
+---
+
+### أولاً: تهديدات ترامب باستهداف البنية التحتية الإيرانية
+أطلق الرئيس الأمريكي دونالد ترامب تهديداً مباشراً شديد اللهجة عبر منصة "تروث سوشيال"، مفاده:
+> **"مقابل كل هجوم إيراني يستهدف سفينة في مضيق هرمز باستخدام صاروخ أو طائرة مسيرة أو أي وسيلة أخرى، ستقوم الولايات المتحدة بتدمير جسر أو محطة كهرباء داخل إيران، بما في ذلك المنشآت الواقعة في العاصمة طهران أو بالقرب منها."**
+
+#### أبرز الملامح الميدانية لهذا التصعيد:
+1. **تواصل الغارات الجوية:** واصلت القيادة المركزية الأمريكية (CENTCOM) شن ضربات مكثفة استهدفت مراكز عمليات عسكرية، ومخازن للطائرات المسيرة، وبنية لوجستية في مختلف المحافظات الإيرانية.
+2. **رد طهران:** أكد رئيس البرلمان الإيراني محمد باقر قاليباف أن سلامة البنية التحتية لن تُضمن إذا تعرض أمن إيران للخطر، مشدداً على أن حركة الملاحة في المضيق لن تعود إلى وضعها السابق طالما استمر الوجود العسكري الأمريكي.
+
+---
+
+### ثانياً: الموساد يعلن إحباط خلية استخباراتية إيرانية
+على الصعيد الأمني، أعلن مكتب رئيس الوزراء الإسرائيلي وجهاز الموساد عن إحباط مخطط تدار مفاعيله من قبل وزارة الاستخبارات الإيرانية:
+* **طبيعة العملية:** محاولة تسلل خلية عملياتية إيرانية داخل الأراضي الإسرائيلية.
+* **الهدف:** تنفيذ عمليات اغتيال واستهداف مسؤولين وشخصيات إسرائيلية رفيعة المستوى.
+* **النتيجة:** أعلنت الأجهزة الأمنية تفكيك الخلية واعتراض عناصرها قبل الشروع في تنفيذ المخطط.
+
+---
+
+### ثالثاً: التطورات الإقليمية والميدانية
+تتسع رقعة التأثيرات العسكرية لتشمل عدة أطراف في المنطقة:
+* **اعتراضات جوية في الأردن والبحرين:** أعلن الجيش الأردني اعتراضه لعدد من الصواريخ والمسيرات الإيرانية فوق منطقة العقبة، في حين شهدت مناطق خليجية أخرى مثل البحرين والسعودية إنذارات ودعوات أمنية للمواطنين لأخذ الحيطة.
+* **تصعيد الحوثيين:** لوحت جماعة الحوثي في اليمن بتوسيع نطاق استهداف السفن التجارية والناقلات المتجهة نحو الموانئ الإقليمية والبحر الأحمر.
+
+---
+
+### رابعاً: التداعيات الاقتصادية والمسار الدبلوماسي
+
+| المحور | الوضع الراهن |
+| :--- | :--- |
+| **أسعار النفط** | ارتفعت أسعار خام برنت لتتجاوز **93 دولاراً للبرميل** نتيجة اضطراب الملاحة في مضيق هرمز. |
+| **المسار الدبلوماسي** | تحركات ووساطات إقليمية (عبر باكستان وتركيا ودول الخليج) للتخفيف من حدة التصعيد، وسط شكوك أمريكية صرّح بها وزير الخارجية ماركو روبيو حول مدى جدية إيران في التوصل لإتفاق حالي. |
+
+---
+
+### خلاصة
+دخلت المواجهة مرحلة كسر إرادات مفتوحة؛ حيث يسعى الجانب الأمريكي لفرض معادلة الردع عبر تهديد المرافق الحيوية والبنية التحتية، بينما تؤكد إيران عدم تراجعها عن التحكم بممرات الملاحة في المنطقة دون تفاهمات شاملة.`,
+    contentEn: `### Field and Political Escalation Between Washington and Tehran, Mossad Intercepts Operational Cell
+
+The Middle East is witnessing a dangerous escalation and rapid developments across military, diplomatic, and security fronts. Direct military operations in the Strait of Hormuz overlap with unprecedented U.S. threats to strike Iranian domestic infrastructure, alongside Israeli declarations of a major security interception.
+
+---
+
+### First: Trump’s Direct Threats to Target Iranian Infrastructure
+
+U.S. President Donald Trump issued a stern and direct threat via Truth Social, stating:
+
+> "For every Iranian attack targeting a ship in the Strait of Hormuz using a missile, drone, or any other means, the United States will destroy a bridge or power plant inside Iran, including facilities in or near the capital, Tehran."
+
+#### Key Military Dynamics:
+1. **Sustained Airstrikes:** U.S. Central Command (CENTCOM) continued heavy strikes targeting military operation centers, drone depots, and logistical infrastructure across several Iranian provinces.
+2. **Tehran’s Response:** Speaker of the Iranian Parliament Mohammad Baqer Qalibaf asserted that infrastructure security cannot be guaranteed if Iran’s national security is endangered, stressing that navigation in the Strait will not return to normal as long as U.S. military presence continues.
+
+---
+
+### Second: Mossad Announces Foiling of Iranian Intelligence Cell
+
+On the security front, the Israeli Prime Minister's Office and the Mossad intelligence agency announced the frustration of a plot directed by the Iranian Ministry of Intelligence:
+
+* **Operation Nature:** An infiltration attempt by an Iranian operational cell into Israeli territory.
+* **Objective:** Execution of high-profile assassination operations targeting senior Israeli officials and figures.
+* **Outcome:** Security agencies dismantled the cell and intercepted its members before execution.
+
+---
+
+### Third: Regional & Field Developments
+
+Military impacts are broadening across multiple regional actors:
+* **Air Interceptions in Jordan and Bahrain:** The Jordanian Armed Forces reported intercepting Iranian missiles and drones over Aqaba. Other Gulf regions, including Bahrain and Saudi Arabia, issued security alerts for citizens.
+* **Houthi Escalation:** The Houthi movement in Yemen signaled an expanded targeting scope against commercial vessels and tankers bound for regional ports and the Red Sea.
+
+---
+
+### Fourth: Economic Impact & Diplomatic Track
+
+| Sector | Current Situation |
+| :--- | :--- |
+| **Oil Prices** | Brent crude price surged past **$93 per barrel** due to ongoing maritime disruptions in the Strait of Hormuz. |
+| **Diplomatic Track** | Regional mediation efforts (via Pakistan, Turkey, and Gulf states) aim to de-escalate, amid U.S. skepticism voiced by Secretary of State Marco Rubio regarding Iran’s seriousness. |
+
+---
+
+### Conclusion
+
+The confrontation has entered an open war of wills: Washington seeks to impose deterrence by targeting vital infrastructure, while Tehran insists it will not relinquish control over strategic shipping lanes without comprehensive agreements.`
+  },
+  {
     id: 'trump-approves-saudi-nuclear-deal-2026',
     slug: 'trump-approves-saudi-nuclear-deal-2026',
     focusKeyword: 'الاتفاق-النووي-السعودي-الأمريكي-ترامب',
