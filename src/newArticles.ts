@@ -2,6 +2,167 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'lng-market-upside-risks-middle-east-war-2026',
+    slug: 'lng-market-upside-risks-middle-east-war-2026',
+    focusKeyword: 'الغاز-المسال-قطر-هرمز-أسواق-الطاقة-جي-بي-مورغان-ترجمات',
+    category: 'translations',
+    categories: ['oil-energy', 'translations', 'middle-east', 'arab-markets', 'exclusives'],
+    titleAr: 'تراكم المخاطر التصاعدية في أسواق الغاز المسال مع تجدد الحرب في الشرق الأوسط واضطراب مضيق هرمز',
+    titleEn: 'Upside risks accumulate across LNG market as Middle East war resurges',
+    summaryAr: 'تحليل مترجم يتناول تحذيرات أسواق الغاز المسال العالمية مع تجدد القتال واضطراب حركة الملاحة عبر مضيق هرمز، وتأثير الهجمات على الصادرات القطرية وتضاؤل خيارات امتصاص الصدمات في أوروبا وآسيا.',
+    summaryEn: 'Translated report analyzing how global LNG benchmarks surged 50% as Middle East fighting resumes, choking Persian Gulf LNG flows and exhausting global buffer capacity in Asia and Europe.',
+    excerptAr: 'ارتفعت المؤشرات العالمية للغاز المسال بنحو ٥٠٪ وسط انقطاع الملاحة عبر هرمز لـ١١ يوماً متتالياً، وتراجع قدرة قطر التصديرية وتضاؤل بدائل التغذية العالمية.',
+    excerptEn: 'Global LNG benchmarks surged 50% as Hormuz tanker traffic dropped to zero for 11 straight days, while Qatari output hits long-term constraints.',
+    author: {
+      nameAr: 'مات هويش وكلاوديا كاربنتر (تحرير: جوناثان فوكس)',
+      nameEn: 'Matt Hoisch and Claudia Carpenter (Ed: Jonathan Fox)',
+      titleAr: 'ترجمة ونشر: قسم الترجمات وأبحاث الطاقة - الورّاق',
+      titleEn: 'Translated & Published by Al-Warraq Translations & Energy Research Desk',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 31200,
+    tags: [
+      'النفط_والطاقة', 'الغاز_المسال', 'قطر', 'مضيق_هرمز', 'ترجمات', 'جي_بي_مورغان',
+      'Energy', 'LNG', 'Qatar', 'Hormuz', 'Translations'
+    ],
+    hashtags: ['LNGMarket', 'HormuzCrisis', 'MiddleEastWar', 'QatarEnergy', 'AlWarraqTranslations'],
+    contentAr: `### تراكم المخاطر التصاعدية في أسواق الغاز الطبيعي المسال مع تجدد الحرب في الشرق الأوسط
+
+**بقلم:** مات هويش وكلاوديا كاربنتر  
+**تحرير:** جوناثان فوكس  
+**ترجمة خاصة:** صحيفة الورّاق - قسم الترجمات والدراسات الاستراتيجية
+
+---
+
+### أبرز النقاط الرئيسية
+* **قفزة حادة في الأسعار:** قفزت المؤشرات المرجعية العالمية للغاز الطبيعي المسال بنحو **50%** خلال الأسابيع الأخيرة.
+* **تضاؤل البدائل المتاحة:** ساهمت الإمدادات الإضافية في كبح جماح الارتفاعات سابقاً، لكن الخيارات المتاحة لامتصاص الصدمات القادمة بدأت تتضاءل بسرعة.
+* **عدم يقين في أوروبا وآسيا:** تشكل مستويات الطلب في الأسواق الآسيوية والأوروبية عنصر ريبة محوري أمام المتعاملين.
+
+---
+
+بعد مرور ما يقرب من خمسة أشهر على الغارات الجوية الأمريكية والضربات الإسرائيلية التي أشعلت الحرب مع إيران وشلّت تدفقات الغاز الطبيعي المسال عبر الخليج العربي، بات العالم يمتلك مصدات أقل لامتصاص الصدمات القادمة إذا استمرت اضطرابات زمن الحرب لفترة أطول، وفق ما حذر منه مراقبو الأسواق في الأيام الأخيرة.
+
+تأتي هذه التحذيرات وسط انهيار الهدنة الهشة بين الولايات المتحدة وإيران، مما أدى إلى تجدد القتال وتوقف شحنات الصادرات التي بدأت تتحسن قبل أسابيع قليلة فقط.
+
+وقد تبع ذلك ارتفاع حاد في الأسعار؛ إذ قفزت المؤشرات المرجعية الأوروبية والآسيوية بنحو **50%** خلال الأسابيع القليلة الماضية، ممحيةً الخسائر التي سجلتها خلال موجة الانخفاض السابقة التي هبطت بالأسعار إلى مستويات متدنية مؤخراً.
+
+---
+
+### الوضع في دولة قطر: تراجع الطاقة التصديرية
+تُعد دولة قطر، المنتجة الرئيسية في الشرق الأوسط وثاني أكبر مصدر للغاز المسال في العالم العام الماضي، مصدر القلق الرئيسي في هذا الملف.
+
+وكانت الهجمات التي وقعت في بداية الحرب قد دفعت شركة **"قطر للطاقة"** إلى تعليق إنتاج الغاز الطبيعي المسال والمنتجات المرتبطة به. وبعد أيام، أعلنت القوة القاهرة للمشترين المتأثرين. ولاحقاً، ألحقت الضربات الإيرانية أضراراً طويلة الأجل باثنين من خطوط إنتاج الغاز المسال الـ14 في البلاد، مما أدى إلى تقليص **17%** من طاقتها التصديرية لمدة تتراوح بين ثلاث إلى خمس سنوات، بحسب بيانات قطر للطاقة.
+
+ورغم هذه الخسائر الممتدة، قالت وكالة الطاقة الدولية في أوائل يوليو/تموز إنها تتوقع استقرار إمدادات الغاز المسال العالمية لعام 2026 مقارنة بعام 2025، بشرط استئناف حركة الملاحة البحرية عبر مضيق هرمز في الربع الثالث واستئناف المواقع غير المتضررة في الخليج العربي عملياتها الكاملة بحلول أكتوبر/تشرين الأول. غير أن هذه الافتراضات تبدو غير مؤكدة على نحو متزايد.
+
+> **"تظل حالتنا الأساسية هي تهدئة التصعيد ومواصلة زيادة الإنتاج القطري، ولكن المخاطر التصاعدية تتزايد بوضوح."**  
+> — *محللون في بنك جي بي مورغان (JP Morgan) - 22 يوليو/تموز*
+
+وانخفضت حركة ناقلات الغاز المسال عبر مضيق هرمز إلى **الصفر لـ 11 يوماً متتالياً** حتى 23 يوليو، وفقاً لبيانات "أس أند بي غلوبال كوموديتيز أت سي" (S&P Global Commodities at Sea).
+
+وتراجعت الملاحة عبر هذا الممر المائي الحيوي في الأيام التي تلت تعرض ناقلة غاز مسال لهجوم قبالة سواحل عمان. وكانت وزارة الخارجية القطرية قد ذكرت في 7 يوليو على منصة (X) أن ناقلتها للغاز المسال "الركيات" تعرضت لهجوم بالقرب من هرمز. وبحسب بيانات الملاحة، كانت الناقلة مستأجرة من قبل "قطر للطاقة".
+
+---
+
+### خيارات متضاءلة للمواجهة والتكيف
+لا يقتصر قلق المحللين على أن يؤدي استمرار القتال إلى حرمان العالم من كميات إضافية من الغاز الطبيعي المسال لفترة أطول؛ بل يرون أيضاً تضاؤلاً في الخيارات المتاحة لتعويض تلك الخسائر وتخفيف ارتفاع الأسعار.
+
+وحتى الآن، تمكنت أسواق الغاز المسال العالمية من إدارة أزمة الحرب "بشكل أفضل بكثير" مما كان متوقعة، وفقاً لـ **آن-صوفي كوربو**، الباحثة في مركز سياسة الطاقة العالمية بجامعة كولومبيا.
+
+وقد ساعد التحول من الغاز إلى الفحم بين المستهلكين في تحقيق بعض التوازن، لكن الانفراج الأكثر تأثيراً - كما تجادل كوربو - جاء من منتجي الغاز المسال الآخرين الذين ضخوا كميات أكبر من الوقود شديد التبريد لتعويض خسائر الخليج العربي.
+
+وتتوقع وكالة الطاقة الدولية أن تضيف المشاريع الجديدة إمدادات تعادل نحو **50 مليار متر مكعب** من الغاز الطبيعي هذا العام (أو ما يقرب من **36 million طن متري** من الغاز المسال). كما ترى الوكالة أن المواقع الحالية تساهم بأكثر من 10 مليارات متر مكعب إضافية بفضل زيادة توفر غاز التغذية.
+
+وقد عوضت هذه الكميات الإضافية حتى الآن نحو **70%** من خسائر الغاز الطبيعي المسال الناتجة عن اضطرابات مضيق هرمز، حسبما صرح المدير التنفيذي لوكالة الطاقة الدولية **فاتح بيرول** هذا الأسبوع.
+
+لكن المحللين يتوقعون أن تكون هذه الزيادة قد تركزت في النصف الأول من العام. وبالتالي، ستكون أمام الأسواق سبل أقل للتكيف مع خسائر الإمدادات التي تمتد إلى الأشهر القادمة.
+
+> **"مستقبلاً، نواصل رؤية تباطؤ في نمو الإمدادات البديلة، حيث تصل الكميات الإضافية من المشاريع الحالية إلى حدودها القصوى، وتتراجع المشاريع الجديدة لعام 2026."**  
+> — *فريق أبحاث جي بي مورغان*
+
+---
+
+### الطلب الأوروبي والآسيوي تحت المجهر
+في حين ساعدت استجابات المنتجين في كبح ارتفاع الأسعار حتى الآن، فإن ردود فعل المستهلكين تشكل عنصر عدم يقين رئيسي في المرحلة المقبلة.
+
+* **في آسيا:** هناك خطر تصاعدي يتمثل في ارتفاع درجات الحرارة خلال الأشهر المقبلة، مما يرفع استخدام الغاز لتلبية احتياجات التبريد العالية. ومن ناحية أخرى، يراقب متابعو السوق النقطة التي سيعزف عندها المشترون الحساسون للأسعار — وخاصة في جنوب شرق آسيا — عن شراء الشحنات الأكثر تكلفة إذا تجاوزت الأسعار حاجز الـ 20 دولاراً لكل مليون وحدة حرارية بريطانية.
+* **في أوروبا:** يُعد الطلب الأوروبي قلقاً متوسط المدى. فقد استغنت القارة عن جزء من مخزوناتها من الغاز منذ بداية موسم التخزين، وتواجه فجوة متزايدة؛ إذ اتسع عجز التعبئة في الاتحاد الأوروبي مقارنة بالفترة نفسها من عام 2025 من حوالي **6.4 نقطة مئوية** في أوائل أبريل إلى **11 نقطة مئوية** أواخر يوليو، وفقاً لبيانات "غاس إنفراستركتشر أوروبا".
+
+وشدد فاتح بيرول هذا الأسبوع على أن أي تأخير إضافي في استئناف صادرات الخليج "يهدد بإبقاء الأسواق تحت الضغط لفترة أطول".`,
+    contentEn: `### Upside risks accumulate across LNG market as Middle East war resurges
+
+**By:** Matt Hoisch and Claudia Carpenter  
+**Editor:** Jonathan Fox  
+**Translation & Special Dossier:** Al-Warraq Translations & Energy Research Desk
+
+---
+
+### HIGHLIGHTS
+* **Global benchmarks have surged some 50% in recent weeks**
+* **Added output has helped temper prices, but further options dwindling**
+* **Asian, European demand pose key uncertainties**
+
+---
+
+Nearly five months after joint US and Israeli airstrikes set off the war with Iran that has engulfed the region and choked off copious Persian Gulf LNG flows, the world has fewer buffers to cushion further shocks should the wartime disruptions extend much into the future, market watchers have cautioned in recent days.
+
+The warnings come amid a breakdown in the tenuous US-Iran truce, which has led to renewed fighting and a halt to the trickle of exports that had begun to build just weeks before.
+
+Price rises have followed suit. European and Asian benchmarks have surged some **50%** in the past several weeks, more than erasing losses from a bearish streak last month that briefly brought the indexes to recent lows.
+
+---
+
+### Qatar's Output Bottlenecks
+Qatar, the Middle East's primary producer and the world's second-largest exporter last year, is the key concern.
+
+Attacks early in the war pushed QatarEnergy to halt output of both LNG and associated products. Days later, it declared force majeure to affected buyers. Subsequent Iranian strikes dealt longer-term blows to two of the country's 14 LNG trains, curtailing **17%** of its export capacity for three to five years, according to QatarEnergy.
+
+Even with those extended losses, though, the International Energy Agency said in early July that it expected 2026 global LNG supply to hold roughly steady compared to 2025, assuming maritime traffic through the Strait of Hormuz picks up again in the third quarter and the undamaged Persian Gulf sites resume full operations by October. Those assumptions, however, are looking increasingly shaky.
+
+> **"Our base case is still de-escalation and continued Qatar ramp-up, but risks are rising."**  
+> — *JP Morgan Analysts, July 22 Note*
+
+LNG tanker traffic through the Strait of Hormuz has dwindled to **zero for 11 consecutive days** up to July 23, according to S&P Global Commodities at Sea.
+
+Transits through the vital waterway slumped in the days after an LNG tanker was attacked offshore Oman. Qatar's foreign ministry said July 7 on X that its *Al Rekayyat* LNG tanker was attacked by Iran near Hormuz. According to CAS, the *Al Rekayyat* was chartered by QatarEnergy, which did not respond to a request for comment.
+
+---
+
+### Dwindling Ways to Cope
+Analysts aren't just concerned that further fighting will deprive the world of additional LNG for longer; they also see diminishing options to offset those losses and temper price rises.
+
+So far, global LNG markets have managed the war "much better" than expected, according to **Anne-Sophie Corbeau**, a research scholar with Columbia University's Center on Global Energy Policy.
+
+Gas-to-coal switching among consumers has balanced things a bit, but the most consequential relief, Corbeau argued, has come from other LNG producers, who have generated more of the super-chilled fuel and offset Persian Gulf losses.
+
+New LNG projects are projected to add output equal to some **50 billion cubic meters** of natural gas this year (or about **36 million metric tons** of LNG), the IEA said earlier this month. The energy watchdog also sees existing sites contributing over 10 Bcm more, thanks to greater feedgas availability.
+
+The added volumes have so far offset around **70%** of the LNG losses from the Hormuz disruptions, IEA Executive Director **Fatih Birol** said this week.
+
+But analysts expect the boost has been skewed toward the first half of the year. So, markets are set to have fewer ways to cope with supply losses that extend into the coming months than they've had for those over the past five.
+
+> **"Going forward, we continue to see the rise of alternative supply slowing down, as incremental volumes from existing projects reach their limits and the pipeline of new projects in 2026 is drying out."**  
+> — *JP Morgan Research Team*
+
+---
+
+### Demand in Focus
+While producer-led shifts have helped temper price rises so far, consumer-led responses are a central uncertainty to track looking forward, Corbeau argued.
+
+* **In Asia:** There's an upside risk of warmer weather over the following months, raising gas use to meet higher cooling needs. On the other hand, market watchers are also monitoring for the point when price-sensitive buyers—particularly in Southeast Asia—shun more expensive cargoes if prices exceed $20 per MMBtu.
+* **In Europe:** European demand is more of a medium-term concern. The continent has forgone some of its gas storage build since the start of the stocking season. It faces a growing gap between this year and last, with the EU's filling deficit against the same time in 2025 widening from about **6.4 percentage points** in early April to **11 percentage points** as of late July, according to Gas Infrastructure Europe.
+
+This week, the IEA's Birol stressed that further delays in resuming Gulf exports "risk keeping markets tighter for longer."`
+  },
+  {
     id: 'egypt-energy-hub-tamar-gas-sumed-pipeline-2026',
     slug: 'egypt-energy-hub-tamar-gas-sumed-pipeline-2026',
     focusKeyword: 'مصر-غاز-شرق-المتوسط-سوميد-تمار-قناة-السويس-الطاقة',

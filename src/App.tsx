@@ -38,7 +38,7 @@ import { Sparkline } from './components/Sparkline';
 import { OilCurrencyVolatilityChart } from './components/OilCurrencyVolatilityChart';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode, ShieldAlert } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
@@ -2114,25 +2114,33 @@ export default function App() {
                       </span>
                     </div>
 
-                    {/* Full-width Row for FIFA Feature Article */}
-                    {displayedExclusives.find(s => s.id === 'fifa-polymarket-struggle-2026') && (() => {
-                      const fifaFeature = displayedExclusives.find(s => s.id === 'fifa-polymarket-struggle-2026')!;
+                    {/* Full-width Row for Damascus Feature Article (Special Investigation) */}
+                    {(() => {
+                      const damascusFeature = allArticles.find(s => s.id === 'damascus-extended-shadow-syrian-role-lebanon-2026') || displayedExclusives.find(s => s.id === 'damascus-extended-shadow-syrian-role-lebanon-2026');
+                      if (!damascusFeature) return null;
                       return (
-                        <div className="w-full bg-red-50/40 p-4 md:p-6 border-2 border-red-800 shadow-[6px_6px_0px_0px_rgba(153,27,27,1)] relative transition-all hover:scale-[1.002] mb-6">
-                          <div className="absolute top-0 right-0 bg-red-800 text-white font-sans font-black text-[9px] md:text-[10px] uppercase px-3 py-1 tracking-widest z-10">
-                            {isAr ? 'تحقيق مميز عاجل' : 'FEATURED SPECIAL INVESTIGATION'}
+                        <div 
+                          className="w-full bg-[#1a0808] p-5 md:p-7 border-2 border-red-800 shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] relative transition-all hover:border-amber-400 mb-6 text-white group cursor-pointer overflow-hidden"
+                          onClick={() => setSelectedArticle(damascusFeature)}
+                        >
+                          <div className="absolute top-0 right-0 bg-red-800 text-amber-300 font-mono font-black text-[10px] md:text-[11px] uppercase px-3.5 py-1 tracking-widest z-10 flex items-center gap-1.5 border-b border-l border-red-600">
+                            <Sparkles size={13} className="animate-pulse text-amber-300" />
+                            <span>{isAr ? 'تحقيق سيادي عاجل ومميز: الدور السوري في لبنان' : 'FEATURED SPECIAL DOSSIER: SYRIAN ROLE IN LEBANON'}</span>
                           </div>
-                          <ArticleCard
-                            article={fifaFeature}
-                            layoutMode={layoutMode}
-                            language={language}
-                            variant="lead"
-                            onSelect={(article) => setSelectedArticle(article)}
-                            isSaved={savedArticleIds.includes(fifaFeature.id)}
-                            onToggleSave={handleToggleSaveArticle}
-                            onTagClick={handleTagClick}
-                            hideImage={activeCategory === 'all'}
-                          />
+
+                          <div className="pt-4">
+                            <ArticleCard
+                              article={damascusFeature}
+                              layoutMode={layoutMode}
+                              language={language}
+                              variant="lead"
+                              onSelect={(article) => setSelectedArticle(article)}
+                              isSaved={savedArticleIds.includes(damascusFeature.id)}
+                              onToggleSave={handleToggleSaveArticle}
+                              onTagClick={handleTagClick}
+                              hideImage={false}
+                            />
+                          </div>
                         </div>
                       );
                     })()}
@@ -2140,7 +2148,7 @@ export default function App() {
                     {/* Remaining Exclusives in a 4-Column Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
                       {displayedExclusives
-                        .filter((story) => story.id !== 'fifa-polymarket-struggle-2026')
+                        .filter((story) => story.id !== 'damascus-extended-shadow-syrian-role-lebanon-2026')
                         .map((story) => (
                           <div key={story.id} className="break-inside-avoid flex flex-col justify-between">
                             <ArticleCard
@@ -2217,41 +2225,61 @@ export default function App() {
                   />
                 )}
 
-                {/* HERO SLIDER AND TRENDING SIDEBAR SECTION - REDESIGNED AS VERTICAL NEWS MENU */}
+                {/* HERO SLIDER AND TRENDING SIDEBAR SECTION - REDESIGNED CENTRAL INVESTIGATIVE WIRE */}
                 {activeCategory === 'all' && !searchQuery && sliderSlides.length > 0 && activeSlide && (
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    {/* Left Column (8/12) - Vertical News Menu Layout */}
+                    {/* Left Column (8/12) - Redesigned Sovereign Investigative Wire */}
                     <div className="lg:col-span-8 w-full">
-                      <section className="relative overflow-hidden border-4 border-amber-500/30 p-6 bg-zinc-950 text-white shadow-[10px_10px_0px_0px_rgba(185,28,28,0.9)] rounded-sm" id="home-vertical-news-hero">
-                        {/* Sovereign Grid Background Watermark */}
-                        <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.015)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
-                        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                      <section className="relative overflow-hidden border-4 border-amber-500/40 p-5 md:p-7 bg-zinc-950 text-white shadow-[12px_12px_0px_0px_rgba(185,28,28,0.95)] rounded-none" id="home-vertical-news-hero">
+                        {/* Sovereign Grid Watermark & Radial Glow */}
+                        <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.02)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+                        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-                        {/* Share Button in Top-Right Corner */}
-                        <button
-                          onClick={() => setShowQrOverlay(true)}
-                          className="absolute top-4 right-4 z-20 flex items-center gap-1.5 bg-zinc-900 hover:bg-zinc-800 text-white text-[10px] font-mono font-black py-1.5 px-2.5 border border-zinc-800 uppercase tracking-wider transition-all cursor-pointer select-none active:translate-y-0.5"
-                          title={isAr ? 'مشاركة عبر رمز الاستجابة السريعة' : 'Share via QR Code'}
-                          id="home-hero-share-btn"
-                        >
-                          <Share2 size={12} className="text-amber-400" />
-                          <span className="hidden sm:inline">{isAr ? 'مشاركة' : 'SHARE'}</span>
-                        </button>
-
-                        {/* Section header indicator */}
-                        <div className="flex justify-between items-center pb-3 mb-5 border-b border-zinc-900 pr-12 sm:pr-24">
-                          <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 bg-red-600 rounded-none inline-block animate-pulse"></span>
-                            <span className="font-mono text-xxs tracking-widest font-black uppercase text-amber-400">
-                              {isAr ? 'منصة التحقيقات الكبرى والأخبار السيادية' : 'AL-WARRAQ CENTRAL INVESTIGATIVE WIRE'}
+                        {/* Top Control Bar & Header */}
+                        <div className="relative z-10 border-b-2 border-amber-500/30 pb-4 mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                          <div className="flex items-center gap-3">
+                            <span className="relative flex h-3.5 w-3.5 shrink-0">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-red-600 border border-amber-400"></span>
                             </span>
+
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <span className="bg-amber-400 text-black font-mono text-[9px] font-black px-2 py-0.5 uppercase tracking-widest border border-black">
+                                  {isAr ? 'منصة التحقيقات الكبرى ⚡' : 'INVESTIGATIVE WIRE ⚡'}
+                                </span>
+                                <span className="bg-zinc-900 text-amber-300 font-mono text-[9px] px-2 py-0.5 border border-zinc-800">
+                                  {isAr ? 'الأخبار والملفات السيادية' : 'AL-WARRAQ SOVEREIGN DOSSIERS'}
+                                </span>
+                              </div>
+                              <h2 className="text-lg md:text-xl font-black font-sans tracking-tight text-white mt-1">
+                                {isAr ? 'منصة التحقيقات الكبرى والأخبار السيادية' : 'Al-Warraq Central Investigative Wire & Sovereign Dossiers'}
+                              </h2>
+                            </div>
                           </div>
+
+                          {/* Quick Share Button */}
+                          <button
+                            onClick={() => setShowQrOverlay(true)}
+                            className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-black text-[10px] font-mono font-black py-1.5 px-3 border border-black uppercase tracking-wider transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] active:translate-y-0.5 self-end md:self-auto"
+                            title={isAr ? 'مشاركة عبر رمز الاستجابة السريعة' : 'Share via QR Code'}
+                            id="home-hero-share-btn"
+                          >
+                            <Share2 size={12} className="text-black" />
+                            <span>{isAr ? 'مشاركة المنصة' : 'SHARE WIRE'}</span>
+                          </button>
                         </div>
 
                         {/* Split Menu & Excerpt Layout */}
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10 items-stretch">
                           {/* Column 1: Vertical News Menu Index (5/12) */}
-                          <div className="md:col-span-5 border-l border-zinc-900 pl-3 space-y-2.5 max-h-[480px] overflow-y-auto pr-1 rtl:border-l-0 rtl:pl-0 rtl:border-r rtl:border-zinc-900 rtl:pr-3 rtl:pl-1">
+                          <div className="md:col-span-5 border-l border-zinc-850 pl-3 space-y-2 max-h-[500px] overflow-y-auto pr-1 rtl:border-l-0 rtl:pl-0 rtl:border-r rtl:border-zinc-850 rtl:pr-3 rtl:pl-1">
+                            <div className="text-[10px] font-mono font-black text-amber-400/80 uppercase pb-2 flex items-center justify-between border-b border-zinc-900">
+                              <span>{isAr ? 'فهرس التحقيقات النشطة' : 'ACTIVE DOSSIER INDEX'}</span>
+                              <span className="text-zinc-500">{sliderSlides.length} {isAr ? 'ملفاً' : 'files'}</span>
+                            </div>
+
                             {sliderSlides.map((story, idx) => {
                               const isSelected = currentSlide === idx;
                               const isDossier = !!DOSSIER_DESKTOP_META[story.id];
@@ -2261,24 +2289,24 @@ export default function App() {
                                   onClick={() => setCurrentSlide(idx)}
                                   className={`w-full text-right rtl:text-right ltr:text-left p-3 border transition-all duration-200 cursor-pointer flex gap-2.5 items-start select-none rounded-none ${
                                     isSelected
-                                      ? 'bg-amber-950/40 text-amber-400 font-bold border-amber-500 border-l-4 rtl:border-r-4 rtl:border-l'
-                                      : 'bg-zinc-900/60 hover:bg-zinc-900 text-zinc-300 border-zinc-900 hover:border-zinc-850'
+                                      ? 'bg-amber-950/60 text-amber-300 font-bold border-amber-500 border-l-4 rtl:border-r-4 rtl:border-l-1 shadow-[4px_4px_12px_rgba(245,158,11,0.15)]'
+                                      : 'bg-zinc-900/80 hover:bg-zinc-900 text-zinc-300 border-zinc-850 hover:border-zinc-700'
                                   }`}
                                 >
                                   <span className={`font-mono text-[11px] font-black shrink-0 mt-0.5 ${isSelected ? 'text-amber-400' : 'text-zinc-500'}`}>
-                                    {String(idx + 1).padStart(2, '0')}.
+                                    [{String(idx + 1).padStart(2, '0')}]
                                   </span>
-                                  <div className="flex-1 flex items-center justify-between gap-3 min-w-0">
-                                    <div className="space-y-1.5 min-w-0 flex-1 text-right rtl:text-right ltr:text-left">
-                                      <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-amber-300' : 'text-zinc-100'}`}>
+                                  <div className="flex-1 flex items-center justify-between gap-2.5 min-w-0">
+                                    <div className="space-y-1 min-w-0 flex-1 text-right rtl:text-right ltr:text-left">
+                                      <h4 className={`text-xs md:text-sm font-sans font-black leading-snug line-clamp-2 ${isSelected ? 'text-amber-200' : 'text-zinc-200'}`}>
                                         {isAr ? story.titleAr : story.titleEn}
                                       </h4>
-                                      <div className="flex flex-wrap gap-1.5 items-center">
-                                        <span className="text-[9px] font-mono uppercase bg-zinc-800 text-zinc-400 px-1.5 py-0.2 font-bold">
+                                      <div className="flex flex-wrap gap-1.5 items-center pt-0.5">
+                                        <span className="text-[8.5px] font-mono uppercase bg-zinc-800 text-amber-400/90 px-1.5 py-0.2 font-bold border border-zinc-700">
                                           {isAr ? story.categoryAr || 'عام' : story.category.toUpperCase()}
                                         </span>
                                         {isDossier && (
-                                          <span className="text-[9px] font-mono font-black text-red-400 bg-red-950/60 px-1.5 py-0.2 uppercase border border-red-900/30">
+                                          <span className="text-[8.5px] font-mono font-black text-red-300 bg-red-950/80 px-1.5 py-0.2 uppercase border border-red-800/60">
                                             {isAr ? 'تحقيق سيادي' : 'DOSSIER'}
                                           </span>
                                         )}
@@ -2293,22 +2321,25 @@ export default function App() {
                             })}
                           </div>
 
-                          {/* Column 2: Selected Excerpt & Actions Pane (7/12) */}
-                          <div className="md:col-span-7 flex flex-col justify-between h-full space-y-4">
-                            <div className="space-y-3">
-                              {/* Meta Info */}
-                              <div className="flex justify-between items-center text-xxs font-mono">
-                                <span className="text-zinc-400 font-extrabold uppercase tracking-widest block">
-                                  {activeSlide.category === 'editor-desk'
-                                    ? (isAr ? 'هيئة تحرير صحيفة الوارّاق' : 'Al-Warraq Editorial Board')
-                                    : (isAr ? `تغطية برئاسة: ${activeSlide.author?.nameAr || ''}` : `Filed by: ${activeSlide.author?.nameEn || ''}`)}
+                          {/* Column 2: Selected Dossier Inspector & Actions Console (7/12) */}
+                          <div className="md:col-span-7 flex flex-col justify-between h-full space-y-4 bg-zinc-900/60 border border-zinc-850 p-4 md:p-5 relative">
+                            <div className="space-y-3.5">
+                              {/* Security Header */}
+                              <div className="flex justify-between items-center text-xxs font-mono border-b border-zinc-800 pb-2.5">
+                                <span className="text-amber-400 font-extrabold uppercase tracking-widest flex items-center gap-1.5">
+                                  <ShieldAlert size={12} className="text-red-500 animate-pulse" />
+                                  <span>
+                                    {activeSlide.category === 'editor-desk'
+                                      ? (isAr ? 'هيئة تحرير صحيفة الوارّاق' : 'Al-Warraq Editorial Board')
+                                      : (isAr ? `إعداد: ${activeSlide.author?.nameAr || ''}` : `Filed by: ${activeSlide.author?.nameEn || ''}`)}
+                                  </span>
                                 </span>
-                                <span className="font-mono font-black text-red-400 animate-pulse uppercase">
-                                  ● {isAr ? 'خلاصة مفرج عنها' : 'DECLASSIFIED EXCERPT'}
+                                <span className="font-mono font-black text-red-400 bg-red-950/80 px-2 py-0.5 border border-red-800 uppercase tracking-wider">
+                                  ● {isAr ? 'ملف مفرج عنه' : 'DECLASSIFIED DOSSIER'}
                                 </span>
                               </div>
 
-                              {/* Clickable Card/Doc Preview (instead of image) */}
+                              {/* Interactive Cover / Document Card Banner */}
                               <div 
                                 onClick={() => {
                                   if (DOSSIER_DESKTOP_META[activeSlide.id]) {
@@ -2319,21 +2350,31 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="relative h-[80px] md:h-[100px] bg-zinc-900 border border-zinc-800 cursor-pointer p-4 flex items-center justify-between group shadow-[4px_4px_12px_rgba(0,0,0,0.4)] hover:bg-zinc-850"
+                                className="relative bg-zinc-950 border-2 border-amber-500/30 cursor-pointer p-3.5 flex items-center justify-between group shadow-[6px_6px_0px_0px_rgba(0,0,0,0.6)] hover:border-amber-400 transition-all overflow-hidden"
                               >
-                                <div className="flex items-center gap-3">
-                                  <BookOpen className="text-amber-500 animate-pulse" size={24} />
+                                {activeSlide.imageUrl ? (
+                                  <div className="absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity">
+                                    <img src={activeSlide.imageUrl} alt="dossier cover" className="w-full h-full object-cover" />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent"></div>
+                                  </div>
+                                ) : null}
+
+                                <div className="relative z-10 flex items-center gap-3">
+                                  <div className="p-2 bg-amber-500/20 text-amber-400 border border-amber-500/50">
+                                    <BookOpen className="animate-pulse" size={22} />
+                                  </div>
                                   <div className="text-left rtl:text-right">
-                                    <span className="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider">
-                                      {isAr ? 'وثيقة مفرجة وموثقة' : 'CLASSIFIED DOSSIER LOG'}
+                                    <span className="text-[9px] font-mono text-amber-400 font-extrabold block uppercase tracking-wider">
+                                      {isAr ? 'وثيقة استقصائية موثقة' : 'CLASSIFIED DOSSIER LOG'}
                                     </span>
-                                    <span className="text-xs font-sans font-extrabold text-zinc-200">
-                                      {isAr ? 'التحليلات الاستقصائية للوراق' : 'AlWarraq Strategic Intelligence'}
+                                    <span className="text-xs font-sans font-black text-zinc-100">
+                                      {isAr ? 'استخبارات وتحليلات الورّاق الاستراتيجية' : 'AlWarraq Strategic Intelligence'}
                                     </span>
                                   </div>
                                 </div>
+
                                 {activeSlide.isBreaking && (
-                                  <span className="bg-red-950/80 text-red-300 text-[8px] font-black tracking-widest px-2 py-1 uppercase border border-red-800 font-mono animate-pulse">
+                                  <span className="relative z-10 bg-red-800 text-white text-[8px] font-black tracking-widest px-2 py-1 uppercase border border-red-500 font-mono animate-pulse">
                                     {isAr ? 'عاجل وحصري' : 'EXCLUSIVE WIRE'}
                                   </span>
                                 )}
@@ -2350,19 +2391,19 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="text-base md:text-lg font-black text-white hover:text-amber-400 leading-snug tracking-tight hover:underline cursor-pointer font-sans transition-colors"
+                                className="text-base md:text-lg font-black text-white hover:text-amber-300 leading-snug tracking-tight hover:underline cursor-pointer font-sans transition-colors"
                               >
                                 {isAr ? activeSlide.titleAr : activeSlide.titleEn}
                               </h3>
 
                               {/* Excerpt Summary */}
-                              <p className="text-zinc-300 font-serif text-xs leading-relaxed line-clamp-3 bg-zinc-900/50 border-amber-500/40 p-2.5 border-r-2 rtl:border-r-2 rtl:border-l-0 ltr:border-l-2 ltr:border-r-0 rounded-none shadow-[1px_1px_0px_0px_rgba(0,0,0,0.05)]">
+                              <p className="text-zinc-300 font-serif text-xs md:text-sm leading-relaxed line-clamp-3 bg-zinc-950/70 border-amber-500/50 p-3 border-r-2 rtl:border-r-2 rtl:border-l-0 ltr:border-l-2 ltr:border-r-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]">
                                 {isAr ? activeSlide.summaryAr : activeSlide.summaryEn}
                               </p>
                             </div>
 
                             {/* Actions and Socials Panel */}
-                            <div className="border-t border-zinc-900 pt-3.5 flex flex-wrap items-center justify-between gap-3 select-none">
+                            <div className="border-t border-zinc-800 pt-3.5 flex flex-wrap items-center justify-between gap-3 select-none mt-2">
                               {/* Read Button */}
                               <button 
                                 onClick={() => {
@@ -2374,19 +2415,19 @@ export default function App() {
                                   }
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-black text-[11px] px-4 py-2 uppercase cursor-pointer transition-colors flex items-center gap-1 shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5"
+                                className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-[11px] px-4 py-2 uppercase cursor-pointer transition-all flex items-center gap-1.5 shadow-[3px_3px_0px_0px_rgba(255,255,255,0.15)] active:translate-y-0.5 border border-black"
                               >
                                 <span>{isAr ? 'طالع التحقيق بالكامل ➜' : 'Read Full Investigation ➜'}</span>
                               </button>
 
-                              {/* Social share icons requested by user */}
+                              {/* Social share icons */}
                               <div className="flex items-center gap-1.5 text-[9px] font-mono">
                                 {/* WhatsApp */}
                                 <a
                                   href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تحقيق سيادي مفرج عنه من جريدة الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? activeSlide.titleAr : activeSlide.titleEn}*\n\n👉 ${window.location.origin}/?article=${activeSlide.id}`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="px-2 py-1 bg-emerald-800/80 hover:bg-emerald-800 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer"
+                                  className="px-2 py-1 bg-emerald-800/90 hover:bg-emerald-800 text-white flex items-center gap-1 transition-colors font-bold uppercase cursor-pointer border border-emerald-600"
                                   title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
                                 >
                                   <Send size={9} />
@@ -2402,7 +2443,7 @@ export default function App() {
                                       alert(isAr ? 'تم نسخ الرابط المباشر للمادة!' : 'Direct article link copied!');
                                     });
                                   }}
-                                  className="px-2 py-1 bg-zinc-900 hover:bg-zinc-850 text-white flex items-center gap-1 transition-all font-bold uppercase border border-zinc-800 rounded-none cursor-pointer"
+                                  className="px-2 py-1 bg-zinc-800 hover:bg-zinc-750 text-white flex items-center gap-1 transition-all font-bold uppercase border border-zinc-700 cursor-pointer"
                                 >
                                   <Link size={9} />
                                   <span>{isAr ? 'نسخ الرابط' : 'COPY'}</span>
@@ -2411,7 +2452,7 @@ export default function App() {
                                 {/* PDF Download / Print */}
                                 <button
                                   onClick={() => window.print()}
-                                  className="px-2 py-1 bg-red-950 hover:bg-red-900 text-white flex items-center gap-1 transition-colors font-bold uppercase rounded-none cursor-pointer border border-red-900/50"
+                                  className="px-2 py-1 bg-red-950 hover:bg-red-900 text-white flex items-center gap-1 transition-colors font-bold uppercase cursor-pointer border border-red-800"
                                   title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
                                 >
                                   <Download size={9} />
