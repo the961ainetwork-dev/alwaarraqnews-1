@@ -2,6 +2,207 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'tripoli-energy-geopolitics-deir-ammar-2026',
+    slug: 'tripoli-energy-geopolitics-deir-ammar-2026',
+    focusKeyword: 'طرابلس-دير_عمار-الغاز_المصري-خط_الغاز_العربي-طاقة',
+    category: 'research-reports',
+    categories: ['research-reports', 'oil-energy', 'lebanon', 'economy', 'iraq-us-dossier', 'alwarraq-investigations'],
+    titleAr: 'تقرير خاص من الورّاق: ما وراء الصدأ على الشاطئ الشمالي: جيوسياسية الطاقة ذات الرهانات العالية في مركز طرابلس',
+    titleEn: 'Al-Warraq Special Report: Beyond the Rust on the Northern Coast: High-Stakes Energy Geopolitics at the Tripoli Hub',
+    summaryAr: 'تقرير خاص واستقصائي جديد من الورّاق يحلل أبعاد الأصول المزدوجة لمنشآت النفط في طرابلس ومحطة دير عمار، ومستجدات مذكرة التفاهم اللبنانية المصرية لتوريد 650 مليون متر مكعب من الغاز عبر خط الغاز العربي، مع تقييم تحديات البنية التحتية والعقوبات الجيوسياسية والتأمين المالي.',
+    summaryEn: 'An exclusive Al-Warraq Special Report analyzing the dual energy assets of Tripoli oil installations and the Deir Ammar power plant, evaluating the Lebanese-Egyptian MoU to deliver 650M m³ of natural gas via the Arab Gas Pipeline amidst infrastructure, geopolitical, and financial bottlenecks.',
+    excerptAr: 'تقرير خاص يستكشف التحول الجوهري لمنشآت طرابلس ودير عمار من السولار المكلف إلى الغاز المصري عبر الأنابيب، والتحديات الجيوسياسية المرتبطة بعقوبات أوفاك وإعادة تأهيل الشبكة.',
+    excerptEn: 'Al-Warraq Special Report examining the geopolitical and technical realities of piping Egyptian natural gas to Tripoli Deir Ammar power plant.',
+    author: {
+      nameAr: 'وحدة الأبحاث والدراسات الجيوسياسية - الورّاق',
+      nameEn: 'Al-Warraq Geopolitical Research Unit',
+      titleAr: 'قسم الطاقة والجيواقتصاد الإقليمي',
+      titleEn: 'Energy & Regional Geoeconomics Desk',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1581094751196-f354c1632d55?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-26',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    views: 32400,
+    tags: [
+      'طاقة', 'نفط', 'طرابلس', 'دير_عمار', 'الغاز_المصري', 'لبنان', 'خط_الغاز_العربي', 'البداوي',
+      'Tripoli', 'DeirAmmar', 'LebanonGas', 'EgyptianGas', 'ArabGasPipeline', 'EnergyGeopolitics'
+    ],
+    hashtags: ['TripoliEnergy', 'DeirAmmarGas', 'AlWarraqSpecialReport', 'LebanonEnergy'],
+    contentAr: `### ما وراء الصدأ على الشاطئ الشمالي: جيوسياسية الطاقة ذات الرهانات العالية في مركز طرابلس
+
+على الشاطئ الشمالي لمدينة طرابلس، حيث تتلاطم أمواج البحر الأبيض المتوسط مع بقايا البنية التحتية الصناعية المتهالكة، تقبع شواهد من زمن كان فيه لبنان يمتلك مفاتيح عبور الطاقة في شرق المتوسط. كانت منشآت النفط في طرابلس—الممتدة على مساحات شاسعة تعادل مئات آلاف الأمتار المربعة على طول ساحل البداوي—تشكل المصب الفخور لخط أنابيب شركة النفط العراقية (IPC). إلا أن عقوداً من النزاعات، ونقص الاستثمار، والشلل السياساتي حولت هذا الأصل الاستراتيجي الثمين إلى مجرد مستودع لتخزين الوقود وموقع لاختبار المشتقات النفطية المستوردة.
+
+وبالجوار مباشرَةً تقف محطة دير عمار لتوليد الكهرباء، وهي محطة تعمل بنظام الدورة المركبة أُنشئت لإنارة الشمال اللبناني. غير أن دير عمار ظلت مكبلة بتبعات الانهيار المالي الشامل للدولة، لتكتفي بالعمل بقدرة إنتاجية ضئيلة جداً اعتماداً على الفيول أويل والديزل المكلفين، بينما تعاني مجتمعات الشمال من ساعات تقنين قاسية.
+
+ويُعتبر توقيع مذكرة التفاهم بين وزير الطاقة اللبناني جو صدي ووزير البترول المصري كريم بدوي محاولة استراتيجية لإعادة الروح إلى هذا القطاع الصناعي. وتهدف الاتفاقية إلى توريد الغاز الطبيعي المصري إلى محطة دير عمار عبر شبكة خط الغاز العربي. إن الانتقال بمركز الطاقة في شمال لبنان من المحروقات السائلة إلى الغاز الطبيعي عبر الأنابيب يحمل مزايا اقتصادية جليّة، لكن تحقيق هذا الهدف ينطوي على التعامل مع تعقيدات السياسة الإقليمية، وصيانة البنية التحتية، والتراخيص الجيوسياسية.
+
+---
+
+### أصول الطاقة المزدوجة في طرابلس: التاريخ في مواجهة الواقع
+
+لتقييم مدى واقعية اتفاقية الغاز الجديدة، لا بد من إمعان النظر في الوضع الميداني لمنشآت طرابلس.
+
+كانت منشآت النفط في طرابلس تعمل تاريخياً كمركز متكامل للتكرير والتصدير. أما اليوم، فقد توقفت قدراتها التكريرية، وإن كانت ميزتها الجغرافية لا تزال قائمة. وتتولى مرابطها البحرية وخزاناتها وشبكات توزيعها التعامل مع جزء من واردات البلاد من السولار والفيول. ومع ذلك، فإن التعامل مع أصل استراتيجي يقع على مياه عميقة كمجرد موقع تخزين سلبي يعكس عقوداً من هدر الإمكانات.
+
+وتتصل بهذه المنشأة مباشرةً محطة دير عمار. لقد صُممت المحطة لتعمل بنظام الوقود المزدوج؛ حيث بُنيت توربيناتها لتعمل بكفاءة على الغاز الطبيعي مع الاحتفاظ بالقدرة على تشغيل السولار الخفيف كخيار بديل. إلا أن تشغيل المحطة بالوقود السائل يترتب عليه أثمان اقتصادية وفنية باهظة:
+
+* **تسارع التآكل الميكانيكي** في التوربينات المخصصة للاحتراق النظيف
+* **ارتفاع تكاليف التشغيل والصيانة** بشكل ملحوظ
+* **زيادة كبيرة في تكلفة شراء الوقود** لكل ميغاواط/ساعة منتجة
+* **انبعاثات غازية كثيفة** تتصاعد فوق حوض طرابلس والبداوي المكتظ بالسكان
+
+ونظراً لافتقار مؤسسة كهرباء لبنان للسيولة بالدولار لدى المصرف المركزي لتأمين إمدادات منتظمة من الفيول أويل، كثيراً ما توقفت محطة دير عمار عن العمل بالكامل، مما ترك الاقتصاد المحلي تحت رحمة المولدات الخاصة المكلفة والموثة.
+
+---
+
+### الإطار المصري: ما الذي تعد به الاتفاقية فعلياً؟
+
+تسعى الاتفاقية الموقعة في أواخر ديسمبر 2025 إلى استبدال الوقود السائل بالغاز الطبيعي عبر الأنابيب. وبموجب خطة التوريد المحددة، تهدف مصر إلى نقل نحو 650 مليون متر مكعب من الغاز الطبيعي سنوياً عبر شبكة خط الغاز العربي.
+
+وعند تشغيل محطة دير عمار بالكامل وفق هذا المخطط، يُتوقع أن يولد هذا التدفق من الغاز الطبيعي نحو 450 ميغاواط من الكهرباء الأساسية. وبنسبة للمواطن اللبناني، تترجم هذه القدرة إلى نحو أربع إلى ست ساعات إضافية من تغذية الشبكة العامة يومياً—وهي زيادة ملموسة لاقتصاد يعاني من شح التغذية الكهربائية.
+
+\`\`\`
+مصر (العريش / محطات الغاز المسال)
+             │
+             ▼  [خط الغاز العربي]
+الأردن (العقبة / Rehab)
+             │
+             ▼  [ممر العبور]
+سوريا (مركز حمص)
+             │
+             ▼  [الفرع الشمالي]
+لبنان (دير عمار / طرابلس)
+\`\`\`
+
+وبعيداً عن زيادة القدرة الإنتاجية للشبكة، فإن التحول الاقتصادي يُعد جوهرياً؛ إذ إن توليد الكهرباء في دير عمار عبر الغاز المنقول بالأنابيب يخفض التكلفة الحدية للوقود لكل ميغاواط/ساعة بنسبة تتراوح بين 35% و40% مقارنة بشراء الديزل من الأسواق الفورية. وبالنسبة لحكومة تسعى لكبح الدين السيادي، فإن استبدال واردات الوقود السائل بعقود الغاز يمثل مساراً عملياً لتقليص تكاليف الإنتاج.
+
+---
+
+### عقبات البنية التحتية: اختبار الواقع لخط الأنابيب
+
+على الرغم من أن مذكرة التفاهم تثبت النوايا الدبلوماسية، فإن ضخ الغاز الفعلي يتطلب بنية تحتية صالحة عبر حدود دول متعددة. يجب أن يعبر خط الإمداد مساراً يبلغ طوله 1200 كيلومتر يمر عبر مصر والأردن وسوريا قبل دخوله إلى شمال لبنان.
+
+وتركز العقود المبرمة مع شركات متخصصة—مثل شركة الخدمات الفنية للغاز المصرية (TGS)—على تأهيل الجزء الأخير من الشبكة. ويمتد مقطع الأنابيب من الحدود السورية عند نقطة الدبوسية وصولاً إلى صمامات السحب في دير عمار، وهو ما يتطلب فحوصات هيكلية شاملة:
+
+1. **التنظيف والكشف على السلامة (Pigging):** إزالة الرواسب والرطوبة والتآكل من داخل الأنابيب غير المستخدمة.
+2. **استعادة الصمامات وأجهزة القياس:** استبدال محطات تنظيم الضغط وعدادات نقل الملكية بالقرب من طرابلس.
+3. **عايرة خط العبور السوري:** فحص نقطة التلاقي في حمص لضمان استقرار مستويات الضغط.
+
+ويدرّك الفنيون أن الإصلاحات الميدانية في الجانب اللبناني ستستغرق من ثلاثة إلى أربعة أشهر فور صرف التمويل اللازم. غير أن البنية التحتية ليست سوى جانب واحد من التحدي.
+
+---
+
+### حقل المطبّات الجيوسياسية
+
+واجهت المحاولات السابقة لإتمام مسار العبور الإقليمي عوائق سياسية دولية. ولذا يتوجب على المشروع تجاوز عدة عوامل جيوسياسية قبل أن يتدفق الغاز إلى طرابلس:
+
+1. **إشكالية ترخيص العبور:**
+نظرًا لأن خط الغاز العربي يمر عبر الأراضي السورية للوصول إلى طرابلس، فإن العملية تتضمن التعامل مع مشغلي خطوط الأنابيب الحكوميين في سوريا. ويتطلب ذلك حصول الجهات المشاركة في القاهرة وعمّان وبيروت على تراخيص صريحة من مكتب مراقبة الأصول الأجنبية (OFAC) التابع لوزارة الخزانة الأمريكية لضمان عدم خضوع رسوم العبور أو ترتيبات الاستيفاء العيني للغاز للعقوبات الثانوية.
+
+2. **الملاءة المالية وغطاء المانحين:**
+يتطلب توريد الغاز ضمانات ائتمانية طويلة الأجل؛ حيث تشترط الشركة المصرية القابضة للغازات الطبيعية (إيجاس) ضمانات الدفع. وفي ظل إعادة هيكلة النظام المالي اللبناني، يعتمد تمويل إعادة تأهيل خط الأنابيب وفتح الاعتماد المستندي بشكل كبير على المؤسسات المالية الدولية، بما في ذلك المحادثات مع المؤسسات التابعة للبنك الدولي.
+
+3. **التوازن في سوق الإنتاج المصري:**
+تعتمد قدرة مصر على التصدير على توازن استهلاكها المحلي ومستويات إنتاجها من الغاز. وتعمل القاهرة على الموازنة بين الطلب الداخلي على الكهرباء والتزامات تصدير الغاز المسال من جهة، وبين الحصص المخصصة للتصدير الإقليمي نحو المشرق العربي من جهة أخرى.
+
+---
+
+### المسار الاستراتيجي نحو المستقبل
+
+تظل البنية التحتية للطاقة في طرابلس أصلاً محورياً لتعافي لبنان الاقتصادي. وتوفر محطة دير عمار موقع توليد جاهزاً يمكنه تحويل الغاز المستورد بسرعة إلى كهرباء للمؤسسة العامة، مما يشكل بديلاً لشبكات المولدات الخاصة المكلفة.
+
+تضمّن الاتفاق الموّقع بين جو صدي وكريم بدوي مساراً عملياً نحو تخفيض كلفة الطاقة. إلا أن تحويل هذا الإطار النظري إلى توليد فعلي للكهرباء يستلزم إنهاء إصلاحات خط الأنابيب، وتأمين التمويل الدولي، والحصول على التراخيص الدبلوماسية الإقليمية. وإلى أن يتدفق الغاز عبر صمامات البداوي، ستبقى منشآت الطاقة في طرابلس فرصة تنتظر التنفيذ.`,
+    contentEn: `### Beyond the Rust on the Northern Coast: High-Stakes Energy Geopolitics at the Tripoli Hub
+
+On the northern shore of Tripoli, where Mediterranean waves crash against decaying industrial infrastructure, lie relics from an era when Lebanon held the keys to East Mediterranean energy transit. The Tripoli oil installations—spanning vast areas equivalent to hundreds of thousands of square meters along the Beddawi coast—once served as the proud terminus of the Iraq Petroleum Company (IPC) pipeline. Decades of conflict, underinvestment, and policy paralysis transformed this strategic asset into a mere fuel storage yard and quality-testing facility for imported derivatives.
+
+Right next door stands the Deir Ammar power plant, a combined-cycle facility built to light up Northern Lebanon. However, Deir Ammar remained shackled by the state's total financial collapse, operating at a fraction of its capacity on costly heavy fuel oil and diesel, while northern communities endured severe blackouts.
+
+The signing of a Memorandum of Understanding (MoU) between Lebanese Energy Minister Joe Saddi and Egyptian Petroleum Minister Karim Badawi represents a strategic attempt to revitalize this industrial sector. The agreement aims to supply Egyptian natural gas to the Deir Ammar plant via the Arab Gas Pipeline network. Transitioning Northern Lebanon's energy hub from liquid fuel to piped natural gas offers clear economic advantages, but achieving this goal requires navigating regional political complexities, infrastructure rehabilitation, and geopolitical clearances.
+
+---
+
+### Dual Energy Assets in Tripoli: History vs. Reality
+
+To evaluate the feasibility of the new gas agreement, one must closely inspect the field reality of Tripoli's facilities.
+
+Historically, the Tripoli oil installations operated as an integrated refining and export center. Today, refining capacity is defunct, though geographic advantage endures. Its offshore moorings, storage tanks, and distribution networks handle part of the nation's gasoil and fuel imports. Yet, treating a deep-water asset as a passive storage site reflects decades of squandered potential.
+
+Directly connected to this facility is the Deir Ammar plant. Designed as a dual-fuel plant, its turbines were built to burn natural gas efficiently while retaining the ability to run on light gasoil as a backup. However, operating the plant on liquid fuel incurs heavy economic and technical costs:
+
+* **Accelerated mechanical wear** in turbines designed for clean combustion
+* **Significantly higher operation and maintenance costs**
+* **Steep increases in fuel purchasing cost** per megawatt-hour produced
+* **Heavy emissions** hovering over the densely populated Tripoli-Beddawi basin
+
+Lacking US dollar liquidity at the Central Bank to secure regular fuel shipments, Electricité du Liban (EDL) frequently shut down Deir Ammar entirely, leaving the local economy at the mercy of expensive, polluting private generators.
+
+---
+
+### The Egyptian Framework: What Does the Agreement Actually Promise?
+
+The MoU signed in late December 2025 seeks to replace liquid fuel with piped natural gas. Under the defined supply plan, Egypt aims to transport approximately 650 million cubic meters of natural gas annually via the Arab Gas Pipeline.
+
+When Deir Ammar runs at full capacity under this plan, this gas flow is expected to generate around 450 megawatts of baseload electricity. For Lebanese citizens, this translates into four to six additional hours of daily grid power—a tangible boost for an energy-starved economy.
+
+\`\`\`
+Egypt (Arish / LNG Terminals)
+             │
+             ▼  [Arab Gas Pipeline]
+Jordan (Aqaba / Rehab)
+             │
+             ▼  [Transit Corridor]
+Syria (Homs Hub)
+             │
+             ▼  [Northern Branch]
+Lebanon (Deir Ammar / Tripoli)
+\`\`\`
+
+Beyond capacity gains, the economic shift is profound: electricity generation at Deir Ammar using piped gas reduces the marginal fuel cost per megawatt-hour by 35% to 40% compared to spot diesel purchases. For a government striving to curb sovereign debt, replacing liquid imports with gas contracts offers a practical route to cut production costs.
+
+---
+
+### Infrastructure Hurdles: Real-World Tests for the Pipeline
+
+While the MoU cements diplomatic intent, actual gas flow demands functioning infrastructure across multiple borders. The supply line must traverse a 1,200-kilometer path through Egypt, Jordan, and Syria before entering Northern Lebanon.
+
+Contracts with specialized firms—such as Egypt's Technical Gas Services (TGS)—focus on rehabilitating the final segment. The pipeline stretch extending from the Syrian border at Debboussiyeh to the intake valves at Deir Ammar requires comprehensive structural checks:
+
+1. **Pigging & Integrity Audits:** Clearing sediment, moisture, and corrosion from inside unused pipes.
+2. **Valve & Metering Restoration:** Replacing pressure-regulating stations and custody-transfer meters near Tripoli.
+3. **Syrian Transit Calibration:** Inspecting the Homs junction to ensure stable pressure levels.
+
+Technicians estimate that field repairs on the Lebanese side will take three to four months once funds are disbursed. Yet infrastructure is only one side of the challenge.
+
+---
+
+### The Geopolitical Minefield
+
+Previous attempts to complete the regional transit route encountered international political roadblocks. The project must clear several geopolitical hurdles before gas flows to Tripoli:
+
+1. **Transit Clearance & Sanctions:**
+Because the Arab Gas Pipeline passes through Syrian territory to reach Tripoli, operations involve Syrian state pipeline operators. This requires Cairo, Amman, and Beirut to secure explicit sanctions waivers from the U.S. Treasury's Office of Foreign Assets Control (OFAC) to ensure transit fees or in-kind gas settlements do not trigger secondary sanctions.
+
+2. **Financial Solvency & Donor Coverage:**
+Gas supply requires long-term credit guarantees; the Egyptian Natural Gas Holding Company (EGAS) demands payment assurances. Amid Lebanon's financial restructuring, funding pipeline rehabilitation and opening letters of credit depend heavily on international financial institutions, including ongoing talks with World Bank entities.
+
+3. **Balancing Egyptian Production:**
+Egypt’s export capacity depends on balancing domestic consumption with gas production levels. Cairo must balance internal electricity demand and LNG export commitments against quotas allocated for Eastern Mediterranean regional exports.
+
+---
+
+### Strategic Roadmap Ahead
+
+Tripoli's energy infrastructure remains a pivotal asset for Lebanon's economic recovery. The Deir Ammar plant provides a ready generation site that can swiftly convert imported gas into grid electricity, offering a viable alternative to costly private generator networks.
+
+The agreement between Joe Saddi and Karim Badawi provides a realistic path toward lowering energy costs. However, translating this theoretical framework into actual electricity requires completing pipeline repairs, securing international financing, and obtaining regional diplomatic clearances. Until gas flows through Beddawi's valves, Tripoli's energy hub remains a high-stakes potential waiting to be unlocked.`
+  },
+  {
     id: 'washington-tehran-escalation-hormuz-2026',
     slug: 'washington-tehran-escalation-hormuz-2026',
     focusKeyword: 'تصعيد-واشنطن-طهران-مضيق-هرمز-الموساد',
