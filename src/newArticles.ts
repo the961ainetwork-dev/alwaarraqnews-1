@@ -2,6 +2,165 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'egypt-energy-hub-tamar-gas-sumed-pipeline-2026',
+    slug: 'egypt-energy-hub-tamar-gas-sumed-pipeline-2026',
+    focusKeyword: 'مصر-غاز-شرق-المتوسط-سوميد-تمار-قناة-السويس-الطاقة',
+    category: 'oil-energy',
+    categories: ['oil-energy', 'war-room', 'middle-east', 'lebanon', 'economy', 'urgent-release'],
+    titleAr: 'مصر مركز إقليمي للطاقة: تحولات سوق الغاز وتحديات أمن شحنات النفط عبر "سوميد"',
+    titleEn: 'Egypt as a Regional Energy Hub: Gas Market Shifts and SUMED Pipeline Crude Security Challenges',
+    summaryAr: 'تحليل استراتيجي يحلل تحول مصر إلى مركز جيوسياسي واقتصادي للطاقة بشرق المتوسط عبر صفقة حقل تمار بقيمة 20 مليار دولار، والدور الحيوي لخط أنبوب "سوميد" وقناة السويس أمام تهديدات البحر الأحمر، وتأثيرات ذلك على خط الغاز العربي والملف اللبناني.',
+    summaryEn: 'Strategic analysis examining Egypt’s position as a regional energy hub driven by a $20 billion Tamar gas deal, the critical role of the SUMED pipeline and Suez Canal amid Red Sea threats, and regional ramifications for Lebanon and the Arab Gas Pipeline.',
+    excerptAr: 'صفقة غاز بقيمة ٢٠ مليار دولار وتغير مسارات الناقلات السعودية شمالاً تسلطان الضوء على محورية خط "سوميد" وقناة السويس وموقع لبنان الهيدروكربوني.',
+    excerptEn: 'A $20B Tamar gas agreement and shifting Saudi oil routes highlight the strategic reliance on Egypt’s SUMED pipeline, Suez Canal, and Lebanon’s energy prospects.',
+    author: {
+      nameAr: 'قسم أبحاث النفط والأسواق الإقليمية - الورّاق',
+      nameEn: 'Al-Warraq Energy & Regional Markets Desk',
+      titleAr: 'وحدة الدراسات الاقتصادية والجيوسياسية',
+      titleEn: 'Economic & Geopolitical Research Unit',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 45200,
+    tags: [
+      'مصر', 'النفط_والطاقة', 'سوميد', 'تمار', 'قناة_السويس', 'البحر_الأحمر', 'لبنان', 'خط_الغاز_العربي', 'غرفة_العمليات',
+      'Egypt', 'Energy', 'SUMED', 'Gas', 'RedSea'
+    ],
+    hashtags: ['EgyptEnergyHub', 'SUMEDPipeline', 'RedSeaEnergy', 'AlWarraqEnergy'],
+    contentAr: `### مصر مركز إقليمي للطاقة: تحولات سوق الغاز وتحديات أمن شحنات النفط عبر "سوميد"
+
+تشهد خريطة الطاقة الإقليمية في الشرق الأوسط وشمال إفريقيا إعادة تشكيل متسارعة، تلعب فيها جمهورية مصر العربية دور المحور الجيوسياسي والاقتصادي للترابط الإقليمي. وفي ظل التحولات الجارية، تبرز تطورات متوازية تؤكد الأهمية الاستراتيجية للقاهرة: الأولى تتعلق بتعميق شبكات الغاز الإقليمية من خلال اتفاقيات ضخمة، والثانية تكمن في الدور الحيوي الذي تلعبه البنية التحتية المصرية لنقل النفط في مواجهة التهديدات الأمنية المباشرة في البحر الأحمر.
+
+---
+
+### 1. اتفاقية غاز تاريخية: تعميق الاعتماد المتبادل في شرق المتوسط
+
+أعلنت الأطراف المشاركة في حقل غاز "تمار" الإسرائيلي عن خطط لتوقيع صفقة توريد غاز طبيعي كبرى مع شريك مصري، بقيمة تُقدر بنحو 20 مليار دولار. تأتي هذه الخطوة استكمالاً لصفقات الطاقة الكبرى التي تهدف إلى تلبية احتياجات السوق المحلي المصري من جهة، وإعادة تصدير الفائض على شكل غاز طبيعي مسال (LNG) إلى الأسواق الأوروبية من جهة أخرى.
+
+تُمثل هذه الصفقة محطة محورية في المسار التالي:
+
+* **تعزيز الجدوى الاقتصادية:** يُسهم التدفق المستمر للغاز من حقول شرقي المتوسط نحو محطات الإسالة المصرية في إدكو ودمياط في تحسين تشغيل هذه البنى التحتية الحيوية وزيادة العوائد المالية لمصر كموّرد ومركز ترانزيت رئيسي.
+* **الترابط الإقليمي:** تكرس هذه الاتفاقية الاعتماد المتبادل بين دول شرق المتوسط، حيث تتحول مصر إلى شريان اقتصادي وتصديري لا غنى عنه لتسويق الموارد الهيدروكربونية في المنطقة.
+
+---
+
+### 2. تهديدات الحوثيين تضع خط "سوميد" وقناة السويس تحت أضواء المشهد الدولي
+
+في موازاة تطورات سوق الغاز، ألقت التوترات الأمنية في البحر الأحمر بظلالها على حركة شحن النفط العالمي؛ إذ أدت تهديدات جماعة الحوثي باستهداف ناقلات النفط المتجهة من وإلى الموانئ السعودية إلى تحول مسار عدد من ناقلات النفط الخام المنطلقة من ساحل المملكة على البحر الأحمر شمالاً لتفادي مضيق باب المندب.
+
+هذا التحول المفاجئ سلط الضوء المباشر على خيارات النقل البديلة التي تقدمها مصر:
+
+\`\`\`
+[ ناقلات النفط السعودية / البحر الأحمر ]
+                     │
+         (تعديل المسار شمالاً)
+                     │
+                     ▼
+      ┌──────────────┴──────────────┐
+      ▼                             ▼
+[ قناة السويس ]             [ خط أنبوب "سوميد" ]
+(للشركات والحمولات             (لتفريغ الناقلات العملاقة VLCC
+ الخفيفة والقياسية)             وإعادة شحنها من سيدي كرير)
+\`\`\`
+
+#### الأهمية الاستراتيجية لخط أنبوب "سوميد" (SUMED)
+* **حل مشكلة الغاطس للناقلات العملاقة (VLCC):** لا تستطيع ناقلات النفط العملاقة بكامل حمولتها العبور عبر قناة السويس نظرًا لقيود العمق. وهنا يظهر دور خط "سوميد" الذي يربط محطة العين السخنة على خليج السويس بمحطة سيدي كرير على البحر المتوسط، حيث يتم تفريغ جزء من الشحنة أو كاملها ونقلها ضخاً لتُعاد معالجتها وشحنها في المتوسط.
+* **طاقة استيعابية عالية:** يتمتع الأنبوب بقدرة تشغيلية تصل إلى نحو 2.5 مليون برميل يومياً، مما يجعله صمام أمان رئيسياً لضمان استمرار تدفق الإمدادات النفطية نحو الأسواق العالمية.
+
+---
+
+### 3. التبعات والتحديات التشغيلية
+
+على الرغم من جاهزية قناة السويس وخط أنبوب "سوميد" لاستيعاب جانب كبير من الصادرات التحويلية، فإن التغييرات الاضطرارية في مسارات الشحن تفرض قيوداً وتكاليف عالية على سوق الطاقة العالمي:
+
+* **ارتفاع تكاليف التأمين والشحن:** تغيير مسارات الناقلات يضيف أياماً أطول للرحلات ويمتد بها عبر مسارات بديلة، مما يرفع أجور الشحن وأقساط مخاطر الحرب.
+* **ضغط على الطاقة الاستيعابية:** وصول الأنبوب إلى مستوياته التشغيلية القصوى قد يخلق ازدحاماً لوجستياً في موانئ التفريغ والتجميع.
+
+---
+
+### 4. الدور اللبناني المتوقع: بين أزمة الطاقة والاندماج في شبكة شرق المتوسط
+
+في قلب هذه الديناميكيات الإقليمية المتسارعة، يجد لبنان نفسه في موقع الجغرافيا الحرج؛ حيث يمثل نقطة التقاء بين أزمات الطاقة المحلية والتطلعات للإندماج في الهيكل الإقليمي الجديد الذي تقوده مصر:
+
+* **إعادة إحياء خط الغاز العربي:** يسعى لبنان بشكل حثيث للاستفادة من تحول مصر إلى مركز إقليمي عبر استكمال صيغ التأهيل الفني والأمني لـ "خط الغاز العربي" (الممتد من مصر عبر الأردن وسوريا وصولاً إلى شمال لبنان). وتهدف هذه الخطوة إلى ضخ الغاز الطبيعي لتشغيل محطات الكهرباء المتهالكة وخفض التكلفة الباهظة للاستيراد.
+* **من مستهلك إلى شريك مستقبلي:** رغم عثرات عمليات الاستكشاف الأولية في الحقول البحرية (مثل البلوك 9)، يظل الرهان اللبناني قائماً على مواصلة المسح والتنقيب في حقول أخرى (مثل البلوك 8) لربط اكتشافاته المفترضة مستقبلاً بالبنية التحتية المصرية للإسالة والتصدير، مما يمنح بيروت مقعداً مستقبلياً في تكتل غاز شرق المتوسط.
+* **التعقيدات الجيوسياسية والأمنية:** يظل انخراط لبنان الفعلي مرهوناً بتجاوز العقبات الدبلوماسية (مثل الحصول على استثناءات صريحة من عقوبات "قانون قيصر" المرتبطة بعبور الغاز عبر الأراضي السورية) وحماية استقرار الحدود البحرية والبرية؛ إذ إن أي تصعيد عسكري إقليمي من شأنه تعريض مشاريع الربط الكهربائي والغازي للتوقف، مما يبقي لبنان في دائرة التأثر المباشر بتحولات أمن الشحن في البحر الأحمر وسوق الطاقة الإقليمي.
+
+---
+
+### خلاصة
+تؤكد هذه التطورات المزدوجة — من صفقات الغاز الإقليمية الضخمة إلى الاعتماد على خط "سوميد" وقناة السويس كبدائل آمنة للاضطرابات البحرية — أن مصر تثبت موقعها كركيزة أساسية لا بديل عنها لاستقرار واستدامة أمن الطاقة في المنطقة والعالم.`,
+    contentEn: `### Egypt as a Regional Energy Hub: Gas Market Shifts and SUMED Pipeline Crude Security Challenges
+
+The regional energy landscape across the Middle East and North Africa is undergoing rapid restructuring, with Egypt serving as the geopolitical and economic linchpin of regional interconnectivity. Parallel developments underscore Cairo's strategic indispensability: the deep integration of regional natural gas networks via massive supply deals, and the critical role played by Egyptian oil transport infrastructure in mitigating maritime security threats in the Red Sea.
+
+---
+
+### 1. Historic Gas Deal: Deepening East Med Interdependence
+
+Partners in Israel's offshore Tamar gas field announced plans to sign a major natural gas supply agreement with an Egyptian counterpart valued at approximately $20 billion. This agreement reinforces existing mega-energy deals designed to satisfy Egypt's domestic market demand while re-exporting surplus volume as liquefied natural gas (LNG) to European buyers.
+
+This deal marks a pivotal milestone:
+
+* **Enhancing Economic Viability:** Steady gas flows from East Med fields into Egyptian liquefaction terminals at Idku and Damietta optimize infrastructure usage and generate substantial revenue for Egypt as a primary transit hub.
+* **Regional Interdependence:** The agreement cements cross-border economic ties, establishing Egypt as an essential commercial artery for marketing Eastern Mediterranean hydrocarbons.
+
+---
+
+### 2. Houthi Threats Put SUMED Pipeline and Suez Canal in the Global Spotlight
+
+Concurrently, Red Sea security tensions continue to disrupt global oil shipping. Threats by the Houthi movement against tankers operating near Saudi ports prompted several northbound crude vessels departing Saudi Red Sea terminals to re-route northward, bypassing the Bab al-Mandab Strait.
+
+This sudden tactical shift spotlights Egypt's vital transit alternatives:
+
+\`\`\`
+[ Saudi Oil Tankers / Red Sea ]
+              │
+    (Northbound Re-routing)
+              │
+              ▼
+   ┌──────────┴──────────┐
+   ▼                     ▼
+[ Suez Canal ]   [ SUMED Pipeline ]
+(Standard &      (Offloading VLCCs for
+ Light Cargo)     Sidi Kerir Re-shipment)
+\`\`\`
+
+#### Strategic Significance of the SUMED Pipeline
+* **Resolving Draft Limitations for VLCCs:** Fully laden Very Large Crude Carriers (VLCCs) cannot pass through the Suez Canal due to depth restrictions. The SUMED pipeline, connecting Ain Sokhna on the Gulf of Suez with Sidi Kerir on the Mediterranean, enables partial or complete offloading, pumping crude overland for Mediterranean reload.
+* **High Operational Capacity:** With a throughput capacity of ~2.5 million barrels per day, SUMED serves as a vital safety valve for global energy security.
+
+---
+
+### 3. Operational Repercussions & Challenges
+
+While the Suez Canal and SUMED pipeline possess the infrastructure to absorb re-routed crude, forced shipping shifts impose significant operational costs:
+
+* **Surging Insurance & Freight Rates:** Re-routed vessel paths add transit days and require war risk premiums.
+* **Capacity Bottlenecks:** Peak pipeline utilization risks creating port congestion at offloading and gathering terminals.
+
+---
+
+### 4. Lebanon's Role: Between Energy Crisis and East Med Integration
+
+At the heart of these regional shifts, Lebanon occupies a precarious geographical position at the intersection of domestic energy scarcity and regional integration hopes:
+
+* **Reviving the Arab Gas Pipeline:** Lebanon seeks to capitalize on Egypt's hub status by expediting technical and security overhauls of the Arab Gas Pipeline (stretching from Egypt through Jordan and Syria to northern Lebanon) to power domestic electrical grids.
+* **From Consumer to Future Partner:** Despite early offshore exploration hurdles in Block 9, Lebanon eyes continued survey work in Block 8 to tie future offshore discoveries into Egyptian LNG infrastructure.
+* **Geopolitical & Security Hurdles:** Lebanon's realization of these projects remains tied to Caesar Act sanctions waivers for Syrian transit and maintaining maritime/land stability.
+
+---
+
+### Conclusion
+These twin developments—from $20B regional gas deals to reliance on the SUMED pipeline and Suez Canal—reaffirm Egypt's status as an indispensable pillar of regional and global energy security.`
+  },
+  {
     id: 'ukraine-iran-russia-escalation-scenarios-part1-2026',
     slug: 'ukraine-iran-russia-escalation-scenarios-part1-2026',
     focusKeyword: 'أوكرانيا-إيران-روسيا-بحر-قزوين-المسيرات',
