@@ -2,6 +2,166 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'trump-delays-iran-strikes-interceptor-depletion-2026',
+    slug: 'trump-delays-iran-strikes-interceptor-depletion-2026',
+    focusKeyword: 'ترامب-إيران-مضيق-هرمز-باتريوت-الدبلوماسية',
+    category: 'urgent-release',
+    categories: ['urgent-release', 'war-room', 'iraq-us-dossier', 'middle-east', 'exclusives'],
+    titleAr: 'عاجل: ترامب يرجي هجوماً واسعاً على إيران لإعادة تفعيل الدبلوماسية وسط تحذيرات من استنزاف صواريخ الباتريوت',
+    titleEn: 'BREAKING: Trump Delays Major Military Campaign Against Iran to Allow Diplomacy Amid Defense Interceptor Depletion',
+    summaryAr: 'أرجأ الرئيس الأمريكي دونالد ترامب خطة لشن حملة عسكرية واسعة ضد إيران كانت مقررة الجمعة وتستمر حتى أسبوعين، وذلك لإفساد المجال للجهود الدبلوماسية عبر عمان وقطر لفتح مضيق هرمز، ووسط تحذيرات رسمية من تراجع مخزونات صواريخ الدفاع الجوي الأمريكية (باتريوت وثاد).',
+    summaryEn: 'President Trump has postponed an intensive 10-to-14-day military strike campaign against Iran to allow regional diplomacy via Oman and Qatar to proceed, and amid warnings from Gen. Dan Caine regarding declining U.S. air defense interceptor inventories.',
+    excerptAr: 'تقرير استخباري وعسكري خاص: خلف كواليس تأجيل الضربة الأمريكية لإيران، ومخاوف هيئة الأركان من نفاذ صواريخ الباتريوت، والوساطة الخليجية لإعادة فتح مضيق هرمز قبل لقاء نتنياهو وترامب.',
+    excerptEn: 'Inside the decision to delay U.S. strikes on Iran: Joint Chiefs warnings over Patriot interceptor stocks, Gulf diplomatic pushes, and upcoming Trump-Netanyahu talks.',
+    author: {
+      nameAr: 'غرفة التحليلات العسكرية والسياسية - الورّاق',
+      nameEn: 'Al-Warraq Military & Strategic Intel Desk',
+      titleAr: 'مكتب واشنطن والشؤون الجيو-عسكرية',
+      titleEn: 'Washington & Geopolitical Security Desk',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 54200,
+    tags: [
+      'واشنطن', 'ترامب', 'إيران', 'مضيق_هرمز', 'باتريوت', 'ثاد', 'نتنياهو', 'عمان', 'قطر',
+      'Trump', 'Iran', 'Hormuz', 'Patriot', 'THAAD', 'Netanyahu', 'Centcom'
+    ],
+    hashtags: ['TrumpIran', 'HormuzStrait', 'PatriotInventory', 'BreakingNews'],
+    contentAr: `### ترامب يرجي هجوماً واسعاً على إيران لإعادة تفعيل الدبلوماسية وسط تحذيرات من استنزاف صواريخ الباتريوت
+
+أفاد مسؤولون أمريكيون مطلعون بأن الرئيس الأمريكي دونالد ترامب أرجأ تصعيداً عسكرياً كبيراً كان حاسماً في حملته العسكرية ضد إيران، وذلك في ظل جهود متسارعة لإحياء المسار الدبلوماسي بهدف إعادة فتح **مضيق هرمز**، وإثر سجال داخلي محتدم حول تداعيات تراجع مخزونات الدفاع الجوي والصواريخ الاعتراضية لدى الولايات المتحدة.
+
+---
+
+### أولاً: كواليس قرار تأجيل الضربة العسكرية
+
+كان الجيش الأمريكي على أهبة الاستعداد يوم الجمعة الماضي لإطلاق سلسلة من الضربات المكثفة والشاملة ضد أهداف إيرانية، وهي حملة كان يُتوقع أن تستمر من **10 إلى 14 يوماً** وفقاً للمسؤولين.
+
+غير أن العملية جُمدت مؤقتاً لإفساد المجال أمام الدبلوماسية، بالتوازي مع مناقشات رفيعة المستوى حول التأثير المعقد الذي قد يتركه هجوم موسع على **المخزونات المتناقصة من صواريخ الباتريوت (Patriot) ونظام ثاد (THAAD)** وغيرها من الاعتراضيات الجوية الأمريكية. وأكد المسؤولون أن الوضع ما يزال سيالاً، وأن الرئيس ترامب قد يصدر أوامره بالهجوم في أي لحظة.
+
+---
+
+### ثانياً: تحذيرات القيادة العسكرية وموقف ترامب والسينتكوم
+
+1. **تحذيرات هيئة الأركان المشتركة:**
+قام رئيس هيئة الأركان المشتركة، **الجنرال دان كين (Gen. Dan Caine)**، بإحاطة البيت الأبيض بتراجع إمدادات الصواريخ الاعتراضية للدفاع الجوي. وتشكل هذه النقطة هاجساً لدى كين، حيث يرى أن انخفاض المخزون لا يمنع استئناف العمليات القتالية الكبرى ضد إيران، لكنه يرفع منسوب المخاطر الاستراتيجية للجيش الأمريكي.
+*(ورفض متحدث باسم كين التعليق على النصائح السرية التي يقدمها للرئيس).*
+
+2. **تقديرات القيادة المركزية (CENTCOM):**
+في المقابل، صرح مسؤولون بأن **الأدميرال براد كوبر (Adm. Brad Cooper)**، قائد القيادة المركزية، يعتقد أن الولايات المتحدة قادرة على التعامل مع المنسوب المتبقي من صواريخ الباتريوت، لأن تكثيف الضربات الهجومية الأمريكية—في حال إقرارها من ترامب—سوف يُشل قدرة إيران على إطلاق أعداد كبيرة من الصواريخ. *(ورفض متحدث باسم CENTCOM التعليق على تخطيط كوبر).*
+
+3. **رد الرئيس ترامب:**
+نفى ترامب أن تكون تضاؤل الذخائر مشكلة، وأكد في تصريح صريح لصحيفة *وول ستريت جورنال (The Wall Street Journal)*:
+> **"لدينا ذخائر أكثر بكثير من أي طرف آخر في العالم، وأكثر بكثير مما نحتاجه."**
+
+في الوقت نفسه، شدد البيت الأبيض على أن **الأمن القومي سيتعرض للخطر** إذا نشرت الوسائل الإعلامية أرقاماً حكومية حديثة حول استهلاك صواريخ الباتريوت وثاد، لما تظهره من استخدام كثيف للاعتراضيات منذ اندلاع الحرب.
+
+---
+
+### ثالثاً: تقديرات مراكز الفكر واستنزاف المخزونات
+
+حذر محللون مستقلون من أن الأعداد الهائلة من الصواريخ الاعتراضية التي استخدمت لصد الهجمات الصاروخية الإيرانية قد تضعف قدرة الولايات المتحدة على ردع الخصوم في مناطق أخرى حول العالم، وفي مقدمتهم **الصين**.
+
+* **تقرير مركز الدراسات الاستراتيجية والدولية (CSIS):**
+أشار تقرير صدر في أبريل أعده **مارك كانسيان** (عقيد متقاعد في المارينز) و**كريس بارك** إلى أن:
+> **"تضاؤل مخزونات الذخائر خلق مخاطر قريبة المدى. وإن حرباً ضد منافس كفء ومكافئ مثل الصين ستستهلك الذخائر بمعدلات أسرع بكثير من هذه الحرب."**
+
+وفي مقابلة حديثة، قدر الباحثان أنه تم استهلاك ما لا يقل عن **1,500 صاروخ باتريوت** منذ بدء المواجهة مع إيران، مما يترك المخزون الأمريكي الإجمالي عند **أقل من 1,000 صاروخ باتريوت فقط**.
+
+وأكدت المتحدثة باسم البيت الأبيض **كارولين ليفيت** وسكرتير البنتاغون الصحفي **شون بارنيل** أن الجيش يمتلك كل ما يحتاجه لأي مهمة يختارها ترامب.
+
+---
+
+### رابعاً: التهديد الصاروخي الإيراني والوساطات الإقليمية
+
+1. **ضربة القاعدة الأمريكية في الأردن:**
+تجلت خطورة الصواريخ الإيرانية الأسبوع الماضي عندما أصابت ثلاثة صواريخ باليستية إيرانية قاعدة في الأردن، وسقط أحدها على مجمع سكني للجنود الأمريكيين، مما أدى إلى **مقتل ثلاثة جنود أمريكيين**.
+
+2. **تكتيكات المناورة الإيرانية:**
+أفاد وزير الخارجية **ماركو روبيو** بأن معظم الصواريخ التي استهدفت القاعدة تم إسقاطها، لكن مسؤولين أمريكيين أوضحوا أن القوات الصاروخية الإيرانية باتت تستخدم مسارات طيران ومناورات وسرعات متغيرة، مما يشكل تحدياً لأنظمة الدفاع الجوي ويزيد من معدل استهلاك الاعتراضيات. كما استنزفت دول الخليج قسماً كبيراً من مخزوناتها الصاروخية.
+
+3. **حجم الترسانة الإيرانية:**
+على الرغم من تصريح وزير الدفاع **بيت هيغسيث** سابقاً بأن البرنامج الصاروخي الإيراني "تم تدميره وظيفياً"، إلا أن تقديرات استخباراتية أمريكية وإسرائيلية أكدت أن إيران ما تزال تحتفظ **بآلاف الصواريخ الباليستية** في أنفاق ومستودعات تحت الأرض قادرة على سحبها وإطلاقها.
+
+---
+
+### خامساً: المسار الدبلوماسي وقمة ترامب - نتنياهو المرتقبة
+
+* **التحركات الخليجية:** تقود دول مثل **سلطنة عمان** (التي زار диплоماسيوه طهران يوم الجمعة) و**دولة قطر** جهوداً حثيثة لإحياء التفاوض.
+* **تصريح ترامب حول الخيارات:** صرح ترامب للصحفيين يوم الجمعة:
+> **"هناك مخرج عسكري حيث نواصل بالطريقة نفسها وبجرعة أشد للتقشير على كل ما يملكون.. أو هناك استراتيجية أذكى بعقد صفقة. وهم يريدون عقد صفقة."**
+* **لقاء نتنياهو وترامب في واشنطن:** من المقرر أن يلتقي رئيس الوزراء الإسرائيلي **بنيامين نتنياهو** بالرئيس ترامب يوم الثلاثاء في واشنطن لمناقشة كافة الملفات العالقة وعلى رأسها **الملف الإيراني**. وفي حين توقفت إسرائيل عن ضرب إيران منذ يونيو بناءً على طلب ترامب، يدرس المسؤولون خيار مشاركة إسرائيل في أي جولة غارات جديدة إذا تجددت الحملة الجوية الأمريكية.`,
+    contentEn: `### President Trump Delays Major Military Campaign Against Iran to Allow Diplomacy Amid Defense Interceptor Depletion
+
+President Donald Trump has postponed a major escalation of his military campaign against Iran amid efforts to revive diplomacy aimed at reopening the **Strait of Hormuz** and a high-level debate over declining U.S. air defense interceptor inventories, according to U.S. officials familiar with the matter.
+
+---
+
+### 1. Behind the Decision to Delay Military Action
+
+The U.S. military had been poised on Friday to launch an intensive, multi-phase series of strikes against Iranian targets that could have lasted **10 to 14 days**, officials said.
+
+However, the operation was put on hold so diplomatic channels could proceed, and as top officials debated the strategic impact a major offensive would have on the U.S.’s shrinking stocks of **Patriot and THAAD air defense interceptors**. Officials emphasized that the situation remains fluid and the president could still order an attack at any moment.
+
+---
+
+### 2. Pentagon Leadership Warnings vs. Official Positions
+
+1. **Joint Chiefs of Staff Warning:**
+Gen. Dan Caine, Chairman of the Joint Chiefs of Staff, informed the White House of the declining inventories of air defense interceptors. While Caine believes low inventories would not preclude a resumption of major combat operations against Iran, he warned it adds significant strategic risk. *(A spokesman for Caine declined to discuss his confidential advice to the president).*
+
+2. **Central Command (CENTCOM) Assessment:**
+Conversely, Adm. Brad Cooper, head of U.S. Central Command, believes the U.S. can manage limited Patriot stocks because aggressive U.S. offensive strikes—if approved by Trump—would blunt Iran’s ability to launch large-scale missile volleys. *(CENTCOM declined to comment on Cooper’s operational planning).*
+
+3. **President Trump’s Rebuttal:**
+President Trump dismissed concerns regarding dwindling munitions, stating to *The Wall Street Journal*:
+> **"We have far more munitions than anyone in the world, and far more than we need."**
+
+Simultaneously, the White House cautioned that national security would be compromised if media outlets published updated U.S. government figures on Patriot and THAAD missile expenditures showing the high volume of interceptors used since the conflict began.
+
+---
+
+### 3. Think-Tank Assessments & Stockpile Depletion Estimates
+
+Independent defense analysts warn that the vast number of antimissile interceptors expended to counter Iranian salvos could impair the U.S.'s global deterrence capabilities, particularly regarding **China**.
+
+* **Center for Strategic and International Studies (CSIS) Analysis:**
+An April report authored by Mark Cancian (retired Marine Corps colonel) and Chris Park noted:
+> **"The diminished munitions stockpiles have created a near-term risk. A war against a capable peer competitor like China will consume munitions at greater rates than in this war."**
+
+In a recent interview, Cancian and Park updated their assessment, estimating that **at least 1,500 Patriot interceptors** have been fired since the war with Iran began. This leaves total U.S. Patriot inventory at **fewer than 1,000 interceptors**.
+
+White House Press Secretary Karoline Leavitt and Pentagon Chief Spokesman Sean Parnell maintained that the military possesses all necessary resources for any mission chosen by President Trump.
+
+---
+
+### 4. Ongoing Iranian Missile Threat & Regional Dynamics
+
+1. **Fatal Base Strike in Jordan:**
+The ongoing threat of Iran’s arsenal was underscored last week when three Iranian ballistic missiles struck a U.S. base in Jordan, with one hitting servicemembers' housing, resulting in the **deaths of three American soldiers**.
+
+2. **Evolving Flight Trajectories & Gulf Depletion:**
+Secretary of State Marco Rubio noted that most incoming missiles directed at the base were intercepted. However, officials stated that Iran is utilizing varied flight paths, evasive maneuvers, and changing speeds, challenging defenses and driving up interceptor usage. Gulf allies have similarly drained large portions of their antimissile stockpiles.
+
+3. **Underground Arsenals:**
+While Defense Secretary Pete Hegseth previously claimed Iran’s missile program was "functionally destroyed," U.S. and Israeli intelligence assessments indicate Iran still holds **thousands of operational ballistic missiles** stored in hardened underground facilities.
+
+---
+
+### 5. Diplomatic Tracks & Upcoming Trump-Netanyahu Summit
+
+* **Gulf Mediation:** Oman (whose diplomats visited Tehran on Friday) and Qatar are actively leading efforts to broker a diplomatic opening.
+* **Trump’s Options:** Speaking to reporters, Trump remarked:
+> **"There’s a military exit where we just keep going just the way we are, and we can even make it a heavier dose... Or there’s a smarter strategy that you make a deal. And they want to make a deal."**
+* **Washington Summit:** Israeli Prime Minister Benjamin Netanyahu is scheduled to meet President Trump in Washington on Tuesday to discuss "all pending issues," centered on Iran. While Israel has paused strikes on Iran since June at Trump’s request, officials suggest Israeli participation in fresh joint air operations remains a viable option.`
+  },
+  {
     id: 'tripoli-energy-geopolitics-deir-ammar-2026',
     slug: 'tripoli-energy-geopolitics-deir-ammar-2026',
     focusKeyword: 'طرابلس-دير_عمار-الغاز_المصري-خط_الغاز_العربي-طاقة',
