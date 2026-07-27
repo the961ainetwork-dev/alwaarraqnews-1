@@ -30,6 +30,7 @@ import {
   Legend,
   Cell
 } from 'recharts';
+import ArabGasPipelineD3Map from './ArabGasPipelineD3Map';
 
 interface EgyptGasCrisisReportProps {
   language: 'ar' | 'en';
@@ -37,7 +38,7 @@ interface EgyptGasCrisisReportProps {
 
 export const EgyptGasCrisisReport: React.FC<EgyptGasCrisisReportProps> = ({ language }) => {
   const isAr = language === 'ar';
-  const [activeTab, setActiveTab] = useState<'comparison' | 'flow' | 'obstacles'>('comparison');
+  const [activeTab, setActiveTab] = useState<'pipeline_map' | 'comparison' | 'flow' | 'obstacles'>('pipeline_map');
   const [selectedFlowStep, setSelectedFlowStep] = useState<number>(0);
   const [hoveredObstacle, setHoveredObstacle] = useState<string | null>(null);
 
@@ -180,17 +181,18 @@ export const EgyptGasCrisisReport: React.FC<EgyptGasCrisisReportProps> = ({ lang
         </div>
 
         {/* Custom Tabs */}
-        <div className="flex rounded-lg bg-slate-950 p-1 border border-slate-800 self-start md:self-auto">
-          {(['comparison', 'flow', 'obstacles'] as const).map((tab) => (
+        <div className="flex flex-wrap rounded-lg bg-slate-950 p-1 border border-slate-800 self-start md:self-auto gap-1">
+          {(['pipeline_map', 'comparison', 'flow', 'obstacles'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 ${
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer ${
                 activeTab === tab 
-                  ? 'bg-slate-800 text-white shadow-md' 
+                  ? 'bg-amber-600 text-white shadow-md font-bold' 
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
+              {tab === 'pipeline_map' && (isAr ? 'خريطة الأنبوب D3' : 'D3 Pipeline Map')}
               {tab === 'comparison' && (isAr ? 'مقارنة الإنتاج' : 'Production Comparison')}
               {tab === 'flow' && (isAr ? 'مسار العبور المتبادل' : 'Swap & Transit Flow')}
               {tab === 'obstacles' && (isAr ? 'مقياس المخاطر والعقبات' : 'Risk & Obstacles')}
@@ -202,6 +204,18 @@ export const EgyptGasCrisisReport: React.FC<EgyptGasCrisisReportProps> = ({ lang
       {/* Main Interactive Container */}
       <div className="min-h-[380px]">
         <AnimatePresence mode="wait">
+
+          {/* TAB 0: Interactive D3 Pipeline Map */}
+          {activeTab === 'pipeline_map' && (
+            <motion.div
+              key="pipeline_map"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+            >
+              <ArabGasPipelineD3Map language={language} />
+            </motion.div>
+          )}
           
           {/* TAB 1: Comparison */}
           {activeTab === 'comparison' && (

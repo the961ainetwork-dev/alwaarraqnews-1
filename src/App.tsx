@@ -36,6 +36,7 @@ import WorldOfAI from './components/WorldOfAI';
 import { IraqUSInvestmentDossier } from './components/IraqUSInvestmentDossier';
 import { Sparkline } from './components/Sparkline';
 import { OilCurrencyVolatilityChart } from './components/OilCurrencyVolatilityChart';
+import ArabGasPipelineD3Map from './components/ArabGasPipelineD3Map';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
 import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode, ShieldAlert } from 'lucide-react';
@@ -3463,10 +3464,11 @@ export default function App() {
                   </span>
                 </div>
 
-                {/* D3.js VOLATILITY CHART FEATURE IN DEDICATED VIEW */}
-                {activeCategory === 'oil-energy' && (
-                  <div className="mb-6">
-                    <OilCurrencyVolatilityChart language={language} />
+                {/* D3.js INTERACTIVE PIPELINE MAP & VOLATILITY CHART FEATURE */}
+                {(activeCategory === 'oil-energy' || activeCategory === 'all') && (
+                  <div className="mb-6 space-y-6">
+                    <ArabGasPipelineD3Map language={language} />
+                    {activeCategory === 'oil-energy' && <OilCurrencyVolatilityChart language={language} />}
                   </div>
                 )}
 

@@ -913,7 +913,7 @@ export default function ArticleViewer({
               <div className="mb-6">
                 <HormuzCrisisReport language={activeLang} />
               </div>
-            ) : article.id === 'egypt-lebanon-syria-gas-crisis-2026' ? (
+            ) : article.id === 'egypt-lebanon-syria-gas-crisis-2026' || article.id === 'egypt-energy-hub-tamar-gas-sumed-pipeline-2026' ? (
               <div className="mb-6">
                 <EgyptGasCrisisReport language={activeLang} />
               </div>
