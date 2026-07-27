@@ -2,6 +2,170 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'maan-barazy-impunity-culture-abl-july-2026',
+    slug: 'maan-barazy-impunity-culture-abl-july-2026',
+    focusKeyword: 'عقلية-الإفلات-من-العقاب-جمعية-المصارف-فادي-خلف-معن-برازي',
+    category: 'opinion',
+    categories: ['opinion', 'economy', 'lebanon', 'exclusives'],
+    titleAr: 'عقلية الإفلات من العقاب: تفكيك مغالطات جمعية المصارف في تقرير تموز 2026',
+    titleEn: 'The Culture of Impunity: Deconstructing the Fallacies of the Association of Banks in Lebanon (July 2026 Report)',
+    summaryAr: 'افتتاحية بقلم معن برازي — رئيس التحرير تفكك النقاط السبع التي وردت في تقرير جمعية مصارف لبنان لشهر تموز 2026، وتفند محاولات تحصين كبار المساهمين ومجالس الإدارة وعرقلة إصلاح القطاع المصرفي تحت مسمى "الضمانات القانونية".',
+    summaryEn: 'An editorial by Editor-in-Chief Maan Barazy deconstructing the seven arguments presented in the Association of Banks in Lebanon July 2026 report, exposing attempts to shield bank executives and impede financial sector restructuring under the guise of legal guarantees.',
+    excerptAr: 'مقال رأي وافتتاحية بقلم معن برازي — رئيس التحرير يفكك خطاب جمعية المصارف ومغالطات تقرير تموز 2026 الداعية لحصانة المصارف وعرقلة شطب أرباح الهندسات المالية.',
+    excerptEn: 'Editorial by Editor-in-Chief Maan Barazy deconstructing the Association of Banks in Lebanon July 2026 report and its push for legal immunity.',
+    author: {
+      nameAr: 'معن برازي — رئيس التحرير',
+      nameEn: 'Maan Barazy — Editor-in-Chief',
+      titleAr: 'رئيس التحرير والمدير العام — الورّاق نيوز',
+      titleEn: 'Editor-in-Chief & Publisher — Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 24500,
+    tags: [
+      'معن_برازي', 'رئيس_التحرير', 'جمعية_المصارف', 'فادي_خلف', 'هيكلة_المصارف', 'الانتظام_المالي', 'المودعين',
+      'Maan_Barazy', 'Editor_in_Chief', 'ABL_Lebanon', 'Banking_Reform', 'Clawback', 'Bail_In'
+    ],
+    hashtags: ['MaanBarazy', 'EditorInChief', 'ABL_Report', 'LebanonBankingCrisis', 'BankingReform'],
+    contentAr: `*(افتتاحية بقلم معن برازي — رئيس التحرير)*
+
+### عقلية الإفلات من العقاب: تفكيك مغالطات جمعية المصارف في تقرير تموز 2026
+**بقلم: معن برازي — رئيس التحرير**
+
+لم تكن الافتتاحية التي كتبها الأمين العام لجمعية مصارف لبنان، الدكتور فادي خلف، في تقرير الجمعية لشهر تموز 2026، سوى حلقة جديدة في مسلسل طويل من التعمية وتجميع الذرائع القانونية والمالية لعرقلة أي إصلاح حقيقي للقطاع المصرفي.
+
+تحت عنوان جاذب وظاهره محقّ—«لا إصلاح مصرفياً بلا ضمانات قانونية»—تسعى الجمعية، مرة أخرى، إلى تقديم المصارف كـ «ضحية» لنظام سياسي فاسد ودولة مفلسة، بينما تُضمر السعي للحفاظ على المكاسب غير المشروعة التي حققها كبار المساهمين ومجالس الإدارة طوال عقود، مع تعطيل أدوات المساءلة والمحاسبة تحت مسمى "حق الدفاع" و"الرقابة القضائية".
+
+إن قراءة تفكيكية وبنيوية للنقاط السبع التي وردت في افتتاحية خلف تكشف بوضوح حجم المغالطات والانتقائية والتناقضات التي تبناها خطاب الجمعية.
+
+---
+
+### تفكيك الحجج والرد على النقاط السبع
+
+#### 1. حول المسؤولية عن الأزمة النظامية
+* **ادعاء الجمعية:** الأزمة نظامية تسببت بها الدولة ومصرف لبنان، ولا يجوز تحميل القطاع المصرفي نتائجها أو إعفاء الدولة من مسؤولياتها.
+* **الرد والتحليل:** لا أحد ينفي المسؤولية الكبرى والعميقة للدولة ومصرف لبنان في إهدار المال العام. لكن هذا لا يعفي إدارة المصارف من المسؤولية التجارية والمهنية والشخصية.  
+المصارف لم تكن «مُكرهة» على إيداع أكثر من 70% من أصولها لدى مصرف لبنان للاستفادة من الفوائد الفاحشة والهندسات المالية السخية؛ بل فعلت ذلك عن معرفة وطمع بالربح السريع وتوزيع أرباح خيالية على المساهمين بالدولار.  
+إن مبدأ الحيطة والمخاطرة ($Prudential\\ Risk$) هو أصل مهنة المصارف. إعفاء الإدارات من تحمل أخطائها بحجة أن الأزمة نظامية يضرب مفهوم الحوكمة والمخاطرة من أساسه، ويُحوّل المصارف إلى مجرد "دكاكين مالية" تأخذ الأرباح وتتنصل من الخسائر.
+
+#### 2. تضارب المصالح وتعدد الأدوار
+* **ادعاء الجمعية:** الدولة ومصرف لبنان خصم وحكم في الأزمة، ويجب منع تضارب المصالح عبر توازن مؤسسي مع القضاء.
+* **الرد والتحليل:** شُبهة تضارب المصالح حقيقية، لكن الجمعية تستخدمها عذراً لشلّ يد هيئة حلّ الأزمات أو المصرف المركزي عن التدخل السريع.  
+التشريعات المالية الدولية والمعايير الموصى بها من قبل لجنة باسل للرقابة المصرفية ($Basel\\ Committee$) تجعل من الهيئات التنظيمية والمصرف المركزي السلطة الحصرية للتدخل المباشر وإعادة الهيكلة.  
+مطالبة الجمعية بتعقيد المساطر بانتظار "توازن مؤسسي" كامل هي كلمة حق يُراد بها باطل، وهدفها الحقيقي تسويف المهل وتعطيل إجراءات الهيكلة الشاملة.
+
+#### 3. حق الاعتراض والرقابة القضائية
+* **ادعاء الجمعية:** حصر حق الاعتراض بأسباب ضيقة أو مهل قصيرة يمسّ بالعدالة ويهدم الثقة.
+* **الرد والتحليل:** في العمل المصرفي، الساعات والأيام تُحدث الفارق بين إنقاذ المؤسسة وتصفيتها. إتاحة مسارات تقاضٍ طويلة أمام المحاكم العادية يُمكّن كبار أصحاب المصارف والمساهمين من عرقلة القرارات التنفيذية وممارسة شتى أنواع الدعاوى التعطيلية ($Dilatory\\ Litigation$).  
+الممارسات الفضلى دولياً (كما في أوروبا وهيئة الهيكلة المالية) تقضي بتقييد أثر الدعاوى القضائية بحيث لا تُوقف تنفيذ قرارات إعادة الهيكلة والتصفية، واقتصار حق التقاضي—إن وُجد—على التعويض المالي اللاحق إن ثبت الشطط، لمنع الانهيار المتسلسل وسحب الأصول ($Asset\\ Stripping$).
+
+\`\`\`
+المسار التقليدي للمصارف (التعطيل):
+  دعاوى قضائية طويلة ──► تجمد الأصول ──► تآكل حقوق المودعين
+
+المسار الإصلاحي الدولي (الحاسم):
+  معالجة إدارية سريعة ──► حماية الودائع ──► تقاضٍ لاحق للتعويض فقط
+\`\`\`
+
+#### 4. صلاحيات المدير المؤقت أو المصفي
+* **ادعاء الجمعية:** لا يجوز إعطاء المصفي أو المدير المؤقت صلاحيات ذات طابع قضائي كإبطال الأعمال القانونية.
+* **الرد والتحليل:** إن إبطال التصرفات الصورية والتحويلات المشبوهة التي جرت قبل الانهيار (أو ما يُعرف بالـ $Clawback\\ Provisions$) هو صلب عمل هيئات التصفية وإعادة الهيكلة في العالم أجمع.  
+تجريد المدير المؤقت أو المصفي من هذه الصلاحية يُحصّن الأموال والتهريبات التي قام بها متنفّذون وكبار المساهمين والمحظوظين عشية أزمة 2019 وفي أعقابها.  
+تحويل هذه الصلاحية حصراً للقضاء اللبناني البطيء والمستهدف سياسياً يعني عملياً العفو العام عن كل التصرفات الاحتيالية التي سبقت الانهيار وتلته.
+
+#### 5. الإنقاذ الداخلي ($Bail\\text{-}in$) وحقوق المودعين
+* **ادعاء الجمعية:** الـ $Bail\\text{-}in$ يجب أن يُدار بحذر شديد حتى لا يتحول إلى أداة ظالمة لإعادة توزيع الخسائر.
+* **الرد والتحليل:** هذه المغالطة الأكبر في بيان الجمعية؛ حيث يتم دمج حقوق المساهمين والدائنين مع حقوق المودعين في سلة واحدة تحت شعار "حماية الملكية".  
+التراتبية المالية الصارمة ($Seniority\\ Structure$) تنص بوضوح على أن الخسائر تمتصها بالكامل أولاً حقوق المساهمين (رأس المال والأرباح المحتجزة)، ثم الديون الثانوية، ثم أصحاب الشكوك الكبيرة والفوائد الخيالية، وآخر من يُمَس هم المودعون الصغار والمتوسطون.  
+خلط الجمعية المريب بين حقوق المساهمين والمالكين وبين ودائع الناس يهدف إلى استخدام المودعين كـ "دروع بشرية" لمنع إعدام رؤوس أموال المصارف المفلسة وتغيير إداراتها.
+
+#### 6. استمرارية المصارف القادرة
+* **ادعاء الجمعية:** يجب تحصين المصارف السليمة ومنع فتح مراكز قانونية سابقة حتى لا تتأثر ثقة المستثمرين والمودعين.
+* **الرد والتحليل:** لا يمكن الحديث عن "مصارف سليمة وقادرة" في ظل قطاع متوقف عن الدفع ومحتجز لودائع الناس منذ سنوات.  
+ما تصفه الجمعية بـ "فتح المراكز القانونية" هو في الحقيقة إجراء عملية تدقيق جنائي ورقابي دقيق لتحديد المصارف المليئة بالفعل وتلك المفلسة التي تعيش على الاقتطاع غير الرسمي ($Haircut$) من ودائع الناس.  
+الثقة لا تعود بالتغاضي عن التجاوزات السابقة بل بإغلاق المصارف غير القابلة للاستمرار وتنقية القطاع بشفافية قاسية.
+
+#### 7. الانسجام التشريعي وحماية المصارف من الدعاوى
+* **ادعاء الجمعية:** ضرورة الانسجام بين قانون إصلاح المصارف وقانون الانتظام المالي لمنع فتح باب للدعاوى والتعويضات التي تغرق المحاكم.
+* **الرد والتحليل:** تطلب الجمعية عملياً حصانة شاملة من المحاسبة! إن الحديث عن "إغلاق باب الدعاوى" هو دعوة صريحة لإبطال أي ملاحقة قضائية ضد إدارات المصارف التي خالفت القوانين والنسب الرقابية، أو أساءت الأمانة، أو هرّبت أموالاً للخارج.  
+التناغم المطلوب يجب أن يكون لحماية الحقوق وتطبيق العدالة، وليس لتأمين غطاء قانوني يحمي المتسببين في أكبر عملية قرصنة مالية شهدها التاريخ الحديث.
+
+---
+
+### خلاصة القول
+إن الافتتاحية الصادرة عن جمعية مصارف لبنان تمثل استمراراً لسياسة "إنكار الواقع" ($Denial$). إن ما تنادي به الجمعية تحت مسمى "الضمانات القانونية" ليس سوى منظومة تحصين قانونية تهدف إلى:
+1. نفي المساءلة عن إدارات المصارف وكبار المساهمين.
+2. حماية الأموال المهربة والتصرفات الاحتيالية من الملاحقة والاسترداد.
+3. تحميل الدولة (أي المكلف اللبناني والمودع نفسه) الكلفة الكاملة لتغطية الثقبة المالية.
+
+إن الإصلاح المصرفي الحقيقي والشفاف يتطلب معالجة الجرح لا تغطيته:
+* إعدام رؤوس أموال المصارف غير المليئة.
+* شطب أرباح الهندسات المالية الفاحشة وتطبيق الـ $Clawback$.
+* استرداد الأرباح غير المشروعة وتطبيق الهيكلة الصارمة.
+
+بدون هذه الخطوات الشجاعة، سيبقى كل كلام عن "إعادة الثقة" مجرد إنشاء صحفي وتضليل للرأي العام، وسيبقى القطاع المصرفي عاجزاً عن العودة إلى دوره الطبيعي في تمويل الاقتصاد وتنميته.`,
+    contentEn: `*(Editorial by Maan Barazy — Editor-in-Chief)*
+
+### The Culture of Impunity: Deconstructing the Fallacies of the Association of Banks in Lebanon (July 2026 Report)
+**By Maan Barazy — Editor-in-Chief**
+
+The editorial authored by Dr. Fadi Khalf, Secretary General of the Association of Banks in Lebanon (ABL), in the association's July 2026 report is nothing more than the latest episode in a long-standing strategy of obfuscation. It compiles legal and financial pretexts aimed at obstructing any genuine reform of the Lebanese banking sector.
+
+Under the appealing headline—"No Banking Reform Without Legal Guarantees"—ABL once again attempts to frame commercial banks as "victims" of a corrupt political regime and a bankrupt state. Beneath this rhetoric lies a persistent effort to safeguard the illicit gains accumulated by major shareholders and board members over decades, while sabotaging accountability under the guise of "due process" and "judicial review."
+
+A structural deconstruction of the seven arguments presented in Khalf's editorial reveals the magnitude of selective logic and contradictions embedded in ABL's narrative:
+
+---
+
+### Deconstructing the 7 Arguments & Detailed Rebuttal
+
+#### 1. On Systemic Responsibility
+* **ABL Claim:** The crisis is systemic, caused exclusively by the state and the Central Bank (BDL). Commercial banks cannot bear the consequences, nor should the state be absolved.
+* **Analysis & Rebuttal:** No one denies the grave responsibility of the state and BDL in squandering public funds. However, this does not absolve commercial bank management of commercial, professional, and personal fiduciary liability.  
+Banks were not "forced" to deposit over 70% of their assets at BDL to exploit exorbitant interest rates and generous financial engineering schemes; they did so knowingly out of greed for quick profits and distributing astronomical USD dividends to shareholders.  
+Prudential risk management ($Prudential\\ Risk$) is the core foundation of banking. Absolving management of their errors under the guise of systemic crisis destroys governance principles and reduces banks to speculative shops taking profits while disowning losses.
+
+#### 2. Conflict of Interest & Dual Roles
+* **ABL Claim:** The state and BDL are both party and judge in the crisis; conflicts of interest must be prevented through institutional balance with the judiciary.
+* **Analysis & Rebuttal:** While conflict of interest is a legitimate concern, ABL uses it as a pretext to paralyze the Resolution Authority and BDL from taking swift action.  
+International standards set by the Basel Committee ($Basel\\ Committee$) empower resolution authorities and central banks with exclusive statutory powers for immediate intervention and restructuring.  
+ABL's demand for procedural complexity waiting for full "institutional balance" is a dilatory tactic designed to stall time and block comprehensive resolution.
+
+#### 3. Right to Objection & Judicial Review
+* **ABL Claim:** Restricting rights to object or imposing short deadlines undermines justice and destroys confidence.
+* **Analysis & Rebuttal:** In banking resolution, hours and days dictate whether an institution is saved or liquidated. Granting lengthy litigation paths in ordinary courts empowers major bank owners and shareholders to block executive orders via dilatory litigation ($Dilatory\\ Litigation$).  
+International best practice dictates restricting the suspensive effect of legal challenges so they do not freeze resolution decisions, limiting recourse—if proven—to post-facto monetary compensation to prevent domino collapses and asset stripping ($Asset\\ Striping$).
+
+#### 4. Powers of Temporary Administrators / Liquidators
+* **ABL Claim:** Temporary administrators or liquidators must not be granted quasi-judicial powers to annul past legal transactions.
+* **Analysis & Rebuttal:** Annulling fraudulent transactions and suspicious transfers executed prior to collapse ($Clawback\\ Provisions$) is the quintessential core of resolution authorities globally.  
+Stripping liquidators of clawback powers shields illicit capital flight executed by insiders and major shareholders on the eve of the 2019 crash.
+
+#### 5. Bail-in Mechanics & Depositor Rights
+* **ABL Claim:** Bail-in must be managed with extreme caution so as not to become an unfair wealth redistribution tool.
+* **Analysis & Rebuttal:** This is ABL's largest fallacy, conflating shareholder equity rights with depositor claims under the banner of "property protection."  
+Strict financial seniority ($Seniority\\ Structure$) mandates that losses are absorbed first by shareholder equity and retained earnings, then subordinated debt, and lastly depositors. Conflating shareholders with depositors uses depositors as human shields to prevent wiping out bank capital.
+
+#### 6. Viability of "Healthy" Banks
+* **ABL Claim:** Healthy banks must be shielded from reopening past legal positions to preserve investor confidence.
+* **Analysis & Rebuttal:** One cannot speak of "healthy banks" in a sector that has halted payments and locked depositor funds for years. Forensic audits are mandatory to separate truly solvent banks from insolvent entities surviving on informal haircuts.
+
+#### 7. Legislative Harmony & Immunity
+* **ABL Claim:** Harmony between the Banking Reform Law and Financial Order Law is necessary to prevent drowning courts in lawsuits.
+* **Analysis & Rebuttal:** ABL is practically demanding blanket immunity! Closing the door to lawsuits grants immunity to bank management that violated regulatory ratios, breached fiduciary duties, or siphoned funds abroad.
+
+---
+
+### Conclusion
+ABL's editorial represents a continuation of reality denial ($Denial$). What ABL demands under "legal guarantees" is a legal fortress aimed at denying accountability, protecting siphoned capital, and shifting the entire burden onto taxpayers and depositors. True banking reform requires wiping out unviable bank capital, executing clawbacks on abnormal financial engineering profits, and enforcing strict resolution.`
+  },
+  {
     id: 'marco-rubio-visit-beirut-exclusive-2026',
     slug: 'marco-rubio-visit-beirut-exclusive-2026',
     focusKeyword: 'ماركو-روبيو-بيروت-لبنان-نبيه-بري-ترامب-جوزيف-عون-الجيش',
