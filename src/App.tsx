@@ -3273,9 +3273,17 @@ export default function App() {
             )}
 
             {/* SECTION 3A: ARAB MARKETS INDICATORS (مؤشرات الأسواق العربية) */}
-            {(activeCategory === 'all' || activeCategory === 'lebanon') && (
+            {(activeCategory === 'all' || activeCategory === 'arab-markets' || activeCategory === 'markets' || activeCategory === 'lebanon') && (
               <section className="space-y-5">
-                <ArabMarketsIndicators language={language} layoutMode={layoutMode} />
+                <ArabMarketsIndicators 
+                  language={language} 
+                  layoutMode={layoutMode} 
+                  articles={allArticles}
+                  onSelectArticle={(article) => setSelectedArticle(article)}
+                  savedArticleIds={savedArticleIds}
+                  onToggleSaveArticle={handleToggleSaveArticle}
+                  onTagClick={handleTagClick}
+                />
               </section>
             )}
 

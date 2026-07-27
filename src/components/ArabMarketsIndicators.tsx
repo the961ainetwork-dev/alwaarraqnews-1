@@ -1,18 +1,89 @@
-import React, { useState } from 'react';
-import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity, Coins, Cpu, RefreshCw, Check } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { TrendingDown, TrendingUp, BarChart3, ShieldAlert, Award, FileText, Globe, Landmark, ChevronRight, Minimize2, Maximize2, Info, Activity, Coins, Cpu, RefreshCw, Check, Clock, Eye, Sparkles, Building2, Flame, Scale } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, CartesianGrid } from 'recharts';
+import { Article } from '../types';
+import ArticleCard from './ArticleCard';
+import { NEW_ARTICLES } from '../newArticles';
+import { INITIAL_ARTICLES } from '../data';
 
 interface ArabMarketsIndicatorsProps {
   language: 'ar' | 'en';
   layoutMode: 'digital' | 'classic-print';
+  articles?: Article[];
+  onSelectArticle?: (article: Article) => void;
+  savedArticleIds?: string[];
+  onToggleSaveArticle?: (article: Article, e: React.MouseEvent) => void;
+  onTagClick?: (tag: string, e: React.MouseEvent) => void;
 }
 
-export default function ArabMarketsIndicators({ language, layoutMode }: ArabMarketsIndicatorsProps) {
+export default function ArabMarketsIndicators({ 
+  language, 
+  layoutMode, 
+  articles, 
+  onSelectArticle,
+  savedArticleIds = [],
+  onToggleSaveArticle,
+  onTagClick 
+}: ArabMarketsIndicatorsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
   const [activeTab, setActiveTab] = useState<'stocks' | 'commodities'>('stocks');
   const [isReportExpanded, setIsReportExpanded] = useState(true);
   const [infographicType, setInfographicType] = useState<'brent' | 'pipelines'>('brent');
+  const [storyCategory, setStoryCategory] = useState<'all' | 'sovereign' | 'deals' | 'energy'>('all');
+
+  // Filter Arab Markets Articles
+  const arabMarketStories = useMemo(() => {
+    const pool = articles && articles.length > 0 ? articles : [...NEW_ARTICLES, ...INITIAL_ARTICLES];
+    
+    // Match articles belonging to arab-markets or markets or economy or relevant IDs
+    const filtered = pool.filter(a => {
+      const cat = a.category?.toLowerCase() || '';
+      const cats = (a.categories || []).map(c => c.toLowerCase());
+      const id = a.id?.toLowerCase() || '';
+      
+      return (
+        cat === 'arab-markets' ||
+        cats.includes('arab-markets') ||
+        id.includes('audi-capital') ||
+        id.includes('saudi-uae-rivalry') ||
+        id.includes('arab-markets') ||
+        id.includes('egypt-energy-hub') ||
+        id.includes('iranian-oil-sea')
+      );
+    });
+
+    // Deduplicate by ID
+    const uniqueMap = new Map<string, Article>();
+    filtered.forEach(item => {
+      if (!uniqueMap.has(item.id)) {
+        uniqueMap.set(item.id, item);
+      }
+    });
+
+    let result = Array.from(uniqueMap.values());
+
+    // Filter by selected sub-category tab
+    if (storyCategory === 'sovereign') {
+      result = result.filter(a => 
+        a.id.includes('saudi-uae') || 
+        a.tags?.some(t => t.includes('السعودية') || t.includes('الإمارات') || t.includes('السيادة') || t.includes('Sovereign'))
+      );
+    } else if (storyCategory === 'deals') {
+      result = result.filter(a => 
+        a.id.includes('audi-capital') || 
+        a.tags?.some(t => t.includes('استثمار') || t.includes('عقارات') || t.includes('RealEstate'))
+      );
+    } else if (storyCategory === 'energy') {
+      result = result.filter(a => 
+        a.id.includes('egypt-energy') || 
+        a.id.includes('iranian-oil') || 
+        a.tags?.some(t => t.includes('النفط') || t.includes('غاز') || t.includes('سوميد') || t.includes('Oil'))
+      );
+    }
+
+    return result;
+  }, [articles, storyCategory]);
 
   // Interactive state variables for live-refreshing market indicators
   const [stocks, setStocks] = useState([
@@ -819,6 +890,163 @@ export default function ArabMarketsIndicators({ language, layoutMode }: ArabMark
           <span className="font-bold">
             {isAr ? 'لجنة البحوث الاقتصادية الكلية • سينترا ٢٠٢٦' : 'Macro Research Division • Sintra / Basel 2026'}
           </span>
+        </div>
+      </div>
+
+      {/* REVAMPED ARAB MARKETS STORIES & INVESTIGATIONS SECTION */}
+      <div className="mt-8 border-t-4 border-black pt-6 space-y-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 border-b-2 border-black border-double gap-4">
+          <div className="flex items-center gap-2.5">
+            <div className="p-2 bg-[#b91c1c] text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <Building2 size={20} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="bg-amber-100 text-amber-950 text-[9px] font-mono font-black px-2 py-0.5 border border-amber-800/20 uppercase tracking-widest">
+                  {isAr ? 'تقارير الأسواق وبورصات الخليج ٢٠٢٦' : '2026 ARAB MARKETS DOSSIERS'}
+                </span>
+                <span className="bg-emerald-100 text-emerald-800 text-[9px] font-mono font-bold px-2 py-0.5 border border-emerald-300">
+                  {isAr ? `${arabMarketStories.length} تغطيات صحفية` : `${arabMarketStories.length} REPORTS`}
+                </span>
+              </div>
+              <h3 className="font-sans font-black text-xl md:text-2xl text-black tracking-tight mt-1">
+                {isAr ? 'أحدث تحقيقات وتغطيات الأسواق المالية العربية' : 'Latest Arab Financial & Sovereign Market Stories'}
+              </h3>
+            </div>
+          </div>
+
+          {/* Sub-Category Filter Buttons */}
+          <div className="flex flex-wrap items-center gap-1.5 border border-black p-1 bg-zinc-100">
+            <button
+              onClick={() => setStoryCategory('all')}
+              className={`px-3 py-1 font-sans text-[11px] font-black transition-all cursor-pointer ${
+                storyCategory === 'all' ? 'bg-black text-white shadow-xs' : 'text-zinc-700 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'جميع التقارير' : 'All Stories'}
+            </button>
+            <button
+              onClick={() => setStoryCategory('sovereign')}
+              className={`px-3 py-1 font-sans text-[11px] font-black transition-all cursor-pointer ${
+                storyCategory === 'sovereign' ? 'bg-[#b91c1c] text-white shadow-xs' : 'text-zinc-700 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'الصناديق والسيادة' : 'Sovereign Wealth'}
+            </button>
+            <button
+              onClick={() => setStoryCategory('deals')}
+              className={`px-3 py-1 font-sans text-[11px] font-black transition-all cursor-pointer ${
+                storyCategory === 'deals' ? 'bg-black text-white shadow-xs' : 'text-zinc-700 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'الصفقات والعقارات' : 'Deals & Real Estate'}
+            </button>
+            <button
+              onClick={() => setStoryCategory('energy')}
+              className={`px-3 py-1 font-sans text-[11px] font-black transition-all cursor-pointer ${
+                storyCategory === 'energy' ? 'bg-amber-600 text-white shadow-xs' : 'text-zinc-700 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'النفط والغاز' : 'Crude & Gas'}
+            </button>
+          </div>
+        </div>
+
+        {/* Lead Featured Story Banner (if available) */}
+        {arabMarketStories.length > 0 && (
+          <div 
+            className="border-3 border-black bg-zinc-950 text-white p-6 md:p-8 relative shadow-[8px_8px_0px_0px_rgba(185,28,28,1)] overflow-hidden group cursor-pointer transition-all hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"
+            onClick={() => onSelectArticle && onSelectArticle(arabMarketStories[0])}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              {/* Thumbnail / Visual */}
+              <div className="lg:col-span-5 relative h-56 md:h-64 overflow-hidden border-2 border-amber-500/30">
+                <img 
+                  src={arabMarketStories[0].imageUrl || 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200'} 
+                  alt={isAr ? arabMarketStories[0].titleAr : arabMarketStories[0].titleEn}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                <div className="absolute top-3 right-3 rtl:right-3 ltr:left-3 bg-[#b91c1c] text-white text-[10px] font-mono font-black px-2.5 py-1 uppercase tracking-widest border border-red-400 flex items-center gap-1">
+                  <Sparkles size={11} className="animate-pulse text-amber-300" />
+                  <span>{isAr ? 'تقرير خاص استثنائي' : 'LEAD DOSSIER'}</span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="lg:col-span-7 space-y-4 text-right rtl:text-right ltr:text-left">
+                <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
+                  <span className="bg-amber-400 text-black text-[10px] font-mono font-black px-2.5 py-0.5 uppercase tracking-wider">
+                    {isAr ? 'الأسواق العربية' : 'ARAB MARKETS'}
+                  </span>
+                  <span className="text-zinc-400 text-xxs font-mono font-bold flex items-center gap-1">
+                    <Clock size={12} />
+                    <span>{isAr ? arabMarketStories[0].readTimeAr : arabMarketStories[0].readTimeEn}</span>
+                  </span>
+                  {arabMarketStories[0].views && (
+                    <span className="text-zinc-400 text-xxs font-mono font-bold flex items-center gap-1">
+                      <Eye size={12} />
+                      <span>{arabMarketStories[0].views.toLocaleString()} {isAr ? 'مشاهدة' : 'views'}</span>
+                    </span>
+                  )}
+                </div>
+
+                <h4 className="font-sans font-black text-2xl md:text-3xl text-white group-hover:text-amber-400 transition-colors leading-tight">
+                  {isAr ? arabMarketStories[0].titleAr : arabMarketStories[0].titleEn}
+                </h4>
+
+                <p className="font-serif text-xs md:text-sm text-zinc-300 leading-relaxed line-clamp-3">
+                  {isAr ? (arabMarketStories[0].summaryAr || arabMarketStories[0].excerptAr) : (arabMarketStories[0].summaryEn || arabMarketStories[0].excerptEn)}
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-zinc-800">
+                  <div className="flex items-center gap-2">
+                    <img 
+                      src={arabMarketStories[0].author?.avatar || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'} 
+                      alt="author" 
+                      className="w-7 h-7 rounded-full border border-amber-500/50 object-cover"
+                    />
+                    <span className="text-xs font-bold text-zinc-300 font-sans">
+                      {isAr ? arabMarketStories[0].author?.nameAr : arabMarketStories[0].author?.nameEn}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (onSelectArticle) onSelectArticle(arabMarketStories[0]);
+                      }}
+                      className="bg-amber-400 hover:bg-amber-500 text-black font-sans font-extrabold text-xs px-4 py-2 border border-black transition-all flex items-center gap-1.5 cursor-pointer shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]"
+                    >
+                      <span>{isAr ? 'قراءة التحقيق الكامل ←' : 'Read Full Investigation →'}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Grid of Remaining Stories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+          {arabMarketStories.slice(1).map((story) => {
+            const isSaved = savedArticleIds?.includes(story.id);
+            return (
+              <div key={story.id} className="break-inside-avoid">
+                <ArticleCard 
+                  article={story}
+                  layoutMode={layoutMode}
+                  language={language}
+                  variant="standard"
+                  onSelect={(art) => onSelectArticle && onSelectArticle(art)}
+                  isSaved={isSaved}
+                  onToggleSave={onToggleSaveArticle}
+                  onTagClick={onTagClick}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
