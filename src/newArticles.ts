@@ -2,6 +2,292 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'ukraine-iran-russia-escalation-scenarios-part1-2026',
+    slug: 'ukraine-iran-russia-escalation-scenarios-part1-2026',
+    focusKeyword: 'أوكرانيا-إيران-روسيا-بحر-قزوين-المسيرات',
+    category: 'war-room',
+    categories: ['war-room', 'middle-east', 'urgent-release'],
+    titleAr: 'التصعيد الأخير بين أوكرانيا وإيران، والدور المحوري لروسيا، وسيناريوهات الفاعلية العسكرية المفترضة 1/2',
+    titleEn: 'Recent Escalation Between Ukraine and Iran, Russia’s Pivotal Role, and Assumed Military Efficacy Scenarios (Part 1/2)',
+    summaryAr: 'تحليل جيوسياسي واستراتيجي لتصاعد التوتر العسكري المباشر بين كييف وطهران عقب استهداف السفن الإيرانية في بحر قزوين، ودور المحور الروسي، وسيناريو انخراط المتعاقدين الأوكرانيين ضد إيران.',
+    summaryEn: 'Geopolitical and strategic analysis of direct military tension between Kyiv and Tehran following Caspian Sea maritime strikes, Russia’s role, and scenarios of Ukrainian contractors engaging Iran.',
+    excerptAr: 'تصعيد بحري مباشر في بحر قزوين بين كييف وطهران، وقراءة استراتيجية في انخراط كوادر أوكرانية وخبرات مسيّرات في مواجهة إيران.',
+    excerptEn: 'Direct maritime escalation in the Caspian Sea between Kyiv and Tehran, and strategic assessment of Ukrainian drone expertise against Iranian assets.',
+    author: {
+      nameAr: 'وحدة الدراسات الاستراتيجية والعسكرية - الورّاق',
+      nameEn: 'Al-Warraq Military & Strategic Studies Unit',
+      titleAr: 'غرفة العمليات والشؤون الجيو-عسكرية',
+      titleEn: 'War Room & Geo-Military Desk',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 38400,
+    tags: [
+      'أوكرانيا', 'إيران', 'روسيا', 'بحر_قزوين', 'شاهد', 'المسيرات', 'غرفة_العمليات',
+      'Ukraine', 'Iran', 'Russia', 'CaspianSea'
+    ],
+    hashtags: ['UkraineIranEscalation', 'CaspianSeaStrike', 'WarRoomAnalysis'],
+    contentAr: `### التصعيد الأخير بين أوكرانيا وإيران، والدور المحوري لروسيا، وسيناريوهات الفاعلية العسكرية المفترضة (الجزء الأول)
+
+شهدت مستويات التوتر العسكري المباشر بين أوكرانيا والجمهورية الإسلامية الإيرانية تصعيداً ملحوظاً، عقب تنفيذ القوات الأوكرانية ضربات طالت نقاطاً لوجستية بحرية في بحر قزوين، استهدفت بشكل مباشر سفينة إيرانية يُعتقد أنها كانت تُستخدم في نقل معدات عسكرية إلى الجانب الروسي.
+
+ودانت طهران هذا الهجوم معتبرةً إياه عملاً من أعمال العدوان الدولي، حيث قامت باستدعاء السفير الأوكراني ولوّحت باتخاذ إجراءات انتقامية. وفي المقابل، أصدرت الرئاسة الأوكرانية تأكيداً رسمياً مفاده أن الكيانات الأوكرانية استهدفت أصولاً بحرية تُسهم في إدامة خط الإمداد العسكري المتنامي بين موسكو وطهران.
+
+---
+
+### أبرز محاور الصراع الراهن
+
+#### 1. واقعة بحر قزوين
+استهدفت ضربات بعيدة المدى أطلقها الجانب الأوكراني خطوط الملاحة التي ترتادها سفن ترفع العلم الإيراني في بحر قزوين. وبينما جادلت كييف بأن الهدف كان ينقل أجزاء لطيارات مسيّرة ومكونات صاروخية مخصصة للجيش الروسي، شددت طهران على أن السفينة تُعدّ تجارية بحتة، محذرةً من تداعيات وخيمة لهذه الخطوة.
+
+#### 2. المحور الروسي التشاركي
+تشكّل موسكو الممر والمحرّك الأساسي للتقارب القائم بين كييف وطهران؛ إذ تعتمد إيران اعتماداً مكثفاً على روسيا للحصول على عتاد عسكري متطور، وتكنولوجيا طيران، وتبادل للاستخبارات الفضائية، مقابل توفير طهران لمسيّرات هجومية منخفضة التكلفة وعالية الإنتاجية (من طراز شاهد) لدعم الحملات الجوية الروسية ضد البنية التحتية الأوكرانية.
+
+#### 3. عمليات المنطقة الرمادية
+قبل هذه المواجهة البحرية المباشرة، كانت الاحتكاكات محصورة إلى حد كبير في حروب الوكالة؛ حيث استهدفت القوات الأوكرانية مدربين تابعين للحرس الثوري الإيراني في مناطق مثل شبه جزيرة القرم، إضافة إلى تنفيذ تحركات نوعية ضد قوى مدعومة إيرانيًا في ساحات أخرى (مثل السودان).
+
+---
+
+### قراءة سيناريو افتراضي: ماذا لو انخرطت أوكرانيا في مواجهة إيران تحت غطاء "مرتزقة أمريكيين"؟
+
+يطرح السؤال فركيات سيناريو من مفترضات الإستراتيجية: ماذا لو شاركت عناصر أوكرانية — بصفتها تشكيلات أمنية خاصة أو شبكة متعاقدين ممولة غربياً — في نزاع مباشر ضد إيران يقوده التحالف الدولي أو الولايات المتحدة؟
+
+تحليل الواقع المتوقع لهذا السيناريو يتشعب إلى ثلاثة أبعاد رئيسية:
+
+#### 1. الواقع الميداني والتكتيكي: خبرات أوكرانية نوعية في حرب المسيرات
+في حال تم زج كوادر أوكرانية ضمن أطر شركات الأمن الخاصة (PMCs)، فإنها ستجلب معها خبرات ميدانية غير مسبوقة:
+* **كفاءة تفكيك منظومات "شاهد":** تمتلك الوحدات الأوكرانية أضخم قاعدة بيانات عملاتية في التعامل مع المسيرات الإيرانية الصنع، والصواريخ الباليستية، وفي بيئات الحرب الإلكترونية المعقدة، بمستويات تتفوق على ما لدى العديد من جيوش حلف الناتو.
+* **الحرب البحرية غير المتناظرة:** نجحت التكتيكات البحرية المسيّرة التي اعتمدتها كييف في تحييد أجزاء واسعة من أسطول البحر الأسود الروسي دون امتلاكها لأسطول تقليدي؛ ونقل هذه التكتيكات إلى الخليج العربي أو بحر قزوين قد يربك الملاحة واللوجستيات البحرية الإيرانية بشكل حاد.
+
+#### 2. العقبات القانونية والسياسية: مفهوم "المرتزقة" مقابل الدعم الرسمي
+* **تمنع أحكام القانون الدولي** (مثل المادة 47 من البروتوكول إضافي الأول لاتفاقيات جنيف) إسباغ صفة "المرتزقة" قانوناً على القوات العسكرية النظامية للدول.
+* **الشركات العسكرية الخاصة (PMCs):** بدلاً من إرسال قوات نظامية، قد ينخرط المحاربون القدامى في أوكرانيا ضمن شركات أمنية خاصة مدعومة غربياً.
+* **الموقف الحكومي:** بالنسبة للحكومة الأوكرانية، يُعد إرسال قوات نظامية للقتال في ساحات خارجية في وقت تخوض فيه حرباً دفاعية على أرضها خياراً غير منطقي، ما لم يكن مؤطراً باتفاقيات أمنية ومالية مباشرة وشاملة مع واشنطن.
+
+#### 3. التداعيات الجيوسياسية: رد الفعل الروسي المضاد
+إذا شاركت عناصر أوكرانية في حملة ضد إيران برعاية أمريكية، فمن المرجح أن ترد موسكو عبر:
+* **تعميق التعاون الاستخباري:** ستعمد موسكو إلى تسريع تزويد طهران بالصور الفضائية المباشرة ودعم أنظمة الدفاع الجوي لمواجهة الكيانات الموالية للغرب.
+* **التصعيد في الساحة الأوروبية:** ستوظف روسيا هذا الانخراط في خطابها الترويجي لفرض مزيد من التعبئة العامة، أو لتصعيد الهجمات السيبرانية الانتقامية ضد المصالح الغربية.
+
+---
+
+### جدول مقاربة إستراتيجية
+
+| ديناميكية المحور | الوضع الراهن | سيناريو المتعاقدين / الشركات الخاصة |
+| :--- | :--- | :--- |
+| **المسرح الرئيسي** | البحر الأسود، بحر قزوين، والأجواء الأوكرانية | الخليج العربي، بحر قزوين، أو مسارح الشرق الأوسط |
+| **الموقف الإيراني** | إمداد موسكو بالعتاد مع التلويح بالرد ضد كييف | مواجهة مباشرة مع وحدات أوكرانية ذات خبرات تخصصية |
+| **الدور الروسي** | المستفيد الأول من العتاد والتكنولوجيا الإيرانية | تقديم دعم استخباري وتقني كامل النطاق لصالح إيران |`,
+    contentEn: `### Recent Escalation Between Ukraine and Iran, Russia's Pivotal Role, and Assumed Military Efficacy Scenarios (Part 1/2)
+
+Direct military tensions between Ukraine and the Islamic Republic of Iran have escalated significantly following Ukrainian strikes targeting maritime logistical nodes in the Caspian Sea, directly impacting an Iranian vessel suspected of transporting military hardware to Russian forces.
+
+Tehran condemned the attack as an act of international aggression, summoning the Ukrainian ambassador and signaling retaliatory measures. Conversely, the Ukrainian presidency issued an official statement confirming that Ukrainian entities targeted maritime assets sustaining the expanding military supply corridor between Moscow and Tehran.
+
+---
+
+### Core Axes of the Current Conflict
+
+#### 1. Caspian Sea Incident
+Long-range Ukrainian strikes targeted maritime routes frequented by Iranian-flagged vessels in the Caspian Sea. While Kyiv argued the target carried drone parts and missile components bound for the Russian military, Tehran insisted the vessel was strictly commercial, warning of severe repercussions.
+
+#### 2. The Russian Partnership Axis
+Moscow acts as the central hub and catalyst behind the growing standoff between Kyiv and Tehran. Iran relies heavily on Russia for advanced military equipment, aviation technology, and satellite intelligence sharing, in exchange for providing Tehran's low-cost, high-yield attack drones (Shahed series) to support Russian strikes against Ukrainian infrastructure.
+
+#### 3. Gray-Zone Operations
+Prior to this direct naval engagement, friction remained largely confined to proxy theaters—such as Ukrainian forces targeting IRGC advisors in Crimea and conducting special operations against Iranian-backed groups in third countries (e.g., Sudan).
+
+---
+
+### Strategic Scenario Analysis: What If Ukraine Engages Iran Under a "U.S. Contractor" Umbrella?
+
+A hypothetical strategic inquiry arises: What if Ukrainian personnel—operating as private security outfits or a Western-funded contractor network—participate in direct conflict against Iran under a U.S. or international coalition banner?
+
+Analyzing the anticipated reality of this scenario branches into three key dimensions:
+
+#### 1. Operational & Tactical Reality: Specialized Ukrainian Drone Warfare Expertise
+If Ukrainian veterans are deployed via Private Military Companies (PMCs), they bring unprecedented tactical experience:
+* **Shahed Countermeasure Proficiency:** Ukrainian units possess the world's largest operational database for countering Iranian-made drones, ballistic missiles, and complex EW environments—surpassing capability levels of many NATO forces.
+* **Asymmetric Naval Warfare:** Kyiv's uncrewed surface vehicle (USV) tactics neutralized large portions of Russia's Black Sea Fleet without a conventional navy; transferring these tactics to the Persian Gulf or Caspian Sea could severely disrupt Iranian maritime logistics.
+
+#### 2. Legal & Political Hurdles: "Mercenary" Labels vs. Official Support
+* **International Humanitarian Law** (e.g., Article 47 of Additional Protocol I to the Geneva Conventions) legally bars classifying regular state military forces as mercenaries.
+* **Private Military Companies (PMCs):** Rather than dispatching regular forces, Ukrainian veterans could integrate into Western-backed private security contractors.
+* **Governmental Stance:** For Kyiv, deploying regular troops abroad while fighting a defensive war at home is illogical unless framed by comprehensive security and financial arrangements with Washington.
+
+#### 3. Geopolitical Repercussions: Russia's Counter-Response
+If Ukrainian elements engage in a U.S.-sponsored campaign against Iran, Moscow is likely to respond via:
+* **Deepened Intelligence Sharing:** Moscow would accelerate real-time satellite imagery feeds and air defense support to Tehran.
+* **European Theater Escalation:** Russia would leverage this involvement to justify further domestic mobilization or intensify retaliatory cyber operations against Western targets.
+
+---
+
+### Strategic Comparison Table
+
+| Axis Dynamic | Current Status | Contractor / PMC Scenario |
+| :--- | :--- | :--- |
+| **Primary Theater** | Black Sea, Caspian Sea, Ukrainian Airspace | Persian Gulf, Caspian Sea, Middle East |
+| **Iranian Position** | Supplying Moscow while threatening Kyiv | Direct engagement with specialized Ukrainian units |
+| **Russian Role** | Primary beneficiary of Iranian arms/tech | Full-scope intelligence and technical backing for Iran |`
+  },
+  {
+    id: 'ukraine-iran-russia-escalation-scenarios-part2-2026',
+    slug: 'ukraine-iran-russia-escalation-scenarios-part2-2026',
+    focusKeyword: 'خيارات-استراتيجية-أوكرانيا-إيران-روسيا-محاكاة',
+    category: 'war-room',
+    categories: ['war-room', 'middle-east', 'urgent-release'],
+    titleAr: 'التصعيد الأخير بين أوكرانيا وإيران، والدور المحوري لروسيا، وسيناريوهات الفاعلية العسكرية المفترضة 2/2',
+    titleEn: 'Recent Escalation Between Ukraine and Iran, Russia’s Pivotal Role, and Assumed Military Efficacy Scenarios (Part 2/2)',
+    summaryAr: 'مصفوفة الخيارات الاستراتيجية للأطراف الفاعلة (كييف، طهران، موسكو) ومحاكاة السيناريوهات المستقبلية لنزاع قزوين وانخراط المتعاقدين الأمنيين.',
+    summaryEn: 'Strategic options matrix for Kyiv, Tehran, and Moscow, alongside simulation scenarios for Caspian confrontation and security contractors.',
+    excerptAr: 'تحليل استراتيجي لمصفوفة خيارات أوكرانيا وإيران وروسيا، ومحاكاة النمذجة المستقبلية لسيناريوهات الاحتواء والانسداد والتصعيد الشامل.',
+    excerptEn: 'Strategic analysis of options for Kyiv, Tehran, and Moscow, with future simulation modeling of containment, multi-theater attrition, and full escalation.',
+    author: {
+      nameAr: 'وحدة الدراسات الاستراتيجية والعسكرية - الورّاق',
+      nameEn: 'Al-Warraq Military & Strategic Studies Unit',
+      titleAr: 'غرفة العمليات والشؤون الجيو-عسكرية',
+      titleEn: 'War Room & Geo-Military Desk',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: false,
+    isPremium: false,
+    views: 34100,
+    tags: [
+      'أوكرانيا', 'إيران', 'روسيا', 'خيارات_استراتيجية', 'محاكاة', 'غرفة_العمليات',
+      'StrategicOptions', 'Simulation'
+    ],
+    hashtags: ['StrategicOptionsMatrix', 'UkraineIranSimulation', 'WarRoomAnalysis'],
+    contentAr: `### التصعيد الأخير بين أوكرانيا وإيران، والدور المحوري لروسيا، وسيناريوهات الفاعلية العسكرية المفترضة (الجزء الثاني)
+
+#### خيارات الأطراف الفاعلة (Strategic Options Matrix)
+في ظل تحول المواجهة بين كييف وطهران من حرب بالوكالة إلى احتكاك مباشر في بحر قزوين، تمتلك الأطراف الرئيسية خيارات إستراتيجية محددة تشكل ملامح المرحلة القائمة:
+
+#### 1. الخيارات الأوكرانية (Kyiv's Strategic Options)
+* **الخيار (أ) - التصعيد البحري واللوجستي:** توسيع نطاق استهداف السفن والموانئ الإيرانية في بحر قزوين لمنع وصول الدعم المباشر لموسكو، مع قبول مخاطر احتكاك أوسع مع طهران.
+* **الخيار (ب) - الحرب الاستخباراتية الشاملة:** نقل المواجهة إلى الساحات الخارجية عبر استهداف مستشاري الحرس الثوري وشبكات التوريد في مناطق النزاع الدولية (أفريقيا، الشرق الأوسط).
+* **الخيار (ج) - الاستثمار في سوق الخدمات الأمنية:** فتح المجال أمام الكوادر العسكرية والمحاربين القدامى للانخراط ضمن شركات أمنية خاصة (PMCs) ممولة غربياً لمواجهة أذرع طهران عالمياً.
+
+#### 2. الخيارات الإيرانية (Tehran's Strategic Options)
+* **الخيار (أ) - الرد بالمثل في البحر الأسود:** تنفيذ هجمات سيبرانية أو غير متناظرة استهدافاً للملاحة الأوكرانية وتصدير الحبوب عبر مسارات بديلة.
+* **الخيار (ب) - تسريع نقل التكنولوجيا المعقدة:** رفع مستوى التزويد العسكري لموسكو ليشمل صواريخ باليستية متوسطة المدى، لقاء الحصول على منظومات دفاع جوي روسية متطورة ($S-400$) ومقاتلات حديثة.
+* **الخيار (ج) - احتواء التصعيد دبلوماسياً:** الاعتماد على الوساطة الصينية/الروسية لتحديد "قواعد اشتباك" جديدة وتفادي الانجرار لمواجهة مباشرة مع الغرب.
+
+#### 3. الخيارات الروسية (Moscow's Strategic Options)
+* **الخيار (أ) - مظلة حماية بحر قزوين:** تسيير دوريات بحرية وجوية مشتركة لحماية حركة الشحن الإيراني في قزوين واعتبار أي استهداف لها مساساً بالأمن القومي الروسي.
+* **الخيار (ب) - مقايضة الدعم:** توظيف التوتر الأوكراني-الإيراني لتطوير حلف دفاعي إقليمي يربط بين موسكو وطهران ومحاور أخرى لتشتيت التركيز الغربي.
+
+---
+
+### محاكاة السيناريوهات المستقبلية (Simulation Scenarios)
+
+بناءً على افتراض انخراط كوادر أوكرانية كقوات متعاقدة أو "مرتزقة" تحت رعاية أمريكية لمواجهة النفوذ الإيراني، توضح المحاكاة الإستراتيجية ثلاثة مسارات متوقعة:
+
+\`\`\`
+[شرارة التصعيد: صراع قزوين / انخراط متعاقدين]
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+[محاكاة 1: الاحتواء]  [محاكاة 2: الاستنزاف]  [محاكاة 3: المواجهة]
+  (توازن الرعب)       (حروب الوكالة)      (حرب إقليمية)
+\`\`\`
+
+#### المحاكاة الأولى: مسار "توازن الرعب والتأطير" (Low-Intensity Containment)
+* **الفرضية:** انخراط محدود لخبراء أوكرانيين ضمن شركات أمنية غربية لتشغيل منظومات الدفاع ضد المسيّرات في الخليج العربي.
+* **النتيجة الميدانية:** نجاح التكتيكات الأوكرانية في خفض فاعلية هجمات المسيّرات الإيرانية بنسبة عالية، مما يؤدي إلى ردع تكتيكي دون اندلاع مواجهة شاملة.
+* **التأثير الجيوسياسي:** تحول الخبرة الأوكرانية إلى "سلعة أمنية إستراتيجية" مرغوبة دولياً، مع بقاء المواجهة ضمن حدود "المنطقة الرمادية".
+
+#### المحاكاة الثانية: مسار "الاستنزاف المعقد وتعدد الجبهات" (Multi-Theater Attrition)
+* **الفرضية:** تنفيذ متعاقدين أوكرانيين هجمات استباقية ضد خطوط الإمداد الإيرانية في الشرق الأوسط وبحر قزوين بدعم لوجستي أمريكي.
+* **النتيجة الميدانية:** رد إيراني متكافئ عبر تزويد روسيا بمنظومات صاروخية دقيقة وتكثيف الهجمات السيبرانية ضد البنية التحتية للغرب وأوكرانيا.
+* **التأثير الجيوسياسي:** اتساع رقعة الصراع لتصبح حرب استنزاف عابرة للأقاليم، تتقاطع فيها خطوط المواجهة في شرق أوروبا بالشرق الأوسط.
+
+#### المحاكاة الثالثة: مسار "الانفجار الشامل والرد المباشر" (Full Escalation & Proxy Collapse)
+* **الفرضية:** استهداف مباشر وعالي الشدة لأصول إيرانية سيادية بأيدٍ أوكرانية/أمريكية في بحر قزوين أو داخل الأراضي الإيرانية.
+* **النتيجة الميدانية:** تدخل روسي مباشر عبر تزويد طهران ببيانات استخباراتية لحظية وإحداث إغلاق فعلي لخطوط الملاحة البحرية في قزوين والخليج.
+* **التأثير الجيوسياسي:** قفزة حادة في أسعار الطاقة العالمية، وانهيار أطر التهدئة الإقليمية، ودخول العلاقات الدولية في نموذج صراع التكتلات المغلقة.
+
+---
+
+### جدول مقارنة خيارات المحاكاة (Simulation Matrix)
+
+| عنصر القياس | المحاكاة 1: الاحتواء المحدود | المحاكاة 2: الاستنزاف المتبادل | المحاكاة 3: التصعيد الشامل |
+| :--- | :--- | :--- | :--- |
+| **مستوى المخاطرة** | متوسط | مرتفع جداً | أقصى درجات الخطورة |
+| **ديمومة أمن الملاحة** | استقرار نسبي | اضطراب متقطع | توقف شبه كامل للشحن |
+| **موقف موسكو** | دعم استخباري خلفي | تزويد صاروخي مكثف | حماية وتغطية مباشرة |
+| **العائد لكييف/المتعاقدين** | مكاسب مالية وتقنية | استنزاف القدرات البشرية | مخاطر الانجرار لحرب ثانوية |`,
+    contentEn: `### Recent Escalation Between Ukraine and Iran, Russia's Pivotal Role, and Assumed Military Efficacy Scenarios (Part 2/2)
+
+#### Strategic Options Matrix
+As the standoff between Kyiv and Tehran transitions from proxy skirmishes to direct Caspian friction, the core actors possess distinct strategic pathways:
+
+#### 1. Kyiv's Strategic Options
+* **Option A - Maritime & Logistical Escalation:** Expand targeting of Iranian vessels and ports in the Caspian Sea to sever direct support to Moscow, accepting broader friction risks with Tehran.
+* **Option B - Comprehensive Intelligence Warfare:** Shift conflict to international theaters by targeting IRGC advisors and supply networks in global conflict zones (Africa, Middle East).
+* **Option C - Monetizing Security Services:** Enable military personnel and veterans to join Western-backed PMCs countering Tehran's network worldwide.
+
+#### 2. Tehran's Strategic Options
+* **Option A - Tit-for-Tat in the Black Sea:** Execute cyber or asymmetric strikes targeting Ukrainian shipping and alternative grain export corridors.
+* **Option B - Accelerating Advanced Technology Transfers:** Elevate arms shipments to Moscow to include medium-range ballistic missiles, in return for advanced Russian air defense systems (S-400) and modern fighters.
+* **Option C - Diplomatic De-escalation:** Rely on Chinese/Russian mediation to establish new rules of engagement and prevent direct collision with Western powers.
+
+#### 3. Moscow's Strategic Options
+* **Option A - Caspian Protection Umbrella:** Deploy joint naval and air patrols to protect Iranian shipping in the Caspian, declaring attacks on them a national security threat.
+* **Option B - Reciprocal Support Alignment:** Leverage Ukraine-Iran friction to forge a broader regional defense coalition connecting Moscow, Tehran, and other axes to divide Western focus.
+
+---
+
+### Simulation Scenarios
+
+Assuming Ukrainian personnel operate as contracted units or private security contractors under Western auspices to counter Iranian influence, strategic simulation outlines three potential trajectories:
+
+\`\`\`
+[Trigger: Caspian Clash / Contractor Deployment]
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+[Sim 1: Containment] [Sim 2: Attrition]   [Sim 3: Full Escalation]
+ (Tactical Deterrence) (Proxy Attrition)    (Regional Conflict)
+\`\`\`
+
+#### Simulation 1: Low-Intensity Containment
+* **Premise:** Limited involvement of Ukrainian specialists within Western security firms operating counter-drone systems in the Persian Gulf.
+* **Field Outcome:** High-efficiency drone interception tactics significantly reduce Iranian strike effectiveness, establishing deterrence without triggering open war.
+* **Geopolitical Impact:** Ukrainian expertise becomes a globally sought strategic security commodity while conflict remains bounded in the gray zone.
+
+#### Simulation 2: Multi-Theater Attrition
+* **Premise:** Ukrainian contractors conduct preemptive strikes against Iranian supply lines in the Middle East and Caspian with U.S. logistical backing.
+* **Field Outcome:** Symmetrical Iranian response supplying Russia with precision missiles and ramping up cyber warfare against Western/Ukrainian infrastructure.
+* **Geopolitical Impact:** Conflict widens into a cross-regional war of attrition, bridging Eastern European and Middle Eastern frontlines.
+
+#### Simulation 3: Full Escalation & Proxy Collapse
+* **Premise:** High-intensity direct targeting of sovereign Iranian assets by Ukrainian/U.S.-backed forces in the Caspian or within Iran.
+* **Field Outcome:** Direct Russian intervention supplying real-time target intelligence to Tehran and effectively halting Caspian and Gulf maritime traffic.
+* **Geopolitical Impact:** Sharp spike in global energy prices, collapse of regional de-escalation frameworks, and division of international relations into rigid closed blocks.
+
+---
+
+### Simulation Matrix Comparison
+
+| Metric | Sim 1: Containment | Sim 2: Multi-Theater Attrition | Sim 3: Full Escalation |
+| :--- | :--- | :--- | :--- |
+| **Risk Level** | Moderate | Very High | Extreme Risk |
+| **Naval Route Stability** | Relatively Stable | Intermittent Disruption | Complete Shipping Halt |
+| **Moscow's Position** | Back-end Intel Support | Heavy Missile Provision | Direct Protection & Cover |
+| **Returns for Kyiv/PMCs** | Financial & Tech Gains | Human Resource Depletion | Secondary War Entanglement |`
+  },
+  {
     id: 'damascus-extended-shadow-syrian-role-lebanon-2026',
     slug: 'damascus-extended-shadow-syrian-role-lebanon-2026',
     focusKeyword: 'سوريا-لبنان-أحمد-الشرع-التدخل-السوري-دمشق',

@@ -2088,6 +2088,110 @@ export default function App() {
                   />
                 )}
 
+                {/* SECTION: EXCLUSIVES (التحقيقات الصحفية) - Moved right after NarrativeLebanonCrisisInfographics */}
+                {(activeCategory === 'all' || activeCategory === 'exclusives') && exclusivesArticles.length > 0 && (
+                  <section className="space-y-5 my-8">
+                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
+                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
+                        <Sparkles size={18} className="text-black shrink-0" />
+                        <span>{isAr ? 'التحقيقات الصحفية' : 'Exclusive Bulletins & Enquiries'}</span>
+                      </h3>
+                      <span className="font-mono text-xxs font-bold text-zinc-500">
+                        {isAr ? `المطالع: ${exclusivesArticles.length} خبر` : `${exclusivesArticles.length} Filed Records`}
+                      </span>
+                    </div>
+
+                    {/* Full-width Row for FIFA Feature Article */}
+                    {displayedExclusives.find(s => s.id === 'fifa-polymarket-struggle-2026') && (() => {
+                      const fifaFeature = displayedExclusives.find(s => s.id === 'fifa-polymarket-struggle-2026')!;
+                      return (
+                        <div className="w-full bg-red-50/40 p-4 md:p-6 border-2 border-red-800 shadow-[6px_6px_0px_0px_rgba(153,27,27,1)] relative transition-all hover:scale-[1.002] mb-6">
+                          <div className="absolute top-0 right-0 bg-red-800 text-white font-sans font-black text-[9px] md:text-[10px] uppercase px-3 py-1 tracking-widest z-10">
+                            {isAr ? 'تحقيق مميز عاجل' : 'FEATURED SPECIAL INVESTIGATION'}
+                          </div>
+                          <ArticleCard
+                            article={fifaFeature}
+                            layoutMode={layoutMode}
+                            language={language}
+                            variant="lead"
+                            onSelect={(article) => setSelectedArticle(article)}
+                            isSaved={savedArticleIds.includes(fifaFeature.id)}
+                            onToggleSave={handleToggleSaveArticle}
+                            onTagClick={handleTagClick}
+                            hideImage={activeCategory === 'all'}
+                          />
+                        </div>
+                      );
+                    })()}
+
+                    {/* Remaining Exclusives in a 4-Column Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
+                      {displayedExclusives
+                        .filter((story) => story.id !== 'fifa-polymarket-struggle-2026')
+                        .map((story) => (
+                          <div key={story.id} className="break-inside-avoid flex flex-col justify-between">
+                            <ArticleCard
+                              article={story}
+                              layoutMode={layoutMode}
+                              language={language}
+                              variant="standard"
+                              onSelect={(article) => setSelectedArticle(article)}
+                              isSaved={savedArticleIds.includes(story.id)}
+                              onToggleSave={handleToggleSaveArticle}
+                              onTagClick={handleTagClick}
+                              hideImage={activeCategory === 'all'}
+                            />
+                          </div>
+                        ))}
+                    </div>
+
+                    {/* SOLIDERE DEEP-DIVE ARCHIVES FOR EXCLUSIVES TAB ONLY */}
+                    {activeCategory === 'exclusives' && !searchQuery && (
+                      <div className="mt-10 pt-10 border-t-4 border-double border-zinc-900">
+                        <div className="bg-zinc-900 text-white p-5 border border-zinc-800 mb-6">
+                          <div className="flex items-center gap-2">
+                            <span className="w-2.5 h-2.5 bg-amber-500 rounded-none inline-block"></span>
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-amber-500 font-bold">
+                              {isAr ? 'قسم أرشيف تحقيقات سوليدير ٢٠٦٩ الحصرية' : 'EXCLUSIVE SOLIDERE 2069 DEEP-DIVE DOSSIER'}
+                            </span>
+                          </div>
+                          <h4 className="text-xl font-black font-sans mt-2">
+                            {isAr ? 'الجدول الزمني والتحقيق التفاعلي لشركة سوليدير ومستندات الأراضي' : 'Interactive Solidere Extension Timeline & Beirut Bourse Stock Tracker'}
+                          </h4>
+                          <p className="text-xs text-zinc-400 mt-2 max-w-4xl leading-relaxed">
+                            {isAr 
+                              ? 'تفاصيل تمديد مرسوم سوليدير التفاعلي لعام ٢٠٦٩ وتأثيره على قلب العاصمة وحرب الاستحواذ الدائرة بين أنطون صحناوي والحرس القديم، مع وثائق المحاضر القضائية.'
+                              : 'A chronological interactive outline of Solidere’s legal mandates and the corporate takeover battle on the Beirut Stock Exchange between Antoun Sehnaoui and the old guard.'}
+                          </p>
+                        </div>
+                        
+                        <div className="border-4 border-black bg-white text-black p-4 md:p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                          <SolidereInfographic
+                            language={language}
+                            articles={allArticles}
+                            onSelectArticle={(article) => setSelectedArticle(article)}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* REDIRECT READ MORE */}
+                    {activeCategory === 'all' && exclusivesArticles.length > 0 && (
+                      <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
+                        <button
+                          onClick={() => {
+                            setActiveCategory('exclusives');
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
+                        >
+                          <span>{isAr ? 'طالع كامل تحقيقات الملف ←' : 'Read More in Exclusives →'}</span>
+                        </button>
+                      </div>
+                    )}
+                  </section>
+                )}
+
                 {/* THE WORLD OF ARTIFICIAL INTELLIGENCE SECTION */}
                 {activeCategory === 'all' && !searchQuery && (
                   <WorldOfAI 
@@ -2813,110 +2917,6 @@ export default function App() {
             )}
 
             {/* CONDITIONAL SUB SECTIONS FOR MAIN PAGE (PINTEREST MASONRY GRID 4-IN-A-ROW) */}
-            
-            {/* SECTION 1: EXCLUSIVES (انفرادات صحفية) */}
-            {(activeCategory === 'all' || activeCategory === 'exclusives') && exclusivesArticles.length > 0 && (
-              <section className="space-y-5">
-                <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
-                  <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
-                    <Sparkles size={18} className="text-black shrink-0" />
-                    <span>{isAr ? 'التحقيقات الصحفية' : 'Exclusive Bulletins & Enquiries'}</span>
-                  </h3>
-                  <span className="font-mono text-xxs font-bold text-zinc-500">
-                    {isAr ? `المطالع: ${exclusivesArticles.length} خبر` : `${exclusivesArticles.length} Filed Records`}
-                  </span>
-                </div>
-
-                {/* Full-width Row for FIFA Feature Article */}
-                {displayedExclusives.find(s => s.id === 'fifa-polymarket-struggle-2026') && (() => {
-                  const fifaFeature = displayedExclusives.find(s => s.id === 'fifa-polymarket-struggle-2026')!;
-                  return (
-                    <div className="w-full bg-red-50/40 p-4 md:p-6 border-2 border-red-800 shadow-[6px_6px_0px_0px_rgba(153,27,27,1)] relative transition-all hover:scale-[1.002] mb-6">
-                      <div className="absolute top-0 right-0 bg-red-800 text-white font-sans font-black text-[9px] md:text-[10px] uppercase px-3 py-1 tracking-widest z-10">
-                        {isAr ? 'تحقيق مميز عاجل' : 'FEATURED SPECIAL INVESTIGATION'}
-                      </div>
-                      <ArticleCard
-                        article={fifaFeature}
-                        layoutMode={layoutMode}
-                        language={language}
-                        variant="lead"
-                        onSelect={(article) => setSelectedArticle(article)}
-                        isSaved={savedArticleIds.includes(fifaFeature.id)}
-                        onToggleSave={handleToggleSaveArticle}
-                        onTagClick={handleTagClick}
-                        hideImage={activeCategory === 'all'}
-                      />
-                    </div>
-                  );
-                })()}
-
-                {/* Remaining Exclusives in a 4-Column Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
-                  {displayedExclusives
-                    .filter((story) => story.id !== 'fifa-polymarket-struggle-2026')
-                    .map((story) => (
-                      <div key={story.id} className="break-inside-avoid flex flex-col justify-between">
-                        <ArticleCard
-                          article={story}
-                          layoutMode={layoutMode}
-                          language={language}
-                          variant="standard"
-                          onSelect={(article) => setSelectedArticle(article)}
-                          isSaved={savedArticleIds.includes(story.id)}
-                          onToggleSave={handleToggleSaveArticle}
-                          onTagClick={handleTagClick}
-                          hideImage={activeCategory === 'all'}
-                        />
-                      </div>
-                    ))}
-                </div>
-
-                {/* SOLIDERE DEEP-DIVE ARCHIVES FOR EXCLUSIVES TAB ONLY */}
-                {activeCategory === 'exclusives' && !searchQuery && (
-                  <div className="mt-10 pt-10 border-t-4 border-double border-zinc-900">
-                    <div className="bg-zinc-900 text-white p-5 border border-zinc-800 mb-6">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 bg-amber-500 rounded-none inline-block"></span>
-                        <span className="font-mono text-[10px] uppercase tracking-widest text-amber-500 font-bold">
-                          {isAr ? 'قسم أرشيف تحقيقات سوليدير ٢٠٦٩ الحصرية' : 'EXCLUSIVE SOLIDERE 2069 DEEP-DIVE DOSSIER'}
-                        </span>
-                      </div>
-                      <h4 className="text-xl font-black font-sans mt-2">
-                        {isAr ? 'الجدول الزمني والتحقيق التفاعلي لشركة سوليدير ومستندات الأراضي' : 'Interactive Solidere Extension Timeline & Beirut Bourse Stock Tracker'}
-                      </h4>
-                      <p className="text-xs text-zinc-400 mt-2 max-w-4xl leading-relaxed">
-                        {isAr 
-                          ? 'تفاصيل تمديد مرسوم سوليدير التفاعلي لعام ٢٠٦٩ وتأثيره على قلب العاصمة وحرب الاستحواذ الدائرة بين أنطون صحناوي والحرس القديم، مع وثائق المحاضر القضائية.'
-                          : 'A chronological interactive outline of Solidere’s legal mandates and the corporate takeover battle on the Beirut Stock Exchange between Antoun Sehnaoui and the old guard.'}
-                      </p>
-                    </div>
-                    
-                    <div className="border-4 border-black bg-white text-black p-4 md:p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                      <SolidereInfographic
-                        language={language}
-                        articles={allArticles}
-                        onSelectArticle={(article) => setSelectedArticle(article)}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* REDIRECT READ MORE */}
-                {activeCategory === 'all' && exclusivesArticles.length > 0 && (
-                  <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
-                    <button
-                      onClick={() => {
-                        setActiveCategory('exclusives');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
-                    >
-                      <span>{isAr ? 'طالع كامل تحقيقات الملف ←' : 'Read More in Exclusives →'}</span>
-                    </button>
-                  </div>
-                )}
-              </section>
-            )}
 
             {/* SECTION 2: FROM THE EDITOR'S DESK (من طاولة رئيس التحرير) */}
             {(activeCategory === 'all' || activeCategory === 'editor-desk') && editorDeskArticles.length > 0 && (
