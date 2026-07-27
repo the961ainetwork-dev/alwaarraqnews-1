@@ -73,6 +73,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
   descAr: string;
   descEn: string;
 }> = {
+  'damascus-extended-shadow-syrian-role-lebanon-2026': {
+    fileId: 'AW-FILE-00',
+    badge: 'PRIMARY DOSSIER',
+    titleAr: 'الملف الرئيسي: ظلال دمشق الممتد: خيارات وتجليات الدور السوري في لبنان',
+    titleEn: 'Primary Dossier: The Extended Shadow of Damascus - Syrian Role in Lebanon',
+    descAr: 'تحليل سياسي واستراتيجي عميق يفكك حسابات القوى اللبنانية ودمشق تحت قيادة أحمد الشرع والخيارات الثلاثة للتدخل السوري.',
+    descEn: 'A deep strategic analysis decoding the political calculations of Lebanese factions and Damascus under Ahmed al-Sharaa.'
+  },
   'lebanon-framework-agreement-analysis-2026': {
     fileId: 'AW-FILE-01',
     badge: 'TOP SECRET',
@@ -235,7 +243,7 @@ export default function AlWarraqInvestigations({
   );
   
   // Track selected dossier for our new immersive reader layout
-  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('lebanon-framework-agreement-analysis-2026');
+  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('damascus-extended-shadow-syrian-role-lebanon-2026');
   
   const selectedDossierId = propSelectedDossierId !== undefined ? propSelectedDossierId : localSelectedDossierId;
   const setSelectedDossierId = onSelectDossier !== undefined ? onSelectDossier : setLocalSelectedDossierId;
@@ -258,6 +266,7 @@ export default function AlWarraqInvestigations({
   // Filter to keep only the main investigations
   const investigativeArticles = allArticles.filter(article => {
     return (
+      article.id === 'damascus-extended-shadow-syrian-role-lebanon-2026' ||
       article.id === 'lebanon-framework-agreement-analysis-2026' ||
       article.id === 'solidere-extension-2069' ||
       article.id === 'lebanon-ceasefire-mirage-2026' ||
@@ -720,7 +729,25 @@ export default function AlWarraqInvestigations({
 
                 {/* MOUNTED DYNAMIC INFOGRAPHIC GRAPHICS DIRECTLY INLINE AS STAMPED FILE ATTACHMENTS */}
                 <div className="my-6">
-                  {activeDossier.id === 'lebanon-framework-agreement-analysis-2026' ? (
+                  {activeDossier.id === 'damascus-extended-shadow-syrian-role-lebanon-2026' ? (
+                    <div className="space-y-6">
+                      <div className="p-4 bg-white relative overflow-hidden rounded-md shadow-sm border border-zinc-200">
+                        <span className="bg-red-800 text-white text-[8px] font-mono font-black px-2 py-0.5 absolute top-0 right-0 uppercase tracking-widest">
+                          {isAr ? 'وثيقة مدمجة أ' : 'EXHIBIT A'}
+                        </span>
+                        <div className="pt-2 mb-3">
+                          <h4 className="text-xs font-mono font-bold text-zinc-500 uppercase">
+                            {isAr ? '✦ خريطة النفوذ الجيوسياسي والدور السوري في لبنان' : '✦ Geopolitical Regional Map & Syrian Influence Grid'}
+                          </h4>
+                        </div>
+                        <LebanonConflictMap 
+                          language={language} 
+                          allArticles={allArticles}
+                          onSelectArticle={(art) => { setSelectedDossierId(art.id); }} 
+                        />
+                      </div>
+                    </div>
+                  ) : activeDossier.id === 'lebanon-framework-agreement-analysis-2026' ? (
                     <div className="space-y-6">
                       <div className="p-4 bg-white relative overflow-hidden rounded-md shadow-sm">
                         <span className="bg-red-800 text-white text-[8px] font-mono font-black px-2 py-0.5 absolute top-0 right-0 uppercase tracking-widest">
