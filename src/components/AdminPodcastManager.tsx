@@ -14,10 +14,10 @@ const LOCAL_STORAGE_KEY = 'alwarraq_published_podcasts';
 
 const DEFAULT_PODCASTS: PublishedPodcast[] = [
   {
-    id: 'podcast-lebanon-pilot-zones',
-    articleId: 'joseph-aoun-washington-visit-2026',
-    titleAr: 'ديوان تحريات الوراق: كواليس الاتفاق الأمني والمناطق التجريبية في الجنوب',
-    titleEn: 'Al-Warraq Podcast: Inside the Security Agreement & South Lebanon Pilot Zones',
+    id: 'podcast-lebanon-rubio-visit',
+    articleId: 'marco-rubio-visit-beirut-exclusive-2026',
+    titleAr: 'ديوان تحريات الوراق: زيارة ماركو روبيو الكواليس والأبعاد السياسية والأمنية',
+    titleEn: 'Al-Warraq Podcast: Marco Rubio Beirut Visit - Political & Security Dimensions',
     audioUrl: '',
     publishedAt: '2026-07-21T00:00:00.000Z',
     publisherAr: 'هيئة التحرير العسكرية',

@@ -954,7 +954,7 @@ export default function App() {
 
   // Find breaking news to populate the top ticker strip
   const latestBreaking = useMemo(() => {
-    return allArticles.find(story => story.id === 'joseph-aoun-washington-visit-2026') || allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
+    return allArticles.find(story => story.id === 'marco-rubio-visit-beirut-exclusive-2026') || allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
   }, [allArticles]);
 
   // Handle Search queries across translated titles and summaries

@@ -35,12 +35,12 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
 }) => {
   const isAr = language === 'ar';
 
-  // Target specific IDs requested by the user: Rubio as lead (idx 0), White House summit degraded (idx 1), etc.
+  // Target specific IDs requested by the user: Rubio as sole lead (idx 0), and key secondary dossier stories
   const targetIds = [
     'marco-rubio-visit-beirut-exclusive-2026',
-    'joseph-aoun-washington-visit-2026',
     'damascus-extended-shadow-syrian-role-lebanon-2026',
     'ukraine-iran-russia-escalation-scenarios-part1-2026',
+    'ukraine-iran-russia-escalation-scenarios-part2-2026',
     'egypt-energy-hub-tamar-gas-sumed-pipeline-2026'
   ];
 
@@ -202,7 +202,7 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
             const isUkrainePart1 = story.id.includes('part1');
             const isUkrainePart2 = story.id.includes('part2');
             const isEgyptEnergy = story.id.includes('egypt');
-            const isWashingtonSummit = story.id === 'joseph-aoun-washington-visit-2026';
+            const isDamascus = story.id.includes('damascus');
 
             return (
               <div 
@@ -213,7 +213,7 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
                 {/* Header Tag */}
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span className={`font-mono text-[9px] font-black px-2 py-0.5 border uppercase ${
-                    isWashingtonSummit
+                    isDamascus
                       ? 'bg-red-100 text-red-950 border-red-500'
                       : isUkrainePart1 || isUkrainePart2 
                       ? 'bg-amber-100 text-amber-900 border-amber-400' 
@@ -221,8 +221,8 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
                       ? 'bg-emerald-100 text-emerald-900 border-emerald-400'
                       : 'bg-zinc-100 text-zinc-900 border-zinc-300'
                   }`}>
-                    {isWashingtonSummit
-                      ? (isAr ? 'القمة التاريخية: واشنطن وبيروت' : 'LEBANON-US SUMMIT')
+                    {isDamascus
+                      ? (isAr ? 'ملف خاص: الدور السوري' : 'SPECIAL DOSSIER: SYRIAN ROLE')
                       : isUkrainePart1 
                       ? (isAr ? 'غرفة العمليات: أوكرانيا وإيران (١/٢)' : 'WAR ROOM: UKRAINE-IRAN (1/2)') 
                       : isUkrainePart2 
