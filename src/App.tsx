@@ -27,6 +27,7 @@ import { AlWarraqPodcast } from './components/AlWarraqPodcast';
 import { SaudiUaeFinancialChart } from './components/SaudiUaeFinancialChart';
 import { LebanonTelecomFinanceDashboard } from './components/LebanonTelecomFinanceDashboard';
 import GoldenPrimeWorkspace from './components/GoldenPrimeWorkspace';
+import { HappeningNowSection } from './components/HappeningNowSection';
 import InCaseYouMissedIt from './components/InCaseYouMissedIt';
 import WarRoom from './components/WarRoom';
 import UrgentRelease from './components/UrgentRelease';
@@ -2077,6 +2078,18 @@ export default function App() {
                     )}
 
                   </div>
+                )}
+
+                {/* HAPPENING NOW SECTION (يحدث الآن) */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <HappeningNowSection
+                    language={language}
+                    articles={allArticles}
+                    onSelectArticle={(article) => setSelectedArticle(article)}
+                    savedArticleIds={savedArticleIds}
+                    onToggleSaveArticle={handleToggleSaveArticle}
+                    onTagClick={handleTagClick}
+                  />
                 )}
 
                 {/* NARRATIVE LEBANON CRISIS INFOGRAPHICS DASHBOARD */}
