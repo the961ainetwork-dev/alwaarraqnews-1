@@ -2,6 +2,147 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'damascus-extended-shadow-syrian-role-lebanon-2026',
+    slug: 'damascus-extended-shadow-syrian-role-lebanon-2026',
+    focusKeyword: 'سوريا-لبنان-أحمد-الشرع-التدخل-السوري-دمشق',
+    category: 'urgent-release',
+    categories: ['urgent-release', 'war-room', 'lebanon', 'middle-east', 'exclusives', 'alwarraq-investigations'],
+    titleAr: 'حدث الآن: ظل دمشق الممتد: خيارات وتجليات الدور السوري في لبنان',
+    titleEn: 'HAPPENING NOW: The Extended Shadow of Damascus: Options and Manifestations of the Syrian Role in Lebanon',
+    summaryAr: 'تحليل سياسي واستراتيجي عميق يفكك حسابات القوى اللبنانية ودمشق تحت قيادة أحمد الشرع، متناولاً ثلاثة خيارات أساسية: سيناريو المواجهة العسكرية المباشرة، التدخل الناعم والنفوذ الأمني، والهندسة الإقليمية وإعادة تشكيل التوازنات بالتعاون مع الخليج وتركيا.',
+    summaryEn: 'A deep strategic analysis decoding the political calculations of Lebanese factions and Damascus under Ahmed al-Sharaa, examining three primary pathways: direct military collision, soft security influence, and regional engineering alongside Gulf and Turkish players.',
+    excerptAr: 'تقرير خاص لـ"الورّاق" يحلل الخيارات الثلاثة للتدخل السوري في لبنان: من سيناريو المواجهة العسكرية والتسوية الخليجية-الأمريكية، إلى الوصاية الأمنية الناعمة، والهندسة الإقليمية المتكاملة مع أنقرة والرياض.',
+    excerptEn: 'Al-Warraq Special Analysis examining the 3 core scenarios for Syrian intervention in Lebanon: military collision, soft security guardianship, and regional engineering.',
+    author: {
+      nameAr: 'وحدة التحليلات السياسية والإقليمية - الورّاق',
+      nameEn: 'Al-Warraq Political & Regional Analysis Unit',
+      titleAr: 'قسم الشؤون السورية - اللبنانية والجيوسياسية',
+      titleEn: 'Syrian-Lebanese Affairs & Geopolitics Desk',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 41200,
+    tags: [
+      'سوريا', 'لبنان', 'أحمد_الشرع', 'حزب_الله', 'جوزيف_عون', 'نواف_سلام', 'دمشق', 'الشرق_الأوسط',
+      'Damascus', 'Lebanon', 'Syria', 'Sharaa', 'Hezbollah'
+    ],
+    hashtags: ['DamascusLebanon', 'SyriaInLebanon', 'SharaaRole', 'AlWarraqReport'],
+    contentAr: `### ظل دمشق الممتد: خيارات وتجليات الدور السوري في لبنان
+
+تخطئ غالبية القوى السياسية اللبنانية عندما تختزل مفهوم "التدخل السوري" بالوجود العسكري المباشر. والمفارقة الكبرى أن القوى المرحّبة بأي دور لدمشق اليوم—من رئيس الجمهورية جوزيف عون ومساعده الحكومي نواف سلام، إلى "القوات اللبنانية" و"الكتائب"، وصولاً إلى بقايا "14 آذار" و"ثوار تشرين"—هي نفسها المنخرطة في المشروع المناهض للمقاومة. تتجنّب هذه القوى المجاهرة برغبتها الضمنية: أن يتدخل أحمد الشرع عسكرياً لإنجاز ما عجزت عنه إسرائيل ضد "حزب الله"، ثم يغادر مشكوراً!
+
+في المقابل، يرى دعاة التقسيم والفيدرالية أن التدخل السوري يُعدّ رافعة لمشروعهم؛ إذ يتصورون تقسيماً وظيفياً يتولى فيه السوريون مناطق البقاع والشمال وجنوب بيروت، وتتكفل إسرائيل بالجنوب والبقاع الغربي، بينما يُترك لهم حكم "جبل لبنان الشمالي" والأقضية المسيحية لتحويلها إلى "موناكو الشرق" تحت حماية أميركية مباشرة، مع نشر أمني أميركي يمتد من الساحل المسيحي شمالاً إلى مرفأ بيروت وعوكر.
+
+ولفهم طبيعة الحراك الجاري، يمكن تفكيك المشهد اللبناني - السوري عبر ثلاثة خيارات ومسارات أساسية للتدخل السوري:
+
+---
+
+### الخيار الأول: التدخل العسكري المباشر (سيناريو المواجهة)
+
+يدور هذا السيناريو في أروقة النقاشات الافتراضية، ويقوم على المعطيات والتوازنات التالية:
+
+* **الآلية والتمويل:** لا تُقدم دمشق على هذه الخطوة إلا بطلب رسمي من الحكومة اللبنانية وبالتنسيق مع الجيش اللبناني (عبر وضع الثكنات والمقرات في خدمة القوات السورية بمواجهة حزب الله). وتتولى السعودية والإمارات التمويل، بينما تُؤمّن واشنطن الدعم اللوجستي، ومنظومات دفاع جوي متطورة لدرء أي رد إيراني، وتزويد دمشق بالمسيرات والذخائر الصاروخية مع غطاء جوي فعّال.
+
+#### التساؤلات والتعقيدات الجوهرية:
+1. **هل يقبل أحمد الشرع** أن يتحول إلى شريك ميداني لإسرائيل ضد حزب الله؟
+2. **هل ستكون ثمن هذه الحرب** فرض توطين مليون ونصف مليون نازح سوري في لبنان؟
+3. **هل واشنطن مستعدة** لدفع الثمن كاملاً للشرع عبر دعمه لتوحيد سوريا تحت سلطته، والضغط لانسحاب إسرائيل من الجنوب السوري، وإنهاء تمرد السويداء؟
+4. **كيف سيتعامل الغرب** مع القوى الإسلامية التي ستشكل العمود الفقري لهذه الحملة (سواء التشكيلات التابعة لدمشق أو المجموعات اللبنانية/النازحة)؟
+
+> **الموقف التركي:** تُشير المعطيات إلى أن أنقرة حذّرت القيادة السورية بوضوح من مخاطر الانخراط في أي مغامرة عسكرية ضد حزب الله في لبنان.
+
+---
+
+### الخيار الثاني: التدخل الناعم والمستمر (النفوذ عن بُعد والوصاية الأمنيّة)
+
+وهو الخيار القائم والمُمارس فعلياً اليوم، والذي أطرّه الشرع سياسياً وإعلامياً تحت عنوان "التنسيق مع الحكومة اللبنانية لمعالجة الأزمة بأبعادها الشاملة لا الأمنية فقط". وتتجلّى مظاهر هذا التدخل المباشر في عدة ملفات:
+
+#### 1. الملف الأمني والسياسي:
+* **إرغام السلطات اللبنانية**—بضغط أميركي - سعودي—على الإفراد عن سجناء سوريين صادر بحقهم أحكام في قضايا إرهاب واعتداءات على الجيش اللبناني.
+* **فرض تبادل أمني** للحصول على معلومات عن خصوم النظام الجديد من ضباط ومسؤولين سابقين، وتعقب المعارضين السياسيين والإعلاميين ورجال الأعمال.
+* **إبقاء باب الخيار العسكري مفتوحاً مستقبلاً**، كما نقل مسؤول سوري مقرب من الشرع يزور بيروت، مع العمل على إدارة قيادات محلية ورجال دين (مثل فتح قنوات بين سلفيين لبنانيين و"شرعيين" في هيئة تحرير الشام).
+
+#### 2. الملف الحدودي والاقتصادي:
+* **رفض دمشق** تشكيل لجنة مشتركة لترسيم الحدود البرية والبحرية، ورفض حسم سيادة مزارع شبعا.
+* **اشتراط إعادة ودائع السوريين** المحتجزة في المصارف اللبنانية قبل البحث في ملف إعادة النازحين.
+* **طلب آلية للتعاون المباشر** مع إدارة مرفأ طرابلس ومطار القليعات، وفرض الشروط السورية على المعابر الحدودية، مع الإبقاء على ملف التهريب بلا ضبط كامل بحجة عدم الجاهزية.
+
+---
+
+### الخيار الثالث: الهندسة الإقليمية وإعادة تشكيل التوازنات (دبلوماسية الشيباني)
+
+كشفت زيارة وزير الخارجية السوري أسعد الشيباني إلى بيروت عن خريطة الحسابات الإقليمية لدمشق، والتي تُدار وفق التوازنات التالية:
+
+* **المظلة الخليجية:** حرصت دمشق على مراعاة السعودية أملاً في دعم مالي، والاستجابة لطلب الرياض بمقاطعة سعد والنائبة السابقة بهية الحريري، مقابل فتح خطوط مع "الكتائب" و"القوات اللبنانية" وتجاهل "التيار الوطني الحر". كما أثمرت الرغبة السعودية عن لقاء مع نبيه بري (الذي حرص على التمايز عن موقف حزب الله والنظام السوري السابق). في المقابل، تتطلع دمشق باستثمارات إماراتية ضخمة تصل لـ 20 مليار دولار على الساحل ومحيط العاصمة.
+* **إدارة الساحة السنية:** الانفتاح على شخصيات محلية محدودة التأثير في طرابلس، واستكمال مسؤول سوري مقرب من الشرع (يحمل جنسية أجنبية) لقاءات مع نخب سنية ورجال دين لإدارة الشارع.
+* **الرؤية العابرة للحدود (المشروع الإقليمي):** تدرك دمشق أن مستقبل لبنان يُرسم بالتكامل مع الرؤية التركية، التي تتعامل مع المنطقة (سوريا، لبنان، العراق) كإطار إقليمي واحد، وهو المفهوم الذي يتقاطع مع المشروع الذي يعمل عليه الموفد الأميركي توم برّاك.
+
+---
+
+### خلاصة
+أياً كانت هوية الحاكم في دمشق—بعثياً، إسلامياً، أو بلا لون عقائدي—فإن الجغرافيا والتاريخ يمنعان ترك لبنان خارج دائرة النفوذ السوري. التدخل القائم اليوم عن بُعد يثبت أن دمشق تُدير الملف اللبناني بتوازنات دقيقة، تُرضي القوى الإقليمية والدولية دون أن تورط نفسها في مغامرة عسكرية غير محسوبة النتائج.`,
+    contentEn: `### The Extended Shadow of Damascus: Options and Manifestations of the Syrian Role in Lebanon
+
+Most Lebanese political factions make a fundamental mistake when they reduce the concept of "Syrian intervention" solely to a direct military presence. The major paradox is that the very forces welcoming a role for Damascus today—from President Joseph Aoun and his governmental assistant Nawaf Salam, to the "Lebanese Forces" and "Kataeb", down to the remnants of March 14 and October Revolution activists—are the same forces engaged in anti-resistance political projects. These forces avoid openly stating their implicit desire: for Ahmed al-Sharaa to intervene militarily to accomplish against Hezbollah what Israel failed to achieve, and then politely depart!
+
+Conversely, proponents of partition and federalism view Syrian intervention as a leverage for their agenda. They envision a functional division where Syrians assume responsibility over the Bekaa, North Lebanon, and Southern Beirut; Israel secures the South and Western Bekaa; while they are left to govern "Northern Mount Lebanon" and Christian districts, transforming them into a "Monaco of the East" under direct American protection, alongside U.S. security deployments stretching from the Christian coastline north to the Port of Beirut and Awkar.
+
+To grasp the ongoing dynamics, the Lebanese-Syrian scene can be deconstructed into three primary options and pathways for Syrian intervention:
+
+---
+
+### Option 1: Direct Military Intervention (Collision Scenario)
+
+This scenario circulates within theoretical discussions, rooted in the following parameters and balances:
+
+* **Mechanism and Funding:** Damascus would only undertake this step upon a formal request from the Lebanese government and in coordination with the Lebanese Armed Forces (placing barracks and facilities at the disposal of Syrian forces against Hezbollah). Saudi Arabia and the UAE would provide financing, while Washington supplies logistical support, advanced air defense systems to counter Iranian responses, and equips Damascus with drones and missile munitions under effective air cover.
+
+#### Fundamental Questions & Complications:
+1. **Will Ahmed al-Sharaa accept** becoming an operational field partner with Israel against Hezbollah?
+2. **Will the price of this conflict** involve forcing the permanent settlement of 1.5 million Syrian refugees in Lebanon?
+3. **Is Washington willing** to pay the full price to Sharaa by supporting the unification of Syria under his authority, pressuring Israel to withdraw from Southern Syria, and ending the Suwayda rebellion?
+4. **How will Western powers interact** with the Islamist forces forming the backbone of this campaign (whether Damascus-affiliated units or Lebanese/refugee groups)?
+
+> **Turkish Position:** Reports indicate Ankara explicitly warned the Syrian leadership against engaging in any military adventure against Hezbollah in Lebanon.
+
+---
+
+### Option 2: Soft & Continuous Intervention (Remote Influence & Security Guardianship)
+
+This is the operational reality practiced today, framed politically and media-wise by Sharaa under "coordination with the Lebanese government to address the crisis in its comprehensive dimensions, not merely security ones." This direct influence manifests across several key domains:
+
+#### 1. Security and Political File:
+* **Pressuring Lebanese authorities**—under U.S.-Saudi backing—to release Syrian prisoners serving sentences for terrorism and attacks on the Lebanese army.
+* **Imposing security exchanges** to obtain intelligence on opponents of the new regime among former officers and officials, while tracking political dissidents, journalists, and businessmen.
+* **Keeping the military option open for the future**, as relayed by a Syrian official close to Sharaa visiting Beirut, alongside cultivating local leaders and clerics (e.g., opening channels between Lebanese Salafis and "jurisprudents" in Hay'at Tahrir al-Sham).
+
+#### 2. Border and Economic File:
+* **Damascus’s refusal** to form a joint committee for land and maritime border demarcation, and declining to settle Shebaa Farms sovereignty.
+* **Conditioning the return of Syrian refugees** on unlocking frozen Syrian bank deposits in Lebanese banks.
+* **Requesting direct operational mechanisms** with the management of Tripoli Port and Quleiaat Airport, imposing Syrian conditions on border crossings while leaving smuggling uncurbed under the pretext of unreadiness.
+
+---
+
+### Option 3: Regional Engineering & Reshaping Balances (Shabbani Diplomacy)
+
+Syrian Foreign Minister Asaad Al-Shaibani's visit to Beirut exposed Damascus's regional calculation map, managed along the following dynamics:
+
+* **Gulf Umbrella:** Damascus carefully catered to Saudi Arabia hoping for financial aid, fulfilling Riyadh's request to boycott Saad and former MP Bahia Hariri, in exchange for opening lines with the "Kataeb" and "Lebanese Forces" while ignoring the "Free Patriotic Movement." Furthermore, Saudi desires produced a meeting with Speaker Nabih Berri (who made sure to differentiate his position from Hezbollah and the former Syrian regime). Simultaneously, Damascus eyes massive UAE investments reaching $20 billion along the coast and capital outskirts.
+* **Managing the Sunni Arena:** Reaching out to local figures of limited influence in Tripoli, while a Syrian official close to Sharaa (holding foreign citizenship) conducts meetings with Sunni elites and clerics to manage street dynamics.
+* **Cross-Border Vision (Regional Project):** Damascus recognizes that Lebanon's future is mapped in tandem with the Turkish vision, which treats the region (Syria, Lebanon, Iraq) as a unified regional framework—intersecting directly with the project led by U.S. envoy Tom Barrack.
+
+---
+
+### Conclusion
+Regardless of the ruler's identity in Damascus—Baathist, Islamist, or non-ideological—geography and history prevent leaving Lebanon outside Syria's sphere of influence. Today's remote intervention proves that Damascus manages the Lebanese file with delicate balances, satisfying regional and international powers without entangling itself in an uncalculated military adventure.`
+  },
+  {
     id: 'trump-delays-iran-strikes-interceptor-depletion-2026',
     slug: 'trump-delays-iran-strikes-interceptor-depletion-2026',
     focusKeyword: 'ترامب-إيران-مضيق-هرمز-باتريوت-الدبلوماسية',
