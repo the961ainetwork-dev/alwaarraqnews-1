@@ -2,6 +2,122 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'marco-rubio-visit-beirut-exclusive-2026',
+    slug: 'marco-rubio-visit-beirut-exclusive-2026',
+    focusKeyword: 'ماركو-روبيو-بيروت-لبنان-نبيه-بري-ترامب-جوزيف-عون-الجيش',
+    category: 'exclusives',
+    categories: ['exclusives', 'lebanon', 'war-room', 'middle-east'],
+    titleAr: 'مصادر خاصة لـ «الورّاق نيوز»: زيارة مرتقبة لوزير الخارجية الأميركي ماركو روبيو إلى بيروت بحسابات سياسية وأمنية مفصلية',
+    titleEn: 'Exclusive: US Secretary of State Marco Rubio Planning Critical Visit to Beirut Amid Pivotal Security and Political Calculations',
+    summaryAr: 'ترتيبات جارية لزيارة مرتقبة يقوم بها وزير الخارجية الأميركي ماركو روبيو إلى بيروت للقاء نبيه بري بحاملاً رسالة من ترامب، ضمن خطة تنفيذية من ٣ خطوات تشمل الطيران المباشر ودعم الجيش بـ١٥٠ مليون دولار ودعم الاتفاق الإطاري.',
+    summaryEn: 'Arrangements are underway for an upcoming visit by US Secretary of State Marco Rubio to Beirut to meet Speaker Nabih Berri with a direct message from Trump, implementing a 3-step plan including direct FBI-coordinated flights, $150M LAF military aid, and framework agreement support.',
+    excerptAr: 'مصادر خاصة تشكف عن زيارة مرتقبة لماركو روبيو إلى بيروت تحمل رسالة من ترامب للرئيس بري، وتفاصيل خطة تنفيدية ثلاثية تشمل فتح الطيران المباشر والدعم العسكري للجيش.',
+    excerptEn: 'Exclusive sources reveal an upcoming visit by Marco Rubio to Beirut carrying a message from Trump to Berri, outlining a 3-step action plan including direct flights and $150M in army aid.',
+    author: {
+      nameAr: 'بيروت — «الورّاق نيوز» (قسم التحقيقات السيادية)',
+      nameEn: 'Beirut — Al-Warraq News (Sovereign Intelligence Desk)',
+      titleAr: 'محرر الشؤون الاستراتيجية والدبلوماسية',
+      titleEn: 'Strategic & Diplomatic Affairs Editor',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-07-27',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 48900,
+    tags: [
+      'ماركو_روبيو', 'بيروت', 'نبيه_بري', 'ترامب', 'جوزيف_عون', 'الجيش_اللبناني', 'لبنان', 'تحقيقات',
+      'MarcoRubio', 'Beirut', 'Lebanon', 'Trump', 'LAF'
+    ],
+    hashtags: ['MarcoRubioInBeirut', 'LebanonUSSummit', 'AlWarraqExclusive', 'NabihBerri', 'JosephAoun'],
+    contentAr: `### مصادر خاصة لـ «الورّاق نيوز»: زيارة مرتقبة لوزير الخارجية الأميركي ماركو روبيو إلى بيروت بحسابات سياسية وأمنية مفصلية
+
+**بيروت — «الورّاق نيوز»**  
+علمت «الورّاق نيوز» من مصادر خاصة بوجود ترتيبات جارية لزيارة مرتقبة يقوم بها وزير الخارجية الأميركي **ماركو روبيو** إلى العاصمة اللبنانية بيروت. وتكتسب هذه الزيارة أهمية بالغة بالنظر إلى توقيتها وأجندة الملفات التي يحملها المسؤول الأميركي، حيث يُتوقع أن يشكل اللقاء المقرّر بينه وبين رئيس مجلس النواب **نبيه بري** المحطة الأساسية في جولته.
+
+بحسب المصادر الخاصة، يحمل روبيو إلى بري رسالة مباشرة تستكمل الإشارات الإيجابية التي وجّهها الرئيس الأميركي **دونالد ترامب** خلال لقائه بالرئيس **جوزيف عون**، مفادها أن المرحلة المقبلة تتطلب من بري الوقوف إلى جانب الدولة والعهد، ودعم "الاتفاق الإطاري"، والالتفاف حول رئيس الجمهورية والشرعية اللبنانية كمدخل رئيسي لإعادة بناء مؤسسات الدولة.
+
+---
+
+### أبعاد الزيارة ومُخرجات القمة اللبنانية - الأميركية
+تندرج زيارة روبيو ضمن خطة تنفيذية متكاملة من ثلاث خطوات تُترجم مخرجات التفاهمات الأخيرة بين بيروت وواشنطن:
+
+1. **الخطوة الأولى (إعادة تشغيل الطيران المباشر):** الشروع في الخطوات التنفيذية لقرار إعادة فتح خطوط الطيران المباشر بين لبنان والولايات المتحدة، عبر تنسيق أمني وتقني مباشر بين مكتب التحقيقات الفيدرالي الأميركي ($FBI$) والجهات اللبنانية المختصة لضمان معايير السلامة.
+2. **الخطوة الثانية (دعم الجيش اللبناني):** تقديم مساعدات عينية للمؤسسة العسكرية بقيمة تُقدّر بنحو **150 مليون دولار** تشمل التجهيزات، البرامج التدريبية، والأسلحة المتطورة، في انتظار رفع القيادة اللبنانية لائحة تفصيلية باحتياجاتها.
+3. **الخطوة الثالثة (زيارة روبيو وحراك الدبلوماسية):** إبلاغ القيادات اللبنانية الرسمية بضرورة التماسك السياسي وحشد الدعم لمسار الاتفاق الإطاري.
+
+---
+
+### ردود الفعل والتفاعلات السياسية في الداخل اللبناني
+
+#### 1. موقف رئيس مجلس النواب نبيه بري
+* شدّد بري على أن العبرة تكمن في النتائج على أرض الواقع وليس في الشكل، معتبراً أن تثبيت وقف إطلاق النار والانسحاب الإسرائيلي الكامل هما المعيار الحقيقي لنجاح أي قمة.
+* انتقد الانسحابات الميدانية الجزئية (كالانسحاب من بلدة زوطر الغربية) مع استمرار عمليات التفجير والاعتداءات على القرى الحدودية.
+* وعن إشارة ترامب إلى إمكانية انضمامه إلى المسار مستقبلاً، علّق بري ضاحكاً: **"يبدو أن ترامب يفهمني أكثر من اللبنانيين"**.
+* في سياق متصل، استقبل بري السفير المصري علاء موسى الذي أكد أن الإشادة ببري في المؤتمر الصحافي تؤكد محوريته في الحياة السياسية اللبنانية.
+
+#### 2. موقف «حزب الله» والوفاء للمقاومة
+* اعتبر النائب **حسين الحاج حسن** أن نتائج القمة لا تتعدى كونها "كلاماً عاماً ووعوداً بلا ضمانات أو أطر زمنية".
+* انتقد دعوة ترامب للتدخل السوري واعتبرها انتهاكاً للسيادة اللبنانية، مقللاً من أهمية الانسحابات الإسرائيلية التي وصفها بالشكليّة.
+* وعن إمكانية فتح قنوات تواصل أميركية مع الحزب، ردّ مستخفاً: **"كنا عم نشرب قهوة مش فاضيين هيدا الكلام"**.
+* تساءل حول الغرض من تسليح الجيش وما إذا كان لمواجهة الحزب أم إسرائيل، مؤكداً في الوقت نفسه على متانة الثقة والتعاون بين الحزب والمؤسسة العسكرية، ومشدداً على صعوبة فصل البيئة الحاضنة عن الحزب.
+
+#### 3. موقف رئيس الجمهورية جوزيف عون
+* أكد عون خلال حفل عشاء في واشنطن أن نزع سلاح حزب الله أمر قابل للتحقيق إذا صَدَقت النوايا، موضحاً أن الحزب ليس قوة مرتزقة بل مكون لبناني بُني على مدى 40 عاماً.
+* شدّد على أن الحل يكمن في بسط الدولة لسيطرتها الحصرية على قرار الحرب والسلم والحدود، مشيداً بالالتزام الأميركي الجاد عبر "الإطار الثلاثي".
+
+---
+
+### التطورات الميدانية والتصعيد الإقليمي
+تزامناً مع هذا الحراك الدبلوماسي، شهد الميدان تصعيداً مستمراً:
+
+* **ميدانياً في الجنوب:** تقدمت القوات الإسرائيلية باتجاه أطراف بلدة برج الملوك وتغلغلت في بلدة صربين، بالتزامن مع قصف مدفعي وغارات من مسيّرات على منطقة النبطية الفوقا، وتفجيرات في برعشيت وحداثا. كما أعلن الجيش الإسرائيلي عن انفجار عبوة ناسفة قرب سيارتي إسعاف للصليب الأحمر في ميفدون ورجّح وقوف حزب الله خلفها.
+* **إقليمياً:** شهدت المنطقة تصعيداً جوياً؛ حيث اعترضت الدفاعات الجوية في البحرين والدمام (السعودية) اعتداءات جوية، فيما أعلن الجيش الأردني اعتراض 4 صواريخ إيرانية سقط اثنان منها في مناطق نائية بعد رصد 6 صواريخ عبرت أجوائه.`,
+    contentEn: `### Exclusive: US Secretary of State Marco Rubio Planning Critical Visit to Beirut Amid Pivotal Security and Political Calculations
+
+**Beirut — Al-Warraq News**  
+*Al-Warraq News* has learned from exclusive diplomatic sources that arrangements are currently underway for an upcoming visit by US Secretary of State **Marco Rubio** to the Lebanese capital, Beirut. The visit carries paramount significance given its timing and agenda, with a scheduled meeting with Parliament Speaker **Nabih Berri** set to form the primary anchor of his tour.
+
+According to exclusive sources, Rubio carries a direct message to Berri building upon positive signals delivered by US President **Donald Trump** during his meeting with President **Joseph Aoun**. The message underscores that the upcoming phase requires Berri to align with state institutions, support the "Framework Agreement," and unite around the Presidency and Lebanese legitimacy as the foundational gateway to rebuilding state apparatuses.
+
+---
+
+### Key Dimensions of the Visit & Lebanon-US Summit Outcomes
+Rubio's visit falls under a comprehensive 3-step operational roadmap translating recent Beirut-Washington understandings:
+
+1. **Step One (Resuming Direct Flights):** Commencing operational steps to reopen direct airline routes between Lebanon and the United States, via direct security and technical coordination between the Federal Bureau of Investigation ($FBI$) and competent Lebanese authorities to guarantee safety benchmarks.
+2. **Step Two (Supporting the Lebanese Armed Forces - LAF):** Providing in-kind military aid to the Lebanese Armed Forces estimated at **$150 million**, covering equipment, training programs, and advanced weaponry, awaiting a detailed needs assessment from LAF leadership.
+3. **Step Three (Rubio's Visit & Diplomatic Push):** Briefing official Lebanese leadership on the imperative of political cohesion and mobilizing support for the Framework Agreement track.
+
+---
+
+### Political Reactions & Internal Lebanese Dynamics
+
+#### 1. Position of Parliament Speaker Nabih Berri
+* Berri emphasized that the true measure lies in tangible results on the ground rather than political optics, stressing that establishing a durable ceasefire and full Israeli withdrawal are the sole metrics of success.
+* He criticized partial field withdrawals (such as from Zoutar al-Gharbiya) while demolition operations and shelling of border villages persist.
+* Commenting on Trump's remark regarding Berri potentially joining the track in the future, Berri remarked with a laugh: **"It seems Trump understands me better than the Lebanese do."**
+
+#### 2. Position of Hezbollah & Loyalty to Resistance Bloc
+* MP **Hussein Hajj Hassan** stated that the summit outcomes amount to "general statements and promises lacking guarantees or timelines."
+* He criticized calls regarding Syrian intervention as a violation of Lebanese sovereignty, dismissing Israeli field shifts as cosmetic.
+* Asked about potential US communication channels with Hezbollah, he scoffed: **"We were drinking coffee, we don't have time for such talk."**
+
+#### 3. Position of President Joseph Aoun
+* Speaking at a dinner in Washington, President Aoun affirmed that disarming Hezbollah is achievable if intentions are sincere, explaining that Hezbollah is a 40-year-old Lebanese societal component rather than a mercenary force.
+* He stressed that the ultimate resolution lies in the state exercising exclusive authority over war, peace, and borders, praising serious US commitment through the "Tripartite Framework."
+
+---
+
+### Field Escalations & Regional Developments
+In parallel with diplomatic maneuvering, the field witnessed ongoing escalations:
+* **Southern Front:** Israeli forces advanced toward the outskirts of Bourj el-Moulouk and penetrated Sarbine, accompanied by artillery shelling and drone strikes on Nabatieh al-Fawqa.
+* **Regional Air Domain:** Air defense systems in Bahrain and Dammam (Saudi Arabia) intercepted aerial threats, while the Jordanian Armed Forces intercepted 4 Iranian missiles crossing its airspace.`
+  },
+  {
     id: 'lng-market-upside-risks-middle-east-war-2026',
     slug: 'lng-market-upside-risks-middle-east-war-2026',
     focusKeyword: 'الغاز-المسال-قطر-هرمز-أسواق-الطاقة-جي-بي-مورغان-ترجمات',

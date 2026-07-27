@@ -37,6 +37,7 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
 
   // Target specific IDs requested by the user
   const targetIds = [
+    'marco-rubio-visit-beirut-exclusive-2026',
     'damascus-extended-shadow-syrian-role-lebanon-2026',
     'ukraine-iran-russia-escalation-scenarios-part1-2026',
     'ukraine-iran-russia-escalation-scenarios-part2-2026',
@@ -109,7 +110,13 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
             <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <span className="bg-red-800 text-white font-mono text-xxs font-black px-2.5 py-1 uppercase tracking-widest flex items-center gap-1">
                 <ShieldAlert size={12} className="text-amber-300" />
-                <span>{isAr ? 'ملف خاص: النفوذ السوري في لبنان' : 'SPECIAL DOSSIER: SYRIAN ROLE IN LEBANON'}</span>
+                <span>
+                  {leadStory.id === 'marco-rubio-visit-beirut-exclusive-2026'
+                    ? (isAr ? 'انفراد سيادي عاجل: زيارة ماركو روبيو إلى بيروت' : 'EXCLUSIVE DOSSIER: MARCO RUBIO BEIRUT VISIT')
+                    : leadStory.id === 'damascus-extended-shadow-syrian-role-lebanon-2026'
+                    ? (isAr ? 'ملف خاص: النفوذ السوري في لبنان' : 'SPECIAL DOSSIER: SYRIAN ROLE IN LEBANON')
+                    : (isAr ? 'تحقيق سيادي خاص' : 'SPECIAL INVESTIGATIVE DOSSIER')}
+                </span>
               </span>
 
               <div className="flex items-center gap-2 text-xxs font-mono text-zinc-600">
