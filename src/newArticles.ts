@@ -2,6 +2,430 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'fifa-leadership-crisis-infantino-resignation-2026',
+    slug: 'fifa-leadership-crisis-infantino-resignation-2026',
+    focusKeyword: 'أزمة-قيادة-الفيفا-جياني-إنفانتينو-خصخصة-كأس-العالم-اليويفا-فساد-الفيفا',
+    category: 'alwarraq-investigations',
+    categories: ['alwarraq-investigations', 'investigations', 'editor-desk', 'research-reports', 'sports-business'],
+    titleAr: 'تقرير شامل: أزمة القيادة في الفيفا.. اتهامات الفساد، التجاوزات المالية، وضغوط الإطاحة بـ جياني إنفانتينو',
+    titleEn: 'Comprehensive Report: FIFA Leadership Crisis — Corruption Allegations, Financial Misconduct & Pressure to Oust Gianni Infantino',
+    summaryAr: 'تقرير واستحقاق استقصائي شامل يفكك تفاصيل انشطار القيادة في الاتحاد الدولي لكرة القدم (الفيفا)، وعاصفة إسقاط مشروع خصخصة كأس العالم بقيمة 20 مليار دولار، ومطالبة اليويفا و55 اتحاداً باقالة جياني إنفانتينو أو مواجهة تصويت سحب الثقة.',
+    summaryEn: 'A special investigative dossier analyzing the deep leadership crisis at FIFA, the collapse of Gianni Infantino’s $20B World Cup privatization scheme, UEFA’s ultimatum demanding his resignation or a no-confidence vote, and lingering prosecutorial controversies.',
+    excerptAr: 'تحقيق خاص يفكك صراع خصخصة حقوق المونديال، وتهديدات اليويفا بسحب الثقة، وقضية لقاءات لوبر السويسرية السرية وتجاوزات التقويم الكروي.',
+    excerptEn: 'Deep investigation into the $20B World Cup commercial privatization collapse, UEFA’s no-confidence motion against Infantino, the Lauber prosecutor scandal, and FIFPRO calendar strains.',
+    author: {
+      nameAr: 'غرفة التحقيقات الاستقصائية والرياضة السيادية — الورّاق نيوز',
+      nameEn: 'Sovereign Sports & Governance Intel — Al-Warraq',
+      titleAr: 'قسم الحوكمة الرياضية والتحقيقات الدولية',
+      titleEn: 'Sports Governance & Anti-Corruption Desk',
+      avatar: 'https://images.unsplash.com/photo-1517649763962-0c6232662000?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-03',
+    readTimeAr: '١١ دقيقة قراءة',
+    readTimeEn: '11 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 38900,
+    tags: [
+      'الفيفا', 'جياني_إنفانتينو', 'خصخصة_كأس_العالم', 'اليويفا', 'سحب_الثقة', 'فساد_الفيفا', 'ميكائيل_لوبر', 'FIFPRO',
+      'FIFA', 'Gianni_Infantino', 'UEFA', 'World_Cup_Privatization', 'FIFA_Corruption', 'Michael_Lauber', 'No_Confidence_Vote'
+    ],
+    hashtags: ['FIFA', 'Infantino', 'UEFA', 'WorldCupPrivatization', 'FIFACorruption', 'FootballGovernance'],
+    contentAr: `### تقرير شامل: أزمة القيادة في الفيفا.. اتهامات الفساد، التجاوزات المالية، وضغوط الإطاحة بـ جياني إنفانتينو
+
+تمر منظمة الاتحاد الدولي لكرة القدم (الفيفا) بواحدة من أشد أزماتها السياسية والهيكلية حرجاً منذ فضائح عام 2015 التي أطاحت بالرئيس السابق سيب بلاتر. فبعد عقد تقريباً من وصول السويسري جياني إنفانتينو إلى سدة الحكم بوعود التشفيف والشفافية والإصلاح، باتت رئاسته مهددة بالانهيار في أعقاب سلسلة من شبهات الممارسات المالية غير الشفافة، والقرارات الأحادية في إدارة البطولات الدولية، وتصاعد غضب الاتحادات القارية.
+
+---
+
+### أولاً: مشروع خصخصة كأس العالم وانفجار أزمة سحب الثقة
+شكل طرح مشروع خصخصة الحقوق التجارية لبطولة كأس العالم النقطة التي أفاضت الكأس، حيث سعى إنفانتينو لتمرير صفقة مع شركات ورؤوس أموال خاصة بقيمة **20 مليار دولار** لبيع حصص من الحقوق التجارية للمونديال.
+
+وفي هذا الصدد، يبدو أن مشكلات رئيس الاتحاد الدولي (فيفا) لكرة القدم السويسري جياني إنفانتينو لم تنته بإلغاء خطته لخصخصة كأس العالم، إذ ذكرت تقارير صحفية أن إنفانتينو يواجه خيارين لا ثالث لهما: **إما الاستقالة أو مواجهة تصويت لسحب الثقة**.
+
+وصحف أوروبية ذكرت أن الاتحاد الأوروبي لكرة القدم (يويفا) يطالب باستقالة المسؤول السويسري، مضيفة أن جميع الاتحادات المحلية الـ55 الأعضاء يوافقون على التصويت للإطاحة به، في حال رفض التنحي، مؤكدة أن الاتحاد الأوروبي يستطيع الدعوة إلى مثل هذا التصويت بموافقة **43 اتحاداً** فقط من أعضائه.
+
+وواجه إنفانتينو عاصفة من الانتقادات عقب طرحه المشروع المثير للجدل، ورفضت عدة جهات ومسؤولين خصخصة بطولة المونديال. وذكر اليويفا في بيان أنه فقد الثقة في إنفانتينو، مطالباً بإجراء تغيير في قيادة المنظمة الدولية غير الربحية التي تكلف بإدارة كرة القدم العالمية، وذلك بعد تخليه عن خطته لبيع حصص من الحقوق التجارية لكأس العالم بقيمة 20 مليار دولار.
+
+---
+
+### ثانياً: ملف الشبهات القضائية واتهامات الفساد والتجاوزات
+لم تكن أزمة الخصخصة سوى امتداد لسجل حافل من السجالات القانونية والشبهات التي حاصرت إنفانتينو خلال فترة توليه المنصب:
+
+\`\`\`
+                         ┌──────────────────────────────────────────────┐
+                         │   أبرز الملفات القضائية والشبهات حول إنفانتينو  │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌─────────────────────────┐            ┌─────────────────────────┐            ┌─────────────────────────┐
+│     لقاءات لوبر السرية  │            │  المحاباة واستغلال السلطة │            │ الصفقات المالية الغامضة  │
+├─────────────────────────┤            ├─────────────────────────┤            ├─────────────────────────┤
+│ لقاءات غير مسجلة مع      │            │ استخدام طائرات خاصة     │            │ طرح مشاريع استثمارية     │
+│ المدعي العام السويسري   │            │ وتعيين شخصيات مقربة في  │            │ بسرية ودون موافقة        │
+│ المٌقال ميكائيل لوبر.   │            │ مناصب قيادية بالفيفا.   │            │ الجمعية العمومية (الكونغرس)│
+└─────────────────────────┘            └─────────────────────────┘            └─────────────────────────┘
+\`\`\`
+
+1. **قضية اللقاءات السرية (ملف لوبر):** واجه إنفانتينو تحقيقات جنائية في سويسرا بشأن لقاءات غير معلنة جمعته بالمدعي العام السويسري السابق ميكائيل لوبر، أثناء نظر القضاء السويسري في قضايا فساد تتعلق بالفيفا. ورغم إغلاق القضية لاحقاً لعدم كفاية الأدلة المباشرة للإدانة الجنائية، إلا أن القضية تسببت في إقالة لوبر ووجهت ضربة قاسية لمصداقية إنفانتينو الأخلاقية.
+2. **الانحياز والاستغلال السياسي:** واجه رئيس الفيفا انتقادات حادة بسبب إقحام المؤسسة الرياضية في استقطابات سياسية، واستغلال موارد المنظمة لخدمة مصالح ورؤى ضيقة دون الرجوع للاتحادات القارية والأعضاء.
+
+---
+
+### ثالثاً: التجاوزات في إدارة البطولات الدولية والتقويم الكروي
+تزايد الاستياء الدولي من إدارة إنفانتينو للعبة بسبب اتخاذه قرارات أحادية أربكت التقويم الكروي العالمي وأثارت حفيظة اللاعبين والأندية على حد سواء:
+
+* **التوسع المفرط في البطولات:** زيادة عدد منتخبات كأس العالم إلى **48 منتخباً**، وإطلاق بطولة كأس العالم للأندية بنظامها الموسع (**32 فريقاً**)، مما زاد من إجهاد اللاعبين وتسبب في نزاعات قانونية مع رابطات الدوريات المحترفة ونقابات اللاعبين (FIFPRO).
+* **قرارات الرعاية والتلفزيون الأحادية:** اتخاذ قرارات حصرية بشأن حقوق البث والرعاية لبطولات الفيفا الجديدة بعيداً عن أطر الشفافية والرقابة التي تعهد بها عند انتخابه عام 2016.
+* **تغليب المنطق التجاري:** ااتهامات متزايدة لرئاسة الفيفا بتحويل منظمة رياضية غير ربحية إلى كيان استثماري يبحث عن تعظيم الإيرادات المالية على حساب صحة اللاعبين ونزاهة المنافسة.
+
+---
+
+### الخلاصة والمستقبل السياسي بالفيفا
+تضع هذه الأزمة المتصاعدة جياني إنفانتينو أمام مفترق طرق تاريخي؛ إذ إن الموقف الموحد للاتحاد الأوروبي (UEFA) ودعم العديد من الاتحادات القارية الأخرى لمطلب التغيير يجعل من بقائه في المنصب أمراً معقداً. وتكشف هذه التطورات أن محاولة المساس بهيكل كأس العالم وخصخصته قد أدت إلى تكتل المعارضة الكروية لإعادة تقييم قيادة الفيفا واستعادة التوازن والحوكمة والشفافية للمنظمة الكروية الأعلى في العالم.`,
+    contentEn: `### Comprehensive Report: FIFA Leadership Crisis — Corruption Allegations, Financial Misconduct & Pressure to Oust Gianni Infantino
+
+The International Federation of Association Football (FIFA) is enduring one of its most critical political and structural leadership crises since the 2015 corruption scandals that ousted former president Sepp Blatter. Nearly a decade after Swiss administrator Gianni Infantino assumed office promising transparency and reform, his presidency faces imminent collapse following unmitigated financial opacity, unilateral tournament expansion, and mounting revolt across continental confederations.
+
+---
+
+### 1. The $20 Billion World Cup Privatization Collapse & UEFA No-Confidence Ultimatum
+Infantino’s attempt to introduce private equity into world football became the ultimate catalyst for the crisis. He sought to push through a **$20 billion deal** with private investment funds to sell off commercial equity stakes in the FIFA World Cup.
+
+Reports confirm that Infantino's troubles extend beyond abandoning the privatization plan: he now faces two stark choices—**immediate resignation or a formal vote of no confidence**.
+
+European press outlets report that UEFA is demanding Infantino’s immediate resignation. All 55 member associations of UEFA are prepared to vote for his removal if he refuses to step down—with UEFA requiring only **43 member signatures** to convene the mandatory extraordinary congress vote.
+
+Faced with a wall of opposition from global leagues, player unions, and member nations, UEFA issued an official statement affirming it has completely lost confidence in Infantino, calling for a clean leadership change atop global football governance.
+
+---
+
+### 2. Judicial Controversies & Corruption Allegations
+The privatization crisis represents merely the latest chapter in a long record of legal investigations and ethical controversies encircling Infantino:
+
+\`\`\`
+                         ┌──────────────────────────────────────────────┐
+                         │    Core Judicial Cases & Allegations         │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌─────────────────────────┐            ┌─────────────────────────┐            ┌─────────────────────────┐
+│ Secret Lauber Meetings  │            │ Power Abuse & Nepotism  │            │ Opaque Financial Deals  │
+├─────────────────────────┤            ├─────────────────────────┤            ├─────────────────────────┤
+│ Undisclosed meetings    │            │ Private jet charters    │            │ Secret commercial       │
+│ with ousted Swiss       │            │ and key appointments of │            │ proposals without       │
+│ Prosecutor M. Lauber.   │            │ close personal allies.  │            │ FIFA Congress approval. │
+└─────────────────────────┘            └─────────────────────────┘            └─────────────────────────┘
+\`\`\`
+
+1. **The Secret Meetings Scandal (Lauber File):** Infantino faced criminal proceedings in Switzerland regarding undocumented secret meetings with former Swiss Attorney General Michael Lauber while the prosecutor's office was investigating FIFA corruption. Though the case was later closed for lack of direct criminal proof, it led to Lauber's dismissal and dealt a devastating blow to Infantino's moral authority.
+2. **Political Instrumentalization:** Infantino has faced intense criticism for entangling FIFA in partisan geopolitical optics and deploying organizational resources to advance personal alliances without consultation.
+
+---
+
+### 3. Tournament Overload & Global Calendar Strains
+International discontent has mounted due to unilateral decisions that disrupted the global match calendar:
+
+* **Aggressive Expansion:** Expanding the World Cup to **48 teams** and launching the **32-team Club World Cup** caused severe player exhaustion and provoked formal legal actions from professional league associations and FIFPRO.
+* **Unilateral Media & Sponsorship Deals:** Granting exclusive broadcast rights without open competitive bidding or oversight mechanisms promised during his 2016 campaign.
+* **Over-Commercialization:** Transforming a non-profit international sports governing body into a commercial investment vehicle at the expense of player health and competitive integrity.
+
+---
+
+### Conclusion & The Future of FIFA Governance
+This escalating revolt places Gianni Infantino at a historic crossroads. The unified front presented by UEFA, combined with supporting continental confederations, makes his continued tenure increasingly untenable. The revolt proves that attempting to privatize football’s crown jewel—the World Cup—has mobilized the global football ecosystem to restore governance, ethics, and transparency to the world’s governing body.`,
+  },
+  {
+    id: 'riad-salameh-prosecution-health-political-dimensions-2026',
+    slug: 'riad-salameh-prosecution-health-political-dimensions-2026',
+    focusKeyword: 'رياض-سلامة-الملاحقة-القضائية-سجن-رومية-مصرف-لبنان-كريم-سعيد-بنك-عودة',
+    category: 'alwarraq-investigations',
+    categories: ['alwarraq-investigations', 'investigations', 'editor-desk', 'lebanon', 'banking'],
+    titleAr: 'بين سلامة صحته وحماية المال العام: خلفيات الملاحقة القضائية لسلامة وأبعادها السياسية',
+    titleEn: 'Between His Health & Protecting Public Funds: Salameh Judicial Prosecution & Political Dimensions',
+    summaryAr: 'تحقيق استقصائي يفكك تحولات ملف حاكم مصرف لبنان السابق رياض سلامة، والجدل الطبي القضائي حول نقله لسجن رومية، والدعاوى الجديدة التي رفعها كريم سعيد حول صفقة بنك عودة (260M$) وسندات بنك ميد، والتقاطعات السياسية.',
+    summaryEn: 'An investigative dossier analyzing the sudden judicial shift in Riad Salameh’s prosecution, his medical maneuvers vs. Roumieh prison transfer, the new Bank Audi ($260M) and Bank Med bond lawsuits filed by BDL Governor Karim Said, and political power plays.',
+    excerptAr: 'تحليل خاص يفكك المناورة الصحية لسلامة والدعاوى الجديدة لبنك عودة وبنك ميد ومستجدات ملفات فوري وأوبتيموم وحساب الاستشارات والرسائل الإقليمية حول رئاسة الحكومة.',
+    excerptEn: 'Deep investigation into Riad Salameh’s medical defense, Roumieh transfer decree, BDL Governor Karim Said’s new lawsuits, and geopolitical power levers in Beirut.',
+    author: {
+      nameAr: 'غرفة التحقيقات الاستقصائية — الورّاق نيوز',
+      nameEn: 'Investigative Dossier Desk — Al-Warraq',
+      titleAr: 'قسم الفساد والجرائم المالية السيادية',
+      titleEn: 'Sovereign Financial Crime & Governance Unit',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-03',
+    readTimeAr: '١٢ دقيقة قراءة',
+    readTimeEn: '12 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 42800,
+    tags: [
+      'رياض_سلامة', 'مصرف_لبنان', 'كريم_سعيد', 'بنك_عودة', 'سندات_ميد', 'سجن_رومية', 'نجيب_ميقاتي', 'سعد_الحريري', 'نواف_سلام',
+      'Riad_Salameh', 'BDL', 'Karim_Said', 'Bank_Audi', 'Bank_Med', 'Roumieh_Prison', 'Forry', 'Optimum'
+    ],
+    hashtags: ['RiadSalameh', 'LebanonBanking', 'BDL', 'RoumiehPrison', 'BankAudi', 'FinancialCrime'],
+    contentAr: `### بين سلامة صحته وحماية المال العام: خلفيات الملاحقة القضائية لسلامة وأبعادها السياسية
+
+تتسارع التطورات في ملف حاكم مصرف لبنان السابق رياض سلامة، حيث تحول التركيز الفجائي من جلسات التحقيق القضائي إلى السجال المحموم حول وضعه الصحي، في مشهد يتقاطع فيه البعد الطبي بالمسار القضائي والحسابات السياسية الإقليمية والدولية.
+
+---
+
+### أولاً: المناورة الصحية وحسم المسار القضائي
+شهدت الأيام الأخيرة جدلاً واسعاً حول صحة سلامة، بعد محاولات لتبرير عدم مثوله أمام التحقيق بداعي تدهور حالته الصحية أثناء إقامته في جناح خاص بمركز بحنس الطبي:
+
+* **الموقف الطبي المزدوج:** أشار طبيبه الخاص إلى تدهور ضغط دمه وحاجته لارتداء قناع أوكسجين، ملمحاً إلى إضرابه عن الطعام والتدخين. وفي المقابل، أكد تقرير طبيب قوى الأمن الداخلي استقرار حالته وعدم الحاجة لبقائه في المستشفى.
+* **القرار القضائي:** حسم النائب العام التمييزي القاضي أحمد رامي الحاج السجال برفض منح أي معاملة استثنائية، موازناً بين متابعة وضعه الصحي وإصدار قرار بنقله إلى غرفة خاصة في سجن رومية (ضمن مبنى شعبة المعلومات) لاستكمال إجراءات المحاكمة.
+
+---
+
+### ثانياً: الدعاوى الجديدة وملفات التجاوزات المالية
+لا تقتصر الملاحقات الأخيرة على التهم السابقة، بل تشمل دعوى جديدة تقدم بها حاكم مصرف لبنان الحالي كريم سعيد، والتي تفتح ملفات مالية معقدة:
+
+\`\`\`
+                      ┌─────────────────────────────────────────┐
+                      │    أبرز محاور الاتهامات والقضايا        │
+                      └────────────────────┬────────────────────┘
+                                           │
+         ┌─────────────────────────────────┴─────────────────────────────────┐
+         ▼                                                                   ▼
+┌─────────────────────────────────┐                         ┌─────────────────────────────────┐
+│     صفقة بنك عودة (260M$)       │                         │       سندات بنك "ميد"           │
+├─────────────────────────────────┤                         ├─────────────────────────────────┤
+│ تمويل شراء أسهم مقابل سندات     │                         │ تحقيق أرباح غير مشروعة عبر بيع   │
+│ مرتبطة بشركات تعود للرئيس       │                         │ سندات خزينة لصالح كبار المساهمين│
+│ نجيب ميقاتي وشقيقه طه.          │                         │ وفي مقدمهم الرئيس سعد الحريري.  │
+└─────────────────────────────────┘                         └─────────────────────────────────┘
+\`\`\`
+
+وإلى جانب هذه الدعوى، تقف سلسلة من الملفات القضائية العالقة محلياً ودولياً دون أحكام نهائية حتى الآن:
+
+* **ملف تحويلات الحسابات الخاصة:** القضية المتعلقة بتحويلات مالية إلى المحامي ميكي تويني ومنه إلى مروان عيسى الخوري لحساب سلامة.
+* **ملف شركة "فوري" (Forry):** اختلاس أكثر من 330 مليون دولار كعمولات وساطة، والمحالة قضائياً في أوروبا.
+* **ملفا "أوبتيموم" وهندسات المبالغ المدعومة:** عمليات التلاعب المالي وسندات الخزينة.
+* **حساب الاستشارات:** اتهامات باختلاس نحو 44.8 مليون دولار من حساب الاستشارات في المصرف المركزي.
+
+---
+
+### ثالثاً: الأبعاد والتقاطعات السياسية الإقليمية
+تستحضر المصادر المتابعة توقيت إثارة هذه الملفات والتحقيقات المكثفة، مشيرة إلى أهداف وسياسات تتجاوز البعد القضائي الخالص:
+
+1. **الغطاء السياسي والاستحقاقات:** تتقاطع التحركات القضائية مع توجهات لدعم استمرار رئيس الحكومة نواف سلام، وسد الطريق أمام احتمال إعادة طرح اسمَي نجيب ميقاتي أو سعد الحريري في الاستحقاقات الحكومية المقابلة.
+2. **الرسائل الإقليمية:** تشير المعطيات إلى وجود كوابح سياسية تحول دون استعادة بعض القوى لترتيباتها السابقة في الساحة اللبنانية، مما يجعل من الملفات المالية أدوات ضغط لحسم خيارات السلطة التنفيذية في المرحلة القادمة.
+
+---
+
+### الخلاصة
+بين التأكيد على مبدأ سيادة القانون وحماية المال العام، وبين استخدام ملفات الفساد كأوراق ضغط في التوازنات السياسية، يظل ملف رياض سلامة حافلاً بالتعقيدات؛ حيث يسعى القضاء إلى إنهاء حقبة من التجاوزات المالية، بينما تتشابك خيوط المحاكمة مع صراعات النفوذ المحلي والإقليمي.`,
+    contentEn: `### Between His Health & Protecting Public Funds: Background & Political Dimensions of Salameh's Prosecution
+
+Developments surrounding former Banque du Liban (BDL) Governor Riad Salameh are accelerating rapidly. The focus has abruptly shifted from courtroom sessions to a heated dispute over his medical condition—a drama where medical assessments intersect with judicial proceedings and complex regional and international political calculations.
+
+---
+
+### 1. Medical Maneuvers vs. Judicial Resolution
+Recent days saw intense controversy regarding Salameh’s health, following attempts to justify his failure to appear for questioning due to alleged deterioration while staying in a private wing at the Bhannes Medical Center:
+
+* **Dual Medical Opinions:** Salameh’s private physician cited severe blood pressure drops and a need for oxygen therapy, hinting at a hunger and smoking strike. Conversely, the Internal Security Forces (ISF) medical report confirmed his condition was stable and required no hospital stay.
+* **The Judicial Decree:** Prosecutor General Judge Ahmad Rami El-Hajj ended the standoff by rejecting any preferential treatment. Balancing medical care with accountability, he ordered Salameh transferred to a specialized room in Roumieh Prison (within the Information Branch wing) to resume trial procedures.
+
+---
+
+### 2. New BDL Lawsuits & Complex Financial Violations
+The latest proceedings expand beyond prior charges to include a major lawsuit filed by current BDL Governor Karim Said, uncovering intricate financial transactions:
+
+\`\`\`
+                      ┌─────────────────────────────────────────┐
+                      │    Core Axises of New Charges & Cases   │
+                      └────────────────────┬────────────────────┘
+                                           │
+         ┌─────────────────────────────────┴─────────────────────────────────┐
+         ▼                                                                   ▼
+┌─────────────────────────────────┐                         ┌─────────────────────────────────┐
+│    Bank Audi Transaction ($260M)│                         │       Bank Med Sovereign Bonds  │
+├─────────────────────────────────┤                         ├─────────────────────────────────┤
+│ Financing share purchases for   │                         │ Unlawful profit generation via  │
+│ bonds tied to entities of       │                         │ treasury bill sales favoring    │
+│ PM Najib Mikati & brother Taha. │                         │ shareholders (e.g. Saad Hariri).│
+└─────────────────────────────────┘                         └─────────────────────────────────┘
+\`\`\`
+
+Alongside Governor Karim Said’s lawsuit, a series of pending domestic and European cases remain active:
+
+* **Private Account Transfers:** Financial transfers routed to attorney Micky Tueni and subsequently to Marwan Issa El-Khoury for Salameh's benefit.
+* **The Forry Brokerage Dossier:** Embezzlement of over $330 million in commissions, currently before European judicial tribunals.
+* **Optimum & Subsidized Financial Engineering:** Allegations of market manipulation and treasury bond schemes.
+* **Consultations Account:** Charges involving $44.8 million allegedly embezzled from BDL’s consulting account.
+
+---
+
+### 3. Regional Geopolitics & Political Power Plays
+Observant sources point to the deliberate timing of these intensified prosecutions, signaling objectives that extend far beyond courtroom boundaries:
+
+1. **Political Cover & Cabinet Stance:** Judicial moves align with efforts to bolster Prime Minister Nawaf Salam’s administration, effectively blocking any potential comeback for former PMs Najib Mikati or Saad Hariri in upcoming government formations.
+2. **Regional Signals:** Data suggests firm political vetoes preventing legacy factions from restoring past influence in Beirut, turning financial corruption files into key levers for shaping executive governance.
+
+---
+
+### Conclusion
+Navigating between upholding the rule of law to protect public funds and using corruption charges as bargaining chips in political realignments, the Riad Salameh dossier remains deeply intricate. The judiciary aims to close a chapter of financial misconduct, even as courtroom proceedings weave through local and regional struggles for power.`,
+  },
+  {
+    id: 'saudi-diplomacy-regional-equation-2026',
+    slug: 'saudi-diplomacy-regional-equation-2026',
+    focusKeyword: 'الدبلوماسية-السعودية-محمد-بن-سلمان-أزمة-هرمز-الميزانية-السعودية-2026',
+    category: 'alwarraq-investigations',
+    categories: ['alwarraq-investigations', 'investigations', 'war-room', 'research-reports', 'middle-east', 'economy', 'urgent-release'],
+    titleAr: 'الدبلوماسية السعودية وإعادة تشكيل المعادلة الإقليمية بين الضرورات الاقتصادية والحسابات الاستراتيجية',
+    titleEn: 'Saudi Diplomacy & Reshaping the Regional Equation: Economic Imperatives vs Strategic Calculations',
+    summaryAr: 'دراسة وتحليل استراتيجي خاص يستعرض التحركات السعودية بقيادة ولي العهد الأمير محمد بن سلمان لإدارة تداعيات إغلاق مضيق هرمز لـ 100 يوم، والتوفيق بين عجز الميزانية البالغ 125.7 مليار ريال وضمان الأمن الاستراتيجي وتأمين خطوط الالتفاف الملاحية.',
+    summaryEn: 'A special geopolitical and economic dossier analyzing Saudi Arabia’s strategic maneuvering under Crown Prince Mohammed bin Salman, balancing a Q1 2026 budget deficit of 125.7B SAR with regional de-escalation, maritime coalitions, and Red Sea oil bypass routes.',
+    excerptAr: 'تحليل خاص يفكك استراتيجية الرياض المزدوجة بين المسار العلني المتمثل بالتهدئة والتحالفات الملاحية والمسار الضمني الهادف لتقليم نفوذ طهران وإعادة توزيع القوة الإقليمية.',
+    excerptEn: 'Deep dossier deconstructing Saudi Arabia’s dual-track strategy during the 100-day Hormuz crisis: public de-escalation & trade security vs. implicit geopolitical leverage.',
+    author: {
+      nameAr: 'غرفة تحليل الحرب والاستراتيجية — الورّاق نيوز',
+      nameEn: 'War Room & Strategic Intel Desk — Al-Warraq',
+      titleAr: 'قسم التحليلات الجيواقتصادية والسيادية',
+      titleEn: 'Geoeconomic & Sovereign Risk Desk',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-03',
+    readTimeAr: '١٠ دقائق قراءة',
+    readTimeEn: '10 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 31200,
+    tags: [
+      'الدبلوماسية_السعودية', 'محمد_بن_سلمان', 'أزمة_هرمز', 'عجز_الميزانية', 'الخليج_العربي', 'تحالف_الملاحة', 'البحر_الأحمر',
+      'Saudi_Diplomacy', 'MBS', 'Hormuz_Crisis', 'Saudi_Budget_Deficit', 'Red_Sea_Bypass', 'Stagflation_Risk'
+    ],
+    hashtags: ['SaudiDiplomacy', 'MBS', 'HormuzCrisis', 'Geopolitics2026', 'RedSeaBypass'],
+    contentAr: `### الدبلوماسية السعودية وإعادة تشكيل المعادلة الإقليمية بين الضرورات الاقتصادية والحسابات الاستراتيجية
+
+شهدت المنطقة تحولات حادة في أعقاب اندلاع المواجهات الأخيرة وتصعيد أزمة مضيق هرمز الذي يمر عبره نحو خمس الإمدادات العالمية من النفط المحمول بحراً. وفي هذا السياق، برزت المملكة العربية السعودية بقيادة ولي العهد الأمير محمد بن سلمان كفاعل محوري يسعى إلى التوفيق بين قيادة مبادرات التهدئة والدبلوماسية الإقليمية، وبين إدارة التداعيات الاقتصادية والأمنية الناتجة عن انقطاع سلاسل الإمداد العالمية.
+
+---
+
+### أولاً: المحرك الاقتصادي والدوافع المباشرة للتهدئة
+تُظهر المؤشرات المالية أن الاستقرار الإقليمي ليس خياراً سياسياً فحسب، بل هو ضرورة اقتصادية ملحة:
+
+* **العجز المالي:** سجلت وزارة المالية السعودية في الربع الأول من عام 2026 عجزاً في الميزانية بلغ **125.7 مليار ريال سعودي** (نحو 33.5 مليار دولار)، وهو العجز الأكبر خلال ربع واحد منذ نحو ثماني سنوات، متجاوزاً تقديرات العجز السنوي الكامل المعلنة سابقاً.
+* **مراجعات النمو:** انخفضت توقعات صندوق النقد الدولي والبنك الدولي لنمو اقتصاد المملكة واقتصادات دول مجلس التعاون الخليجي، حيث تحول الامتياز التنموي والمتوقع سابقاً بـ **6%** إلى انكماشات محتملة تصل إلى **8%** في بعض دول المنطقة.
+* **الضرر العالمي ومخاطر الركود التضخمي:** أدى إغلاق مضيق هرمز لأكثر من **100 يوم** إلى تعطيل **13 مليون برميل نفط** و**140 مليار متر مكعب** من الغاز يومياً، إضافة إلى تضرر إمدادات الهيليوم، الألومنيوم، والأسمدة (مثل اليوريا بنسبة 46%). وحذر صندوق النقد من تراجع النمو العالمي بنسبة **40%** وارتفاع معدلات التضخم إلى **6%** في حال استمرار الإغلاق، مما يهدد بسيناريو "ركود تضخمي" لم يشهده العالم منذ أزمة 2008-2009.
+* **المرونة السعودية:** على الرغم من أن خطوط الأنابيب البديلة عبر البحر الأحمر (أنبوب شرق-غرب بترولاين) والشبكات البرية خففت من الأثر المباشر على المملكة مقارنة بجيرانها، إلا أن تعافي الاقتصاد السعودي وتدفق الاستثمارات الأجنبية يظلان مرتبطين بنمو الاقتصاد العالمي وانتظام الملاحة الدولية.
+
+---
+
+### ثانياً: التحركات الدبلوماسية والتنسيق القيادي
+أدارت الرياض خطة دبلوماسية مكثفة ارتكزت على عدة مسارات:
+
+1. **التنسيق مع الإدارة الأمريكية:** أجرى ولي العهد الأمير محمد بن سلمان اتصالات رفيعة المستوى مع الرئيس الأمريكي دونالد ترامب، ركزت علناً على إعطاء الأولوية للحوار، وتثبيت هدنة مستدامة، وتهيئة الظروف للحلول السياسية لتفادي تداعيات استمرار الحرب.
+2. **الوساطة والتحالفات الإقليمية:** نشطت المبادرات السعودية تجاه دول مجلس التعاون الخليجي وشركاء إقليميين بارزين مثل مصر، تركيا، وباكستان، لصياغة أطر عملية لتخفيف حدة التصعيد وتأمين حركة التجارة البحرية.
+
+---
+
+### ثالثاً: الأمن الاستراتيجي وحماية ممرات الملاحة
+في إطار حماية المصالح الاقتصادية والأمن القومي، تقود المملكة جهوداً لتأمين ممرات الطاقة:
+
+* **ائتلاف حماية الملاحة:** بادرت السعودية إلى دعم وإنشاء تحالف أمني بحري واسع يضم عشرات الدول لحماية ممرات التجارة في البحر الأحمر والخليج العربي من تهديدات الجماعات الوكيلة والجماعات الحوثية.
+* **تجاوز آثار الأزمة:** يسعى هذا التحالف إلى معالجة الآثار المتراكمة لإغلاق هرمز واستعادة ثقة أسواق الطاقة والملاحة العالمية.
+
+---
+
+### رابعاً: القراءة الجيوسياسية - التوازن بين العلن والخفاء
+تظهر تقارير صحفية دولية وجود مسارين متوازيين في السلوك السياسي السعودي خلال الأزمة:
+
+\`\`\`
+                  ┌─────────────────────────────────────────┐
+                  │       استراتيجية السعودية أثناء الأزمة   │
+                  └────────────────────┬────────────────────┘
+                                       │
+            ┌──────────────────────────┴──────────────────────────┐
+            ▼                                                     ▼
+┌───────────────────────┐                             ┌───────────────────────┐
+│     المسار العلني     │                             │     المسار الضمني     │
+├───────────────────────┤                             ├───────────────────────┤
+│ • الدعوة للدبلوماسية  │                             │ • الضغط لتقليم نفوذ   │
+│ • التهدئة وإيقاف الحرب│                             │   طهران الإقليمي      │
+│ • تحالفات حماية التجارة│                             │ • ملء الفراغ الجيوسياسي│
+└───────────────────────┘                             └───────────────────────┘
+\`\`\`
+
+* **مراعاة موازين القوى:** تشير تقارير صحفية (مثل واشنطن بوست ونيويورك تايمز) إلى أن الرياض احتفظت بقنوات اتصال مشددة مع واشنطن لحثها على إبقاء الضغط العسكري على طهران ومنع أي اتفاق يترك القدرات الصاروخية والوكلاء دون رادع.
+* **استغلال التحولات الإقليمية:** تظهر القرارات السعودية رغبة في استثمار تراجع النفوذ الإيراني في المنطقة (خاصة في بلاد الشام بعد تراجع حلفاء طهران) لإعادة رسم خريطة النفوذ الإقليمي لمالك الدبلوماسية ورأس المال السعودي بكلفة أقل وأثر أطول مدى.
+
+---
+
+### الخلاصة
+تقف المملكة العربية السعودية في مركز إدارة الأزمة الإقليمية؛ حيث توازن بين ضرورة التهدئة الفورية لإعادة فتح مضيق هرمز وتدارك العجز المالي والركود العالمي، وبين الفرصة الجيوسياسية لإعادة بناء توازن القوى الإقليمي وضمان استقرار طويل الأمد يدعم رؤيتها التنموية الشاملة.`,
+    contentEn: `### Saudi Diplomacy & Reshaping the Regional Equation: Economic Imperatives vs Strategic Calculations
+
+The Middle East has witnessed drastic geopolitical shifts following recent military escalation and the blockade of the Strait of Hormuz—the maritime chokepoint through which roughly one-fifth of global sea-borne crude oil flows. Within this high-stakes environment, the Kingdom of Saudi Arabia, led by Crown Prince Mohammed bin Salman, has emerged as a central actor reconciling active de-escalation diplomacy with complex economic and security risk management.
+
+---
+
+### 1. Economic Drivers & Immediate De-escalation Imperatives
+Financial metrics demonstrate that regional stability is not merely a diplomatic choice, but an urgent fiscal necessity:
+
+* **Budget Deficit:** In Q1 2026, the Saudi Ministry of Finance recorded a budget deficit of **125.7 billion SAR** (~$33.5 billion USD)—the largest single-quarter deficit in nearly eight years, significantly surpassing initial annual projections.
+* **Growth Revisions:** The IMF and World Bank downgraded economic growth projections for Saudi Arabia and the GCC, shifting from a previously anticipated +6% surge to potential contractions of up to **-8%** in specific regional economies.
+* **Global Stagflation Risks:** Over **100 days of Hormuz blockades** disrupted **13 million barrels of oil** and **140 billion cubic meters of natural gas** daily, along with critical global supplies of helium, aluminum, and urea fertilizer (46%). The IMF warned of a 40% drop in global economic growth and a spike in inflation to 6%, raising fears of global stagflation unseen since 2008-2009.
+* **Saudi Resilience:** While alternative Red Sea overland pipelines (East-West Petroline to Yanbu) provided Saudi Arabia with greater resilience than its immediate neighbors, long-term economic recovery and FDI inflows remain deeply tethered to global trade stability.
+
+---
+
+### 2. High-Level Diplomatic Coordination
+Riyadh orchestrated an intense multi-track diplomatic strategy:
+
+1. **US Presidential Coordination:** Crown Prince Mohammed bin Salman held strategic calls with US President Donald Trump, prioritizing sustained dialogue, binding ceasefires, and structured political solutions to prevent uncontrolled regional war.
+2. **Regional Alliances:** Saudi initiatives engaged GCC partners alongside key regional powers—Egypt, Turkey, and Pakistan—to establish practical mechanisms for de-escalation and maritime trade protection.
+
+---
+
+### 3. Strategic Maritime Security & Energy Corridors
+To safeguard economic interests and national sovereignty, Saudi Arabia pioneered key security frameworks:
+
+* **Maritime Escort Coalition:** Saudi Arabia established a broad multi-national maritime security coalition to protect commercial shipping routes across the Red Sea and Arabian Gulf against drone and proxy threats.
+* **Restoring Global Market Faith:** The coalition targets long-term risk mitigation to lower war-risk insurance premiums and restore global supply chain predictability.
+
+---
+
+### 4. Geopolitical Strategy: Public vs. Implicit Tracks
+International reporting reveals two parallel tracks in Saudi Arabia's strategic doctrine during the crisis:
+
+\`\`\`
+                  ┌─────────────────────────────────────────┐
+                  │       Saudi Strategy During Crisis      │
+                  └────────────────────┬────────────────────┘
+                                       │
+            ┌──────────────────────────┴──────────────────────────┐
+            ▼                                                     ▼
+┌───────────────────────┐                             ┌───────────────────────┐
+│      Public Track     │                             │     Implicit Track    │
+├───────────────────────┤                             ├───────────────────────┤
+│ • Call for Diplomacy  │                             │ • Pressure to curb    │
+│ • De-escalation & War │                             │   Tehran influence    │
+│   Ceasefire           │                             │ • Fill geopolitical   │
+│ • Trade Defense Coalition                           │   vacuum in Levant    │
+└───────────────────────┘                             └───────────────────────┘
+\`\`\`
+
+* **Balance of Power Considerations:** Leading international outlets (Washington Post, NYT) report that Riyadh maintained discreet high-level communication with Washington, advocating for sustained military leverage against Tehran to prevent any compromise that leaves ballistic missile capabilities unaddressed.
+* **Capitalizing on Regional Shifts:** Saudi decision-makers seek to leverage the contraction of Iranian influence across the Levant to redraw regional security architecture at lower cost and with long-term stability.
+
+---
+
+### Conclusion
+Saudi Arabia sits at the nexus of regional crisis management—balancing the urgent necessity of reopening the Strait of Hormuz to arrest fiscal deficits and global stagflation, while seizing a historic geopolitical window to rebuild long-term regional equilibrium.`,
+  },
+  {
     id: 'maan-barazy-impunity-culture-abl-july-2026',
     slug: 'maan-barazy-impunity-culture-abl-july-2026',
     focusKeyword: 'عقلية-الإفلات-من-العقاب-جمعية-المصارف-فادي-خلف-معن-برازي',

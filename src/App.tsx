@@ -1665,7 +1665,9 @@ export default function App() {
                       {/* Summary points of all 7 available investigations */}
                       <div className="border-t border-zinc-800 mt-6 pt-6 text-right rtl:text-right ltr:text-left">
                         <h3 className="font-sans font-bold text-xs uppercase tracking-wider text-amber-900 mb-4 font-mono">
-                          {isAr ? 'فهرس التحقيقات الاستقصائية المتاحة (٧ تحقيقات نشطة):' : 'CATALOGUE OF ALL AVAILABLE INVESTIGATIONS (7 ACTIVE DOSSIERS):'}
+                          {isAr 
+                            ? `فهرس التحقيقات الاستقصائية المتاحة (${Object.keys(DOSSIER_DESKTOP_META).length} تحقيقات نشطة):` 
+                            : `CATALOGUE OF ALL AVAILABLE INVESTIGATIONS (${Object.keys(DOSSIER_DESKTOP_META).length} ACTIVE DOSSIERS):`}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           {Object.entries(DOSSIER_DESKTOP_META).map(([id, meta], index) => {

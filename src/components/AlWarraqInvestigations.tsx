@@ -208,6 +208,30 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XVI: S&P Global Ratings: Middle East War Creates Uneven Risk For GCC Corporate Sectors',
     descAr: 'دراسة استقصائية وتقييم ائتماني رسمي من وكالة ستاندرد آند بورز يحلل الحساسية والمخاطر الهيكلية عبر ١٥ قطاعاً اقتصادياً في دول الخليج.',
     descEn: 'Official credit rating analysis by S&P Global Ratings evaluating scenario sensitivity and credit risk across 15 GCC corporate sectors.'
+  },
+  'riad-salameh-prosecution-health-political-dimensions-2026': {
+    fileId: 'AW-FILE-17',
+    badge: 'JUDICIAL & HEALTH DOSSIER',
+    titleAr: 'الملف السابع عشر: بين سلامة صحته وحماية المال العام: خلفيات الملاحقة القضائية لسلامة وأبعادها السياسية',
+    titleEn: 'Dossier XVII: Between His Health & Protecting Public Funds: Salameh Judicial Prosecution & Political Dimensions',
+    descAr: 'تحقيق قضائي وسياسي يفكك تفاصيل احتجاز رياض سلامة في سجن رومية، والإنذارات الطبيّة، ودعاوى بنك عودة (260M$) وبنك ميد والحسابات الخاصة.',
+    descEn: 'A deep investigation into Riad Salameh’s medical maneuvers, new Bank Audi ($260M) lawsuit, Bank Med bond profits, and political alignments.'
+  },
+  'saudi-diplomacy-regional-equation-2026': {
+    fileId: 'AW-FILE-18',
+    badge: 'SAUDI GEOPOLITICAL DOSSIER',
+    titleAr: 'الملف الثامن عشر: الدبلوماسية السعودية وإعادة تشكيل المعادلة الإقليمية بين الضرورات الاقتصادية والحسابات الاستراتيجية',
+    titleEn: 'Dossier XVIII: Saudi Diplomacy & Reshaping the Regional Equation: Economic Imperatives vs Strategic Calculations',
+    descAr: 'دراسة وتحليل استراتيجي خاص يستعرض التحركات السعودية بقيادة ولي العهد الأمير محمد بن سلمان لإدارة تداعيات إغلاق مضيق هرمز لـ 100 يوم، والتوفيق بين عجز الميزانية وتأمين خطوط الملاحة.',
+    descEn: 'A special geopolitical dossier analyzing Saudi Arabia’s strategic maneuvering under Crown Prince MBS during the 100-day Hormuz crisis.'
+  },
+  'fifa-leadership-crisis-infantino-resignation-2026': {
+    fileId: 'AW-FILE-19',
+    badge: 'FIFA GOVERNANCE DOSSIER',
+    titleAr: 'الملف التاسع عشر: تقرير شامل: أزمة القيادة في الفيفا.. اتهامات الفساد، التجاوزات المالية، وضغوط الإطاحة بـ جياني إنفانتينو',
+    titleEn: 'Dossier XIX: Comprehensive Report: FIFA Leadership Crisis — Corruption Allegations, Financial Misconduct & Pressure to Oust Gianni Infantino',
+    descAr: 'تحقيق استقصائي شامل يفكك أزمة القيادة بالفيفا، وسقوط مشروع خصخصة المونديال بـ 20 مليار دولار، ومهلة اليويفا لإنفانتينو بالاستقالة أو سحب الثقة.',
+    descEn: 'Special investigative dossier analyzing the deep leadership crisis at FIFA, the collapse of Infantino’s $20B World Cup privatization scheme, and UEFA’s no-confidence ultimatum.'
   }
 };
 
@@ -267,6 +291,9 @@ export default function AlWarraqInvestigations({
   const investigativeArticles = allArticles.filter(article => {
     return (
       article.id === 'damascus-extended-shadow-syrian-role-lebanon-2026' ||
+      article.id === 'fifa-leadership-crisis-infantino-resignation-2026' ||
+      article.id === 'riad-salameh-prosecution-health-political-dimensions-2026' ||
+      article.id === 'saudi-diplomacy-regional-equation-2026' ||
       article.id === 'lebanon-framework-agreement-analysis-2026' ||
       article.id === 'solidere-extension-2069' ||
       article.id === 'lebanon-ceasefire-mirage-2026' ||
@@ -281,7 +308,12 @@ export default function AlWarraqInvestigations({
       article.id === 'bdl-versus-salameh-2026' ||
       article.id === 'us-spr-release-172m-2026' ||
       article.id === 'syria-terror-list-removal-2026' ||
-      article.id === 'infrastructure-war-gcc-iran-2026'
+      article.id === 'infrastructure-war-gcc-iran-2026' ||
+      article.id === 'sp-gcc-corporate-war-risk-2026' ||
+      article.category === 'alwarraq-investigations' ||
+      article.category === 'investigations' ||
+      article.categories?.includes('alwarraq-investigations') ||
+      article.categories?.includes('investigations')
     );
   });
 
@@ -889,7 +921,7 @@ export default function AlWarraqInvestigations({
                     <div className="p-1 bg-[#FAF8F5] relative overflow-hidden rounded-md">
                       <FuelProfiteeringInfographic language={language} />
                     </div>
-                  ) : activeDossier.id === 'bdl-versus-salameh-2026' ? (
+                  ) : activeDossier.id === 'bdl-versus-salameh-2026' || activeDossier.id === 'riad-salameh-prosecution-health-political-dimensions-2026' ? (
                     <div className="p-1 relative overflow-hidden rounded-md">
                       <BdlSalamehInfographic language={language} />
                     </div>

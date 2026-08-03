@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import Hormuz100DayTimeline from './Hormuz100DayTimeline';
 import { 
   TrendingUp, 
   TrendingDown, 
@@ -369,6 +370,9 @@ Aramco's delivered spot sales are scaling rapidly, highlighted by a prompt 2-mil
           </button>
         </div>
       </div>
+
+      {/* Interactive 100-Day Escalation Timeline Banner Component */}
+      <Hormuz100DayTimeline language={language} />
 
       {/* Sub-Tabs Selector */}
       <div className="flex flex-wrap items-center gap-2 border-b border-zinc-800 pb-1 overflow-x-auto select-none">
