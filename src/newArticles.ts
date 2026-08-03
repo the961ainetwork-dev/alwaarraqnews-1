@@ -2,6 +2,337 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'global-proven-oil-reserves-analysis-2026',
+    slug: 'global-proven-oil-reserves-analysis-2026',
+    focusKeyword: 'احتياطيات-النفط-الاستراتيجية-المؤكدة-أوبك-السعودية-فنزويلا-الاقتصاد-العالمي',
+    category: 'oil-energy',
+    categories: ['oil-energy', 'arab-markets', 'markets', 'economy', 'alwarraq-investigations', 'research-reports', 'editor-desk'],
+    titleAr: 'تقرير شامل: احتياطيات النفط الاستراتيجية المؤكدة في العالم حسب الدول.. المصادر والانعكاسات على الاقتصاد العالمي',
+    titleEn: 'Global Proven Strategic Oil Reserves by Country: Sources & Economic Impacts Analysis',
+    summaryAr: 'تقرير استراتيجي واستقصائي يستعرض التوزيع الجغرافي لـ 1.57 تريليون برميل من احتياطيات النفط المؤكدة عالمياً، وسيطرة دول أوبك على 79% منها، وجدول أكبر 10 دول، وتأثير التمركز على أسعار الطاقة والتضخم وتكاليف الاستخراج ونفط فنزويلا مقابل الخليج.',
+    summaryEn: 'Strategic analytical dossier breaking down 1.57 trillion barrels of global proven oil reserves, OPEC’s 79% concentration, top 10 country rankings, extraction cost disparities (Venezuela heavy crude vs. Gulf low-cost), and global macroeconomic impacts.',
+    excerptAr: 'دراسة تفصيلية لحجم ومواقع احتياطيات النفط الخام المؤكدة عالمياً، وجدول القوة النفطية، وتداعيات تركّز الاحتياطي في الشرق الأوسط وأوبك على أمن الطاقة العالمي.',
+    excerptEn: 'Comprehensive analysis of global proven oil reserves (1.57 trillion barrels), top 10 country distributions, extraction economics, and energy security implications.',
+    author: {
+      nameAr: 'غرفة أسواق الطاقة والبحوث الاستراتيجية — الورّاق نيوز',
+      nameEn: 'Oil, Energy & Geopolitics Desk — Al-Warraq',
+      titleAr: 'وحدة تحليل الطاقة واقتصادات النفط السيادي',
+      titleEn: 'Sovereign Energy & Commodities Unit',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-03',
+    readTimeAr: '١١ دقيقة قراءة',
+    readTimeEn: '11 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 35600,
+    tags: [
+      'احتياطيات_النفط', 'النفط_الخام', 'أوبك', 'السعودية', 'فنزويلا', 'إيران', 'العراق', 'الإمارات', 'أوبك_بلس', 'أمن_الطاقة',
+      'Oil_Reserves', 'Crude_Oil', 'OPEC', 'Saudi_Arabia', 'Venezuela', 'Energy_Security', 'OPEC_Plus', 'Oil_Economics'
+    ],
+    hashtags: ['OilReserves', 'OPEC', 'EnergyEconomics', 'SaudiArabia', 'OilAndEnergy', 'GlobalEconomy'],
+    contentAr: `### تقرير شامل: احتياطيات النفط الاستراتيجية المؤكدة في العالم حسب الدول.. المصادر والانعكاسات على الاقتصاد العالمي
+
+تمر أسواق الطاقة العالمية بتحولات استراتيجية عميقة في ظل إعادة رسم الخارطة الجيوسياسية ومجالات التجارة الدولية. ويظل حجم **الاحتياطيات النفطية المؤكدة** وتوزعها الجغرافي المحدد الأساسي للملاءة الاقتصادية والنفوذ الجيو-اقتصادي للدول المنتجة، فضلاً عن كونه محركاً رئيساً لتكاليف الإنتاج وأمن الطاقة العالمي.
+
+---
+
+### أولاً: نظرة عامة وتوزيع احتياطيات النفط الاستراتيجية حسب الدول
+يبلغ إجمالي الاحتياطيات المؤكدة من النفط الخام في العالم ما يقارب **1.57 تريليون برميل**. وتتمركز الغالبية العظمى من هذه الاحتياطيات في عدد محدود من الدول، حيث تستحوذ دول منظمة "أوبك" (**OPEC**) وحدها على نحو **79%** من الإجمالي العالمي.
+
+#### جدول: أكبر 10 دول امتلاكاً لاحتياطيات النفط المؤكدة عالمياً
+*(بناءً على التقارير الرسمية والسنوية لـ "أوبك" والجهات الإحصائية المعتمدة)*
+
+| الترتيب العالمي | الدولة | الاحتياطي المؤكد (مليار برميل) | النسبة من إجمالي الاحتياطي العالمي |
+| :---: | :--- | :---: | :---: |
+| **1** | فنزويلا | ~ 303.7 | ~ 17.2% |
+| **2** | المملكة العربية السعودية | ~ 267.2 | ~ 15.1% |
+| **3** | إيران | ~ 208.6 | ~ 11.8% |
+| **4** | العراق | ~ 140.0 - 145.0 | ~ 8.2% |
+| **5** | الإمارات العربية المتحدة | ~ 113.0 - 120.0 | ~ 6.4% |
+| **6** | الكويت | ~ 101.5 | ~ 5.8% |
+| **7** | روسيا | ~ 80.0 | ~ 4.5% |
+| **8** | ليبيا | ~ 48.4 | ~ 2.7% |
+| **9** | الولايات المتحدة الأمريكية | ~ 41.9 - 45.0 | ~ 4.7% |
+| **10** | نيجيريا | ~ 37.0 - 37.3 | ~ 2.1% |
+
+*\*(ملاحظة: تُصنف كندا في بعض المراجعات الغربية ضمن المراكز الأولى عند احتساب الرمال النفطية "Oil Sands" غير التقليدية، بينما تظهر هنا وفق التصنيف الجغرافي والرسمي الخام لبيانات أوبك).\**
+
+---
+
+### ثانياً: الانعكاسات على الاقتصاد العالمي
+يترتب على التركيز الجغرافي للاحتياطيات النفطية تأثيرات عميقة على استقرار الاقتصاد الدولي وتدفقات التجارة والنقد، تتلخص في المحاور التالية:
+
+\`\`\`
+                         ┌──────────────────────────────────────────────┐
+                         │    أبرز الانعكاسات على الاقتصاد العالمي       │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌─────────────────────────┐            ┌─────────────────────────┐            ┌─────────────────────────┐
+│ التحكم بالأسعار والتضخم │            │ تكلفة الاستخراج والنوعية│            │ التحالفات والتحول النقدي │
+├─────────────────────────┤            ├─────────────────────────┤            ├─────────────────────────┤
+│ تركز 79% بأوبك والشرق   │            │ تفاوت باهظ بين النفط    │            │ اتفاقيات أوبك+، والتداول│
+│ الأوسط يرفع حساسيات     │            │ الثقيل (فنزويلا) والخام  │            │ بعملات غير الدولار لصالح│
+│ الصدمات والتضخم.        │            │ السهل الرخيص (الخليج).  │            │ تحولات الطاقة والأمن.   │
+└─────────────────────────┘            └─────────────────────────┘            └─────────────────────────┘
+\`\`\`
+
+1. **التحكم بأسعار الطاقة ومعدلات التضخم:**
+التركز العالي في منطقة الشرق الأوسط وبعض الدول الخاضعة لعقوبات (مثل إيران وفنزويلا) يعني أن أي توترات جيوسياسية أو اضطرابات في ممرات الشحن الحيوية تنعكس فوراً على أسعار النفط الخام، مما يتسبب في موجات تضخمية عالمية وارتفاع تكاليف الإنتاج والشحن والنقل في الاقتصادات الكبرى.
+
+2. **تكلفة الاستخراج وسهولة النفاذ مقابل حجم الاحتياطي:**
+على الرغم من أن فنزويلا تحتل المرتبة الأولى عالمياً من حيث حجم الاحتياطي الورقي، إلا أن معظم هذا النفط ثقيل وعالي الكثافة (حزام أورينوكو)، مما يجعل تكلفة استخراجه وتقنياته معقدة وباهظة مقارنة بالنفط السهل وقليل التكلفة في دول الخليج العربي (مثل السعودية)، وهو ما ينعكس تفاوتًا واضحًا في الملاءة المالية والربحية لاقتصادات هذه الدول.
+
+3. **التحول نحو الطاقة البديلة والأمن القومي:**
+إن حقيقة أن الاحتياطي العالمي يكفي لمعدلات الاستهلاك الحالية لنحو **45 إلى 47 عاماً تقريباً** تدفع الدول المستهلكة الكبرى (مثل دول الاتحاد الأوروبي والولايات المتحدة والصين) لتسريع وتيرة التحول نحو مصادر الطاقة المتجددة والسيارات الكهربائية لتقليل الارتهان للتقلبات السياسية المرتبطة بمصدرين محددين للطاقة.
+
+4. **إعادة تشكيل التحالفات التجارية والنقدية:**
+الدول المالكة لأكبر الاحتياطيات تلعب أدواراً محورية في صياغة السياسات المالية والنقدية العالمية (مثل تداولات العملات خارج إطار الدولار، واتفاقيات أوبك بلس)، مما يؤثر بشكل مباشر على استقرار الأسواق الناشئة والدول النامية غير النفطية التي تتأثر صعوداً وهبوطاً بفاتورة استيراد الطاقة.
+
+---
+
+### ثالثاً: المصادر والمراجع الإحصائية
+* **بيانات منظمة الدول المصدرة للنفط (أوبك):** النشرة الإحصائية السنوية (*OPEC Annual Statistical Bulletin*).
+* **تقارير ومراجعات الطاقة العالمية:** *World Population Review & Worldometer Energy Statistics* (استناداً إلى بيانات الأوبك ومراجعات الطاقة العالمية).
+* **دراسات تحليلية متخصصة:** تقارير الأسواق الاقتصادية العالمية وتوزيعات الاحتياطي الاستراتيجي (*Business Stats / Visual Capitalist*).`,
+    contentEn: `### Global Proven Strategic Oil Reserves by Country: Sources & Economic Impacts Analysis
+
+Global energy markets are undergoing profound structural realignments amid shifting geopolitical friction and re-engineered international trade routes. The volume and geographic distribution of **proven crude oil reserves** serve as the foundational bedrock for sovereign economic solvency, fiscal leverage, extraction economics, and global energy security.
+
+---
+
+### 1. Overview & Distribution of Global Proven Oil Reserves
+Total proven crude oil reserves globally stand at approximately **1.57 trillion barrels**. The vast majority of these reserves are heavily concentrated in a small number of countries, with member states of the Organization of the Petroleum Exporting Countries (**OPEC**) holding roughly **79%** of the global total.
+
+#### Table: Top 10 Countries by Proven Oil Reserves Globally
+*(Based on official OPEC Annual Statistical Bulletins and verified energy statistics)*
+
+| Global Rank | Country | Proven Reserves (Billion Barrels) | Share of Global Total |
+| :---: | :--- | :---: | :---: |
+| **1** | Venezuela | ~ 303.7 | ~ 17.2% |
+| **2** | Saudi Arabia | ~ 267.2 | ~ 15.1% |
+| **3** | Iran | ~ 208.6 | ~ 11.8% |
+| **4** | Iraq | ~ 140.0 - 145.0 | ~ 8.2% |
+| **5** | United Arab Emirates | ~ 113.0 - 120.0 | ~ 6.4% |
+| **6** | Kuwait | ~ 101.5 | ~ 5.8% |
+| **7** | Russia | ~ 80.0 | ~ 4.5% |
+| **8** | Libya | ~ 48.4 | ~ 2.7% |
+| **9** | United States of America | ~ 41.9 - 45.0 | ~ 4.7% |
+| **10** | Nigeria | ~ 37.0 - 37.3 | ~ 2.1% |
+
+*\*(Note: Some Western reviews rank Canada among top reserve holders when non-conventional oil sands are included; here, figures strictly reflect crude liquid reserves per official OPEC classification).\**
+
+---
+
+### 2. Macroeconomic Implications for the Global Economy
+The geographical concentration of crude reserves exerts deep structural influence over international fiscal stability, energy inflation, and monetary flows:
+
+\`\`\`
+                         ┌──────────────────────────────────────────────┐
+                         │   Key Macroeconomic Impact Channels          │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌─────────────────────────┐            ┌─────────────────────────┐            ┌─────────────────────────┐
+│ Price Control & Inflation│            │ Extraction Economics    │            │ Alliances & De-Dollarization│
+├─────────────────────────┤            ├─────────────────────────┤            ├─────────────────────────┤
+│ 79% OPEC concentration   │            │ High cost of heavy      │            │ OPEC+ quota coordination│
+│ amplifies geopolitical   │            │ Orinoco crude vs. low-   │            │ and non-USD trade drives│
+│ choke point vulnerabilities│           │ cost Gulf conventional. │            │ energy transition plans. │
+└─────────────────────────┘            └─────────────────────────┘            └─────────────────────────┘
+\`\`\`
+
+1. **Energy Price Control & Inflationary Volatility:**
+Heavy geographic concentration in the Middle East and sanctioned producer nations (Iran, Venezuela) means maritime choke-point disruptions or geopolitical friction immediately trigger global energy price spikes, driving transportation and manufacturing inflation worldwide.
+
+2. **Extraction Costs & Accessibility vs. Nominal Reserve Size:**
+While Venezuela holds the largest headline reserve on paper, the bulk consists of heavy, high-viscosity Orinoco Belt bitumen requiring complex, expensive processing. In contrast, low-cost conventional light crude in Saudi Arabia and the Arabian Gulf yields far superior net cash margins and fiscal flexibility.
+
+3. **Energy Transition Accelerators & National Security:**
+Given that current global reserves represent approximately **45 to 47 years** of consumption at present burn rates, major consuming economies (EU, US, China) are accelerating renewable energy transitions and EV adoption to hedge against supply concentration risks.
+
+4. **Reshaping Trade Alliances & Currency Paradigms:**
+Major reserve owners play central roles in reshaping monetary frameworks (e.g., OPEC+ quota policies, bilateral non-USD oil trade settlements), directly impacting non-oil developing markets and global inflation baselines.
+
+---
+
+### 3. Statistical References & Sources
+* **Organization of the Petroleum Exporting Countries (OPEC):** *OPEC Annual Statistical Bulletin*.
+* **Global Energy Reviews:** *World Population Review & Worldometer Energy Statistics* (based on OPEC and BP Statistical Review datasets).
+* **Market Analytical Reports:** *Business Stats / Visual Capitalist Energy Research*.`,
+  },
+  {
+    id: 'lebanese-eurobonds-market-analysis-2026',
+    slug: 'lebanese-eurobonds-market-analysis-2026',
+    focusKeyword: 'سندات-اليوروبوندز-اللبنانية-الأسواق-المالية-بلوم-بوند-صندوق-النقد-مؤشر-BBI',
+    category: 'markets',
+    categories: ['markets', 'lebanon', 'economy', 'alwarraq-investigations', 'research-reports', 'editor-desk'],
+    titleAr: 'تقرير تحليلي: حركة وأسعار سندات اليوروبوندز اللبنانيّة في الأسواق المالية',
+    titleEn: 'Analytical Report: Price Movements & Dynamics of Lebanese Eurobonds in Financial Markets',
+    summaryAr: 'تقرير تحليلي استثماري يفكك التداولات الحالية لسندات اليوروبوندز اللبنانية (23.75 - 24.75 سنتاً)، ومؤشر بلوم بوند (BBI)، وعوائد الآجال القريبة الفلكية، وأسباب الهيركات المرتقب (+70%) والمحركين الأساسيين بين المصارف، صناديق التحوط، وصندوق النقد.',
+    summaryEn: 'Comprehensive financial report analyzing current Lebanese Eurobond trading ranges (23.75–24.75 cents), the Blom Bond Index (BBI), inverted yield curves, expected 70%+ Haircut pricing, and market setters.',
+    excerptAr: 'تحليل دقيق لأسعار سندات الدين السيادي اللبناني، انضغاط الأسعار حول 27 سنتاً، عوائد الاستحقاقات القريبة، وضغوط صناديق التحوط والمصارف المحلية.',
+    excerptEn: 'In-depth analysis of Lebanese sovereign bond trading, price compression around 27 cents, short-term yield spikes, and hedge fund dynamics.',
+    author: {
+      nameAr: 'غرفة الأسواق المالية والبحوث الاقتصادية — الورّاق نيوز',
+      nameEn: 'Capital Markets & Fixed Income Desk — Al-Warraq',
+      titleAr: 'وحدة تحليل الدين السيادي والأسواق المالية',
+      titleEn: 'Sovereign Debt & Fixed Income Unit',
+      avatar: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-03',
+    readTimeAr: '١٠ دقائق قراءة',
+    readTimeEn: '10 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 31200,
+    tags: [
+      'اليوروبوندز', 'سندات_لبنان', 'بلوم_بوند', 'BBI', 'الهيركات', 'صندوق_النقد', 'صناديق_التحوط', 'الدين_السيادي',
+      'Eurobonds', 'Lebanon_Debt', 'Blom_Bond_Index', 'IMF', 'Hedge_Funds', 'Sovereign_Default', 'Haircut'
+    ],
+    hashtags: ['LebanonEurobonds', 'CapitalMarkets', 'Eurobonds', 'LebanonEconomy', 'BBI', 'IMF'],
+    contentAr: `### تقرير تحليلي: حركة وأسعار سندات اليوروبوندز اللبنانيّة في الأسواق المالية
+
+تتداعى مؤشرات أسواق الدين السيادي اللبناني وسط حالة تخلف شاملة عن السداد، حيث ترسم التداولات الأخيرة لسندات اليوروبوندز بالعملة الأجنبية صورة واقعية لحالة الانفصال بين المشهد المالي المحلي وأسواق الدين العالمية.
+
+---
+
+### أولاً: الأسعار الفعلية الحالية لسندات اليوروبوندز اللبنانية
+تتداول سندات الدين السيادي اللبناني بالعملة الأجنبية (**Eurobonds**) حالياً ضمن نطاق ضيق ومنخفض نسبياً، مستقرة في تداولات الأسبوع الأخير قيد المراجعة بين **23.75 و24.75 سنتاً** للدولار الواحد، مسجلة تراجعاً طفيفاً عن الأسابيع السابقة التي كانت تراوح بين 24.00 و25.50 سنتاً.
+
+ويأتي هذا الأداء امتداداً لمسار تذبذب وسطه العام، حيث كانت الأسعار قد لامست مطلع العام مستويات تقارب 27 سنتاً إثر بعض التفاؤل السياسي الداخلي واقتراب نقاشات "قانون الفجوة المالية"، لكنها عادت وانخفضت تحت ضغط الواقع الميداني والسياسي.
+
+يُظهر تفحص جداول البيانات ومؤشرات السوق مجموعة من الاستنتاجات والدلالات الاقتصادية الحرجة:
+
+1. **استقرار هامشي للمؤشر مقابل مكاسب سنوية واسعة:**
+سجل مؤشر "بلوم بوند" (BBI) ارتفاعاً طفيفاً إلى **28.32 نقطة** بنسبة تغير يومي/أسبوعي بلغت **+0.57%**، مسجلاً مكاسب ملحوظة منذ بداية العام بلغت **17.58%**. هذا الصعود التراكمي منذ بداية العام لا يعكس تعافياً اقتصادياً حقيقياً، بل يترجم عمليات إعادة تسعير تنفذها صناديق التحوط والمضاربون لاقتناص الأصول المنهارة بأسعار بخسة (أقل من 28 سنتاً).
+
+2. **انضغاط الأسعار حول عتبة الـ 27 سنتاً (منحنى العائد المقلوب جزئياً):**
+عند النظر إلى الأسعار حسب تواريخ الاستحقاق، نلاحظ أن معظم الإصدارات تتحرك في حيز ضيق جداً يتراوح بين **26.52 و28.29 سنتاً**. هذا التقارب الشديد يشير إلى أن السوق لا يميز كثيراً بين الآجال المختلفة (قريبة أو بعيدة)، نظراً لأن الدولة تختزل في حالة **"تخلف عن الدفع شامل" (Default)**، وأن قيمة الاسترداد النهائية مرتبطة بنسبة تسوية موحدة متوقعة وليس بجدول زمن السداد الأصلي.
+
+3. **مستويات عائد فلكية في الآجال القريبة:**
+تُظهر الأرقام عوائد خيالية على السندات قصيرة الأجل؛ حيث يبلغ عائد استحقاق نوفمبر 2027 **143.91%**، بينما يسجل استحقاق مارس 2028 بعائد **114.96%**. هذا الانعكاس الحاد يفسر المخاطر القصوى المرتبطة بالتدفقات النقدية القريبة واحتمالات التفاوض المبكر، بينما تنخفض العوائد تدريجياً مع طول الأجل لتصل إلى نحو **30.11%** في استحقاق 2037، وهو سلوك رياضي بحت يعكس تناقص القيمة الحالية للتدفقات المخصومة على المدى البعيد.
+
+4. **تراجع طفيف في الهوامش والمخاطر السيادية:**
+انخفض العائد المرجح بمقدار **27 نقطة أساس** ليسجل **61.41%**، وتراجعت هوامش سندات الـ 5 والـ 10 سنوات بواقع **11 نقطة أساس** لكل منهما (لتستقر عند **4,212 و2,622 نقطة أساس** فوق سندات الخزانة الأمريكية تباعاً). ورغم هذا الانخفاض الطفيف، إلا أن بقاء الهوامش السيادية في مستويات تفوق 26,000 إلى 42,000 نقطة أساس يكشف عن حالة قطيعة كاملة وتامّة بين السوق المالي اللبناني وأسواق الدين العالمية.
+
+---
+
+### ثانياً: لماذا تتداول عند هذه المستويات؟ (أسباب التسعير الحالي)
+إن بقاء الأسعار في حدود الـ 24 سنتاً للدولار يعكس تقييماً واقعياً تفرضه عدة معطيات جوهرية:
+
+* **توقعات نسبة الخصم (Haircut):** تشير تقديرات مؤسسات دولية كبرى (مثل J.P. Morgan) إلى أن إعادة هيكلة الدين السيادي اللبناني ستتضمن خسائر محتملة (Haircut) تفوق **70%**، مما يجعل الأسعار الحالية (قرب 24-25 سنتاً) قريبة من القيمة العادلة التي يراها المضاربون والمستثمرون متوافقة مع نسبة الاسترداد المتوقعة عند التسوية النهائية.
+* **المخاطر الجيوسياسية المستمرة:** استئناف العمليات العسكرية والتوترات الحدودية في المنطقة يبقيان حالة عدم اليقين في أعلى مستوياتها.
+* **تعثر الإصلاحات الهيكلية:** البطء المستمر في إقرار التشريعات الإصلاحية المطلوبة وغياب اتفاق نهائي وناجز مع صندوق النقد الدولي (IMF) يؤجلان أي أفق حقيقي لعملية إعادة هيكلة منتظمة للدين.
+
+---
+
+### ثالثاً: مراجعة تفصيلية للأسبوع الأخير في السوق
+خلال الأسبوع قيد المراجعة:
+
+* **نطاق التداول:** انحصرت الحركة بين **23.75 و24.75 سنتاً** للدولار.
+* **شح السيولة وضعف التداول:** اتسمت جلسات التداول بضعف شديد في الأحجام وانعدام للسيولة النشطة، في ظل عزوف المستثمرين عن ضخ أموال جديدة.
+* **التأثيرات السياسية المتباينة:** على الرغم من وجود بعض الزيارات والمبادرات الدبلوماسية رفيعة المستوى (مثل زيارة رئيس الجمهورية إلى واشنطن لتخفيف حدة التوتر) والتي خلقت زخماً إيجابياً مؤقتاً، إلا أن تواصل المواجهات العسكرية على الأرض طغى على المشهد، مما أبقى المستثمرين الدوليين في موقع الحذر الشديد والترقب السلبي.
+
+---
+
+### رابعاً: صُنّاع السوق والمحركّون الأساسيون (Market Setters)
+يتأثر سوق اليوروبوندز اللبناني بديناميكيات فريدة نظراً لتوقف خدمة الدين وعدم وجود صانع سوق تقليدي (Market Maker) نشط، وتتوزع قوى التأثير بين:
+
+\`\`\`
+                         ┌──────────────────────────────────────────────┐
+                         │   صُنّاع القوة والمحرّكون لسوق اليوروبوندز     │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌─────────────────────────┐            ┌─────────────────────────┐            ┌─────────────────────────┐
+│   المصارف المحلية       │            │  صناديق التحوط الدولية  │            │  المؤسسات وصندوق النقد   │
+├─────────────────────────┤            ├─────────────────────────┤            ├─────────────────────────┤
+│ تحتفظ بالكتلة الكبرى    │            │ تضارب بالقيم المنخفضة   │            │ تحدد بوصلة الثقة والشروط │
+│ وتنتظر معالجة الفجوة.   │            │ (شراء <22c / بيع ~27c). │            │ لإعادة هيكلة الدين.      │
+└─────────────────────────┘            └─────────────────────────┘            └─────────────────────────┘
+\`\`\`
+
+1. **المصارف المحلية اللبنانية:** التي تحتفظ بالجزء الأكبر من هذه الإصدارات في دفاترها، وتخضع لضوابط مصرف لبنان ولجنة التحقيق الخاصة، حيث تتابع عن كثب أي تسويات محاسبية مرتبطة بالميزانيات ومعالجة الخسائر.
+2. **المستثمرون الدوليون وصناديق التحوط (Hedge Funds):** وهم الطرف الأكثر نشاطاً في التداول الهامشي الحالي (Buy/Sell)؛ حيث يدخلون للشراء عند مستويات منخفضة جداً (دون 22-23 سنتاً) ويبيعون عند محاولات التعافي (قرب 27 سنتاً) بهدف تحقيق أرباح سريعة مستغلين الأخبار السياسية.
+3. **الجهات الرقابية والدولية (صندوق النقد والوكالات الدولية):** التي تقرأ التقارير الإصلاحية وتحدد ببياناتها النبرة العامة للثقة في قدرة الدولة على النهوض، مما يوجه حركة المضاربين صعوداً أو هبوطاً على مدار الأسبوع.`,
+    contentEn: `### Analytical Report: Price Movements & Dynamics of Lebanese Eurobonds in Financial Markets
+
+Lebanon’s sovereign debt indicators continue to hover around default pricing levels. Recent trading in foreign currency Eurobonds highlights the stark decoupling between domestic financial realities and global debt capital markets.
+
+---
+
+### 1. Actual Current Prices of Lebanese Eurobonds
+Lebanese foreign currency sovereign debt instruments (**Eurobonds**) are currently trading within a tight, low range, stabilizing during the weekly review period between **23.75 and 24.75 cents** on the dollar—a slight decline from previous weeks when prices fluctuated between 24.00 and 25.50 cents.
+
+This performance extends a volatile broader trajectory. Earlier this year, prices touched levels near 27 cents following brief domestic political optimism and preliminary discussions surrounding the Financial Gap Legislation, before falling back under geopolitical and economic pressure.
+
+Examining market datasets and yield metrics reveals several critical economic implications:
+
+1. **Marginal Index Stability vs. Broad YTD Gains:**
+The Blom Bond Index (**BBI**) nudged up slightly to **28.32 points** (+0.57% weekly), marking a notable year-to-date gain of **17.58%**. However, this cumulative rise does not reflect real economic recovery; rather, it represents repricing executed by opportunistic hedge funds acquiring distressed sovereign paper at rock-bottom prices (<28 cents).
+
+2. **Price Compression Around 27 Cents (Partially Inverted Yield Curve):**
+Across maturities, most issues trade within a narrow band of **26.52 to 28.29 cents**. This price compression shows that markets do not differentiate significantly between short-term and long-term maturities. Because the state is in comprehensive default, final recovery value hinges on a unified settlement ratio rather than original maturity schedules.
+
+3. **Astronomical Short-Term Yields:**
+Short-term maturities exhibit extreme mathematical yields: the November 2027 paper yields **143.91%**, while the March 2028 issue yields **114.96%**. This severe inversion reflects acute near-term liquidity default risks, whereas long-term yields taper off mathematically (e.g., **30.11%** for 2037 paper) due to discounted cash flow mechanics.
+
+4. **Sovereign Spreads & Risk Premia:**
+The weighted average yield dropped by **27 bps** to **61.41%**, and 5-year and 10-year bond spreads narrowed by 11 bps each (settling at **4,212 and 2,622 bps** above US Treasuries). Despite these minor movements, sovereign risk spreads exceeding 26,000 to 42,000 basis points underscore complete isolation from global capital markets.
+
+---
+
+### 2. Why Are Eurobonds Trading at These Levels? (Pricing Drivers)
+Prices holding around 24 cents reflect realistic valuations driven by three key factors:
+
+* **Expected Haircut Margins:** Major international financial institutions (e.g., J.P. Morgan) estimate that restructuring Lebanese sovereign debt will entail a **Haircut exceeding 70%**, positioning current prices (24–25 cents) close to fair value expectations for eventual recovery.
+* **Ongoing Geopolitical Risks:** Active regional military engagements and border tensions maintain elevated uncertainty.
+* **Stalled Structural Reforms:** Persistent delays in passing necessary reform legislation and the absence of a final, binding IMF agreement defer any realistic timeline for orderly debt restructuring.
+
+---
+
+### 3. Detailed Review of Recent Market Activity
+During the week under review:
+
+* **Trading Range:** Fluctuation was strictly confined between **23.75 and 24.75 cents** on the dollar.
+* **Illiquidity & Low Volumes:** Trading sessions were marked by severe illiquidity as institutional investors refrained from deploying fresh capital.
+* **Mixed Political Drivers:** High-level diplomatic moves (such as presidential visits to Washington) provided temporary sentiment support, but ongoing frontline conflict dominated market outlooks.
+
+---
+
+### 4. Key Market Setters & Influencers
+With debt service halted and no active traditional market maker, Lebanese Eurobond market dynamics are governed by three primary forces:
+
+\`\`\`
+                         ┌──────────────────────────────────────────────┐
+                         │      Primary Market Setters & Drivers        │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+┌─────────────────────────┐            ┌─────────────────────────┐            ┌─────────────────────────┐
+│      Domestic Banks     │            │ Offshore Hedge Funds    │            │ IMF & Rating Agencies   │
+├─────────────────────────┤            ├─────────────────────────┤            ├─────────────────────────┤
+│ Hold bulk of portfolio; │            │ await balance sheet     │            │ Set reform benchmarks   │
+│ await balance sheet     │            │ gap resolution.         │            │ and sovereign recovery  │
+│ gap resolution.         │            │                         │            │ framework.              │
+└─────────────────────────┘            └─────────────────────────┘            └─────────────────────────┘
+\`\`\`
+
+1. **Local Lebanese Banks:** Holding the largest portion of these bond issues on their balance sheets, subject to BDL regulations, and closely watching accounting loss-allocation frameworks.
+2. **International Hedge Funds:** The most active participants in marginal trading, entering to buy below 22–23 cents and selling near 27 cents to capture quick news-driven arbitrage gains.
+3. **Multilateral Agencies & IMF:** Shaping market sentiment through reform assessments and restructuring guidance, dictating speculative positioning from week to week.`,
+  },
+  {
     id: 'fifa-leadership-crisis-infantino-resignation-2026',
     slug: 'fifa-leadership-crisis-infantino-resignation-2026',
     focusKeyword: 'أزمة-قيادة-الفيفا-جياني-إنفانتينو-خصخصة-كأس-العالم-اليويفا-فساد-الفيفا',

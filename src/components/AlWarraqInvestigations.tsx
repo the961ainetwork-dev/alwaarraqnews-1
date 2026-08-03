@@ -232,6 +232,22 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XIX: Comprehensive Report: FIFA Leadership Crisis — Corruption Allegations, Financial Misconduct & Pressure to Oust Gianni Infantino',
     descAr: 'تحقيق استقصائي شامل يفكك أزمة القيادة بالفيفا، وسقوط مشروع خصخصة المونديال بـ 20 مليار دولار، ومهلة اليويفا لإنفانتينو بالاستقالة أو سحب الثقة.',
     descEn: 'Special investigative dossier analyzing the deep leadership crisis at FIFA, the collapse of Infantino’s $20B World Cup privatization scheme, and UEFA’s no-confidence ultimatum.'
+  },
+  'lebanese-eurobonds-market-analysis-2026': {
+    fileId: 'AW-FILE-20',
+    badge: 'MARKETS & CAPITAL DEBT DOSSIER',
+    titleAr: 'الملف العشرين: تقرير تحليلي: حركة وأسعار سندات اليوروبوندز اللبنانيّة في الأسواق المالية',
+    titleEn: 'Dossier XX: Analytical Report: Price Movements & Dynamics of Lebanese Eurobonds in Financial Markets',
+    descAr: 'دراسة مالية واستثمارية تفكك أسعار سندات اليوروبوندز (23.75 - 24.75 سنتاً)، انضغاط الأسعار، مؤشر BBI، وتوقعات الهيركات لـ J.P. Morgan وديناميكيات صناديق التحوط والمصارف.',
+    descEn: 'A comprehensive fixed-income market report analyzing Lebanese Eurobond trading ranges, default price compression, BBI index dynamics, and expected 70%+ haircut models.'
+  },
+  'global-proven-oil-reserves-analysis-2026': {
+    fileId: 'AW-FILE-21',
+    badge: 'OIL & GLOBAL ENERGY DOSSIER',
+    titleAr: 'الملف الحادي والعشرون: تقرير شامل: احتياطيات النفط الاستراتيجية المؤكدة في العالم حسب الدول',
+    titleEn: 'Dossier XXI: Comprehensive Report: Global Proven Strategic Oil Reserves by Country',
+    descAr: 'تحليل استراتيجي يفكك 1.57 تريليون برميل نفط مؤكد عالمياً، وسيطرة أوبك (79%)، وتفاوت تكاليف النفط الثقيل بفنزويلا مقابل الخفيف بالخليج، وتأثيرات الأسعار والتضخم.',
+    descEn: 'Strategic energy dossier analyzing 1.57T barrels of global proven oil reserves, OPEC’s 79% concentration, extraction cost disparities, and macroeconomic inflation impacts.'
   }
 };
 
@@ -290,7 +306,9 @@ export default function AlWarraqInvestigations({
   // Filter to keep only the main investigations
   const investigativeArticles = allArticles.filter(article => {
     return (
+      article.id === 'global-proven-oil-reserves-analysis-2026' ||
       article.id === 'damascus-extended-shadow-syrian-role-lebanon-2026' ||
+      article.id === 'lebanese-eurobonds-market-analysis-2026' ||
       article.id === 'fifa-leadership-crisis-infantino-resignation-2026' ||
       article.id === 'riad-salameh-prosecution-health-political-dimensions-2026' ||
       article.id === 'saudi-diplomacy-regional-equation-2026' ||

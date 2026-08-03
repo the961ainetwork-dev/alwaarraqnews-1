@@ -2083,18 +2083,6 @@ export default function App() {
                   </div>
                 )}
 
-                {/* HAPPENING NOW SECTION (يحدث الآن) */}
-                {activeCategory === 'all' && !searchQuery && (
-                  <HappeningNowSection
-                    language={language}
-                    articles={allArticles}
-                    onSelectArticle={(article) => setSelectedArticle(article)}
-                    savedArticleIds={savedArticleIds}
-                    onToggleSaveArticle={handleToggleSaveArticle}
-                    onTagClick={handleTagClick}
-                  />
-                )}
-
                 {/* NARRATIVE LEBANON CRISIS INFOGRAPHICS DASHBOARD */}
                 {activeCategory === 'all' && !searchQuery && (
                   <NarrativeLebanonCrisisInfographics
