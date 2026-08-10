@@ -99,7 +99,26 @@ export const NEW_ARTICLES: Article[] = [
 ---
 
 ### ثالثاً: دلالات المستند في التوازنات السياسية والمالية
-تُشكل هذه الوثيقة الرسمية الصادرة عن مجلس الوزراء كسرًا واضحاً للنموذج الاستثماري التاريخي الذي قامت عليه "سوليدير" لثلاثة عقود. فبدلاً من التجديد التلقائي لـ 25 عاماً دون مقابل، فرضت الدولة إطاراً سيادياً يعيد ربط بقاء الشركة بـ **المنفعة العامة، التحصيل الضريبي، واستعادة التراث الوطني**.`,
+تُشكل هذه الوثيقة الرسمية الصادرة عن مجلس الوزراء كسرًا واضحاً للنموذج الاستثماري التاريخي الذي قامت عليه "سوليدير" لثلاثة عقود. فبدلاً من التجديد التلقائي لـ 25 عاماً دون مقابل، فرضت الدولة إطاراً سيادياً يعيد ربط بقاء الشركة بـ **المنفعة العامة، التحصيل الضريبي، واستعادة التراث الوطني**.
+
+---
+
+### رابعاً: افتتاحية تحريرية: عودة «سوليدير» إلى طاولة المساءلة... هل تفكك الدولة «الجزيرة المعزولة»؟
+
+**بقلم: معن برازي، رئيس التحرير**
+
+يُعَدّ قرار مجلس الوزراء رقم 11 تاريخ 2026/08/07 محطة مفصلية في مسار التعاطي الرسمّي مع الشركة اللبنانية لتطوير وإعادة إعمار وسط مدينة بيروت (سوليدير)، إذ ينتقل بمقاربة الدولة من خانة "التسليم المسبق" إلى منطق الشروط والمقايضة لصالح المصلحة العامة. وفيما يلي قراءة نقدية نقطة بنقطة لأبرز ما جاء في رد الحكومة:
+
+* **المبدأ بين الانفتاح والتقييم التاريخي:** تقر الحكومة في مبدئها بالدور التاريخي للشركة في إعادة إعمار الوسط التجاري، لكنها تضع هذا الاعتراف على المحك حين تشير إلى أنه بعد مرور أكثر من 30 عاماً على التأسيس، لا يزال جزء كبير من المساحات العمرانية غير مطور، فضلاً عن عدم تنفيذ عدد من التزامات الدولة تجاه الشركة. هذا التوازن يعكس إقراراً ضمنياً بأن العقد الاجتماعي والاقتصادي الأول قد تآكل.
+* **الصرامة في المتطلبات القانونية والإجرائية:** لا تقبل الحكومة ببحث التمديد مرور الكرام، بل تشترط مسبقاً تقديم إفادة براءة ذمة ضريبية، وتدقيقاً مستقلّاً وشفافاً في حسابات الشركة وأصولها ورصيدها العقاري، إلى جانب قرار صريح وواضح للجمعية العمومية وفقاً للقانون رقم 117/1991. هذه البنود تضع حداً لأي محاولة تمديد غامضة أو خارج الأطر الرقابية الدقيقة.
+* **ربط التمديد بمؤشرات الأداء وجداول زمنية (KPIs):** ترفض الحكومة رفضاً قاطعاً أي تمديد طويل الأمد وغير مشروط. وتطرح بديلاً عملياً يقوم إما على التمديد على مراحل (مثال: 8 سنوات تقيّم بعدها لـ 6 سنوات إضافية) أو فرض غرامات مالية صارمة على أي تأخير أو إخلال جوهري بالعقد. وهو تحول نوعي يحول الضمانات الزمنية إلى أدوات ضغط فعلية لإنهاء المشاريع.
+* **المراجعة المالية والضريبية ووقف الاحتكار:** تفتح الوثيقة ملف الامتيازات والإعفاءات الضريبية السابقة التي لم تقابلها قيمة مضافة كافية للصالح العام. كما تلحظ بوضوح ضرورة الحد من احتفاظ الشركة بالعقارات والأراضي الشاغرة وإخضاع أي مشاريع ومداخيل مستقبلية لإطار ضريبي ومالي حديث يتماشى مع المعايير العامة في البلاد.
+* **أولوية المشاريع والساحات العامة العالقة:** يعيد القرار تصويب البوصلة نحو إنجاز الواجهة البحرية، حديقة رفيق الحريري، استكمال تطوير ساحة الشهداء، ومتحف تاريخ مدينة بيروت وحديقة التل الأثري، إضافة إلى ترميم المسرح الكبير (العقار 891 - الباشورة). إن إلزام الشركة بهذه المعالم الثقافية والتراثية يهدف إلى إعادة إحياء الذاكرة المدنية للمدينة بعد أن تضررت طويلاً.
+* **فك العزلة الحضرية ودمج النسيج المديني:** يلحظ القرار بُعداً إنسانياً واجتماعياً واقتصادياً غائباً منذ نشأة المشروع، متمثلاً في إعادة ربط وسط بيروت بالمناطق المحيطة (كالمرفأ، الجميزة، ومار مخايل)، وتخصيص مساحات للفنون ومحترفات بأسعار ميسرة للفنانين الناشئين، فضلاً عن تشجيع عودة أبناء الطبقة الوسطى والمؤسسات الصغيرة والمتوسطة إلى النطاق. هذا البند يعكس محاولة حثيثة لتحرير الوسط التجاري من صفته كـ "جزيرة معزولة" للأثرياء فقط.
+
+**خلاصة القول**، إن هذا القرار يرسل رسالة واضحة مفادها أن أي تمديد محتمل لشركة سوليدير لن يكون مجانياً ولا مفتوحاً على غوارب الإهمال، بل هو خاضع لمنطق الإنتاجية، والشفافية المالية، ودمج الوسط التجاري بقسامه ونسيجه الحيوي ضمن جسد مدينة بيروت الواحد.
+
+**بقلم: معن برازي، رئيس التحرير**`,
     contentEn: `### Exclusive Documents: Lebanese Cabinet Rejects Unconditional Solidere Extension, Imposing 5 Sovereign Conditions & 8-Year Conditional Mandate (Minutes 70 - Decision 11)
 
 **Beirut — Al-Warraq News (Sovereign Intelligence Desk)**  
@@ -370,6 +389,86 @@ While the Cabinet proposal strongly defends state and municipal rights, it omits
 1. **Define Enforceable KPI Benchmarks:** Ensure the 8-year contract includes quantitative development milestones rather than vague qualitative targets.
 2. **Dedicated Heritage Restoration Fund:** Allocate a portion of new land tax revenues toward a dedicated heritage fund to prevent construction halts.
 3. **Sovereign Safeguards:** Maintain strict oversight over share transfers to protect national security and urban integrity.`
+  },
+
+  {
+    id: 'solidere-editorial-maan-barazi-2026',
+    slug: 'solidere-editorial-maan-barazi-2026',
+    focusKeyword: 'افتتاحية-معن-برازي-سوليدير-قرار-مجلس-الوزراء-2026-الجزيرة-المعزولة-رئيس-التحرير',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'investigations', 'alwarraq-investigations', 'lebanon', 'economy', 'exclusives'],
+    titleAr: 'افتتاحية تحريرية: عودة «سوليدير» إلى طاولة المساءلة... هل تفكك الدولة «الجزيرة المعزولة»؟',
+    titleEn: 'Editor-in-Chief Editorial: Solidere Back on the Accountability Table — Is the State Dismantling the "Isolated Island"?',
+    summaryAr: 'قراءة نقدية افتتاحية بقلم معن برازي — رئيس التحرير تفكك قرار مجلس الوزراء رقم 11 تاريخ 2026/08/07، وتحلل تحول موقف الدولة من التسليم المسبق إلى الشروط والمقايضة والـ KPIs، وتفكيك احتكار العقارات وإعادة ربط النسيج المديني لوسط بيروت.',
+    summaryEn: 'An editorial critique by Editor-in-Chief Maan Barazi evaluating Cabinet Decision No. 11/70 on Solidere, dissecting the shift from unconditional corporate lease renewals to strict performance KPIs, fiscal reforms, and urban integration.',
+    excerptAr: 'بقلم معن برازي، رئيس التحرير: قراءة نقدية نقطة بنقطة لقرار مجلس الوزراء بملف سوليدير، وبنود الشفافية المالية والـ KPIs وفك العزلة الحضرية عن وسط بيروت.',
+    excerptEn: 'By Maan Barazi, Editor-in-Chief: Point-by-point critical appraisal of Cabinet Decision No. 11/70 regarding Solidere and urban integration.',
+    author: {
+      nameAr: 'معن برازي — رئيس التحرير',
+      nameEn: 'Maan Barazi — Editor-in-Chief',
+      titleAr: 'رئيس التحرير والمدير العام — «الورّاق نيوز»',
+      titleEn: 'Editor-in-Chief & Managing Director — Al-Warraq News',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-10',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 29400,
+    tags: [
+      'افتتاحية', 'معن_برازي', 'رئيس_التحرير', 'سوليدير', 'مجلس_الوزراء', 'بيروت', 'الجزيرة_المعزولة',
+      'Editorial', 'Maan_Barazi', 'Editor_in_Chief', 'Solidere', 'Lebanon_Economy'
+    ],
+    hashtags: ['MaanBaraziEditorial', 'SolidereAccountability', 'AlWarraqEditorDesk', 'BeirutUrbanIntegration'],
+    contentAr: `### افتتاحية تحريرية: عودة «سوليدير» إلى طاولة المساءلة... هل تفكك الدولة «الجزيرة المعزولة»؟
+
+**بقلم: معن برازي، رئيس التحرير**
+
+يُعَدّ قرار مجلس الوزراء رقم 11 تاريخ 2026/08/07 محطة مفصلية في مسار التعاطي الرسمّي مع الشركة اللبنانية لتطوير وإعادة إعمار وسط مدينة بيروت (سوليدير)، إذ ينتقل بمقاربة الدولة من خانة "التسليم المسبق" إلى منطق الشروط والمقايضة لصالح المصلحة العامة. وفيما يلي قراءة نقدية نقطة بنقطة لأبرز ما جاء في رد الحكومة:
+
+* **المبدأ بين الانفتاح والتقييم التاريخي:** تقر الحكومة في مبدئها بالدور التاريخي للشركة في إعادة إعمار الوسط التجاري، لكنها تضع هذا الاعتراف على المحك حين تشير إلى أنه بعد مرور أكثر من 30 عاماً على التأسيس، لا يزال جزء كبير من المساحات العمرانية غير مطور، فضلاً عن عدم تنفيذ عدد من التزامات الدولة تجاه الشركة. هذا التوازن يعكس إقراراً ضمنياً بأن العقد الاجتماعي والاقتصادي الأول قد تآكل.
+* **الصرامة في المتطلبات القانونية والإجرائية:** لا تقبل الحكومة ببحث التمديد مرور الكرام، بل تشترط مسبقاً تقديم إفادة براءة ذمة ضريبية، وتدقيقاً مستقلّاً وشفافاً في حسابات الشركة وأصولها ورصيدها العقاري، إلى جانب قرار صريح وواضح للجمعية العمومية وفقاً للقانون رقم 117/1991. هذه البنود تضع حداً لأي محاولة تمديد غامضة أو خارج الأطر الرقابية الدقيقة.
+* **ربط التمديد بمؤشرات الأداء وجداول زمنية (KPIs):** ترفض الحكومة رفضاً قاطعاً أي تمديد طويل الأمد وغير مشروط. وتطرح بديلاً عملياً يقوم إما على التمديد على مراحل (مثال: 8 سنوات تقيّم بعدها لـ 6 سنوات إضافية) أو فرض غرامات مالية صارمة على أي تأخير أو إخلال جوهري بالعقد. وهو تحول نوعي يحول الضمانات الزمنية إلى أدوات ضغط فعلية لإنهاء المشاريع.
+* **المراجعة المالية والضريبية ووقف الاحتكار:** تفتح الوثيقة ملف الامتيازات والإعفاءات الضريبية السابقة التي لم تقابلها قيمة مضافة كافية للصالح العام. كما تلحظ بوضوح ضرورة الحد من احتفاظ الشركة بالعقارات والأراضي الشاغرة وإخضاع أي مشاريع ومداخيل مستقبلية لإطار ضريبي ومالي حديث يتماشى مع المعايير العامة في البلاد.
+* **أولوية المشاريع والساحات العامة العالقة:** يعيد القرار تصويب البوصلة نحو إنجاز الواجهة البحرية، حديقة رفيق الحريري، استكمال تطوير ساحة الشهداء، ومتحف تاريخ مدينة بيروت وحديقة التل الأثري، إضافة إلى ترميم المسرح الكبير (العقار 891 - الباشورة). إن إلزام الشركة بهذه المعالم الثقافية والتراثية يهدف إلى إعادة إحياء الذاكرة المدنية للمدينة بعد أن تضررت طويلاً.
+* **فك العزلة الحضرية ودمج النسيج المديني:** يلحظ القرار بُعداً إنسانياً واجتماعياً واقتصادياً غائباً منذ نشأة المشروع، متمثلاً في إعادة ربط وسط بيروت بالمناطق المحيطة (كالمرفأ، الجميزة، ومار مخايل)، وتخصيص مساحات للفنون ومحترفات بأسعار ميسرة للفنانين الناشئين، فضلاً عن تشجيع عودة أبناء الطبقة الوسطى والمؤسسات الصغيرة والمتوسطة إلى النطاق. هذا البند يعكس محاولة حثيثة لتحرير الوسط التجاري من صفته كـ "جزيرة معزولة" للأثرياء فقط.
+
+**خلاصة القول**، إن هذا القرار يرسل رسالة واضحة مفادها أن أي تمديد محتمل لشركة سوليدير لن يكون مجانياً ولا مفتوحاً على غوارب الإهمال، بل هو خاضع لمنطق الإنتاجية، والشفافية المالية، ودمج الوسط التجاري بقسامه ونسيجه الحيوي ضمن جسد مدينة بيروت الواحد.
+
+**بقلم: معن برازي، رئيس التحرير**`,
+    contentEn: `### Editor-in-Chief Editorial: Solidere Back on the Accountability Table — Is the State Dismantling the "Isolated Island"?
+
+**By: Maan Barazi, Editor-in-Chief**
+
+Cabinet Decision No. 11 dated 07/08/2026 marks a watershed moment in the official handling of Solidere. It shifts state strategy from automatic corporate concessions to a rigorous logic of sovereign conditions, performance metrics, and public interest trade-offs.
+
+#### 1. Historical Recognition vs. Modern Appraisal
+While acknowledging Solidere's historical role in post-war reconstruction, the Cabinet notes that after 30+ years, vast urban spaces remain undeveloped. This balance reflects an implicit acknowledgment that the original 1990s social and economic pact has eroded.
+
+#### 2. Legal Rigor & Independent Audit
+The government refuses blanket renewals, mandating tax clearance, independent financial and real estate asset audits, and formal shareholder assembly votes under Law 117/1991.
+
+#### 3. Binding KPIs & Phased Term
+Rejecting 25-year unconditional extensions, the Cabinet proposes a conditional 8-year initial term subject to verified KPIs and default penalties.
+
+#### 4. Tax Reforms & Anti-Land Hoarding
+The decision repeals legacy tax privileges and targets vacant land banking, subjecting future corporate revenues to standard taxation.
+
+#### 5. Priority Heritage Assets
+Mandating the completion of Rafik Hariri Park (60k sqm), Martyrs' Square, Beirut History Museum, and restoring the historic Grand Theatre (Plot 891 - Bachoura).
+
+#### 6. Re-Integrating the Urban Fabric
+Reconnecting Downtown Beirut with Gemmayzeh, Mar Mikhael, and the Port, while creating affordable creative spaces to dismantle the "isolated luxury island" status.
+
+---
+
+### Conclusion
+Any potential extension for Solidere is no longer a blank check. It is strictly tied to productivity, fiscal transparency, and civic integration into the beating heart of Beirut.
+
+**By: Maan Barazi, Editor-in-Chief**`
   },
 
   {

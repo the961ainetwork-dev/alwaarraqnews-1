@@ -181,14 +181,21 @@ export default function App() {
       try {
         const parsed = JSON.parse(raw);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // Smart merge: ensure new pre-seeded articles in INITIAL_ARTICLES are loaded
-          const existingIds = new Set(parsed.filter(a => a && typeof a === 'object' && a.id).map((a: any) => a.id));
+          // Smart merge: ensure fresh definitions from INITIAL_ARTICLES for key updated articles, and append remaining parsed
+          const initialMap = new Map(INITIAL_ARTICLES.map(a => [a.id, a]));
+          const merged = parsed.map((a: any) => {
+            if (a && a.id && initialMap.has(a.id)) {
+              // Always prefer code definitions for Solidere and Editor Desk articles to keep fresh edits
+              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl')) {
+                return initialMap.get(a.id);
+              }
+            }
+            return a;
+          });
+
+          const existingIds = new Set(merged.filter(a => a && typeof a === 'object' && a.id).map((a: any) => a.id));
           const missing = INITIAL_ARTICLES.filter(a => a && a.id && !existingIds.has(a.id));
-          if (missing.length > 0) {
-            articles = [...missing, ...parsed];
-          } else {
-            articles = parsed;
-          }
+          articles = [...missing, ...merged];
         }
       } catch (e) {}
     }

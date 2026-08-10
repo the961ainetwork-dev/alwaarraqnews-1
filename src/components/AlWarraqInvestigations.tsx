@@ -264,6 +264,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXIII: Strategic Appraisal of the Government Solidere Plan: Pros & Cons of Decision 11/70',
     descAr: 'دراسة استراتيجية شاملة تفكك الفرص والمخاطر في قرار مجلس الوزراء بملف سوليدير؛ بين تعزيز الخزينة وإحياء التراث وبين مخاطر التحكيم القضائي وشح السيولة وإهمال حقوق المالكين الأصليين والمودعين.',
     descEn: 'A balanced strategic report analyzing the pros, cons, and trade-offs of the Cabinet’s conditional 8-year Solidere proposal for the public domain, real estate markets, and depositors.'
+  },
+  'solidere-editorial-maan-barazi-2026': {
+    fileId: 'AW-FILE-24',
+    badge: 'EDITOR-IN-CHIEF EDITORIAL DOSSIER',
+    titleAr: 'الملف الرابع والعشرون: افتتاحية تحريرية بقلم رئيس التحرير معن برازي: عودة "سوليدير" إلى طاولة المساءلة... هل تفكك الدولة "الجزيرة المعزولة"؟',
+    titleEn: 'Dossier XXIV: Editor-in-Chief Editorial by Maan Barazi: Solidere Back on the Accountability Table — Is the State Dismantling the "Isolated Island"?',
+    descAr: 'افتتاحية تحريرية وتقييم نقدي بقلم معن برازي يفكك قرار مجلس الوزراء رقم 11 تاريخ 2026/08/07 ويحلل أبعاد التحول من التسليم المسبق إلى الشروط والـ KPIs وفك العزلة الحضرية عن وسط بيروت.',
+    descEn: 'A critical editorial appraisal by Editor-in-Chief Maan Barazi analyzing Cabinet Decision No. 11/70 and the shift from corporate concessions to sovereign conditions and urban integration.'
   }
 };
 
