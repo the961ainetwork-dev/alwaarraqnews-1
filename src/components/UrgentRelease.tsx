@@ -56,9 +56,9 @@ export default function UrgentRelease({
   const [pdfProgress, setPdfProgress] = useState(0);
   const [pdfStatusMsg, setPdfStatusMsg] = useState('');
 
-  // Find the Marco Rubio Beirut visit story
+  // Find breaking story for Urgent Release
   const mainArticle = useMemo(() => {
-    return NEW_ARTICLES.find(a => a.id === 'marco-rubio-visit-beirut-exclusive-2026') || NEW_ARTICLES[0];
+    return NEW_ARTICLES.find(a => a.isBreaking) || NEW_ARTICLES[0];
   }, []);
 
   // Define the Iraq-US $60 Billion Sovereign Investment Package Special Report

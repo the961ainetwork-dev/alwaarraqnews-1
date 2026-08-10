@@ -68,16 +68,28 @@ export const SolidereInfographic: React.FC<SolidereInfographicProps> = ({
       icon: ArrowLeftRight
     },
     {
-      year: '2026',
-      titleAr: 'المطالبة الكبرى وتثبيت التمديد حتى 2069',
-      titleEn: 'The 75-Year Demand to 2069',
+      year: 'شباط 2026',
+      titleAr: 'المطالبة الكبرى وتثبيت التمديد لـ 25 عاماً',
+      titleEn: 'The 25-Year Extension Petition (to 2054/2069)',
       durationAr: 'إبقاء الشركة 75 سنة من تاريخ التأسيس',
       durationEn: 'Locking company term to 75 years from founding',
-      descAr: 'المدير العام ناصر الشماع يطالب باعتماد المدة التأسيسية القصوى (75 عاماً) في النظام التأسيسي، لتتحول الشركة عملياً من مُكلّف إعادة إعمار إلى "مالك أبدي" لوسط العاصمة اللبنانية دون مراجعة أو محاسبة.',
-      descEn: 'General Manager Nasser Chammaa requests restoring the maximum founding duration (75 years) from the original bylaws, changing Solidere from a temporary agent into an "eternal landlord" of downtown.',
+      descAr: 'المدير العام ناصر الشماع يطالب بإعادة النظر بقرار 2005 وتثبيت مدة 75 عاماً من التأسيس، لتتحول الشركة عملياً إلى "مالك أبدي" لوسط العاصمة دون مراجعة أو محاسبة.',
+      descEn: 'General Manager Nasser Chammaa requests restoring the maximum founding duration (75 years) from original bylaws, seeking an unconditional 25-year extension.',
       statusAr: 'انتقال السيادة على وسط بيروت بشكل دائم',
-      statusEn: 'Permanent transfer of downtown Beirut sovereignty',
+      statusEn: 'Attempted permanent transfer of downtown sovereignty',
       icon: Calendar
+    },
+    {
+      year: '07 آب 2026',
+      titleAr: 'قرار مجلس الوزراء رقم 11 (محضر 70): كسر التمديد المفتوح',
+      titleEn: 'Cabinet Decision No. 11/70: Rejecting Unconditional Extension',
+      durationAr: 'تمديد أولي بـ 8 سنوات فقط مقترن بـ 5 شروط سيادية',
+      durationEn: 'Initial 8-year conditional phase tied to 5 sovereign pillars',
+      descAr: 'مجلس الوزراء برئاسة الحكومة وأمانة محمود مكية يرفض طلب التمديد لـ 25 سنة، ويفرض خطة من 5 بنود: تدقيق أصول مستقل، ضرائب على الأراضي الشاغرة، استعادة الحديقة البحرية (60 ألف م²) والمسرح الكبير ونقل ملكيتها للقطاع العام، وتحديد ولاية أولية بـ 8 سنوات مشروطة بـ KPIs.',
+      descEn: 'The Cabinet rejects the blanket 25-year extension, imposing 5 strict conditions: independent asset audits, vacant land taxes, restoration of Marine Park and Grand Theatre to public domain, and an 8-year performance phase.',
+      statusAr: 'تحول استراتيجي واستعادة الهيبة السيادية للدولة',
+      statusEn: 'Strategic shift reasserting state sovereign oversight',
+      icon: CheckCircle2
     }
   ];
 

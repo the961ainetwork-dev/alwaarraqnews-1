@@ -2,6 +2,377 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'solidere-cabinet-decision-2026-investigation',
+    slug: 'solidere-cabinet-decision-2026-investigation',
+    focusKeyword: 'سوليدير-قرار-مجلس-الوزراء-2026-محضر-70-تمديد-8-سنوات-شروط-حقوق-الدولة',
+    category: 'exclusives',
+    categories: ['exclusives', 'lebanon', 'alwarraq-investigations', 'economy', 'editor-desk', 'investigations'],
+    titleAr: 'مستندات حصرية: الحكومة تكسر التمديد المفتوح لـ «سوليدير» وتضع 5 شروط سيادية لتحديد ولايتها بـ 8 سنوات مشروطة (محضر 70 - قرار 11)',
+    titleEn: 'Exclusive Documents: Lebanese Cabinet Rejects Unconditional Solidere Extension, Imposing 5 Sovereign Conditions & 8-Year Conditional Mandate (Minutes 70 - Decision 11)',
+    summaryAr: 'تكشف «الورّاق نيوز» عن المحضر الرسمي رقم 70 والقرار رقم 11 الصادر عن مجلس الوزراء بتاريخ 07/08/2026، والذي رفض طلب شركة «سوليدير» بالتمديد لـ 25 عاماً (حتى 2054)، واعتمد بدلاً عنه خطة إصلاحية مشروطة بـ 5 بنود صارمة تشمل التدقيق الفعلي للأصول، فرض الضرائب على الأراضي غير المبنية، إنجاز الحديقة البحرية وترميم المسرح الكبير، وتحديد ولاية أولية بـ 8 سنوات خاضعة لـ KPIs.',
+    summaryEn: 'Al-Warraq News unveils official Cabinet Minutes No. 70 / Decision No. 11 (Aug 7, 2026), rejecting Solidere’s request for a 25-year extension (to 2054) and establishing a strict 5-pillar sovereign reform framework including asset audits, vacant land taxes, completion of the Marine Park and Grand Theatre, and a conditional 8-year performance phase.',
+    excerptAr: 'محضر مجلس الوزراء رقم 70 يحسم سجال «سوليدير»: لا تمديد مجاني لـ 25 سنة، وتثبيت 5 شروط سيادية وضرائب على العقارات غير المبنية واستعادة المعالم التراثية للقطاع العام.',
+    excerptEn: 'Official Cabinet Minutes No. 70 settles the Solidere debate: rejecting an unconditional 25-year renewal, mandating asset audits, land taxes, and heritage restoration.',
+    author: {
+      nameAr: 'غرفة التحقيقات الاستراتيجية — «الورّاق نيوز»',
+      nameEn: 'Sovereign Intelligence & Real Estate Desk — Al-Warraq News',
+      titleAr: 'وحدة متابعة الملفات السيادية والعمرانية',
+      titleEn: 'Sovereign Real Estate & Economic Affairs Unit',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-08',
+    readTimeAr: '١٠ دقائق قراءة',
+    readTimeEn: '10 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 42300,
+    tags: [
+      'سوليدير', 'مجلس_الوزراء', 'محضر_70', 'قرار_11', 'بيروت', 'الأملاك_العامة', 'الضرائب', 'الحديقة_البحرية', 'المسرح_الكبير', 'محمود_مكية',
+      'Solidere', 'Cabinet_Decision', 'Beirut', 'Real_Estate', 'Lebanon_Economy', 'Public_Domain'
+    ],
+    hashtags: ['SolidereDecree', 'BeirutRealEstate', 'CabinetDecision11', 'AlWarraqInvestigation', 'SolidereRestructuring'],
+    contentAr: `### مستندات حصرية: الحكومة تكسر التمديد المفتوح لـ «سوليدير» وتضع 5 شروط سيادية لتحديد ولايتها بـ 8 سنوات مشروطة (محضر 70 - قرار 11)
+
+**بيروت — «الورّاق نيوز» (قسم التحقيقات السيادية)**  
+في تطور مفصلي ينهي عقوداً من الامتيازات المفتوحة والقرارات الاستثنائية لصالح الشركة اللبنانية لتطوير وإعادة إعمار وسط بيروت (**سوليدير**)، حصلت «الورّاق نيوز» على المضمون الكامل للمستند الرسمي الصادر عن الأمانة العامة لمجلس الوزراء (**رقم المحضر: 70 — رقم القرار: 11 — تاريخ القرار: 2026/08/07**)، الموقّع من أمين عام مجلس الوزراء القاضي **محمود مكية**.
+
+يكشف المستند عن موقِف حاسم اتخذته الحكومة اللبنانية برفض طلب شركة "سوليدير" المقدم بتاريخ 26 شباط 2026، والذي طالبت فيه بإعادة النظر بقرار مجلس الوزراء تاريخ 2005/12/1 وتصديق قرار الجمعية العمومية غير العادية المنعقدة عام 1998 بتعديل مدة الشركة لتصبح **75 سنة** من تاريخ التأسيس (أي تمديد ولاية الشركة لـ 25 عاماً إضافية تنتهي في عام 2054 أو 2069).
+
+---
+
+### أولاً: الخلفيات والطلبات المقدمة من شركة «سوليدير»
+استند طلب الشركة المُرفوع إلى رئاسة مجلس الوزراء عبر كتابها رقم 115/م.ص (بتاريخ 2026/01/15) والكتابين رقم 10 و2/491 (بتاريخ 2026/01/02 و2026/02/26) إلى الذرائع التالية:
+1. **الركود الاقتصادي والتعثر العقاري:** تحجج إدارة الشركة بالأزمات المتعددة التي شهدها لبنان منذ تأسيس الشركة، والتي أدت إلى تراجع اقتصادي وتعرقل السوق العقاري وإحباط الخطط والبرامج التطويرية.
+2. **استمرارية مفاعيل الجمعية العمومية لعام 1998:** المطالبة بتثبيت تعديل المادة 3 من النظام الأساسي استناداً إلى قرار الجمعية العمومية غير العادية المنعقدة بتاريخ 1998/06/29.
+3. **تقديم خطة عمل للأعوام المقبلة:** إيداع رئاسة الحكومة تصوراً عاماً يتضمن مشاريـع عقارية جديدة، متابعة تنفيذ مشاريع قيد الإنشاء، استكمال البنية التحتية، صيانة الأشغال، واستثمار المرفأ السياحي الغربي والشرقي.
+
+---
+
+### ثانياً: القرار الحكومي والشروط السيادية الخمسة (5 Pillars)
+بناءً على توصيات اللجنة الوزارية المشكلة بقرار مجلس الوزراء رقم 15 تاريخ 2026/06/25 (والتي ضمت وزراء الأشغال العامة والنقل، الثقافة، الاقتصاد والتجارة، والمالية)، قرر مجلس الوزراء **ردّ طلب الشركة بالتمديد المباشر والمفتوح لـ 25 سنة**، واضعة الإطار الملزم التالي قبل البتّ بأي تمديد:
+
+\`\`\`
+                          ┌──────────────────────────────────────────────┐
+                          │     محددات القرار الحكومي رقم 11/70 (2026)  │
+                          └──────────────────────┬───────────────────────┘
+                                                 │
+      ┌───────────────────┬──────────────────────┼──────────────────────┬───────────────────┐
+      ▼                   ▼                      ▼                      ▼                   ▼
+┌──────────────┐   ┌──────────────┐       ┌──────────────┐       ┌──────────────┐    ┌──────────────┐
+│  1. التدقيق  │   │ 2. التمديد   │       │ 3. الضرائب   │       │  4. المشاريع │    ┌  5. قاعدة   │
+│   والقانون   │   │  المرحلي     │       │   والرسوم    │       │   التراثية   │    │    بيروت     │
+├──────────────┤   ├──────────────┤       ├──────────────┤       ├──────────────┤    ├──────────────┤
+│ إبراء ذمة    │   │ 8 سنوات فقط  │       │ إلغاء الإعفاء│       │ الحديقة      │    │  البحرية مع  │
+│ ضريبية وتدقيق│   │ مشروطة بـ    │       │ وفرض ضريبة على│      │ البحرية و    │    │ وزارة الدفاع │
+│ أصول مستقل.  │   │ مؤشرات KPIs.  │       │ الأراضي غير  │       │ المسرح الكبير│    │ والجيش.      │
+│              │   │              │       │ المبنية.     │       │ والمتاحف.    │    │              │
+└──────────────┘   └──────────────┘       └──────────────┘       └──────────────┘    └──────────────┘
+\`\`\`
+
+#### 1. التدقيق والمتطلبات القانونية (Audit & Compliance)
+* **إبراء الذمة الضريبية:** إلزام الشركة بتقديم إفادة براءة ذمة ضريبية حديثة تؤكد تسوية جميع الالتزامات المستحقة للخزينة اللبنانية.
+* **التدقيق المستقل للأصول:** إجراء تدقيق مالي وعقاري شامل من قبل جهة مستقلة لحسابات الشركة وأصولها ورصيدها العقاري للتوصل إلى تقييم شفاف ومرجعي لوضع الشركة.
+* **موافقة الجمعية العمومية:** صدور قرار جديد عن الجمعية العمومية غير العادية يطلب التمديد وفق أحكام القانون 117/1991.
+
+#### 2. مؤشرات الأداء الملزمة والتمديد المرحلي (KPIs & Phased Tenure)
+* **رفض التمديد المفتوح:** أكدت الحكومة أنها لا ترى مناسباً منح الشركة تمديداً غير مشروط وطويل الأمد.
+* **تمديد مرحلي أولي (8 سنوات):** اقتراح منح تمديد أولي لمدة **ثماني سنوات فقط** (حتى عام 2037)، يُجدد لمدد إضافية بقرار من مجلس الوزراء بعد الثبت من التزام الشركة بنتائج مؤشرات الأداء المتفق عليها.
+* **غرامات مالية وسحب الامتياز:** وضع غرامات مالية على أي تأخير في التنفيذ أو إخلال جوهري بالعقد، لتكون بمثابة حوافز حقيقية للوفاء بالتعهدات في المواعيد المحددة.
+
+#### 3. الإطار المالي والضريبي والتصدي للمضاربة (Fiscal Reform & Land Taxes)
+* **إلغاء الإعفاءات التاريخية:** إنهاء التقديمات والتسهيلات الاستثنائية التي استفادت منها الشركة منذ عام 1994 (إلغاء الإعفاءات الضريبية والمالية).
+* **معاملة ضريبية قياسية:** إخضاع أي نشاط أو مشروع مستقبلي مدرّ للدخل (بما في ذلك بيع الأراضي أو تأجيرها أو المنشآت) لإطار مالي وضريبي وبدلات تسجيل عقاري حديثة وملائمة تترافق مع المعايير المطبقة في البلاد.
+* **ضريبة الأراضي غير المبنية (Vacant Land Bank):** البحث في آلية تحدّ من احتفاظ الشركة بالعقارات الشاغرة وغير المطورة، وتفعيل هذه الأصول لتسريع إحياء وسط بيروت كمركز حضري ناطق بالحياة.
+
+#### 4. المشاريع ذات الأولوية والذاكرة العمرانية والثقافية
+يشترط القرار التزام سوليدير بجدول زمني ملزم لإنجاز ونقل ملكية المشاريع التالية للقطاع العام:
+* **الحديقة العامة البحرية (حديقة رفيق الحريري):** استكمال الحديقة العامة والكورنيش الممتد على الأراضي المستصلحة بمساحة تُقدّر بنحو **60 ألف متر مربع**، وتوفير مواقف سيارات واستكمال الكورنيش من عين المريسة والمنارة إلى خليج الزيتونة.
+* **ساحة الشهداء:** استكمال تطوير ساحة الشهداء كفضـاء مدني وفق المخطط العمراني المعتمد (تصميم رينزو بيانو)، وإنجاز موقف السيارات السفلي.
+* **المعالم الثقافية والتراثية:** إنجاز متحف تاريخ مدينة بيروت وحديقة التل الأثري، **ترميم المسرح الكبير (العقار 891 - الباشورة)** الذي شُيّد عام 1929، تطوير حديقة الغفران، ونقل ملكيتها إلى القطاع العام بعد استكمال تطويرها.
+* **أحواض المرفأ والترابط الحضري:** استكمال تطوير الحوض الشرقي، نقل ملكية موقف السيارات المجاور للحوض الغربي إلى بلدية بيروت عند انتهاء مدة الشركة، تخصيص محترفات واستوديوهات بأسعار ميسرة للفنانين والمصممين الناشئين، وتسهيل الربط مع منطقتي الجميزة ومار مخايل.
+
+#### 5. قاعدة بيروت البحرية
+تكليف اللجنة الوزارية بالتنسيق والتباحث مع **وزارة الدفاع الوطني** ومؤسسة الجيش بشأن قاعدة بيروت البحرية التابعة للجيش، وإيجاد الحلول المناسبة بجهود مشتركة.
+
+---
+
+### ثالثاً: دلالات المستند في التوازنات السياسية والمالية
+تُشكل هذه الوثيقة الرسمية الصادرة عن مجلس الوزراء كسرًا واضحاً للنموذج الاستثماري التاريخي الذي قامت عليه "سوليدير" لثلاثة عقود. فبدلاً من التجديد التلقائي لـ 25 عاماً دون مقابل، فرضت الدولة إطاراً سيادياً يعيد ربط بقاء الشركة بـ **المنفعة العامة، التحصيل الضريبي، واستعادة التراث الوطني**.`,
+    contentEn: `### Exclusive Documents: Lebanese Cabinet Rejects Unconditional Solidere Extension, Imposing 5 Sovereign Conditions & 8-Year Conditional Mandate (Minutes 70 - Decision 11)
+
+**Beirut — Al-Warraq News (Sovereign Intelligence Desk)**  
+In a pivotal development ending decades of open-ended corporate privileges and executive exemptions enjoyed by the Lebanese Company for the Development and Reconstruction of Beirut Central District (**Solidere**), *Al-Warraq News* has obtained the full official document issued by the General Secretariat of the Council of Ministers (**Minutes No.: 70 — Decision No.: 11 — Decision Date: 2026/08/07**), signed by Cabinet Secretary General Judge **Mahmoud Makiyeh**.
+
+The document reveals a firm government stance rejecting Solidere's petition submitted on February 26, 2026, which requested a reconsideration of Cabinet Decision 2005/12/1 and the ratification of the 1998 Extraordinary General Assembly resolution extending company duration to **75 years** from incorporation (effectively extending Solidere's lease by 25 additional years to 2054 or 2069).
+
+---
+
+### 1. Background & Solidere's Formal Petitions
+Solidere's request to the Prime Minister (via Letters 115/M.S. dated 2026/01/15, and Letters 10 & 2/491 dated 2026/01/02 and 2026/02/26) relied on the following arguments:
+1. **Economic Stagnation & Real Estate Distress:** Citing multi-layered Lebanese crises since 1994 that caused market contraction, stalled development programs, and asset value drops.
+2. **Continued Effect of 1998 General Assembly:** Demanding the formal endorsement of Article 3 bylaws amendment extending corporate life to 75 years based on the June 29, 1998 assembly.
+3. **Future Vision & Infrastructure Commitments:** Submitting a operational blueprint covering new real estate developments, infrastructure completion, and marina harbor operations.
+
+---
+
+### 2. The Cabinet Decision & 5 Sovereign Pillars
+Based on recommendations from the Ministerial Committee formed under Decision No. 15 on 2026/06/25 (comprising Ministers of Public Works, Transport, Culture, Economy, and Finance), the Cabinet formally **rejected the company's request for an unconditional 25-year extension**, establishing a mandatory 5-pillar reform framework:
+
+\`\`\`
+                          ┌──────────────────────────────────────────────┐
+                          │   Cabinet Decision 11/70 Framework (2026)    │
+                          └──────────────────────┬───────────────────────┘
+                                                 │
+      ┌───────────────────┬──────────────────────┼──────────────────────┬───────────────────┐
+      ▼                   ▼                      ▼                      ▼                   ▼
+┌──────────────┐   ┌──────────────┐       ┌──────────────┐       ┌──────────────┐    ┌──────────────┐
+│  1. Audit &  │   │  2. Phased   │       │  3. Fiscal & │       │ 4. Heritage  │    │  5. Beirut   │
+│ Compliance   │   │   8-Yr Term  │       │   Land Tax   │       │  Asset Plan  │    │  Naval Base  │
+├──────────────┤   ├──────────────┤       ├──────────────┤       ├──────────────┤    ├──────────────┤
+│ Modern tax   │   │ Initial 8-yr │       │ Stripping    │       │ Marine Park, │    │ Joint Defense│
+│ clearance &  │   │ conditional  │       │ exemptions;  │       │ Grand Theatre│    │ Ministry &   │
+│ independent  │   │ extension on │       │ taxing vacant│       │ & history    │    │ LAF talks.   │
+│ asset valuation│ │ strict KPIs. │       │ land bank.   │       │ museums.     │    │              │
+└──────────────┘   └──────────────┘       └──────────────┘       └──────────────┘    └──────────────┘
+\`\`\`
+
+#### Pillar 1: Audit & Legal Compliance
+* **Modern Tax Clearance:** Mandating a recent tax settlement certificate from the Ministry of Finance proving zero outstanding liabilities.
+* **Independent Asset Audit:** Conducting an independent financial and property audit of all company accounts, land inventory, and asset valuations.
+* **Assembly Authorization:** Requiring a new formal petition from the Extraordinary General Assembly per Law 117/1991.
+
+#### Pillar 2: Phased Term & Binding KPIs
+* **Rejection of Blanket Extension:** The Cabinet explicitly rejected granting an unearned long-term extension.
+* **Initial 8-Year Phase:** Offering an initial **8-year phased extension** (up to 2037), renewable only upon verified compliance with strict Key Performance Indicators (KPIs).
+* **Financial Penalties:** Establishing enforceable default fines and contractual clawbacks for master plan delays.
+
+#### Pillar 3: Fiscal Reform & Vacant Land Bank Taxation
+* **Ending Legacy Tax Exemptions:** Repealing special tax privileges enjoyed since 1994.
+* **Standard Market Taxes:** Subjecting all future commercial, rental, and land sale revenues to standard national corporate, registration, and property taxes.
+* **Vacant Land Tax (Anti-Speculation):** Introducing mechanisms to tax undeveloped vacant land parcels to discourage land hoarding and stimulate active urban construction.
+
+#### Pillar 4: Priority Heritage & Public Infrastructure
+* **Marine Public Park (Rafik Hariri Park):** Completing the 60,000 sqm coastal park, Corniche extension, and public parking facilities.
+* **Martyrs' Square:** Completing Martyrs' Square per the approved urban master plan (Renzo Piano design) and underground parking.
+* **Cultural Landmarks:** Completing Beirut History Museum, restoring the historic **Grand Theatre (Plot 891 - Bachoura)** built in 1929, developing the Garden of Forgiveness, and transferring their public ownership to the State upon completion.
+* **Harbor Basins:** Completing the Eastern Basin and transferring western basin public parking to Beirut Municipality.
+
+#### Pillar 5: Beirut Naval Base Negotiations
+* Tasking the Ministerial Committee with direct negotiations alongside the **Ministry of National Defense** and LAF Command regarding the Beirut Naval Base area.`
+  },
+  {
+    id: 'solidere-cabinet-proposal-pros-cons-analysis-2026',
+    slug: 'solidere-cabinet-proposal-pros-cons-analysis-2026',
+    focusKeyword: 'تحليل-مقترح-سوليدير-إيجابيات-وسلبيات-قرار-مجلس-الوزراء-2026-الحكومة-المساهمين',
+    category: 'research-reports',
+    categories: ['research-reports', 'investigations', 'lebanon', 'alwarraq-investigations', 'economy', 'markets', 'editor-desk'],
+    titleAr: 'قراءة استراتيجية في التكييف الحكومي لملف «سوليدير»: إيجابيات وسلبيات المقترح بين إنقاذ خزينة الدولة وحسابات كبار المساهمين',
+    titleEn: 'Strategic Appraisal of the Government\'s Solidere Plan: Pros & Cons of Cabinet Decision No. 11/70 for Public Treasury, Depositors & Corporate Shareholders',
+    summaryAr: 'تحليل اقتصادي وقانوني يفكك ميزان القوى والفرص والمخاطر في مقترح مجلس الوزراء بملف «سوليدير»؛ بين المكاسب المالية للخزينة واستعادة المعالم التراثية والواجهة البحرية، وبين مخاطر التعطيل والنزاعات القضائية، وشح السيولة لتنفيذ المشاريع، وتغييب حقوق المالكين الأصليين والمودعين.',
+    summaryEn: 'A comprehensive economic and legal analysis breaking down the strengths, pitfalls, and trade-offs of Cabinet Decision No. 11/70 regarding Solidere—from treasury gains and heritage asset recovery to judicial arbitration risks, corporate liquidity hurdles, and forgotten depositors and original property owners.',
+    excerptAr: 'بين تحصين المالية العامة وتفكيك الاحتكار وبين مخاطر التعطيل والنزاعات المالية: دراسة تفصيلية لإيجابيات وسلبيات الخطة الحكومية الجديدة لشركة «سوليدير».',
+    excerptEn: 'An in-depth balance sheet of the pros and cons of the Lebanese Cabinet\'s conditional 8-year Solidere restructuring proposal.',
+    author: {
+      nameAr: 'وحدة التحليل الاقتصادي والمالي السيادي — «الورّاق نيوز»',
+      nameEn: 'Sovereign Financial & Economic Analysis Unit — Al-Warraq News',
+      titleAr: 'قسم الدراسات العقارية والأسواق المالية',
+      titleEn: 'Real Estate & Capital Markets Research Department',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-09',
+    readTimeAr: '١٢ دقيقة قراءة',
+    readTimeEn: '12 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 38700,
+    tags: [
+      'سوليدير', 'دراسة_استراتيجية', 'إيجابيات_وسلبيات', 'مجلس_الوزراء', 'أنطون_صحناوي', 'خزينة_الدولة', 'الضرائب', 'التراث_العمراني',
+      'Solidere_Analysis', 'Pros_and_Cons', 'Beirut_Real_Estate', 'Lebanon_Economic_Policy'
+    ],
+    hashtags: ['SolidereAnalysis', 'ProsAndCons', 'LebanonEconomy', 'BeirutRestructuring', 'AlWarraqResearch'],
+    contentAr: `### قراءة استراتيجية في التكييف الحكومي لملف «سوليدير»: إيجابيات وسلبيات المقترح بين إنقاذ خزينة الدولة وحسابات كبار المساهمين
+
+شكل القرار الصادر عن مجلس الوزراء اللبناني برقم 11 (المحضر 70 بتاريخ 2026/08/07) نقطة تحول جوهرية في التعاطي الرسمي مع أكبر ملف عقاري وسيادي في تاريخ لبنان الحديث: **تمديد امتياز شركة سوليدير**.
+
+فبدلاً من الرضوخ لضغوط إدارة الشركة ورئاستها التنفيذية بمنح تمديد تلقائي ومفتوح لـ 25 عاماً دون مقابل، هندست الحكومة خياراً ثالثاً يقوم على **التمديد المرحلي المشروط بـ 8 سنوات**، والمقترن بـ 5 شروط هيكلية صارمة. يحلل هذا التقرير الاستراتيجي ميزان القوى والفرص والمخاطر (**Pros & Cons**) لهذا المقترح الحكومي.
+
+---
+
+### أولاً: جدول المقارنة الاستراتيجي (الإيجابيات مقابل السلبيات)
+
+| البعد الاستراتيجي | الإيجابيات والفرص للقطاع العام والدولة (PROS) | السلبيات والمخاطر والتحديات التنفيذية (CONS) |
+| :--- | :--- | :--- |
+| **الحوكمة والسيادة** | كسر نموذج "الشيك الأبيض"؛ ربط بقاء الشركة بـ 8 سنوات مشروطة بـ KPIs وتدقيق أصول مستقل. | مخاطر المماطلة القضائية والطعن من كبار المساهمين بدعوى خرق "الحقوق المكتسبة". |
+| **المالية والضرائب** | إلغاء الإعفاءات التاريخية؛ فرض ضريبة على الأراضي غير المبنية لمنع التجميد والمضاربة. | شح سيولة الشركة قد يرفع أسعار العقارات خيالياً لتغطية الضرائب، مما يجمد حركة الشراء. |
+| **التراث والأملاك العامة** | استعادة الحديقة البحرية (60 ألف م²)، المسرح الكبير، ومتحف بيروت ونقل ملكيتها للدولة. | عبء تكلفة الترميم الباهظة قد يعرقل إنجاز المشاريع وتأخر KPIs لتبرير التمديد الثاني. |
+| **السوق والمساهمون** | تحفيز الضخ العمراني الفعلي بالوسط ومنع تحويل وسط بيروت لمخزن أراضي ميت. | ضغوط على تقييم سهم سوليدير ببورصة بيروت وإرباك حسابات تكتلات الاستحواذ (صحناوي). |
+| **العدالة الاجتماعية** | إنصاف حقوق بلدية بيروت والخزينة العامة والجمهور في الواجهة البحرية. | إغفال تام لملف تعويض المالكين الأصليين المصادرة أراضيهم أو المودعين المحتجزين. |
+
+---
+
+### ثانياً: تفكيك الإيجابيات والفرص (PROS)
+
+\`\`\`
+                                  ┌──────────────────────────────────────────────┐
+                                  │      أبرز إيجابيات القرار الحكومي (PROS)     │
+                                  └──────────────────────┬───────────────────────┘
+                                                         │
+         ┌───────────────────────────────────────────────┼───────────────────────────────────────────────┐
+         ▼                                               ▼                                               ▼
+┌─────────────────────────┐                     ┌─────────────────────────┐                     ┌─────────────────────────┐
+│ 1. إنهاء الامتياز المفتوح│                     │ 2. ضريبة الأراضي الشاغرة│                     │ 3. استعادة الأملاك العامة│
+├─────────────────────────┤                     ├─────────────────────────┤                     ├─────────────────────────┤
+│ ربط التمديد بـ 8 سنوات   │                     │ فرض ضرائب على العقارات   │                     │ نقل ملكية الحديقة       │
+│ فقط خاضعة لـ KPIs وتدقيق│                     │ غير المبنية يجبر الشركة │                     │ البحرية والمسرح الكبير  │
+│ أصول مستقل وشفاف.       │                     │ على البناء أو البيع.    │                     │ والمتاحف للقطاع العام.  │
+└─────────────────────────┘                     └─────────────────────────┘                     └─────────────────────────┘
+\`\`\`
+
+#### 1. كسر نموذج "الشيك الأبيض" وإخضاع الشركة للحوكمة
+لأول مرة منذ عام 1994، ترفض الحكومة اللبنانية مطالب إدارة سوليدير بالتمديد المجاني المفتوح (25 سنة). عبر اعتماد **تمديد أولي بـ 8 سنوات فقط (حتى 2037)** مقترن بمؤشرات أداء (KPIs) وغرامات مالية، تستعيد الدولة يدها العليا وتتحول من طرف منفّذ لرغبات الشركة إلى مرجع رقابي سيادي.
+
+#### 2. فرض ضريبة على الأراضي غير المبنية (Vacant Land Tax)
+تضمن القرار تحولاً ضريبياً جوهرياً عبر البحث في فرض ضرائب على المخزون العقاري الشاغر وغير المطور لدى الشركة. هذا الإجراء يحارب ظاهرة "تخزين الأراضي" (Land Hoarding) بغرض المضاربة، ويجبر الشركة أو المطورين على ضخ رؤوس أموال في البناء الفعلي أو بيع العقارات بأسعار منطقية، مما يعيد تحريك الدورة الاقتصادية في العاصمة.
+
+#### 3. استعادة الواجهة البحرية والأصول التراثية للقطاع العام
+إلزام الشركة بجدول زمني لنقل ملكية **الحديقة العامة البحرية (60 ألف م²)**، و**المسرح الكبير (العقار 891 - الباشورة)**، و**متحف تاريخ بيروت**، و**حديقة الغفران** يمثل مكسباً تراثياً وعمرانياً هائلاً للمواطنين ولمجلس بلدية بيروت، ويُعيد ربط نسيج وسط بيروت بالأحياء المجاورة (الجميزة، مار مخايل، عين المريسة).
+
+#### 4. الشفافية عبر التدقيق الفعلي للأصول (Asset Audit)
+فرض إجراء تدقيق مالي وعقاري مستقل لأصول الشركة وعقاراتها يقطع الطريق أمام التقييمات الضبابية، ويكشف القيمة الحقيقية للأسهم والموجودات قبل البتّ بأي تمديد إضافي.
+
+---
+
+### ثالثاً: مخاطر والتحديات والسلبيات (CONS)
+
+\`\`\`
+                                  ┌──────────────────────────────────────────────┐
+                                  │    أبرز السلبيات والمخاطر الاستراتيجية (CONS) │
+                                  └──────────────────────┬───────────────────────┘
+                                                         │
+         ┌───────────────────────────────────────────────┼───────────────────────────────────────────────┐
+         ▼                                               ▼                                               ▼
+┌─────────────────────────┐                     ┌─────────────────────────┐                     ┌─────────────────────────┐
+│ 1. النزاعات والتحكيم     │                     │ 2. ضغوط السيولة والتعثر  │                     │ 3. تغييب المالكين والمودعين│
+├─────────────────────────┤                     ├─────────────────────────┤                     ├─────────────────────────┤
+│ احتمال لجوء كبار        │                     │ تكاليف الترميم والضرائب │                     │ المقترح يخدم الخزينة    │
+│ المساهمين للطعن القضائي  │                     │ الباهظة قد تؤدي لتعثر   │                     │ والبلدية ويغفل المالكين  │
+│ أو التحكيم الدولي.      │                     │ تنفيذ المشاريع التراثية.│                     │ الأصليين والمودعين.     │
+└─────────────────────────┘                     └─────────────────────────┘                     └─────────────────────────┘
+\`\`\`
+
+#### 1. مخاطر التعطيل والنزاعات القضائية والتحكيم الدولي
+قد يرى كبار المساهمين الجدد في الشركة — وعلى رأسهم تكتل أنطون صحناوي والحرس القديم — أن إلغاء الإعفاءات وفرض شروط قصيرة الأمد (8 سنوات) يمثل مساساً بحقوقهم المكتسبة وبالمراسيم التأسيسية لعام 1994 و1998. هذا قد يدفعهم للجوء إلى **التحكيم الدولي** أو رفع دعاوى طعن أمام القضاء الإداري، مما يدخل وسط بيروت في حلقة مفرغة جديدة من الجمود القضائي.
+
+#### 2. ضغوط الملاءة المالية وشح السيولة لتنفيذ التعهّدات
+تعتمد سوليدير حالياً كلياً على بيع العقارات لتأمين السيولة التشغيلية. فرض ضرائب جديدة وإلغاء الإعفاءات مع إلزام الشركة بترميم معالم مكلفة جداً (كالمسرح الكبير ومتحف تاريخ بيروت الذي يتطلب عشرات ملايين الدولارات) قد يؤدي إلى عجز مالي لدى الشركة، مما يعوق قدرتها على تلبية مؤشرات الأداء (KPIs) خلال مهلة الـ 8 سنوات.
+
+#### 3. إرباك بورصة بيروت وسوق العقارات الهش
+إن تقليص مدة التمديد من 25 سنة إلى 8 سنوات خاضعة للتقييم قد يمارس ضغوطاً هبوطية على سعر سهم سوليدير في بورصة بيروت، والتي تُعد الملاذ الأخير لعدد كبير من المودعين والمستثمرين المحليين الذين حولوا وديائعهم الاحتجازية إلى أسهم عقارية.
+
+#### 4. الإغفال التام لحقوق المالكين الأصليين والمودعين
+رغم المكتسبات التي حققها القرار لصالح خزينة الدولة وبلدية بيروت، إلا أنه يغفل تماماً وضع آلية لإنصاف **المالكين الأصليين لوسط بيروت** الذين جُرّدوا من عقاراتهم في التسعينات مقابل أسهم بخسة، كما لا يقدم أي حل للمودعين الصغار المحتجزين في معركة السيطرة بين كبار الماليين.
+
+---
+
+### رابعاً: التوصيات الاستراتيجية للمرحلة المقبلة
+1. **صياغة KPIs دقيقة وشفافة:** أن تتضمن عقود التمديد الـ 8 مؤشرات إنجاز زمنية ومالية محددة بالأرقام بدلاً من الصياغات العامة.
+2. **إنشاء صندوق تراثي مشترك:** تحويل جزء من العائدات الضريبية المفروضة على عقارات سوليدير إلى صندوق مخصص لترميم المسرح الكبير والمناطق التراثية لضمان عدم التعثر.
+3. **ضمان عدم تسرب الأصول لجهات أجنبية مشبوهة:** وضع قيود سيادية على نقل ملكية الأسهم والأراضي في وسط العاصمة لحماية الأمن القومي والنسيج اللبناني.`,
+    contentEn: `### Strategic Appraisal of the Government's Solidere Plan: Pros & Cons of Cabinet Decision No. 11/70 for Public Treasury, Depositors & Corporate Shareholders
+
+The decision issued by the Lebanese Council of Ministers (Decision No. 11, Minutes No. 70 dated 2026/08/07) represents a historic watershed in state governance regarding Lebanon's largest real estate dossier: **the extension of Solidere's corporate mandate**.
+
+Rather than bowing to corporate pressures for an open-ended 25-year extension, the Cabinet engineered a **conditional 8-year phased extension**, tethered to 5 mandatory sovereign reform pillars. This strategic appraisal evaluates the balance sheet of opportunities and risks (**Pros & Cons**) embedded in the government's proposal.
+
+---
+
+### 1. Strategic Balance Sheet (Pros vs. Cons)
+
+| Dimension | Public & State Opportunities (PROS) | Execution Risks & Pitfalls (CONS) |
+| :--- | :--- | :--- |
+| **Governance & Sovereignty** | Ends "blank-check" renewals; ties survival to 8-year KPI phases & independent asset audits. | Judicial pushback & potential international arbitration by major corporate shareholders. |
+| **Fiscal & Land Taxation** | Repeals legacy tax breaks; taxes vacant land banks to end speculative hoarding. | Company liquidity crunch could drive property prices upward, paralyzing real estate trades. |
+| **Heritage & Public Domain** | Recovers 60k sqm Marine Park, Grand Theatre, & Beirut Museum for public ownership. | Heavy restoration costs could lead to project defaults and missed KPI deadlines. |
+| **Market & Shareholder Structure** | Forces active urban development; prevents downtown Beirut from remaining a frozen land bank. | Heavy pressure on Solidere stock valuations on the Beirut Bourse; disrupts takeover bids (Sehnaoui). |
+| **Social & Public Justice** | Restores municipal rights and public coastal access for Beirut citizens. | Omits compensation mechanisms for original expropriated property owners and depositors. |
+
+---
+
+### 2. Breakdown of Opportunities & Benefits (PROS)
+
+\`\`\`
+                                  ┌──────────────────────────────────────────────┐
+                                  │        Key Proposal Strengths (PROS)         │
+                                  └──────────────────────┬───────────────────────┘
+                                                         │
+         ┌───────────────────────────────────────────────┼───────────────────────────────────────────────┐
+         ▼                                               ▼                                               ▼
+┌─────────────────────────┐                     ┌─────────────────────────┐                     ┌─────────────────────────┐
+│ 1. Ends Blanket Mandate │                     │ 2. Vacant Land Bank Tax │                     │ 3. Restores Public Assets│
+├─────────────────────────┤                     ├─────────────────────────┤                     ├─────────────────────────┤
+│ Replaces 25-yr blanket  │                     │ Taxes undeveloped plot  │                     │ Transfers Marine Park,  │
+│ extension with an 8-yr  │                     │ holdings to force real  │                     │ Grand Theatre & Museum  │
+│ KPI-linked contract.    │                     │ construction activity.  │                     │ to state ownership.     │
+└─────────────────────────┘                     └─────────────────────────┘                     └─────────────────────────┘
+\`\`\`
+
+#### 1. Ending the "Blank Check" Model
+For the first time since 1994, the Lebanese state refused an unconditional corporate extension. By granting an **initial 8-year phase (to 2037)** subject to verified KPIs and financial penalties, the State reasserts sovereign oversight.
+
+#### 2. Vacant Land Bank Taxation (Anti-Speculation)
+Taxing undeveloped vacant plots effectively penalizes land hoarding, forcing Solidere and property developers to build or sell at market-conducive prices, reigniting urban capital velocity.
+
+#### 3. Restoring Coastal & Heritage Domain
+Mandating the completion and public transfer of the **60,000 sqm Marine Public Park**, the **Grand Theatre (Plot 891 - Bachoura)**, and the **Beirut History Museum** delivers immense public value and reconnects BCD with neighboring district communities (Gemmayzeh, Mar Mikhael).
+
+#### 4. Independent Financial & Asset Audits
+Requiring independent valuation audits ensures transparent accounting of real company land holdings and asset reserves before any future renewal turns.
+
+---
+
+### 3. Execution Risks & Drawbacks (CONS)
+
+\`\`\`
+                                  ┌──────────────────────────────────────────────┐
+                                  │          Key Execution Risks (CONS)          │
+                                  └──────────────────────┬───────────────────────┘
+                                                         │
+         ┌───────────────────────────────────────────────┼───────────────────────────────────────────────┐
+         ▼                                               ▼                                               ▼
+┌─────────────────────────┐                     ┌─────────────────────────┐                     ┌─────────────────────────┐
+│ 1. Arbitration & Friction│                    │ 2. Liquidity Bottlenecks│                     │ 3. Ignored Depositor Rights│
+├─────────────────────────┤                     ├─────────────────────────┤                     ├─────────────────────────┤
+│ Corporate shareholders   │                    │ Restoring costly heritage│                    │ Plan fixes state revenues│
+│ might initiate litigation│                    │ assets during market    │                     │ but leaves original     │
+│ over "acquired rights." │                     │ distress risks default. │                     │ landholders uncompensated.│
+└─────────────────────────┘                     └─────────────────────────┘                     └─────────────────────────┘
+\`\`\`
+
+#### 1. Judicial Arbitration Risks
+Major corporate shareholders (including the Sehnaoui bloc and legacy Hariri-era stakeholders) may view short-term phased renewals and tax repeals as a breach of "acquired rights" under earlier decrees, triggering international arbitration or legal deadlocks.
+
+#### 2. Company Liquidity Crunch
+Imposing new taxes and demanding multi-million dollar restorations (such as the Grand Theatre and Beirut Museum) during real estate market weakness risks default, making KPI compliance difficult to achieve within the 8-year timeline.
+
+#### 3. Stock Market Pressure on Beirut Bourse
+Reducing the extension horizon from 25 years to a conditional 8 years creates valuation volatility on Solidere Class A & B shares, affecting retail depositors who converted trapped bank balances into stock assets.
+
+#### 4. Omission of Original Property Owners
+While the Cabinet proposal strongly defends state and municipal rights, it omits mechanisms to compensate original property owners expropriated in the 1990s or trapped retail depositors.
+
+---
+
+### 4. Strategic Policy Recommendations
+1. **Define Enforceable KPI Benchmarks:** Ensure the 8-year contract includes quantitative development milestones rather than vague qualitative targets.
+2. **Dedicated Heritage Restoration Fund:** Allocate a portion of new land tax revenues toward a dedicated heritage fund to prevent construction halts.
+3. **Sovereign Safeguards:** Maintain strict oversight over share transfers to protect national security and urban integrity.`
+  },
+
+  {
     id: 'global-proven-oil-reserves-analysis-2026',
     slug: 'global-proven-oil-reserves-analysis-2026',
     focusKeyword: 'احتياطيات-النفط-الاستراتيجية-المؤكدة-أوبك-السعودية-فنزويلا-الاقتصاد-العالمي',
@@ -919,122 +1290,6 @@ Strict financial seniority ($Seniority\\ Structure$) mandates that losses are ab
 
 ### Conclusion
 ABL's editorial represents a continuation of reality denial ($Denial$). What ABL demands under "legal guarantees" is a legal fortress aimed at denying accountability, protecting siphoned capital, and shifting the entire burden onto taxpayers and depositors. True banking reform requires wiping out unviable bank capital, executing clawbacks on abnormal financial engineering profits, and enforcing strict resolution.`
-  },
-  {
-    id: 'marco-rubio-visit-beirut-exclusive-2026',
-    slug: 'marco-rubio-visit-beirut-exclusive-2026',
-    focusKeyword: 'ماركو-روبيو-بيروت-لبنان-نبيه-بري-ترامب-جوزيف-عون-الجيش',
-    category: 'exclusives',
-    categories: ['exclusives', 'lebanon', 'war-room', 'middle-east'],
-    titleAr: 'مصادر خاصة لـ «الورّاق نيوز»: زيارة مرتقبة لوزير الخارجية الأميركي ماركو روبيو إلى بيروت بحسابات سياسية وأمنية مفصلية',
-    titleEn: 'Exclusive: US Secretary of State Marco Rubio Planning Critical Visit to Beirut Amid Pivotal Security and Political Calculations',
-    summaryAr: 'ترتيبات جارية لزيارة مرتقبة يقوم بها وزير الخارجية الأميركي ماركو روبيو إلى بيروت للقاء نبيه بري بحاملاً رسالة من ترامب، ضمن خطة تنفيذية من ٣ خطوات تشمل الطيران المباشر ودعم الجيش بـ١٥٠ مليون دولار ودعم الاتفاق الإطاري.',
-    summaryEn: 'Arrangements are underway for an upcoming visit by US Secretary of State Marco Rubio to Beirut to meet Speaker Nabih Berri with a direct message from Trump, implementing a 3-step plan including direct FBI-coordinated flights, $150M LAF military aid, and framework agreement support.',
-    excerptAr: 'مصادر خاصة تشكف عن زيارة مرتقبة لماركو روبيو إلى بيروت تحمل رسالة من ترامب للرئيس بري، وتفاصيل خطة تنفيدية ثلاثية تشمل فتح الطيران المباشر والدعم العسكري للجيش.',
-    excerptEn: 'Exclusive sources reveal an upcoming visit by Marco Rubio to Beirut carrying a message from Trump to Berri, outlining a 3-step action plan including direct flights and $150M in army aid.',
-    author: {
-      nameAr: 'بيروت — «الورّاق نيوز» (قسم التحقيقات السيادية)',
-      nameEn: 'Beirut — Al-Warraq News (Sovereign Intelligence Desk)',
-      titleAr: 'محرر الشؤون الاستراتيجية والدبلوماسية',
-      titleEn: 'Strategic & Diplomatic Affairs Editor',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
-    date: '2026-07-27',
-    readTimeAr: '٦ دقائق قراءة',
-    readTimeEn: '6 min read',
-    isBreaking: true,
-    isFeatured: true,
-    isPremium: false,
-    views: 48900,
-    tags: [
-      'ماركو_روبيو', 'بيروت', 'نبيه_بري', 'ترامب', 'جوزيف_عون', 'الجيش_اللبناني', 'لبنان', 'تحقيقات',
-      'MarcoRubio', 'Beirut', 'Lebanon', 'Trump', 'LAF'
-    ],
-    hashtags: ['MarcoRubioInBeirut', 'LebanonUSSummit', 'AlWarraqExclusive', 'NabihBerri', 'JosephAoun'],
-    contentAr: `### مصادر خاصة لـ «الورّاق نيوز»: زيارة مرتقبة لوزير الخارجية الأميركي ماركو روبيو إلى بيروت بحسابات سياسية وأمنية مفصلية
-
-**بيروت — «الورّاق نيوز»**  
-علمت «الورّاق نيوز» من مصادر خاصة بوجود ترتيبات جارية لزيارة مرتقبة يقوم بها وزير الخارجية الأميركي **ماركو روبيو** إلى العاصمة اللبنانية بيروت. وتكتسب هذه الزيارة أهمية بالغة بالنظر إلى توقيتها وأجندة الملفات التي يحملها المسؤول الأميركي، حيث يُتوقع أن يشكل اللقاء المقرّر بينه وبين رئيس مجلس النواب **نبيه بري** المحطة الأساسية في جولته.
-
-بحسب المصادر الخاصة، يحمل روبيو إلى بري رسالة مباشرة تستكمل الإشارات الإيجابية التي وجّهها الرئيس الأميركي **دونالد ترامب** خلال لقائه بالرئيس **جوزيف عون**، مفادها أن المرحلة المقبلة تتطلب من بري الوقوف إلى جانب الدولة والعهد، ودعم "الاتفاق الإطاري"، والالتفاف حول رئيس الجمهورية والشرعية اللبنانية كمدخل رئيسي لإعادة بناء مؤسسات الدولة.
-
----
-
-### أبعاد الزيارة ومُخرجات القمة اللبنانية - الأميركية
-تندرج زيارة روبيو ضمن خطة تنفيذية متكاملة من ثلاث خطوات تُترجم مخرجات التفاهمات الأخيرة بين بيروت وواشنطن:
-
-1. **الخطوة الأولى (إعادة تشغيل الطيران المباشر):** الشروع في الخطوات التنفيذية لقرار إعادة فتح خطوط الطيران المباشر بين لبنان والولايات المتحدة، عبر تنسيق أمني وتقني مباشر بين مكتب التحقيقات الفيدرالي الأميركي ($FBI$) والجهات اللبنانية المختصة لضمان معايير السلامة.
-2. **الخطوة الثانية (دعم الجيش اللبناني):** تقديم مساعدات عينية للمؤسسة العسكرية بقيمة تُقدّر بنحو **150 مليون دولار** تشمل التجهيزات، البرامج التدريبية، والأسلحة المتطورة، في انتظار رفع القيادة اللبنانية لائحة تفصيلية باحتياجاتها.
-3. **الخطوة الثالثة (زيارة روبيو وحراك الدبلوماسية):** إبلاغ القيادات اللبنانية الرسمية بضرورة التماسك السياسي وحشد الدعم لمسار الاتفاق الإطاري.
-
----
-
-### ردود الفعل والتفاعلات السياسية في الداخل اللبناني
-
-#### 1. موقف رئيس مجلس النواب نبيه بري
-* شدّد بري على أن العبرة تكمن في النتائج على أرض الواقع وليس في الشكل، معتبراً أن تثبيت وقف إطلاق النار والانسحاب الإسرائيلي الكامل هما المعيار الحقيقي لنجاح أي قمة.
-* انتقد الانسحابات الميدانية الجزئية (كالانسحاب من بلدة زوطر الغربية) مع استمرار عمليات التفجير والاعتداءات على القرى الحدودية.
-* وعن إشارة ترامب إلى إمكانية انضمامه إلى المسار مستقبلاً، علّق بري ضاحكاً: **"يبدو أن ترامب يفهمني أكثر من اللبنانيين"**.
-* في سياق متصل، استقبل بري السفير المصري علاء موسى الذي أكد أن الإشادة ببري في المؤتمر الصحافي تؤكد محوريته في الحياة السياسية اللبنانية.
-
-#### 2. موقف «حزب الله» والوفاء للمقاومة
-* اعتبر النائب **حسين الحاج حسن** أن نتائج القمة لا تتعدى كونها "كلاماً عاماً ووعوداً بلا ضمانات أو أطر زمنية".
-* انتقد دعوة ترامب للتدخل السوري واعتبرها انتهاكاً للسيادة اللبنانية، مقللاً من أهمية الانسحابات الإسرائيلية التي وصفها بالشكليّة.
-* وعن إمكانية فتح قنوات تواصل أميركية مع الحزب، ردّ مستخفاً: **"كنا عم نشرب قهوة مش فاضيين هيدا الكلام"**.
-* تساءل حول الغرض من تسليح الجيش وما إذا كان لمواجهة الحزب أم إسرائيل، مؤكداً في الوقت نفسه على متانة الثقة والتعاون بين الحزب والمؤسسة العسكرية، ومشدداً على صعوبة فصل البيئة الحاضنة عن الحزب.
-
-#### 3. موقف رئيس الجمهورية جوزيف عون
-* أكد عون خلال حفل عشاء في واشنطن أن نزع سلاح حزب الله أمر قابل للتحقيق إذا صَدَقت النوايا، موضحاً أن الحزب ليس قوة مرتزقة بل مكون لبناني بُني على مدى 40 عاماً.
-* شدّد على أن الحل يكمن في بسط الدولة لسيطرتها الحصرية على قرار الحرب والسلم والحدود، مشيداً بالالتزام الأميركي الجاد عبر "الإطار الثلاثي".
-
----
-
-### التطورات الميدانية والتصعيد الإقليمي
-تزامناً مع هذا الحراك الدبلوماسي، شهد الميدان تصعيداً مستمراً:
-
-* **ميدانياً في الجنوب:** تقدمت القوات الإسرائيلية باتجاه أطراف بلدة برج الملوك وتغلغلت في بلدة صربين، بالتزامن مع قصف مدفعي وغارات من مسيّرات على منطقة النبطية الفوقا، وتفجيرات في برعشيت وحداثا. كما أعلن الجيش الإسرائيلي عن انفجار عبوة ناسفة قرب سيارتي إسعاف للصليب الأحمر في ميفدون ورجّح وقوف حزب الله خلفها.
-* **إقليمياً:** شهدت المنطقة تصعيداً جوياً؛ حيث اعترضت الدفاعات الجوية في البحرين والدمام (السعودية) اعتداءات جوية، فيما أعلن الجيش الأردني اعتراض 4 صواريخ إيرانية سقط اثنان منها في مناطق نائية بعد رصد 6 صواريخ عبرت أجوائه.`,
-    contentEn: `### Exclusive: US Secretary of State Marco Rubio Planning Critical Visit to Beirut Amid Pivotal Security and Political Calculations
-
-**Beirut — Al-Warraq News**  
-*Al-Warraq News* has learned from exclusive diplomatic sources that arrangements are currently underway for an upcoming visit by US Secretary of State **Marco Rubio** to the Lebanese capital, Beirut. The visit carries paramount significance given its timing and agenda, with a scheduled meeting with Parliament Speaker **Nabih Berri** set to form the primary anchor of his tour.
-
-According to exclusive sources, Rubio carries a direct message to Berri building upon positive signals delivered by US President **Donald Trump** during his meeting with President **Joseph Aoun**. The message underscores that the upcoming phase requires Berri to align with state institutions, support the "Framework Agreement," and unite around the Presidency and Lebanese legitimacy as the foundational gateway to rebuilding state apparatuses.
-
----
-
-### Key Dimensions of the Visit & Lebanon-US Summit Outcomes
-Rubio's visit falls under a comprehensive 3-step operational roadmap translating recent Beirut-Washington understandings:
-
-1. **Step One (Resuming Direct Flights):** Commencing operational steps to reopen direct airline routes between Lebanon and the United States, via direct security and technical coordination between the Federal Bureau of Investigation ($FBI$) and competent Lebanese authorities to guarantee safety benchmarks.
-2. **Step Two (Supporting the Lebanese Armed Forces - LAF):** Providing in-kind military aid to the Lebanese Armed Forces estimated at **$150 million**, covering equipment, training programs, and advanced weaponry, awaiting a detailed needs assessment from LAF leadership.
-3. **Step Three (Rubio's Visit & Diplomatic Push):** Briefing official Lebanese leadership on the imperative of political cohesion and mobilizing support for the Framework Agreement track.
-
----
-
-### Political Reactions & Internal Lebanese Dynamics
-
-#### 1. Position of Parliament Speaker Nabih Berri
-* Berri emphasized that the true measure lies in tangible results on the ground rather than political optics, stressing that establishing a durable ceasefire and full Israeli withdrawal are the sole metrics of success.
-* He criticized partial field withdrawals (such as from Zoutar al-Gharbiya) while demolition operations and shelling of border villages persist.
-* Commenting on Trump's remark regarding Berri potentially joining the track in the future, Berri remarked with a laugh: **"It seems Trump understands me better than the Lebanese do."**
-
-#### 2. Position of Hezbollah & Loyalty to Resistance Bloc
-* MP **Hussein Hajj Hassan** stated that the summit outcomes amount to "general statements and promises lacking guarantees or timelines."
-* He criticized calls regarding Syrian intervention as a violation of Lebanese sovereignty, dismissing Israeli field shifts as cosmetic.
-* Asked about potential US communication channels with Hezbollah, he scoffed: **"We were drinking coffee, we don't have time for such talk."**
-
-#### 3. Position of President Joseph Aoun
-* Speaking at a dinner in Washington, President Aoun affirmed that disarming Hezbollah is achievable if intentions are sincere, explaining that Hezbollah is a 40-year-old Lebanese societal component rather than a mercenary force.
-* He stressed that the ultimate resolution lies in the state exercising exclusive authority over war, peace, and borders, praising serious US commitment through the "Tripartite Framework."
-
----
-
-### Field Escalations & Regional Developments
-In parallel with diplomatic maneuvering, the field witnessed ongoing escalations:
-* **Southern Front:** Israeli forces advanced toward the outskirts of Bourj el-Moulouk and penetrated Sarbine, accompanied by artillery shelling and drone strikes on Nabatieh al-Fawqa.
-* **Regional Air Domain:** Air defense systems in Bahrain and Dammam (Saudi Arabia) intercepted aerial threats, while the Jordanian Armed Forces intercepted 4 Iranian missiles crossing its airspace.`
   },
   {
     id: 'lng-market-upside-risks-middle-east-war-2026',

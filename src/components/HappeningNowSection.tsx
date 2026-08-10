@@ -35,9 +35,11 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
 }) => {
   const isAr = language === 'ar';
 
-  // Target specific IDs requested by the user: Rubio as sole lead (idx 0), and key secondary dossier stories
+  // Target specific IDs requested by the user for key secondary dossier stories
   const targetIds = [
-    'marco-rubio-visit-beirut-exclusive-2026',
+    'solidere-cabinet-decision-2026-investigation',
+    'solidere-cabinet-proposal-pros-cons-analysis-2026',
+    'global-proven-oil-reserves-analysis-2026',
     'damascus-extended-shadow-syrian-role-lebanon-2026',
     'ukraine-iran-russia-escalation-scenarios-part1-2026',
     'ukraine-iran-russia-escalation-scenarios-part2-2026',
@@ -111,8 +113,10 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
               <span className="bg-red-800 text-white font-mono text-xxs font-black px-2.5 py-1 uppercase tracking-widest flex items-center gap-1">
                 <ShieldAlert size={12} className="text-amber-300" />
                 <span>
-                  {leadStory.id === 'marco-rubio-visit-beirut-exclusive-2026'
-                    ? (isAr ? 'انفراد سيادي عاجل: زيارة ماركو روبيو إلى بيروت' : 'EXCLUSIVE DOSSIER: MARCO RUBIO BEIRUT VISIT')
+                  {leadStory.id.includes('solidere')
+                    ? (isAr ? 'تحقيق سيادي حصري: ملف سوليدير وقرار مجلس الوزراء' : 'EXCLUSIVE DOSSIER: SOLIDERE CABINET DECISION')
+                    : leadStory.id === 'global-proven-oil-reserves-analysis-2026'
+                    ? (isAr ? 'تقرير استراتيجي: احتياطيات النفط العالمية' : 'STRATEGIC REPORT: GLOBAL OIL RESERVES')
                     : leadStory.id === 'damascus-extended-shadow-syrian-role-lebanon-2026'
                     ? (isAr ? 'ملف خاص: النفوذ السوري في لبنان' : 'SPECIAL DOSSIER: SYRIAN ROLE IN LEBANON')
                     : (isAr ? 'تحقيق سيادي خاص' : 'SPECIAL INVESTIGATIVE DOSSIER')}
@@ -199,6 +203,7 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
         {/* Right Column: Secondary Ukraine-Iran & Regional Cards (5 Columns) */}
         <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
           {secondaryStories.map((story, idx) => {
+            const isSolidere = story.id.includes('solidere');
             const isUkrainePart1 = story.id.includes('part1');
             const isUkrainePart2 = story.id.includes('part2');
             const isEgyptEnergy = story.id.includes('egypt');
@@ -213,7 +218,9 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
                 {/* Header Tag */}
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span className={`font-mono text-[9px] font-black px-2 py-0.5 border uppercase ${
-                    isDamascus
+                    isSolidere
+                      ? 'bg-amber-100 text-amber-950 border-amber-600'
+                      : isDamascus
                       ? 'bg-red-100 text-red-950 border-red-500'
                       : isUkrainePart1 || isUkrainePart2 
                       ? 'bg-amber-100 text-amber-900 border-amber-400' 
@@ -221,7 +228,9 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
                       ? 'bg-emerald-100 text-emerald-900 border-emerald-400'
                       : 'bg-zinc-100 text-zinc-900 border-zinc-300'
                   }`}>
-                    {isDamascus
+                    {isSolidere
+                      ? (isAr ? 'ملف خاص: إعادة هيكلة سوليدير' : 'SPECIAL DOSSIER: SOLIDERE')
+                      : isDamascus
                       ? (isAr ? 'ملف خاص: الدور السوري' : 'SPECIAL DOSSIER: SYRIAN ROLE')
                       : isUkrainePart1 
                       ? (isAr ? 'غرفة العمليات: أوكرانيا وإيران (١/٢)' : 'WAR ROOM: UKRAINE-IRAN (1/2)') 

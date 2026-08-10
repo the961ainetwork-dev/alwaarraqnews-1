@@ -955,7 +955,7 @@ export default function App() {
 
   // Find breaking news to populate the top ticker strip
   const latestBreaking = useMemo(() => {
-    return allArticles.find(story => story.id === 'marco-rubio-visit-beirut-exclusive-2026') || allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
+    return allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
   }, [allArticles]);
 
   // Handle Search queries across translated titles and summaries
@@ -1260,21 +1260,21 @@ export default function App() {
                         {isAr ? 'يحدث الآن' : 'HAPPENING NOW'}
                       </span>
                       <span className="text-zinc-500 font-mono text-[10px]">
-                        {isAr ? 'تغطية تحليلية فورية لأحدث الملفات والزيارات الرسمية' : 'Real-Time Strategic Coverage of Critical Diplomatic Movements'}
+                        {isAr ? 'تغطية تحليلية واستقصائية فورية لأحدث الملفات والقرارات الحكومية' : 'Real-Time Investigative Coverage of Critical Government Decisions'}
                       </span>
                     </div>
                     
                     <h2 className="text-2xl md:text-4xl font-sans font-black text-white tracking-tight leading-none select-text">
                       {isAr 
-                        ? 'عون إلى واشنطن..  السيادة بين ضغوط نزع السلاح والاحتكاك الإسرائيلي' 
-                        : "Aoun to Washington.. Sovereignty Between Disarmament Pressures and Israeli Friction"
+                        ? 'قرار مجلس الوزراء بملف سوليدير (محضر 70 - قرار 11): الشروط السيادية الخمسة والتمديد المرحلي بـ 8 سنوات' 
+                        : "Cabinet Decision No. 11/70 on Solidere: 5 Sovereign Conditions & Phased 8-Year Mandate"
                       }
                     </h2>
                     
                     <p className="text-sm text-zinc-400 font-serif leading-relaxed line-clamp-3 md:line-clamp-2 max-w-4xl select-text">
                       {isAr 
-                        ? 'تأتي زيارة الرئيس اللبناني جوزيف عون الرسمية إلى واشنطن ولقائه بالرئيس الأمريكي دونالد ترامب ووزير خارجيته ماركو روبيو كحدث استثنائي؛ فهو أول رئيس لبناني يزور البيت الأبيض منذ نحو 17 عاماً في طيات اختبار حاسم لحيادية وسيادة المؤسسة العسكرية.' 
-                        : 'The official visit of Lebanese President Joseph Aoun to Washington and his meeting with US President Donald Trump and Secretary of State Marco Rubio comes as an extraordinary event; he is the first Lebanese president to visit the White House in nearly 17 years in a critical test for military sovereignty.'
+                        ? 'مستندات رسمية حصرية تكشف رفض الحكومة التمديد المفتوح لـ 25 عاماً وإلزام شركة سوليدير بـ 5 بنود صارمة تشمل التدقيق الفعلي للأصول، ضريبة الأراضي غير المبنية، واستعادة المسرح الكبير والحديقة البحرية للقطاع العام.' 
+                        : 'Exclusive Cabinet documents unveiling the rejection of Solidere’s 25-year extension request, imposing 5 strict reform pillars, land bank taxes, and heritage transfers to the public domain.'
                       }
                     </p>
                   </div>
@@ -1283,12 +1283,17 @@ export default function App() {
                   <div className="flex flex-col justify-center shrink-0 w-full md:w-auto border-t md:border-t-0 md:border-r border-zinc-800 pt-4 md:pt-0 md:pr-6 select-none">
                     <button
                       onClick={() => {
-                        setActiveCategory('urgent-release');
+                        const solidereArt = allArticles.find(a => a.id === 'solidere-cabinet-decision-2026-investigation');
+                        if (solidereArt) {
+                          setSelectedArticle(solidereArt);
+                        } else {
+                          setActiveCategory('investigations');
+                        }
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white font-sans font-black text-xs px-6 py-3.5 rounded tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap uppercase border border-red-500/20 hover:scale-[1.02]"
                     >
-                      <span>{isAr ? 'طالع التفاصيل والتحليلات الحية' : 'VIEW LIVE INSIGHTS & INTEL'}</span>
+                      <span>{isAr ? 'طالع التحقيق المستنداتي كاملاً' : 'VIEW FULL INVESTIGATION'}</span>
                       {isAr ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
                     </button>
                   </div>

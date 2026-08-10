@@ -248,6 +248,22 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXI: Comprehensive Report: Global Proven Strategic Oil Reserves by Country',
     descAr: 'تحليل استراتيجي يفكك 1.57 تريليون برميل نفط مؤكد عالمياً، وسيطرة أوبك (79%)، وتفاوت تكاليف النفط الثقيل بفنزويلا مقابل الخفيف بالخليج، وتأثيرات الأسعار والتضخم.',
     descEn: 'Strategic energy dossier analyzing 1.57T barrels of global proven oil reserves, OPEC’s 79% concentration, extraction cost disparities, and macroeconomic inflation impacts.'
+  },
+  'solidere-cabinet-decision-2026-investigation': {
+    fileId: 'AW-FILE-22',
+    badge: 'SOLIDERE RESTRUCTURING DOSSIER',
+    titleAr: 'الملف الثاني والعشرون: قرار مجلس الوزراء بملف سوليدير (محضر 70 - قرار 11): الشروط السيادية الخمسة والتمديد المرحلي بـ 8 سنوات',
+    titleEn: 'Dossier XXII: Cabinet Decision No. 11/70 on Solidere: 5 Sovereign Conditions & Phased 8-Year Mandate',
+    descAr: 'مستندات رسمية حصرية تكشف رفض الحكومة التمديد المفتوح لـ 25 عاماً وإلزام الشركة بـ 5 بنود صارمة تشمل التدقيق الفعلي للأصول، ضريبة الأراضي غير المبنية، واستعادة المسرح الكبير والحديقة البحرية للقطاع العام.',
+    descEn: 'Exclusive Cabinet documents unveiling the rejection of Solidere’s 25-year extension and mandating 5 strict reform pillars, land bank taxes, and heritage transfers.'
+  },
+  'solidere-cabinet-proposal-pros-cons-analysis-2026': {
+    fileId: 'AW-FILE-23',
+    badge: 'STRATEGIC PROS & CONS DOSSIER',
+    titleAr: 'الملف الثالث والعشرون: قراءة استراتيجية في التكييف الحكومي لملف سوليدير: إيجابيات وسلبيات المقترح بين إنقاذ خزينة الدولة وحسابات كبار المساهمين',
+    titleEn: 'Dossier XXIII: Strategic Appraisal of the Government Solidere Plan: Pros & Cons of Decision 11/70',
+    descAr: 'دراسة استراتيجية شاملة تفكك الفرص والمخاطر في قرار مجلس الوزراء بملف سوليدير؛ بين تعزيز الخزينة وإحياء التراث وبين مخاطر التحكيم القضائي وشح السيولة وإهمال حقوق المالكين الأصليين والمودعين.',
+    descEn: 'A balanced strategic report analyzing the pros, cons, and trade-offs of the Cabinet’s conditional 8-year Solidere proposal for the public domain, real estate markets, and depositors.'
   }
 };
 
@@ -306,6 +322,8 @@ export default function AlWarraqInvestigations({
   // Filter to keep only the main investigations
   const investigativeArticles = allArticles.filter(article => {
     return (
+      article.id === 'solidere-cabinet-decision-2026-investigation' ||
+      article.id === 'solidere-cabinet-proposal-pros-cons-analysis-2026' ||
       article.id === 'global-proven-oil-reserves-analysis-2026' ||
       article.id === 'damascus-extended-shadow-syrian-role-lebanon-2026' ||
       article.id === 'lebanese-eurobonds-market-analysis-2026' ||

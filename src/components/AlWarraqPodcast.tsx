@@ -16,10 +16,10 @@ const LOCAL_STORAGE_KEY = 'alwarraq_published_podcasts';
 
 const DEFAULT_PODCASTS: PublishedPodcast[] = [
   {
-    id: 'podcast-lebanon-rubio-visit',
-    articleId: 'marco-rubio-visit-beirut-exclusive-2026',
-    titleAr: 'ديوان تحريات الوراق: زيارة ماركو روبيو الكواليس والأبعاد السياسية والأمنية',
-    titleEn: 'Al-Warraq Podcast: Marco Rubio Beirut Visit - Political & Security Dimensions',
+    id: 'podcast-lebanon-eurobonds-analysis',
+    articleId: 'lebanese-eurobonds-market-analysis-2026',
+    titleAr: 'ديوان تحريات الوراق: حركة وأسعار سندات اليوروبوندز اللبنانية والتوقعات الماليّة',
+    titleEn: 'Al-Warraq Podcast: Lebanese Eurobonds Market Dynamics & Financial Outlook',
     audioUrl: '',
     publishedAt: '2026-07-21T00:00:00.000Z',
     publisherAr: 'هيئة التحرير العسكرية',
