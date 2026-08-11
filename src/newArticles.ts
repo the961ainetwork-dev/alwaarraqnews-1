@@ -472,6 +472,222 @@ Any potential extension for Solidere is no longer a blank check. It is strictly 
   },
 
   {
+    id: 'lebanon-remittances-crisis-investigation-2025-2026',
+    slug: 'lebanon-remittances-crisis-investigation-2025-2026',
+    focusKeyword: 'تحويلات-المغتربين-لبنان-مصرف-لبنان-البنك-الدولي-الخليج-أومتي-الناتج-المحلي',
+    category: 'investigations',
+    categories: ['investigations', 'alwarraq-investigations', 'lebanon', 'economy', 'banking'],
+    titleAr: 'أزمة انخفاض التحويلات المالية إلى لبنان (2025–2026): القراءات، الأسباب، والتبعات الاقتصادية',
+    titleEn: 'The Decline in Remittances to Lebanon (2025–2026): Drivers, Scenarios, and Macroeconomic Consequences',
+    summaryAr: 'دراسة استقصائية حصرية تفكك تراجع تحويلات المغتربين والعمال المهاجرين إلى 6.3 مليارات دولار عام 2025 (-500 مليون دولار)، وتناقش سيناريوهات 2026، الضغوط الجيوسياسية في الخليج، التضخم الغربي، والتبعات المالية على ميزان المدفوعات والمعيشة.',
+    summaryEn: 'An exclusive investigative report analyzing the drop in Lebanese remittances to $6.3B in 2025 (-7.35%), evaluating 2026 scenarios, Gulf geopolitical pressures, inflation in Europe/Americas, and macroeconomic repercussions.',
+    excerptAr: 'تحقيق استقصائي تفصيلي يحلل تراجع تحويلات المغتربين بـ 500 مليون دولار عام 2025، ويرسم سيناريوهات 2026 والتبعات الهيكلية على السيولة والفقر وميزان المدفوعات.',
+    excerptEn: 'Detailed investigation analyzing the $500M drop in diaspora remittances in 2025, outlining 2026 scenarios, liquidity impacts, and poverty dynamics.',
+    author: {
+      nameAr: 'وحدة التحقيقات المالية والاستقصائية — «الورّاق نيوز»',
+      nameEn: 'Sovereign Financial Desk — Al-Warraq News',
+      titleAr: 'تحقيق استقصائي اقتصادي',
+      titleEn: 'Economic Investigation Unit',
+      avatar: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-11',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 31200,
+    tags: [
+      'تحويلات_المغتربين', 'لبنان', 'مصرف_لبنان', 'البنك_الدولي', 'الخليج', 'أومتي', 'السيولة', 'الناتج_المحلي',
+      'Remittances', 'Lebanon_Economy', 'BDL', 'World_Bank', 'Fresh_Dollar'
+    ],
+    hashtags: ['LebanonRemittances', 'MaanBaraziInvestigates', 'BDLStats2026', 'FreshDollarEconomy'],
+    contentAr: `### أزمة انخفاض التحويلات المالية إلى لبنان (2025–2026): القراءات، الأسباب، والتبعات الاقتصادية
+
+تُشكل تحويلات المغتربين والعمال المهاجرين الدعامة الأساسية للاقتصاد اللبناني؛ حيث تراوحت مساهمتها التاريخية بين **25% و30% من الناتج المحلي الإجمالي**، مما يضع لبنان ضمن أعلى دول العالم اعتماداً على أموال المغتربين وفق بيانات البنك الدولي.
+
+وقد كشفت الأرقام الرسمية الصادرة عن **مصرف لبنان** عن تراجع حجم التحويلات الوافدة خلال عام 2025 إلى **6.3 مليارات دولار** مقارنة بـ **6.8 مليارات دولار** في عام 2024، أي بانخفاض قدره **500 مليون دولار (-7.35%)**. يطرح هذا التراجع تساؤلات جوهرية حول المسار المتوقع لعام 2026، في ظل تجاذب بين الضغوط الجيوسياسية الإقليمية والحاجة الميدانية الملحّة للأسر اللبنانية.
+
+---
+
+### أولاً: الأسباب الهيكلية والظرفية للتراجع
+
+تتداخل مجموعة من العوامل الإقليمية، والدولية، والداخلية لتفسير هذا الانكماش:
+
+1. **العوامل الجيوسياسية والإقليمية (منطقة الخليج العربي):**
+   * **تداعيات الصراع الإقليمي وإغلاق مضيق هرمز:** أدى تصاعد التوتر واضطراب حركة الملاحة في مضيق هرمز إلى عرقلة صادرات الطاقة الخليجية وتذبذب أسواق النفط.
+   * **سياسات التقشف والضغط المالي:** تضرر المنشآت النفطية والبنية التحتية دفع عدداً من الحكومات والشركات في الخليج إلى تبني سياسات تقشفية وإعادة هيكلة التشغيل، مما أثر مباشرة على دخل ومكتسبات العمالة اللبنانية هناك (والتي تمثل شريحة كبرى من مصادر التحويلات).
+
+2. **العوامل الاقتصادية الدولية (أوروبا والأمريكتان):**
+   * **ضغوط التضخم وتكلفة المعيشة:** شهدت الدول الغربية ارتفاعات متتالية في معدلات التضخم وأسعار الفائدة، مما قلّص الفائض المالي المتاح لدى المغتربين اللبنانيين للإرسال إلى عائلاتهم.
+
+3. **العوامل المؤسسية والتنظيمية في لبنان:**
+   * **استمرار أزمة الثقة بالقطاع المصرفي (منذ 2019):** أدى احتجاز الودائع والقيود على السحوبات إلى عزوف شبه تام عن التحويل عبر المصارف، والاعتماد الأغلب على شركات التحويل النقدية السريعة (مثل OMT وWish Money) أو القنوات غير الرسمية ("الكاش").
+   * **الامتثال ومكافحة تبييض الأموال (AML/CFT):** تشديد الرقابة المالية الدولية والمحلية فرض إجراءات تحقق صارمة، مما أدى إلى ارتفاع كلفة التحويل أو تباطؤ تدفق الأموال.
+
+4. **العوامل الاستثمارية والمؤسسية:**
+   * **تجميد الاستثمارات المغتربة:** فضّل كبار المغتربين ورجال الأعمال تجميد ضخ رؤوس الأموال في مشاريع جديدة أو عقارات بانتظار اتضاح الرؤية السياسية والتشريعية (الإصلاحات الهيكلية مع صندوق النقد الدولي).
+   * **ضعف أداء اتحادات الأعمال:** تراجع دور مجلس رجال الأعمال اللبناني-الخليجي والروابط الاقتصادية في ابتكار آليات جذب لرؤوس الأموال.
+
+---
+
+### ثانياً: توقعات عام 2026 وديناميكيات السوق
+
+تتباعد رؤى الخبراء الماليين بشأن اتجاه التحويلات لعام 2026 بين سيناريوين:
+
+> **مسار التحويلات لعام 2026**
+>
+> **السيناريو المتفائل:**
+> • زيادة الاعتماد الأسري لتغطية احتياجات المعيشة الأساسية.
+> • تعويض انخفاض زيارات الصيف عبر شحنات إلكترونية OMT/Wish.
+> • صمود التدفقات النقدية الصغيرة المتكررة ("Fresh Dollars" بين $100 و$300).
+>
+> **السيناريو التشاؤمي:**
+> • استمرار انكماش أنشطة الأعمال واضطرابات الملاحة في الخليج العربي.
+> • قطيعة استثمارية هيكلية وتجميد سوق العقارات والودائع.
+> • تحول سلوكي لدى الأجيال الشابة وتراجع الروابط المباشرة.
+
+* **السيناريو المتفائل (الاستقرار أو الارتفاع المحتمل):**
+  1. **شدة الحاجة المحلية:** ارتفاع معدلات الفقر المتعدد الأبعاد في لبنان (الذي يتجاوز 50% بحسب تقارير الأمم المتحدة) يجعل التحويلات شبكة أمان لا غنى عنها للغذاء، الاستشفاء، والتعليم.
+  2. **تعويض غياب الزيارات المباشرة:** يرى خبراء أن انخفاض أعداد المغتربين القادمين في مواسم الصيف (بسبب المخاطر الأمنية) يدفعهم لزيادة التحويلات المالية الإلكترونية لتعويض المساعدات النقدية "الكاش" التي كانوا يحملونها معهم شخصياً.
+  3. **مرونة المبالغ الصغيرة:** مرونة التحويلات الصغيرة (100 إلى 300 دولار) والتي تمثل الجزء الأكبر من حجم المعاملات اليومية.
+
+* **السيناريو الهيكلي التشاؤمي (تراجع إضافي):**
+  يعزو هذا الفريق التراجع ليس فقط للظروف الإقليمية المؤقتة، بل لـ **تحول هيكلي في الروابط الاقتصادية**: أجيال جديدة من المغتربين تنقطع روابطها المباشرة مع الداخل، إلى جانب الصدمة المزمنة الناتجة عن احتجاز أموال المودعين وغياب أي خطة موثوقة لإعادة الهيكلة.
+
+---
+
+### ثالثاً: التبعات الاقتصادية والمالية لانخفاض التحويلات
+
+إن خسارة **500 مليون دولار سنوياً** من التحويلات المالية تحمل انعكاسات مباشرة على كافة مستويات الاقتصاد الكلي والجزئي:
+
+| المجال | نوع التأثير | التبعات والمخاطر |
+| :--- | :--- | :--- |
+| **ميزان المدفوعات والسيولة** | استنزاف العملة الصعبة | تقليص التدفقات النقدية بالدولار ("Fresh Dollar")، مما يضغط على ميزان المدفوعات ويزيد صعوبة تغطية فاتورة الاستيراد. |
+| **سعر الصرف والسياسة النقدية** | استقرار هش | انخفاض معروض الدولار في السوق المحلي قد يضع قيوداً إضافية على قدرة مصرف لبنان على ضبط استقرار سعر الصرف. |
+| **المستوى المعيشي والاستهلاكي** | انكماش القوة الشرائية | تراجع قدرة الإنفاق لدى آلاف الأسر، مما يؤثر سلباً على حركة التجارة الداخلية ورسوم القيمة المضافة (VAT) التي تغذي خزينة الدولة. |
+| **الحد من الفقر** | اتساع الفجوة الاجتماعية | تزايد الضغط على الجمعيات الأهلية والبرامج الحكومية المحدودة في ظل غياب التغطية الصحية والاجتماعية الشاملة. |
+
+---
+
+### الخلاصة
+
+يؤكد تراجع التحويلات الماليّة إلى **6.3 مليارات دولار** أن الاعتماد الأحادي على أموال المغتربين لترميم العجز المالي لم يعد خياراً مستداماً. وفي حين تُبقي شبكات الدعم الأسري على حد أدنى من التدفقات المالية لعام 2026، فإن استعادة الحجم التاريخي للتحويلات (الذي قارب 7 إلى 8 مليارات دولار سابقاً) يظل مرهوناً بإنجاز إصلاحات مصرفية واقتصادية شاملة تُعيد الثقة للقطاع المالي وتجعله قابلاً لجذب الاستثمارات لا مجرد المساعدات المعيشية.`,
+    contentEn: `### The Decline in Remittances to Lebanon (2025–2026): Drivers, Scenarios, and Macroeconomic Consequences
+
+Remittances from Lebanese expatriates and migrant workers constitute the foundational pillar of Lebanon's economy, historically contributing between 25% and 30% of Gross Domestic Product (GDP).
+
+Official data released by Banque du Liban (BDL) revealed a contraction in remittance inflows in 2025 to **$6.3 billion** compared to **$6.8 billion** in 2024—a net reduction of **$500 million (-7.35%)**.
+
+> **2026 Remittance Trajectory Scenarios**
+>
+> **Optimistic Scenario:**
+> • Critical family reliance for basic survival and medical expenses.
+> • Surge in electronic transfers (OMT/Wish Money) compensating for missed summer visits.
+> • Resilience of small fresh cash transfers ($100-$300).
+>
+> **Pessimistic Scenario:**
+> • Prolonged Gulf economic slowdown and regional shipping disruptions.
+> • Structural capital fatigue and frozen real estate investments.
+> • Generational decoupling among younger diaspora members.
+
+#### Key Repercussions Matrix:
+* **Balance of Payments & Liquidity:** Depletion of fresh dollar inflows, heightening import coverage challenges.
+* **Exchange Rate & Monetary Policy:** Fragile stability creating additional pressure on BDL currency management.
+* **Living Standards & Domestic Trade:** Consumption contraction directly weakening VAT tax collections.
+* **Poverty Mitigation:** Expanding poverty gap placing severe strain on social safety nets.`
+  },
+
+  {
+    id: 'lebanon-remittances-gdp-decade-historical-data-2015-2025',
+    slug: 'lebanon-remittances-gdp-decade-historical-data-2015-2025',
+    focusKeyword: 'مساهمة-التحويلات-الناتج-المحلي-لبنان-2015-2025-البنك-الدولي-مصرف-لبنان-بيانات-تاريخية',
+    category: 'investigations',
+    categories: ['investigations', 'alwarraq-investigations', 'lebanon', 'economy', 'research-reports'],
+    titleAr: 'مساهمة التحويلات في الناتج المحلي الإجمالي خلال العقد الماضي (2015–2025)',
+    titleEn: 'Remittances Contribution to Lebanon’s GDP Over the Past Decade (2015–2025): Historical Analysis',
+    summaryAr: 'بيانات إحصائية ورسوم توضيحية تاريخية ترصد تحول نسبة مساهمة تحويلات المغتربين في الناتج المحلي من 13.8% عام 2015 إلى ذروتها الاستثنائية بـ 33.3% عقب الانهيار المالي، واستقرارها عند 23%-25% لعامي 2025–2026.',
+    summaryEn: 'A historical data analysis tracking diaspora remittances as a share of Lebanon’s GDP from 13.8% in 2015 to a peak of 33.3% post-collapse, stabilizing at 23-25% in 2025-2026.',
+    excerptAr: 'تحليل بياني وتاريخي لمساهمة التحويلات المالية في اقتصاد لبنان بين 2015 و2025، ومراحل الاستقرار، الانكماش، وتعديل الأسعار.',
+    excerptEn: 'Graphical historical breakdown of remittance-to-GDP ratios in Lebanon across three distinct macroeconomic phases from 2015 to 2025.',
+    author: {
+      nameAr: 'وحدة الإحصاء والرسوم البيانية — «الورّاق نيوز»',
+      nameEn: 'Data & Graphics Bureau — Al-Warraq News',
+      titleAr: 'دراسة إحصائية مقارنة',
+      titleEn: 'Statistical Research Unit',
+      avatar: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-11',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: true,
+    views: 28900,
+    tags: [
+      'الناتج_المحلي', 'تحويلات_المغتربين', 'مساهمة_التحويلات', 'لبنان', 'بيانات_إحصائية', 'البنك_الدولي',
+      'GDP_Share', 'Lebanon_Remittances', 'Historical_Data', 'Economic_Phases'
+    ],
+    hashtags: ['LebanonGDPData', 'RemittanceHistory', 'AlWarraqStats', 'MacroLebanon'],
+    contentAr: `### مساهمة التحويلات في الناتج المحلي الإجمالي خلال العقد الماضي (2015–2025)
+
+شهدت نسبة مساهمة تحويلات المغتربين في الناتج المحلي الإجمالي للبنان تحولاً هيكلياً استثنائياً على مدى السنوات العشر الماضية:
+
+> **تطور نسبة مساهمة التحويلات في الناتج المحلي الإجمالي (2015 - 2025):**
+> • **2015:** 13.8% (استقرار اقتصادي، ناتج إجمالي > 53B$)
+> • **2017:** 13.2%
+> • **2018:** 12.7% (أعلى حجم تدفق بـ 7.6B$)
+> • **2019:** 14.5% (بداية الأزمة النقدية)
+> • **2020:** 19.8% (انكماش الناتج)
+> • **2021:** 32.1% (ذروة الانكماش)
+> • **2023:** 33.3% (الذروة التاريخية - المرتبة الثالثة عالمياً)
+> • **2024:** 17.7% (إعادة تقييم الحسابات القومية وتعديل سعر الصرف)
+> • **2025–2026:** 23% - 25% (تراجع الحجم إلى 6.3B$ واستقرار النسبة)
+
+---
+
+### أولاً: مرحلة الاستقرار الفعلي (2015–2018)
+
+* تراوحت مساهمة التحويلات بين **12.7% و14.5%** من الناتج المحلي الإجمالي.
+* رغم أن أحجام التحويلات كانت في أعلى مستوياتها التاريخية (بين **7.0 و7.6 مليارات دولار سنوياً**)، إلا أن حجم الناتج المحلي الإجمالي الكبير آنذاك (الذي جاوز 53 مليار دولار) جعل شريحة المساهمة متوازنة ومستقرة نسبيًا.
+
+---
+
+### ثانياً: مرحلة الانكماش والارتفاع الحاد في الاعتمادية (2019–2023)
+
+* مع اندلاع الأزمة المالية والنقدية عام 2019 وتدهور سعر صرف الليرة، انكمش الناتج المحلي الإجمالي الاسمي للبنان بنسبة تجاوزت **50%**.
+* أدى هذا الانكماش الاقتصادي الكبير إلى قفزة استثنائية في نسبة الاعتماد على التحويلات لتصل إلى **19.8% عام 2020**، ثم الذروة التاريخية بين **32.1% و33.3% بين عامي 2021 و2023**، مما جعل لبنان يصنّف في **المرتبة الثالثة عالمياً** من حيث كثافة الاعتماد على أموال المغتربين مقارنة بحجم اقتصاده.
+
+---
+
+### ثالثاً: مرحلة تعديل الأسعار والانخفاض التنسيقي (2024–2025)
+
+* في عام 2024، ومع بداية دولرة الاقتصاد وإعادة تقييم الحسابات القومية وفق سعر الصرف الواقعي، انخفضت النسبة إلى نحو **17.7%** (مع تسجيل تدفقات بقيمة 5.8 مليارات دولار وفق تقديرات البنك الدولي).
+* ومع تراجع التدفقات في عام 2025 إلى **6.3 مليارات دولار** [وفق بيانات مصرف لبنان الرسمية]، تُقدّر النسبة الحالية لعامي 2025–2026 بين **23% و25%** من حجم الاقتصاد المحلي المحسوب بالدولار، مما يعكس استمرار شريان التحويلات كأكبر مصدر فردي للنقد الأجنبي للبلاد، متجاوزاً قيمة الصادرات السلعية والمساعدات الخارجية مجتمعة.`,
+    contentEn: `### Remittances Contribution to Lebanon’s GDP Over the Past Decade (2015–2025)
+
+Over the past ten years, remittance share of Lebanon's GDP underwent a dramatic structural shift:
+
+> **Remittance Share of GDP Evolution (2015 - 2025):**
+> • **2015:** 13.8% (Economic stability, GDP > $53B)
+> • **2017:** 13.2%
+> • **2018:** 12.7% (Peak volume at $7.6B)
+> • **2019:** 14.5% (Crisis onset)
+> • **2020:** 19.8% (GDP contraction)
+> • **2021:** 32.1% (Deep collapse)
+> • **2023:** 33.3% (Historic Peak — #3 Worldwide)
+> • **2024:** 17.7% (Dollarization & re-indexing)
+> • **2025–2026:** 23% - 25% (Drop to $6.3B, stable baseline)
+
+#### Three Macro Phases:
+1. **Stabilization Era (2015–2018):** 12.7%–14.5% of GDP. Nominal GDP exceeded $53B, balancing remittance inflows of $7.0B–$7.6B.
+2. **Economic Collapse & Peak Dependence (2019–2023):** Nominal GDP plummeted >50%, surging remittance ratio to 33.3% (3rd highest worldwide).
+3. **Price Normalization (2024–2025):** Dollarization re-indexed GDP, placing remittance share at 23-25% ($6.3B in 2025 per BDL stats).`
+  },
+
+  {
     id: 'global-proven-oil-reserves-analysis-2026',
     slug: 'global-proven-oil-reserves-analysis-2026',
     focusKeyword: 'احتياطيات-النفط-الاستراتيجية-المؤكدة-أوبك-السعودية-فنزويلا-الاقتصاد-العالمي',

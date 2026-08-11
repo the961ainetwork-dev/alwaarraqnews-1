@@ -1,7 +1,458 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import * as d3 from 'd3';
 import { TrendingDown, TrendingUp, DollarSign, Calendar, BarChart3, Percent, ChevronRight, BookMarked } from 'lucide-react';
 import { INITIAL_ARTICLES } from '../data';
 import { Article } from '../types';
+
+interface RemittanceDataPoint {
+  year: string;
+  volumeUSD: number;
+  gdpPct: number;
+  changeUSD: string;
+  labelAr: string;
+  labelEn: string;
+  isPeakVol?: boolean;
+  isPeakPct?: boolean;
+  isDecline?: boolean;
+  isEst?: boolean;
+}
+
+const REMITTANCE_HISTORICAL_DATA: RemittanceDataPoint[] = [
+  { year: '2015', volumeUSD: 7.2, gdpPct: 13.8, changeUSD: '0.0', labelAr: 'استقرار قبل الأزمة (ناتج > 53B$)', labelEn: 'Pre-crisis stability (GDP > $53B)' },
+  { year: '2017', volumeUSD: 7.4, gdpPct: 13.2, changeUSD: '+$0.2B', labelAr: 'استقرار حجم التدفقات', labelEn: 'Stable inflow volume' },
+  { year: '2018', volumeUSD: 7.6, gdpPct: 12.7, changeUSD: '+$0.2B', labelAr: 'أعلى حجم تدفق مال تاريخي ($7.6B)', labelEn: 'Peak historical volume ($7.6B)', isPeakVol: true },
+  { year: '2019', volumeUSD: 7.1, gdpPct: 14.5, changeUSD: '-$0.5B', labelAr: 'بداية الانهيار المالي واحتجاز الودائع', labelEn: 'Financial crisis onset' },
+  { year: '2020', volumeUSD: 6.6, gdpPct: 19.8, changeUSD: '-$0.5B', labelAr: 'انكماش الناتج القومي بـ 50%', labelEn: 'GDP contracted >50%' },
+  { year: '2021', volumeUSD: 6.4, gdpPct: 32.1, changeUSD: '-$0.2B', labelAr: 'قفزة الاعتمادية مع انهيار الليرة', labelEn: 'Peak collapse reliance' },
+  { year: '2023', volumeUSD: 6.5, gdpPct: 33.3, changeUSD: '+$0.1B', labelAr: 'الذروة التاريخية (%33.3) - #3 عالمياً', labelEn: 'Historic Peak (#3 Global)', isPeakPct: true },
+  { year: '2024', volumeUSD: 6.8, gdpPct: 17.7, changeUSD: '+$0.3B', labelAr: 'دولرة الحسابات القومية وإعادة التقييم', labelEn: 'GDP re-indexing & dollarization' },
+  { year: '2025', volumeUSD: 6.3, gdpPct: 24.0, changeUSD: '-$0.5B', labelAr: 'تراجع بـ 500M$ مقارنة بـ 2024 (-7.35%)', labelEn: 'Drop to $6.3B (-$500M / -7.35%)', isDecline: true },
+  { year: '2026*', volumeUSD: 6.2, gdpPct: 24.5, changeUSD: '-$0.1B', labelAr: 'تقديرات رسمية تحت الضغوط الإقليمية', labelEn: 'Official projection under tension', isEst: true },
+];
+
+function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [chartMode, setChartMode] = useState<'combo' | 'volume' | 'gdp'>('combo');
+  const [hoveredData, setHoveredData] = useState<RemittanceDataPoint | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    if (!svgRef.current || !containerRef.current) return;
+
+    const containerWidth = containerRef.current.clientWidth || 700;
+    const height = 360;
+    const margin = { top: 45, right: chartMode === 'combo' ? 55 : 30, bottom: 50, left: 55 };
+    const width = Math.max(containerWidth, 320);
+
+    const svg = d3.select(svgRef.current);
+    svg.selectAll('*').remove();
+
+    svg
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', `0 0 ${width} ${height}`);
+
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
+
+    const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+    // X Scale
+    const xScale = d3
+      .scaleBand()
+      .domain(REMITTANCE_HISTORICAL_DATA.map((d) => d.year))
+      .range([0, innerWidth])
+      .padding(0.32);
+
+    const xPointScale = d3
+      .scalePoint()
+      .domain(REMITTANCE_HISTORICAL_DATA.map((d) => d.year))
+      .range([xScale.bandwidth() / 2, innerWidth - xScale.bandwidth() / 2]);
+
+    // Y Scale 1: Volume ($ Billions)
+    const yVolScale = d3
+      .scaleLinear()
+      .domain([0, 9])
+      .range([innerHeight, 0]);
+
+    // Y Scale 2: GDP Share (%)
+    const yGdpScale = d3
+      .scaleLinear()
+      .domain([0, 40])
+      .range([innerHeight, 0]);
+
+    // Grid Lines
+    const gridYScale = chartMode === 'gdp' ? yGdpScale : yVolScale;
+    const gridAxis = d3.axisLeft(gridYScale).ticks(5).tickSize(-innerWidth).tickFormat(() => '');
+
+    g.append('g')
+      .attr('class', 'grid-lines')
+      .call(gridAxis)
+      .selectAll('line')
+      .attr('stroke', '#e4e4e7')
+      .attr('stroke-dasharray', '3,3');
+    g.select('.grid-lines .domain').remove();
+
+    // Bars (for 'combo' and 'volume' mode)
+    if (chartMode === 'combo' || chartMode === 'volume') {
+      const barsG = g.append('g').attr('class', 'bars-group');
+
+      const bars = barsG
+        .selectAll('.bar')
+        .data(REMITTANCE_HISTORICAL_DATA)
+        .enter()
+        .append('rect')
+        .attr('class', 'bar')
+        .attr('x', (d) => xScale(d.year) || 0)
+        .attr('width', xScale.bandwidth())
+        .attr('y', innerHeight)
+        .attr('height', 0)
+        .attr('rx', 3)
+        .attr('ry', 3)
+        .attr('fill', (d) => {
+          if (d.isPeakVol) return '#059669';
+          if (d.isDecline) return '#dc2626';
+          if (d.isEst) return '#d97706';
+          return '#27272a';
+        })
+        .attr('stroke', '#000000')
+        .attr('stroke-width', 1.5)
+        .style('cursor', 'pointer');
+
+      bars
+        .transition()
+        .duration(700)
+        .delay((_, i) => i * 45)
+        .attr('y', (d) => yVolScale(d.volumeUSD))
+        .attr('height', (d) => innerHeight - yVolScale(d.volumeUSD));
+
+      barsG
+        .selectAll('.bar-label')
+        .data(REMITTANCE_HISTORICAL_DATA)
+        .enter()
+        .append('text')
+        .attr('class', 'bar-label')
+        .attr('x', (d) => (xScale(d.year) || 0) + xScale.bandwidth() / 2)
+        .attr('y', (d) => yVolScale(d.volumeUSD) - 8)
+        .attr('text-anchor', 'middle')
+        .attr('font-family', 'monospace')
+        .attr('font-size', '10px')
+        .attr('font-weight', 'bold')
+        .attr('fill', (d) => (d.isDecline ? '#dc2626' : d.isPeakVol ? '#047857' : '#18181b'))
+        .text((d) => `$${d.volumeUSD}B`);
+
+      bars
+        .on('mouseenter', (event, d) => {
+          d3.select(event.currentTarget).attr('opacity', 0.8).attr('stroke-width', 2.5);
+          const [mx, my] = d3.pointer(event, svgRef.current);
+          setTooltipPos({ x: mx, y: my });
+          setHoveredData(d);
+        })
+        .on('mousemove', (event) => {
+          const [mx, my] = d3.pointer(event, svgRef.current);
+          setTooltipPos({ x: mx, y: my });
+        })
+        .on('mouseleave', (event) => {
+          d3.select(event.currentTarget).attr('opacity', 1).attr('stroke-width', 1.5);
+          setHoveredData(null);
+          setTooltipPos(null);
+        });
+    }
+
+    // Line Chart (for 'combo' and 'gdp' mode)
+    if (chartMode === 'combo' || chartMode === 'gdp') {
+      const lineG = g.append('g').attr('class', 'line-group');
+
+      const defs = svg.append('defs');
+      const areaGradient = defs
+        .append('linearGradient')
+        .attr('id', 'gdp-area-gradient')
+        .attr('x1', '0%')
+        .attr('y1', '0%')
+        .attr('x2', '0%')
+        .attr('y2', '100%');
+
+      areaGradient.append('stop').attr('offset', '0%').attr('stop-color', '#10b981').attr('stop-opacity', 0.35);
+      areaGradient.append('stop').attr('offset', '100%').attr('stop-color', '#10b981').attr('stop-opacity', 0.02);
+
+      const areaGenerator = d3
+        .area<RemittanceDataPoint>()
+        .x((d) => xPointScale(d.year) || 0)
+        .y0(innerHeight)
+        .y1((d) => yGdpScale(d.gdpPct))
+        .curve(d3.curveMonotoneX);
+
+      const lineGenerator = d3
+        .line<RemittanceDataPoint>()
+        .x((d) => xPointScale(d.year) || 0)
+        .y((d) => yGdpScale(d.gdpPct))
+        .curve(d3.curveMonotoneX);
+
+      lineG
+        .append('path')
+        .datum(REMITTANCE_HISTORICAL_DATA)
+        .attr('fill', 'url(#gdp-area-gradient)')
+        .attr('d', areaGenerator);
+
+      const linePath = lineG
+        .append('path')
+        .datum(REMITTANCE_HISTORICAL_DATA)
+        .attr('fill', 'none')
+        .attr('stroke', chartMode === 'combo' ? '#2563eb' : '#047857')
+        .attr('stroke-width', 3)
+        .attr('d', lineGenerator);
+
+      const totalLength = linePath.node()?.getTotalLength() || 0;
+      linePath
+        .attr('stroke-dasharray', `${totalLength} ${totalLength}`)
+        .attr('stroke-dashoffset', totalLength)
+        .transition()
+        .duration(900)
+        .attr('stroke-dashoffset', 0);
+
+      const points = lineG
+        .selectAll('.data-point')
+        .data(REMITTANCE_HISTORICAL_DATA)
+        .enter()
+        .append('circle')
+        .attr('class', 'data-point')
+        .attr('cx', (d) => xPointScale(d.year) || 0)
+        .attr('cy', (d) => yGdpScale(d.gdpPct))
+        .attr('r', (d) => (d.isPeakPct ? 7 : 5))
+        .attr('fill', (d) => (d.isPeakPct ? '#f59e0b' : '#ffffff'))
+        .attr('stroke', chartMode === 'combo' ? '#2563eb' : '#047857')
+        .attr('stroke-width', (d) => (d.isPeakPct ? 3 : 2.5))
+        .style('cursor', 'pointer');
+
+      lineG
+        .selectAll('.gdp-label')
+        .data(REMITTANCE_HISTORICAL_DATA)
+        .enter()
+        .append('text')
+        .attr('class', 'gdp-label')
+        .attr('x', (d) => xPointScale(d.year) || 0)
+        .attr('y', (d) => yGdpScale(d.gdpPct) - (chartMode === 'combo' ? 14 : 10))
+        .attr('text-anchor', 'middle')
+        .attr('font-family', 'sans-serif')
+        .attr('font-size', '10px')
+        .attr('font-weight', 'bold')
+        .attr('fill', (d) => (d.isPeakPct ? '#d97706' : chartMode === 'combo' ? '#1d4ed8' : '#065f46'))
+        .text((d) => `${d.gdpPct}%`);
+
+      points
+        .on('mouseenter', (event, d) => {
+          d3.select(event.currentTarget).attr('r', 9).attr('stroke-width', 3.5);
+          const [mx, my] = d3.pointer(event, svgRef.current);
+          setTooltipPos({ x: mx, y: my });
+          setHoveredData(d);
+        })
+        .on('mousemove', (event) => {
+          const [mx, my] = d3.pointer(event, svgRef.current);
+          setTooltipPos({ x: mx, y: my });
+        })
+        .on('mouseleave', (event, d) => {
+          d3.select(event.currentTarget).attr('r', d.isPeakPct ? 7 : 5).attr('stroke-width', d.isPeakPct ? 3 : 2.5);
+          setHoveredData(null);
+          setTooltipPos(null);
+        });
+    }
+
+    // X Axis
+    const xAxis = d3.axisBottom(xScale);
+    const xAxisG = g
+      .append('g')
+      .attr('class', 'x-axis')
+      .attr('transform', `translate(0,${innerHeight})`)
+      .call(xAxis);
+
+    xAxisG
+      .selectAll('text')
+      .attr('font-family', 'monospace')
+      .attr('font-weight', 'bold')
+      .attr('font-size', '11px')
+      .attr('fill', '#18181b');
+
+    xAxisG.select('.domain').attr('stroke', '#000000').attr('stroke-width', 1.5);
+
+    // Left Y Axis
+    if (chartMode === 'combo' || chartMode === 'volume') {
+      const leftAxis = d3.axisLeft(yVolScale).ticks(5).tickFormat((d) => `$${d}B`);
+      const leftAxisG = g.append('g').attr('class', 'y-axis-left').call(leftAxis);
+
+      leftAxisG.selectAll('text').attr('font-family', 'monospace').attr('font-size', '10px').attr('fill', '#18181b');
+      leftAxisG.select('.domain').attr('stroke', '#000000').attr('stroke-width', 1.5);
+
+      g.append('text')
+        .attr('transform', 'rotate(-90)')
+        .attr('y', -42)
+        .attr('x', -innerHeight / 2)
+        .attr('text-anchor', 'middle')
+        .attr('font-family', 'sans-serif')
+        .attr('font-size', '10px')
+        .attr('font-weight', 'bold')
+        .attr('fill', '#18181b')
+        .text(isAr ? 'الحجم (مليار دولار)' : 'Volume ($ Billions)');
+    } else {
+      const leftAxis = d3.axisLeft(yGdpScale).ticks(5).tickFormat((d) => `${d}%`);
+      const leftAxisG = g.append('g').attr('class', 'y-axis-left').call(leftAxis);
+
+      leftAxisG.selectAll('text').attr('font-family', 'monospace').attr('font-size', '10px').attr('fill', '#18181b');
+      leftAxisG.select('.domain').attr('stroke', '#000000').attr('stroke-width', 1.5);
+
+      g.append('text')
+        .attr('transform', 'rotate(-90)')
+        .attr('y', -42)
+        .attr('x', -innerHeight / 2)
+        .attr('text-anchor', 'middle')
+        .attr('font-family', 'sans-serif')
+        .attr('font-size', '10px')
+        .attr('font-weight', 'bold')
+        .attr('fill', '#047857')
+        .text(isAr ? 'النسبة من الناتج المحلي الإجمالي (%)' : 'GDP Contribution (%)');
+    }
+
+    // Right Y Axis (for 'combo' mode showing GDP %)
+    if (chartMode === 'combo') {
+      const rightAxis = d3.axisRight(yGdpScale).ticks(5).tickFormat((d) => `${d}%`);
+      const rightAxisG = g
+        .append('g')
+        .attr('class', 'y-axis-right')
+        .attr('transform', `translate(${innerWidth},0)`)
+        .call(rightAxis);
+
+      rightAxisG.selectAll('text').attr('font-family', 'monospace').attr('font-size', '10px').attr('fill', '#2563eb');
+      rightAxisG.select('.domain').attr('stroke', '#2563eb').attr('stroke-width', 1.5);
+
+      g.append('text')
+        .attr('transform', 'rotate(90)')
+        .attr('y', -innerWidth - 42)
+        .attr('x', innerHeight / 2)
+        .attr('text-anchor', 'middle')
+        .attr('font-family', 'sans-serif')
+        .attr('font-size', '10px')
+        .attr('font-weight', 'bold')
+        .attr('fill', '#2563eb')
+        .text(isAr ? 'نسبة الناتج (%)' : 'GDP Share (%)');
+    }
+  }, [chartMode, isAr]);
+
+  return (
+    <div className="border-2 border-black p-5 bg-white space-y-4">
+      {/* Header with Mode Toggles */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-black pb-3 gap-3">
+        <div>
+          <div className="flex items-center gap-2">
+            <BarChart3 className="text-emerald-800" size={20} />
+            <h4 className="font-sans font-black text-lg text-zinc-900 uppercase">
+              {isAr ? 'تطور التحويلات والناتج المحلي (تفاعلي D3)' : 'Interactive D3 Remittance & GDP Dynamics'}
+            </h4>
+          </div>
+          <p className="text-xs text-zinc-500 font-mono mt-0.5">
+            {isAr
+              ? 'مقارنة ديناميكية بين حجم التدفقات المالية ($) والمساهمة المئوية في الناتج المحلي (٢٠١٥ – ٢٠٢٦)'
+              : 'Dynamic D3 visualization mapping inflow volumes ($B) against GDP contribution ratio (2015-2026)'}
+          </p>
+        </div>
+
+        {/* View mode toggle buttons */}
+        <div className="flex items-center gap-1 bg-zinc-100 p-1 border border-zinc-300 rounded self-stretch sm:self-auto">
+          <button
+            onClick={() => setChartMode('combo')}
+            className={`px-2.5 py-1 text-xs font-mono font-bold transition-all cursor-pointer ${
+              chartMode === 'combo' ? 'bg-black text-white shadow' : 'text-zinc-600 hover:text-black'
+            }`}
+          >
+            {isAr ? 'مزدوج (Combo)' : 'Dual Combo'}
+          </button>
+          <button
+            onClick={() => setChartMode('volume')}
+            className={`px-2.5 py-1 text-xs font-mono font-bold transition-all cursor-pointer ${
+              chartMode === 'volume' ? 'bg-black text-white shadow' : 'text-zinc-600 hover:text-black'
+            }`}
+          >
+            {isAr ? 'الحجم ($B)' : 'Volume ($B)'}
+          </button>
+          <button
+            onClick={() => setChartMode('gdp')}
+            className={`px-2.5 py-1 text-xs font-mono font-bold transition-all cursor-pointer ${
+              chartMode === 'gdp' ? 'bg-black text-white shadow' : 'text-zinc-600 hover:text-black'
+            }`}
+          >
+            {isAr ? 'النسبة (% GDP)' : 'GDP Share (%)'}
+          </button>
+        </div>
+      </div>
+
+      {/* Interactive Legend */}
+      <div className="flex flex-wrap items-center gap-4 text-xs font-mono pt-1 pb-2 px-2 bg-zinc-50 border border-zinc-200">
+        {(chartMode === 'combo' || chartMode === 'volume') && (
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-3 bg-zinc-800 border border-black inline-block rounded-xs"></span>
+            <span className="text-zinc-700">{isAr ? 'الحجم بالمليار ($B)' : 'Volume ($B)'}</span>
+          </div>
+        )}
+        {(chartMode === 'combo' || chartMode === 'volume') && (
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-3 bg-emerald-600 border border-black inline-block rounded-xs"></span>
+            <span className="text-emerald-800 font-bold">{isAr ? 'أعلى تدفق (٢٠١٨ - $7.6B)' : 'Peak Volume (2018 - $7.6B)'}</span>
+          </div>
+        )}
+        {(chartMode === 'combo' || chartMode === 'volume') && (
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-3 bg-red-600 border border-black inline-block rounded-xs"></span>
+            <span className="text-red-700 font-bold">{isAr ? 'تراجع ٢٠٢٥ (-$500M)' : '2025 Drop (-$500M)'}</span>
+          </div>
+        )}
+        {(chartMode === 'combo' || chartMode === 'gdp') && (
+          <div className="flex items-center gap-1.5">
+            <span className={`w-3 h-0.5 ${chartMode === 'combo' ? 'bg-blue-600' : 'bg-emerald-600'} inline-block`}></span>
+            <span className="w-2.5 h-2.5 rounded-full border border-black bg-amber-400 inline-block"></span>
+            <span className="text-zinc-700 font-bold">{isAr ? 'النسبة من الناتج (% GDP)' : 'GDP Contribution (%)'}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Chart Canvas Area */}
+      <div ref={containerRef} className="relative w-full overflow-hidden bg-white border border-zinc-200 p-2">
+        <svg ref={svgRef} className="w-full h-[360px] block"></svg>
+
+        {/* Hover Tooltip Overlay */}
+        {hoveredData && tooltipPos && (
+          <div
+            className="absolute z-20 pointer-events-none bg-zinc-900 text-white p-3 rounded shadow-xl border border-zinc-700 text-xs w-64 transition-all duration-75"
+            style={{
+              left: Math.min(tooltipPos.x + 12, (containerRef.current?.clientWidth || 300) - 260),
+              top: Math.max(tooltipPos.y - 80, 10),
+            }}
+          >
+            <div className="flex justify-between items-center border-b border-zinc-700 pb-1.5 mb-1.5">
+              <span className="font-mono font-black text-amber-400 text-sm">{hoveredData.year}</span>
+              <span className="font-mono text-[10px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-300">
+                {hoveredData.changeUSD}
+              </span>
+            </div>
+            <div className="space-y-1 font-mono text-[11px]">
+              <div className="flex justify-between">
+                <span className="text-zinc-400">{isAr ? 'حجم التحويلات:' : 'Remittance Volume:'}</span>
+                <span className="font-bold text-emerald-400">${hoveredData.volumeUSD} Billion</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-zinc-400">{isAr ? 'المساهمة في الناتج:' : 'GDP Contribution:'}</span>
+                <span className="font-bold text-blue-400">{hoveredData.gdpPct}%</span>
+              </div>
+            </div>
+            <p className="text-[11px] text-zinc-300 mt-2 pt-1.5 border-t border-zinc-800 leading-tight font-sans">
+              {isAr ? hoveredData.labelAr : hoveredData.labelEn}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
 
 interface InStatsProps {
   language: 'ar' | 'en';
@@ -12,7 +463,7 @@ interface InStatsProps {
 export default function InStats({ language, layoutMode, onSelectArticle }: InStatsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
-  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction'>('bdl-budget');
+  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction' | 'remittances'>('bdl-budget');
   const [activeInsight, setActiveInsight] = useState<number | null>(1);
   const [isArticleExpanded, setIsArticleExpanded] = useState<boolean>(false);
 
@@ -152,11 +603,19 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
           </button>
           <button
             onClick={() => setActiveTab('lebanon-destruction')}
-            className={`px-3 py-1 cursor-pointer transition-colors ${
+            className={`px-3 py-1 cursor-pointer transition-colors border-r border-black ${
               activeTab === 'lebanon-destruction' ? 'bg-black text-white' : 'hover:bg-red-50 text-red-750'
             }`}
           >
-            {isAr ? 'دمار الجنوب (النهار)' : 'Southern Devastation (An-Nahar)'}
+            {isAr ? 'دمار الجنوب' : 'Southern Devastation'}
+          </button>
+          <button
+            onClick={() => setActiveTab('remittances')}
+            className={`px-3 py-1 cursor-pointer transition-colors ${
+              activeTab === 'remittances' ? 'bg-black text-white' : 'hover:bg-emerald-50 text-emerald-800'
+            }`}
+          >
+            {isAr ? 'تحويلات المغتربين' : 'Remittances Data'}
           </button>
         </div>
       </div>
@@ -1578,6 +2037,231 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
               <BookMarked size={16} />
               <span>{isAr ? 'مطالعة التحقيق بالكامل' : 'Read Full Investigation'}</span>
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Tab Panel 9: REMITTANCES & GDP HISTORICAL DATA */}
+      {activeTab === 'remittances' && (
+        <div className="space-y-8">
+          {/* Key Metric Telemetries */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="border-2 border-black p-4 bg-emerald-50/40 relative">
+              <span className="text-[10px] font-mono text-emerald-800 uppercase tracking-widest block font-bold">
+                {isAr ? 'حجم التحويلات الوافدة (٢٠٢٥)' : '2025 Remittance Inflows'}
+              </span>
+              <div className="flex items-baseline gap-2 mt-1.5">
+                <span className="text-3xl font-black font-mono text-zinc-900">$6.30B</span>
+                <span className="text-xs text-red-700 font-bold flex items-center gap-0.5" dir="ltr">
+                  <TrendingDown size={14} /> -7.35%
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-600 mt-2 leading-relaxed">
+                {isAr ? 'بيانات مصرف لبنان الرسمية: تراجع بـ ٥٠٠ مليون دولار مقارنة بـ ٦.٨ مليارات عام ٢٠٢٤.' : 'Official BDL Data: Down by $500M from $6.8B recorded in 2024.'}
+              </p>
+            </div>
+
+            <div className="border-2 border-black p-4 bg-zinc-50 relative">
+              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                {isAr ? 'المساهمة في الناتج المحلي (٢٠٢٥–٢٠٢٦)' : 'GDP Share (2025–2026 Est.)'}
+              </span>
+              <div className="flex items-baseline gap-2 mt-1.5">
+                <span className="text-3xl font-black font-mono text-zinc-900">23%–25%</span>
+                <span className="text-xs text-emerald-700 font-bold flex items-center gap-0.5">
+                  <TrendingUp size={14} /> {isAr ? 'الأعلى فرداً' : 'Top Source'}
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-600 mt-2 leading-relaxed">
+                {isAr ? 'تتجاوز حصيلة الصادرات السلعية والمساعدات الخارجية مجتمعة.' : 'Exceeds merchandise exports and foreign aid combined.'}
+              </p>
+            </div>
+
+            <div className="border-2 border-black p-4 bg-amber-50/40 relative">
+              <span className="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-bold">
+                {isAr ? 'التصنيف العالمي كنسبة من الاقتصاد' : 'Global Dependency Rank'}
+              </span>
+              <div className="flex items-baseline gap-2 mt-1.5">
+                <span className="text-3xl font-black font-mono text-zinc-900">#3</span>
+                <span className="text-xs text-zinc-600 font-bold">
+                  {isAr ? 'عالمياً (البنك الدولي)' : 'Worldwide (WB)'}
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-600 mt-2 leading-relaxed">
+                {isAr ? 'لبنان ضمن المراكز الثلاثة الأولى عالمياً في كثافة الاعتماد المالي.' : 'Lebanon ranks 3rd highest in global diaspora remittance reliance.'}
+              </p>
+            </div>
+
+            <div className="border-2 border-black p-4 bg-zinc-50 relative">
+              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                {isAr ? 'معدل الفقر الموجه للتحويلات' : 'Local Poverty Catalyst'}
+              </span>
+              <div className="flex items-baseline gap-2 mt-1.5">
+                <span className="text-3xl font-black font-mono text-zinc-900">&gt; 50%</span>
+                <span className="text-xs text-red-700 font-bold">
+                  {isAr ? 'شبكة أمان' : 'Safety Net'}
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-600 mt-2 leading-relaxed">
+                {isAr ? 'التحويلات تغطي الغذاء والدواء لنحو نصف السكان عبر OMT وWish.' : 'Transfers cover food and healthcare via OMT & Wish Money.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Section 1: D3 Dynamic Visualization - Remittance Volumes & GDP Contribution */}
+          <RemittancesD3Charts isAr={isAr} />
+
+          {/* Three Phases Explanation Grid */}
+          <div className="border-2 border-black p-5 bg-white space-y-4">
+            <h5 className="font-sans font-black text-sm text-zinc-900 uppercase border-b border-black pb-2">
+              {isAr ? 'المراحل الكلية لمسار التحويلات والناتج القومي (٢٠١٥–٢٠٢٦)' : 'Macro Phases of Remittances & National GDP (2015–2026)'}
+            </h5>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <div className="p-3 bg-zinc-50 border border-zinc-300">
+                <span className="font-bold text-black block mb-1">
+                  {isAr ? '١. مرحلة الاستقرار (٢٠١٥–٢٠١٨)' : '1. Stabilization Era (2015-2018)'}
+                </span>
+                <p className="text-zinc-600 leading-relaxed">
+                  {isAr
+                    ? 'نسبة متوازنة (١٢.٧٪ – ١٤.٥٪) بفضل كبر حجم الناتج المحلي الإجمالي اللبناني آنذاك والذي جاوز ٥٣ مليار دولار، مع بلوغ حجم التحويلات ذروته بـ ٧.٦ مليارات دولار عام ٢٠١٨.'
+                    : 'Balanced share (12.7%-14.5%) cushioned by a large nominal GDP exceeding $53B, with remittance inflow peaking at $7.6B in 2018.'}
+                </p>
+              </div>
+
+              <div className="p-3 bg-amber-50/50 border border-amber-300">
+                <span className="font-bold text-amber-900 block mb-1">
+                  {isAr ? '٢. مرحلة الانكماش والقفزة (٢٠١٩–٢٠٢٣)' : '2. Collapse & Peak Shift (2019-2023)'}
+                </span>
+                <p className="text-zinc-600 leading-relaxed">
+                  {isAr
+                    ? 'انكماش الناتج بـ ٥٠٪ وانهيار الليرة قفز بالمساهمة المئوية لتبلغ ٣٣.٣٪ عام ٢٠٢٣ وتصنيف لبنان بالمرتبة الثالثة عالمياً في الاعتماد على المغتربين.'
+                    : 'Nominal GDP collapsed >50%, surging remittance share to a record 33.3% in 2023 (#3 worldwide in diaspora reliance).'}
+                </p>
+              </div>
+
+              <div className="p-3 bg-emerald-50/50 border border-emerald-300">
+                <span className="font-bold text-emerald-900 block mb-1">
+                  {isAr ? '٣. مرحلة الدولرة والتنسيق (٢٠٢٤–٢٠٢٦)' : '3. Price Normalization & Baseline (2024-2026)'}
+                </span>
+                <p className="text-zinc-600 leading-relaxed">
+                  {isAr
+                    ? 'دولرة الاقتصاد وتراجع التحويلات لـ ٦.٣ مليارات دولار عام ٢٠٢٥ (-٥٠٠ مليون) يثبت المساهمة المئوية الحالية عند خط الأساس الهيكلي ٢٣٪–٢٥٪.'
+                    : 'Economy dollarization and $6.3B inflow in 2025 (-$500M drop) sets the current baseline at 23%-25% of GDP.'}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 2: Scenarios & Drivers for 2026 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="border-2 border-emerald-800 p-5 bg-emerald-50/20 space-y-3">
+              <div className="flex items-center gap-2 border-b border-emerald-800/30 pb-2">
+                <TrendingUp className="text-emerald-800" size={18} />
+                <h5 className="font-sans font-black text-sm text-emerald-950 uppercase">
+                  {isAr ? 'السيناريو المتفائل لعام ٢٠٢٦' : 'Optimistic Scenario for 2026'}
+                </h5>
+              </div>
+              <ul className="space-y-2 text-xs text-zinc-700 leading-relaxed">
+                <li className="flex items-start gap-1.5">
+                  <span className="font-bold text-emerald-800">•</span>
+                  <span>{isAr ? 'شدة الحاجة المنزلية: الفقر المتعدد الأبعاد (>50%) يجبر المغتربين على استمرار الدعم.' : 'Severe local needs: Poverty (>50%) forces ongoing household cash assistance.'}</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="font-bold text-emerald-800">•</span>
+                  <span>{isAr ? 'تعويض غياب زيارات الصيف: التحويل الإلكتروني عبر OMT بديلاً عن الكاش الشخصي.' : 'E-transfers substituting for missed summer cash visits due to security risks.'}</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="font-bold text-emerald-800">•</span>
+                  <span>{isAr ? 'مرونة التحويلات الصغيرة ($100 - $300): الأكثر صموداً واستدامة.' : 'Resilience of micro-transfers ($100-$300) forming the backbone of daily flows.'}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border-2 border-red-800 p-5 bg-red-50/20 space-y-3">
+              <div className="flex items-center gap-2 border-b border-red-800/30 pb-2">
+                <TrendingDown className="text-red-800" size={18} />
+                <h5 className="font-sans font-black text-sm text-red-950 uppercase">
+                  {isAr ? 'السيناريو الهيكلي التشاؤمي لعام ٢٠٢٦' : 'Pessimistic Scenario for 2026'}
+                </h5>
+              </div>
+              <ul className="space-y-2 text-xs text-zinc-700 leading-relaxed">
+                <li className="flex items-start gap-1.5">
+                  <span className="font-bold text-red-800">•</span>
+                  <span>{isAr ? 'انكماش الخليج وإغلاق مضيق هرمز: تقشف الشركات وإعادة هيكلة عمالة اللبنانيين.' : 'Gulf slowdown & Hormuz shipping hits energy firms and expatriate salaries.'}</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="font-bold text-red-800">•</span>
+                  <span>{isAr ? 'التضخم الأورو-أمريكي: ارتفاع المعيشة يقلص الفائض المالي المتاح للإرسال.' : 'Western inflation & high interest rates shrinking disposable diaspora savings.'}</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="font-bold text-red-800">•</span>
+                  <span>{isAr ? 'انقطاع الأجيال الشابة وتجميد الاستثمار العقاري بسبب أزمة احتجاز الودائع.' : 'Generational detachment and frozen real estate investment due to trapped bank deposits.'}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Section 3: Click-Through Actions for the Two Investigative Dossiers */}
+          <div className="border-2 border-black p-5 bg-zinc-900 text-white space-y-4">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-zinc-700 pb-3">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold block">
+                  {isAr ? 'ملفات التحقيقات الاستقصائية الرسمية' : 'OFFICIAL INVESTIGATION DOSSIERS'}
+                </span>
+                <h4 className="font-sans font-black text-base text-white mt-0.5">
+                  {isAr ? 'قراءة التحقيقات الكاملة الخاصة بالتحويلات والناتج المحلي' : 'Read Full Investigation Files on Remittances & GDP'}
+                </h4>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border border-zinc-700 p-4 bg-zinc-800/80 rounded flex flex-col justify-between space-y-3">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono text-amber-400 font-bold">AW-FILE-25</span>
+                  <h5 className="font-sans font-black text-sm text-white">
+                    {isAr ? 'أزمة انخفاض التحويلات المالية إلى لبنان (2025–2026): القراءات، الأسباب، والتبعات' : 'The Decline in Remittances to Lebanon (2025–2026): Drivers & Impact'}
+                  </h5>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    {isAr ? 'تحليل تفصيلي لتراجع التحويلات بـ ٥٠٠ مليون دولار، وأسباب الخليج وأومتي وتأثيرها على السيولة.' : 'In-depth analysis of the $500M drop in remittances, Gulf factors, OMT channels, and liquidity risks.'}
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    if (onSelectArticle) {
+                      const art = INITIAL_ARTICLES.find(a => a.id === 'lebanon-remittances-crisis-investigation-2025-2026');
+                      if (art) onSelectArticle(art);
+                    }
+                  }}
+                  className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white transition-colors font-sans font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer rounded"
+                >
+                  <BookMarked size={14} />
+                  <span>{isAr ? 'فتح ملف أزمة التحويلات (AW-FILE-25)' : 'Open Dossier AW-FILE-25'}</span>
+                </button>
+              </div>
+
+              <div className="border border-zinc-700 p-4 bg-zinc-800/80 rounded flex flex-col justify-between space-y-3">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono text-emerald-400 font-bold">AW-FILE-26</span>
+                  <h5 className="font-sans font-black text-sm text-white">
+                    {isAr ? 'مساهمة التحويلات في الناتج المحلي الإجمالي خلال العقد الماضي (2015–2025)' : 'Remittances Contribution to Lebanon’s GDP Over the Past Decade'}
+                  </h5>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    {isAr ? 'دراسة إحصائية تاريخية تقارن النسبة بين ١٣.٨٪ عام ٢٠١٥ و٣٣.٣٪ عقب الانهيار المالي.' : 'Historical statistical study mapping remittance share from 13.8% in 2015 to 33.3% peak.'}
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    if (onSelectArticle) {
+                      const art = INITIAL_ARTICLES.find(a => a.id === 'lebanon-remittances-gdp-decade-historical-data-2015-2025');
+                      if (art) onSelectArticle(art);
+                    }
+                  }}
+                  className="w-full py-2.5 bg-zinc-100 hover:bg-white text-zinc-900 transition-colors font-sans font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer rounded"
+                >
+                  <BookMarked size={14} />
+                  <span>{isAr ? 'فتح ملف الناتج المحلي (AW-FILE-26)' : 'Open Dossier AW-FILE-26'}</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}

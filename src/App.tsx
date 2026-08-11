@@ -185,8 +185,8 @@ export default function App() {
           const initialMap = new Map(INITIAL_ARTICLES.map(a => [a.id, a]));
           const merged = parsed.map((a: any) => {
             if (a && a.id && initialMap.has(a.id)) {
-              // Always prefer code definitions for Solidere and Editor Desk articles to keep fresh edits
-              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl')) {
+              // Always prefer code definitions for Solidere, Editor Desk, Exclusives, and Remittance articles to keep fresh edits
+              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance')) {
                 return initialMap.get(a.id);
               }
             }

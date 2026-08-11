@@ -272,6 +272,22 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXIV: Editor-in-Chief Editorial by Maan Barazi: Solidere Back on the Accountability Table — Is the State Dismantling the "Isolated Island"?',
     descAr: 'افتتاحية تحريرية وتقييم نقدي بقلم معن برازي يفكك قرار مجلس الوزراء رقم 11 تاريخ 2026/08/07 ويحلل أبعاد التحول من التسليم المسبق إلى الشروط والـ KPIs وفك العزلة الحضرية عن وسط بيروت.',
     descEn: 'A critical editorial appraisal by Editor-in-Chief Maan Barazi analyzing Cabinet Decision No. 11/70 and the shift from corporate concessions to sovereign conditions and urban integration.'
+  },
+  'lebanon-remittances-crisis-investigation-2025-2026': {
+    fileId: 'AW-FILE-25',
+    badge: 'REMITTANCES CRISIS DOSSIER',
+    titleAr: 'الملف الخامس والعشرون: أزمة انخفاض التحويلات المالية إلى لبنان (2025–2026): القراءات، الأسباب، والتبعات الاقتصادية',
+    titleEn: 'Dossier XXV: The Decline in Remittances to Lebanon (2025–2026): Drivers, Scenarios, and Macroeconomic Impact',
+    descAr: 'تحقيق استقصائي حقيقي تفكك فيه وحدة الدراسات تراجع تحويلات المغتربين والعمال إلى 6.3 مليارات دولار عام 2025 بانخفاض 500 مليون دولار، مع رسم سيناريوهات 2026 وتبعات الميزان والفقر.',
+    descEn: 'An investigative dossier breaking down the $500M drop in Lebanese remittances in 2025 to $6.3B, dissecting 2026 scenarios, Gulf inflation, OMT channel shifts, and poverty risks.'
+  },
+  'lebanon-remittances-gdp-decade-historical-data-2015-2025': {
+    fileId: 'AW-FILE-26',
+    badge: 'GDP REMITTANCES HISTORICAL DOSSIER',
+    titleAr: 'الملف السادس والعشرون: مساهمة التحويلات في الناتج المحلي الإجمالي خلال العقد الماضي (2015–2025)',
+    titleEn: 'Dossier XXVI: Remittances Contribution to Lebanon’s GDP Over the Past Decade (2015–2025)',
+    descAr: 'ملف إحصائي وتاريخي يرصد تطور مساهمة التحويلات من 13.8% في 2015 إلى قمتها الاستثنائية بـ 33.3% عقب الانهيار، وصولاً إلى استقرارها عند 23%-25% لعامي 2025–2026.',
+    descEn: 'A historical research dossier analyzing the shift in remittance-to-GDP ratio from 13.8% in 2015 to a historic 33.3% peak and its current 23-25% baseline in 2025-2026.'
   }
 };
 
