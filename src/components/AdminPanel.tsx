@@ -411,6 +411,7 @@ export default function AdminPanel({
       sector: newUSector.trim() || 'عام',
       country: newUCountry.trim() || 'لبنان',
       registeredAt: new Date().toISOString().substring(0, 10),
+      timestamp: new Date().toISOString(),
       isPremiumSubscriber: newUIsPremium
     };
 
@@ -468,10 +469,54 @@ export default function AdminPanel({
       }
     } else {
       const dummy = [
-        { email: 'maanbarazy@gmail.com', username: 'Maan Barazy', role: 'admin', isPremiumSubscriber: true },
-        { email: 'editor@alwarraqnews.com', username: 'Chief Editor', role: 'admin', isPremiumSubscriber: true },
-        { email: 'sarah.k@beirutfinance.org', username: 'Sarah Khalil', role: 'reader', isPremiumSubscriber: true },
-        { email: 'lebanon_investor@gmail.com', username: 'Anis Gemayel', role: 'reader', isPremiumSubscriber: false }
+        { 
+          email: 'maanbarazy@gmail.com', 
+          username: 'Maan Barazy', 
+          role: 'admin', 
+          isPremiumSubscriber: true,
+          jobTitle: 'رئيس التحرير',
+          organization: 'صحيفة الورّاق',
+          sector: 'الصحافة والإعلام',
+          country: 'لبنان',
+          registeredAt: '2026-08-01',
+          timestamp: '2026-08-01T09:00:00.000Z'
+        },
+        { 
+          email: 'editor@alwarraqnews.com', 
+          username: 'Chief Editor', 
+          role: 'admin', 
+          isPremiumSubscriber: true,
+          jobTitle: 'مدير قسم التحقيقات',
+          organization: 'جريدة الورّاق',
+          sector: 'الإعلام الرقمي',
+          country: 'لبنان',
+          registeredAt: '2026-08-02',
+          timestamp: '2026-08-02T11:30:00.000Z'
+        },
+        { 
+          email: 'sarah.k@beirutfinance.org', 
+          username: 'Sarah Khalil', 
+          role: 'reader', 
+          isPremiumSubscriber: true,
+          jobTitle: 'كبيرة محللي دراسات',
+          organization: 'جمعية مجتمع المال',
+          sector: 'القطاع المصرفي',
+          country: 'لبنان',
+          registeredAt: '2026-08-05',
+          timestamp: '2026-08-05T14:20:00.000Z'
+        },
+        { 
+          email: 'lebanon_investor@gmail.com', 
+          username: 'Anis Gemayel', 
+          role: 'reader', 
+          isPremiumSubscriber: false,
+          jobTitle: 'مستثمر ورجل أعمال',
+          organization: 'بيروت كابيتال',
+          sector: 'الاستثمار والمال',
+          country: 'لبنان',
+          registeredAt: '2026-08-10',
+          timestamp: '2026-08-10T18:45:00.000Z'
+        }
       ];
       localStorage.setItem('alwarraq_registered_users', JSON.stringify(dummy));
       setRegisteredUsers(dummy);
@@ -1257,7 +1302,7 @@ export default function AdminPanel({
             }`}
           >
             <UserCheck size={14} className="text-[#b91c1c]" />
-            <span className="font-extrabold">{isAr ? 'سجل المستخدمين المسجلين' : 'User Registry'}</span>
+            <span className="font-extrabold">{isAr ? 'سجل التسويق بالبريد والمستخدمين' : 'Email Marketing Registry'}</span>
             <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-red-100 text-[#b91c1c] px-1 font-black">{registeredUsers.length}</span>
           </button>
 
@@ -3208,8 +3253,13 @@ export default function AdminPanel({
                                   </span>
                                 )}
                               </div>
-                              <div className="text-[10px] text-zinc-500 font-bold">
-                                {user.registeredAt || '2026-08-01'}
+                              <div className="text-[10px] text-zinc-600 font-mono font-bold flex flex-col items-center gap-0.5">
+                                <span>{user.registeredAt || (user.timestamp ? user.timestamp.substring(0, 10) : '2026-08-01')}</span>
+                                {user.timestamp && (
+                                  <span className="text-[9px] text-zinc-400 font-normal">
+                                    {user.timestamp.includes('T') ? user.timestamp.split('T')[1].substring(0, 5) : (user.timestamp.length > 10 ? user.timestamp.substring(11, 16) : '')}
+                                  </span>
+                                )}
                               </div>
                             </td>
 

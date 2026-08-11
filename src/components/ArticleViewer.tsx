@@ -312,7 +312,7 @@ export default function ArticleViewer({
 
   const handleSpeak = () => {
     if (isPremiumLocked) {
-      alert(isAr ? 'عذراً، الاستماع الصوتي للمقالات الخاصة متاح لمشتركي العضوية الفاخرة فقط.' : 'Audio narration is restricted to Premium Patrons only.');
+      alert(isAr ? 'عذراً، هذا المقال متاح فقط للمستخدمين المسجلين - التسجيل مجاني حتى نهاية شهر أغسطس' : 'Sorry, this article is available only for registered users - Registration is free until the end of August');
       return;
     }
     if (!('speechSynthesis' in window)) {
@@ -358,7 +358,7 @@ export default function ArticleViewer({
   // 2. Fetch AI Summary from our Express custom endpoint
   const handleFetchSummary = async () => {
     if (isPremiumLocked) {
-      alert(isAr ? 'عذراً، التلخيص الآلي للمقالات الخاصة متاح لمشتركي العضوية الفاخرة فقط.' : 'AI executive summary services are restricted to Premium Patrons only.');
+      alert(isAr ? 'عذراً، هذا المقال متاح فقط للمستخدمين المسجلين - التسجيل مجاني حتى نهاية شهر أغسطس' : 'Sorry, this article is available only for registered users - Registration is free until the end of August');
       return;
     }
     if (aiSummary) return; // already loaded
@@ -388,7 +388,7 @@ export default function ArticleViewer({
   // 3. Fetch Political Grounding Supplement
   const handleFetchAnalysis = async () => {
     if (isPremiumLocked) {
-      alert(isAr ? 'عذراً، التحليل المتقدم للمقالات الخاصة متاح لمشتركي العضوية الفاخرة فقط.' : 'Strategic AI forecasting is restricted to Premium Patrons only.');
+      alert(isAr ? 'عذراً، هذا المقال متاح فقط للمستخدمين المسجلين - التسجيل مجاني حتى نهاية شهر أغسطس' : 'Sorry, this article is available only for registered users - Registration is free until the end of August');
       return;
     }
     if (aiAnalysis) return;
@@ -1195,17 +1195,6 @@ export default function ArticleViewer({
             {/* Headline Body Story content */}
             {isPremiumLocked ? (
               <div className="space-y-6 select-none" onCopy={(e) => { e.preventDefault(); alert(isAr ? 'عذراً، نسخ واستنساخ مقالات الورّاق محظور.' : 'Copying content is restricted.'); }}>
-                <div className="relative overflow-hidden select-none pointer-events-none">
-                  <div 
-                    className={`whitespace-pre-line text-black/40 tracking-wide leading-relaxed prose max-w-none font-medium filter blur-[3px] ${fontClass()}`}
-                  >
-                    {content.slice(0, 260)}...
-                    <br />
-                    [تغطية صحفية محمية] المقال محظور على القراء غير المسجلين - يرجى التسجيل المجاني فوراً للوصول الكامل.
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
-                </div>
-
                 {/* Registration Paywall Station */}
                 <div className="border-4 border-black bg-[#faf9f6] p-5 sm:p-7 text-right rtl:text-right ltr:text-left space-y-4 shadow-[6px_6px_0_0_#000] relative z-10 animate-fade-in my-2">
                   <div className="w-12 h-12 bg-red-800 text-white border-2 border-black flex items-center justify-center mx-auto rounded-none shadow-[2px_2px_0_0_#000]">
@@ -1215,13 +1204,13 @@ export default function ArticleViewer({
                   <div className="space-y-2 text-center">
                     <div className="bg-red-800 text-white p-3 border-2 border-black font-sans font-black text-sm md:text-base leading-snug shadow-[2px_2px_0_0_#000]">
                       {isAr 
-                        ? 'هذا المقال مخصص للمستخدمين المسجلين فقط - التسجيل مجاني حتى نهاية شهر آب/أغسطس' 
-                        : 'This article is restricted to registered users - Registration is free until the end of August'}
+                        ? 'عذراً، هذا المقال متاح فقط للمستخدمين المسجلين - التسجيل مجاني حتى نهاية شهر أغسطس' 
+                        : 'Sorry, this article is available only for registered users - Registration is free until the end of August'}
                     </div>
                     <p className="text-xs text-zinc-600 font-serif leading-relaxed max-w-lg mx-auto font-medium">
                       {isAr 
-                        ? 'يرجى ملء استبيان التسجيل السريع أدناه لإتاحة قراءة كافة التحقيقات والأخبار مجاناً وبلا رسوم حتى نهاية شهر أغسطس:' 
-                        : 'Please complete the short registration questionnaire below to instantly unlock full reading access:'}
+                        ? 'يرجى إكمال استبيان التسجيل أدناه لقراءة المقال كاملاً ومجاناً وبلا رسوم حتى نهاية شهر أغسطس:' 
+                        : 'Please complete the registration questionnaire below to view the full article for free:'}
                     </p>
                   </div>
 
@@ -1400,12 +1389,12 @@ export default function ArticleViewer({
             )}
 
             {/* Injected Interactive Map for Ali Al-Taher strategic hill investigation */}
-            {article.id === 'ali-al-taher-investigation' && (
+            {!isPremiumLocked && article.id === 'ali-al-taher-investigation' && (
               <AliAlTaherMap language={activeLang} />
             )}
 
             {/* Injected Interactive Regional Map for Lebanon conflict intensity */}
-            {article.id === 'israel-escalation-logic-lebanon' && (
+            {!isPremiumLocked && article.id === 'israel-escalation-logic-lebanon' && (
               <LebanonConflictMap 
                 language={activeLang} 
                 allArticles={allArticles}
@@ -1414,7 +1403,7 @@ export default function ArticleViewer({
             )}
 
             {/* Injected Interactive Risk Simulation Sandbox for proactive risk intelligence editorial */}
-            {article.id === 'lebanon-proactive-risk-intelligence-2026' && (
+            {!isPremiumLocked && article.id === 'lebanon-proactive-risk-intelligence-2026' && (
               <RiskSimulationSandbox language={activeLang} />
             )}
 

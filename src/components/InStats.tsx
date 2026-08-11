@@ -35,14 +35,27 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [chartMode, setChartMode] = useState<'combo' | 'volume' | 'gdp'>('combo');
   const [hoveredData, setHoveredData] = useState<RemittanceDataPoint | null>(null);
+  const [selectedYear, setSelectedYear] = useState<string>('2025');
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
+  const [containerWidth, setContainerWidth] = useState<number>(700);
+
+  // ResizeObserver for responsive D3 redraw
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      if (entries[0] && entries[0].contentRect) {
+        setContainerWidth(entries[0].contentRect.width);
+      }
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!svgRef.current || !containerRef.current) return;
 
-    const containerWidth = containerRef.current.clientWidth || 700;
-    const height = 360;
-    const margin = { top: 45, right: chartMode === 'combo' ? 55 : 30, bottom: 50, left: 55 };
+    const height = 370;
+    const margin = { top: 50, right: chartMode === 'combo' ? 55 : 30, bottom: 50, left: 55 };
     const width = Math.max(containerWidth, 320);
 
     const svg = d3.select(svgRef.current);
@@ -63,7 +76,7 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
       .scaleBand()
       .domain(REMITTANCE_HISTORICAL_DATA.map((d) => d.year))
       .range([0, innerWidth])
-      .padding(0.32);
+      .padding(0.30);
 
     const xPointScale = d3
       .scalePoint()
@@ -111,19 +124,20 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         .attr('rx', 3)
         .attr('ry', 3)
         .attr('fill', (d) => {
+          if (d.year === selectedYear) return '#0284c7';
           if (d.isPeakVol) return '#059669';
           if (d.isDecline) return '#dc2626';
           if (d.isEst) return '#d97706';
           return '#27272a';
         })
-        .attr('stroke', '#000000')
-        .attr('stroke-width', 1.5)
+        .attr('stroke', (d) => (d.year === selectedYear ? '#0284c7' : '#000000'))
+        .attr('stroke-width', (d) => (d.year === selectedYear ? 2.5 : 1.5))
         .style('cursor', 'pointer');
 
       bars
         .transition()
-        .duration(700)
-        .delay((_, i) => i * 45)
+        .duration(650)
+        .delay((_, i) => i * 40)
         .attr('y', (d) => yVolScale(d.volumeUSD))
         .attr('height', (d) => innerHeight - yVolScale(d.volumeUSD));
 
@@ -139,12 +153,12 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         .attr('font-family', 'monospace')
         .attr('font-size', '10px')
         .attr('font-weight', 'bold')
-        .attr('fill', (d) => (d.isDecline ? '#dc2626' : d.isPeakVol ? '#047857' : '#18181b'))
+        .attr('fill', (d) => (d.isDecline ? '#dc2626' : d.isPeakVol ? '#047857' : d.year === selectedYear ? '#0284c7' : '#18181b'))
         .text((d) => `$${d.volumeUSD}B`);
 
       bars
         .on('mouseenter', (event, d) => {
-          d3.select(event.currentTarget).attr('opacity', 0.8).attr('stroke-width', 2.5);
+          d3.select(event.currentTarget).attr('opacity', 0.85).attr('stroke-width', 2.5);
           const [mx, my] = d3.pointer(event, svgRef.current);
           setTooltipPos({ x: mx, y: my });
           setHoveredData(d);
@@ -157,6 +171,9 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
           d3.select(event.currentTarget).attr('opacity', 1).attr('stroke-width', 1.5);
           setHoveredData(null);
           setTooltipPos(null);
+        })
+        .on('click', (_, d) => {
+          setSelectedYear(d.year);
         });
     }
 
@@ -208,7 +225,7 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         .attr('stroke-dasharray', `${totalLength} ${totalLength}`)
         .attr('stroke-dashoffset', totalLength)
         .transition()
-        .duration(900)
+        .duration(850)
         .attr('stroke-dashoffset', 0);
 
       const points = lineG
@@ -219,10 +236,10 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         .attr('class', 'data-point')
         .attr('cx', (d) => xPointScale(d.year) || 0)
         .attr('cy', (d) => yGdpScale(d.gdpPct))
-        .attr('r', (d) => (d.isPeakPct ? 7 : 5))
-        .attr('fill', (d) => (d.isPeakPct ? '#f59e0b' : '#ffffff'))
+        .attr('r', (d) => (d.isPeakPct ? 7 : d.year === selectedYear ? 7 : 5))
+        .attr('fill', (d) => (d.isPeakPct ? '#f59e0b' : d.year === selectedYear ? '#0284c7' : '#ffffff'))
         .attr('stroke', chartMode === 'combo' ? '#2563eb' : '#047857')
-        .attr('stroke-width', (d) => (d.isPeakPct ? 3 : 2.5))
+        .attr('stroke-width', (d) => (d.isPeakPct || d.year === selectedYear ? 3 : 2.5))
         .style('cursor', 'pointer');
 
       lineG
@@ -237,7 +254,7 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         .attr('font-family', 'sans-serif')
         .attr('font-size', '10px')
         .attr('font-weight', 'bold')
-        .attr('fill', (d) => (d.isPeakPct ? '#d97706' : chartMode === 'combo' ? '#1d4ed8' : '#065f46'))
+        .attr('fill', (d) => (d.isPeakPct ? '#d97706' : d.year === selectedYear ? '#0284c7' : chartMode === 'combo' ? '#1d4ed8' : '#065f46'))
         .text((d) => `${d.gdpPct}%`);
 
       points
@@ -252,10 +269,62 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
           setTooltipPos({ x: mx, y: my });
         })
         .on('mouseleave', (event, d) => {
-          d3.select(event.currentTarget).attr('r', d.isPeakPct ? 7 : 5).attr('stroke-width', d.isPeakPct ? 3 : 2.5);
+          d3.select(event.currentTarget).attr('r', d.isPeakPct || d.year === selectedYear ? 7 : 5).attr('stroke-width', d.isPeakPct || d.year === selectedYear ? 3 : 2.5);
           setHoveredData(null);
           setTooltipPos(null);
+        })
+        .on('click', (_, d) => {
+          setSelectedYear(d.year);
         });
+    }
+
+    // Explicit D3 Callout Box for 2025-2026 Decline Highlight
+    if (chartMode === 'combo' || chartMode === 'volume') {
+      const x2024 = (xScale('2024') || 0) + xScale.bandwidth() / 2;
+      const x2025 = (xScale('2025') || 0) + xScale.bandwidth() / 2;
+      const y2024 = yVolScale(6.8);
+      const y2025 = yVolScale(6.3);
+
+      if (x2024 && x2025) {
+        const annotationG = g.append('g').attr('class', 'decline-annotation');
+
+        // Connecting arc
+        const pathData = `M ${x2024} ${y2024 - 18} C ${x2024 + 10} ${Math.min(y2024, y2025) - 35}, ${x2025 - 10} ${Math.min(y2024, y2025) - 35}, ${x2025} ${y2025 - 18}`;
+        
+        annotationG
+          .append('path')
+          .attr('d', pathData)
+          .attr('fill', 'none')
+          .attr('stroke', '#dc2626')
+          .attr('stroke-width', 2)
+          .attr('stroke-dasharray', '4,3');
+
+        // Callout Badge Box
+        const badgeX = (x2024 + x2025) / 2;
+        const badgeY = Math.min(y2024, y2025) - 38;
+
+        annotationG
+          .append('rect')
+          .attr('x', badgeX - 48)
+          .attr('y', badgeY - 12)
+          .attr('width', 96)
+          .attr('height', 20)
+          .attr('rx', 4)
+          .attr('fill', '#dc2626')
+          .attr('stroke', '#000000')
+          .attr('stroke-width', 1);
+
+        annotationG
+          .append('text')
+          .attr('x', badgeX)
+          .attr('y', badgeY + 2)
+          .attr('text-anchor', 'middle')
+          .attr('font-family', 'monospace')
+          .attr('font-size', '10px')
+          .attr('font-weight', 'black')
+          .attr('fill', '#ffffff')
+          .text(isAr ? 'تراجع -500M$' : 'Drop -$500M');
+      }
     }
 
     // X Axis
@@ -335,7 +404,9 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         .attr('fill', '#2563eb')
         .text(isAr ? 'نسبة الناتج (%)' : 'GDP Share (%)');
     }
-  }, [chartMode, isAr]);
+  }, [chartMode, isAr, containerWidth, selectedYear]);
+
+  const activeSelectedData = REMITTANCE_HISTORICAL_DATA.find((d) => d.year === selectedYear) || REMITTANCE_HISTORICAL_DATA[8];
 
   return (
     <div className="border-2 border-black p-5 bg-white space-y-4">
@@ -384,38 +455,54 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
         </div>
       </div>
 
-      {/* Interactive Legend */}
-      <div className="flex flex-wrap items-center gap-4 text-xs font-mono pt-1 pb-2 px-2 bg-zinc-50 border border-zinc-200">
-        {(chartMode === 'combo' || chartMode === 'volume') && (
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-zinc-800 border border-black inline-block rounded-xs"></span>
-            <span className="text-zinc-700">{isAr ? 'الحجم بالمليار ($B)' : 'Volume ($B)'}</span>
-          </div>
-        )}
-        {(chartMode === 'combo' || chartMode === 'volume') && (
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-emerald-600 border border-black inline-block rounded-xs"></span>
-            <span className="text-emerald-800 font-bold">{isAr ? 'أعلى تدفق (٢٠١٨ - $7.6B)' : 'Peak Volume (2018 - $7.6B)'}</span>
-          </div>
-        )}
-        {(chartMode === 'combo' || chartMode === 'volume') && (
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-red-600 border border-black inline-block rounded-xs"></span>
-            <span className="text-red-700 font-bold">{isAr ? 'تراجع ٢٠٢٥ (-$500M)' : '2025 Drop (-$500M)'}</span>
-          </div>
-        )}
-        {(chartMode === 'combo' || chartMode === 'gdp') && (
-          <div className="flex items-center gap-1.5">
-            <span className={`w-3 h-0.5 ${chartMode === 'combo' ? 'bg-blue-600' : 'bg-emerald-600'} inline-block`}></span>
-            <span className="w-2.5 h-2.5 rounded-full border border-black bg-amber-400 inline-block"></span>
-            <span className="text-zinc-700 font-bold">{isAr ? 'النسبة من الناتج (% GDP)' : 'GDP Contribution (%)'}</span>
-          </div>
-        )}
+      {/* Interactive Legend & Year Selector Buttons */}
+      <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono pt-1 pb-2 px-3 bg-zinc-50 border border-zinc-200">
+        <div className="flex flex-wrap items-center gap-4">
+          {(chartMode === 'combo' || chartMode === 'volume') && (
+            <div className="flex items-center gap-1.5">
+              <span className="w-3 h-3 bg-zinc-800 border border-black inline-block rounded-xs"></span>
+              <span className="text-zinc-700">{isAr ? 'الحجم بالمليار ($B)' : 'Volume ($B)'}</span>
+            </div>
+          )}
+          {(chartMode === 'combo' || chartMode === 'volume') && (
+            <div className="flex items-center gap-1.5">
+              <span className="w-3 h-3 bg-red-600 border border-black inline-block rounded-xs"></span>
+              <span className="text-red-700 font-bold">{isAr ? 'تراجع ٢٠٢٥ (-$500M)' : '2025 Drop (-$500M)'}</span>
+            </div>
+          )}
+          {(chartMode === 'combo' || chartMode === 'gdp') && (
+            <div className="flex items-center gap-1.5">
+              <span className={`w-3 h-0.5 ${chartMode === 'combo' ? 'bg-blue-600' : 'bg-emerald-600'} inline-block`}></span>
+              <span className="w-2.5 h-2.5 rounded-full border border-black bg-amber-400 inline-block"></span>
+              <span className="text-zinc-700 font-bold">{isAr ? 'النسبة من الناتج (% GDP)' : 'GDP Contribution (%)'}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Fast Year Buttons */}
+        <div className="flex items-center gap-1 flex-wrap">
+          <span className="text-[10px] text-zinc-400 font-bold mr-1">{isAr ? 'اختر السنة:' : 'Year:'}</span>
+          {REMITTANCE_HISTORICAL_DATA.map((d) => (
+            <button
+              key={d.year}
+              onClick={() => setSelectedYear(d.year)}
+              className={`px-2 py-0.5 text-[10px] font-mono font-bold cursor-pointer transition-colors border ${
+                selectedYear === d.year
+                  ? 'bg-sky-600 text-white border-sky-800'
+                  : d.isDecline
+                  ? 'bg-red-50 text-red-700 border-red-300 hover:bg-red-100'
+                  : 'bg-white text-zinc-700 border-zinc-300 hover:bg-zinc-100'
+              }`}
+            >
+              {d.year}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Chart Canvas Area */}
       <div ref={containerRef} className="relative w-full overflow-hidden bg-white border border-zinc-200 p-2">
-        <svg ref={svgRef} className="w-full h-[360px] block"></svg>
+        <svg ref={svgRef} className="w-full h-[370px] block"></svg>
 
         {/* Hover Tooltip Overlay */}
         {hoveredData && tooltipPos && (
@@ -448,6 +535,48 @@ function RemittancesD3Charts({ isAr }: { isAr: boolean }) {
           </div>
         )}
       </div>
+
+      {/* Selected Year Detailed Telemetry Breakdown Card */}
+      {activeSelectedData && (
+        <div className="p-4 bg-sky-50/60 border-2 border-sky-800 space-y-2 animate-fade-in">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-sky-200 pb-2">
+            <div className="flex items-center gap-2">
+              <span className="bg-sky-800 text-white font-mono font-black text-xs px-2 py-0.5">
+                {activeSelectedData.year}
+              </span>
+              <h5 className="font-sans font-black text-sm text-sky-950">
+                {isAr ? activeSelectedData.labelAr : activeSelectedData.labelEn}
+              </h5>
+            </div>
+            <div className="flex items-center gap-3 font-mono text-xs font-bold">
+              <span className="text-zinc-800">
+                {isAr ? 'حجم التدفق:' : 'Inflow:'} <strong className="text-emerald-700">${activeSelectedData.volumeUSD}B</strong>
+              </span>
+              <span className="text-zinc-800">
+                {isAr ? 'حصة الناتج:' : 'GDP Share:'} <strong className="text-blue-700">{activeSelectedData.gdpPct}%</strong>
+              </span>
+              <span className={`px-1.5 py-0.5 text-[10px] ${activeSelectedData.isDecline ? 'bg-red-600 text-white' : 'bg-sky-200 text-sky-900'}`}>
+                {activeSelectedData.changeUSD}
+              </span>
+            </div>
+          </div>
+          <p className="text-xs text-zinc-700 leading-relaxed font-sans">
+            {activeSelectedData.year === '2025' ? (
+              isAr
+                ? 'تظهر البيانات الرسمية انخفاضاً حاداً بمقدار ٥٠٠ مليون دولار مقارنة بعام ٢٠٢٤، متأثرة بتقشف الشركات في دول الخليج، وإلغاء تحويلات المغتربين الصيفية بسبب الأوضاع الأمنية، مع استمرار تحويلات الخردوات والتحويلات الصغيرة ($100-$300) عبر OMT وWish Money كشبكة أمان للطبقات الفقيرة.'
+                : 'Official telemetry reveals a sharp $500M contraction from 2024, driven by Gulf corporate cost-cutting, cancelled summer diaspora trips due to geopolitical tensions, and heavy reliance on micro-transfers ($100-$300) via OMT and Wish Money to support vulnerable households.'
+            ) : activeSelectedData.year === '2026*' ? (
+              isAr
+                ? 'تشير التقديرات الأولوية لعام ٢٠٢٦ إلى استقرار الحجم عند حدود ٦.٢ مليارات دولار بنسبة مشاركة قدرها ٢٤.٥٪ من الناتج القومي، وتعمل المنظومة المالية على تكييف قنوات OMT للتخفيف من التضخم العالمي وضمان وصول المساعدات العائلية المباشرة.'
+                : 'Projections for 2026 estimate inflow stabilizing around $6.2B (24.5% of GDP), as diaspora channels adjust to global inflation and regional transport shocks while preserving baseline family support.'
+            ) : (
+              isAr
+                ? `بيانات عام ${activeSelectedData.year}: بلغت حجم التدفقات ${activeSelectedData.volumeUSD} مليار دولار بنسبة مساهمة ${activeSelectedData.gdpPct}٪ من الناتج المحلي الإجمالي في تلك الفترة.`
+                : `Telemetry for ${activeSelectedData.year}: Recorded $${activeSelectedData.volumeUSD} billion in inflows representing ${activeSelectedData.gdpPct}% of nominal GDP.`
+            )}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
@@ -463,7 +592,7 @@ interface InStatsProps {
 export default function InStats({ language, layoutMode, onSelectArticle }: InStatsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
-  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction' | 'remittances'>('bdl-budget');
+  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction' | 'remittances'>('remittances');
   const [activeInsight, setActiveInsight] = useState<number | null>(1);
   const [isArticleExpanded, setIsArticleExpanded] = useState<boolean>(false);
 

@@ -293,8 +293,8 @@ export default function UserAuthModal({ isOpen, onClose, language, onLoginSucces
             {/* Promo Banner */}
             <div className="bg-red-900 text-white p-2.5 border-2 border-black font-sans font-bold text-xs text-center leading-snug">
               {isAr 
-                ? 'هذا المقال مخصص للمستخدمين المسجلين فقط - التسجيل مجاني حتى نهاية شهر آب/أغسطس' 
-                : 'This article is restricted to registered users - Registration is free until the end of August'}
+                ? 'عذراً، هذا المقال متاح فقط للمستخدمين المسجلين - التسجيل مجاني حتى نهاية شهر أغسطس' 
+                : 'Sorry, this article is available only for registered users - Registration is free until the end of August'}
             </div>
 
             <div>
