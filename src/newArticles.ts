@@ -2,6 +2,153 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'solidere-arbitrage-maan-barazy-2026-investigation',
+    slug: 'solidere-arbitrage-maan-barazy-2026-investigation',
+    focusKeyword: 'سوليدير-مراجحة-مالية-خسائر-البنوك-معن-براق-تحقيق-استقصائي',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'lebanon', 'exclusives', 'alwarraq-investigations', 'economy', 'markets', 'investigations'],
+    titleAr: 'هندسة النهب المنظم: كيف جرى تحويل خسائر البنوك إلى مليارات عينية عبر "مصيدة" سوليدير وبغطاء رسمي؟',
+    titleEn: 'Engineered Grand Larceny: How Bank Losses Were Converted into Solid Assets via the "Solidere Trap" Under Official Protection',
+    summaryAr: 'بقلم رئيس التحرير معن برّاق — ينسف هذا التحقيق الاستقصائي الفكرة القائلة بأن ارتفاع أسهم "سوليدير" كان تحوطاً طبيعياً، كاشفاً عن عملية مراجحة مالية (Arbitrage) واختلاس هيكلي جرى خلاله امتصاص دماء المودعين لإطفاء ديون المصارف بالـ "لولار" وتملّك عقارات بيروت بمليارات الدولارات الحقيقية.',
+    summaryEn: 'By Editor-in-Chief Maan Barazy — An investigative report dismantling the myth that Solidere stock surges were mere inflation hedges, exposing an arbitrage scheme that erased bank debts in lollars while securing billions in real estate assets at depositors\' expense.',
+    excerptAr: 'تحقيق استقصائي بقلم رئيس التحرير معن برّاق كاشفاً عن هندسة "مصيدة سوليدير" وتحويل ديون المصارف الهالكة إلى ملكيات عقارية بمليارات الدولارات عبر الاقتطاع من المودعين.',
+    excerptEn: 'Investigative report by Editor-in-Chief Maan Barazy revealing how bank debts were converted into multi-billion real estate holdings through the Solidere stock arbitrage trap.',
+    author: {
+      nameAr: 'معن برّاق — رئيس تحرير «الورّاق نيوز»',
+      nameEn: 'Maan Barazy — Al-Warraq News Editor-in-Chief',
+      titleAr: 'رئيس التحرير والمدير العام',
+      titleEn: 'Editor-in-Chief & Managing Director',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-10',
+    readTimeAr: '١٢ دقيقة قراءة',
+    readTimeEn: '12 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: true,
+    views: 58900,
+    tags: [
+      'سوليدير', 'معن_براق', 'رئيس_التحرير', 'لبنان', 'البنوك', 'المراجحة_المالية', 'اللولار', 'بورصة_بيروت', 'أنطون_صحناوي', 'كريم_سويد', 'مصرف_لبنان', 'التحقيقات_الاستقصائية',
+      'Solidere', 'MaanBarazy', 'EditorInChief', 'LebanonEconomy', 'BankingArbitrage', 'BeirutStockExchange', 'Lollar'
+    ],
+    hashtags: ['SolidereTrap', 'MaanBarazyInvestigation', 'LebanonBankingLarceny', 'BeirutRealEstate', 'AlWarraqExclusive'],
+    contentAr: `### بقلم رئيس التحرير: معن برّاق (Maan Barazy — Alwarraq News Editor-in-Chief)
+
+تنسف الحقائق والبيانات المالية الفكرة القائلة بأن ارتفاع أسهم شركة "سوليدير" (الفئتان A و B) في بورصة بيروت كان مجرد حركة "تحوط طبيعية" ضد الانهيار النقدي. الواقع الاستقصائي يكشف عن عملية مراجحة مالية (Arbitrage) واختلاس هيكلي واسع النطاق، جرى خلاله امتصاص دماء صغار المودعين لتحويل ديون البنوك الهالكة إلى ملكيات عقارية صلبة بمليارات الدولارات.
+
+---
+
+### ⚡ أبرز أرقام "الصفقة الكبرى" (2019 - 2026)
+
+* **2.5 مليار دولار صافي أرباح المراجحة:** أرباح استثنائية حققها تحالف كبار النافذين والمصارف عبر إطفاء ديون واهية بالـ "لولار" مقابل أصول عينية صلبة بدولارات حقيقية.
+* **اقتطاع وحشي يناهز 95%:** تآكل القدرة الشرائية الحقيقية للمودع الصغير من $6.50 عام 2019 إلى $3.78 فقط عام 2026، رغم القفزة الوهمية لسعر السهم بالبورصة إلى $75.60.
+* **45% من القوة التصويتية تحت السيطرة الاحتكارية:** استحواذ تحالف مصرفي/سياسي محدود على ما يزيد عن 45% من مالية وسلطة قرار شركة سوليدير.
+* **التفاف صريح على سقف الـ 10%:** خرق القوانين المحددة لنسبة الملكية القصوى عبر واجهات أوفشور شبكية ممتدة بين بنما، الجزر العذراء (BVI)، ولويكسمبورغ.
+
+---
+
+### 💣 محاكاة التشوه المالي: مصيدة السهم واقتطاع الـ 95%
+
+بينما كان صغار المودعين يهرعون لشراء أسهم "سوليدير" بالدولار المصرفي المحتجز (Lollar) ظناً منهم أنهم يحمون مدخراتهم من الهيركات، كان كبار النافذين يديرون اللعبة من الخلف: شراء كتل الأسهم وتجميعها لتصفية التزاماتهم المالية، مع إعادة تصدير الأرباح بالدولار النقدي (Fresh USD) للخارج.
+
+#### جدول مسار تآكل القوة الشرائية مقابل التضخم الوهمي للسهم (2019 - 2026)
+
+| السنة | سعر التداول بالبورصة ($ Lollar) | القيمة العينية الحقيقية للسهم ($ Fresh NAV) | نسبة خصم/اقتطاع اللولار | القدرة الشرائية الفعالية للمودع ($ Real Yield) |
+| :--- | :--- | :--- | :--- | :--- |
+| **2019** | $6.50 | $22.00 | 0% | $6.50 |
+| **2021** | $13.10 | $24.40 | 60% | $5.24 |
+| **2023** | $26.40 | $26.80 | 82% | $4.75 |
+| **2025** | $53.25 | $29.20 | 92% | $4.26 |
+| **2026** | $75.60 | $30.40 | 95% | $3.78 |
+
+**النتيجة الصادمة:** ارتفاع سعر السهم الاسمي بالدولار المصرفي بنسبة تتجاوز 1060% قابلته خسارة فعلية للمودع الصغير تجاوزت 90% إلى 95% من القيمة النقدية الحقيقية لوديعته.
+
+---
+
+### 🔍 اختراق القانون وسرية المستفيد الحقيقي (UBO)
+
+تمنع الأنظمة والقوانين المرعية أي طرف من امتلاك أكثر من 10% من أسهم شركة سوليدير لمنع الهيمنة الاحتكارية. لكن الواقع أظهر تجميع كتل هائلة لصالح كبار المتمولين والمصارف (وفي مقدمتهم شخصيات نافذة مثل المصرفي أنطون صحناوي رئيس مجموعة SGBL وأطراف مرتبطة به):
+
+1. **التعمية الكاملة عبر شركات الأوفشور (UBO Concealment):** تقطيع الملكيات الكبيرة ونشرها عبر ملاذات ضريبية وحسابات حظر إدارية دون أي تدقيق من هيئة الأسواق المالية (CMA).
+2. **التداول المباشر للنافذين (Insider Trading):** غياب تام للرقابة على حركة التداول اليومي، مما أتاح التلاعب الممنهج بالأسعار وإعادة تشكيل مجالس الإدارة وفق تسويات جانبية بين كتل البنوك الكبرى.
+
+---
+
+### 🏛️ مظلة الحماية: مظلة حاكمية مصرف لبنان وبورصة بيروت
+
+تخضع بورصة بيروت وهيئة الأسواق المالية (CMA) نفوذاً وتنظيماً لسلطة حاكمية مصرف لبنان والمجلس المركزي:
+
+* **غياب الاستقلالية التنفيذية:** تحول رئيس لجنة بورصة بيروت إلى منفذ للسياسات النقدية والمالية التي تمليها الحاكمية.
+* **التغطية التنظيمية المستمرة:** سواء خلال الحاكمية السابقة أو في ظل الحاكمية الحالية (الحاكم كريم سويد)، استمر الامتناع الممنهج عن فرض قواعد الإفصاح عن هوية المشتري النهائي أو منع التداول المزدوج.
+* **شرعنة غسيل الالتزامات:** وفر هذا الصمت التنظيمي غطاءً كاملاً للبنوك لتطهير ميزانياتها وإعادة هيكلة خسائرها على حساب أصول العاصمة وحقوق المالكين الأصليين والمودعين.
+
+---
+
+### 💰 حصيلة الغنيمة: كيف تحولت أزمة البلد إلى مليارات نقدية؟
+
+1. **إطفاء ديون بقيمة 1.8 إلى 2.5 مليار دولار:** سددت المصارف والنافذون التزامات بالدولار الصافي من خلال شراء أسهم سوليدير بـ "اللولار" المخصوم.
+2. **تهريب العوائد وتجريد الاقتصاد:** بيعت المشروعات والأصول العقارية التابعة لـ (سوليدير الدولية) بالعملة الصعبة وتم إيداع أرباحها في حسابات خارجية، حارمةً السوق المحلي من أي سيولة حقيقية.
+3. **تكريس الاحتكار العقاري:** إحكام القبضة على أكثر من 45% من القوة المالية والتصويتية بقلب العاصمة بيروت، ما أجهض أي أمل في إحياء اقتصاد نزهٍ أو إجراء إصلاحات قانونية ملموسة.`,
+    contentEn: `### Byline: Maan Barazy (Alwarraq News Editor-in-Chief)
+
+Financial data and investigative evidence dismantle the assertion that the surge of Solidere shares (Categories A and B) on the Beirut Stock Exchange was a natural inflation hedge. The investigation uncovers a massive financial arbitrage operation and structural expropriation, through which small depositors’ funds were absorbed to extinguish toxic bank liabilities in exchange for billions in tangible real estate assets.
+
+---
+
+### ⚡ Key Figures of the "Grand Deal" (2019 - 2026)
+
+* **$2.5 Billion Net Arbitrage Profit:** Extraordinary profits reaped by a coalition of influential elites and commercial banks by wiping out worthless "Lollar" debts in exchange for concrete physical real estate assets in fresh dollars.
+* **Brutal 95% Haircut:** Total erosion of small depositors' purchasing power from $6.50 in 2019 to just $3.78 in 2026, despite the artificial surge of nominal share prices to $75.60 on the exchange.
+* **45% Voting Monopoly:** Consolidation of over 45% of financial and voting control in Solidere by a select banking-political cartel.
+* **Overt Violation of the 10% Ownership Cap:** Bypassing statutory ownership caps via complex offshore shells spanning Panama, the British Virgin Islands (BVI), and Luxembourg.
+
+---
+
+### 💣 Financial Distortion Simulation: The Stock Trap & 95% Cut
+
+While small depositors rushed to purchase Solidere shares using trapped banking dollars (Lollars) hoping to shield their savings from haircuts, financial insiders orchestrated the scheme behind closed doors: accumulating stock blocks to clear liabilities while exporting profits in fresh USD abroad.
+
+#### Erosion of Purchasing Power vs. Artificial Stock Inflation (2019 - 2026)
+
+| Year | Exchange Price ($ Lollar) | Fresh NAV Real Value ($ Fresh) | Lollar Discount Rate | Real Purchasing Power ($ Yield) |
+| :--- | :--- | :--- | :--- | :--- |
+| **2019** | $6.50 | $22.00 | 0% | $6.50 |
+| **2021** | $13.10 | $24.40 | 60% | $5.24 |
+| **2023** | $26.40 | $26.80 | 82% | $4.75 |
+| **2025** | $53.25 | $29.20 | 92% | $4.26 |
+| **2026** | $75.60 | $30.40 | 95% | $3.78 |
+
+**Shocking Outcome:** While nominal share prices in banking dollars soared over 1060%, small depositors suffered an effective purchasing power loss exceeding 90% to 95% on their real savings value.
+
+---
+
+### 🔍 Statutory Evasion & UBO Concealment
+
+Lebanese regulations prohibit any single entity from acquiring more than 10% of Solidere shares to prevent monopolistic control. However, investigation reveals massive stock consolidation for high-net-worth financiers and banks (notably figures like banker Antoun Sehnaoui of SGBL and affiliated parties):
+
+1. **Offshore Concealment (UBO Concealment):** Fragmenting large shareholdings across tax havens and custodial accounts without scrutiny from the Capital Markets Authority (CMA).
+2. **Unchecked Insider Trading:** Complete absence of regulatory oversight on daily trading, allowing systematic price manipulation and board restructuring through side deals.
+
+---
+
+### 🏛️ Regulatory Shield: Banque du Liban & Beirut Stock Exchange
+
+The Beirut Stock Exchange and Capital Markets Authority (CMA) remain under the regulatory authority of Banque du Liban (BDL) and its Central Council:
+
+* **Absence of Executive Independence:** The head of the Beirut Stock Exchange committee functions as an execution arm for BDL monetary directives.
+* **Ongoing Regulatory Cover:** Both under past leadership and under current Governor Karim Souaid, regulatory bodies systematically refrained from enforcing Ultimate Beneficial Owner (UBO) disclosures or curbing dual-currency arbitrage.
+* **Legitimizing Debt Laundering:** This regulatory silence provided full cover for commercial banks to cleanse balance sheets and restructure losses at the expense of capital city assets and depositors' rights.
+
+---
+
+### 💰 Total Loot: Converting National Collapse into Hard Cash
+
+1. **$1.8B to $2.5B Debt Extinction:** Banks and elites extinguished hard USD obligations by buying Solidere shares at discounted "Lollar" rates.
+2. **Siphoning Yields Abroad:** Assets and projects under Solidere International were sold in hard currency, with proceeds parked in offshore accounts, draining local liquidity.
+3. **Consolidating Real Estate Monopoly:** Securing over 45% of voting power in downtown Beirut, thwarting hopes for economic reform or legal accountability.`
+  },
+  {
     id: 'solidere-cabinet-decision-2026-investigation',
     slug: 'solidere-cabinet-decision-2026-investigation',
     focusKeyword: 'سوليدير-قرار-مجلس-الوزراء-2026-محضر-70-تمديد-8-سنوات-شروط-حقوق-الدولة',

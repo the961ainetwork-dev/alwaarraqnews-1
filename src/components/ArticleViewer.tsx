@@ -32,6 +32,7 @@ interface ArticleViewerProps {
   savedArticleIds?: string[];
   onToggleSaveMultipleArticles?: (articles: Article[], save: boolean) => void;
   onTagClick?: (tag: string, e: React.MouseEvent) => void;
+  onLoginSuccess?: (user: any) => void;
 }
 
 export default function ArticleViewer({
@@ -47,6 +48,7 @@ export default function ArticleViewer({
   savedArticleIds = [],
   onToggleSaveMultipleArticles,
   onTagClick,
+  onLoginSuccess,
 }: ArticleViewerProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
@@ -76,7 +78,70 @@ export default function ArticleViewer({
   const [ctaSuccess, setCtaSuccess] = useState(false);
   const [activeAuthorProfile, setActiveAuthorProfile] = useState<AuthorProfile | null>(null);
 
-  const isPremiumLocked = article.isPremium && (!currentUser || (currentUser.role !== 'admin' && !currentUser.isPremiumSubscriber));
+  // Inline Paywall Questionnaire State
+  const [inlineUsername, setInlineUsername] = useState('');
+  const [inlineEmail, setInlineEmail] = useState('');
+  const [inlinePassword, setInlinePassword] = useState('');
+  const [inlineJobTitle, setInlineJobTitle] = useState('');
+  const [inlineOrg, setInlineOrg] = useState('');
+  const [inlineSector, setInlineSector] = useState('شؤون الشرق الأوسط والسياسة');
+  const [inlineCountry, setInlineCountry] = useState('');
+  const [inlineErr, setInlineErr] = useState('');
+  const [inlineSuccess, setInlineSuccess] = useState('');
+
+  // Global access restriction: all articles require user registration
+  const isRegisteredLocked = !currentUser;
+  const isPremiumLocked = isRegisteredLocked || (article.isPremium && (currentUser.role !== 'admin' && !currentUser.isPremiumSubscriber));
+
+  const handleInlineRegistration = (e: React.FormEvent) => {
+    e.preventDefault();
+    setInlineErr('');
+    setInlineSuccess('');
+
+    if (!inlineEmail.trim() || !inlineEmail.includes('@')) {
+      setInlineErr(isAr ? 'يرجى إدخال بريد إلكتروني صحيح.' : 'Valid email required.');
+      return;
+    }
+    if (inlinePassword.length < 6) {
+      setInlineErr(isAr ? 'كلمة المرور يجب أن لا تقل عن ٦ خانات.' : 'Password must be at least 6 characters.');
+      return;
+    }
+
+    const rawUsers = localStorage.getItem('alwarraq_registered_users');
+    let users = [];
+    if (rawUsers) {
+      try { users = JSON.parse(rawUsers); } catch(e) {}
+    }
+
+    const existing = users.find((u: any) => u.email.toLowerCase() === inlineEmail.trim().toLowerCase());
+    if (existing) {
+      setInlineErr(isAr ? 'البريد الإلكتروني مسجل بالفعل. يرجى تسجيل الدخول.' : 'Email already registered. Please sign in.');
+      return;
+    }
+
+    const newUser = {
+      email: inlineEmail.trim(),
+      username: inlineUsername.trim() || inlineEmail.split('@')[0],
+      password: inlinePassword,
+      role: 'reader',
+      jobTitle: inlineJobTitle.trim() || (isAr ? 'متابع وقارئ صحفي' : 'General Reader'),
+      organization: inlineOrg.trim() || (isAr ? 'غير محدد' : 'N/A'),
+      sector: inlineSector || (isAr ? 'شؤون الشرق الأوسط والسياسة' : 'Middle East Affairs'),
+      country: inlineCountry.trim() || (isAr ? 'لبنان' : 'Lebanon'),
+      registeredAt: new Date().toISOString().replace('T', ' ').substring(0, 16)
+    };
+
+    users.push(newUser);
+    localStorage.setItem('alwarraq_registered_users', JSON.stringify(users));
+    localStorage.setItem('alwarraq_current_user', JSON.stringify(newUser));
+
+    setInlineSuccess(isAr ? '✓ تم التسجيل بنجاح! جاري فتح المقال...' : '✓ Registration complete! Unlocking article...');
+    setTimeout(() => {
+      if (onLoginSuccess) {
+        onLoginSuccess(newUser);
+      }
+    }, 1000);
+  };
 
   const isInvestigativeArticle = (art: any) => {
     if (!art) return false;
@@ -1129,75 +1194,206 @@ export default function ArticleViewer({
 
             {/* Headline Body Story content */}
             {isPremiumLocked ? (
-              <div className="space-y-6">
+              <div className="space-y-6 select-none" onCopy={(e) => { e.preventDefault(); alert(isAr ? 'عذراً، نسخ واستنساخ مقالات الورّاق محظور.' : 'Copying content is restricted.'); }}>
                 <div className="relative overflow-hidden select-none pointer-events-none">
                   <div 
-                    className={`whitespace-pre-line text-black/45 tracking-wide leading-relaxed prose max-w-none font-medium filter blur-[2.5px] ${fontClass()}`}
+                    className={`whitespace-pre-line text-black/40 tracking-wide leading-relaxed prose max-w-none font-medium filter blur-[3px] ${fontClass()}`}
                   >
-                    {content.slice(0, 220)}...
+                    {content.slice(0, 260)}...
                     <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tracking market assets, sovereign liquidity limits, HSBC private bank assets, and Lebanese capital flight reserves.
+                    [تغطية صحفية محمية] المقال محظور على القراء غير المسجلين - يرجى التسجيل المجاني فوراً للوصول الكامل.
                   </div>
                   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
                 </div>
 
-                {/* Secure Premium Lock Box Station */}
-                <div className="border-4 border-black bg-[#faf9f6] p-6 text-center space-y-4 shadow-[4px_4px_0_0_#000] relative z-10 animate-fade-in my-2">
-                  <div className="w-12 h-12 bg-red-50 border-2 border-black text-[#b91c1c] flex items-center justify-center mx-auto rounded-sm">
-                    <Lock size={20} className="animate-pulse" />
+                {/* Registration Paywall Station */}
+                <div className="border-4 border-black bg-[#faf9f6] p-5 sm:p-7 text-right rtl:text-right ltr:text-left space-y-4 shadow-[6px_6px_0_0_#000] relative z-10 animate-fade-in my-2">
+                  <div className="w-12 h-12 bg-red-800 text-white border-2 border-black flex items-center justify-center mx-auto rounded-none shadow-[2px_2px_0_0_#000]">
+                    <Lock size={22} className="animate-pulse" />
                   </div>
-                  
-                  <div className="space-y-1">
-                    <h4 className="font-sans font-black text-sm md:text-base uppercase tracking-tight text-neutral-900">
-                      {isAr ? 'حظر سيادي: المحتوى متاح حصرياً للمشتركين بجريدة الوراق' : 'Sovereign Restriction: Report Reserved for Patrons'}
-                    </h4>
-                    <p className="text-[10px] text-zinc-500 font-bold max-w-md mx-auto leading-normal">
+
+                  <div className="space-y-2 text-center">
+                    <div className="bg-red-800 text-white p-3 border-2 border-black font-sans font-black text-sm md:text-base leading-snug shadow-[2px_2px_0_0_#000]">
                       {isAr 
-                        ? 'إن تحقيقات ديوان الوراق الميدانية، والملفات السياسية والمصرفية الكبرى، محمية ومخصصة لأصحاب العضويات والمساهمات الاقتصادية المستقلة.' 
-                        : 'Al-Warraq’s deep geopolitical coverage, banking leaks, and chief editor bulletins are secured under patron-only subscription tiers.'}
+                        ? 'هذا المقال مخصص للمستخدمين المسجلين فقط - التسجيل مجاني حتى نهاية شهر آب/أغسطس' 
+                        : 'This article is restricted to registered users - Registration is free until the end of August'}
+                    </div>
+                    <p className="text-xs text-zinc-600 font-serif leading-relaxed max-w-lg mx-auto font-medium">
+                      {isAr 
+                        ? 'يرجى ملء استبيان التسجيل السريع أدناه لإتاحة قراءة كافة التحقيقات والأخبار مجاناً وبلا رسوم حتى نهاية شهر أغسطس:' 
+                        : 'Please complete the short registration questionnaire below to instantly unlock full reading access:'}
                     </p>
                   </div>
 
-                  {/* Pricing brief summary */}
-                  <div className="grid grid-cols-2 gap-4 max-w-xs mx-auto py-2">
-                    <div className="p-2.5 border-2 border-black bg-white text-center">
-                      <span className="block font-mono text-[9px] text-zinc-400 font-bold uppercase">{isAr ? 'الخيار الشهري' : 'MONTHLY PATRON'}</span>
-                      <span className="block font-sans font-black text-xl text-black">$20<span className="text-[10px] font-mono text-zinc-400 font-medium">/mo</span></span>
-                    </div>
-                    <div className="p-2.5 border-2 border-black bg-white text-center relative">
-                      <span className="block font-mono text-[9px] text-zinc-400 font-bold uppercase">{isAr ? 'الخيار السنوي' : 'ANNUAL DIRECT'}</span>
-                      <span className="block font-sans font-black text-xl text-[#b91c1c]">$200<span className="text-[10px] font-mono text-zinc-400 font-medium">/yr</span></span>
-                      <span className="absolute -top-2 right-1/2 translate-x-1/2 bg-[#b91c1c] text-white text-[7px] font-mono px-1 font-black uppercase">
-                        {isAr ? 'توفير' : 'SAVE'}
-                      </span>
-                    </div>
-                  </div>
+                  {/* Inline Registration Form Questionnaire */}
+                  {!currentUser ? (
+                    <form onSubmit={handleInlineRegistration} className="space-y-3 max-w-md mx-auto pt-2 border-t border-dashed border-zinc-300">
+                      {inlineErr && (
+                        <div className="bg-red-100 border border-red-400 text-red-800 text-xs p-2 font-bold text-center">
+                          {inlineErr}
+                        </div>
+                      )}
+                      {inlineSuccess && (
+                        <div className="bg-emerald-100 border border-emerald-400 text-emerald-800 text-xs p-2 font-bold text-center">
+                          {inlineSuccess}
+                        </div>
+                      )}
 
-                  <div className="flex flex-col gap-2 max-w-sm mx-auto pt-3">
-                    {!currentUser ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                          <label className="block text-xxs font-mono font-black text-zinc-600 mb-1">
+                            {isAr ? 'الاسم الكامل / اسم القارئ *' : 'Full Name *'}
+                          </label>
+                          <input 
+                            type="text" 
+                            required
+                            value={inlineUsername}
+                            onChange={(e) => setInlineUsername(e.target.value)}
+                            placeholder={isAr ? 'مثال: د. معن البرّاق' : 'Dr. Maan Barazy'}
+                            className="w-full text-xs p-2 border-2 border-black bg-white font-bold outline-none"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xxs font-mono font-black text-zinc-600 mb-1">
+                            {isAr ? 'البريد الإلكتروني *' : 'Email Address *'}
+                          </label>
+                          <input 
+                            type="email" 
+                            required
+                            value={inlineEmail}
+                            onChange={(e) => setInlineEmail(e.target.value)}
+                            placeholder="user@domain.com"
+                            className="w-full text-xs p-2 border-2 border-black bg-white font-bold outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xxs font-mono font-black text-zinc-600 mb-1">
+                          {isAr ? 'كلمة المرور (٦ خانات كحد أدنى) *' : 'Password (Min 6 chars) *'}
+                        </label>
+                        <input 
+                          type="password" 
+                          required
+                          value={inlinePassword}
+                          onChange={(e) => setInlinePassword(e.target.value)}
+                          placeholder="••••••••"
+                          className="w-full text-xs p-2 border-2 border-black bg-white font-bold outline-none"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                        <div>
+                          <label className="block text-xxs font-mono text-zinc-600 mb-1">
+                            {isAr ? 'المسمى الوظيفي / المهنة' : 'Job Title / Profession'}
+                          </label>
+                          <input 
+                            type="text" 
+                            value={inlineJobTitle}
+                            onChange={(e) => setInlineJobTitle(e.target.value)}
+                            placeholder={isAr ? 'باحث، محلل، صحفي' : 'Researcher, Analyst'}
+                            className="w-full text-xs p-2 border border-black bg-white font-semibold"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xxs font-mono text-zinc-600 mb-1">
+                            {isAr ? 'المؤسسة / جهة العمل' : 'Organization'}
+                          </label>
+                          <input 
+                            type="text" 
+                            value={inlineOrg}
+                            onChange={(e) => setInlineOrg(e.target.value)}
+                            placeholder={isAr ? 'جامعة، مركز أبحاث' : 'Institute, Firm'}
+                            className="w-full text-xs p-2 border border-black bg-white font-semibold"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                          <label className="block text-xxs font-mono text-zinc-600 mb-1">
+                            {isAr ? 'مجال الاهتمام الرئيسي' : 'Primary Interest'}
+                          </label>
+                          <select
+                            value={inlineSector}
+                            onChange={(e) => setInlineSector(e.target.value)}
+                            className="w-full text-xs p-2 border border-black bg-white font-semibold"
+                          >
+                            <option value="شؤون الشرق الأوسط والسياسة">{isAr ? 'شؤون الشرق الأوسط والسياسة' : 'Middle East & Politics'}</option>
+                            <option value="الأسواق المالية والاقتصاد">{isAr ? 'الأسواق المالية والاقتصاد' : 'Financial Markets & Econ'}</option>
+                            <option value="النفط والطاقة والموارد">{isAr ? 'النفط والطاقة والموارد' : 'Oil, Gas & Energy'}</option>
+                            <option value="التكنولوجيا والذكاء الاصطناعي">{isAr ? 'التكنولوجيا والذكاء الاصطناعي' : 'Tech & AI Research'}</option>
+                            <option value="التحقيقات والأرشيف السيادي">{isAr ? 'التحقيقات والأرشيف السيادي' : 'Investigations & Archives'}</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-xxs font-mono text-zinc-600 mb-1">
+                            {isAr ? 'الدولة / المدينة' : 'Country / City'}
+                          </label>
+                          <input 
+                            type="text" 
+                            value={inlineCountry}
+                            onChange={(e) => setInlineCountry(e.target.value)}
+                            placeholder={isAr ? 'بيروت، الرياض' : 'Beirut, Riyadh'}
+                            className="w-full text-xs p-2 border border-black bg-white font-semibold"
+                          />
+                        </div>
+                      </div>
+
                       <button
-                        onClick={() => { stopAudio(); onAuthClick(); }}
-                        className="w-full bg-black hover:bg-neutral-800 text-white font-black text-xs uppercase py-2.5 border border-black cursor-pointer transition-all"
+                        type="submit"
+                        className="w-full bg-red-800 hover:bg-black text-white font-black text-xs uppercase py-3 border-2 border-black cursor-pointer transition-all shadow-[3px_3px_0_0_#000] hover:shadow-none mt-2"
                       >
-                        {isAr ? 'تسجيل الدخول لتفعيل الاشتراك' : 'SIGN IN / SIGN UP TO UNLOCK'}
+                        {isAr ? 'إنشاء حساب مجاني وقراءة المقال فوراً 🔓' : 'CREATE FREE ACCOUNT & UNLOCK ARTICLE 🔓'}
                       </button>
-                    ) : (
+
+                      <div className="text-center pt-2">
+                        <button
+                          type="button"
+                          onClick={() => { stopAudio(); onAuthClick(); }}
+                          className="text-xs font-mono font-bold text-zinc-700 hover:text-black underline cursor-pointer"
+                        >
+                          {isAr ? 'لديك حساب بالفعل؟ اضغط هنا لتسجيل الدخول' : 'Already have an account? Click here to sign in'}
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <div className="space-y-3 text-center max-w-sm mx-auto">
+                      <p className="text-xs text-zinc-700 font-bold">
+                        {isAr 
+                          ? 'هذا المقال يستلزم ترقية الاشتراك للوصول إلى التحقيقات الخاصة.' 
+                          : 'This article requires a premium subscription.'}
+                      </p>
                       <button
                         onClick={() => { stopAudio(); onSubscribeClick(); }}
                         className="w-full bg-[#b91c1c] hover:bg-neutral-950 text-white font-black text-xs uppercase py-3 border-2 border-black cursor-pointer transition-all shadow-[3px_3px_0_0_#000]"
                       >
                         {isAr ? 'ترقية حسابي والاشتراك الآمن فوراً' : 'SUBSCRIBE & PURCHASE INSTANT ACCESS'}
                       </button>
-                    )}
-                    <span className="text-[8px] font-mono text-zinc-400 tracking-wider">
-                      {isAr ? 'تأمين بنظام معيار التشفير المتقدم وبدون التزامات خفية' : 'SECURE SEC-256 TRANSCEIVER. ZERO HIDDEN COST.'}
+                    </div>
+                  )}
+
+                  <div className="text-center pt-2">
+                    <span className="text-[9px] font-mono text-zinc-400 tracking-wider block">
+                      {isAr ? 'التسجيل مجاني 100% حتى 31 أغسطس 2026 - بدون بطاقة إئتمان' : '100% FREE REGISTRATION UNTIL AUGUST 31, 2026 - NO CREDIT CARD'}
                     </span>
                   </div>
                 </div>
               </div>
             ) : (
               <div 
-                className={`select-text text-black font-sans tracking-wide leading-relaxed prose max-w-none font-medium ${fontClass()}`}
+                onCopy={(e) => {
+                  e.preventDefault();
+                  alert(isAr ? 'عذراً، محتوى ومقالات صحيفة الورّاق محمي وممنوع من النسخ والاستنساخ.' : 'Content copying is restricted on Al-Warraq.');
+                }}
+                onCut={(e) => {
+                  e.preventDefault();
+                  alert(isAr ? 'عذراً، محتوى ومقالات صحيفة الورّاق محمي وممنوع من النسخ.' : 'Content copying is restricted on Al-Warraq.');
+                }}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                }}
+                className={`select-none text-black font-sans tracking-wide leading-relaxed prose max-w-none font-medium ${fontClass()}`}
               >
                 {parseAndRenderContent(content)}
               </div>

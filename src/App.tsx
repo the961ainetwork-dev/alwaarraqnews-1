@@ -3902,6 +3902,7 @@ export default function App() {
           savedArticleIds={savedArticleIds}
           onToggleSaveMultipleArticles={handleToggleSaveMultipleArticles}
           onTagClick={handleTagClick}
+          onLoginSuccess={(user) => setCurrentUser(user)}
         />
       )}
 
