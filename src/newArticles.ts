@@ -2,6 +2,194 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'alwarraq-editor-in-chief-message-2026',
+    slug: 'alwarraq-editor-in-chief-message-2026',
+    focusKeyword: 'رسالة-رئيس-التحرير-معن-برازي-صحيفة-الورّاق-ذكاء-اصطناعي',
+    category: 'exclusives',
+    categories: ['exclusives', 'editor-desk', 'press-releases', 'lebanon'],
+    titleAr: 'رسالة من رئيس التحرير معن برازي: الحوكمة الذكية وتقنيات الذكاء الاصطناعي وراء إنجاز "الورّاق"',
+    titleEn: 'Message from Editor-in-Chief Maan Barazy: Smart Governance & AI Driving Al-Warraq’s Milestone',
+    summaryAr: 'القراء الأعزاء، والشركاء الأفاضل: إن الأرقام الإستثنائية التي سجلتها صحيفة "الورّاق" بتجاوز حاجز 2.5 مليون قارئ هي شهادة حية على نجاح نهج الحوكمة الذكية والاستخدام المبتكر لتقنيات الذكاء الاصطناعي ونماذج Google LLM بالاقتران بأعلى معايير الدقة الصحفية.',
+    summaryEn: 'Dear Readers & Partners: The milestone of surpassing 2.5 million readers is a living testament to smart governance, Google LLM integration, and unwavering journalistic accuracy.',
+    excerptAr: 'رسالة خاصة من رئيس تحرير صحيفة "الورّاق" الكاتب معن برازي حول الرؤية المستقبلية واستثمار الذكاء الاصطناعي.',
+    excerptEn: 'Special message from Editor-in-Chief Maan Barazy on AI innovation and Al-Warraq’s future trajectory.',
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس تحرير صحيفة "الورّاق"',
+      titleEn: 'Editor-in-Chief — Al-Warraq Press',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-11',
+    readTimeAr: '٢ دقيقة قراءة',
+    readTimeEn: '2 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 2250890,
+    tags: [
+      'معن_برازي', 'رئيس_التحرير', 'صحيفة_الورّاق', 'الذكاء_الاصطناعي', 'Google_LLM', 'الحوكمة_الذكية', 'بيان_رسمي',
+      'MaanBarazy', 'EditorInChief', 'AlWarraqAI', 'SmartGovernance'
+    ],
+    hashtags: ['MaanBarazyEditorMessage', 'AlWarraqAI', 'GoogleLLMInPress', 'DigitalJournalismGovernance'],
+    contentAr: `### القراء الأعزاء، والشركاء الأفاضل،
+
+إن الأرقام الإستثنائية التي سجلتها صحيفة "الورّاق" اليوم—بتجاوزنا حاجز 2.5 مليون قارئ في أقل من ستة أشهر—ليست مجرد إنجاز رقمي، بل هي شهادة حية على نجاح نهج الحوكمة الذكية والاستخدام المبتكر لتقنيات الذكاء الاصطناعي في تقديم صناعة إعلامية متقدمة تلبي تطلعات القارئ العربي وتواكب احتياجاته لحلول إعلامية متعددة الوسائط (**Multimedia Solutions**).
+
+لقد أثبتت هذه النتائج أن الجمهور اليوم يبحث عن تجربة إخبارية تتجاوز النمط التقليدي. ومن هذا المنطلق، حرصت "الورّاق" على تطوير بيئة إخبارية متكاملة تقدم محاكاة تفاعلية (**Simulation**) وحفظاً آلياً وذكياً للمحتوى بالاعتماد على نماذج الذكاء الاصطناعي التوليدي من جوجل (**Google LLM Model**) المدمجة مباشرة في الموقع، بالإضافة إلى توفير خدمة الترجمة الفورية والمباشرة لكافة المواد والتقارير الإخبارية.
+
+إن ما جعل الوصول إلى هذه المؤشرات القياسية ممكناً ليس التكنولوجيا وحدها، بل اقترانها بأعلى معايير الدقة الصحفية والسياسة التحريرية الصارمة في انتقاء الأخبار والمعلومات التي تهم القارئ وتصنع الفارق.
+
+نعدكم بالاستمرار في تطوير هذه التجربة الرقمية، والجمع دائماً بين رصانة الطرح الصحفي وأحدث ما توصلت إليه تكنولوجيا الذكاء الاصطناعي.
+
+شاكرين لكم ثقتكم ودعمكم المستمر.
+
+---
+
+**مع خالص التقدير،**  
+**معن برازي**  
+*رئيس تحرير صحيفة "الورّاق"*
+`,
+    contentEn: `### Dear Readers and Esteemed Partners,
+
+The exceptional figures recorded by Al-Warraq today—surpassing 2.5 million readers in under six months—are not merely a numerical milestone, but a living testament to the success of smart governance and the innovative application of Artificial Intelligence in delivering advanced, high-calibre media solutions for our readers (**Multimedia Solutions**).
+
+These results prove that today’s audience seeks a news experience that transcends traditional formats. Accordingly, Al-Warraq committed to building an integrated media ecosystem featuring interactive simulations (**Simulation**), automated smart content archiving powered by integrated Google Generative AI (**Google LLM Model**), and real-time instant translation across all published dossiers and reports.
+
+What made reaching these record indicators possible is not technology alone, but its alignment with the highest standards of journalistic rigor and strict editorial standards.
+
+We promise to continue refining this digital experience, bridging solemn journalism with state-of-the-art AI technology.
+
+Thank you for your continuous trust and support.
+
+---
+
+**With sincere appreciation,**  
+**Maan Barazy**  
+*Editor-in-Chief, Al-Warraq Press*
+`
+  },
+  {
+    id: 'alwarraq-2-million-readers-press-release-2026',
+    slug: 'alwarraq-2-million-readers-press-release-2026',
+    focusKeyword: 'بيان-صحفي-صحيفة-الورّاق-مليونين-ونصف-قارئ-نجاح-قياسي',
+    category: 'exclusives',
+    categories: ['exclusives', 'editor-desk', 'lebanon', 'alwarraq-investigations', 'press-releases'],
+    titleAr: 'صحيفة "الورّاق" تتجاوز حاجز 2.5 مليون قارئ في أقل من 6 أشهر وتتوج جهودها بنجاح قياسي',
+    titleEn: 'Al-Warraq Press Surpasses 2.5 Million Readers in Under 6 Months, Capping Efforts with Record Success',
+    summaryAr: 'بيان صحفي 11/08/2026 للنشر الفوري: أعلنت صحيفة "الورّاق" الرقمية اليوم عن تحقيق إنجاز استثنائي بتجاوز عدد قرائها 2.5 مليون قارئ حقيقي في غضون أقل من ستة أشهر من إطلاق استراتيجيتها المحتوى الجديدة والتطويرية، مستندة إلى النمو المتسارع والابتكار الرقمي والتفاعل الاستثنائي مع الجمهور العربي.',
+    summaryEn: 'Official Press Release 11/08/2026: Al-Warraq Digital Press announced today achieving an extraordinary milestone, exceeding 2.5 million real readers in under 6 months driven by investigative reporting, digital innovation, and reader trust.',
+    excerptAr: 'صحيفة "الورّاق" تتجاوز حاجز 2.5 مليون قارئ في أقل من 6 أشهر وتتوج جهودها بنجاح قياسي وشواهد نمو استثنائية.',
+    excerptEn: 'Al-Warraq Press surpasses 2.5 million readers in under 6 months, marking a milestone in digital journalism.',
+    author: {
+      nameAr: 'قسم العلاقات العامة والإعلام — صحيفة الورّاق',
+      nameEn: 'PR & Media Relations — Al-Warraq Press',
+      titleAr: 'بيان صحفي رسمي — للنشر الفوري',
+      titleEn: 'Official Press Release — For Immediate Release',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-11',
+    readTimeAr: '٣ دقائق قراءة',
+    readTimeEn: '3 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 2250536,
+    tags: [
+      'صحيفة_الورّاق', 'بيان_صحفي', 'مليونين_ونصف_قارئ', 'الصحافة_الرقمية', 'معن_براق', 'إحصائيات_الورّاق', 'نجاح_إعلامي',
+      'PressRelease', 'AlWarraq2M3M', 'DigitalJournalism', 'MaanBarazy'
+    ],
+    hashtags: ['AlWarraqMilestone', 'AlWarraqPressRelease', '2M3MReaders', 'DigitalJournalismSuccess'],
+    contentAr: `### بيان صحفي 11/08/2026 — للنشر الفوري
+
+#### أعلنت صحيفة "الورّاق" الرقمية اليوم عن تحقيق إنجاز استثنائي في مسيرتها الإعلامية، حيث تجاوز عدد قرائها ومتابعيها حاجز 2.5 مليون قارئ حقيقي في غضون أقل من ستة أشهر من إطلاق استراتيجيتها المحتوى الجديدة والتطويرية.
+
+ويأتي هذا الرقم القياسي ليعكس ثمار الاستثمار المستمر في تقديم محتوى صحفي عالي الجودة، يلتزم بالمهنية والمصداقية، ويلبي تطلعات القراء بمختلف اهتماماتهم.
+
+---
+
+### 📊 نمو متسارع وأرقام تعكس الثقة
+
+أظهرت الرسوم البيانية وتحليلات الأداء الصادرة عن الصحيفة نمواً تصاعدياً في مؤشرات التفاعل والوصول الرقمي، حيث تضاعفت نسبة الزيارات الفريدة (**Unique Visitors**) ومعدل قضاء الوقت داخل المنصة مقارنة بالربع الأول من العام.
+
+> **إحصائيات الأداء الموثقة عبر مرصد حركة المنصة:**
+> * **2,250,536** إجمالي مشاهدات المقالات (Total Article Views)
+> * **1,462,848** الزوار الفريدين المستقلين (Unique Visitors)
+> * **45.8%** معدل الارتداد العام بمتوسط تصفح معمق
+> * **14,427** متوسط قراءات وتحليلات المقالة الواحدة
+
+وتشير البيانات التحليلية إلى أن هذا النمو يعود إلى عدة عوامل رئيسية:
+
+* **تنوع المحتوى وتطويره:** التغطية الشاملة للتحليلات الإخبارية، التقارير المعمقة، والتحقيقات الصحفية التي لامست اهتمامات المتابعين.
+* **الابتكار الرقمي:** التحديثات المستمرة على تجربة المستخدم عبر الموقع الإلكتروني والتطبيق، ما جعل الوصول إلى المعلومة أكثر سهولة وسرعة.
+* **التفاعل عبر منصات التواصل:** توسع قاعدة المتابعين والتفاعل المباشر مع القراء عبر مختلف القنوات الرقمية.
+
+---
+
+### 💬 كلمة إدارة صحيفة "الورّاق"
+
+وفي تعليق على هذا الإنجاز، صرّحت إدارة صحيفة "الورّاق":
+
+> *"إن وصولنا إلى 2.5 مليون قارئ في هذه فترة الزمنية القصيرة هو دليل حي على أن ثمار الجهد والعمل الدؤوب قد بدأت تؤتي أكلها. هذه الأرقام ليست مجرد إحصائيات، بل هي تجسيد لثقة القراء الغالية التي نعتز بها، ودافع إضافي لنا لمواصلة تقديم صحافة متجددة، موضوعية، وتصنع الفارق."*
+
+وأكدت الصحيفة عزمها على مواصلة خططها التوسعية خلال المرحلة القادمة، عبر إطلاق محتوى مرئي وصوتي (**بودكاست**) جديد، وتوسيع شبكة مراسليها لتقديم تغطيات إعلامية أكثر عمقاً وشمولاً.
+
+---
+
+**- انتهى -**
+
+**عن صحيفة "الورّاق":** منصة صحفية وإعلامية شاملة تهتم بنقل الخبر بمهنية عالية وتقديم التحليلات والمعارف التي تهم القارئ العربي في مختلف المجالات السياسية، الاقتصادية، الثقافية، والتكنولوجية.
+
+**للتواصل الإعلامي:** قسم العلاقات العامة والإعلام - صحيفة الورّاق  
+**الموقع الإلكتروني:** www.alwarraq.com
+`,
+    contentEn: `### PRESS RELEASE — 11/08/2026 — FOR IMMEDIATE RELEASE
+
+#### Al-Warraq Digital Press today announced an extraordinary milestone in its journalistic journey, surpassing 2.5 million verified readers in under six months following the launch of its new content strategy.
+
+This record achievement reflects the fruition of continuous investment in providing high-quality, objective, and credible journalism tailored to modern readers.
+
+---
+
+### 📊 Rapid Growth & Metrics Demonstrating Reader Trust
+
+Performance analytics issued by Al-Warraq highlight exponential growth in engagement and reach, with unique visitors and session durations doubling compared to Q1.
+
+> **Audience Metrics from Al-Warraq Analytics Observatory:**
+> * **2,250,536** Total Article Views
+> * **1,462,848** Unique Verified Visitors
+> * **45.8%** Overall Bounce Rate with Deep Engagement
+> * **14,427** Average Views Per In-Depth Analysis
+
+Key growth drivers identified in the report include:
+
+* **Content Diversity & Excellence:** Comprehensive news analysis, deep dossiers, and investigative reports addressing key public issues.
+* **Digital Innovation:** Continuous user experience enhancements across web and app platforms for seamless access.
+* **Multi-Channel Engagement:** Expanding audience reach and direct reader interactions across digital touchpoints.
+
+---
+
+### 💬 Executive Statement
+
+Commenting on this landmark achievement, Al-Warraq Management stated:
+
+> *"Reaching 2.5 million readers in this short timeframe is living proof that dedication and journalistic integrity bear fruit. These figures are more than stats — they embody the precious trust of our readership and motivate us to keep delivering groundbreaking, objective press."*
+
+The outlet reiterated its commitment to expansion, including upcoming video and podcast programming, alongside broadening its international correspondent network for deeper regional coverage.
+
+---
+
+**- ENDS -**
+
+**About Al-Warraq Press:** A comprehensive journalistic media platform dedicated to professional news reporting, deep analysis, and intelligence across political, economic, cultural, and technological spheres for the Arab world.
+
+**Media Relations:** PR & Communications Division — Al-Warraq Press  
+**Website:** www.alwarraq.com
+`
+  },
+  {
     id: 'solidere-arbitrage-maan-barazy-2026-investigation',
     slug: 'solidere-arbitrage-maan-barazy-2026-investigation',
     focusKeyword: 'سوليدير-مراجحة-مالية-خسائر-البنوك-معن-براق-تحقيق-استقصائي',

@@ -962,7 +962,10 @@ export default function App() {
 
   // Find breaking news to populate the top ticker strip
   const latestBreaking = useMemo(() => {
-    return allArticles.find(story => story.isBreaking === true) || allArticles[0] || null;
+    return allArticles.find(story => story.id === 'alwarraq-editor-in-chief-message-2026') || 
+           allArticles.find(story => story.id === 'alwarraq-2-million-readers-press-release-2026') || 
+           allArticles.find(story => story.isBreaking === true) || 
+           allArticles[0] || null;
   }, [allArticles]);
 
   // Handle Search queries across translated titles and summaries
@@ -990,31 +993,17 @@ export default function App() {
     // Choose featured or highly viewed articles for the slide gallery
     const filtered = allArticles.filter(story => story.isFeatured || story.id.includes('excl') || story.views > 6000);
     
-    // Ensure 'excl-leb-isr-secret-annex' is the absolute first slide in the slider
-    const secretAnnexIndex = filtered.findIndex(s => s.id === 'excl-leb-isr-secret-annex');
-    let ordered = [...filtered];
+    // Ensure both press releases are placed at the very top of the hero slider
+    const editorMsg = filtered.find(s => s.id === 'alwarraq-editor-in-chief-message-2026');
+    const pressRel = filtered.find(s => s.id === 'alwarraq-2-million-readers-press-release-2026');
     
-    if (secretAnnexIndex > -1) {
-      const secretAnnexArticle = filtered[secretAnnexIndex];
-      const rest = filtered.filter(s => s.id !== 'excl-leb-isr-secret-annex');
-      
-      const gdpIndex = rest.findIndex(s => s.id === 'desk-gdp');
-      if (gdpIndex > -1) {
-        const gdpArticle = rest[gdpIndex];
-        const restOfArticles = rest.filter(s => s.id !== 'desk-gdp');
-        ordered = [secretAnnexArticle, gdpArticle, ...restOfArticles];
-      } else {
-        ordered = [secretAnnexArticle, ...rest];
-      }
-    } else {
-      const gdpIndex = filtered.findIndex(s => s.id === 'desk-gdp');
-      if (gdpIndex > -1) {
-        const gdpArticle = filtered[gdpIndex];
-        const rest = filtered.filter(s => s.id !== 'desk-gdp');
-        ordered = [gdpArticle, ...rest];
-      }
-    }
-    return ordered;
+    const rest = filtered.filter(s => s.id !== 'alwarraq-editor-in-chief-message-2026' && s.id !== 'alwarraq-2-million-readers-press-release-2026');
+    
+    const prioritySlides = [];
+    if (editorMsg) prioritySlides.push(editorMsg);
+    if (pressRel) prioritySlides.push(pressRel);
+
+    return [...prioritySlides, ...rest];
   }, [allArticles]);
 
   const activeSlide = useMemo(() => {

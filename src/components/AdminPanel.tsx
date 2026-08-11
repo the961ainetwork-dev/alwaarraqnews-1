@@ -48,7 +48,7 @@ export default function AdminPanel({
   const [passError, setPassError] = useState('');
 
   // Primary active tab inside authorized Admin Panel
-  type SubTabType = 'stories-list' | 'add-story' | 'manage-sections' | 'newsletter' | 'design-preset' | 'widgets-components' | 'data-validator' | 'article-curator' | 'slider-editor' | 'subscribers-mgmt' | 'live-deploy' | 'social-infographics' | 'analytics-stats' | 'podcast-manager';
+  type SubTabType = 'stories-list' | 'add-story' | 'manage-sections' | 'newsletter' | 'design-preset' | 'widgets-components' | 'data-validator' | 'article-curator' | 'slider-editor' | 'subscribers-mgmt' | 'live-deploy' | 'social-infographics' | 'analytics-stats' | 'podcast-manager' | 'user-registry';
   const [activeSubTab, setActiveSubTab] = useState<SubTabType>('stories-list');
 
   // Live production deployment states
@@ -329,6 +329,134 @@ export default function AdminPanel({
 
   // User list management state
   const [registeredUsers, setRegisteredUsers] = useState<any[]>([]);
+
+  // User Registry Tab states
+  const [userRegistrySearch, setUserRegistrySearch] = useState('');
+  const [userRegistryRoleFilter, setUserRegistryRoleFilter] = useState<'all' | 'admin' | 'reader' | 'premium'>('all');
+  const [showAddUserModal, setShowAddUserModal] = useState(false);
+  const [editingUser, setEditingUser] = useState<any | null>(null);
+
+  // New User Form fields
+  const [newUName, setNewUName] = useState('');
+  const [newUEmail, setNewUEmail] = useState('');
+  const [newUPassword, setNewUPassword] = useState('Reader1234..');
+  const [newURole, setNewURole] = useState<'reader' | 'admin'>('reader');
+  const [newUJobTitle, setNewUJobTitle] = useState('');
+  const [newUOrganization, setNewUOrganization] = useState('');
+  const [newUSector, setNewUSector] = useState('');
+  const [newUCountry, setNewUCountry] = useState('لبنان');
+  const [newUIsPremium, setNewUIsPremium] = useState(false);
+
+  // Export User Email List function
+  const handleExportUserEmailList = () => {
+    if (!registeredUsers || registeredUsers.length === 0) {
+      alert(isAr ? 'لا يوجد مستخدمون مسجلون لتصديرهم حالياً' : 'No registered users available to export.');
+      return;
+    }
+
+    const headers = ["Username / Name", "Email Address", "Role", "Job Title / Profession", "Organization", "Sector of Interest", "Country / Location", "Registration Date", "Subscription Status"];
+    const rows = registeredUsers.map(u => [
+      `"${(u.username || u.name || '').replace(/"/g, '""')}"`,
+      `"${(u.email || '').replace(/"/g, '""')}"`,
+      `"${(u.role || 'reader').replace(/"/g, '""')}"`,
+      `"${(u.jobTitle || 'N/A').replace(/"/g, '""')}"`,
+      `"${(u.organization || 'N/A').replace(/"/g, '""')}"`,
+      `"${(u.sector || 'N/A').replace(/"/g, '""')}"`,
+      `"${(u.country || 'N/A').replace(/"/g, '""')}"`,
+      `"${(u.registeredAt || u.timestamp || '2026-08-01').replace(/"/g, '""')}"`,
+      `"${u.isPremiumSubscriber ? 'Premium Patron' : 'Free August Reader'}"`
+    ]);
+
+    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `alwarraq_registered_user_marketing_emails_${new Date().toISOString().substring(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    alert(isAr 
+      ? `✓ تم تصدير قائمة البريد الإلكتروني لـ ${registeredUsers.length} مستخدم مسجل بنجاح في ملف CSV مخصص للحملات التسويقية!` 
+      : `✓ Exported email marketing list with ${registeredUsers.length} registered user records!`);
+  };
+
+  const handleCopyUserEmails = () => {
+    if (!registeredUsers || registeredUsers.length === 0) return;
+    const emailList = registeredUsers.map(u => u.email.trim()).filter(Boolean).join(', ');
+    navigator.clipboard.writeText(emailList);
+    alert(isAr ? `✓ تم نسخ ${registeredUsers.length} عنوان بريد إلكتروني للحافظة!` : `✓ Copied ${registeredUsers.length} email addresses to clipboard!`);
+  };
+
+  const handleSaveNewUser = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newUEmail || !newUEmail.includes('@') || !newUName) {
+      alert(isAr ? 'يرجى إدخال اسم وبريد إلكتروني صحيح' : 'Please provide a valid name and email address.');
+      return;
+    }
+
+    const emailClean = newUEmail.trim().toLowerCase();
+    if (registeredUsers.some(u => u.email.toLowerCase() === emailClean)) {
+      alert(isAr ? 'هذا البريد الإلكتروني مسجل بالفعل لمستخدم آخر' : 'A user with this email address is already registered.');
+      return;
+    }
+
+    const newUser = {
+      username: newUName.trim(),
+      email: emailClean,
+      password: newUPassword || 'Reader1234..',
+      role: newURole,
+      jobTitle: newUJobTitle.trim() || 'غير محدد',
+      organization: newUOrganization.trim() || 'غير محدد',
+      sector: newUSector.trim() || 'عام',
+      country: newUCountry.trim() || 'لبنان',
+      registeredAt: new Date().toISOString().substring(0, 10),
+      isPremiumSubscriber: newUIsPremium
+    };
+
+    const updated = [newUser, ...registeredUsers];
+    setRegisteredUsers(updated);
+    localStorage.setItem('alwarraq_registered_users', JSON.stringify(updated));
+
+    // Reset form
+    setNewUName('');
+    setNewUEmail('');
+    setNewUJobTitle('');
+    setNewUOrganization('');
+    setNewUSector('');
+    setShowAddUserModal(false);
+
+    alert(isAr ? `✓ تم تسجيل وتوثيق المستخدم ${newUser.username} بنجاح!` : `✓ User ${newUser.username} successfully registered!`);
+  };
+
+  const handleUpdateUser = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingUser) return;
+
+    const updated = registeredUsers.map(u => {
+      if (u.email.toLowerCase() === editingUser.email.toLowerCase()) {
+        return { ...editingUser };
+      }
+      return u;
+    });
+
+    setRegisteredUsers(updated);
+    localStorage.setItem('alwarraq_registered_users', JSON.stringify(updated));
+
+    // Sync current session if editing logged in user
+    const rawCurr = localStorage.getItem('alwarraq_current_user');
+    if (rawCurr) {
+      try {
+        const curr = JSON.parse(rawCurr);
+        if (curr.email.toLowerCase() === editingUser.email.toLowerCase()) {
+          localStorage.setItem('alwarraq_current_user', JSON.stringify(editingUser));
+        }
+      } catch (e) {}
+    }
+
+    setEditingUser(null);
+    alert(isAr ? '✓ تم تحديث بيانات وحساب المستخدم بنجاح!' : '✓ User profile updated successfully!');
+  };
 
   const loadRegisteredUsers = () => {
     const raw = localStorage.getItem('alwarraq_registered_users');
@@ -1118,6 +1246,19 @@ export default function AdminPanel({
             <Users size={14} />
             <span>{isAr ? 'ديوان المشتركين والبريد' : 'Subscriber Registry'}</span>
             <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-zinc-250 px-1 text-black font-extrabold">{subscribers.length}</span>
+          </button>
+
+          <button
+            onClick={() => setActiveSubTab('user-registry')}
+            className={`w-full text-left rtl:text-right px-4 py-2.5 text-xs font-black uppercase flex items-center gap-2.5 border-2 ${
+              activeSubTab === 'user-registry' 
+                ? 'bg-black text-white border-black' 
+                : 'bg-neutral-50 hover:bg-neutral-100 text-[#b91c1c] border-transparent'
+            }`}
+          >
+            <UserCheck size={14} className="text-[#b91c1c]" />
+            <span className="font-extrabold">{isAr ? 'سجل المستخدمين المسجلين' : 'User Registry'}</span>
+            <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-red-100 text-[#b91c1c] px-1 font-black">{registeredUsers.length}</span>
           </button>
 
           <button
@@ -2821,6 +2962,606 @@ export default function AdminPanel({
                   </table>
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* TAB: DEDICATED USER REGISTRY & MARKETING EXTRACTION VIEW */}
+          {activeSubTab === 'user-registry' && (
+            <div className="space-y-6 animate-fade-in text-xs font-semibold" id="admin-user-registry-tab">
+              {/* Header section */}
+              <div className="border-b-2 border-black pb-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <div>
+                  <h3 className="font-sans font-black text-lg uppercase flex items-center gap-2 text-[#b91c1c]">
+                    <UserCheck size={20} className="text-[#b91c1c]" />
+                    {isAr ? 'سجل المستخدمين المسجلين وقاعدة بيانات الحسابات' : 'Registered User Registry & Account Database'}
+                  </h3>
+                  <p className="text-xs text-zinc-600 mt-1 font-medium">
+                    {isAr 
+                      ? 'متابعة جميع القراء والمستخدمين المسجلين عبر نافذة التسجيل والاستبيانات، وتصدير قوائم البريد الإلكتروني للحملات التسويقية والتواصل التحريري.' 
+                      : 'Track all readers and accounts registered through authentication, surveys, and paywalls. Export email lists for marketing communications.'}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2 shrink-0">
+                  <button
+                    onClick={handleExportUserEmailList}
+                    className="bg-[#b91c1c] hover:bg-black text-white font-mono text-xs font-black px-4 py-2.5 border-2 border-black uppercase flex items-center gap-2 cursor-pointer shadow-[3px_3px_0_0_#000] hover:shadow-none hover:translate-x-0.5 transition-all"
+                  >
+                    <Download size={15} />
+                    <span>{isAr ? 'تصدير قائمة البريد (Export Email List)' : 'Export Email List'}</span>
+                  </button>
+
+                  <button
+                    onClick={() => setShowAddUserModal(true)}
+                    className="bg-black hover:bg-zinc-800 text-white font-mono text-xs font-black px-3.5 py-2.5 border-2 border-black uppercase flex items-center gap-1.5 cursor-pointer shadow-[3px_3px_0_0_#000] hover:shadow-none hover:translate-x-0.5 transition-all"
+                  >
+                    <Plus size={15} />
+                    <span>{isAr ? 'تسجيل مستخدم جديد' : 'Enroll New User'}</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Metric Overview Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                <div className="bg-white border-2 border-black p-4 shadow-[3px_3px_0_0_#000]">
+                  <span className="block font-mono text-[10px] uppercase font-bold text-zinc-500">{isAr ? 'إجمالي الحسابات المسجلة' : 'TOTAL REGISTERED ACCOUNTS'}</span>
+                  <div className="font-sans font-black text-3xl text-zinc-900 mt-1">{registeredUsers.length}</div>
+                  <span className="block text-[11px] text-zinc-400 mt-1">{isAr ? 'مسجلون عبر الموقع والاستبيان' : 'Authentication & Paywall Signups'}</span>
+                </div>
+
+                <div className="bg-emerald-900 text-white border-2 border-black p-4 shadow-[3px_3px_0_0_#000]">
+                  <span className="block font-mono text-[10px] uppercase font-bold text-emerald-300">{isAr ? 'أعضاء العضوية البريميوم' : 'PREMIUM PATRONS'}</span>
+                  <div className="font-sans font-black text-3xl text-amber-300 mt-1">{registeredUsers.filter(u => u.isPremiumSubscriber).length}</div>
+                  <span className="block text-[11px] text-emerald-200 mt-1">{isAr ? 'وصول كامل للمستندات والوثائق' : 'Full Access Subscription Tier'}</span>
+                </div>
+
+                <div className="bg-red-900 text-white border-2 border-black p-4 shadow-[3px_3px_0_0_#000]">
+                  <span className="block font-mono text-[10px] uppercase font-bold text-red-200">{isAr ? 'حملة مجانية أغسطس (قراء مجانين)' : 'FREE AUGUST READERS'}</span>
+                  <div className="font-sans font-black text-3xl text-white mt-1">{registeredUsers.filter(u => !u.isPremiumSubscriber && u.role !== 'admin').length}</div>
+                  <span className="block text-[11px] text-red-200 mt-1">{isAr ? 'مستهدفات الحملة التسويقية القادمة' : 'Target Leads for Marketing Campaign'}</span>
+                </div>
+
+                <div className="bg-zinc-900 text-white border-2 border-black p-4 shadow-[3px_3px_0_0_#000]">
+                  <span className="block font-mono text-[10px] uppercase font-bold text-zinc-400">{isAr ? 'المحررون والإداريون' : 'ADMINS & EDITORS'}</span>
+                  <div className="font-sans font-black text-3xl text-purple-300 mt-1">{registeredUsers.filter(u => u.role === 'admin').length}</div>
+                  <span className="block text-[11px] text-zinc-400 mt-1">{isAr ? 'صلاحيات إدارة الموقع الكاملة' : 'Full Editorial Administration'}</span>
+                </div>
+              </div>
+
+              {/* Toolbar & Marketing Export Banner */}
+              <div className="bg-neutral-100 p-4 border-2 border-black space-y-3 shadow-[3px_3px_0_0_#000]">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-zinc-300 pb-3">
+                  <div>
+                    <h4 className="font-sans font-black text-sm uppercase flex items-center gap-2 text-zinc-900">
+                      <Mail size={16} className="text-[#b91c1c]" />
+                      {isAr ? 'أدوات المراسلة والحملات التسويقية (Marketing Communications)' : 'Marketing Campaign & Export Suite'}
+                    </h4>
+                    <p className="text-xs text-zinc-600 font-normal mt-0.5">
+                      {isAr 
+                        ? 'تصدير البريد الإلكتروني بالكامل لصيغة CSV للاستخدام في Mailchimp أو SendGrid، أو النسخ المباشر للإرسال الجماعي.' 
+                        : 'Export formatted email databases for direct import into email service providers or launch quick direct broadcasts.'}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={handleExportUserEmailList}
+                      className="bg-[#b91c1c] hover:bg-black text-white font-mono text-xs font-black px-3.5 py-2 border border-black uppercase flex items-center gap-1.5 cursor-pointer shadow-[2px_2px_0_0_#000] hover:shadow-none transition-all"
+                    >
+                      <Download size={14} />
+                      <span>{isAr ? 'تصدير CSV مميز' : 'Download Marketing CSV'}</span>
+                    </button>
+
+                    <button
+                      onClick={handleCopyUserEmails}
+                      className="bg-black hover:bg-zinc-800 text-white font-mono text-xs font-black px-3.5 py-2 border border-black uppercase flex items-center gap-1.5 cursor-pointer shadow-[2px_2px_0_0_#000] hover:shadow-none transition-all"
+                    >
+                      <Copy size={14} />
+                      <span>{isAr ? 'نسخ كافة العناوين' : 'Copy Email List'}</span>
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        const bccList = registeredUsers.map(u => u.email).join(',');
+                        const subject = encodeURIComponent(isAr ? "نشرة وتحقيقات جريدة الورّاق السياسية المحدثة" : "Al-Warraq Press - Exclusive Dispatch & Updates");
+                        const body = encodeURIComponent(isAr 
+                          ? "عزيزي القارئ،\n\nنشكر اهتمامك وتجيلك في موقع جريدة الورّاق السياسية. نود إعلامك بتوفر تحقيقات صحفية حصرية جديدة.\n\nيمكنك قراءة التحقيقات عبر الرابط: https://alwarraq.com" 
+                          : "Dear Patron,\n\nThank you for registering on Al-Warraq Press. Check our newly released investigative report at https://alwarraq.com");
+                        window.open(`mailto:?bcc=${bccList}&subject=${subject}&body=${body}`, '_blank');
+                      }}
+                      className="bg-emerald-800 hover:bg-emerald-900 text-white font-mono text-xs font-black px-3.5 py-2 border border-black uppercase flex items-center gap-1.5 cursor-pointer shadow-[2px_2px_0_0_#000] hover:shadow-none transition-all"
+                    >
+                      <Send size={14} />
+                      <span>{isAr ? 'إرسال حملة تسويقية (Mailto)' : 'Launch Mail Campaign'}</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Search & Filter controls */}
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <div className="relative flex-1 w-full">
+                    <input
+                      type="text"
+                      value={userRegistrySearch}
+                      onChange={(e) => setUserRegistrySearch(e.target.value)}
+                      placeholder={isAr ? 'ابحث باسم المستخدم، البريد، المسمى الوظيفي، المؤسسة، القطاع، البلد...' : 'Search by username, email, job title, organization, sector, country...'}
+                      className="w-full bg-white border-2 border-black px-3.5 py-2 pr-9 font-sans text-xs font-bold text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#b91c1c]"
+                    />
+                    <Search size={14} className="absolute left-3 top-3 text-zinc-400 rtl:right-3 rtl:left-auto" />
+                  </div>
+
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <span className="font-mono text-[11px] font-bold text-zinc-700 shrink-0">{isAr ? 'تصفية الفئة:' : 'Filter:'}</span>
+                    <select
+                      value={userRegistryRoleFilter}
+                      onChange={(e) => setUserRegistryRoleFilter(e.target.value as any)}
+                      className="bg-white border-2 border-black px-3 py-2 font-mono text-xs font-bold text-zinc-900 focus:outline-none cursor-pointer"
+                    >
+                      <option value="all">{isAr ? 'جميع المسجلين (All Users)' : 'All Registered Users'}</option>
+                      <option value="admin">{isAr ? 'المحررون والإدارة (Admins)' : 'Administrators Only'}</option>
+                      <option value="premium">{isAr ? 'أعضاء البريميوم (Premium Patrons)' : 'Premium Patrons Only'}</option>
+                      <option value="reader">{isAr ? 'القراء المجانيون (Free Readers)' : 'Free Readers Only'}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Registered Users Data Table */}
+              <div className="border-2 border-black bg-white shadow-[4px_4px_0_0_#000] overflow-x-auto">
+                <table className="w-full text-right rtl:text-right border-collapse">
+                  <thead>
+                    <tr className="bg-black text-white font-mono text-[11px] uppercase border-b-2 border-black">
+                      <th className="p-3 border-r border-zinc-700">{isAr ? 'اسم القارئ والحساب' : 'User Identity & Email'}</th>
+                      <th className="p-3 border-r border-zinc-700">{isAr ? 'المسمى الوظيفي والمؤسسة' : 'Profession & Entity'}</th>
+                      <th className="p-3 border-r border-zinc-700">{isAr ? 'قطاع الاهتمام والبلد' : 'Sector & Country'}</th>
+                      <th className="p-3 border-r border-zinc-700 text-center">{isAr ? 'الصفة وتاريخ التسجيل' : 'Role Tier & Date'}</th>
+                      <th className="p-3 text-center">{isAr ? 'إجراءات التحكم' : 'Management Actions'}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y border-black font-sans">
+                    {(() => {
+                      const filteredUsers = registeredUsers.filter(u => {
+                        const searchLower = userRegistrySearch.trim().toLowerCase();
+                        const matchesSearch = !searchLower || (
+                          (u.username || '').toLowerCase().includes(searchLower) ||
+                          (u.email || '').toLowerCase().includes(searchLower) ||
+                          (u.jobTitle || '').toLowerCase().includes(searchLower) ||
+                          (u.organization || '').toLowerCase().includes(searchLower) ||
+                          (u.sector || '').toLowerCase().includes(searchLower) ||
+                          (u.country || '').toLowerCase().includes(searchLower)
+                        );
+
+                        if (!matchesSearch) return false;
+
+                        if (userRegistryRoleFilter === 'admin') return u.role === 'admin';
+                        if (userRegistryRoleFilter === 'premium') return u.isPremiumSubscriber === true;
+                        if (userRegistryRoleFilter === 'reader') return u.role === 'reader' && !u.isPremiumSubscriber;
+
+                        return true;
+                      });
+
+                      if (filteredUsers.length === 0) {
+                        return (
+                          <tr>
+                            <td colSpan={5} className="p-10 text-center italic text-zinc-500 font-serif">
+                              {isAr ? 'لا توجد سجلات مستخدمين تطابق معايير البحث والتصفية المحددة.' : 'No registered user records match the specified query filters.'}
+                            </td>
+                          </tr>
+                        );
+                      }
+
+                      return filteredUsers.map((user) => {
+                        const isPremium = user.isPremiumSubscriber === true;
+
+                        return (
+                          <tr key={user.email} className="hover:bg-amber-50/50 transition-colors">
+                            {/* User & Email */}
+                            <td className="p-3.5 border-r border-black">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 bg-black text-white font-mono font-black text-xs flex items-center justify-center shrink-0 uppercase border border-black">
+                                  {(user.username || user.email)[0]}
+                                </div>
+                                <div>
+                                  <div className="font-sans font-black text-zinc-900 text-xs">{user.username || 'مستخدم مسجل'}</div>
+                                  <div className="font-mono text-[11px] text-[#b91c1c] font-bold select-all">{user.email}</div>
+                                </div>
+                              </div>
+                            </td>
+
+                            {/* Job & Org */}
+                            <td className="p-3.5 border-r border-black">
+                              <div className="font-bold text-zinc-800 text-[11.5px] flex items-center gap-1.5">
+                                <Briefcase size={12} className="text-zinc-500 shrink-0" />
+                                <span>{user.jobTitle || (isAr ? 'غير محدد' : 'N/A')}</span>
+                              </div>
+                              <div className="text-[11px] text-zinc-500 flex items-center gap-1.5 mt-0.5">
+                                <Building2 size={12} className="text-zinc-400 shrink-0" />
+                                <span>{user.organization || (isAr ? 'غير محدد' : 'N/A')}</span>
+                              </div>
+                            </td>
+
+                            {/* Sector & Country */}
+                            <td className="p-3.5 border-r border-black">
+                              <div className="font-extrabold text-[#b91c1c] text-[11px]">
+                                {user.sector || (isAr ? 'الشؤون العامة' : 'General Affairs')}
+                              </div>
+                              <div className="text-[11px] text-zinc-600 flex items-center gap-1 font-mono mt-0.5">
+                                <Globe size={11} className="text-zinc-400 shrink-0" />
+                                <span>{user.country || (isAr ? 'لبنان' : 'Lebanon')}</span>
+                              </div>
+                            </td>
+
+                            {/* Role Tier & Date */}
+                            <td className="p-3.5 border-r border-black text-center font-mono">
+                              <div className="mb-1">
+                                {user.role === 'admin' ? (
+                                  <span className="bg-purple-100 border border-purple-500 text-purple-900 px-2 py-0.5 font-black uppercase text-[9.5px]">
+                                    👑 Admin Editor
+                                  </span>
+                                ) : isPremium ? (
+                                  <span className="bg-emerald-100 border border-emerald-500 text-emerald-900 px-2 py-0.5 font-black uppercase text-[9.5px]">
+                                    ★ Premium Patron
+                                  </span>
+                                ) : (
+                                  <span className="bg-amber-100 border border-amber-500 text-amber-900 px-2 py-0.5 font-black uppercase text-[9.5px]">
+                                    🎁 Free August Reader
+                                  </span>
+                                )}
+                              </div>
+                              <div className="text-[10px] text-zinc-500 font-bold">
+                                {user.registeredAt || '2026-08-01'}
+                              </div>
+                            </td>
+
+                            {/* Actions */}
+                            <td className="p-3.5 text-center">
+                              <div className="flex flex-wrap gap-1.5 justify-center">
+                                {/* Copy Email */}
+                                <button
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(user.email);
+                                    alert(isAr ? '✓ تم نسخ البريد الإلكتروني!' : '✓ Email copied to clipboard!');
+                                  }}
+                                  className="bg-white hover:bg-black hover:text-white text-black border border-black px-2 py-1 font-mono text-[10px] font-black uppercase cursor-pointer shadow-[1px_1px_0_0_#000]"
+                                >
+                                  {isAr ? 'نسخ البريد' : 'Copy Email'}
+                                </button>
+
+                                {/* Edit profile button */}
+                                <button
+                                  onClick={() => setEditingUser({ ...user })}
+                                  className="bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-900 border border-blue-400 px-2 py-1 font-mono text-[10px] font-black uppercase cursor-pointer shadow-[1px_1px_0_0_#000]"
+                                >
+                                  <Edit3 size={11} className="inline mr-1" />
+                                  {isAr ? 'تعديل' : 'Edit'}
+                                </button>
+
+                                {/* Toggle Premium Status */}
+                                <button
+                                  onClick={() => {
+                                    const updatedUsers = registeredUsers.map(u => {
+                                      if (u.email.toLowerCase() === user.email.toLowerCase()) {
+                                        return { ...u, isPremiumSubscriber: !isPremium };
+                                      }
+                                      return u;
+                                    });
+                                    setRegisteredUsers(updatedUsers);
+                                    localStorage.setItem('alwarraq_registered_users', JSON.stringify(updatedUsers));
+                                    alert(isAr ? '✓ تم تغيير رتبة الاشتراك بنجاح!' : '✓ Subscription tier updated!');
+                                  }}
+                                  className={`px-2 py-1 font-mono text-[10px] font-black uppercase border border-black shadow-[1px_1px_0_0_#000] cursor-pointer ${
+                                    isPremium 
+                                      ? 'bg-amber-100 hover:bg-amber-200 text-amber-900' 
+                                      : 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900'
+                                  }`}
+                                >
+                                  {isPremium ? (isAr ? 'إلغاء بريميوم' : 'Revoke Premium') : (isAr ? 'ترقية بريميوم' : 'Grant Premium')}
+                                </button>
+
+                                {/* Delete User */}
+                                <button
+                                  onClick={() => {
+                                    if (!confirm(isAr ? `هل أنت متأكد من حذف حساب القارئ ${user.username || user.email}؟` : `Are you sure you want to delete account ${user.username || user.email}?`)) {
+                                      return;
+                                    }
+                                    const updatedUsers = registeredUsers.filter(u => u.email.toLowerCase() !== user.email.toLowerCase());
+                                    setRegisteredUsers(updatedUsers);
+                                    localStorage.setItem('alwarraq_registered_users', JSON.stringify(updatedUsers));
+                                    alert(isAr ? 'تم حذف الحساب بنجاح.' : 'Account deleted successfully.');
+                                  }}
+                                  className="bg-red-50 hover:bg-red-700 hover:text-white text-red-700 border border-red-300 p-1 font-mono text-[10px] font-black uppercase cursor-pointer"
+                                >
+                                  <Trash2 size={12} />
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      });
+                    })()}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* ADD USER MODAL */}
+              {showAddUserModal && (
+                <div className="fixed inset-0 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 z-50">
+                  <div className="bg-white border-2 border-black shadow-[6px_6px_0_0_#000] max-w-lg w-full p-6 space-y-4 animate-scale-in">
+                    <div className="flex items-center justify-between border-b-2 border-black pb-3">
+                      <h4 className="font-sans font-black text-base uppercase flex items-center gap-2 text-zinc-900">
+                        <Plus size={18} className="text-[#b91c1c]" />
+                        {isAr ? 'تسجيل وتوثيق مستخدم جديد' : 'Enroll & Register New User'}
+                      </h4>
+                      <button 
+                        onClick={() => setShowAddUserModal(false)}
+                        className="text-zinc-500 hover:text-black font-mono font-bold text-lg"
+                      >
+                        ✕
+                      </button>
+                    </div>
+
+                    <form onSubmit={handleSaveNewUser} className="space-y-3 font-sans text-xs">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'اسم المستخدم القارئ *' : 'Username / Name *'}</label>
+                          <input
+                            type="text"
+                            required
+                            value={newUName}
+                            onChange={(e) => setNewUName(e.target.value)}
+                            placeholder="مثال: د. حسان شهاب"
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none focus:ring-1 focus:ring-[#b91c1c]"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'البريد الإلكتروني *' : 'Email Address *'}</label>
+                          <input
+                            type="email"
+                            required
+                            value={newUEmail}
+                            onChange={(e) => setNewUEmail(e.target.value)}
+                            placeholder="user@domain.com"
+                            className="w-full border-2 border-black p-2 font-mono font-bold focus:outline-none focus:ring-1 focus:ring-[#b91c1c]"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'المسمى الوظيفي' : 'Job Title / Profession'}</label>
+                          <input
+                            type="text"
+                            value={newUJobTitle}
+                            onChange={(e) => setNewUJobTitle(e.target.value)}
+                            placeholder="مثال: مدير تحليلات مالية"
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'المؤسسة أو المنظمة' : 'Organization'}</label>
+                          <input
+                            type="text"
+                            value={newUOrganization}
+                            onChange={(e) => setNewUOrganization(e.target.value)}
+                            placeholder="مثال: مصرف لبنان"
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'قطاع الاهتمام' : 'Sector of Interest'}</label>
+                          <input
+                            type="text"
+                            value={newUSector}
+                            onChange={(e) => setNewUSector(e.target.value)}
+                            placeholder="مثال: قطاع البنوك والمالية"
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'البلد والإقامة' : 'Country / Location'}</label>
+                          <input
+                            type="text"
+                            value={newUCountry}
+                            onChange={(e) => setNewUCountry(e.target.value)}
+                            placeholder="بيروت، لبنان"
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'الصفة / الدور' : 'Role / Access Tier'}</label>
+                          <select
+                            value={newURole}
+                            onChange={(e) => setNewURole(e.target.value as any)}
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none cursor-pointer"
+                          >
+                            <option value="reader">{isAr ? 'قارئ عادي (Reader)' : 'Regular Reader'}</option>
+                            <option value="admin">{isAr ? 'محرر ومسؤول (Admin Editor)' : 'Administrator'}</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'كلمة المرور الإفتراضية' : 'Default Password'}</label>
+                          <input
+                            type="text"
+                            value={newUPassword}
+                            onChange={(e) => setNewUPassword(e.target.value)}
+                            className="w-full border-2 border-black p-2 font-mono font-bold focus:outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="pt-2 flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          id="newUIsPremium"
+                          checked={newUIsPremium}
+                          onChange={(e) => setNewUIsPremium(e.target.checked)}
+                          className="w-4 h-4 accent-[#b91c1c] border-2 border-black rounded-none cursor-pointer"
+                        />
+                        <label htmlFor="newUIsPremium" className="font-bold text-zinc-900 cursor-pointer">
+                          {isAr ? 'منح العضوية البريميوم الفاخرة (Premium Patron Status)' : 'Grant Premium Patron Membership'}
+                        </label>
+                      </div>
+
+                      <div className="pt-4 flex items-center justify-end gap-2 border-t border-zinc-200">
+                        <button
+                          type="button"
+                          onClick={() => setShowAddUserModal(false)}
+                          className="bg-zinc-200 hover:bg-zinc-300 font-mono text-xs font-bold px-4 py-2 border border-black uppercase cursor-pointer"
+                        >
+                          {isAr ? 'إلغاء' : 'Cancel'}
+                        </button>
+                        <button
+                          type="submit"
+                          className="bg-[#b91c1c] hover:bg-black text-white font-mono text-xs font-black px-5 py-2 border-2 border-black uppercase cursor-pointer shadow-[2px_2px_0_0_#000]"
+                        >
+                          {isAr ? 'حفظ وتأكيد الحساب' : 'Register Account'}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              )}
+
+              {/* EDIT USER MODAL */}
+              {editingUser && (
+                <div className="fixed inset-0 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 z-50">
+                  <div className="bg-white border-2 border-black shadow-[6px_6px_0_0_#000] max-w-lg w-full p-6 space-y-4 animate-scale-in">
+                    <div className="flex items-center justify-between border-b-2 border-black pb-3">
+                      <h4 className="font-sans font-black text-base uppercase flex items-center gap-2 text-zinc-900">
+                        <Edit3 size={18} className="text-blue-600" />
+                        {isAr ? 'تعديل بيانات القارئ المسجل' : 'Edit Registered User Account'}
+                      </h4>
+                      <button 
+                        onClick={() => setEditingUser(null)}
+                        className="text-zinc-500 hover:text-black font-mono font-bold text-lg"
+                      >
+                        ✕
+                      </button>
+                    </div>
+
+                    <form onSubmit={handleUpdateUser} className="space-y-3 font-sans text-xs">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'الاسم' : 'Username / Name'}</label>
+                          <input
+                            type="text"
+                            required
+                            value={editingUser.username || ''}
+                            onChange={(e) => setEditingUser({ ...editingUser, username: e.target.value })}
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'البريد الإلكتروني (ثابت)' : 'Email (Read-only)'}</label>
+                          <input
+                            type="email"
+                            disabled
+                            value={editingUser.email || ''}
+                            className="w-full border-2 border-zinc-300 bg-zinc-100 p-2 font-mono text-zinc-600 font-bold"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'المسمى الوظيفي' : 'Job Title / Profession'}</label>
+                          <input
+                            type="text"
+                            value={editingUser.jobTitle || ''}
+                            onChange={(e) => setEditingUser({ ...editingUser, jobTitle: e.target.value })}
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'المؤسسة' : 'Organization'}</label>
+                          <input
+                            type="text"
+                            value={editingUser.organization || ''}
+                            onChange={(e) => setEditingUser({ ...editingUser, organization: e.target.value })}
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'القطاع' : 'Sector'}</label>
+                          <input
+                            type="text"
+                            value={editingUser.sector || ''}
+                            onChange={(e) => setEditingUser({ ...editingUser, sector: e.target.value })}
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'البلد' : 'Country'}</label>
+                          <input
+                            type="text"
+                            value={editingUser.country || ''}
+                            onChange={(e) => setEditingUser({ ...editingUser, country: e.target.value })}
+                            className="w-full border-2 border-black p-2 font-bold focus:outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'الدور / الصفة' : 'Role'}</label>
+                          <select
+                            value={editingUser.role || 'reader'}
+                            onChange={(e) => setEditingUser({ ...editingUser, role: e.target.value })}
+                            className="w-full border-2 border-black p-2 font-bold cursor-pointer"
+                          >
+                            <option value="reader">{isAr ? 'قارئ (Reader)' : 'Reader'}</option>
+                            <option value="admin">{isAr ? 'مدير ومحرر (Admin)' : 'Admin'}</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block font-bold text-zinc-700 mb-1">{isAr ? 'العضوية الممتازة' : 'Premium Patron Status'}</label>
+                          <select
+                            value={editingUser.isPremiumSubscriber ? 'true' : 'false'}
+                            onChange={(e) => setEditingUser({ ...editingUser, isPremiumSubscriber: e.target.value === 'true' })}
+                            className="w-full border-2 border-black p-2 font-bold cursor-pointer"
+                          >
+                            <option value="false">{isAr ? 'عادي (Free August Reader)' : 'Free August Reader'}</option>
+                            <option value="true">{isAr ? 'بريميوم (Premium Patron)' : 'Premium Patron'}</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="pt-4 flex items-center justify-end gap-2 border-t border-zinc-200">
+                        <button
+                          type="button"
+                          onClick={() => setEditingUser(null)}
+                          className="bg-zinc-200 hover:bg-zinc-300 font-mono text-xs font-bold px-4 py-2 border border-black uppercase cursor-pointer"
+                        >
+                          {isAr ? 'إلغاء' : 'Cancel'}
+                        </button>
+                        <button
+                          type="submit"
+                          className="bg-black hover:bg-zinc-800 text-white font-mono text-xs font-black px-5 py-2 border-2 border-black uppercase cursor-pointer shadow-[2px_2px_0_0_#000]"
+                        >
+                          {isAr ? 'حفظ التغييرات' : 'Save Changes'}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
