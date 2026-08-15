@@ -2,6 +2,57 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'south-lebanon-tragedy-firestorm-blank-slate-2026',
+    slug: 'south-lebanon-tragedy-firestorm-blank-slate-2026',
+    focusKeyword: 'الأرقام-شاهدة-على-المأساة-ألسنة-النيران-جنوب-لبنان',
+    category: 'lebanon',
+    categories: ['lebanon', 'war-room', 'investigations', 'politics'],
+    titleAr: 'الأرقام شاهدة على المأساة: ألسنة النيران وغبار التفجيرات بين البلدات كإعصار لا يرحم',
+    titleEn: 'Numbers Bear Witness to Tragedy: Flames and Blast Dust Sweep Across Towns Like a Relentless Hurricane',
+    summaryAr: 'في قلب الجنوب اللبناني، وثقت الساعات الـ 24 الماضية فصلاً دموياً لسياسة "اللوح الفارغ" باستهداف أنصار، دير الزهراني، الوادي شمال الليطاني، ومرتفع علي الطاهر بالفوسفور الحارق وتفخيخ المربعات السكنية، وسط تعثر مفاوضات روما وتجاوز حصيلة الشهداء 4,300.',
+    summaryEn: 'In Southern Lebanon, the past 24 hours recorded a bloody chapter of the "Blank Slate" doctrine—strikes devastating Ansar, Deir El-Zahrani, the Litani river valley, and Ali Al-Taher with white phosphorus and systematic residential demolitions amidst stalled Rome negotiations.',
+    excerptAr: 'الأرقام شاهدة على المأساة: ألسنة النيران وغبار التفجيرات بين البلدات كإعصار لا يرحم في الجنوب اللبناني.',
+    excerptEn: 'Numbers bear witness to tragedy: Flames and blast dust sweep across Southern Lebanese towns like a relentless hurricane.',
+    author: {
+      nameAr: 'معن برازي',
+      nameEn: 'Maan Barazy',
+      titleAr: 'رئيس التحرير وغرفة العمليات',
+      titleEn: 'Editor-in-Chief & War Room Desk',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-15',
+    readTimeAr: '٣ دقائق قراءة',
+    readTimeEn: '3 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 18450,
+    tags: [
+      'جنوب_لبنان', 'أنصار', 'دير_الزهراني', 'علي_الطاهر', 'النبطية', 'بنت_جبيل', 'اللوح_الفارغ', 'غرفة_العمليات', 'مفاوضات_روما',
+      'SouthLebanon', 'WarRoom', 'Ansar', 'DeirElZahrani', 'BlankSlatePolicy', 'RomeNegotiations'
+    ],
+    hashtags: ['SouthLebanonTragedy', 'WarRoomFieldBrief', 'LebanonAggression2026', 'RomeTalksDeadlock'],
+    contentAr: `### الأرقام شاهدة على المأساة: ألسنة النيران وغبار التفجيرات بين البلدات كإعصار لا يرحم
+
+في قلب الجنوب اللبناني، لم تكن الساعات الأربع والعشرون الماضية مجرد انقضاء ليوم آخر تحت الحرب، بل كانت فصلاً دموياً جديداً من محاولة سحق المعالم وتحويل القرى الوادعة إلى أرض يباب. تحت السماء التي أثقلها دخان الغارات، يبدو أن الآلة العسكرية الإسرائيلية قررت إعادة كتابة جغرافية الميدان بالنار، متبعة سياسة "اللوح الفارغ" التي تسعى لمسح الحياة والوجود البشري من القرى الحدودية وما بعدها.
+
+تنقلت ألسنة النيران وغبار التفجيرات بين البلدات كإعصار لا يرحم؛ ففي بلدة أنصار، تحول منزل سكني إلى ركام فوق رؤوس ساكنيه إثر غارة جوية مباغتة، مستشهدة أرواح سبعة من أبنائها، بينهم ثلاثة أطفال غيبت الحرب ضحكاتهم في لحظة خاطفة. ولم تكن دير الزهراني بأوفر حظاً، إذ طالها القصف الجوي مخلفاً شهيدين وتسعة جرحى، ليؤكد أن الموت لم يعد يفرق بين خطوط المواجهة الأولى والعمق اللبناني.
+
+امتدت يد التدمير لتصل إلى الوادي الفاصل بين أنصار والزرارية شمال نهر الليطاني، في توسع جراحي يضرب بعرض الحائط حدود قواعد الاشتباك القديمة. ولتكتمل صورة الدمار الشامل، انهمرت القذائف الفوسفورية المحرمة دولياً على حرج مرتفع علي الطاهر ومحيط النادي الحسيني في النبطية الفوقا، بالتوازي مع عمليات تفخيخ وتفجير منظمة للمربعات السكنية في بنت جبيل والمنصوري ومجدل زون، في مشهد يجسد تماماً إرادة محو التاريخ والحاضر من تلك الأرض.
+
+بينما تقف الأرقام شاهدة على المأساة، بتسجيل تسعة شهداء وأحد عشر جريحاً في يوم واحد، وانضمامهم إلى موكب يتجاوز أربعة آلاف وثلاثمائة شهيد منذ بدء العدوان، تجد السياسة نفسها تحت وطأة الميدان الملتهب. تسير المفاوضات الإقليمية والدولية في أروقة روما ورعايتها الأمريكية على حبل مشدود؛ حيث يحاول الإسرائيلي انتزاع مكاسب شروطه القاسية بفرض واقع نزع السلاح وانسحاب القوات عبر التدمير الممنهج، في وقت تمسك فيه القوى الميدانية بمواقفها الرافضة للإذعان، وتصرخ فيه الحكومة اللبنانية بأن الدماء والنار لن تصنع استقراراً، بل تعمق مأساة وطن يقاوم المحو بكل ما تبقى لديه من رماد.`,
+    contentEn: `### Numbers Bear Witness to Tragedy: Flames and Blast Dust Sweep Across Towns Like a Relentless Hurricane
+
+In the heart of Southern Lebanon, the past twenty-four hours were not merely the passing of another day under war, but a bloody new chapter in the systematic attempt to crush topography and turn tranquil villages into barren wasteland. Under a sky heavy with the smoke of airstrikes, the Israeli military machine appears determined to rewrite field geography with fire, pursuing a **"Blank Slate"** policy that seeks to erase human presence and life from border hamlets and beyond.
+
+Flames and blast dust swept between towns like a ruthless hurricane; in the town of Ansar, a residential home was reduced to rubble over its occupants following a sudden airstrike, claiming the lives of seven citizens, including three children whose laughter was stolen in a fleeting instant. Deir El-Zahrani was no more fortunate, struck by airstrikes leaving two martyrs and nine wounded, proving that lethal strikes no longer distinguish between front-line engagements and deep civilian hinterlands.
+
+The destructive reach extended to the valley separating Ansar and Zrarieh north of the Litani River, in a surgical expansion shattering all pre-existing rules of engagement. To complete the landscape of absolute destruction, internationally banned white phosphorus shells rained down on the forested heights of Ali Al-Taher and the vicinity of the Husseini Club in Nabatieh Al-Fawqa, in tandem with organized booby-trapping and controlled demolitions of entire residential blocks in Bint Jbeil, Al-Mansouri, and Majdal Zoun, in a scene epitomizing the sheer will to erase history and the present from that land.
+
+While empirical numbers bear witness to the tragedy—recording nine martyrs and eleven wounded in a single day, joining a grim procession exceeding four thousand three hundred martyrs since the onset of the aggression—diplomacy finds itself suffocated beneath the burning battlefield. Regional and international negotiations in the corridors of Rome under U.S. auspices walk a perilous tightrope; the Israeli command seeks to extract maximalist concessions by imposing demilitarization and troop withdrawal through systematic destruction, while frontline resistance forces maintain their defiance, and the Lebanese government warns that blood and scorched earth will never breed stability, but merely deepen the tragedy of a nation resisting erasure with everything left of its ashes.`
+  },
+  {
     id: 'alwarraq-editor-in-chief-message-2026',
     slug: 'alwarraq-editor-in-chief-message-2026',
     focusKeyword: 'رسالة-رئيس-التحرير-معن-برازي-صحيفة-الورّاق-ذكاء-اصطناعي',
