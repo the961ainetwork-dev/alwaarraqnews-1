@@ -2,6 +2,282 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'the-hill-treasury-yields-turmoil-bessent-buyback-2026',
+    slug: 'اضطراب-عوائد-سندات-الخزانة-الأمريكية-يثير-قلقا-عالميا-ما-يجب-أن-تعرفه-2026',
+    focusKeyword: 'عوائد-سندات-الخزانة-الأمريكية-سكوت-بيسنت-الدين-القومي-40-تريليون-حرب-إيران-الفائدة-التضخم-الترجمات',
+    category: 'translations',
+    categories: ['translations', 'markets', 'economy', 'world', 'exclusives', 'urgent-release'],
+    titleAr: 'اضطراب عوائد سندات الخزانة الأمريكية يثير قلقاً عالمياً: ما يجب أن تعرفه',
+    titleEn: 'Turmoil in Treasury Bond Yields Sparks Global Worries: What to Know',
+    summaryAr: 'ترجمة تحليلية خاصة لتقرير صحيفة The Hill الأمريكية: قفزة عوائد السندات لأعلى مستوى في قرابة عقدين وتجاوز الدين القومي 40 تريليون دولار يربكان أسواق المال العالمية. ومساعي وزير الخزانة سكوت بيسنت لإعادة الشراء تصطدم بتحذيرات الخبراء من ضغوط تضخم حرب إيران، ومنافسة ديون الذكاء الاصطناعي، وخدمة فوائد سنوية تتجاوز تريليون دولار.',
+    summaryEn: 'An analytical translation of The Hill report: 30-year U.S. Treasury bond yields hit their highest point in two decades as national debt crosses $40 trillion. Treasury Secretary Scott Bessent’s buyback intervention faces strong headwinds from Iran war oil inflation, corporate AI debt competition, and an unsustainable $1T+ annual interest bill.',
+    excerptAr: 'ترجمة خاصة: كيف يهدد انفجار عوائد سندات الخزانة الأمريكية لأجل 30 عاماً وتخطي الدين عتبة 40 تريليون دولار قروض المنازل والسيارات، وما هي حدود خطة وزير الخزانة بيسنت؟',
+    excerptEn: 'Special Translation: How soaring 30-year Treasury yields and a $40T debt milestone impact mortgages, car loans, and consumer credit—and why Bessent’s buyback may be a "fool’s game."',
+    author: {
+      nameAr: 'نايل ستانيج — The Hill (ترجمة: الورّاق)',
+      nameEn: 'Niall Stanage — The Hill (Trans: Al-Warraq)',
+      titleAr: 'كبير المحللين السياسيين والاقتصاديين',
+      titleEn: 'Associate Editor & White House Columnist',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-20',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 18450,
+    tags: [
+      'ترجمات', 'سندات_الخزانة', 'سكوت_بيسنت', 'الدين_الأمريكي', 'التضخم', 'أسعار_الفائدة', 'حرب_إيران', 'الذكاء_الاصطناعي', 'TheHill', 'الأسواق_العالمية',
+      'Translations', 'US_Treasuries', 'BondYields', 'ScottBessent', 'NationalDebt', 'Inflation', 'InterestRates', 'IranWar', 'GlobalEconomy', 'TheHillReport'
+    ],
+    hashtags: ['USTreasuryYields', 'BondMarketTurmoil', 'ScottBessent', 'DebtCrisis40T', 'TheHillAnalysis'],
+    contentAr: `### اضطراب عوائد سندات الخزانة الأمريكية يثير قلقاً عالمياً: ما يجب أن تعرفه
+#### عوائد السندات لأجل 30 عاماً تبلغ أعلى مستوياتها في عقدين، وتخطي الدين القومي حاجز 40 تريليون دولار يشعل مخاوف الركود والتضخم
+
+**بقلم: نايل ستانيج (Niall Stanage) — صحيفة The Hill**  
+*ترجمة خاصة ونقل تحليلي: منصة الورّاق للإعلام والدراسات*
+
+---
+
+نادراً ما تشكّل **عوائد السندات الأمريكية** قضية ساخنة تشغل الرأي العام والجمهور العادي. لكن هذا المشهد تغير تماماً هذا الأسبوع، حيث قفزت الارتفاعات الحادة في العوائد لتتصدر الصفحات الأولى للصحف الكبرى ونشرات الأخبار التلفزيونية في الولايات المتحدة وحول العالم.
+
+فقد سجلت عوائد **سندات الخزانة الأمريكية لأجل 30 عاماً** يوم الثلاثاء أعلى مستوياتها في نحو عقدين من الزمن (قرابة 20 عاماً).
+
+هذا الارتفاع المباغت دفع وزير الخزانة الأمريكي الجديد **سكوت بيسنت (Scott Bessent)** إلى التدخل المباشر بإجراء يقضي بـ **إعادة شراء السندات الحكومية (Debt Buyback)**، في محاولة عاجلة لتخفيف الضغط وتبريد حرارة الأسواق.
+
+وقد نجح تكتيك بيسنت لفترة وجيزة لم تتجاوز يوماً واحداً فقط — يوم الأربعاء — قبل أن تعاود العوائد ارتفاعها وصعودها الحاد مجدداً يوم الخميس.
+
+وحتى في ظل هذا الاهتمام الإعلامي المكثف، غالباً ما تبدو موضوعات السندات، والعوائد، وأسباب أهميتها بالغة التعقيد والغموض للمواطن العادي.
+
+**فيما يلي دليل تحليلي وتفكيكي شامل للأزمة.**
+
+---
+
+### أولاً: الأساسيات.. كيف تعمل سوق السندات؟
+
+تُعاني الحكومة الأمريكية من **عجز مالي مزمن (Budget Deficit)** — أي أنها تنفق أموالاً تزيد بكثير عما تجنيه من إيرادات وضرائب — وذلك منذ عقود متواصلة.
+
+ويتسارع الدين القومي الأمريكي حالياً بمعدل يقارب **2 تريليون دولار سنوياً**. وفي وقت سابق من هذا الأسبوع، تجاوز إجمالي الدين العام للولايات المتحدة عتبة **40 تريليون دولار للمرة الأولى في التاريخ**.
+
+وبالنظر إلى هذا العجز المالي المتعاظم، تحتاج الولايات المتحدة باستمرار إلى اقتراض الأموال لتمويل نفقاتها وعملياتها التشغيلية. وهي تفعل ذلك من خلال **إصدار السندات (Treasury Bonds)** — وهي عملية تُشبه في جوهرها الحصول على عدد هائل وغير محدود من القروض المالية.
+
+إن متغيرات أسواق السندات معقدة إلى أبعد الحدود، لكن الفكرة الأساسية بسيطة للغاية:
+* يقوم شخص أو مؤسسة مالية (أو صندوق استثماري أو بنك مركزي أجنبي) بشراء سند من الحكومة.
+* تحصل الحكومة فوراً على السيولة الناتجة عن عملية البيع.
+* في المقابل، تتعهد الحكومة بسداد أصل المبلغ في تاريخ مستقبلي محدد، مع دفع فوائد دورية منتظمة على هذا السند طوال فترة صلاحيته.
+
+وأشهر السندات الأمريكية هي تلك التي تمتد لآجال **10 سنوات** و**30 سنة**، وإن كانت تتوفر خيارات أخرى متعددة لآجال أقصر وأطول.
+
+وحينما يتحدث الاقتصاديون والخبراء عن **"عوائد السندات" (Bond Yields)**، فهم يشيرون في الواقع إلى **معدل الفائدة الفعلي المستحق على السند مقارنة بسعره السوقي**.
+
+وتشكل سندات الخزانة الأمريكية الركيزة الأساسية التي يقوم عليها النظام المالي العالمي بأسره؛ ويعود جزء كبير من ذلك إلى أنها كانت تُعتبر على الدوام أصولاً "شبه آمنة وخالية من المخاطر"، بالنظر إلى أن الولايات المتحدة لم تتخلف قط بشكل كامل عن سداد ديونها السيادية.
+
+ومع ذلك، فإن التقلبات في سوق السندات — وفي الصحة العامة للاقتصاد الأمريكي — تتسبب في تذبذب أسعار السندات وعوائدها باستمرار وبشكل عكسي: **فكلما ارتفعت العوائد، انخفضت أسعار السندات وتعين على الحكومة الفيدرالية دفع أموال أكبر بكثير لتمويل ديونها**. وهذه بلا شك أنباء سيئة على كافة الأصعدة.
+
+---
+
+### ثانياً: ما الذي يحدث الآن؟ محركات الاضطراب الثلاثة
+
+تتضافر اليوم عدة مخاوف جوهرية حول الاقتصاد الأمريكي لتخلق حالة من الاضطراب العنيف في أسواق السندات:
+
+#### 1. محطة الـ 40 تريليون دولار وعقود العجز التراكمي
+وضعت محطة تجاوز الدين حاجز الـ 40 تريليون دولار علامة استفهام دراماتيكية على عقود من الإنفاق القائم على العجز المالي. فالحكومة الأمريكية لم تسجل فائضاً في ميزانيتها الفيدرالية منذ السنة المالية 2001.
+
+#### 2. مخاوف التضخم وارتفاع أسعار الوقود المرتبطة بحرب إيران
+هناك مخاوف متصاعدة بشأن التضخم، ترتبط ارتباطاً وثيقاً بـ **الحرب الدائرة في إيران وتداعياتها على مضيق هرمز وإمدادات الطاقة**.  
+فالارتفاع الحاد في أسعار النفط الخام والغاز الناجم عن الصراع الإقليمي ينعكس مباشرة على تكاليف الوقود في السوق الأمريكية المحلية. وهذا يحمل في طياته خطراً مزدوجاً: **تقليص قدرة المستهلكين على الإنفاق**، وفي الوقت نفسه **إشعال الضغوط التضخمية مجدداً**.  
+فالعائلات باتت تستهلك جزءاً أكبر من دخلها لتعبئة خزانات الوقود لسياراتها؛ كما يواجه المزارعون، والموردون، والمصنعون تكاليف نقل وشحن أعلى بكثير لإيصال سلعهم ومنتجاتهم إلى الأسواق.
+
+#### 3. فورة الإنفاق الهائلة على الذكاء الاصطناعي ومنافسة الاقتراض
+يُضاف إلى كل ما سبق موجات من القلق والارتباك حول **الإنفاق المالي الضخم والاستثنائي الذي تضخه الشركات الكبرى في تكنولوجيا الذكاء الاصطناعي (AI)**.  
+وتثير قضية الذكاء الاصطناعي هاجسين رئيسيين:
+* **الأول — منافسة السندات الحكومية:** إن جزءاً كبيراً من هذا الإنفاق الاستثماري الحالي على مراكز البيانات والرقائق يتم تمويله عن طريق الاقتراض وإصدار السندات المؤسسية. فعندما تقوم شركة مثل **ميتا (Meta)** بتمويل نفقاتها الرأسمالية عبر إصدار سندات بعوائد مغرية، فإنها تدخل عملياً في منافسة مباشرة مع الحكومة الفيدرالية على جذب أموال المشترين والمستثمرين في السندات. وهذا قد يُجبر الحكومة على رفع العوائد التي تدفعها لجذب هؤلاء المشترين بعيداً عن سندات الشركات.
+* **الثاني — وهم مكاسب الإنتاجية الخارقة:** إن الإنفاق التريليوني الهائل على الذكاء الاصطناعي يرتكز برمته على فرضية غير مؤكدة مفادها أن هذه التكنولوجيا ستحقق قفزات إنتاجية هائلة تعوض التكاليف. وإذا ثبت عدم صحة هذا الافتراض، فإن العالم مقبل على موجة ألم مالي واقتصادي عاتية.
+
+---
+
+### ثالثاً: لماذا يجب على المواطن والجمهور العادي الاهتمام؟
+
+مع ارتفاع عوائد سندات الخزانة الأمريكية، **ترتفع بالتبعية معدلات الفائدة على الرهون العقارية (قروض الإسكان)، وقروض شراء السيارات، وأسعار الفائدة على بطاقات الائتمان الاستهلاكية**.
+
+إن المصطلحات الغامضة المحيطة بأسواق السندات وعوائدها قد تحجب حقيقة ما نتحدث عنه فعلياً: **وهو التكلفة المباشرة لاقتراض الأموال في كل مفصل من مفاصل الحياة اليومية**.
+
+وعلى المستوى الحكومي، يبدو أن الدائنين والمقرضين المحتملين باتوا أكثر تردداً في إقراض الحكومة الأمريكية أموالهم — ما لم يحصلوا على مكافأة مجزية تتمثل في عائد مرتفع يغطي مخاطر التضخم وتضخم الدين.
+
+> **يوضح ستيف هانكي (Steve Hanke)**، أستاذ الاقتصاد التطبيقي في جامعة جونز هوبكنز (Johns Hopkins University) في بالتيمور:  
+> *"تنمو العجوزات المالية بمعدل غير مستدام على الإطلاق. وهذا يضع ضغوطاً هائلة على أسواق السندات، لأن الحكومة الفيدرالية تضطر إلى بيع المزيد والمزيد من السندات لتمويل هذه العجوزات المتراكمة. وبالتالي، فإن المعروض من السندات يتزايد بشكل هائل"*.  
+>  
+> ويضيف هانكي: *"لكن أولئك الموجودين في جانب الطلب والمشترين يقولون للحكومة: 'حسناً، سنشتري هذه السندات، ولكن يتعين عليكم أن تدفعوا لنا فوائد وعوائد أعلى بكثير لكي يصبح الأمر مجدياً ومثيراً لاهتمامنا'"*.
+
+ومع ارتفاع العائد على سندات الخزانة لأجل 10 سنوات على وجه الخصوص — وهو المعيار المرجعي العالمي لتسعير الائتمان — ترتفع أسعار الفائدة الأخرى التي تهم المستهلك العام بشكل مباشر وفوري.
+
+وهناك سيناريو أكثر قتامة: **فارتفاع أسعار الفائدة يبطئ النمو الاقتصادي، ويخنق حركة الاستثمار، مما يرفع احتمالات انزلاق الاقتصاد نحو الركود (Recession)**.
+
+---
+
+### رابعاً: ما هو رد وزير الخزانة سكوت بيسنت؟ وما هي حدود أدواته؟
+
+أعلن وزير الخزانة سكوت بيسنت يوم الأربعاء أن الحكومة الأمريكية ستضاعف حجم الأموال المخصصة لإعادة شراء ديونها طويلة الأجل (**Buyback Program**).
+
+حيث ارتفع الرقم المخصص من **2 مليار دولار إلى 4 مليارات دولار لكل عملية إعادة شراء**.
+
+وقد أدى هذا الإعلان إلى كبح العوائد ودفعها نحو الانخفاض — لكن ذلك لم يدم سوى ليوم واحد فقط.
+
+فبحلول يوم الخميس، عاودت العوائد الارتفاع مجدداً. وظهر بيسنت على شاشة شبكة **CNBC** ليصرح بأن عمليات إعادة الشراء: *"قد تتجاوز الـ 4 مليارات دولار لكل إصدار"*.  
+وأضاف الوزير: *"نحن نمتلك صندوق أدوات واسعاً وكبيراً، وسنرى ما ستؤول إليه الأمور"*.
+
+#### حكم هانكي القاطع: "إنها لعبة مغفلين ولن تنجح"
+أطلق البروفيسور ستيف هانكي حكماً مقتضباً وصادماً على تكتيك بيسنت قائلاً: **"هذا لن ينجح أبداً"**.
+
+وأضاف هانكي، الذي شغل سابقاً منصب عضو في مجلس المستشارين الاقتصاديين للرئيس الأسبق رونالد ريغان في ثمانينيات القرن الماضي:  
+> *"ما يحاول بيسنت فعله هو التحكم في منحنى العائد (Yield Curve Control) وإبقاء أسعار السندات طويلة الأجل مرتفعة وعوائدها منخفضة. لكن المشكلة الجوهرية تكمن في أنه إذا قام بإعادة شراء تلك السندات طويلة الأجل، فسيظل مضطراً إلى تمويل العجز المالي القائم. وبالتالي، سيضطر إلى إصدار المزيد والمزيد من الديون قصيرة الأجل (Short-Term Debt). التحكم في منحنى العائد هو لعبة مغفلين (a fool’s game)"*.
+
+يُذكر أن بيسنت كان قد تدخل مؤخراً أيضاً لدعم الين الياباني، في مسعى بدا ناجحاً ظاهرياً لتجنب سيناريو تلجأ فيه اليابان — أكبر حامل أجنبي للديون الأمريكية — إلى بيع كميات ضخمة من سندات الخزانة الأمريكية لتغطية احتياجاتها المالية.
+
+---
+
+### خامساً: ما مدى القلق الذي يجب أن يشعر به الناس؟
+
+**"قلقون للغاية!"**.. كانت هذه الإجابة المباشرة والصريحة من **مارك زاندي (Mark Zandi)**، كبير الاقتصاديين في مؤسسة **موديز أناليتكس (Moody’s Analytics)**.
+
+وأشار زاندي إلى أن معدلات الفائدة على الرهون العقارية ارتفعت بالفعل هذا العام، مما تسبب في فرض عبء ثقيل وكابح حاد على سوق الإسكان والعقارات.
+
+وتوقع زاندي أن هذه الديناميكيات المتشابكة:  
+> *"ستؤثر بشكل مباشر على سهولة الحصول على قروض السيارات. وإذا كنت صاحب عمل أو شركة، فستؤثر على قدرتك على الحصول على قرض لتمويل خطط التوسع والتشغيل. وبطبيعة الحال، هذا يرفع تكلفة خدمة الدين على وزارة الخزانة نفسها. فالخزانة الأمريكية تدفع الآن أكثر من **1 تريليون دولار سنوياً** فقط لتغطية مدفوعات الفوائد على الديون!"*.
+
+#### موقف الرئيس دونالد ترامب
+في المقابل، سعى الرئيس دونالد ترامب إلى التقليل من حجم هذه المخاوف والتهوين من شأنها.  
+وعندما سُئل يوم الأربعاء عما إذا كان ينبغي على الأمريكيين الشعور بالقلق حيال تقلبات أسواق السندات، أجاب باقتضاب: **"لا، لا أعتقد ذلك"**.
+
+إلا أنه وفقاً لآراء الغالبية الساحقة من كبار الخبراء والمحللين الماليين، فإن **إشارات الإنذار المبكر ومصابيح الخطر الحمراء باتت تومض بشدة وبصوت مسموع في كافة أرجاء الأسواق العالمية**.`,
+    contentEn: `### Turmoil in Treasury Bond Yields Sparks Global Worries: What to Know
+#### 30-year bond yields hit a two-decade peak as the national debt breaches $40 trillion, setting off cross-market alarms over inflation, AI debt, and recession risks
+
+**By Niall Stanage — Associate Editor, The Hill (Published 08/20/26 6:27 PM ET)**  
+*Translated and Contextualized by Al-Warraq Investigative & Strategic Research Desk*
+
+---
+
+U.S. bond yields are rarely a burning issue with the general public. But that’s changed this week as a spike in yields has hit the front pages and TV newscasts.
+
+Yields on 30-year U.S. Treasury bonds hit their highest point in almost two decades on Tuesday.
+
+The rise prompted Treasury Secretary Scott Bessent to step in with a buyback measure aimed at alleviating the pressure.
+
+Bessent’s tactic worked for roughly one day — Wednesday — before yields climbed back up on Thursday.
+
+Even amid intense media attention, the topics of bonds, yields, and why they matter can often seem opaque.
+
+Here’s an explainer.
+
+---
+
+### The Basics: How Treasuries Finance the Deficit
+
+The U.S. government has been running a deficit — spending more money than it’s taking in — for decades. 
+
+The national debt is accelerating at a rate of about $2 trillion per year. Earlier this week, it rose above **$40 trillion** for the first time in history.
+
+Given this shortfall, the U.S. needs to borrow money to finance its operations. It does so by issuing bonds — a process that is, in essence, akin to taking out a vast number of loans.
+
+The variables of the bond markets are infinitely complicated, but the basic idea is simple:
+
+* A person or an institution buys a bond from the government.
+* The government instantly gets the proceeds of the sale.
+* In return, the government promises to repay the money at a future date, and to pay interest on the bond during its lifespan.
+
+The best-known U.S. bonds have durations of **10 years** and **30 years**, but lots of other options are available.
+
+When people talk about **“bond yields,”** they’re basically talking about the amount of interest payable on the bond relative to its market price.
+
+U.S. Treasury bonds underpin much of the global financial system in part because they have been seen as almost entirely safe. The United States has never fully defaulted on its debt.
+
+That being said, fluctuations in the bond market — and in the overall health of the economy — cause the price of bonds, and their yields, to vary all the time: **the higher yields go, the more the federal government has to spend to finance its debts. And that’s bad news all around.**
+
+---
+
+### What’s Going On Right Now? Three Compounding Catalysts
+
+Several concerns about the U.S. economy are combining to create turbulence on the bond markets:
+
+#### 1. The $40 Trillion Landmark & Chronic Deficits
+The $40 trillion landmark has put a dramatic point on decades of deficit spending. The U.S. government has not run a surplus since fiscal 2001.
+
+#### 2. War in Iran and Fuel Inflation Shocks
+There are concerns about inflation too, closely linked to the **war in Iran**. 
+
+The rise in oil prices sparked by the conflict is reflected in domestic fuel costs. This has the potential to both **crimp consumer spending** and to **increase inflationary pressure**. 
+
+Families are using more of their income to fill up the tank; farmers, suppliers, and manufacturers have higher transport costs to bring their goods to market.
+
+#### 3. Colossal AI Capital Expenditures & Corporate Debt Competition
+On top of all that, there are ripples of unease about colossal spending by corporations on artificial intelligence technology. 
+
+The AI issue brings two concerns:
+
+1. **Borrowing Competition:** Much of the current spending is financed by borrowing. So if, say, Meta funds some of its spending by issuing bonds, it is in effect in competition for bond-buyers’ business with the federal government. That might mean the government has to pay higher yields to lure those buyers.
+2. **Productivity Premise Vulnerability:** The vast AI spending is predicated on the idea that the technology will deliver equally vast productivity gains. If that assumption proves wrong, a world of pain beckons.
+
+---
+
+### Why Should the General Public Care?
+
+As bond yields rise, **mortgage rates, auto loans, and credit card interest rates rise too**.
+
+The arcane terminology around bond yields can obscure what we’re really talking about: **the cost of borrowing money**.
+
+At the government level, potential creditors appear to be becoming more reluctant to lend the U.S. government money — unless they get rewarded with a solid yield.
+
+> **Steve Hanke**, a professor of applied economics at the Johns Hopkins University in Baltimore, explained:  
+> *“Deficits are growing at, really, an unsustainable rate. That puts pressure on the bond markets because they [the federal government] have to sell more and more bonds to finance the deficits. So the supply is increasing.*  
+>  
+> *“But,” Hanke added, “those who are on the demand side are saying, ‘Fine, we’ll buy them but you have to pay us more to make it interesting for us.’”*
+
+As the yield on the 10-year Treasury, in particular, rises, other interest rates that are of more concern to the general consumer rise too.
+
+And there’s more potential gloom: **Higher interest rates slow economic growth, so the chances of a recession would rise.**
+
+---
+
+### What’s Bessent’s Answer? Yield Curve Control & The Buyback Program
+
+The Treasury secretary announced on Wednesday that the government would double the amount of money it is willing to deploy to buy back long-term government debt. 
+
+The figure rose from **$2 billion to $4 billion per operation**.
+
+The announcement bent yields downward — for a day.
+
+On Thursday, yields rose again. Bessent went on **CNBC** to say the buybacks *“could be more than the 4 billion per issue.”*  
+He added, *“We have a big toolkit, so we’ll see.”*
+
+#### Hanke’s Pithy Verdict: "It Won't Work"
+The professor, who served on former President Reagan’s Council of Economic Advisers in the 1980s, added:
+
+> *“What he is trying to do is control the yield curve and keep those long-bond prices higher and the yields lower. But the problem is, if he buys them back, he still has to finance the deficit. So he is going to have to issue more of the short-term [debt]. Yield curve control is a fool’s game.”*
+
+Bessent also recently intervened to prop up the Japanese yen, aiming — with apparent success — to avoid a scenario where Japan would sell major quantities of U.S. bonds.
+
+---
+
+### Just How Worried Should Regular Folks Be?
+
+**“Concerned!”** is the answer from **Mark Zandi**, chief economist at Moody’s Analytics.
+
+Zandi noted that mortgage rates have already been rising this year, causing a serious drag on the housing market.
+
+The overall dynamics, he predicted:
+> *“are going to affect getting an auto loan. If you own a business, it will affect getting a loan to finance an expansion plan. Obviously it raises the cost to the Treasury. Now the Treasury is shelling out **well over $1 trillion a year in interest payments**.”*
+
+#### President Trump's Stance
+President Trump has played down worries.
+
+Asked on Wednesday if Americans should be concerned about the bond market volatility, he replied, **“No, I don’t think so.”**
+
+According to many experts, though, the warning signs are flashing bright red.`
+  },
+  {
     id: 'editor-desk-bdl-m3-cash-economy-response-2026',
     slug: 'استجابة-للأرقام-الأخيرة-متى-يتحرك-مصرف-لبنان-لضبط-الكتلة-النقدية-واقتصاد-الكاش-2026',
     focusKeyword: 'افتتاحية-الورّاق-مصرف-لبنان-الكتلة-النقدية-M3-اقتصاد-الكاش-الدولرة-إعادة-هيكلة-القطاع-المصرفي',

@@ -185,8 +185,8 @@ export default function App() {
           const initialMap = new Map(INITIAL_ARTICLES.map(a => [a.id, a]));
           const merged = parsed.map((a: any) => {
             if (a && a.id && initialMap.has(a.id)) {
-              // Always prefer code definitions for Solidere, Editor Desk, Exclusives, Remittance, Strategic, and M3 Liquidity articles to keep fresh edits
-              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy') || a.id.includes('liquidity') || a.id.includes('money-supply')) {
+              // Always prefer code definitions for Solidere, Editor Desk, Exclusives, Remittance, Strategic, M3 Liquidity, and Translations articles to keep fresh edits
+              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy') || a.id.includes('liquidity') || a.id.includes('money-supply') || a.id.includes('treasury') || a.id.includes('hill') || a.id.includes('bessent')) {
                 return initialMap.get(a.id);
               }
             }

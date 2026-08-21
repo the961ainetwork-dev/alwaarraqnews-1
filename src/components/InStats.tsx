@@ -4,6 +4,7 @@ import { TrendingDown, TrendingUp, DollarSign, Calendar, BarChart3, Percent, Che
 import { INITIAL_ARTICLES } from '../data';
 import { NEW_ARTICLES } from '../newArticles';
 import { Article } from '../types';
+import LebanonM3MoneySupplyChart from './LebanonM3MoneySupplyChart';
 
 interface RemittanceDataPoint {
   year: string;
@@ -2494,7 +2495,10 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
             </div>
           </div>
 
-          {/* Section 2: Interest Rates & Monetary Survey Side-by-Side */}
+          {/* Section 2: Recharts Historical M3 Trend & YoY Contraction Interactive Visualization */}
+          <LebanonM3MoneySupplyChart language={language} />
+
+          {/* Section 3: Interest Rates & Monetary Survey Side-by-Side */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             {/* Left: Interest Rates Dynamics Table */}
             <div className="lg:col-span-6 border-2 border-black p-5 bg-white flex flex-col justify-between space-y-4">

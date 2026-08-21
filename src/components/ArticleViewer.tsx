@@ -19,6 +19,7 @@ import { RegionalOilEnergyMapInfographic } from './RegionalOilEnergyMapInfograph
 import HormuzRealtimeTracker from './HormuzRealtimeTracker';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
+import LebanonM3MoneySupplyChart from './LebanonM3MoneySupplyChart';
 
 interface ArticleViewerProps {
   article: Article;
@@ -1410,6 +1411,13 @@ export default function ArticleViewer({
             {/* Injected Interactive Risk Simulation Sandbox for proactive risk intelligence editorial */}
             {!isPremiumLocked && article.id === 'lebanon-proactive-risk-intelligence-2026' && (
               <RiskSimulationSandbox language={activeLang} />
+            )}
+
+            {/* Injected Interactive Recharts M3 Money Supply & YoY Contraction Chart */}
+            {!isPremiumLocked && (article.id === 'lebanon-liquidity-money-supply-m3-august-2026' || article.id === 'editor-desk-bdl-m3-cash-economy-response-2026') && (
+              <div className="my-6">
+                <LebanonM3MoneySupplyChart language={activeLang} />
+              </div>
             )}
 
             {/* ARTICLE SEO TARGET KEYWORDS */}
