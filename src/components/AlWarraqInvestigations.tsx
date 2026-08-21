@@ -288,6 +288,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXVI: Remittances Contribution to Lebanon’s GDP Over the Past Decade (2015–2025)',
     descAr: 'ملف إحصائي وتاريخي يرصد تطور مساهمة التحويلات من 13.8% في 2015 إلى قمتها الاستثنائية بـ 33.3% عقب الانهيار، وصولاً إلى استقرارها عند 23%-25% لعامي 2025–2026.',
     descEn: 'A historical research dossier analyzing the shift in remittance-to-GDP ratio from 13.8% in 2015 to a historic 33.3% peak and its current 23-25% baseline in 2025-2026.'
+  },
+  'strategic-investigation-debt-energy-us-china-2026': {
+    fileId: 'AW-FILE-27',
+    badge: 'SOVEREIGN DEBT & ENERGY DOSSIER',
+    titleAr: 'الملف السابع والعشرون: تحقيق استراتيجي: إعادة تشكيل أسواق الدين وتوازنات الطاقة وسط الاستقطاب بين واشنطن وبكين',
+    titleEn: 'Dossier XXVII: Strategic Investigation: Reshaping Debt Markets & Energy Balances Amid US-China Polarization',
+    descAr: 'تحقيق استراتيجي حصري يفكك تراجع حصة المؤسسات الرسمية في سندات الخزانة الأمريكية من 40% إلى 12%، وارتهان الطاقة الصينية للنفط الإيراني وسط صراع النفوذ وأوراق الضغط المالي.',
+    descEn: 'An exclusive strategic investigation analyzing the drop in official foreign US Treasury holdings to 12%, Chinese reliance on Iranian crude, and the shifting dynamics of global debt.'
   }
 };
 

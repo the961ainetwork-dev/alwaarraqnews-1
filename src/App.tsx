@@ -186,7 +186,7 @@ export default function App() {
           const merged = parsed.map((a: any) => {
             if (a && a.id && initialMap.has(a.id)) {
               // Always prefer code definitions for Solidere, Editor Desk, Exclusives, and Remittance articles to keep fresh edits
-              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance')) {
+              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy')) {
                 return initialMap.get(a.id);
               }
             }
@@ -200,12 +200,12 @@ export default function App() {
       } catch (e) {}
     }
 
-    // Explicitly find and prepend 'excl-leb-isr-secret-annex' so it is at the very top of allArticles state as requested
-    const targetArticleIndex = articles.findIndex(a => a && a.id === 'excl-leb-isr-secret-annex');
-    if (targetArticleIndex > -1) {
-      const targetArticle = articles[targetArticleIndex];
-      const rest = articles.filter(a => a && a.id !== 'excl-leb-isr-secret-annex');
-      articles = [targetArticle, ...rest];
+    // Explicitly place the latest strategic investigation and key exclusive at the top
+    const strategicIdx = articles.findIndex(a => a && a.id === 'strategic-investigation-debt-energy-us-china-2026');
+    if (strategicIdx > -1) {
+      const target = articles[strategicIdx];
+      const rest = articles.filter(a => a && a.id !== 'strategic-investigation-debt-energy-us-china-2026');
+      articles = [target, ...rest];
     }
 
     // Update local storage to persist the prepended order

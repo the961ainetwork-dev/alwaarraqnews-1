@@ -2,6 +2,159 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'strategic-investigation-debt-energy-us-china-2026',
+    slug: 'strategic-investigation-debt-energy-us-china-2026',
+    focusKeyword: 'تحقيق-استراتيجي-أسواق-الدين-توازنات-الطاقة-واشنطن-بكين-سندات-الخزانة-النفط-الإيراني',
+    category: 'exclusives',
+    categories: ['exclusives', 'urgent-release', 'alwarraq-investigations', 'economy', 'oil-energy', 'markets', 'editor-desk', 'war-room'],
+    titleAr: 'تحقيق استراتيجي: إعادة تشكيل أسواق الدين وتوازنات الطاقة وسط الاستقطاب بين واشنطن وبكين',
+    titleEn: 'Strategic Investigation: Reshaping Debt Markets and Energy Balances Amid Washington-Beijing Polarization',
+    summaryAr: 'تتداخل الصدمات الاستراتيجية والاقتصادية لتكشف عن تحول بنيوي عميق في النظام المالي والدبلوماسي العالمي؛ حيث يلتقي التوتر السياسي بشأن الملف الإيراني مع هزات حادة في سوق سندات الخزانة الأمريكية، في ظل تراجع قدرة واشنطن على فرض العقوبات الأحادية وتغير قواعد اللعبة في سوق الدين السيادي البالغ 40 تريليون دولار.',
+    summaryEn: 'Strategic shocks and macroeconomic volatility intersect to reveal a profound structural shift in the global financial and diplomatic architecture: diplomatic friction over Iranian crude collides with tremors in the $40T US sovereign debt market as foreign central bank buying dries up and hedge funds dictate liquidity.',
+    excerptAr: 'تحقيق استراتيجي خاص لـ "الورّاق" يكشف تراجع حصة المؤسسات الرسمية الأجنبية في سندات الخزانة الأمريكية من 40% إلى 12%، وارتهان الطاقة الصينية للنفط الإيراني وسط صراع النفوذ وأوراق الضغط المالي بين واشنطن وبكين.',
+    excerptEn: 'An exclusive Al-Warraq strategic investigation analyzing the drop in foreign central bank US Treasury holdings to 12%, Chinese reliance on Iranian oil, and the limits of unilateral financial warfare.',
+    author: {
+      nameAr: 'قسم التحقيقات الاستراتيجية والأسواق السيادية — الورّاق',
+      nameEn: 'Al-Warraq Strategic Investigations & Sovereign Markets Desk',
+      titleAr: 'تحقيق استراتيجي خاص ومتابعة ميدانية حصرية',
+      titleEn: 'Exclusive Strategic Investigation & Financial Intelligence',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-21',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 38920,
+    tags: [
+      'التحقيقات_الصحفية', 'حصري_الورّاق', 'سندات_الخزانة_الأمريكية', 'واشنطن_وبكين', 'النفط_الإيراني', 'أسواق_الدين', 'المعادن_النادرة', 'سكوت_بيسنت', 'البنوك_المركزية', 'يحدث_الآن',
+      'Exclusives', 'USTreasuryBonds', 'USChinaPolarization', 'IranOilSanctions', 'SovereignDebtMarkets', 'RareEarthElements', 'ScottBessent', 'CentralBanks', 'HappeningNow'
+    ],
+    hashtags: ['StrategicInvestigation', 'USTreasuryDebtCrisis', 'ChinaEnergySecurity', 'SovereignDebtPolarization2026'],
+    contentAr: `### تحقيق استراتيجي: إعادة تشكيل أسواق الدين وتوازنات الطاقة وسط الاستقطاب بين واشنطن وبكين
+
+تتداخل الصدمات الاستراتيجية والاقتصادية لتكشف عن تحول بنيوي عميق في النظام المالي والدبلوماسي العالمي؛ حيث يلتقي التوتر السياسي بشأن الملف الإيراني مع هزات حادة في سوق سندات الخزانة الأمريكية. يظهر هذا التقاطع مع تراجع قدرة واشنطن على فرض العقوبات الأحادية، بالتوازي مع تغير قواعد اللعبة في سوق الدين السيادي البالغ **40 تريليون دولار**.
+
+---
+
+### أولاً: الملف الإيراني وضغوط واشنطن على بكين
+
+تخوض الإدارة الأمريكية مواجهة مفتوحة حول الملاحة وملف الطاقة في الشرق الأوسط. وفي هذا السياق، أكد وزير الخزانة الأمريكي، **سكوت بيسنت (Scott Bessent)**، فرض حزم عقوبات مشددة لاستعادة الردع المالي ضد طهران، داعياً الصين إلى التجاوب مع السياسات الأمريكية.
+
+* **الارتهان النفطي للصين:**  
+  تشتري الصين أكثر من **80% من صادرات النفط الإيراني** وفق بيانات الشحن الملاحي وتتبع الناقلات، وتعتمد على منطقة الخليج العربي لتأمين نحو **50% من إجمالي احتياجاتها النفطية**.
+  
+* **الرد الصيني والدبلوماسية المعقدة:**  
+  حذرت بكين من أن "الحرب الاقتصادية" الأمريكية لن تحقق أهدافها، داعية إلى حلول دبلوماسية متوازنة. يكتسب هذا التصعيد حساسية بالغة بالنظر إلى **القمة المرتقبة التي تجمع الرئيس الصيني شي جين بينغ بالقيادة الأمريكية في واشنطن**.
+  
+* **ورقة المعادن والأتربة النادرة:**  
+  تدرك واشنطن أن التصعيد الاقتصادي الشامل ضد بكين ينطوي على مخاطر انتقامية حادة؛ إذ تستحوذ الصين على سلاسل توريد العناصر والأتربة النادرة الأساسية للصناعات التقنية المتقدمة والصناعات العسكرية الأمريكية الفائقة الدقة.
+
+---
+
+### ثانياً: أزمة سوق سندات الخزانة الأمريكية وتغير قواعد اللعبة
+
+تزامن هذا التوتر الدبلوماسي مع قفزات في عوائد السندات طويلة الأجل، مما عكس حقيقة مالية جديدة: **تراجع إقبال الحكومات والبنوك المركزية الأجنبية على تمويل العجز المالي الأمريكي بنفس المستويات التاريخية**.
+
+#### تراجع حصة المؤسسات الرسمية الأجنبية من سندات الخزانة الأمريكية:
+\`\`\`text
+[40% خلال وبعد الأزمة المالية العالمية] ────────► [12% حالياً]
+* مع بقاء القيمة الإجمالية للمحفظة الرسمية الأجنبية ثابتة نسبياً قرب 4 تريليون دولار
+\`\`\`
+
+* **التدخل الإجرائي لوزارة الخزانة:**  
+  اضطرت وزارة الخزانة الأمريكية لمواجهة عمليات البيع المكثفة عبر زيادة وتيرة **عمليات إعادة شراء السندات (Buybacks)** لتهدئة الأسواق وتوفير سيولة مصطنعة.
+
+* **تحذيرات المؤسسات المالية والمحللين:**  
+  * أكد خبراء في مؤسسة **Evercore ISI** أن الاستخدام المكثف لعمليات إعادة الشراء قد يزيد من تقلبات العملة ويقلل من الجاذبية الاستثمارية للدولار على المدى المتوسط.
+  * في الوقت ذاته، أشار تحليل استراتيجي لمصرف **BNP Paribas** إلى أن هذه التدخلات التشغيلية لن تكون كافية لتعويض الفقدان التدريجي لمصداقية السياسة النقدية الأمريكية.
+
+---
+
+### ثالثاً: خلفيات التحول المالي وتراجع "المشتري غير الحساس للأسعار"
+
+تعتبر سندات الخزانة الأمريكية لعقود بمثابة **"حساب بنكي عالمي"** لإدارة تقلبات السيادة وتراكم الاحتياطيات النقدية. غير أن سلوك المؤسسات الرسمية شهد تحولات متسارعة منذ عام 2016 بفعل ثلاث محطات مفصلية:
+
+1. **الدفاع عن العملات المحلية (2016):**  
+   بدأت الصين بالتخلي التدريجي عن جزء من حيازاتها الضخمة لتدعيم قيمة اليوان الصيني أمام ضغوط خروج رؤوس الأموال.
+
+2. **صدمة جائحة كوفيد-19 (2020):**  
+   اتجهت البنوك المركزية لتسييل السندات لتغطية التكاليف الطارئة وحزم الدعم المحلي، بالتوازي مع التضخم القياسي في حجم الدين العام الأمريكي ليصل إلى **40 تريليون دولار** (ما يعادل نحو 120% من الناتج المحلي الإجمالي الأمريكي).
+
+3. **تجميد الأصول السيادية الروسية (2022):**  
+   شكل قرار تجميد أصول البنك المركزي الروسي نقطة تحول استراتيجية عميقة دفعت العديد من الدول الناشئة والاقتصادات غير الغربية لإعادة تقييم مخاطر الاحتفاظ بالاحتياطيات السيادية في أصول مقومة بالدولار الأمريكي.
+
+---
+
+### الخلاصة الاستراتيجية
+
+تُظهر البيانات الكمية أن المؤسسات الرسمية الأجنبية لم تتخلص من سندات الخزانة بشكل جماعي مفاجئ، بل ثبّتت حجم محفظتها الكلية قرب **4 تريليون دولار**. ومع ذلك، فإن عدم زيادة هذه الحيازات لمواكبة الانفجار الهائل في إصدارات الدين الأمريكي جعل السوق أكثر ارتهاناً لـ **المستثمرين من القطاع الخاص وصناديق التحوط (Hedge Funds)**.
+
+تعتمد هذه الفئات الاستثمارية الخاصة على تحقيق الأرباح السريعة وتتأثر بحسابات المخاطر الشديدة وهوامش التداول، مما يقلل بشكل ملموس من قدرة واشنطن على ممارسة ضغوط اقتصادية وسياسية متزامنة دون الانكفاء على **تكاليف اقتراض أعلى وعجز مالي متزايد وتقلبات هيكلية في أسواق المال والطاقة العالمية**.`,
+    contentEn: `### Strategic Investigation: Reshaping Debt Markets and Energy Balances Amid Washington-Beijing Polarization
+
+Strategic shocks and macroeconomic volatility are converging to expose a profound structural transformation in the global financial and diplomatic architecture. Heightened geopolitical friction over Iranian crude oil and Persian Gulf maritime corridors is colliding with unprecedented turbulence across the **$40 Trillion US Sovereign Debt Market**. This critical juncture highlights the diminishing effectiveness of unilateral financial sanctions, alongside shifting paradigms among foreign sovereign buyers.
+
+---
+
+### I. The Iranian File and Washington’s Pressure on Beijing
+
+The US administration is engaged in a broad strategic confrontation regarding maritime freedom and Middle Eastern energy supply lines. In this context, US Treasury Secretary **Scott Bessent** has emphasized escalating sanctions packages to restore financial deterrence against Tehran, explicitly urging China to comply with US policy measures.
+
+* **China’s Energy Dependence on Iranian Crude:**  
+  According to maritime tracking and tanker flows, China purchases over **80% of Iran’s total oil exports** and relies on the broader Persian Gulf region for nearly **50% of its total domestic petroleum consumption**.
+  
+* **Beijing’s Rebuttal and Complex Diplomatic Signaling:**  
+  Beijing has firmly cautioned that unilateral American "economic warfare" will fail to achieve its strategic objectives, calling instead for multilateral diplomatic mechanisms. This dispute carries acute sensitivity ahead of the **anticipated summit between Chinese President Xi Jinping and the US leadership in Washington**.
+  
+* **The Rare Earth Elements Counter-Leverage:**  
+  Washington is keenly aware that all-out economic escalation against China carries severe retaliatory exposure; China commands the global supply chains for critical rare earth minerals and magnets indispensable to US high-tech industries and advanced defense aerospace manufacturing.
+
+---
+
+### II. The $40 Trillion Treasury Crisis: A Structural Paradigm Shift
+
+This diplomatic friction coincides with sharp spikes in long-term US Treasury yields, reflecting a new macroeconomic reality: **foreign governments and sovereign central banks are no longer expanding their purchases to absorb expanding US fiscal deficits at historic rates**.
+
+#### Sharp Contraction in Foreign Official Share of US Treasuries:
+\`\`\`text
+[40% during and after 2008 Global Financial Crisis] ────────► [12% Currently]
+* While the aggregate foreign official portfolio value remains plateaued near $4 Trillion
+\`\`\`
+
+* **Treasury Department Market Intervention:**  
+  To counter aggressive market sell-offs and smooth yield spikes, the US Treasury has significantly expanded its **debt buyback operations (Buybacks)** to inject operational liquidity.
+
+* **Wall Street Analyst Warnings:**  
+  * Economists at **Evercore ISI** caution that heavy reliance on Treasury buyback mechanisms may exacerbate currency volatility and diminish the global reserve appeal of the US Dollar.
+  * Concurrently, a strategic assessment from **BNP Paribas** underscores that technical balance-sheet interventions cannot permanently offset the progressive erosion of monetary policy predictability and sovereign fiscal discipline.
+
+---
+
+### III. The Genesis of the Shift: The Retreat of the "Price-Insensitive Buyer"
+
+For decades, US Treasury bills served as the quintessential "global bank account" for sovereign surplus nations. However, official institutional behavior has decoupled over three distinct historical turning points:
+
+1. **Defending Domestic FX Currencies (2016):**  
+   China initiated a gradual drawdown of its Treasury holdings to defend the valuation of the Renminbi against domestic capital outflow pressures.
+
+2. **The COVID-19 Liquidity Shock (2020):**  
+   Global central banks liquidated sovereign debt to fund emergency fiscal relief, coinciding with a record explosion in gross US national debt reaching **$40 Trillion** (~120% of US GDP).
+
+3. **Freezing of Russian Central Bank Reserves (2022):**  
+   The unprecedented G7 weaponization and freezing of sovereign Russian foreign reserves marked an irreversible watershed, prompting emerging and non-aligned economies to re-evaluate the systemic counterparty risk of holding USD-denominated sovereign reserves.
+
+---
+
+### Strategic Takeaways
+
+Quantitative data proves that foreign central banks did not execute an abrupt wholesale dump of US Treasuries; their collective portfolio remains steady near **$4 Trillion**. However, by refusing to scale their purchases alongside the exponential growth in US debt issuance, the market has become overwhelmingly dependent on **private domestic investors and speculative hedge funds**.
+
+Because private market participants are strictly price-sensitive, yield-driven, and volatile, Washington’s capacity to leverage simultaneous multi-front geopolitical and financial pressure is now constrained by **higher federal borrowing costs, acute market sensitivity, and persistent global energy volatility**.`
+  },
+  {
     id: 'wsj-is-america-still-capable-of-enforcing-world-order-2026',
     slug: 'wsj-is-america-still-capable-of-enforcing-world-order-2026',
     focusKeyword: 'هل-لا-تزال-أمريكا-قادرة-على-فرض-النظام-العالمي-وول-ستريت-جورنال-تروفيموف-صواريخ-باتريوت-حرب-إيران',
