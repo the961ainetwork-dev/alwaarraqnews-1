@@ -2,6 +2,209 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'blominvest-ppp-exchange-rate-lebanon-study-2026',
+    slug: 'دراسة-بلوم-إنفست-بنك-تعادل-القوة-الشرائية-وانحراف-سعر-صرف-الليرة-2026',
+    focusKeyword: 'بلوم-إنفست-بنك-تعادل-القوة-الشرائية-سعر-الصرف-التضخم-المفرط-مؤشر-بيج-ماك-المضاربة-سعر-الصرف-الزاحف-الاقتصاد-اللبناني',
+    category: 'economy',
+    categories: ['economy', 'markets', 'lebanon', 'exclusives', 'alwarraq-investigations', 'urgent-release'],
+    titleAr: 'دراسة بحثية لـ "بلوم إنفست بنك": اختبار تعادل القوة الشرائية (PPP) وتفسير انحراف سعر صرف الليرة وتجاوزه',
+    titleEn: 'BLOMINVEST Bank Research: Testing Purchasing Power Parity & Explaining LBP Exchange Rate Misalignment in Lebanon',
+    summaryAr: 'دراسة إحصائية واقتصادية قياسية صادرة عن قسم البحوث في بلوم إنفست بنك تفكك اختبار نظرية تعادل القوة الشرائية في لبنان خلال ذروة الأزمة (2019-2023). وتكشف الدراسة عن انحراف معامِل التغير إلى 1.2 نتيجة المضاربات السياسية، وتراجع سعر الصرف الحقيقي الذي دعم الصادرات، بينما يظهر مؤشر "بيج ماك" أن الليرة مقومة حالياً بأقل من قيمتها العادلة بنحو 10,000 ليرة (80,000 ليرة للدولار مقابل 89,500 في السوق).',
+    summaryEn: 'An econometric research study from BLOMINVEST Bank Research Department tests Purchasing Power Parity (PPP) in Lebanon across crisis years (2019–2023). The study demonstrates a regression coefficient (β1) of 1.2 driven by speculative overshooting, documents how real exchange rate depreciation boosted goods exports to $3.53B, and utilizes the Big Mac Index to show the LBP is currently undervalued by ~10,000 LBP (fair value at 80,000 LBP/USD vs 89,500 market peg).',
+    excerptAr: 'ملخص بحثي موسع لدراسة بلوم إنفست بنك: بالأرقام والمعادلات القياسية، كيف أدت المضاربة لتجاوز تدهور الليرة معدلات التضخم (Overshooting)، ولماذا يعد سعر الصرف الزاحف المخرج الأمثل للتعافي؟',
+    excerptEn: 'In-depth research briefing on BLOMINVEST Bank’s latest study: econometric proof of speculative overshooting, export competitiveness shifts, Big Mac valuation, and the case for a crawling peg.',
+    author: {
+      nameAr: 'قسم البحوث — بلوم إنفست بنك (BLOMINVEST)',
+      nameEn: 'Research Department — BLOMINVEST Bank',
+      titleAr: 'إدارة البحوث والدراسات الاقتصادية الكلية',
+      titleEn: 'Macroeconomic & Financial Research Division',
+      avatar: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-11',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    views: 24800,
+    tags: [
+      'اقتصاد', 'بلوم_إنفست', 'تعادل_القوة_الشرائية', 'سعر_الصرف', 'الليرة_اللبنانية', 'التضخم_المفرط', 'بيج_ماك', 'المضاربة', 'الصادرات', 'لبنان',
+      'Economy', 'BLOMINVEST', 'PurchasingPowerParity', 'PPP', 'ExchangeRate', 'Hyperinflation', 'BigMacIndex', 'Overshooting', 'LebanesePound', 'CrawlingPeg'
+    ],
+    hashtags: ['BLOMINVESTResearch', 'LebanonEconomy2026', 'PPPLebanon', 'ExchangeRateStudy', 'MacroeconomicAnalysis'],
+    contentAr: `### ملخص دراسة بحثية صادرة عن بلوم إنفست بنك (BLOMINVEST Bank)
+#### اختبار مدى تحقّق نظرية تعادل القوة الشرائية (PPP) في لبنان خلال سنوات الأزمة والتضخم المفرط وتأثيرها على سعر الصرف
+
+**إعداد: قسم البحوث في بلوم إنفست بنك (BLOMINVEST Research Department)**  
+*تاريخ الإصدار: 11 أغسطس 2026*  
+*توثيق وقراءة تحليلية: منصة الورّاق للدراسات والتحقيقات الاقتصادية*
+
+---
+
+تتناول هذه الدراسة البحثية المتخصصة الصادرة عن قسم البحوث في **بلوم إنفست بنك (BLOMINVEST Bank)** اختبار مدى تحقّق **نظرية تعادل القوة الشرائية (Purchasing Power Parity - PPP)** في لبنان خلال سنوات الأزمة العميقة والتضخم المفرط (الممتدة بين أغسطس 2019 وأغسطس 2023) ورصد انعكاساتها المباشرة على حركة وسلوك سعر صرف الليرة اللبنانية مقابل الدولار الأمريكي.
+
+---
+
+### أبرز محاور البحث والنتائج القياسية
+
+| المؤشر القياسي | التفاصيل والنتائج |
+| :--- | :--- |
+| **فرضية النموذج القياسي** | اختبار تعادل القوة الشرائية (PPP Testing) |
+| **الفترة الزمنية المدروسة** | أغسطس 2019 – أغسطس 2023 (سنوات التضخم المفرط) |
+| **معامل الانحدار (β1)** | 1.2 (انحراف إحصائي عن القيمة النظرية 1.0) |
+| **متوسط سعر الصرف الحقيقي** | 2,100 ليرة/دولار (مقارنة بسعر الأساس 1,500 ليرة) |
+| **نمو صادرات السلع السنوية** | ارتفع من 2.95 مليار $ (2018) إلى 3.53 مليار $ (متوسط سنوي) |
+| **السعر العادل (Big Mac)** | ~ 80,000 ليرة للدولار |
+| **فجوة التقييم السوقي** | الليرة مقومة بأقل من قيمتها بنحو 10,000 ليرة للدولار |
+
+---
+
+### 1. فرضية تعادل القوة الشرائية (PPP): السلوك التاريخي والخصوصية اللبنانية
+
+تفترض نظرية تعادل القوة الشرائية (PPP) في الاقتصاد الكلي أن **التغير النسبي في سعر الصرف الاسمي بين عملتين يجب أن يعكس بدقة الفارق في معدلات التضخم بين البلدين المعنيين**.
+
+ورغم أن التجارب الاقتصادية الدولية تؤكد استقرار وصحة هذه النظرية تاريخياً خلال فترات التضخم المفرط (Hyperinflation) في معظم الاقتصادات الناشئة والمتقدمة، إلا أن **الحالة اللبنانية خلال الأزمة أظهرت انحرافاً واضحاً عن الفرضية التقليدية**.
+
+---
+
+### 2. الانحراف الإحصائي عن التعادل (Misalignment): معامِل 1.2 بدلاً من 1.0
+
+أظهرت نتائج معادلة الانحدار الإحصائي والاقتصادي القياسي للدراسة أن **معامل التغير (β1) بلغ 1.2 بدلاً من 1 صحيح**.
+
+> **المعادلة القياسية:**  
+> Δ ln(E_t) = α + 1.2 · (π_Lebanon - π_USA) + ε_t
+
+* **المعنى الاقتصادي للنتيجة:** إن كل تغير بنسبة **1%** في فارق معدل التضخم بين لبنان والولايات المتحدة قابله تغير وانخفاض بنسبة **1.2%** في سعر الصرف الاسمي لليرة اللبنانية أمام الدولار في السوق الموازية.
+
+---
+
+### 3. تفسير تدهور الليرة وظاهرة الإفراط في التراجع (Overshooting)
+
+تشير زيادة نسبة الانخفاض في سعر الصرف عن الفارق الفعلي للتضخم (بفارق 0.2 إضافي) إلى وجود **تجاوز وإفراط حاد في تراجع القيمة الاسمية لليرة (Overshooting Phenomenon)**.
+
+وترجع دراسة بلوم إنفست بنك هذا الإفراط إلى عاملين بنيويين:
+1. **الممارسات المضاربية الحادة:** عمليات المضاربة الواسعة والممنهجة التي قادها صرافون ومنصات نقدية غير مرخصة ارتبطت في كثير من الأحيان بجهات سياسية ومجموعات مصالح نافذة.
+2. **صدمات انعدام الثقة والهلع المالي:** التهافت المذعور على حيازة الدولار الورقي نتيجة الانهيار المصرفي واحتجاز الودائع، مما دفع سعر الصرف إلى مستويات أسوأ بكثير مما تبرره أساسيات التضخم الفعلي.
+
+---
+
+### 4. سعر الصرف الحقيقي (RER) والمكاسب التنافسية للصادرات
+
+أدى هذا الانحراف والـ Overshooting إلى **انخفاض حاد في قيمة سعر الصرف الحقيقي (Real Exchange Rate - RER)**، حيث ارتفع متوسطه الحسابي إلى نحو **2,100 ليرة/دولار** مقارنة بسعر الأساس التاريخي البالغ **1,500 ليرة/دولار**.
+
+#### الأثر الإيجابي على تنافسية التصدير:
+ونتيجة لهذا الانخفاض الملحوظ في سعر الصرف الحقيقي وتراجع تكلفة الإنتاج واليد العاملة محلياً بالدولار، **تحسنت التنافسية التصديرية للبنان بشكل نسبي وملموس**:
+* ارتفعت صادرات البضائع والسلع اللبنانية من **2.95 مليار دولار** في عام 2018 (ما قبل الأزمة).
+* إلى متوسط سنوي بلغ **3.53 مليار دولار** خلال سنوات الأزمة الممتدة بين 2019 و2023، مسجلة دعماً حيوياً لميزان المدفوعات والتدفقات النقدية الخارجية.
+
+---
+
+### 5. تقييم القيمة الحالية لليرة اللبنانية: مؤشر "بيج ماك" (Big Mac Index)
+
+استناداً إلى **مؤشر "بيج ماك" (Big Mac Index)** الاسترشادي المعتمد عالمياً لقياس تعادل القوة الشرائية الميداني:
+* أظهرت حسابات الدراسة أن **سعر الصرف العادل والتوازني لليرة اللبنانية بناءً على تعادل القوة الشرائية يقارب 80,000 ليرة للدولار**.
+* بمقارنة هذا السعر العادل بالسعر السوقي المستقر حالياً عند **89,500 ليرة للدولار**؛ يتبين أن **الليرة اللبنانية مقومة حالياً بأقل من قيمتها الفعلية والحقيقية (Undervalued) بنحو 10,000 ليرة للدولار الواحد (نحو 11% تراجعاً إضافياً غير مبرر اقتصادياً)**.
+
+---
+
+### 6. الخلاصة والتوصيات الاستراتيجية للسياسة النقدية
+
+تخلُص دراسة **بلوم إنفست بنك** إلى حزمة من الخلاصات والتوصيات الموجهة لصناع القرار في مصرف لبنان والحكومة:
+
+1. **انتهاز فرصة التعافي:** مع بدء تعافي الاقتصاد اللبناني التدريجي وتراجع حدة الاضطرابات الأمنية والسياسية، تتوافر أرضية مناسبة لإعادة تصحيح التقييم المنخفض والمبالغ فيه لليرة.
+2. **اعتماد نظام سعر الصرف الزاحف (Crawling / Adjustable Peg):**  
+   توصي الدراسة بتطبيق **نظام سعر صرف مرن وزاحف (Crawling Peg)** يتيح تعديل سعر الصرف تدريجياً ضمن هوامش محددة وشفافة، مما يساهم في:
+   * تصحيح فجوة التقييم المفرط البالغة 10,000 ليرة.
+   * قيادة سعر الصرف نحو **مستوى توازني جديد ومستقر** يعكس الأساسيات الاقتصادية الحقيقية والاحتياطيات الأجنبية المتاحة.
+   * حماية المكتسبات التصديرية وتجنب العودة إلى التثبيت الصارم والمكلف الذي استنزف مقدرات الاقتصاد الوطني قبل 2019.`,
+    contentEn: `### Research Brief: BLOMINVEST Bank Study on Purchasing Power Parity (PPP)
+#### Econometric Evaluation of PPP Validity in Lebanon During Hyperinflation (2019–2023) & Exchange Rate Misalignment
+
+**Prepared by: Research Department, BLOMINVEST Bank**  
+*Publication Date: August 11, 2026*  
+*Analytical Review: Al-Warraq Economic & Strategic Research Desk*
+
+---
+
+This specialized research paper issued by the **Research Department at BLOMINVEST Bank** examines the empirical validity of the **Purchasing Power Parity (PPP)** theory in Lebanon during the years of acute crisis and hyperinflation (August 2019 to August 2023), assessing its structural impact on the Lebanese Pound (LBP) exchange rate trajectory.
+
+---
+
+### Key Research Findings & Econometric Insights
+
+| Benchmark Indicator | Metric Value & Research Findings |
+| :--- | :--- |
+| **Econometric Framework** | Purchasing Power Parity (PPP) Hypothesis Testing |
+| **Sample Period** | August 2019 – August 2023 (Acute Hyperinflation Era) |
+| **Regression Slope (β1)** | 1.2 (Statistical misalignment vs theoretical 1.0) |
+| **Real Exchange Rate Mean** | 2,100 LBP / USD (vs historical 1,500 LBP base) |
+| **Annual Goods Exports** | Rose from $2.95B (2018) to $3.53B average during crisis |
+| **Big Mac Fair Value** | ~ 80,000 LBP / USD |
+| **LBP Valuation Gap** | Undervalued by ~10,000 LBP vs market equilibrium |
+
+---
+
+### 1. The PPP Hypothesis: Theoretical Foundations vs. Lebanon’s Deviation
+
+Purchasing Power Parity (PPP) posits that **changes in nominal exchange rates between two currencies should directly equal the inflation differential between the two corresponding nations**.
+
+While historical economic literature consistently demonstrates that PPP holds robustly during hyperinflation episodes globally, the **Lebanese case exhibited a statistically significant deviation from classical theory**.
+
+---
+
+### 2. Exchange Rate Misalignment: Regression Slope β1 = 1.2
+
+The study’s empirical regression results yielded a slope coefficient of **β1 = 1.2 instead of unity (1.0)**:
+
+> **Econometric Specification:**  
+> Δ ln(E_t) = α + 1.2 · (π_Lebanon - π_USA) + ε_t
+
+* **Economic Implication:** Every **1.0% change** in the inflation differential between Lebanon and the United States caused a **1.2% nominal depreciation** of the LBP against the USD on the parallel market.
+
+---
+
+### 3. Currency Overshooting & Speculative Pressures
+
+The fact that nominal currency depreciation exceeded actual inflation differentials highlights a pronounced **Overshooting Phenomenon**.
+
+BLOMINVEST attributes this severe deviation to:
+1. **Intense Speculative Maneuvers:** Coordinated speculative trading driven by licensed and unlicensed money changers with strong political affiliations.
+2. **Panic-Driven Dollar Demand:** Acute institutional distrust and complete domestic banking paralysis, pushing parallel market rates far beyond fundamental macroeconomic equilibrium.
+
+---
+
+### 4. Real Exchange Rate (RER) & Export Competitiveness Gains
+
+This persistent overshoot led to a substantial **depreciation in the Real Exchange Rate (RER)**, with its historical average climbing to approximately **2,100 LBP/USD** compared to the pre-crisis baseline of **1,500 LBP/USD**.
+
+#### Impact on Lebanese Goods Exports:
+By lowering domestic production and labor dollar costs, the RER depreciation enhanced Lebanese export competitiveness:
+* Merchandise exports increased from **$2.95 billion** in 2018.
+* To an annual average of **$3.53 billion** during the crisis period (2019–2023), providing critical FX inflows to the national economy.
+
+---
+
+### 5. Current LBP Valuation: The Big Mac Index Benchmark
+
+Applying the globally recognized **Big Mac Index** as an informal PPP benchmark:
+* The calculated **fair equilibrium PPP exchange rate is ~80,000 LBP / USD**.
+* Comparing this fundamental rate with the current stabilized market peg of **89,500 LBP / USD** reveals that the **Lebanese Pound is currently undervalued by roughly 10,000 LBP (~11% discount)**.
+
+---
+
+### 6. Strategic Conclusions & Policy Recommendations
+
+The BLOMINVEST study offers strategic guidance for the Central Bank and fiscal authorities:
+
+1. **Capitalizing on Economic Stabilization:** As geopolitical and macroeconomic stabilization takes root, conditions are primed to unwind excessive currency undervaluation.
+2. **Transition to a Crawling / Adjustable Peg:**  
+   The study recommends adopting a **crawling peg exchange rate regime**, enabling managed, transparent adjustments that:
+   * Close the 10,000 LBP undervaluation gap.
+   * Guide the currency toward a new market equilibrium anchored in real macroeconomic fundamentals and verifiable FX reserves.
+   * Preserve export competitiveness while avoiding the hazards of rigid, unsustainable currency pegs.`
+  },
+  {
     id: 'the-hill-treasury-yields-turmoil-bessent-buyback-2026',
     slug: 'اضطراب-عوائد-سندات-الخزانة-الأمريكية-يثير-قلقا-عالميا-ما-يجب-أن-تعرفه-2026',
     focusKeyword: 'عوائد-سندات-الخزانة-الأمريكية-سكوت-بيسنت-الدين-القومي-40-تريليون-حرب-إيران-الفائدة-التضخم-الترجمات',

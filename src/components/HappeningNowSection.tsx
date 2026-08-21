@@ -37,6 +37,8 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
 
   // Target specific IDs requested by the user for key secondary dossier stories
   const targetIds = [
+    'blominvest-ppp-exchange-rate-lebanon-study-2026',
+    'the-hill-treasury-yields-turmoil-bessent-buyback-2026',
     'editor-desk-bdl-m3-cash-economy-response-2026',
     'lebanon-liquidity-money-supply-m3-august-2026',
     'strategic-investigation-debt-energy-us-china-2026',
