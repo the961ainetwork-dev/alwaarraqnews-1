@@ -2,6 +2,144 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'editor-desk-bdl-m3-cash-economy-response-2026',
+    slug: 'استجابة-للأرقام-الأخيرة-متى-يتحرك-مصرف-لبنان-لضبط-الكتلة-النقدية-واقتصاد-الكاش-2026',
+    focusKeyword: 'افتتاحية-الورّاق-مصرف-لبنان-الكتلة-النقدية-M3-اقتصاد-الكاش-الدولرة-إعادة-هيكلة-القطاع-المصرفي',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'lebanon', 'economy', 'markets', 'exclusives', 'urgent-release', 'alwarraq-investigations'],
+    titleAr: 'استجابة للأرقام الأخيرة: متى يتحرك مصرف لبنان لضبط الكتلة النقدية (M3) واقتصاد الكاش؟',
+    titleEn: 'Responding to Recent Telemetry: When Will BDL Act to Control M3 Money Supply & Curb the Cash Economy?',
+    summaryAr: 'تظهر أحدث بيانات مصرف لبنان انكماشاً مستمراً في الكتلة النقدية (M3) وبقاء نسبة الدولرة فوق 97.7% مكرسةً شلل الليرة وسط استشراء اقتصاد الكاش، مما يطرح تساؤلات حاسمة حول موعد وكيفية تحرك السلطة النقدية والحكومة لطرح أدوات نقدية وتشريعية تعيد توجيه السيولة للقنوات المصرفية المنظمة.',
+    summaryEn: 'Latest BDL data confirms ongoing broad money (M3) contraction alongside a record 97.7% dollarization baseline and an entrenched cash economy. This editorial outlines the critical monetary and legislative roadmap required from the Central Bank and government to restore banking intermediation and regulate liquidity.',
+    excerptAr: 'افتتاحية رئيس التحرير: خارطة طريق تفكك أدوات مصرف لبنان والإصلاحات التشريعية للحكومة والبرلمان للانتقال من شلل "اقتصاد الكاش" إلى الاقتصاد المصرفي الرقمي والمنظم.',
+    excerptEn: 'Al-Warraq Editor’s Desk: A strategic roadmap detailing central bank monetary levers and legislative reforms to transition Lebanon from a cash economy into a regulated digital banking system.',
+    author: {
+      nameAr: 'هيئة التحرير — الورّاق',
+      nameEn: 'Al-Warraq Editorial Board',
+      titleAr: 'موقف الورّاق والافتتاحية الاستراتيجية',
+      titleEn: 'Al-Warraq Strategic Editorial',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-21',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 31200,
+    tags: [
+      'رأي_الورّاق', 'مصرف_لبنان', 'الكتلة_النقدية', 'اقتصاد_الكاش', 'الدولرة', 'أسواق_المال', 'إصلاح_المصارف', 'الشمول_المالي', 'لبنان',
+      'EditorDesk', 'CentralBankLebanon', 'MoneySupplyM3', 'CashEconomy', 'Dollarization', 'BankingReform', 'FinancialInclusion', 'CapitalControl'
+    ],
+    hashtags: ['BDLPolicyResponse', 'LebanonCashEconomy', 'MoneySupplyReform2026', 'EditorialAlWarraq'],
+    contentAr: `### استجابة للأرقام الأخيرة: متى يتحرك مصرف لبنان لضبط الكتلة النقدية (M3) واقتصاد الكاش؟
+
+تظهر أحدث بيانات **مصرف لبنان** انكماشاً مستمراً في الكتلة النقدية بمفهومها الواسع (**M3**)، بالتوازي مع بقاء نسبة الدولرة عند مستويات قياسية تتجاوز **97.7%**. يعكس هذا المشهد حالة الشلل في وظيفة الليرة اللبنانية، وتكرّس ما يُعرف بـ **"اقتصاد الكاش" (Cash Economy)** خارج مظلة القطاع المصرفي الرسمي.
+
+ورغم التحسن الظاهري في صافي الأصول الأجنبية للبنك المركزي وإطفاء أجزاء من الدين العام بالليرة، إلا أن السؤال الأساسي يظل مطروحاً في الأوساط المالية والإقتصادية: **متى سيتخذ مصرف لبنان إجراءات فعلية وهيكلية للتعامل مع انكماش M3 والسيطرة على التداول النقدي الورقي؟**
+
+---
+
+### محاور علامات الاستفهام المطروحة على السلطة النقدية
+
+1. **غياب خطة إعادة هيكلة الودائع:**  
+   إن استمرار تراجع الودائع بالعملات الأجنبية وجمود القروض المصرفية للقطاع الخاص يثبت أن تقليص M3 لا يأتي كبرنامج إصلاحي متعمد، بل نتيجة انكماش قهري وزوال الثقة بالمؤسسات المالية.
+
+2. **مخاطر استشراء الاقتصاد النقدي:**  
+   يتيح التداول بالدولار النقدي خروج جزء كبير من الدورة الاقتصادية عن التتبع الضريبي والرقابي، مما يزيد من مخاطر غسيل الأموال ويضع لبنان تحت مجهر المؤسسات المالية الدولية ومجموعات العمل المالي.
+
+3. **غياب سياسة واضحة لأسعار الفائدة:**  
+   على الرغم من ارتفاع الفوائد المصرفية على التسليفات بالليرة (8.43%) وبالدولار (4.13%)، إلا أنها تفتقر للفاعلية التأثيرية في ظل غياب دور الإقراض التنموي أو الجاذبية الاستثمارية للودائع.
+
+تستدعي المرحلة الانتقالية الانتقال من سياسة **"إدارة الأزمة"** والتحفظ إلى طرح أدوات نقدية حازمة تعيد توجيه السيولة نحو قنوات رسمية، وتضع حداً للتسرب النقدي الذي يهدد الاستقرار المالي والاستثماري المستقبلي للبنان.
+
+يتطلب الانتقال من "اقتصاد الكاش" (Cash Economy) الذي يعفي آلاف المعاملات من الرقابة والمطابقة المالية إلى اقتصاد مصرفي منظم، منظومة متكاملة تدمج بين الأدوات النقدية التي يمتلكها مصرف لبنان، والتشريعات والإصلاحات المالية التي تديرها الحكومة.
+
+---
+
+### أولاً: الأدوات والآليات النقدية المتاحة لمصرف لبنان
+
+#### 1. إعادة تفعيل وسائل الدفع الإلكتروني والنظام المصرفي الرقمي:
+* **إلزامية وسائل الدفع الرقمية:** إلزام المتاجر والشركات والمؤسسات التجارية بتوفير نقاط البيع الإلكترونية (**POS**) والتطبيقات الإلكترونية للدفع دون الاستناد حصراً للنقد الورقي.
+* **تخفيض عمولات البطاقات المصرفية:** وضع سقف إجباري للعمولات التي تتقاضاها المصارف وشركات الدفع على المعاملات المحلية للتشجيع على استخدام البطاقات بدلاً من الدولار الورقي.
+
+#### 2. تسوية أسعار الصرف وإلغاء تعددية الأسعار:
+* إرساء منصة موحدة وشفافة لتداول العملة تعكس العرض والطلب الفعليين، مما يزيل الفوارق بين "سوق الكاش" والعمليات المصرفية، ويُعيد جاذبية إيداع الأموال داخل الحسابات الرسمية.
+
+#### 3. وضع سقوف على السحوبات والتحويلات النقدية الورقية:
+* تحديد سقوف تدريجية على المعاملات التجارية النقداً (**Cash Limits**) التي تتجاوز مبالغ معينة، وفرض إجراء التحويلات الكبيرة حصراً عبر الحسابات المصرفية أو الشيكات المقبولة والمصرفية.
+
+#### 4. إعادة هيكلة القطاع المصرفي وتنقيته:
+* تصنيف البنوك وتقييم ملاءتها المالية لإغلاق أو دمج المؤسسات غير القابلة للاستمرار، مع **ضمان كامل ومطلق لأموال المودعين الجدد (Fresh Accounts)**؛ حيث تُعد الثقة بالحسابات الجديدة الحجر الأساس لإعادة تدفق السيولة إلى الشرايين المصرفية.
+
+---
+
+### ثانياً: الآليات التشريعية والتنظيمية للحكومة والبرلمان
+
+1. **تشريع وإقرار قوانين الضوابط الاستثنائية (Capital Control):**  
+   إقرار قانون واضح وشفاف يستعيد ثقة المتعاملين والمستثمرين، ويضمن قانونياً عدم احتجاز أو تجميد أي سيولة جديدة يدخلها المواطن أو الشركة إلى الحسابات المصرفية.
+
+2. **تحديث وتفعيل قوانين مكافحة تبييض الأموال والتهرب الضريبي:**  
+   إلزام القطاعات الاقتصادية الكبرى (مثل العقارات، تجارة السيارات، وتجارة الذهب والمجوهرات) بالمرور حصراً عبر القنوات المصرفية للتحقق من مصدر الأموال ومكافحة التهرب الضريبي الذي ينشط في بيئة الكاش.
+
+3. **رقمنة التحصيل الضريبي والمعاملات الحكومية:**  
+   حظر تسديد الرسوم والجباية الحكومية (الضرائب، الرسوم العقارية، الجمارك، والخدمات العامة) نقدياً بالمبالغ الكبيرة، واشتراط دفعها عبر أدوات الدفع المصرفية أو الإلكترونية لربط الدورة الاقتصادية بالميزانية العامة للدولة.
+
+4. **قانون إعادة هيكلة الانتظام المالي:**  
+   إنجاز التشريعات التي تعالج الفجوة المالية التاريخية وتحدد توزيع المسؤوليات والالتزامات بين الدولة، البنك المركزي، والمصارف، لإزالة الضبابية القانونية التي تمنع رؤوس الأموال من العودة إلى النظام المصرفي.
+
+---
+
+### النتيجة الاستراتيجية
+
+إن الحد من الشلل الاقتصادي واقتصاد النقد الورقي لا يمكن أن يتحقق عبر القرارات الفردية المنعزلة، بل يقتضي **شراكة ملزمة بين السياسة النقدية والسياسة المالية**. 
+
+تبدأ العملية بتطمين الأسواق والمودعين بشأن سلامة الأموال الجديدة وحصانتها، وتمر عبر **إلزامية الرقمنة والتحصيل الإلكتروني**، وتنتهي بتشريعات حازمة تجعل **كلفة استخدام "الكاش" أعلى من كلفة التعامل المصرفي الرسمي**.`,
+    contentEn: `### Responding to Recent Telemetry: When Will BDL Act to Control M3 Money Supply & Curb the Cash Economy?
+
+Latest data from the **Central Bank of Lebanon (Banque du Liban - BDL)** confirms a continuing contraction in broad money supply (**M3**), accompanied by persistent dollarization above **97.7%**. This reality underscores the functional paralysis of the Lebanese Pound and the deepening of an informal **Cash Economy** operating outside regulated banking channels.
+
+While Net Foreign Assets show nominal accumulation and public domestic debt has shrunk via inflationary liquidation, the critical macroeconomic question remains: **When will BDL and fiscal authorities execute structural interventions to regulate M3 and re-absorb paper cash?**
+
+---
+
+### Key Questions Facing the Monetary Authority
+
+1. **Absence of a Structured Deposit Restructuring Framework:**  
+   The ongoing drain in foreign currency bank deposits and the absolute freeze in private sector credit prove that M3 reduction is not the outcome of planned monetary tightening, but rather a coercive contraction caused by total institutional distrust.
+
+2. **Dangers of an Unregulated Cash Economy:**  
+   Paper USD transactions shield massive economic volume from fiscal oversight, escalating illicit finance risks and keeping Lebanon vulnerable to international financial scrutiny.
+
+3. **Ineffective Interest Rate Dynamics:**  
+   Despite commercial lending rates climbing to 8.43% on LBP and 4.13% on USD, interest rates remain functionally ineffective in the absence of productive credit demand and deposit incentives.
+
+---
+
+### I. Central Bank Monetary Levers
+
+* **Mandatory Digital Payments & POS Infrastructure:** Enforce digital point-of-sale adoption across all commercial retailers and cap merchant card interchange fees to make card usage cheaper than physical cash.
+* **Unified Exchange Rate Mechanism:** Establish a transparent, market-clearing FX platform to eliminate arbitrage between informal cash brokers and regulated banking channels.
+* **Statutory Cash Transaction Ceilings:** Implement tiered legal limits on cash transactions, mandating certified checks or bank transfers for high-value business deals.
+* **Banking Sector Clean-Up & Fresh Account Guarantees:** Rigorously audit commercial bank solvency while providing legally ironclad protections for all new "fresh" liquidity deposits.
+
+---
+
+### II. Executive & Legislative Fiscal Reforms
+
+* **Enactment of Genuine Capital Control Legislation:** Legally guarantee full liquidity and unhindered transferability for all new corporate and retail bank deposits.
+* **Targeted AML & Tax Compliance in High-Cash Sectors:** Mandate that real estate acquisitions, vehicle sales, and gold/jewelry trading route exclusively through verified banking transactions.
+* **Government E-Taxation & Digital Revenue Collection:** Prohibit large physical cash payments for customs, land registry fees, and state utilities, requiring digital bank settlement.
+* **Financial Order Restructuring Law:** Resolve the systemic legacy financial gap with clear burden-sharing between the sovereign state, BDL, and commercial banks to unlock institutional capital repatriation.
+
+---
+
+### Strategic Conclusion
+
+Dismantling the cash economy requires an integrated monetary and fiscal compact: reassuring depositors on new liquidity, enforcing mandatory electronic payments, and instituting regulatory mechanisms that make **the cost of operating in physical cash higher than transacting through the official banking system**.`
+  },
+  {
     id: 'lebanon-liquidity-money-supply-m3-august-2026',
     slug: 'السيولة-والكتلة-النقدية-في-لبنان-وتداعياتها-الاقتصادية-أغسطس-2026',
     focusKeyword: 'الكتلة-النقدية-M3-مصرف-لبنان-السيولة-الدولرة-أسعار-الفائدة-الميزانية-الموحدة-2026',

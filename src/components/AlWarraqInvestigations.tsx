@@ -304,6 +304,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXVIII: Liquidity & Broad Money Supply (M3) in Lebanon: Repercussions on Credit & Banking',
     descAr: 'تحقيق نقدي وإحصائي يرصد انكماش الكتلة النقدية M3 إلى 65.09 مليار دولار، ودولرة بنسبة 97.74%، وارتفاع الفائدة المصرفية وتراجع الودائع بـ 80.8 مليون دولار.',
     descEn: 'A monetary research dossier detailing the M3 money aggregate contraction to $65.09B, 97.74% dollarization baseline, deposit drains, and commercial bank lending interest rate surges.'
+  },
+  'editor-desk-bdl-m3-cash-economy-response-2026': {
+    fileId: 'AW-FILE-29',
+    badge: 'EDITORIAL & STRATEGIC MONETARY ROADMAP',
+    titleAr: 'الملف التاسع والعشرون: استجابة للأرقام الأخيرة: متى يتحرك مصرف لبنان لضبط الكتلة النقدية (M3) واقتصاد الكاش؟',
+    titleEn: 'Dossier XXIX: Responding to Recent Telemetry: When Will BDL Act to Control M3 Money Supply & Curb the Cash Economy?',
+    descAr: 'افتتاحية استراتيجية تفكك أدوات البنك المركزي والتشريعات المطلوبة لمكافحة اقتصاد الكاش والانتقال لنظام مصرفي رقمي ومنظم.',
+    descEn: 'A strategic editorial detailing Central Bank levers and legislative reforms required to transition Lebanon from a cash economy into a regulated digital banking system.'
   }
 };
 
