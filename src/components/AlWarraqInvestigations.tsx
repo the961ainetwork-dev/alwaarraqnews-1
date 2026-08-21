@@ -320,6 +320,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXX: SOLIDERE INVESTIGATION Aug 2026: Comprehensive Forensic Report on Ownership & Valuation of Solidere',
     descAr: 'تحقيق استقصائي جنائي بقلم معن برازي: شطب 483 مليون دولار ديون باللولار، ميزانية بلا ديون، هيمنة الأفراد بنسبة 99.85% (12.82 مليار دولار)، استثمار كوبيرنيك، واستحقاق امتياز 2029.',
     descEn: 'A comprehensive forensic dossier by Maan Barazy: $483M debt elimination via lollar checks, zero-debt balance sheet, 99.85% retail ownership, Kopernik Global stake, and 2029 concession milestones.'
+  },
+  'solidere-transit-vehicle-lollar-cash-economy-editorial-2026': {
+    fileId: 'AW-FILE-31',
+    badge: 'EDITORIAL & CASH ECONOMY DISSECTION',
+    titleAr: 'الملف الحادي والثلاثون: افتتاحية: سوليدير كأداة عبور: كيف يغذي تداول الأسهم بـ "اللولار" الاقتصاد النقدي في لبنان',
+    titleEn: 'Dossier XXXI: Editorial: Solidere as a Transit Vehicle: How "Lollar" Share Trading Feeds Lebanon’s Cash Economy',
+    descAr: 'افتتاحية رئيس التحرير: تفكيك آلية تسييل الودائع المحتجزة عبر أسهم سوليدير، وإعادة بيعها في السوق الموازي نقداً، وتداعياتها على تهميش البنوك والتهرب الضريبي.',
+    descEn: 'Editor-in-Chief Maan Barazy breaks down the mechanics of liquidating trapped lollar deposits into fresh cash via Solidere shares, entrenching shadow cash dynamics and disintermediating banks.'
   }
 };
 
