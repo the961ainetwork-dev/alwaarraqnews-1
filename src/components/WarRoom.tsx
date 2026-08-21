@@ -34,6 +34,7 @@ import {
 } from 'lucide-react';
 import { Article } from '../types';
 import { BypassInteractiveMap } from './BypassInteractiveMap';
+import HormuzRealtimeTracker from './HormuzRealtimeTracker';
 
 interface WarRoomProps {
   language: 'ar' | 'en';
@@ -64,6 +65,356 @@ interface TacticalDossier {
 }
 
 const TACTICAL_DOSSIERS: TacticalDossier[] = [
+  {
+    id: 'kneeling-under-debt-economic-warfare-iran-bombs-2026',
+    codeName: 'OPERATION SOLVENCY SQUEEZE / TREASURY CHOKEPOINT',
+    titleEn: 'Kneeling Under Debt and Default: Can Economic Warfare Succeed Where Bombs Stumble Against Iran?',
+    titleAr: 'ركوع تحت طائلة السداد: هل تنجح الحرب الاقتصادية حيث تتعثر القنابل ضد إيران؟',
+    summaryEn: 'High-level US intelligence and Treasury reports reveal that while military airstrikes paused under a temporary truce, crushing financial embargoes, shadow banking interdiction, and fuel deficits threaten Tehran’s regime survival more permanently than kinetic bombardment—raising the question of economic capitulation versus resistance economy adaptation.',
+    summaryAr: 'تشير تقارير أمريكية واستخباراتية رفيعة إلى أن حزم العقوبات الشاملة وتجفيف شبكات المصارف الموازية وأزمات الوقود الداخلية قد تطيح ببنية النظام الإيراني بشكل أعمق من القصف العسكري، وسط معضلة بين قدرة طهران على التكيف بورقة هرمز وبين مخاطر الانفجار الشعبي الداخلي.',
+    contentEn: `### Kneeling Under Debt and Default: Can Economic Warfare Succeed Where Bombs Stumble Against Iran?
+
+While world attention tracks the settling dust in the wake of airstrikes, the decisive battle against Tehran unfolds far from the roar of fighter jets. High-level assessments circulating within US policy corridors indicate that comprehensive economic warfare and coordinated financial containment could destabilize the Iranian regime’s structural foundations far more sustainably than direct military strikes.
+
+With the temporary truce in effect and sorties suspended following days of intense kinetic targeting, intelligence telemetry points to an acute structural liquidity crisis gripping the Iranian interior, reviving the central question: can Tehran truly be brought to its knees by severing its financial lifelines?
+
+---
+
+### Realities of Economic Pressure vs. Battlefield Lines
+
+1. **Paralysis in Funding the Military Apparatus:**  
+   Intelligence estimates reveal severe difficulties faced by Tehran in meeting payroll for its armed forces and regional proxy networks, caused by an airtight financial cordon and escalating interdiction of shadow banking channels.
+
+2. **Cost-of-Living Crises and Domestic Erosion:**  
+   Despite being a premier oil power, Iran suffers from severe domestic economic strangulation compounded by acute fuel shortages and essential supply bottlenecks, escalating the risk of bank runs and popular unrest—which US strategists consider the regime’s most vulnerability.
+
+3. **Tactical Negotiation Demands:**  
+   Regional backchannel communications (via Muscat, Doha, and Islamabad) indicate that Iranian negotiating demands focus predominantly on unfreezing foreign reserves and lifting banking embargoes, reflecting domestic priorities centered on securing cash liquidity to prevent internal systemic collapse.
+
+---
+
+### Structural Flaws and the Economic Resilience Dilemma
+
+Despite US enthusiasm for dual-track economic options as lower-cost alternatives to prolonged military operations, skepticism persists regarding whether economic warfare alone can compel complete capitulation:
+
+1. **Adaptation to the "Resistance Economy":**  
+   Iran maintains decades of experience developing sophisticated sanctions-evasion mechanisms, generating billions in covert petroleum revenue that previously exceeded budget baselines and demonstrating entrenched institutional resilience.
+
+2. **The Temporal Lag and Political Repercussions:**  
+   Financial strangulation requires a prolonged operational horizon compared to rapid kinetic strikes. This prolonged timeline tests Western political patience, especially as energy market volatility and retail pump price inflation spill into domestic electorates.
+
+3. **Escalation Hazards Across Maritime Corridors:**  
+   Excessive economic asphyxiation risks provoking Tehran into wielding high-stakes retaliatory levers, including weaponizing navigation through the Strait of Hormuz to amplify the economic pain globally.
+
+---
+
+### Strategic Synthesis
+
+While US Treasury-led financial tightening has imposed unprecedented pressure on Iran's domestic cohesion, betting on absolute economic capitulation remains a strategic gamble. Authoritarian structures historically transfer economic hardship onto populations to safeguard regime preservation, leaving conditional diplomatic balances as the only viable exit from an exhausting war of attrition.`,
+    contentAr: `### ركوع تحت طائلة السداد: هل تنجح الحرب الاقتصادية حيث تتعثر القنابل ضد إيران؟
+
+بينما تتجه أنظار العالم نحو الدخان المترسب في أعقاب الضربات الجوية، تدور المعركة الحقيقية والفاصلة ضد طهران بعيداً عن أزيز الطائرات؛ إذ تشير تقارير رفيعة المستوى داخل أروقة الإدارة الأمريكية إلى أن السياسات الاقتصادية وحزم العقوبات الشاملة قد تطيح ببنية النظام الإيراني بشكل أعمق وأكثر استدامة من القصف العسكري المباشر.
+
+ومع سريان **"الهدنة المؤقتة"** وتوقف الغارات بعد أيام متواصلة من الاستهداف العسكري، تكشف المعطيات الميدانية والاستخباراتية عن أزمة مالية وهيكلية طاحنة تعصف بالداخل الإيراني، لتعيد طرح السؤال الأبرز: هل يمكن بالفعل تركيع طهران عبر تجفيف منابعها المالية؟
+
+---
+
+### واقعية الضغط الاقتصادي مقابل خطوط الميدان
+
+1. **فقدان القدرة على تمويل الذراع العسكري:**  
+   كشفت تقديرات استخباراتية عن صعوبات بالغة تواجهها طهران في تسديد رواتب عناصرها العسكرية ومجموعاتها المسلحة، وذلك نتيجة الحصار المالي المطبق والتضييق المتزايد على شبكات المصارف الموازية (**Shadow Banking**).
+
+2. **أزمات المعيشة وتآكل الجبهة الداخلية:**  
+   رغم كونه قطباً نفطياً بارزاً، يعاني الداخل الإيراني من أزمات خنق اقتصادي تظافرت مع نقص حاد في إمدادات الوقود والمستلزمات الأساسية، مما يرفع من مخاطر اضطرابات بنكية وموجات سخط شعبي يرى المسؤولون الأمريكيون أنها تشكل الخطر الأكثر إقلاقاً للنظام.
+
+3. **الاستراتيجية التكتيكية للتفاوض:**  
+   أظهرت التسريبات والتواصل عبر الوساطات الإقليمية (في عمان وقطر وباكستان) أن المطالب الإيرانية تتركز بشكل أساسي حول الإفراج عن الأصول المجمدة ورفع الحظر المالي، مما يعكس تحول الأولويات الداخلية نحو تأمين الموارد النقدية للحد من الانهيار الداخلي.
+
+---
+
+### مواطن الخلل ومعضلة المرونة الاقتصادية
+
+رغم الحماس الأمريكي لوجود "خيارات إستراتيجية مزدوجة" تجعل العقوبات بديلاً أقل كلفة عسكرياً، إلا أن التشكيك في مدى قدرة الحرب الاقتصادية على جلب طهران إلى طاولة الشروط الكاملة يظل حاضراً وبقوة:
+
+1. **التكيف مع "اقتصاد المقاومة":**  
+   تمتلك إيران تاريخاً طويلاً من تطوير مسارات الالتفاف على الحظر الشامل، حيث نجحت في توليد عائدات نفطية بمليارات الدولارات خلال الفترات الماضية متجاوزة توقعات الميزانية، مما يثبت قدرة النظام على التعايش مع الضغوط الشديدة.
+
+2. **العامل الزمني والتبعات السياسية:**  
+   يتطلب الضغط الاقتصادي فترة زمنية أطول لتحقيق أهدافه التكتيكية مقارنة بالعمل العسكري المباشر. هذا التباطؤ يضع القوى الدولية أمام اختبارات سياسية داخلية، خاصة مع تأثر أسواق الطاقة العالمية وارتفاع أسعار الوقود.
+
+3. **مخاطر استهداف الطرق الملاحية:**  
+   الضغط الاقتصادي المفرط قد يدفع النظام الإيراني لإشهار أوراق مناورة أكثر خطورة، مثل استخدام ملف التحكم في حركة الملاحة عبر مضيق هرمز لرفع كلفة المواجهة على الاقتصاد العالمي بأكمله.
+
+---
+
+### المعادلة النهائية
+
+تُثبت التطورات أن العقوبات المالية والتشديد المصرفي بقيادة وزارة الخزانة الأمريكية أوجدت واقعاً ضاغطاً يهدد التماسك الداخلي لإيران بشكل غير مسبوق. غير أن الرهان على "تركيع كامل" يظل مجازفة سياسية؛ فالأنظمة الاستبدادية غالباً ما تميل إلى تحميل المجتمعات التكلفة الاقتصادية الباهظة في سبيل الحفاظ على بقائها السياسي والعسكري، مما يجعل الدبلوماسية المشروطة بالتوازنات هي المخرج الوحيد لتجنب حرب استنزاف طويلة الأجل.`,
+    threatLevel: 'HIGH',
+    regionEn: 'Tehran / Shadow Banking Networks / Strait of Hormuz / Washington',
+    regionAr: 'طهران / شبكات المصارف الموازية / مضيق هرمز / واشنطن',
+    coordinates: '35.68° N, 51.38° E & 38.90° N, 77.03° W',
+    dateEn: 'August 21, 2026',
+    dateAr: '٢١ أغسطس ٢٠٢٦',
+    sourceEn: 'US Treasury & Defense Intelligence Briefing — Al-Warraq War Room',
+    sourceAr: 'إحاطة وزارة الخزانة والاستخبارات الدفاعية الأمريكية — غرفة عمليات الورّاق'
+  },
+  {
+    id: 'iran-escalation-scenarios-europe-undersea-cables-2026',
+    codeName: 'OPERATION SUBSEA ARTERY & EURO-EXPANSION SIMULATION',
+    titleEn: 'Escalation Scenario Simulations: Iran Evaluates Expanding Retaliation Arc to US Bases in Europe and Undersea Internet Cables in Hormuz',
+    titleAr: 'محاكاة سيناريوهات التصعيد: إيران تدرس توسيع دائرة الرد لتشمل قواعد أمريكية في أوروبا وكابلات الإنترنت بمضيق هرمز',
+    summaryEn: 'Financial Times reveals Iranian military simulation evaluating strikes against US/allied assets in Bulgaria and Cyprus (RAF Akrotiri), combined with kinetic and acoustic sabotage of undersea fiber cables in the Strait of Hormuz (FALCON, AAE-1, TGN-Gulf) to trigger global digital and SWIFT payment paralysis.',
+    summaryAr: 'كشف تقرير "فايننشال تايمز" عن محاكاة القوات الإيرانية لسيناريوهات استهداف قواعد أمريكية في بلغاريا وقبرص، وقطع كابلات الألياف الضوئية البحرية في مضيق هرمز (FALCON, AAE-1, TGN-Gulf)، معلنةً الانتقال من "الردع العسكري التقليدي" إلى "الردع السيبراني-البنيوي" غير المتماثل.',
+    contentEn: `### Escalation Scenario Simulations: Iran Evaluates Expanding Retaliation Arc to US Bases in Europe and Undersea Internet Cables in Hormuz
+
+An intelligence report published by the **Financial Times (FT)** discloses that Iranian armed forces have conducted war-game simulations and strategic assessments indicating readiness to target US and allied military facilities across Europe, alongside critical global infrastructure, in the event of major geopolitical escalation.
+
+According to the report, Iranian strategic contingencies under active evaluation include:
+
+* **Bulgaria and Geographic Escalation:** Iranian command is assessing kinetic and drone strike options against US military installations and forward logistics sites in Southeastern Europe, particularly in **Bulgaria**, marking a geographic leap in Iran's deterrence posture.
+* **Cyprus and British Bases:** **Cyprus** is identified as a priority target due to the sovereign presence of the British Royal Air Force base (**RAF Akrotiri**), which previously witnessed hostile drone tracking.
+* **Undersea Internet Cables in the Strait of Hormuz:** Iranian forces are evaluating options to disrupt or sever submarine fiber-optic cables lining the seabed of the Strait of Hormuz. These cables represent the critical nervous system for global telecommunications, high-frequency trade data, and military command relays.
+
+---
+
+### Paradigm Shift: From "Conventional Military Deterrence" to "Cyber-Infrastructural Deterrence"
+
+The FT revelation highlights a fundamental evolution in Iranian asymmetric doctrine: transitioning from traditional kinetic threats into **"Cyber-Infrastructural Deterrence"** weaponized directly against digital supply chains and global financial connectivity.
+
+Targeting seabed communication lines in Hormuz represents high-impact **Asymmetric Warfare**, generating multifaceted geopolitical and economic reverberations:
+
+---
+
+### 1. Geopolitical Ramifications
+
+1. **Internationalization and Theater Expansion:**  
+   Undersea infrastructure sabotage demonstrates that conflict cannot be ring-fenced within the Middle East, imposing asymmetric economic friction on Western capitals and GCC economies.
+
+2. **Direct Leverage Over GCC Nations:**  
+   Key submarine cable systems transiting Hormuz (such as **FALCON**, **AAE-1**, and **TGN-Gulf**) form the core data backbone for Gulf cloud computing and banking. Threatening these assets aims to push GCC states into exerting intense diplomatic pressure on Washington to de-escalate.
+
+3. **The Attribution Dilemma in Undersea Warfare:**  
+   Deep-sea sabotage (via anchor dragging, autonomous unmanned underwater vehicles/UUVs, or seabed explosives) allows plausible deniability, confronting the US and NATO with severe legal and operational retaliation hurdles.
+
+4. **Maintenance Interdiction Risks:**  
+   Repairing severed subsea cables requires specialized civilian vessels needing maritime security. Prolonged conflict zones in Hormuz could deny entry to repair fleets, transforming short outages into multi-week digital blackouts.
+
+---
+
+### 2. Global Economic Ramifications
+
+1. **Financial Transaction and SWIFT Paralysis:**  
+   Global financial clearinghouses, banks, and equity markets depend on low-latency fiber lines to process billions of dollars daily. Disruptions would degrade SWIFT transactions and introduce latency spikes between Asia and Europe.
+
+2. **Cloud and Communications Bottlenecks:**  
+   While global internet routing possesses algorithmic redundancy, alternative paths (such as terrestrial links or Red Sea corridors) cannot absorb sudden multi-terabit traffic surges, causing severe cloud and logistics degradation.
+
+3. **Digital Risk Premiums:**  
+   Designating submarine cables as military targets will skyrocket marine insurance rates and increase operating expenses for regional hyperscale data centers in the Arabian Gulf.
+
+---
+
+### Strategic Synthesis
+
+Pivoting Iranian leverage from **"Hormuz Oil"** to **"Hormuz Data"** mirrors modern economic realities. While petroleum is the fuel of the physical economy, undersea fiber-optic cables constitute the vital arterial network of the global digital economy—granting Tehran asymmetric leverage with outsized systemic impact.`,
+    contentAr: `### محاكاة سيناريوهات التصعيد: إيران تدرس توسيع دائرة الرد لتشمل قواعد أمريكية في أوروبا وبنى تحتية حيوية
+
+كشف تقرير نشرته صحيفة **"فايننشال تايمز" (FT)** عن إجراء القوات الإيرانية لمحاكاة سيناريوهات وإصدار تقديرات تُظهر إمكانية استهداف مرافق وعناصر عسكرية تابعة للولايات المتحدة وحلفائها في أوروبا، إلى جانب ضرب بنى تحتية استراتيجية، في حال تصاعد التوتر واندلاع مواجهة جديدة.
+
+ووفقاً للتقرير، تشمل الخيارات الإيرانية الموضوعة قيد الدراسة والتقييم ما يلي:
+
+* **بلغاريا وتوسع نطاق الاستهداف:** تشير المصادر إلى أن القوات الإيرانية تقيّم إمكانية شن ضربات ضد مرافق وقواعد عسكرية أمريكية في دول جنوب شرق أوروبا، وعلى رأسها **بلغاريا**، مما يمثل تحولاً جوياً واستراتيجياً في جغرافيا الاستهداف ونطاق العمليات.
+* **قبرص والقواعد البريطانية:** تُعد جزيرة **قبرص** هدفاً محتملاً ضمن بنك الأهداف الإيراني، خصوصاً مع وجود القاعدة الجوية البريطانية (**RAF Akrotiri**) التي سبق وأن تعرضت لمحاولات استهداف بطائرات مسيرة.
+* **كابلات الإنترنت البحرية في مضيق هرمز:** تدرس القوات الإيرانية خيار تعطيل أو استهداف كابلات الألياف الضوئية الممتدة عبر القاع البحري لمضيق هرمز في حال حدوث تصعيد حاد، لما تشكله هذه الكابلات من شريان حيوي للاتصالات والبيانات الاقتصادية والعسكرية العالمية.
+
+تؤكد هذه السيناريوهات والمحاكاة مدى جاهزية طهران لتوسيع رقعة الرد في أي مواجهة جيو-سياسية مرتقبة، مما يعني أن الضربات—في حال اندلاعها—لن تقتصر على القواعد والمصالح الأمريكية في الشرق الأوسط فحسب، بل قد تمتد لتطال أهدافاً في العمق الأوروبي وممرات الاتصالات العالمية.
+
+---
+
+### التحول من "الردع العسكري التقليدي" إلى "الردع السيبراني-البنيوي"
+
+يُشكل التقرير الذي نشرته صحيفة فايننشال تايمز (FT) تحولاً نوعياً في مفهوم الردع الإيراني، حيث ينتقل التهديد من "الردع العسكري التقليدي" إلى **"الردع السيبراني-البنيوي"** الموجه ضد سلاسل الإمداد الرقمي والاقتصاد العالمي.
+
+يمثل استهداف كابلات الاتصالات البحرية في مضيق هرمز خياراً استراتيجياً غير متماثل (**Asymmetric Warfare**)، وتتوزع تداعياته بين أبعاد جيوسياسية واقتصادية معقدة:
+
+---
+
+### أولاً: التداعيات الجيوسياسية
+
+1. **توسيع جغرافيا الصراع وتدويله:**  
+   يقدم استهداف الكابلات البحرية رسالة صريحة بأن الصراع لن يقتصر على المواجهة العسكرية المباشرة في الشرق الأوسط، بل سينتقل ليطال المصالح الرقمية الحيوية لدول الخليج وحلفاء واشنطن في الغرب، مما يفرض "كلفة غير متكافئة" على القوى الدولية.
+
+2. **الضغط على دول الخليج العربي:**  
+   تُعد أنظمة الكابلات المارة عبر مضيق هرمز (مثل **FALCON** و **AAE-1** و **TGN-Gulf**) البنية التحتية الأساسية لنقل البيانات والخدمات السحابية لدول مجلس التعاون الخليجي. يهدف هذا التهديد إلى دفع هذه الدول لممارسة ضغوط دبلوماسية على واشنطن لتهدئة التصعيد، تجنباً لشلل قطاعاتها الرقمية والمالية.
+
+3. **صعوبة الإسناد والدفاع (Attribution Problem):**  
+   تتميز حرب الأعماق (**Undersea Warfare**) بصعوبة إثبات الجهة المنفذة فوراً. يمكن التسبب بأضرار للكابلات عبر تخريب صامت (مثل جرّ المرساة، أو استخدام غواصات صغيرة مسيرة UUVs، أو العبوات الناسفة القاعية)، مما يضع الولايات المتحدة وحلف الناتو أمام معضلة قانونية وعسكرية في تحديد طبيعة الرد.
+
+4. **مخاطر التعطيل أثناء الصيانة:**  
+   إصلاح الكابلات البحرية يتطلب سفن صيانة متخصصة تحتاج لموافقات أمنية واستقرار عسكري في منطقة العطل. استمرار التوتر في مضيق هرمز قد يمنع هذه السفن من الدخول أو يجعلها هدفاً عسكرياً، مما يطيل فترة الانقطاع الرقمي لأسابيع أو أشهر.
+
+---
+
+### ثانياً: التداعيات الاقتصادية
+
+1. **شلل قطاع المعاملات المالية والتجارة:**  
+   تعتمد البنوك والمؤسسات المالية العالمية وأسواق الأسهم على شبكات الألياف الضوئية لإجراء معاملات تفوق مليارات الدولارات يومياً. قطع هذه الشبكات سيعطل أنظمة التحويلات المالية والسويفت (**SWIFT**) في المنطقة، ويزيد من زمن التأخير (**Latency**) بين المراكز المالية الكبرى في آسيا وأوروبا.
+
+2. **اختناق الاتصالات والخدمات السحابية:**  
+   رغم أن الحركة العالمية للإنترنت تتميز بالقدرة على إعادة التوجيه (**Redundancy**)، إلا أن الطاقة الاستيعابية للكابلات البديلة (مثل مسارات البحر الأحمر أو الكابلات البرية) قد لا تتحمل تدفق البيانات الفوري، مما يؤدي إلى تباطؤ حاد في الخدمات السحابية، التجارة الإلكترونية، والعمليات اللوجستية للموانئ.
+
+3. **ارتفاع أسعار التأمين والاستثمار الرقمي:**  
+   مجرد إدراج الكابلات البحرية كأهداف عسكرية سيرفع أقساط التأمين على مشاريع البنية التحتية للاتصالات في خليج عمان والخليج العربي، مما قد يرفع كلفة التشغيل ويدفع شركات التقنية العالمية لإعادة تقييم استثماراتها في مراكز البيانات الضخمة بالمنطقة.
+
+---
+
+### التقييم الاستراتيجي العام
+
+إن نقل خيارات التهديد الإيراني من **"نفط هرمز"** إلى **"بيانات هرمز"** يعكس إدراكاً عميقاً لطبيعة الاقتصاد العالمي الحديث. فبينما يمثل النفط شريان الطاقة التقليدي، تُشكل كابلات الألياف الضوئية شريان الحياة للاقتصاد الرقمي المعاصر. وبذلك، يمنح هذا التكتيك طهران ورقة ضغط استراتيجية حادة تتيح لها إلحاق خسائر اقتصادية بالغة بالخصوم دون الحاجة لخوض مواجهة عسكرية كلاسيكية شاسعة النطاق.`,
+    threatLevel: 'CRITICAL',
+    regionEn: 'Persian Gulf / Hormuz Subsea Matrix / Bulgaria / Cyprus',
+    regionAr: 'الخليج العربي / منظومة كابلات هرمز البحرية / بلغاريا / قبرص',
+    coordinates: '26.34° N, 56.25° E & 42.73° N, 25.48° E',
+    dateEn: 'August 21, 2026',
+    dateAr: '٢١ أغسطس ٢٠٢٦',
+    sourceEn: 'Financial Times Intelligence & Defense Simulations Desk — Al-Warraq',
+    sourceAr: 'تحقيقات فايننشال تايمز ومكتب التقديرات الدفاعية — صحيفة الورّاق'
+  },
+  {
+    id: 'middle-east-maritime-structural-shift-kpler-2026',
+    codeName: 'OPERATION CHOKEPOINT MATRIX / KPLER TELEMETRY',
+    titleEn: 'Middle East Maritime Navigation Undergoes Structural Shift: Kpler Chokepoint Data, Dark Fleet Expansion & Two-Tier Routing',
+    titleAr: 'قطاع الملاحة البحرية في الشرق الأوسط يتجه نحو تحول هيكلي: رصد كبلر للمضائق، أسطول الظل ونظام التوجيه متعدد المستويات',
+    summaryEn: 'Latest Kpler telemetry indicates daily transits in Hormuz plunged to 0–3 vessels with zero visible VLCC/LNG supertankers and 60% dark fleet operations. Bab el-Mandeb sustains 4.9M bpd in conditional equilibrium, while Cape of Good Hope rerouting absorbs 5-7% of global container capacity.',
+    summaryAr: 'تشير أحدث بيانات كبلر إلى انخفاض عبور هرمز إلى ما بين صفر و٣ سفن وغياب ناقلات VLCC والغاز المسال، مع اعتماد ٦٠٪ على الملاحة المظلمة. في المقابل، يمر عبر باب المندب ٤.٩ مليون برميل يومياً وسط تحول طريق رأس الرجاء الصالح إلى مسار عالمي افتراضي واستيعاب ٥-٧٪ من سعة الحاويات.',
+    contentEn: `### Middle East Maritime Navigation Undergoes Structural Shift
+
+Latest data from **Kpler**—including the collapse of daily transits through the Strait of Hormuz to between **zero and three vessels**, the total absence of visible Very Large Crude Carriers (VLCCs) and Liquefied Natural Gas (LNG) carriers, and heavy reliance on dark navigation—indicate that the Middle Eastern maritime shipping sector is undergoing a profound structural shift and transitioning into a multi-tiered routing regime rather than merely coping with a transient crisis.
+
+---
+
+### Core Findings from Current Chokepoints
+
+1. **Sharp Divergence Between Maritime Corridors:**
+   * **Strait of Hormuz:** Remains the hardest hit due to direct vessel targeting, diplomatic deadlock, and naval blockade. With no maritime exit alternative from the Persian Gulf, energy exports face a physical stranglehold.
+   * **Bab el-Mandeb & Red Sea:** Exhibits a **"two-track equilibrium."** While general cargo and selected crude flows continue, updated risk assessments mean the corridor operates conditionally rather than as a safe baseline.
+
+2. **Institutionalization of the "Dark Fleet" as an Operational Baseline:**
+   * With approximately **60% of transits** through Hormuz operating with disabled AIS transponders or navigating unilateral Iranian lanes, traditional international maritime frameworks are being bypassed. Dark navigation has evolved from an anomaly into standard industry practice.
+
+---
+
+### Strait of Hormuz Maritime Breakdown
+
+* **VLCCs and LNG Carriers:** **Zero visible transits**. Movements of supertankers and LNG vessels are completely frozen due to extreme security risks and direct commercial blockade.
+* **LPG Carriers and Small/Medium Fuel Tankers:** Extremely limited. Recent entries are confined to Medium Range (MR) fuel tankers, intermediate carriers, and ballast Very Large Gas Carriers (VLGCs, such as the **Xavia**) sailing empty along the unilateral Iranian route. Outbound transits intermittently feature Panamax fuel tankers and medium-sized LPG vessels.
+* **Dry Bulk Carriers:** Minimal activity, limited to occasional Panamax bulk departures from the Gulf with active AIS transponders.
+* **Dark / Unmonitored Volume:** Approximately **60% of all transits** were conducted with AIS transmitters switched off or through non-standard channels to evade monitoring and interception.
+
+---
+
+### Bab el-Mandeb & Red Sea Maritime Breakdown
+
+* **Crude and Heavy Oil Tankers:** Higher resilience. Transits regularly feature multiple supertankers (such as the **Norns**, departing with approximately **2 million barrels**), alongside Suezmax and Aframax crude carriers. Total crude and condensate flows average **4.9 million barrels per day** through the strait.
+* **Refined Products and Clean Liquids:** Active westbound flow toward Suez markets, including diesel-laden MR tankers, chemical carriers, and clean distillates.
+* **Dry Bulk and Container Vessels:** General cargo and bulk carriers comprise the majority of non-oil transits, benefiting from selective Houthi exemptions and permits.
+* **Dark / Unmonitored Volume:** Declined to **16 undetected transits** from 40 previously.
+
+---
+
+### Impact on the Suez Canal and Global Diversions
+
+* **Diverted Tonnage:** Total tonnage entering the Suez Canal via Bab el-Mandeb remains severely depressed compared to historical pre-crisis baselines.
+* **Cape of Good Hope Rerouting:** High-value LNG shipments and primary container carriers continue diverting around the Cape of Good Hope due to persistent missile strike hazards near Egyptian ports and the southern Red Sea.
+
+---
+
+### Strategic Projections for Global Supply Chains
+
+1. **Regional Energy and Pipeline Restructuring:**
+   * **Near-Term (3–6 Months):** Energy markets will adjust to constrained supertanker availability in the Gulf. Exporters will maximize terrestrial pipeline utilization (e.g., the **Saudi East-West Petroline** to Yanbu on the Red Sea and the **UAE Habshan-Fujairah Pipeline**) to bypass Hormuz entirely.
+   * **Refined Distillate Sourcing Shift:** European and Asian buyers are pivoting middle distillate procurement to alternative hubs (US Gulf Coast, West Africa, and India) to compensate for delayed or shadow-transported Gulf cargoes.
+
+2. **Institutionalizing the Cape of Good Hope as the Global Default Route:**
+   * **Network Realignment:** Global liner operators will maintain the Cape route (**+10 to 14 days delay**) as the baseline network schedule for East Asia–Europe and US East Coast services.
+   * **Capacity Absorption:** Longer voyages will permanently absorb **5–7% of global container ship capacity**, stabilizing sailing schedules while sustaining elevated spot freight rates.
+
+3. **Two-Tier Risk-Segmented Shipping Services:**
+   * **Tier 1 (High-Value / Low-Risk Tolerance Cargo):** Scheduled container lines, perishables, automotive, and high-tech supply chains adhere strictly to the Cape route or multimodal solutions (Sea-Air via Dubai, or Transpacific rail).
+   * **Tier 2 (Low-Margin / High-Risk Tolerance Cargo):** Dry bulk carriers, shadow-fleet crude tankers, and regional feeders opportunistically navigate the Suez/Red Sea corridor, absorbing elevated war risk insurance premiums (**0.5–1.0% of cargo/hull value**) in exchange for transit speed.
+
+4. **Shipper-Level Cost and Working Capital Adjustments:**
+   * **Buffer Inventory over Just-in-Time:** Shippers are incorporating **2 to 3 weeks of additional lead time** into supply chain planning, permanently raising safety stock baselines.
+   * **Freight Rate Structuring:** Container freight rates will remain structurally volatile, embedding emergency risk surcharges and wide spreads between long-term contracts and spot indices.`,
+    contentAr: `### قطاع الملاحة البحرية في الشرق الأوسط يتجه نحو تحول هيكلي
+
+تشير أحدث البيانات الواردة من مرصد **كبلر (Kpler)**—مثل انخفاض العبور اليومي في مضيق هرمز إلى ما بين **صفر وثلاث سفن**، والغياب التام لحركة ناقلات النفط الخام الضخمة (VLCC) وناقلات الغاز الطبيعي المسال المرئية، والاعتماد الكبير على الملاحة المظلمة—إلى أن قطاع الملاحة البحرية في الشرق الأوسط يتجه نحو تحول هيكلي ونظام توجيه متعدد المستويات بدلاً من مجرد إدارة أزمة مؤقتة.
+
+---
+
+### أبرز النتائج من الاختناقات الملاحية الحالية
+
+1. **الانقسام الحاد بين الممرات البحرية:**
+   * **مضيق هرمز:** هو الأكثر تضرراً بسبب الاستهداف المباشر للسفن، والمأزق الدبلوماسي، والحصار المفروض. ونظراً لعدم وجود بديل بحري للخروج من الخليج العربي، تواجه صادرات الطاقة اختناقاً فعلياً غير مسبوق.
+   * **باب المندب والبحر الأحمر:** يظهران حالة من **"التوازن ثنائي المسار"**. فبينما تستمر حركة البضائع العامة وبعض شحنات النفط الخام، فإن إعادة تقييم المخاطر تعني أن الممر يعمل بشكل مشروط وليس كخط أساسي آمن.
+
+2. **ترسيخ "أسطول الظل" (Dark Fleet) كنموذج تشغيلي أساسي:**
+   * مع إغلاق أجهزة التتبع (AIS) أو العبور عبر القنوات الإيرانية الأحادية لنحو **60% من السفن عبر هرمز**، يتم تجاوز الأطر البحرية الدولية التقليدية. أصبحت الملاحة المظلمة ممارسة قياسية بدلاً من كونها حالة استثنائية.
+
+---
+
+### تفصيل حركة الملاحة عبر مضيق هرمز
+
+* **ناقلات النفط الخام الضخمة (VLCCs) وناقلات الغاز الطبيعي المسال:** **صفر عبور مرئي**. تعطلت حركة الناقلات العملاقة وناقلات الغاز المسال تماماً بسبب المخاطر الأمنية العالية والحصار التجاري المباشر.
+* **ناقلات الغاز النفطي المسال (LPG) وناقلات الوقود الصغيرة/المتوسطة:** حركة محدودة جداً. تقتصر عمليات الدخول الأخيرة على ناقلات وقود متوسطة المدى (MR)، وناقلات غاز ضخمة فارغة (VLGCs، مثل السفينة **Xavia**) التي تبحر بفارغ الوزن عبر المسار الإيراني الأحادي. بينما تشمل عمليات الخروج بعض ناقلات الوقود من طراز "باناماكس" وسفن الغاز المسال المتوسطة بشكل متقطع.
+* **سفن بضائع الصب الجاف (Dry Bulk):** حركة دنيا، تقتصر على خروج متقطع لسفن صب من طراز "باناماكس" من الخليج مع تشغيل أجهزة التتبع (AIS).
+* **الحجم المظلم / غير المرصود:** أُجريت نحو **60% من إجمالي عمليات العبور** مع إيقاف تشغيل أجهزة التتبع (AIS) أو عبر قنوات غير قياسية لتفادي المراقبة والرصد العسكري.
+
+---
+
+### تفصيل حركة الملاحة عبر باب المندب والبحر الأحمر
+
+* **ناقلات النفط الخام والنفط الثقيل:** مرونة أعلى. تشهد حركة العبور بانتظام مشاركة ناقلات ضخمة متعددة (مثل الناقلة **Norns** المغادرة بحمولة بلغت نحو **مليوني برميل**)، إلى جانب ناقلات الخام من طرازي "سويسماكس" و"أفراماكس". ويبلغ متوسط إجمالي تدفقات النفط الخام والمكثفات **4.9 مليون برميل يومياً** عبر المضيق.
+* **ناقلات المشتقات المكررة والسوائل:** تدفق نشط غرباً نحو أسواق سويس، بما في ذلك ناقلات المدى المتوسط (MR) المحملة بالديزل وناقلات المواد الكيميائية والمشتقات.
+* **سفن الصب الجاف وسفن الحاويات:** تشكل سفن البضائع العامة وسفن الصب الجاف غالبية العبور غير النفطي، مستفيدة من إعفاءات وتصاريح عبور انتقائية من الحوثيين.
+* **الحجم المظلم / غير المرصود:** انخفض إلى **16 عملية عبور** غير مكتشفة بعد أن كانت 40 عملية سابقاً.
+
+---
+
+### التأثير على قناة السويس وطرق الملاحة البديلة
+
+* **الحمولات التحويلية:** لا تزال إجمالي الحمولات الداخلة إلى قناة السويس عبر باب المندب منخفضة مقارنة بالمتوسطات التاريخية المسجلة قبل اندلاع الأزمة.
+* **إعادة التوجيه نحو طريق رأس الرجاء الصالح:** تواصل شحنات الغاز الطبيعي المسال عالية القيمة وخطوط الحاويات الكبرى إعادة التوجيه حول رأس الرجاء الصالح نتيجة استمرار مخاطر الضربات بالقرب من الموانئ المصرية وجنوب البحر الأحمر.
+
+---
+
+### التوقعات الاستراتيجية لسلاسل الإمداد العالمية
+
+1. **إعادة هيكلة قطاع الطاقة والأنابيب الإقليمية:**
+   * **المدى القريب (3–6 أشهر):** ستتكيف أسواق الطاقة مع تراجع توفر الناقلات الضخمة في الخليج. وسيسعى المصدرون إلى تعظيم استخدام أنابيب نقل النفط البرية (مثل **خط شرق-غرب السعودي** إلى ينبع على البحر الأحمر، و**خط حبشان-الفجيرة الإماراتي**) لتجنب الشحن عبر هرمز تماماً.
+   * **تحول مصادر المشتقات المكررة:** يُتوقع أن يتجه المشترون في أوروبا وآسيا إلى استيراد المشتقات الوسطى من مراكز بديلة (الساحل الأمريكي على الخليج، غرب أفريقيا، والهند) للتعويض عن الشحنات المتأخرة أو المنقولة عبر سفن الظل من الخليج.
+
+2. **اعتماد طريق رأس الرجاء الصالح كمسار عالمي افتراضي:**
+   * **إعادة تنظيم الشبكات:** ستحافظ شركات الشحن العالمية على مسار رأس الرجاء الصالح (إضافة **10 إلى 14 يوماً**) كخط تشغيلي أساسي لخطوط شرق آسيا–أوروبا والسواحل الشرقية للأمريكتين.
+   * **استيعاب السعة:** سيؤدي طول المسافات إلى استمرار استيعاب **5–7% من إجمالي سعة سفن الحاويات العالمية**، مما يقضي على عدم انتظام الجداول الزمنية الناتجة عن اختناقات البحر الأحمر.
+
+3. **خدمات شحن ثنائية المستوى ومقسمة حسب المخاطر:**
+   * **المستوى الأول (بضائع عالية القيمة / منخفضة التحمل للمخاطر):** ستلتزم خطوط الحاويات المنتظمة، البضائع السريعة التلف، قطاع السيارات، والصناعات التقنية العالية بمسار رأس الرجاء الصالح أو بالحلول متعددة الوسائط (بحر-جو عبر دبي، أو عبر المحيط الهادئ والسكك الحديدية).
+   * **المستوى الثاني (بضائع منخفضة الهامش / عالية التحمل للمخاطر):** ستستمر سفن الصب الجاف، ناقلات النفط التابعة لأسطول الظل، وسفن التغذية الإقليمية في استخدام ممر سويس/البحر الأحمر بشكل انتهازي، مع تحمل أقساط تأمين عالية ضد مخاطر الحرب (**0.5–1.0% من قيمة الشحنة**) مقابل اختصار الوقت.
+
+4. **التعديلات التكلفية على مستوى أصحاب البضائع:**
+   * **المخزون الاحتياطي بدلاً من التسليم الفوري:** يضيف الشاحنون مهل زمنية إضافية تتراوح بين **أسبوعين إلى 3 أسابيع** في تخطيط سلاسل التوريد، مما يزيد من مستوى مخزون الأمان دائمًا.
+   * **هيكلة أسعار الشحن:** يُتوقع أن تظل أسعار شحن الحاويات متقلبة مع إدراج "رسوم المخاطر" وتفاوت الأسعار بين العقود طويلة الأجل والأسعار الفورية كلما تجددت التوترات.`,
+    threatLevel: 'CRITICAL',
+    regionEn: 'Strait of Hormuz / Persian Gulf / Bab el-Mandeb / Red Sea',
+    regionAr: 'مضيق هرمز / الخليج العربي / باب المندب / البحر الأحمر',
+    coordinates: '26.56° N, 56.47° E',
+    dateEn: 'August 21, 2026',
+    dateAr: '٢١ أغسطس ٢٠٢٦',
+    sourceEn: 'Kpler Satellite Telemetry & Maritime Logistics Intelligence — Al-Warraq',
+    sourceAr: 'مرصد كبلر للبيانات الفضائية والملاحة البحرية — صحيفة الورّاق'
+  },
   {
     id: 'south-lebanon-tragedy-firestorm-blank-slate-2026',
     codeName: 'OPERATION TABULA RASA / LEBANON FRONT',
@@ -1385,7 +1736,8 @@ export default function WarRoom({
 }: WarRoomProps) {
   const isAr = language === 'ar';
   
-  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('south-lebanon-tragedy-firestorm-blank-slate-2026');
+  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('iran-escalation-scenarios-europe-undersea-cables-2026');
+  const [activeMapTool, setActiveMapTool] = useState<'tracker' | 'bypass'>('tracker');
   
   const selectedDossierId = propSelectedDossierId && TACTICAL_DOSSIERS.some(d => d.id === propSelectedDossierId)
     ? propSelectedDossierId 
@@ -1876,9 +2228,46 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
         )}
       </AnimatePresence>
 
-      {/* Interactive Map Section */}
-      <div className="mb-8">
-        <BypassInteractiveMap language={language} />
+      {/* Interactive Geopolitical & Maritime Intelligence Tools */}
+      <div className="mb-8 space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800 pb-2">
+          <div className="flex items-center gap-2">
+            <Radio size={14} className="text-red-500 animate-pulse" />
+            <span className="font-mono text-xs font-black uppercase tracking-wider text-zinc-300">
+              {isAr ? 'المنظومات التفاعلية والمراقبة الرادارية المباشرة' : 'Live Interactive Telemetry & Radar Systems'}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setActiveMapTool('tracker')}
+              className={`px-3 py-1.5 rounded text-xs font-mono font-bold uppercase transition-all cursor-pointer flex items-center gap-1.5 ${
+                activeMapTool === 'tracker'
+                  ? 'bg-red-600 text-white shadow-lg shadow-red-900/30 border border-red-500'
+                  : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
+              }`}
+            >
+              <Anchor size={13} />
+              <span>{isAr ? 'رادار هرمز والملاحة المظلمة (Kpler)' : 'Hormuz Dark Fleet Radar (Kpler)'}</span>
+            </button>
+            <button
+              onClick={() => setActiveMapTool('bypass')}
+              className={`px-3 py-1.5 rounded text-xs font-mono font-bold uppercase transition-all cursor-pointer flex items-center gap-1.5 ${
+                activeMapTool === 'bypass'
+                  ? 'bg-red-600 text-white shadow-lg shadow-red-900/30 border border-red-500'
+                  : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
+              }`}
+            >
+              <MapPin size={13} />
+              <span>{isAr ? 'خريطة أنابيب الالتفاف الإقليمية' : 'Regional Bypass Pipeline Map'}</span>
+            </button>
+          </div>
+        </div>
+
+        {activeMapTool === 'tracker' ? (
+          <HormuzRealtimeTracker language={language} />
+        ) : (
+          <BypassInteractiveMap language={language} />
+        )}
       </div>
 
       {/* Main Grid Structure */}

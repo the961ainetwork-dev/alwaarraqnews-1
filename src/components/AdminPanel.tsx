@@ -4,7 +4,7 @@ import {
   Lock, KeyRound, Check, Plus, Trash2, Edit3, Save, RotateCcw, 
   Send, Layers, Newspaper, Users, Mail, UserCheck, AlertCircle, FileEdit, Network,
   Palette, LayoutGrid, ShieldCheck, SlidersHorizontal, RefreshCw, UploadCloud, FileUp, Tag, Sparkles,
-  Instagram, BarChart3, AudioLines, Copy, Download, Briefcase, Building2, Globe
+  Instagram, BarChart3, AudioLines, Copy, Download, Briefcase, Building2, Globe, Search
 } from 'lucide-react';
 import { SEO_SILOS } from '../seoData';
 import ArticleCurator from './ArticleCurator';

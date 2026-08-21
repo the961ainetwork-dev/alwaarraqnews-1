@@ -16,6 +16,7 @@ import { HormuzCrisisReport } from './HormuzCrisisReport';
 import { EgyptGasCrisisReport } from './EgyptGasCrisisReport';
 import { SpMiddleEastWarGCCInfographic } from './SpMiddleEastWarGCCInfographic';
 import { RegionalOilEnergyMapInfographic } from './RegionalOilEnergyMapInfographic';
+import HormuzRealtimeTracker from './HormuzRealtimeTracker';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
 
@@ -1001,6 +1002,10 @@ export default function ArticleViewer({
             ) : article.id === 'regional-oil-energy-map-2026' ? (
               <div className="mb-6">
                 <RegionalOilEnergyMapInfographic language={activeLang} />
+              </div>
+            ) : article.id === 'middle-east-maritime-structural-shift-kpler-2026' || article.id === 'hormuz-crisis-report-2026' ? (
+              <div className="mb-6">
+                <HormuzRealtimeTracker language={activeLang} />
               </div>
             ) : null}
 
