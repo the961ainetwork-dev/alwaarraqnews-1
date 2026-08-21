@@ -296,6 +296,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXVII: Strategic Investigation: Reshaping Debt Markets & Energy Balances Amid US-China Polarization',
     descAr: 'تحقيق استراتيجي حصري يفكك تراجع حصة المؤسسات الرسمية في سندات الخزانة الأمريكية من 40% إلى 12%، وارتهان الطاقة الصينية للنفط الإيراني وسط صراع النفوذ وأوراق الضغط المالي.',
     descEn: 'An exclusive strategic investigation analyzing the drop in official foreign US Treasury holdings to 12%, Chinese reliance on Iranian crude, and the shifting dynamics of global debt.'
+  },
+  'lebanon-liquidity-money-supply-m3-august-2026': {
+    fileId: 'AW-FILE-28',
+    badge: 'LEBANON MONEY SUPPLY & LIQUIDITY DOSSIER',
+    titleAr: 'الملف الثامن والعشرون: السيولة والكتلة النقدية في لبنان وتداعياتها الاقتصادية (أغسطس 2026)',
+    titleEn: 'Dossier XXVIII: Liquidity & Broad Money Supply (M3) in Lebanon: Repercussions on Credit & Banking',
+    descAr: 'تحقيق نقدي وإحصائي يرصد انكماش الكتلة النقدية M3 إلى 65.09 مليار دولار، ودولرة بنسبة 97.74%، وارتفاع الفائدة المصرفية وتراجع الودائع بـ 80.8 مليون دولار.',
+    descEn: 'A monetary research dossier detailing the M3 money aggregate contraction to $65.09B, 97.74% dollarization baseline, deposit drains, and commercial bank lending interest rate surges.'
   }
 };
 

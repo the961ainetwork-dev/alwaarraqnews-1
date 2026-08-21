@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import { TrendingDown, TrendingUp, DollarSign, Calendar, BarChart3, Percent, ChevronRight, BookMarked } from 'lucide-react';
+import { TrendingDown, TrendingUp, DollarSign, Calendar, BarChart3, Percent, ChevronRight, BookMarked, Wallet, Building2, Coins, ArrowUpRight, ArrowDownRight, Layers } from 'lucide-react';
 import { INITIAL_ARTICLES } from '../data';
+import { NEW_ARTICLES } from '../newArticles';
 import { Article } from '../types';
 
 interface RemittanceDataPoint {
@@ -592,7 +593,7 @@ interface InStatsProps {
 export default function InStats({ language, layoutMode, onSelectArticle }: InStatsProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
-  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction' | 'remittances'>('remittances');
+  const [activeTab, setActiveTab] = useState<'real-estate' | 'agriculture' | 'inflation' | 'bdl-budget' | 'industrial-exports' | 'investment-banks' | 'us-iran-war-cost' | 'lebanon-destruction' | 'remittances' | 'm3-liquidity'>('m3-liquidity');
   const [activeInsight, setActiveInsight] = useState<number | null>(1);
   const [isArticleExpanded, setIsArticleExpanded] = useState<boolean>(false);
 
@@ -740,11 +741,19 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
           </button>
           <button
             onClick={() => setActiveTab('remittances')}
-            className={`px-3 py-1 cursor-pointer transition-colors ${
+            className={`px-3 py-1 cursor-pointer transition-colors border-r border-black ${
               activeTab === 'remittances' ? 'bg-black text-white' : 'hover:bg-emerald-50 text-emerald-800'
             }`}
           >
             {isAr ? 'تحويلات المغتربين' : 'Remittances Data'}
+          </button>
+          <button
+            onClick={() => setActiveTab('m3-liquidity')}
+            className={`px-3 py-1 cursor-pointer transition-colors ${
+              activeTab === 'm3-liquidity' ? 'bg-black text-white' : 'hover:bg-sky-50 text-sky-800 font-bold'
+            }`}
+          >
+            {isAr ? 'الكتلة النقدية والسيولة (M3)' : 'Money Supply (M3) & Liquidity'}
           </button>
         </div>
       </div>
@@ -2390,6 +2399,279 @@ export default function InStats({ language, layoutMode, onSelectArticle }: InSta
                   <span>{isAr ? 'فتح ملف الناتج المحلي (AW-FILE-26)' : 'Open Dossier AW-FILE-26'}</span>
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab Panel 10: MONEY SUPPLY & LIQUIDITY (M3) AUGUST 2026 */}
+      {activeTab === 'm3-liquidity' && (
+        <div className="space-y-6">
+          {/* Header Metric Summary Bar */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="border-2 border-black p-4 bg-sky-50/40 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                  <span>{isAr ? 'الكتلة النقدية الواسعة (M3)' : 'Broad Money Supply (M3)'}</span>
+                  <span className="bg-sky-800 text-white px-1.5 py-0.5 rounded-xs text-[9px] font-mono">13 AUG 2026</span>
+                </div>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-2xl lg:text-3xl font-black font-mono text-zinc-950">5.82M B</span>
+                  <span className="text-xs text-red-650 font-bold flex items-center" dir="ltr">
+                    <TrendingDown size={14} className="mr-0.5" /> -5.13% YoY
+                  </span>
+                </div>
+                <div className="text-[11px] font-mono font-bold text-sky-900 mt-1">
+                  ≈ $65.09B {isAr ? '(سعر ٨٩,٥٠٠ ليرة)' : '(@ 89,500 LBP/USD)'}
+                </div>
+              </div>
+              <p className="text-[10px] text-zinc-500 mt-2 pt-2 border-t border-zinc-200 leading-relaxed font-sans">
+                {isAr ? 'انخفاض أسبوعي بـ ٦,١٤٠ مليار ليرة (-٣.٠٤٪ منذ بداية العام YTD).' : 'Weekly drop of LBP 6,140B (-3.04% Year-to-Date contraction).'}
+              </p>
+            </div>
+
+            <div className="border-2 border-black p-4 bg-amber-50/40 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                  <span>{isAr ? 'نسبة الدولرة القياسية' : 'Dollarization Baseline'}</span>
+                  <span className="bg-amber-700 text-white px-1.5 py-0.5 rounded-xs text-[9px] font-mono">M3 SHARE</span>
+                </div>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-2xl lg:text-3xl font-black font-mono text-amber-950">97.74%</span>
+                  <span className="text-xs text-zinc-600 font-mono font-bold">
+                    (97.739%)
+                  </span>
+                </div>
+                <div className="text-[11px] font-mono font-bold text-amber-900 mt-1">
+                  {isAr ? 'اقتصاد نقدي بالكامل (Cash Economy)' : 'Fully Dollarized Cash Economy'}
+                </div>
+              </div>
+              <p className="text-[10px] text-zinc-500 mt-2 pt-2 border-t border-zinc-200 leading-relaxed font-sans">
+                {isAr ? 'فقدان الليرة لوظيفتها كمخزن للقيمة وانحصارها في تداولات المياومة.' : 'LBP ceased functioning as a store of value; pure transaction vehicle.'}
+              </p>
+            </div>
+
+            <div className="border-2 border-black p-4 bg-emerald-50/40 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                  <span>{isAr ? 'صافي الأصول الأجنبية (NFA)' : 'Net Foreign Assets'}</span>
+                  <span className="bg-emerald-800 text-white px-1.5 py-0.5 rounded-xs text-[9px] font-mono">BDL + BANKS</span>
+                </div>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-2xl lg:text-3xl font-black font-mono text-emerald-950">3.59M B</span>
+                  <span className="text-xs text-emerald-650 font-bold flex items-center" dir="ltr">
+                    <TrendingUp size={14} className="mr-0.5" /> +54.56%
+                  </span>
+                </div>
+                <div className="text-[11px] font-mono font-bold text-emerald-800 mt-1">
+                  {isAr ? 'ارتفاع من ٢,٣٢٧ تريليون ليرة' : 'Surged from LBP 2,327,864.5B'}
+                </div>
+              </div>
+              <p className="text-[10px] text-zinc-500 mt-2 pt-2 border-t border-zinc-200 leading-relaxed font-sans">
+                {isAr ? 'مراكمة تدريجية لاحتياطيات المركزي وتجميد خدمة الديون الخارجية.' : 'Reflects conservative BDL reserve hoarding & frozen Eurobond servicing.'}
+              </p>
+            </div>
+
+            <div className="border-2 border-black p-4 bg-red-50/40 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
+                  <span>{isAr ? 'نزيف الودائع الأجنبية' : 'FX Deposits Outflow'}</span>
+                  <span className="bg-red-800 text-white px-1.5 py-0.5 rounded-xs text-[9px] font-mono">WEEKLY RUN</span>
+                </div>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-2xl lg:text-3xl font-black font-mono text-red-950">-$90.02M</span>
+                  <span className="text-xs text-red-650 font-bold font-mono">
+                    (7-13 AUG)
+                  </span>
+                </div>
+                <div className="text-[11px] font-mono font-bold text-red-800 mt-1">
+                  {isAr ? 'تراجع إجمالي الودائع بـ -$80.8M' : 'Total deposits dropped -$80.81M'}
+                </div>
+              </div>
+              <p className="text-[10px] text-zinc-500 mt-2 pt-2 border-t border-zinc-200 leading-relaxed font-sans">
+                {isAr ? 'انعدام الثقة المصرفية وتفضيل الاحتفاظ بالسيولة النقدية خارج المصارف.' : 'Continuing disintermediation and cash hoarding outside the banking system.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Section 2: Interest Rates & Monetary Survey Side-by-Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            {/* Left: Interest Rates Dynamics Table */}
+            <div className="lg:col-span-6 border-2 border-black p-5 bg-white flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center justify-between border-b-2 border-black pb-2">
+                  <div className="flex items-center gap-2">
+                    <Percent className="text-black" size={18} />
+                    <h5 className="font-sans font-black text-sm text-zinc-900 uppercase">
+                      {isAr ? 'اتجاهات أسعار الفائدة المصرفية (أبريل ٢٠٢٥ – أبريل ٢٠٢٦)' : 'Commercial Bank Interest Rates (April 2025 vs April 2026)'}
+                    </h5>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold bg-zinc-100 px-2 py-0.5 border border-zinc-300">
+                    BDL STATS
+                  </span>
+                </div>
+
+                <div className="overflow-x-auto mt-3">
+                  <table className="w-full text-xs font-mono border-collapse">
+                    <thead>
+                      <tr className="bg-zinc-100 border-b border-black text-zinc-700">
+                        <th className="py-2 px-2 text-start font-black font-sans">{isAr ? 'نوع المؤشر المصرفي' : 'Metric'}</th>
+                        <th className="py-2 px-2 text-center font-black">أبريل 2025</th>
+                        <th className="py-2 px-2 text-center font-black">أبريل 2026</th>
+                        <th className="py-2 px-2 text-end font-black">{isAr ? 'التغير' : 'Change'}</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-zinc-200">
+                      <tr className="hover:bg-zinc-50 transition-colors">
+                        <td className="py-2.5 px-2 font-sans font-bold text-zinc-900 flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-blue-600 inline-block"></span>
+                          {isAr ? 'الودائع بالليرة (LBP Deposits)' : 'LBP Deposits'}
+                        </td>
+                        <td className="py-2.5 px-2 text-center text-zinc-600">1.93%</td>
+                        <td className="py-2.5 px-2 text-center font-black text-blue-900">3.99%</td>
+                        <td className="py-2.5 px-2 text-end font-black text-emerald-600 flex items-center justify-end gap-0.5" dir="ltr">
+                          <ArrowUpRight size={14} /> +2.06%
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-zinc-50 transition-colors">
+                        <td className="py-2.5 px-2 font-sans font-bold text-zinc-900 flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-emerald-600 inline-block"></span>
+                          {isAr ? 'الودائع بالدولار (USD Deposits)' : 'USD Deposits'}
+                        </td>
+                        <td className="py-2.5 px-2 text-center text-zinc-600">0.04%</td>
+                        <td className="py-2.5 px-2 text-center font-black text-emerald-900">0.11%</td>
+                        <td className="py-2.5 px-2 text-end font-black text-emerald-600 flex items-center justify-end gap-0.5" dir="ltr">
+                          <ArrowUpRight size={14} /> +0.07%
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-red-50/40 transition-colors">
+                        <td className="py-2.5 px-2 font-sans font-bold text-red-950 flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                          {isAr ? 'الإقراض بالليرة (LBP Lending)' : 'LBP Lending Rate'}
+                        </td>
+                        <td className="py-2.5 px-2 text-center text-zinc-600">7.35%</td>
+                        <td className="py-2.5 px-2 text-center font-black text-red-900">8.43%</td>
+                        <td className="py-2.5 px-2 text-end font-black text-red-600 flex items-center justify-end gap-0.5" dir="ltr">
+                          <ArrowUpRight size={14} /> +1.08%
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-red-50/40 transition-colors">
+                        <td className="py-2.5 px-2 font-sans font-bold text-red-950 flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-amber-600 inline-block"></span>
+                          {isAr ? 'الإقراض بالدولار (USD Lending)' : 'USD Lending Rate'}
+                        </td>
+                        <td className="py-2.5 px-2 text-center text-zinc-600">3.69%</td>
+                        <td className="py-2.5 px-2 text-center font-black text-amber-900">4.13%</td>
+                        <td className="py-2.5 px-2 text-end font-black text-red-600 flex items-center justify-end gap-0.5" dir="ltr">
+                          <ArrowUpRight size={14} /> +0.44%
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="p-3 bg-zinc-50 border border-zinc-200 text-[11px] text-zinc-600 leading-relaxed font-sans">
+                <strong>{isAr ? 'الخلاصة التحليلية:' : 'Monetary Takeaway:'}</strong> {isAr ? 'ارتفاع أسعار الفائدة على القروض (٨.٤٣٪ بالليرة و٤.١٣٪ بالدولار) يفرض جفافاً ائتمانياً خانقاً يمنع استعادة الاستثمار وتمويل رأس المال العامل.' : 'Lending rate spikes to 8.43% (LBP) and 4.13% (USD) create an institutional credit freeze, suffocating productive investments.'}
+              </div>
+            </div>
+
+            {/* Right: Consolidated Monetary Survey */}
+            <div className="lg:col-span-6 border-2 border-black p-5 bg-zinc-900 text-white flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center justify-between border-b border-zinc-700 pb-2">
+                  <div className="flex items-center gap-2">
+                    <Layers className="text-sky-400" size={18} />
+                    <h5 className="font-sans font-black text-sm text-white uppercase">
+                      {isAr ? 'الميزانية النقدية الموحدة (Monetary Survey)' : 'Consolidated Monetary Survey'}
+                    </h5>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-emerald-400">
+                    LBP BILLIONS
+                  </span>
+                </div>
+
+                <div className="space-y-3 mt-4">
+                  {/* NFA */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-zinc-300 font-sans font-bold">{isAr ? 'صافي الأصول الأجنبية (NFA)' : 'Net Foreign Assets'}</span>
+                      <span className="text-emerald-400 font-black">3,598,078B <span className="text-[10px] text-zinc-400">(+54.6%)</span></span>
+                    </div>
+                    <div className="w-full h-2 bg-zinc-800 rounded-xs overflow-hidden">
+                      <div className="h-full bg-emerald-500" style={{ width: '60.7%' }}></div>
+                    </div>
+                  </div>
+
+                  {/* NCPS */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-zinc-300 font-sans font-bold">{isAr ? 'صافي الدين للقطاع العام (NCPS)' : 'Net Claims on Public Sector'}</span>
+                      <span className="text-amber-400 font-black">2,419,987B <span className="text-[10px] text-red-400">(-38.5%)</span></span>
+                    </div>
+                    <div className="w-full h-2 bg-zinc-800 rounded-xs overflow-hidden">
+                      <div className="h-full bg-amber-500" style={{ width: '40.8%' }}></div>
+                    </div>
+                  </div>
+
+                  {/* CPS */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-zinc-300 font-sans font-bold">{isAr ? 'التسليفات للقطاع الخاص (CPS)' : 'Claims on Private Sector'}</span>
+                      <span className="text-sky-400 font-black">510,825B <span className="text-[10px] text-zinc-400">(+1.1% جمود)</span></span>
+                    </div>
+                    <div className="w-full h-2 bg-zinc-800 rounded-xs overflow-hidden">
+                      <div className="h-full bg-sky-500" style={{ width: '8.6%' }}></div>
+                    </div>
+                  </div>
+
+                  {/* OIN */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-zinc-300 font-sans font-bold">{isAr ? 'عناصر صافية أخرى (OIN)' : 'Other Items Net'}</span>
+                      <span className="text-red-400 font-black">-603,713B</span>
+                    </div>
+                    <div className="w-full h-2 bg-zinc-800 rounded-xs overflow-hidden">
+                      <div className="h-full bg-red-500" style={{ width: '10.2%' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 bg-zinc-800 border border-zinc-700 text-[11px] text-zinc-300 leading-relaxed font-sans">
+                {isAr ? 'تراجع دين القطاع العام ناتج عن إطفاء الديون بالليرة التضخمية، بينما يعكس جمود تسليفات القطاع الخاص (٥١٠,٨٢٥ مليار ليرة) شللاً إقراضياً تاماً للمشاريع.' : 'Public sector debt contraction reflects hyper-inflated local currency redemption, while private claims stagnation indicates a complete lending paralysis.'}
+              </div>
+            </div>
+          </div>
+
+          {/* Section 3: Click-Through Action for the Full Story */}
+          <div className="border-2 border-black p-5 bg-gradient-to-r from-sky-900 to-zinc-900 text-white space-y-4">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold block">
+                  {isAr ? 'تقرير تحليلي خاص بالأسواق النقدية اللبنانية' : 'SPECIAL LEBANON MONEY MARKETS DOSSIER'}
+                </span>
+                <h4 className="font-sans font-black text-lg text-white mt-0.5">
+                  {isAr ? 'السيولة والكتلة النقدية في لبنان وتداعياتها الاقتصادية (أغسطس 2026)' : 'Liquidity & Money Supply (M3) in Lebanon: August 2026 Telemetry'}
+                </h4>
+                <p className="text-xs text-zinc-300 mt-1 max-w-2xl leading-relaxed">
+                  {isAr 
+                    ? 'دراسة تفكيكية شاملة لحركة الكتلة النقدية (M3 وM1)، وانكماش الودائع بـ ٨٠.٨ مليون دولار، ودولرة بنسبة ٩٧.٧٤٪، وميزانية مصرف لبنان الموحدة وتداعياتها على الاقتصاد النقدي والتسليف.' 
+                    : 'Comprehensive investigation on M3 contraction, $80.8M deposit drain, 97.74% dollarization, and monetary survey repercussions on credit and cash economy.'}
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  if (onSelectArticle) {
+                    const art = NEW_ARTICLES.find(a => a.id === 'lebanon-liquidity-money-supply-m3-august-2026') || INITIAL_ARTICLES.find(a => a.id === 'lebanon-liquidity-money-supply-m3-august-2026');
+                    if (art) onSelectArticle(art);
+                  }
+                }}
+                className="py-3 px-6 bg-sky-500 hover:bg-sky-400 text-black transition-all font-sans font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-lg shrink-0 rounded"
+              >
+                <BookMarked size={16} />
+                <span>{isAr ? 'قراءة التحليل والمؤشرات الكاملة' : 'Read Full Monetary Report'}</span>
+              </button>
             </div>
           </div>
         </div>

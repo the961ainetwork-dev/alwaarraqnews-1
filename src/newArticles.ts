@@ -2,6 +2,175 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'lebanon-liquidity-money-supply-m3-august-2026',
+    slug: 'السيولة-والكتلة-النقدية-في-لبنان-وتداعياتها-الاقتصادية-أغسطس-2026',
+    focusKeyword: 'الكتلة-النقدية-M3-مصرف-لبنان-السيولة-الدولرة-أسعار-الفائدة-الميزانية-الموحدة-2026',
+    category: 'markets',
+    categories: ['markets', 'economy', 'lebanon', 'stats', 'alwarraq-investigations', 'urgent-release', 'exclusives', 'editor-desk'],
+    titleAr: 'السيولة والكتلة النقدية في لبنان وتداعياتها الاقتصادية (أغسطس 2026)',
+    titleEn: 'Liquidity and Money Supply (M3) in Lebanon & Economic Repercussions (August 2026)',
+    summaryAr: 'أظهرت أحدث البيانات الصادرة عن مصرف لبنان المركزي انكماشاً في الكتلة النقدية بمفهومها الواسع (M3) بنسبة 5.13% سنوياً لتستقر عند 65.09 مليار دولار، وسط استمرار شح السيولة والجمود الاقتصادي المقترن بدولرة تفوق 97.7% وارتفاع أسعار الفائدة وتراجع الودائع المصرفية.',
+    summaryEn: 'Latest statistical data from the Central Bank of Lebanon (BDL) indicates a 5.13% YoY contraction in broad money supply (M3) to $65.09B, reflecting persistent liquidity dry-up, over 97.7% dollarization, surging lending interest rates, and an ongoing contraction in sovereign bank deposits.',
+    excerptAr: 'بيانات وإحصاءات رسمية ترصد حركة الكتلة النقدية (M3 وM1) ومستوى الدولرة البالغ 97.74%، وتطور أسعار الفائدة والميزانية النقدية الموحدة وتداعياتها على الاقتصاد النقدي والتسليف في لبنان.',
+    excerptEn: 'Official statistical telemetry mapping BDL money aggregates (M3 & M1), 97.74% dollarization, interest rate spikes, and monetary survey shifts shaping Lebanon’s cash economy.',
+    author: {
+      nameAr: 'وحدة الدراسات النقدية والأسواق المالية — الورّاق',
+      nameEn: 'Al-Warraq Monetary Research & Financial Markets Unit',
+      titleAr: 'تحليل إحصائي ونقدي معمّق',
+      titleEn: 'In-Depth Statistical & Monetary Analysis',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-21',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 29450,
+    tags: [
+      'أسواق_المال', 'الكتلة_النقدية', 'مصرف_لبنان', 'الدولرة', 'شح_السيولة', 'لبنان', 'الإحصاءات_والأرقام', 'أسعار_الفائدة', 'الاقتصاد_النقدي', 'M3',
+      'MoneyMarkets', 'MoneySupplyM3', 'CentralBankLebanon', 'Dollarization', 'LebanonEconomy', 'StatsAndData', 'InterestRates', 'MonetarySurvey', 'CashEconomy'
+    ],
+    hashtags: ['LebanonMoneySupply2026', 'BDLMonetarySurvey', 'DollarizationCrisis', 'LebanonBankingStats'],
+    contentAr: `### السيولة والكتلة النقدية في لبنان وتداعياتها الاقتصادية (أغسطس 2026)
+
+أظهرت أحدث البيانات الصادرة عن **مصرف لبنان المركزي** انكماشاً في الكتلة النقدية بمفهومها الواسع (**M3**)، مما يعكس استمرار شح السيولة والجمود الاقتصادي المقترن بدولرة خيالية للقطاع المصرفي.
+
+---
+
+### أولاً: تفكيك حركة الكتلة النقدية (الأسبوع المنتهي في 13 أغسطس 2026)
+
+* **انكماش الكتلة النقدية الواسعة (M3):**  
+  انخفضت الكتلة النقدية (M3) بمقدار **6,140.48 مليار ليرة لبنانية** لتستقر عند **5,825,560 مليار ليرة** (ما يعادل **65.09 مليار دولار** على سعر الصرف الرسمي المعتمد **89,500 ليرة للدولار**).
+  
+* **الأداء السنوي والتراكمي:**  
+  سجلت M3 تراجعاً بنسبة **5.13% على أساس سنوي (YOY)**، وانخفاضاً بنسبة **3.04% منذ بداية العام (YTD)**.
+
+* **نمو الكتلة النقدية الضيقة (M1):**  
+  ارتفعت M1 بمقدار **1,092.16 مليار ليرة** خلال الأسبوع الممتد من 7 إلى 13 أغسطس 2026، وجاء ذلك حصيلة:
+  * **ارتفاع الودائع تحت الطلب** بمقدار **1,766.17 مليار ليرة**.
+  * **انخفاض حجم النقد في التداول (Currency in Circulation)** بمقدار **674.01 مليار ليرة**.
+
+* **تراجع إجمالي الودائع المصرفية:**  
+  انخفضت الودائع الاستثمارية والادخارية بمقدار **7,232.64 مليار ليرة** (نحو **80.81 مليون دولار**)، بضغط أساسي من تراجع الودائع بالعملات الأجنبية بمقدار **90.02 مليون دولار** خلال أسبوع واحد، على الرغم من ارتفاع الودائع لأجل والادخار بالليرة بمقدار **824.45 مليار ليرة**.
+
+* **مستوى الدولرة القياسي:**  
+  انخفضت نسبة دولرة الكتلة النقدية الواسعة بشكل طفيف جداً من **97.774%** في 6 أغسطس إلى **97.739%** في 13 أغسطس 2026.
+
+---
+
+### ثانياً: اتجاهات أسعار الفائدة المصرفية (أبريل 2025 - أبريل 2026)
+
+سجلت معدلات الفائدة لدى البنوك التجارية اللبنانية ارتفاعات متزامنة على الودائع والقروض بالعملتين اللبنانية والدولار الأمريكي:
+
+| نوع الفائدة المصرفية | أبريل 2025 | أبريل 2026 | التغير السنوي |
+| :--- | :---: | :---: | :---: |
+| **الودائع بالليرة (LBP)** | 1.93% | 3.99% | ⬆ **+2.06%** |
+| **الودائع بالدولار (USD)** | 0.04% | 0.11% | ⬆ **+0.07%** |
+| **الإقراض بالليرة (LBP)** | 7.35% | 8.43% | ⬆ **+1.08%** |
+| **الإقراض بالدولار (USD)** | 3.69% | 4.13% | ⬆ **+0.44%** |
+
+---
+
+### ثالثاً: التحليل المالي والميزانية النقدية الموحدة (Monetary Survey)
+
+تُشتق الكتلة النقدية (M3) من الجمع بين ميزانية مصرف لبنان وميزانيات المصارف التجارية العاملة. وتوضح المقارنة الإحصائية بين أبريل 2025 وأبريل 2026 التغيرات الهيكلية التالية:
+
+* **إجمالي الكتلة النقدية (M3):**  
+  تراجعت من **6,212,858.5 مليار ليرة** إلى **5,925,178 مليار ليرة**.
+
+* **صافي الأصول الأجنبية (NFA):**  
+  ارتفع بشكل ملحوظ من **2,327,864.5 مليار ليرة** إلى **3,598,078 مليار ليرة**، مما يعكس مراكمة تدريجية للسيولة بالعملات الأجنبية لدى مصرف لبنان وتراجع التزامات أجنبية معينة في ظل تجميد خدمة الديون الخارجية.
+
+* **التسليفات للقطاع الخاص (CPS):**  
+  شهدت جموداً شبه تام، حيث ارتفعت بنسبة طفيفة جداً من **505,232.5 مليار ليرة** إلى **510,825.3 مليار ليرة**، مما يظهر الشلل الإقراضي الحاد الذي يصيب القطاعات الإنتاجية.
+
+* **صافي الدين للقطاع العام (NCPS):**  
+  انخفض بشكل كبير من **3,936,710 مليار ليرة** إلى **2,419,987.2 مليار ليرة**، نتيجة إطفاء جزء من الديون وسداد الاستحقاقات بالليرة اللبنانية المحشوة بالتضخم وتراجع القيمة الحقيقية للديون المحلية.
+
+* **عناصر صافية أخرى (OIN):**  
+  سجلت قيمة سالبة ارتفعت من **-556,948.4 مليار ليرة** إلى **-603,712.8 مليار ليرة**.
+
+---
+
+### رابعاً: التداعيات الاقتصادية والمالية (Economic Consequences)
+
+1. **تأكيد ظاهرة "الاقتصاد النقدي" والتسليع الفعلي:**  
+   على الرغم من انخفاض النقد في التداول خلال هذا الأسبوع المحدد، فإن نسبة الدولرة التي تتجاوز **97.7%** تعكس فقدان الليرة اللبنانية لوظيفتها كمخزن للقيمة، وتحول الاقتصاد بالكامل إلى التعامل النقدي بالدولار (**Cash Economy**).
+
+2. **ارتفاع تكلفة الإقراض وانكماش الاستثمار:**  
+   كبح ارتفاع أسعار الفائدة على القروض بالليرة (إلى **8.43%**) وبالدولار (إلى **4.13%**) أي فرصة لاستعادة النشاط الإقراضي المصرفي، مما يفرض جفافاً حاداً في التمويل المتاح للشركات والمؤسسات الاستثمارية في القطاع الخاص.
+
+3. **ضعف الوساطة المصرفية (Disintermediation):**  
+   استمرار تراجع الودائع بالعملات الأجنبية يعكس انعدام ثقة المودعين بالمنظومة المصرفية، وترجيح الاحتفاظ بالسيولة النقدية خارج البنوك (في المنازل والخزائن الخاصة) أو استخدامها لتغطية المصاريف التشغيلية والتجارية الحتمية.
+
+4. **تحسن ظاهري في الأصول الأجنبية للبنك المركزي:**  
+   يعود الارتفاع في صافي الأصول الأجنبية (NFA) إلى سياسات مصرف لبنان الحذرة في إدارة وإنفاق الاحتياطيات وتوقف الحكومة عن سداد خدمة الدين الخارجي، إلا أن هذا التحسن لا يترجم إلى تعافٍ اقتصادي شامل طالما بقيت حركة التسليفات للقطاع الخاص مشلولة وتكلفة رأس المال مرتفعة.`,
+    contentEn: `### Liquidity and Money Supply (M3) in Lebanon & Economic Repercussions (August 2026)
+
+Latest statistical data from the **Central Bank of Lebanon (Banque du Liban - BDL)** indicates a continuing contraction in broad money supply (**M3**), highlighting chronic liquidity constraints, economic stagnation, and an extreme dollarization baseline across the banking architecture.
+
+---
+
+### I. Deconstructing Money Supply Dynamics (Week Ending August 13, 2026)
+
+* **Broad Money Supply (M3) Contraction:**  
+  Broad money supply (M3) fell by **LBP 6,140.48 Billion** to settle at **LBP 5,825,560 Billion** (equivalent to **$65.09 Billion** at the official exchange rate of **LBP 89,500 per USD**).
+  
+* **Annual and Year-to-Date Performance:**  
+  M3 recorded a **5.13% Year-on-Year (YoY) decline**, alongside a **3.04% contraction Year-to-Date (YTD)**.
+
+* **Narrow Money Supply (M1) Dynamics:**  
+  Narrow money (M1) expanded by **LBP 1,092.16 Billion** during the week of August 7–13, 2026, driven by:
+  * An increase in **demand deposits** of **LBP 1,766.17 Billion**.
+  * A decline in **currency in circulation** by **LBP 674.01 Billion**.
+
+* **Decline in Total Bank Deposits:**  
+  Term and savings deposits dropped by **LBP 7,232.64 Billion** (~**$80.81 Million**), heavily weighed down by a **$90.02 Million weekly outflow in foreign currency deposits**, despite a modest increase of **LBP 824.45 Billion** in LBP term savings.
+
+* **Severe Dollarization Baseline:**  
+  The dollarization rate of broad money marginally adjusted from **97.774%** on August 6 to **97.739%** on August 13, 2026.
+
+---
+
+### II. Commercial Bank Interest Rate Trends (April 2025 vs. April 2026)
+
+Commercial banking interest rates in Lebanon experienced simultaneous upward adjustments across both local currency and US dollar deposits and loans:
+
+| Interest Rate Metric | April 2025 | April 2026 | YoY Change |
+| :--- | :---: | :---: | :---: |
+| **LBP Deposits** | 1.93% | 3.99% | ⬆ **+2.06%** |
+| **USD Deposits** | 0.04% | 0.11% | ⬆ **+0.07%** |
+| **LBP Lending** | 7.35% | 8.43% | ⬆ **+1.08%** |
+| **USD Lending** | 3.69% | 4.13% | ⬆ **+0.44%** |
+
+---
+
+### III. Consolidated Monetary Survey Analysis
+
+Broad money (M3) represents the consolidated balance sheets of the Central Bank of Lebanon and operating commercial banks. Key structural shifts between April 2025 and April 2026 include:
+
+* **Total Broad Money (M3):** Contracted from **LBP 6,212,858.5 Billion** to **LBP 5,925,178 Billion**.
+* **Net Foreign Assets (NFA):** Surged significantly from **LBP 2,327,864.5 Billion** to **LBP 3,598,078 Billion**, reflecting gradual foreign reserve accumulation by BDL and lower external liabilities amidst defaulted Eurobond debt servicing.
+* **Claims on Private Sector (CPS):** Remained in severe stagnation, inching up marginally from **LBP 505,232.5 Billion** to **LBP 510,825.3 Billion**, demonstrating paralyzed credit intermediation.
+* **Net Claims on Public Sector (NCPS):** Decreased substantially from **LBP 3,936,710 Billion** to **LBP 2,419,987.2 Billion**, driven by debt redemption in hyper-inflated local currency.
+* **Other Items Net (OIN):** Widened to **-LBP 603,712.8 Billion** from **-LBP 556,948.4 Billion**.
+
+---
+
+### IV. Macroeconomic & Financial Repercussions
+
+1. **Entrenchment of the "Cash Economy":**  
+   With dollarization exceeding **97.7%**, the Lebanese Pound has ceased functioning as a store of value, cementing Lebanon's transition into a cash-based US Dollar economy.
+2. **Surging Lending Costs & Investment Freeze:**  
+   Elevated lending rates (8.43% on LBP, 4.13% on USD) continue to choke off private sector borrowing, creating a chronic financing drought for productive capital expenditure.
+3. **Banking Disintermediation:**  
+   Ongoing outflows in foreign currency deposits reflect deep institutional distrust, incentivizing offline cash hoarding and operational liquidity drainage.
+4. **Superficial NFA Accumulation:**  
+   While Net Foreign Assets have expanded due to conservative central bank spending and frozen debt servicing, this does not translate into systemic economic recovery given paralyzed credit markets and high cost of capital.`
+  },
+  {
     id: 'strategic-investigation-debt-energy-us-china-2026',
     slug: 'strategic-investigation-debt-energy-us-china-2026',
     focusKeyword: 'تحقيق-استراتيجي-أسواق-الدين-توازنات-الطاقة-واشنطن-بكين-سندات-الخزانة-النفط-الإيراني',

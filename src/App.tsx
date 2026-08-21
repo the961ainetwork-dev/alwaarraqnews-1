@@ -185,8 +185,8 @@ export default function App() {
           const initialMap = new Map(INITIAL_ARTICLES.map(a => [a.id, a]));
           const merged = parsed.map((a: any) => {
             if (a && a.id && initialMap.has(a.id)) {
-              // Always prefer code definitions for Solidere, Editor Desk, Exclusives, and Remittance articles to keep fresh edits
-              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy')) {
+              // Always prefer code definitions for Solidere, Editor Desk, Exclusives, Remittance, Strategic, and M3 Liquidity articles to keep fresh edits
+              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy') || a.id.includes('liquidity') || a.id.includes('money-supply')) {
                 return initialMap.get(a.id);
               }
             }
@@ -200,11 +200,11 @@ export default function App() {
       } catch (e) {}
     }
 
-    // Explicitly place the latest strategic investigation and key exclusive at the top
-    const strategicIdx = articles.findIndex(a => a && a.id === 'strategic-investigation-debt-energy-us-china-2026');
-    if (strategicIdx > -1) {
-      const target = articles[strategicIdx];
-      const rest = articles.filter(a => a && a.id !== 'strategic-investigation-debt-energy-us-china-2026');
+    // Explicitly place the latest M3 liquidity and strategic investigation at the top
+    const m3Idx = articles.findIndex(a => a && a.id === 'lebanon-liquidity-money-supply-m3-august-2026');
+    if (m3Idx > -1) {
+      const target = articles[m3Idx];
+      const rest = articles.filter(a => a && a.id !== 'lebanon-liquidity-money-supply-m3-august-2026');
       articles = [target, ...rest];
     }
 
