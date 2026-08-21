@@ -312,6 +312,14 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXIX: Responding to Recent Telemetry: When Will BDL Act to Control M3 Money Supply & Curb the Cash Economy?',
     descAr: 'افتتاحية استراتيجية تفكك أدوات البنك المركزي والتشريعات المطلوبة لمكافحة اقتصاد الكاش والانتقال لنظام مصرفي رقمي ومنظم.',
     descEn: 'A strategic editorial detailing Central Bank levers and legislative reforms required to transition Lebanon from a cash economy into a regulated digital banking system.'
+  },
+  'solidere-investigation-aug-2026-ownership-valuation': {
+    fileId: 'AW-FILE-30',
+    badge: 'SOLIDERE FORENSIC & VALUATION DOSSIER',
+    titleAr: 'الملف الثلاثون: SOLIDERE INVESTIGATION Aug 2026: ملخص شامل للتقرير التحقيقي: ملكية وتقييم شركة سوليدير',
+    titleEn: 'Dossier XXX: SOLIDERE INVESTIGATION Aug 2026: Comprehensive Forensic Report on Ownership & Valuation of Solidere',
+    descAr: 'تحقيق استقصائي جنائي بقلم معن برازي: شطب 483 مليون دولار ديون باللولار، ميزانية بلا ديون، هيمنة الأفراد بنسبة 99.85% (12.82 مليار دولار)، استثمار كوبيرنيك، واستحقاق امتياز 2029.',
+    descEn: 'A comprehensive forensic dossier by Maan Barazy: $483M debt elimination via lollar checks, zero-debt balance sheet, 99.85% retail ownership, Kopernik Global stake, and 2029 concession milestones.'
   }
 };
 

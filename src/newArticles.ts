@@ -2,6 +2,211 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'solidere-investigation-aug-2026-ownership-valuation',
+    slug: 'solidere-investigation-aug-2026-ملخص-شامل-ملكية-وتقييم-شركة-سوليدير',
+    focusKeyword: 'سوليدير-ملكية-وتقييم-معن-برازي-كوبيرنيك-بورصة-بيروت-امتياز-2029-اللولار-ديون-ميزانية-عمومية-تحقيق-استقصائي',
+    category: 'alwarraq-investigations',
+    categories: ['alwarraq-investigations', 'investigations', 'lebanon', 'economy', 'markets', 'editor-desk', 'exclusives'],
+    titleAr: 'SOLIDERE INVESTIGATION Aug 2026: ملخص شامل للتقرير التحقيقي حول ملكية وتقييم شركة سوليدير',
+    titleEn: 'SOLIDERE INVESTIGATION Aug 2026: Comprehensive Forensic Report on Ownership & Valuation of Solidere',
+    summaryAr: 'تحقيق استقصائي وتحليلي موسع بقلم معن برازي: تفكيك النموذج المالي لشركة سوليدير عبر مراجحة الالتزامات (Liability Arbitrage)، وشطب ديون بقيمة 483 مليون دولار بشيكات اللولار، وهيكل الملكية الذي يستحوذ فيه الأفراد على 99.85% (12.82 مليار دولار من أصل 12.84 مليار دولار)، وتحليل محفظة صندوق "كوبيرنيك غلوبال"، وصولاً إلى استحقاق انتهاء الامتياز عام 2029.',
+    summaryEn: 'Comprehensive forensic and investigative dossier by analyst Maan Barazy: dissecting Solidere’s unprecedented liability arbitrage under capital controls, eliminating $483M bank debt via lollar checks, breakdown of the 99.85% retail-dominated ownership structure ($12.82B market cap), forensic insights into Kopernik Global’s contrarian stake, and the legal trajectory towards the 2029 concession expiration.',
+    excerptAr: 'متابعة وتحقيق حصري: بالأرقام والبيانات الجنائية.. كيف تحولت سوليدير إلى ميزانية خالية تماماً من الديون، وماذا يكشف استثمار "كوبيرنيك" وأفق انتهاء الامتياز عام 2029؟',
+    excerptEn: 'Exclusive follow-up forensic investigation: How Solidere achieved zero bank debt, Kopernik Global’s contrarian position, and strategic catalysts approaching the 2029 mandate.',
+    author: {
+      nameAr: 'معن برازي — Alwarraqnews.com',
+      nameEn: 'Maan Barazy — Alwarraqnews.com',
+      titleAr: 'رئيس التحرير وكبير المحللين الماليين والاقتصاديين',
+      titleEn: 'Editor-in-Chief & Lead Financial Analyst',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-19',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 31450,
+    tags: [
+      'سوليدير', 'تحقيقات_الورّاق', 'معن_برازي', 'بورصة_بيروت', 'كوبيرنيك', 'اللولار', 'إعادة_الهيكلة', 'العقارات', 'لبنان', 'امتياز_2029',
+      'Solidere', 'AlwarraqInvestigations', 'MaanBarazy', 'BSE', 'Kopernik', 'LiabilityArbitrage', 'ZeroDebt', 'BeirutRealEstate', 'LebanonCrisis', 'Concession2029'
+    ],
+    hashtags: ['SolidereInvestigation2026', 'MaanBarazyAnalysis', 'SolidereOwnership', 'BSEStocks', 'ForensicFinance'],
+    contentAr: `### SOLIDERE INVESTIGATION Aug 2026
+## ملخص شامل للتقرير التحقيقي: ملكية وتقييم شركة سوليدير
+
+**التاريخ:** 19 أغسطس 2026  
+**إعداد المحلل:** معن برازي (Maan Barazy)  
+**المنصة النشر والتوثيق:** Alwarraqnews.com (منصة الورّاق للإعلام والتحقيقات الاقتصادية)  
+
+---
+
+### 1. الملخص التنفيذي وفرضية التحقيق الأساسية
+تقدم **الشركة اللبنانية لتطوير وإعادة إعمار وسط بيروت (سوليدير)** واحدة من أكثر حالات إعادة الهيكلة الاستثنائية والمثيرة للجدل في الأسواق الناشئة بمنطقة المشرق العربي.
+
+يمثل المسار المالي للشركة خلال الأزمة الاقتصادية والمصرفية اللبنانية (2019–2026) حالة نموذجية لإدارة **المرجحة المالية للالتزامات تحت قيود رأس المال (Liability Arbitrage under Capital Controls)**.
+
+ومن خلال قبول الشيكات المصرفية المحلية (**«اللولار»**) بالقيمة الاسمية مقابل مخزون الأراضي والاكتتابات، قامت سوليدير بشكل منهجي بـ:
+* **تصفية ديون تجارية ومصرفية تجاوزت 483 مليون دولار أمريكي**.
+* تحويل الشركة بفعالية من كيان عقاري ذي مديونية عالية وسيولة محدودة إلى **ميزانية عمومية حصينة وخالية تماماً من الديون المصرفية (Zero Bank Debt)**.
+
+تعكس القيمة السوقية الحالية البالغة **12.84 مليار دولار أمريكي** علاوة مخاطر مدفوعة برغبة المستثمرين الأفراد والمحليين في **الهروب إلى الأصول العينية والآمنة** تحسباً لأي اقتطاع مصرفي محتمل (*Haircut*).
+
+ورغم أن مقاييس التقييم التقليدية تعاني من تشوهات محاسبية حادة، فإن قاعدة أصول الشركة (التي تتضمن **أكثر من 1.8 مليار دولار من الأراضي المتميزة في وسط العاصمة بيروت**) توفر حماية مطلقة ضد المخاطر الهبوطية مع الاقتراب الحثيث من موعد **انتهاء مهلة الامتياز عام 2029**.
+
+---
+
+### 2. القصة الكاملة لتمديد مهلة الشركة والوضع القانوني (1994 - 2029)
+تأسست شركة سوليدير في عام 1994 بموجب **المرسوم رقم 2537** لتولي مهمة إعادة إعمار وتطوير وسط العاصمة اللبنانية بيروت المنكوب بعد انتهاء الحرب الأهلية. وتضمن الاتفاق التأسيسي ولاية زمنية محددة تم تعديلها وتمديدها عبر عدة محطات تشريعية وتاريخية:
+
+| المحطة القانونية | التاريخ والسند التنفيذي | تفاصيل الإجراء والأثر التشغيلي |
+| :--- | :--- | :--- |
+| **التأسيس والمهلة الأولية** | **1994** (المرسوم 2537) | حُددت مدة عمل الشركة أصلاً بـ **25 عاماً** تبدأ من تاريخ التأسيس، وكان من المقرر قانوناً أن تنتهي ولايتها في عام **2019**. |
+| **التمديد الأول للولاية** | **مايو 2005** (المرسوم 15909) | أصدرت الحكومة اللبنانية مرسوماً نص على **تمديد مهلة الشركة لمدة 10 سنوات إضافية لتنتهي في عام 2029**، وذلك لتأمين استكمال مشاريع البنية التحتية والواجهة البحرية والردم (Normandy). |
+| **تمديد مهل البناء والاستثمار** | **2020 – 2026** (تدابير استثنائية) | صدرت تدابير استثنائية لمنح المطورين والمستثمرين داخل نطاق سوليدير تمديدات إضافية لإنجاز المشاريع وتراخيص البناء عقب أزمات 2019 المالية وانفجار مرفأ بيروت في 4 آب 2020. |
+
+---
+
+### 3. هيكل الملكية وتوزيع المساهمين (Ownership Overview)
+تظهر بيانات التداول وسجلات الملكية المودعة لدى **بورصة بيروت (BSE)** وهيئة الأسواق المالية هيمنة ساحقة واستثنائية للمستثمرين الأفراد والشركات العامة، مما يعكس الأثر التاريخي لتأسيس الشركة كأداة لتجميع حقوق الملكية العقارية واستخدامها كأداة تحوط رئيسية للمودعين أثناء الأزمة المصرفية.
+
+#### توزيع قاعدة المساهمين:
+| فئة المساهمين | عدد الأسهم المملوكة | نسبة الملكية (%) | القيمة السوقية الضمنية (دولار) |
+| :--- | :--- | :--- | :--- |
+| **صناديق الاستثمار المتبادلة والمؤشرات (Mutual Funds & ETFs)** | 245,810 أسهم | **0.15%** | 19.66 مليون $ |
+| **المستثمرون المؤسسيون الآخرون (Other Institutions)** | 0.00 أسهم | **0.00%** | 0.00 $ |
+| **الشركات العامة والمستثمرون الأفراد (Public & Retail)** | 160.27 مليون سهم | **99.85%** | 12.82 مليار $ |
+| **الإجمالي العام (Total Share Capital)** | **160.51 مليون سهم** | **100.00%** | **12.84 مليار $** |
+
+#### كبار المالكين المؤسسيين الدوليين (Top Institutional Holders):
+1. **شركة كوبيرنيك غلوبال إنفستورز (Kopernik Global Investors, LLC):**  
+   * **نسبة الملكية:** 0.13% (213,356 سهماً)  
+   * **تاريخ الإفصاح والتقرير:** 30 أبريل 2026  
+   * **القيمة المعلنة للمحفظة:** 17.07 مليون دولار أمريكي  
+2. **صندوق (The Advisors' Inner Circle Fund II - Kopernik All-Cap):**  
+   * **نسبة الملكية:** 0.11% (174,732 سهماً)  
+   * **تاريخ الإفصاح والتقرير:** 30 أبريل 2026  
+   * **القيمة المعلنة للمحفظة:** 13.98 مليون دولار أمريكي  
+
+---
+
+### 4. جدول مقارنة مؤشرات التقييم (SOLA vs Peers & Sector)
+عند سعر التداول البالغ **72.65 دولار أمريكي** لأسهم الفئة (A)، تظهر المؤشرات انفصالاً هيكلياً تاماً عن النماذج المالية التقليدية نتيجة لقيود التحويل النقدي وتعدد أسعار الصرف وحالة التحوط:
+
+| مؤشر التقييم المالي | سوليدير (SOLA) | المجموعة المماثلة (Peers) | القطاع العقاري الإقليمي | التحليل والتفسير الجنائي |
+| :--- | :--- | :--- | :--- | :--- |
+| **مكرر الربحية (P/E Ratio)** | **0.0x** | 7.3x | 8.5x | مشوه محاسبياً بسبب الاعتراف بأرباح استثنائية ناتجة عن تصفية وتسوية الديون المصرفية بالشيكات. |
+| **نسبة النمو إلى المكرر (PEG)** | **0.00** | 0.15 | 0.01 | توقعات النمو غير مصنفة من وكالات التصنيف بانتظار استقرار الاقتصاد الكلي الشامل. |
+| **السعر إلى القيمة الدفترية (P/B)** | **0.0x** | 1.2x | 0.9x | الدفاتر تعكس القيم التاريخية للأراضي المسجلة في التسعينات بدلاً من تكلفة الاستبدال الحقيقية. |
+| **السعر إلى المبيعات (P/S LTM)** | **0.0x** | 1.8x | 4.0x | مبيعات مخزون الأراضي بلغت ذروتها الحجمية أثناء موجة تسوية الشيكات المصرفية (2019-2022). |
+| **نسبة صعود المحللين (Upside)** | **0.0%** | 38.6% | 18.8% | غياب التغطية البحثية الرسمية من بنوك الاستثمار العالمية والمؤسسات الاستشارية الكبرى. |
+| **مستهدف القيمة العادلة (Fair Value)** | **مغلقة / مقيدة** | 28.6% | 1.9% | نماذج التدفقات النقدية الخصمية (DCF) معطلة بسبب تعقيدات تحويل الأموال إلى الخارج وتوحيد الصرف. |
+
+---
+
+### 5. التحليل الجنائي لاستثمار مجموعة «كوبيرنيك» (Kopernik Forensic Analysis)
+يقود صندوق **Kopernik Global Investors** الخبير الاستثماري العالمي الشهير **ديف إيبن (Dave Iben)**. وتعتمد فلسفة الصندوق على نهج الاستثمار المخالف للاتجاه السائد (**Contrarian Value Investing**) القائم على اقتناء الأصول الحقيقية الملموسة المسعرة بأقل بكثير من قيمتها الاستبدالية في دول تمر بأزمات سيادية أو عزلة جيوسياسية.
+
+#### دوافع احتفاظ كوبيرنيك بأسهم سوليدير:
+1. **تفضيل الأصول الصلبة على النقود الورقية:** تمثل ملكية الأراضي في قلب العاصمة بيروت أصلاً غير قابل للتكرار أو الاستبدال، ويحافظ على قيمته الذاتية بغض النظر عن انهيار العملات الورقية والتضخم المفرط.
+2. **انعدام ديون الميزانية العمومية:** نجاح سوليدير في إطفاء **483 مليون دولار** من ديونها المصرفية ألغى بالكامل مخاطر التعثر أو الإفلاس المالي تحت ضغط الدائنين.
+3. **خصم حاد مقارنة بتكلفة الاستبدال العالمية:** تتداول أراضي الواجهة البحرية والوسط التجاري في بيروت بخصومات هائلة مقارنة بالأصول المماثلة في عواصم ومدن المنطقة (مثل دبي، أثينا، وإسطنبول).
+
+---
+
+### 6. النظرة المستقبلية والمحفزات الاستراتيجية حتى عام 2029
+* **قاعدة أصول خالية من الأعباء:** الميزانية العمومية الخالية من أي ديون مصرفية تضمن أن أي تدفقات نقدية ناتجة عن بيع أو تأجير الأراضي المتبقية ستتحول مباشرة ومئة بالمئة إلى حقوق المساهمين.
+* **حسم ملف الامتياز (2029):** يفرض اقتراب موعد انتهاء الامتياز حسم الملفات العالقة والمعقدة مع بلدية بيروت والدولة اللبنانية بشأن استلام المساحات العامة، شبكات البنية التحتية، واحتياطيات الأراضي المتبقية للتطوير.
+* **إعادة انتظام السياسة النقدية:** أي توحيد رسمي مستقبلي لأسعار الصرف واستعادة القطاع المصرفي لعافيته سيعيد فتح المجال واسعاً أمام الصناديق والمؤسسات الدولية لتداول السهم وفق مضاعفات تقييم مالية عادلة ومحررة من قيود التحويل.`,
+    contentEn: `### SOLIDERE INVESTIGATION Aug 2026
+## Comprehensive Forensic Report on Ownership & Valuation of Solidere
+
+**Date:** August 19, 2026  
+**Lead Financial Analyst:** Maan Barazy  
+**Publishing Platform:** Alwarraqnews.com (Al-Warraq Economic & Strategic Intelligence)  
+
+---
+
+### 1. Executive Summary & Core Investigative Thesis
+The Lebanese Company for the Development and Reconstruction of Beirut Central District (**Solidere**) presents one of the most remarkable and controversial balance sheet restructuring episodes in Eastern Mediterranean emerging markets history.
+
+The company's financial evolution across the Lebanese economic and banking collapse (2019–2026) serves as a textbook manifestation of **Liability Arbitrage under Capital Controls**.
+
+By accepting trapped local bank checks (**"Lollars"**) at nominal face value in exchange for land parcels and shares, Solidere systematically:
+* **Extinguished over $483 million in commercial and bank debt**.
+* Engineered a transformation from a highly leveraged, illiquid real estate developer into an impregnable balance sheet with **Zero Bank Debt**.
+
+Solidere's current market capitalization of **$12.84 billion** reflects a systemic flight-to-safety risk premium by local retail investors seeking hard-asset insulation against impending banking haircuts.
+
+While standard valuation metrics reflect accounting distortions, the company’s underlying asset base—comprising **over $1.8 billion in prime central Beirut land reserves**—provides downside protection as the **2029 concession expiration** draws near.
+
+---
+
+### 2. Legal History & Concession Extension Timeline (1994–2029)
+Incorporated in 1994 under **Decree No. 2537** to reconstruct war-torn downtown Beirut, Solidere operated under a statutory mandate amended through critical historical milestones:
+
+| Regulatory Milestone | Date & Legal Instrument | Mandate Impact & Operational Scope |
+| :--- | :--- | :--- |
+| **Incorporation & Initial Mandate** | **1994** (Decree 2537) | Granted an initial **25-year operational mandate**, originally scheduled to expire in **2019**. |
+| **First Concession Extension** | **May 2005** (Decree 15909) | Lebanese Government issued Decree 15909, **extending the concession by 10 years to expire in 2029** to complete infrastructure and the waterfront Normandy reclamation. |
+| **Construction & Investment Extensions** | **2020–2026** (Emergency Measures) | Exceptional regulatory extensions granted to third-party developers in Beirut Central District post-2019 collapse and the August 4, 2020 Beirut Port explosion. |
+
+---
+
+### 3. Ownership Structure & Shareholder Distribution
+Shareholder registries at the **Beirut Stock Exchange (BSE)** reflect overwhelming retail concentration, illustrating Solidere’s role as an equity-based capital preservation vehicle for depositors during the financial crisis.
+
+#### Shareholder Breakdown:
+| Investor Category | Shares Held | Ownership Stake (%) | Implied Market Cap ($) |
+| :--- | :--- | :--- | :--- |
+| **Mutual Funds & ETFs** | 245,810 shares | **0.15%** | $19.66 Million |
+| **Other Institutional Investors** | 0.00 shares | **0.00%** | $0.00 |
+| **Public & Retail Investors** | 160.27 Million shares | **99.85%** | $12.82 Billion |
+| **Total Share Capital** | **160.51 Million shares** | **100.00%** | **$12.84 Billion** |
+
+#### Top Institutional Holders:
+1. **Kopernik Global Investors, LLC:**  
+   * **Stake:** 0.13% (213,356 shares)  
+   * **Filing Date:** April 30, 2026  
+   * **Reported Value:** $17.07 Million  
+2. **The Advisors' Inner Circle Fund II - Kopernik All-Cap:**  
+   * **Stake:** 0.11% (174,732 shares)  
+   * **Filing Date:** April 30, 2026  
+   * **Reported Value:** $13.98 Million  
+
+---
+
+### 4. Valuation Multiples Comparison (SOLA vs Peers & Sector)
+At a market trading price of **$72.65** for Class (A) shares, metrics demonstrate complete divergence from traditional financial modeling:
+
+| Metric | Solidere (SOLA) | Peer Group Average | Regional Real Estate Sector | Forensic Context |
+| :--- | :--- | :--- | :--- | :--- |
+| **P/E Ratio** | **0.0x** | 7.3x | 8.5x | Distorted by exceptional one-off gains recognized during debt settlement via lollar checks. |
+| **PEG Ratio** | **0.00** | 0.15 | 0.01 | Long-term EPS growth unrated pending macroeconomic stabilization. |
+| **P/B Ratio** | **0.0x** | 1.2x | 0.9x | Book value reflects historical 1990s acquisition land costs rather than real replacement cost. |
+| **P/S (LTM)** | **0.0x** | 1.8x | 4.0x | Land inventory sales peaked during the 2019–2022 debt-extinguishment cycle. |
+| **Analyst Upside** | **0.0%** | 38.6% | 18.8% | Absence of active institutional equity coverage and broker consensus. |
+| **Fair Value Target** | **Constrained / N/A** | 28.6% | 1.9% | DCF models restricted due to FX multiple tiers and offshore capital transfer controls. |
+
+---
+
+### 5. Kopernik Global Contrarian Value Analysis
+Led by veteran value manager **Dave Iben**, Kopernik Global Investors employs a strict contrarian philosophy targeting tangible real assets trading at steep discounts to replacement cost within distressed sovereign jurisdictions.
+
+#### Drivers of Kopernik's Conviction in Solidere:
+1. **Hard Asset Supremacy:** Prime central Beirut land constitutes an irreplaceable real asset that preserves intrinsic wealth regardless of fiat debasement.
+2. **Debt-Free Balance Sheet:** Eradicating **$483 million in bank liabilities** neutralized insolvency and lender foreclosure risks.
+3. **Severe Discount to Global Replacement Cost:** Prime Mediterranean waterfront real estate trades at a substantial discount relative to regional hubs (Dubai, Athens, Istanbul).
+
+---
+
+### 6. Strategic Catalysts Approaching 2029
+* **Unencumbered Asset Base:** The zero-debt balance sheet ensures that future cash flows from remaining land monetization accrue entirely to equity holders.
+* **Concession Mandate Settlement (2029):** The approaching 2029 statutory threshold necessitates formal resolution with Beirut Municipality and the State regarding public domain handovers, infrastructure assets, and residual land banks.
+* **Monetary Policy Normalization:** Long-term FX unification and banking sector restructuring will reopen institutional liquidity channels, re-anchoring the stock to fundamental valuation multiples.`
+  },
+  {
     id: 'blominvest-ppp-exchange-rate-lebanon-study-2026',
     slug: 'دراسة-بلوم-إنفست-بنك-تعادل-القوة-الشرائية-وانحراف-سعر-صرف-الليرة-2026',
     focusKeyword: 'بلوم-إنفست-بنك-تعادل-القوة-الشرائية-سعر-الصرف-التضخم-المفرط-مؤشر-بيج-ماك-المضاربة-سعر-الصرف-الزاحف-الاقتصاد-اللبناني',
