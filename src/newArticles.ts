@@ -2,6 +2,191 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'wsj-is-america-still-capable-of-enforcing-world-order-2026',
+    slug: 'wsj-is-america-still-capable-of-enforcing-world-order-2026',
+    focusKeyword: 'هل-لا-تزال-أمريكا-قادرة-على-فرض-النظام-العالمي-وول-ستريت-جورنال-تروفيموف-صواريخ-باتريوت-حرب-إيران',
+    category: 'translations',
+    categories: ['translations', 'investigations', 'politics', 'war-room', 'editor-desk'],
+    titleAr: 'هل لا تزال أمريكا قادرة على فرض النظام العالمي؟ استنزاف حرب إيران للمخزونات الصاروخية يثير شكوك الحلفاء',
+    titleEn: 'Is America Still Capable of Enforcing the World Order? As Iran War Drains Missile Stocks, Allies Question Multi-Front Capacity',
+    summaryAr: 'ترجمة خاصة لـ "الورّاق" عن صحيفة وول ستريت جورنال (بقلم ياروسلاف تروفيموف): مع استنزاف حرب إيران للمخزونات الاستراتيجية من صواريخ "باتريوت" و"ثاد" واعتراضات كروز، يتزايد قلق حلفاء واشنطن في آسيا وأوروبا والشرق الأوسط حيال قدرة الردع الأمريكية على إدارة صراعات متزامنة ومتعددة الجبهات في وجه روسيا والصين وكوريا الشمالية.',
+    summaryEn: 'An exclusive Al-Warraq translation of Yaroslav Trofimov’s Wall Street Journal investigation: As the inconclusive war against Iran burns through critical interceptor stockpiles (Patriot PAC-3 and THAAD), US allies in Europe, Asia, and the Gulf increasingly question whether American industrial base decline and strategic distraction leave Washington incapable of fighting a multi-front global conflict.',
+    excerptAr: 'تحقيق استقصائي لياروسلاف تروفيموف في وول ستريت جورنال يكشف تآكل مخزونات الدفاع الجوي الأمريكية وعجز القاعدة الصناعية عن ملاحقة إنتاج الصواريخ الباليستية لدى المحور المضاد.',
+    excerptEn: 'Yaroslav Trofimov explores how the rapid expenditure of interceptors in the Iran conflict exposes the limits of US hard power across Taiwan, Europe, and the Middle East.',
+    author: {
+      nameAr: 'ياروسلاف تروفيموف (ترجمة: الورّاق)',
+      nameEn: 'Yaroslav Trofimov (Trans: Al-Warraq)',
+      titleAr: 'كبير مراسلي الشؤون الخارجية — وول ستريت جورنال (The Wall Street Journal)',
+      titleEn: 'Chief Foreign-Affairs Correspondent — The Wall Street Journal',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-08-21',
+    readTimeAr: '١٣ دقيقة قراءة',
+    readTimeEn: '13 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 34210,
+    tags: [
+      'ترجمات', 'وول_ستريت_جورنال', 'ياروسلاف_تروفيموف', 'النظام_العالمي', 'صواريخ_باتريوت', 'الدفاع_الجوي', 'حرب_إيران', 'تايوان', 'حلف_الناتو',
+      'Translations', 'WallStreetJournal', 'YaroslavTrofimov', 'WorldOrder', 'PatriotMissiles', 'THAAD', 'IranWar', 'TaiwanDeterrence', 'NATO'
+    ],
+    hashtags: ['WSJTranslation', 'AmericanWorldOrderDeterrence', 'PatriotMissileCrisis', 'MultiFrontWarfare2026'],
+    contentAr: `### هل لا تزال أمريكا قادرة على فرض النظام العالمي؟
+#### مع استنزاف حرب إيران للمخزونات الحيوية من الصواريخ الاعتراضية، يتزايد تشكيك حلفاء واشنطن في قدرتها على خوض نزاعات متزامنة على جبهات متعددة
+
+**بقلم: ياروسلاف تروفيموف (Yaroslav Trofimov) — كبير مراسلي الشؤون الخارجية في صحيفة "وول ستريت جورنال"**  
+*ترجمة خاصة ونقل تحليلي: منصة الورّاق*
+
+---
+
+منذ عودة الرئيس دونالد ترامب إلى سدة الرئاسة، كان حلفاء الولايات المتحدة يتوجسون قلقاً بشأن نوايا واشنطن وتوجهاتها السياسية. واليوم، وبعد أن أدت الحرب غير الحاسمة ضد إيران إلى تآكل مخزونات الأسلحة الأمريكية وكشفت حدود القوة الصلبة للولايات المتحدة، بات الحلفاء يشعرون بالقلق أيضاً حيال **القدرات الفعلية** لأمريكا.
+
+**فهل لا تزال أمريكا قادرة حقاً على الدفاع عن أصدقائها، حتى لو كانت ترغب في ذلك؟**
+
+إن السؤال الذي يطرحه المسؤولون في عواصم الدول الحليفة—بل وحتى في عواصم الخصوم—هو: هل تسبب التراجع الصناعي، والاضطراب الاستراتيجي، والانقسام السياسي الداخلي في إضعاف الولايات المتحدة إلى درجة تجعلها عاجزة عن ممارسة قوة حاسمة في صراع متزامن متعدد الجبهات قد يشمل أوروبا والشرق الأوسط وآسيا؟ وهو قلق يشاركهم فيه كثيرون داخل أروقة واشنطن نفسها.
+
+> **يقول الخبير الاستراتيجي ماثيو كرونيغ (Matthew Kroenig)**، الزميل البارز في المجلس الأطلسي (Atlantic Council) والذي عمل في البنتاغون خلال إدارة ترامب الأولى:  
+> *"إذا فكرت في مفهوم الردع، فإنه يقوم على ركنين: القدرة والمصداقية. في السابق، كان السؤال يتمحور حول المصداقية: هل ستقدم الولايات المتحدة حقاً على خوض المعركة؟ لكن القدرة تمثل نصف المعادلة الحاسم. ومع كل هذه التقارير حول استنزاف واشنطن لذخائرها الحيوية، فمن الطبيعي والمنطقي أن يفترض الخصوم أن الولايات المتحدة أصبحت اليوم أقل قدرة مما كانت عليه قبل عدة أشهر أو سنوات"*.
+
+---
+
+### إشارات التراجع وتآكل الثقة في آسيا وأوروبا
+
+جاء قرار ترامب بتقليص التدريبات العسكرية المشتركة مع كوريا الجنوبية، ووصفه لنظام بيونغ يانغ الديكتاتوري بأنه "غير مهدد ويحظى بالاحترام"—في الوقت الذي تنشر فيه كوريا الشمالية صواريخ باليستية وقوات في أوروبا كجزء من تحالفها مع روسيا—ليكون أحدث خطوة تثير شكوكاً عميقة حول صلابة التزام واشنطن وطول نفسها الاستراتيجي.
+
+وتزامنت هذه المبادرة تجاه بيونغ يانغ مع مساعٍ استمرت لأشهر لاسترضاء الصين، بما في ذلك تجميد مبيعات أسلحة أمريكية لتايوان بقيمة **14 مليار دولار**، في انقلاب واضح على أولويات ولاية ترامب الأولى. وفي غضون ذلك، جرى سحب ونقل أصول عسكرية أمريكية بالغة الأهمية—بدءاً من بطاريات الدفاع الصاروخي وصولاً إلى حاملة الطائرات الوحيدة التي كانت منتشرة في المحيط الهادئ—من آسيا للتعامل مع أزمة الشرق الأوسط المتفجرة.
+
+وفي أوروبا، وبينما يدلي المسؤولون بتصريحات علنية تدعم حلف شمال الأطلسي (الناتو)، تتزايد شكوكهم في الغرف المغلقة بشأن ما إذا كانت أمريكا تحت قيادة ترامب ستهب لنجدتهم في حال شنت روسيا هجوماً جديداً.
+
+> **يقول العقيد المتقاعد رودريش كيسفيتر (Roderich Kiesewetter)**، النائب في الحزب الحاكم بألمانيا:  
+> *"بشكل غير رسمي، ندرك جميعاً أنهم لن يغامروا بأمنهم من أجل دول البلطيق أو من أجل ألمانيا... المظلة النووية الأمريكية قد تلاشت فعلياً"*.
+
+وحذر **نيكو لانغيه (Nico Lange)**، المسؤول الكبير السابق في وزارة الدفاع الألمانية ورئيس مركز "إيريس" للدراسات:  
+*"إيران تواصل إذلال الولايات المتحدة أمام الجميع، في حين تخلق واشنطن حالة من عدم اليقين بشأن التزامها بالأمن الأوروبي، بينما لا يظهر الأوروبيون أي إرادة لردع روسيا. كل هذا يخلق بنية فرص بالغة الخطورة للرئيس الروسي فلاديمير بوتين"*.
+
+---
+
+### استنزاف ترسانات الصواريخ: أرقام صادمة وتناقضات رسمية
+
+سعى البيت الأبيض إلى نفي التقارير التي تتحدث عن نقص حاد في الأسلحة جراء حرب إيران؛ حيث صرحت نائبة السكرتير الصحفي آنا كيلي بأن: *"الجيش الأمريكي يمتلك أكثر من ذخائر ومخزونات كافية لخدمة جميع أهداف الرئيس الاستراتيجية وما وراءها، وعملية 'الغضب الملحمي' (Operation Epic Fury) كشفت عواقب العبث مع الولايات المتحدة"*. كما أكد المتحدث باسم البنتاغون شون بارنيل أن *"ادعاءات نقص الذخائر كاذبة... وأمريكا تملك كل ما يلزم للضرب في الزمان والمكان المناسبين"*.
+
+**إلا أن حسابات المحللين العسكريين ترسم مشهداً مختلفاً ومثيراً للقلق البالغ:**
+* كشفت تقديرات **مركز الدراسات الاستراتيجية والدولية (CSIS)** في واشنطن أن الولايات المتحدة قد **استهلكت بالفعل نصف مخزونها الذي كان موجوداً قبل الحرب من الصواريخ الاعتراضية** مثل منظومات **باتريوت (Patriots)** و**ثاد (THAAD)**.
+* استهلك الجيش الأمريكي **ثلث ترسانته من صواريخ كروز طويلة المدى من طرازي "توماهوك" (Tomahawk) و"جاسم" (JASSM)**.
+* تشير تقديرات CSIS إلى أن ما تبقى لدى أمريكا من صواريخ "باتريوت" لا يتعدى **800 صاروخ فقط** في المجمل.
+
+وأكدت دراسة صادرة عن **مجلس العلاقات الخارجية (CFR)** هذا الشهر أن:  
+*"الترسانة الأمريكية استُنزفت ولم تعد تملك القدرة الكافية لردع أي هجوم صيني محتمل ضد تايوان، مما يفرض على واشنطن وضع الإنتاج الضخم للصواريخ الدقيقة في حالة تعبئة لحرب شاملة، لأن الانتظار حتى اندلاع الصراع سيكون قد فات أوانه"*.
+
+وتعلق **يون صن (Yun Sun)**، مديرة برنامج الصين في مركز ستيمسون بواشنطن:  
+*"أمريكا لن تعترف أبداً بنقص الذخائر وستدعي قدرتها على أداء مهام متعددة معاً. لكن الردع يكمن في عين الناظر؛ ماذا لو اقتنعت تايوان بأن واشنطن لا تملك القدرة ولا الإرادة لحمايتها، وأن خيارها الأفضل هو الرضوخ للصين وبدء محادثات التوحيد؟"*.
+
+---
+
+### معضلة القاعدة الصناعية: سباق غير متكافئ مع الأنظمة الاستبدادية
+
+تكمن الكارثة الهيكلية في أن الأنظمة الاستبدادية—سواء تلك المنخرطة في حروب فعلية مثل **روسيا وإيران**، أو تلك التي تستعد مثل **الصين**—قد وضعت قواعدها الصناعية الدفاعية في حالة تعبئة حربية وحققت طفرات إنتاجية هائلة:
+
+1. **طفرة الصواريخ الروسية:** تنتج روسيا وحدها حالياً أكثر من **100 صاروخ باليستي شهرياً**، وعدداً مماثلاً من صواريخ كروز، متجاوزة كافة العقوبات الغربية المفروضة منذ عام 2022.
+2. **الرياضيات المقلقة للاعتراض:** إن إجمالي إنتاج الصواريخ الباليستية لدى محور الخصوم (روسيا، الصين، كوريا الشمالية، إيران) يتفوق بأضعاف مضاعفة على معدلات تصنيع الصواريخ الاعتراضية في الغرب. وما يزيد الأمر سوءاً هو أن **إسقاط صاروخ باليستي واحد يتطلب إطلاق صاروخين أو ثلاثة صواريخ اعتراضية**.
+3. **بطء الإنتاج الغربي:** تعمل مصانع السلاح الغربية وفق قواعد زمن السلم وحسابات أرباح المساهمين. شركة **لوكهيد مارتن (Lockheed Martin)** سلّمت 620 صاروخاً اعتراضياً من طراز (PAC-3 MSE) العام الماضي (بزيادة 20% فقط)، وهي وتيرة متواضعة أمام حجم الاستهلاك السريع.
+
+> **يقول مسؤول دفاعي أوروبي بارز:**  
+> *"هذه هي المعضلة الوجودية: خصومنا يتصرفون على أنهم في حالة حرب، بينما نحن نتظاهر بأننا نعيش في سلام"*.
+
+---
+
+### تحول الصواريخ الباليستية إلى أداة إكراه جيوسياسي
+
+تاريخياً، كانت أجيال الصواريخ الباليستية الأولى مكلفة وغير دقيقة ومخصصة للرؤوس النووية حيث لا يهم انحراف الصاروخ مئات الأمتار. لكن التطور التكنولوجي مكّن حتى القوى المتوسطة كإيران من امتلاك **صواريخ باليستية دقيقة الإصابة** قادرة على إلحاق أضرار جسيمة بقواعد عسكرية أمريكية ومنشآت طاقة وصناعة حيوية في الخليج وإسرائيل.
+
+> **يؤكد خبير الصواريخ فابيان هوفمان (Fabian Hoffman)** من المعهد النرويجي للدراسات الدفاعية:  
+> *"حتى الخصوم الأضعف عسكرياً باتوا يمتلكون قدرة كافية لإطلاق هذه الصواريخ وإيقاع خسائر مؤلمة. وحتى الولايات المتحدة بكل قوتها المالية والصناعية، باتت عاجزة هيكلياً عن المواكبة. منظومات الدفاع الصاروخي، بالشكل الذي صُممت به، كشفت التجربة أنها لا تعمل بهذه الكفاءة الافتراضية في الواقع الميداني"*.
+
+---
+
+### الخلاصة: جرس إنذار أم بداية الانهيار؟
+
+تسعى واشنطن حالياً لضخ مليارات الدولارات لتوسيع الإنتاج؛ حيث أعلن البنتاغون عن صفقات كبرى مع لوكهيد مارتن لمضاعفة إنتاج "باتريوت" و"ثاد"، لكن هذه العقود تتطلب سنوات طويلة لتتحول إلى صواريخ فعلية في الميدان.
+
+ويرى بعض الخبراء، مثل **لودوفيك هود (Ludovic Hood)** الزميل في معهد هدسون، جانباً إيجابياً في هذا الانكشاف:  
+*"كان جرس الإنذار ضرورياً جداً. لقد استكانت القوى الغربية في العقود الأخيرة لشعور زائف بالأمان المطلق. ورغم مرارة خوض الحروب، فإن هذا الاستنزاف قد يمثل قوة دفع إلزامية لإعادة بناء القدرات الاستراتيجية قبل مواجهة تحديات مستقبلية أكثر خطورة على بقاء النظام العالمي"*.`,
+    contentEn: `### Is America Still Capable of Enforcing the World Order?
+#### As the Iran war drains vital stockpiles of missile interceptors, American allies increasingly question Washington’s capacity to wage multi-front conflicts
+
+**By Yaroslav Trofimov — Chief Foreign-Affairs Correspondent, The Wall Street Journal**  
+*Translated and Contextualized by Al-Warraq Media Network*
+
+---
+
+Ever since President Trump’s return to office, America’s allies have been fretting about Washington’s intentions. Now, after the inconclusive war against Iran has eroded U.S. weapons stockpiles and laid bare the limits of American hard power, they also worry about American capabilities.
+
+Can America still defend its friends, if it wants to?
+
+The question that officials in allied—and adversary—capitals are asking themselves is whether industrial decline, strategic incoherence and political dysfunction have weakened the U.S. to the point where it would no longer wield decisive force in a multi-front conflict that may encompass Europe, the Middle East and Asia. It is a concern shared by many in Washington, too.
+
+“If you think about deterrence, it’s about capability and credibility,” said strategist Matthew Kroenig, a senior fellow at the Atlantic Council who served in the Pentagon during the first Trump administration. “The question used to be credibility—will the United States really do it? But capability is an important part of this equation. And, with all the reporting about how the U.S. is expending munitions, it’s just logical that adversaries would assume that the U.S. is less capable now than it was several months, or several years, before.”
+
+---
+
+### Doubts Multiply Across Asia and Europe
+
+Trump’s decision to scale back military exercises with South Korea and to describe North Korea’s dictatorship as “unthreatening and respectful” just as Pyongyang is deploying ballistic missiles and troops to Europe as part of its alliance with Russia is the latest move that has raised doubts about American staying power.
+
+The overture to Pyongyang came alongside a monthslong drive to accommodate China, including a freeze on $14 billion in U.S. military sales to Taiwan—a reversal of Trump’s first-term priorities. Meanwhile, crucial U.S. military assets, from missile defense batteries to the sole aircraft carrier still deployed in the Pacific, have been moved from Asia to deal with the Middle East crisis.
+
+While paying lip service to the NATO alliance in public, European officials are increasingly doubtful in private that Trump’s America will help them in case Russia attacks. “Unofficially, we all know that they won’t risk their security for the sake of the Baltic states, or for the sake of Germany,” said retired colonel Roderich Kiesewetter, a lawmaker from Germany’s ruling party. “The American nuclear umbrella is gone.”
+
+The growing sense of American—and Western—vulnerability can tempt autocratic adversaries, particularly Russian leader Vladimir Putin, warned Nico Lange, a former senior German defense official who now runs the Iris think tank. “Iran is increasingly humiliating the United States in front of everybody, while the U.S. is creating uncertainty about their commitment to European security, and the Europeans aren’t showing any will to deter Russia,” he said. “All this creates an opportunity structure for Putin that is extremely dangerous.”
+
+---
+
+### Depleted Arsenals: Alarming Figures vs. Official Pushback
+
+The White House has pushed back on reports of weapons shortages caused by the war in Iran. “The United States Military has more than enough munitions, ammo and stockpiles to serve all of President Trump’s strategic goals and beyond, and Operation Epic Fury has exposed what happens when you mess with the United States,” deputy press secretary Anna Kelly said. “Even still, the President has urged our defense contractors to constantly produce more made-in-America weapons, which are the best in the world.”
+
+Military analysts, however, calculate that, in some vital categories, stocks are running dangerously low and will take many years to replenish:
+* **The Center for Strategic and International Studies (CSIS)** has estimated that the U.S. has already burned through half of its prewar stocks of missile interceptors, such as Patriots and Thaads.
+* The US has used up **one-third of its arsenal of Tomahawk and JASSM long-range cruise missiles**.
+* CSIS estimates that the US now has only **800 Patriot interceptors remaining** in total.
+
+This has direct implications beyond Iran. A Council on Foreign Relations expert study released this month said that “the U.S. weapons arsenal has been depleted and no longer has the capacity to deter a Chinese attack against Taiwan.” It added that Washington needs to immediately put mass production of precision missiles on a wartime footing because “waiting until conflict begins will be too late.”
+
+Asked about these calculations, the Pentagon replied with a statement by chief Pentagon spokesman Sean Parnell: “Claims of U.S. munitions shortages are false. America’s military remains the most powerful fighting force on earth. We have everything required to strike at the time and place of the President’s choosing.”
+
+Yun Sun, director of the China program at the Stimson Center in Washington, said that U.S. denials of missile shortages aren’t surprising. “America will never acknowledge that we don’t have enough ammunition. It will assert that it has the ability to walk and chew gum,” she said. “But deterrence is in the eye of the beholder. What if Taiwan perceives that you don’t have the capacity and the will to defend it, and that its best option is to be coerced by China and to start negotiations over unification?”
+
+---
+
+### The Defense-Industrial Base Asymmetry
+
+In all actual and potential conflicts involving U.S. allies and partners worldwide, the critical shortage of ballistic-missile interceptors, particularly the Patriot PAC-3 MSE, has emerged as an Achilles’ heel for the entire free world:
+
+1. **War-Footing in Autocracies:** Russia alone now manages to produce more than 100 ballistic missiles a month, according to intelligence estimates, and a similar number of cruise missiles.
+2. **The Asymmetric Math of Interception:** The overall production of ballistic missiles by the axis of adversaries that includes China, North Korea, Russia, and Iran outmatches Western interceptor manufacturing by several times. Furthermore, intercepting a single incoming ballistic missile typically requires launching two or three interceptors.
+3. **Peacetime Western Pace:** Western defense primes operate according to peacetime market incentives. Lockheed Martin delivered 620 PAC-3 MSE interceptors last year—a modest 20% increase despite multi-year backlogs.
+
+“This is the existential problem: our foes think they are at war, while we pretend that we are not,” said a senior European defense official.
+
+---
+
+### Ballistic Missiles as Instruments of Geopolitical Coercion
+
+Because of precision guidance technology, even middle powers like Iran have developed precision ballistic-missile capabilities that inflicted serious damage on U.S. bases in the Gulf and Jordan, as well as critical industrial and energy sites in Israel and the GCC.
+
+“In the environment of major interstate war, even substantially weaker adversaries have enough capability to hurt, enough capability to launch these ballistic missiles. And even the United States, with all of its financial and industrial power, is not able to keep up structurally,” said missile expert Fabian Hoffman, a senior fellow at the Norwegian Institute for Defense Studies. “Ballistic missile defense, as it was conceived, has just been exposed as something that doesn’t work that way in practice.”
+
+---
+
+### Conclusion: Necessary Wake-Up Call
+
+While the Pentagon is attempting to inject tens of billions into expanding production lines with Lockheed Martin and Raytheon, these investments will require years to yield deployable hardware.
+
+As Ludovic Hood, a senior fellow at the Hudson Institute, observed: “The wake-up call was necessary. It’s been very easy for Western powers in recent decades to be lulled into a sense of false security. As unpleasant as it is to have to go to war, it can actually be a useful forcing function to make sure that we’ll be prepared for something much more strategically challenging in the future.”`
+  },
+  {
     id: 'kneeling-under-debt-economic-warfare-iran-bombs-2026',
     slug: 'kneeling-under-debt-economic-warfare-iran-bombs-2026',
     focusKeyword: 'ركوع-تحت-طائلة-السداد-الحرب-الاقتصادية-إيران-العقوبات-المصارف-الموازية-هرمز',
