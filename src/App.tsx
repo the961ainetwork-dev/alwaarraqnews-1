@@ -21,6 +21,7 @@ import LebanonAMLVisualizer from './components/LebanonAMLVisualizer';
 import { SolidereInfographic } from './components/SolidereInfographic';
 import { NarrativeLebanonCrisisInfographics } from './components/NarrativeLebanonCrisisInfographics';
 import AlWarraqInvestigations, { DOSSIER_DESKTOP_META } from './components/AlWarraqInvestigations';
+import SpecialInvestigations from './components/SpecialInvestigations';
 import InvestigativeReports from './components/InvestigativeReports';
 import { PrintableDossier } from './components/PrintableDossier';
 import AlWarraqVideos from './components/AlWarraqVideos';
@@ -1181,7 +1182,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'markets' || activeCategory === 'oil-energy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'special-investigations' || activeCategory === 'research-reports' || activeCategory === 'investigative-reports' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'markets' || activeCategory === 'oil-energy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'special-investigations' || activeCategory === 'investigations' || activeCategory === 'research-reports' || activeCategory === 'investigative-reports' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
 
   return (
     <div
@@ -1398,8 +1399,8 @@ export default function App() {
               <WorldOfAI
                 language={language}
               />
-            ) : (activeCategory === 'special-investigations' || activeCategory === 'alwarraq-investigations') ? (
-              <AlWarraqInvestigations
+            ) : (activeCategory === 'special-investigations' || activeCategory === 'investigations' || activeCategory === 'alwarraq-investigations') ? (
+              <SpecialInvestigations
                 language={language}
                 allArticles={allArticles}
                 onSelectArticle={(article) => {

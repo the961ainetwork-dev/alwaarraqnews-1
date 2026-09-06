@@ -3,7 +3,7 @@ import { NEW_ARTICLES } from './newArticles';
 
 export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'all', labelAr: 'الرئيسية', labelEn: 'Home' },
-  { id: 'special-investigations', labelAr: 'التحقيقات الخاصة', labelEn: 'Special Investigations' },
+  { id: 'special-investigations', labelAr: 'التحقيقات', labelEn: 'Investigations' },
   { id: 'urgent-release', labelAr: 'يحدث الآن', labelEn: 'Happening Now' },
   { id: 'in-case-you-missed-it', labelAr: 'في حال فاتك', labelEn: 'In Case You Missed It' },
   { id: 'alwarraq-investigations', labelAr: 'بوابة التحقيقات الاستقصائية للورّاق', labelEn: 'Al-Warraq Investigative Reporting Portal' },

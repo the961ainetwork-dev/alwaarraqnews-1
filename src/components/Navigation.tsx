@@ -25,7 +25,8 @@ import {
   Sparkles,
   Flame,
   Megaphone,
-  AlertCircle
+  AlertCircle,
+  ShieldAlert
 } from 'lucide-react';
 
 const DESK_METADATA: Record<string, {
@@ -306,7 +307,9 @@ export default function Navigation({ language, activeCategory, setActiveCategory
   const getMenuIcon = (id: string) => {
     switch(id) {
       case 'all': return <Grid size={13} />;
-      case 'alwarraq-investigations': return <Sparkles size={13} />;
+      case 'special-investigations':
+      case 'investigations':
+      case 'alwarraq-investigations': return <ShieldAlert size={13} className="text-amber-400" />;
       case 'war-room': return <Flame size={13} />;
       case 'press-releases': return <Megaphone size={13} />;
       case 'pulse-of-the-street': return <Activity size={13} />;
@@ -336,7 +339,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'لبنان والمنطقة',
       labelEn: 'Lebanon & Region',
       icon: <Globe size={13} />,
-      tabIds: ['lebanon', 'alwarraq-investigations', 'war-room', 'pulse-of-the-street', 'middle-east', 'exclusives'],
+      tabIds: ['special-investigations', 'alwarraq-investigations', 'lebanon', 'war-room', 'pulse-of-the-street', 'middle-east', 'exclusives'],
       descAr: 'المشهد السيادي والأمني والتحقيقات الجيوسياسية الخاصة بلبنان والمشرق العربي',
       descEn: 'Sovereign reports, threat command, and specialized investigative dossiers on Lebanon and the Levant.'
     },
@@ -463,6 +466,22 @@ export default function Navigation({ language, activeCategory, setActiveCategory
               >
                 <AlertCircle size={13} className="text-red-500 animate-pulse animate-duration-1000" />
                 <span className="font-extrabold uppercase">{isAr ? 'يحدث الآن' : 'Happening Now'}</span>
+              </button>
+            </li>
+
+            {/* Direct Link: Investigations */}
+            <li>
+              <button
+                id="nav-tab-investigations"
+                onClick={() => selectTab('special-investigations')}
+                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
+                  activeCategory === 'special-investigations' || activeCategory === 'investigations' || activeCategory === 'alwarraq-investigations'
+                    ? 'bg-red-950 text-amber-300 font-black border-b-2 border-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.25)]'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-900 border border-transparent'
+                }`}
+              >
+                <ShieldAlert size={13} className={activeCategory === 'special-investigations' || activeCategory === 'investigations' ? 'text-amber-400 animate-pulse' : 'text-amber-500'} />
+                <span className="font-extrabold uppercase">{isAr ? 'التحقيقات' : 'Investigations'}</span>
               </button>
             </li>
 
@@ -811,6 +830,21 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                 >
                   <AlertCircle size={13} className="text-red-500 animate-pulse" />
                   <span>{isAr ? 'يحدث الآن' : 'Happening Now'}</span>
+                </button>
+
+                {/* Special Investigations Mobile Link */}
+                <button
+                  id="nav-tab-mobile-investigations"
+                  onClick={() => selectTab('special-investigations')}
+                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
+                    activeCategory === 'special-investigations' || activeCategory === 'investigations' || activeCategory === 'alwarraq-investigations'
+                      ? 'bg-red-950 text-amber-300 font-extrabold border-r-4 border-amber-400'
+                      : 'text-zinc-300 hover:text-white bg-zinc-900/40'
+                  }`}
+                  style={{ textAlign: isAr ? 'right' : 'left' }}
+                >
+                  <ShieldAlert size={13} className={activeCategory === 'special-investigations' || activeCategory === 'investigations' ? 'text-amber-400 animate-pulse' : 'text-amber-500'} />
+                  <span>{isAr ? 'التحقيقات' : 'Investigations'}</span>
                 </button>
 
                 {/* Standalone War Room Link */}
