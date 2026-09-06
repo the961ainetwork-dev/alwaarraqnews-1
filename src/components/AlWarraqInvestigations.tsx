@@ -575,19 +575,19 @@ export default function AlWarraqInvestigations({
           <div className="space-y-2">
             <div className="flex items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
               <span className="bg-red-900 text-amber-100 text-[10px] font-mono px-2.5 py-0.5 font-bold tracking-widest uppercase inline-block border border-black animate-pulse">
-                {isAr ? 'غرفة الملفات السيادية' : 'SOVEREIGN DOSSIERS VAULT'}
+                {isAr ? 'وثائق سيادية حرة ومفتوحة' : 'OPEN SOVEREIGN DOSSIERS'}
               </span>
-              <span className="bg-zinc-950 text-white text-[10px] font-mono px-2 py-0.5 inline-block">
-                {isAr ? 'تصنيف سري للغاية' : 'CLASSIFIED INTEL - TS'}
+              <span className="bg-zinc-950 text-amber-400 text-[10px] font-mono px-2 py-0.5 inline-block font-bold border border-zinc-800">
+                {isAr ? 'التحقيقات الاستقصائية الكبرى' : 'MAJOR INVESTIGATIVE VAULT'}
               </span>
             </div>
-            <h1 className="text-xl md:text-3xl font-black tracking-tight text-zinc-950 font-sans">
-              {isAr ? 'التحقيقات الاستقصائية للورّاق' : 'AlWarraq Investigative Reporting'}
+            <h1 className="text-2xl md:text-4xl font-black tracking-tight text-zinc-950 font-sans">
+              {isAr ? 'بوابة التحقيقات الاستقصائية للورّاق' : 'Al-Warraq Investigative Reporting Portal'}
             </h1>
             <p className="text-sm md:text-base text-zinc-700 font-serif leading-relaxed max-w-3xl">
               {isAr 
-                ? 'مساحة مخصصة ومستقلة لعرض الملفات الاستقصائية كوثائق كاملة ومستندات سيادية مدمجة. تصفح الفهرس على اليمين واقرأ التقرير كاملاً والرسوم التفاعلية مدمجة في صفحة الملف على اليسار.' 
-                : 'A dedicated interactive vault designed to present our core investigations as complete physical briefing folders. Browse the index dossiers on the left and read the full investigation file with integrated blueprints on the right.'}
+                ? 'مساحة مخصصة ومستقلة لعرض الملفات الاستقصائية كوثائق كاملة ومستندات سيادية مدمجة. وثائق سيادية حرة ومفتوحة تغطي ملفات النفوذ، وأسرار المالية العامة، والقرارات الحكومية والخرائط الميدانية.' 
+                : 'A dedicated sovereign interactive vault designed to present our core investigations as declassified briefing dossiers with physical documentation, analytics, and primary source leaks.'}
             </p>
           </div>
           

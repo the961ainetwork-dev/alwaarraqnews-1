@@ -30,11 +30,327 @@ import {
   MessageCircle,
   QrCode,
   Link,
-  Check
+  Check,
+  Target,
+  Layers,
+  Navigation,
+  RefreshCw,
+  AlertCircle,
+  Eye,
+  ChevronRight,
+  ChevronDown
 } from 'lucide-react';
 import { Article } from '../types';
 import { BypassInteractiveMap } from './BypassInteractiveMap';
 import HormuzRealtimeTracker from './HormuzRealtimeTracker';
+
+export type ThreatLevel = 'CRITICAL' | 'HIGH' | 'MODERATE' | 'LOW';
+
+export interface CrisisRegion {
+  id: string;
+  code: string;
+  nameAr: string;
+  nameEn: string;
+  theaterAr: string;
+  theaterEn: string;
+  coordinates: string;
+  threatLevel: ThreatLevel;
+  defcon: 1 | 2 | 3 | 4 | 5;
+  threatScore: number; // 0-100
+  activeAlerts: number;
+  activeSensors: number;
+  blockadeRisk: number;
+  statusTextAr: string;
+  statusTextEn: string;
+  synopsisAr: string;
+  synopsisEn: string;
+  keywords: string[];
+}
+
+export const CRISIS_REGIONS: CrisisRegion[] = [
+  {
+    id: 'hormuz-gulf',
+    code: 'SECTOR-HORMUZ-01',
+    nameAr: 'مضيق هرمز والخليج العربي',
+    nameEn: 'Strait of Hormuz & Persian Gulf',
+    theaterAr: 'مسرح العمليات البحرية واختناق الطاقة',
+    theaterEn: 'Naval Chokepoint & Energy Matrix',
+    coordinates: '26.5667° N, 56.2500° E',
+    threatLevel: 'CRITICAL',
+    defcon: 1,
+    threatScore: 96,
+    activeAlerts: 8,
+    activeSensors: 22,
+    blockadeRisk: 94,
+    statusTextAr: 'أقصى درجات التأهب // اشتباك بحري وملاحة مظلمة',
+    statusTextEn: 'DEFCON 1: MAXIMUM READINESS // DARK FLEET & INTERCEPTION',
+    synopsisAr: 'استهداف ناقلات النفط، اعتراض صواريخ فرط صوتية إيرانية، تشويش راداري كثيف، وإغلاق شبه تام للممرات التجارية.',
+    synopsisEn: 'Direct commercial shipping interdiction, hypersonic missile salvos, intense radar clutter, and high risk of full maritime shutdown.',
+    keywords: ['hormuz', 'persian gulf', 'هرمز', 'الخليج', 'ناقلات', 'oil', 'blockade', 'cables']
+  },
+  {
+    id: 'south-lebanon',
+    code: 'SECTOR-LEVANT-02',
+    nameAr: 'جنوب لبنان والحافة الأمامية',
+    nameEn: 'South Lebanon & Forward Frontline',
+    theaterAr: 'مسرح الاشتباك البري والتلال الحاكمة',
+    theaterEn: 'Ground Maneuver & Dominant Ridges Theater',
+    coordinates: '33.2721° N, 35.3400° E',
+    threatLevel: 'CRITICAL',
+    defcon: 1,
+    threatScore: 94,
+    activeAlerts: 7,
+    activeSensors: 18,
+    blockadeRisk: 88,
+    statusTextAr: 'عمليات برية وتجريف عازل // معارك التلال الحاكمة',
+    statusTextEn: 'DEFCON 1: KINETIC ESCALATION // BUFFER ZONE ENGINEERING',
+    synopsisAr: 'قصف مدفعي مستمر، تجريف هندسي لفرض منطقة عازلة بحكم الأمر الواقع، واشتباكات مرتفعات تلة علي الطاهر المشرفة على النبطية.',
+    synopsisEn: 'Heavy artillery salvos, systematic scorched-earth bulldozing enforcing a de facto buffer zone, and tactical battle for Ali Al-Taher heights.',
+    keywords: ['lebanon', 'لبنان', 'علي الطاهر', 'أنصار', 'النبطية', 'litani', 'تلة', 'buffer']
+  },
+  {
+    id: 'red-sea',
+    code: 'SECTOR-MANDAB-03',
+    nameAr: 'البحر الأحمر ومضيق باب المندب',
+    nameEn: 'Red Sea & Bab el-Mandeb',
+    theaterAr: 'مسرح الملاحة الدولية ومضيق باب المندب',
+    theaterEn: 'International Maritime Transit Corridor',
+    coordinates: '12.5833° N, 43.3333° E',
+    threatLevel: 'HIGH',
+    defcon: 2,
+    threatScore: 84,
+    activeAlerts: 5,
+    activeSensors: 16,
+    blockadeRisk: 78,
+    statusTextAr: 'تأهب قتالي مرتفع // تهديد طائرات مسيرة وزوارق انتحارية',
+    statusTextEn: 'DEFCON 2: HIGH COMBAT ALERT // DRONE & USV THREATS',
+    synopsisAr: 'ارتفاع أقساط التأمين ضد مخاطر الحرب، تحويل مسارات الشحن عبر رأس الرجاء الصالح، وتسيير قوافل حماية دولية.',
+    synopsisEn: 'Surging war-risk insurance premiums, wide container rerouting around Cape of Good Hope, and active naval escort operations.',
+    keywords: ['red sea', 'bab el-mandeb', 'البحر الأحمر', 'باب المندب', 'mandeb', 'suez']
+  },
+  {
+    id: 'syria-iraq',
+    code: 'SECTOR-DESERT-04',
+    nameAr: 'الممر السوري–العراقي والبادية',
+    nameEn: 'Syrian-Iraqi Desert Corridor',
+    theaterAr: 'مسرح البادية والمسيرات العابرة للحدود',
+    theaterEn: 'Transnational Desert & Drone Transit Matrix',
+    coordinates: '34.4211° N, 41.1250° E',
+    threatLevel: 'HIGH',
+    defcon: 2,
+    threatScore: 78,
+    activeAlerts: 4,
+    activeSensors: 14,
+    blockadeRisk: 65,
+    statusTextAr: 'رصد جوي متواصل // مسارات مسيرات واستنزاف حدودي',
+    statusTextEn: 'DEFCON 2: ACTIVE AIR MONITORING // DRONE TRANSIT ARTERIES',
+    synopsisAr: 'اعتراض أسراب مسيرات انتحارية في أجواء البادية، ضربات موضعية لمنصات الإطلاق، وتوترات أمنية على خطوط الإمداد.',
+    synopsisEn: 'Interception of loitering munitions over the desert corridor, precision strikes on launch nodes, and cross-border tension.',
+    keywords: ['syria', 'iraq', 'سوريا', 'العراق', 'desert', 'البادية', 'drones', 'missile']
+  },
+  {
+    id: 'iran-interior',
+    code: 'SECTOR-TEHRAN-05',
+    nameAr: 'العمق الإيراني والشبكات المالية',
+    nameEn: 'Iranian Interior & Sanctions Grid',
+    theaterAr: 'مسرح الحصار المالي والمصارف الموازية',
+    theaterEn: 'Economic Warfare & Shadow Banking Grid',
+    coordinates: '35.6892° N, 51.3890° E',
+    threatLevel: 'HIGH',
+    defcon: 2,
+    threatScore: 74,
+    activeAlerts: 3,
+    activeSensors: 12,
+    blockadeRisk: 70,
+    statusTextAr: 'اختناق مالي واقتصادي // تجفيف المصارف الموازية',
+    statusTextEn: 'DEFCON 2: FINANCIAL STRANGULATION // REGIME SOLVENCY',
+    synopsisAr: 'تتبع الخزانة الأمريكية لشبكات غسيل وتسييل النفط، تفاقم أزمة الوقود والسيولة الداخلية، والتأهب لاضطرابات معيشية.',
+    synopsisEn: 'US Treasury interdiction of illicit oil settlement networks, domestic fuel/liquidity shortages, and heightened socioeconomic vulnerability.',
+    keywords: ['tehran', 'iran', 'طهران', 'إيران', 'debt', 'economy', 'solvency', 'treasury', 'sanctions']
+  },
+  {
+    id: 'cyber-cables',
+    code: 'SECTOR-CYBER-06',
+    nameAr: 'الفضاء السيبراني ومنظومة الكابلات البحرية',
+    nameEn: 'Cyber Domain & Subsea Cables Grid',
+    theaterAr: 'مسرح البنية التحتية الرقمية وحرب الكابلات',
+    theaterEn: 'Digital Infrastructure & Deep Sea Sabotage',
+    coordinates: '34.8000° N, 32.5000° E',
+    threatLevel: 'MODERATE',
+    defcon: 3,
+    threatScore: 58,
+    activeAlerts: 2,
+    activeSensors: 15,
+    blockadeRisk: 45,
+    statusTextAr: 'حرب سيبرانية مستمرة // تهديدات تخريب تحت البحر',
+    statusTextEn: 'DEFCON 3: ELEVATED THREAT // SUBSEA OPTICAL MATRIX PROBING',
+    synopsisAr: 'رصد أنشطة غواصات مجهولة بمحيط كابلات الألياف الضوئية في المتوسط والخليج، وهجمات اختراق تستهدف مراكز البيانات.',
+    synopsisEn: 'Submersible anomaly tracking near subsea fiber routes in the Med and Gulf, paired with persistent cyber infiltration attempts.',
+    keywords: ['cyber', 'cables', 'digital', 'سيبراني', 'كابلات', 'undersea', 'fiber']
+  },
+  {
+    id: 'gcc-markets',
+    code: 'SECTOR-GCC-07',
+    nameAr: 'دول الخليج واقتصاد الطاقة الإقليمي',
+    nameEn: 'GCC Energy & Regional Markets',
+    theaterAr: 'مسرح التحوط المالي والاستقرار النفطي',
+    theaterEn: 'Sovereign Hedging & Energy Resilience',
+    coordinates: '25.2048° N, 55.2708° E',
+    threatLevel: 'MODERATE',
+    defcon: 3,
+    threatScore: 38,
+    activeAlerts: 1,
+    activeSensors: 10,
+    blockadeRisk: 30,
+    statusTextAr: 'استقرار حذر واحتواء اقتصادي // مرونة الاستثمار',
+    statusTextEn: 'DEFCON 3: CAUTIOUS EQUILIBRIUM // RESILIENT CAPITAL FLOWS',
+    synopsisAr: 'استمرار نمو صفقات الاندماج والاستحواذ في الخليج، تشغيل خطوط أنابيب الالتفاف (حبشان–الفجيرة)، وتحوط السيولة السيادية.',
+    synopsisEn: 'Resilient GCC M&A dealmaking, strategic throughput on bypass pipeline arteries (Habshan-Fujairah), and sovereign reserve buffering.',
+    keywords: ['gcc', 'الخليج', 'm&a', 'qatar', 'energy markets', 'uae', 'saudi', 'fujairah']
+  },
+  {
+    id: 'western-diplomatic',
+    code: 'SECTOR-WEST-08',
+    nameAr: 'القنوات الدبلوماسية والعواصم الغربية',
+    nameEn: 'Western Hubs & Diplomatic Channels',
+    theaterAr: 'مسرح التفاوض الخلفي ومراقبة الاحتواء',
+    theaterEn: 'Backchannel Mediation & Containment Matrix',
+    coordinates: '38.8951° N, 77.0364° W',
+    threatLevel: 'LOW',
+    defcon: 4,
+    threatScore: 18,
+    activeAlerts: 0,
+    activeSensors: 8,
+    blockadeRisk: 15,
+    statusTextAr: 'قنوات تفاوض خلفية وهدنة دبلوماسية // هدوء نسبي',
+    statusTextEn: 'DEFCON 4: STABLE SURVEILLANCE // ACTIVE MEDIATION CHANNELS',
+    synopsisAr: 'محادثات غير مباشرة في روما ومسقط والدوحة، تباينات الكونغرس الأمريكي حول المساعدات، ومساعٍ حثيثة لتطويق الانفجار الشامل.',
+    synopsisEn: 'Indirect diplomatic mediation tracks across Rome, Muscat, and Doha; congressional debates on foreign assistance, and containment drives.',
+    keywords: ['washington', 'congress', 'diplomatic', 'الكونغرس', 'واشنطن', 'usa', 'rome', 'mediator']
+  },
+  {
+    id: 'all-theaters',
+    code: 'SECTOR-GLOBAL-00',
+    nameAr: 'كافة المسارح والقطاعات المشتركة',
+    nameEn: 'All Theaters & Combined Domain',
+    theaterAr: 'المصفوفة الاستراتيجية الشاملة لغرفة العمليات',
+    theaterEn: 'Comprehensive War Room Combined Matrix',
+    coordinates: 'REGIONAL THEATER GRID',
+    threatLevel: 'CRITICAL',
+    defcon: 1,
+    threatScore: 88,
+    activeAlerts: 18,
+    activeSensors: 24,
+    blockadeRisk: 86,
+    statusTextAr: 'المسرح الإقليمي المشترك // إنذار عام متعدد الجبهات',
+    statusTextEn: 'DEFCON 1: THEATER-WIDE WATCH // MULTI-FRONT COMBINED CONFLICT',
+    synopsisAr: 'تقاطع العمليات البحرية والجوية والبرية عبر الشرق الأوسط مع استمرار تعثر التسويات الدبلوماسية وتسارع بناء الوقائع الميدانية.',
+    synopsisEn: 'Multi-domain synergy spanning naval, aerial, ground, and financial pressure points as ceasefire mediation faces systemic obstacles.',
+    keywords: []
+  }
+];
+
+export function getThreatTheme(threat: ThreatLevel) {
+  switch (threat) {
+    case 'CRITICAL':
+      return {
+        levelKey: 'critical',
+        bannerGradient: 'bg-gradient-to-r from-red-950/90 via-[#1c0a0a] to-[#0c0d0f]',
+        bannerBorder: 'border-red-600/70',
+        bannerGlow: 'shadow-[0_0_35px_rgba(220,38,38,0.28)]',
+        badgeBg: 'bg-red-950/90 text-red-300 border-red-700/80',
+        activePillBg: 'bg-red-950 text-red-200 border-red-600 shadow-[0_0_12px_rgba(239,68,68,0.4)]',
+        accentText: 'text-red-400',
+        accentBorder: 'border-red-600',
+        pingColor: 'bg-red-500',
+        pingRing: 'bg-red-400',
+        needleX2: '80',
+        needleY2: '70',
+        needleColor: '#ef4444',
+        progressColor: 'bg-red-500',
+        headerIconColor: 'text-red-500',
+        radarColor: 'rgba(239, 68, 68, 0.4)',
+        levelLabelEn: 'CRITICAL',
+        levelLabelAr: 'حرج',
+        defconBadge: 'bg-red-900 text-red-100 border border-red-700',
+        defconText: 'DEFCON 1',
+        tagBg: 'bg-red-950 text-red-300 border-red-800'
+      };
+    case 'HIGH':
+      return {
+        levelKey: 'high',
+        bannerGradient: 'bg-gradient-to-r from-amber-950/90 via-[#1c1206] to-[#0c0d0f]',
+        bannerBorder: 'border-amber-500/70',
+        bannerGlow: 'shadow-[0_0_35px_rgba(245,158,11,0.25)]',
+        badgeBg: 'bg-amber-950/90 text-amber-300 border-amber-700/80',
+        activePillBg: 'bg-amber-950 text-amber-200 border-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.35)]',
+        accentText: 'text-amber-400',
+        accentBorder: 'border-amber-500',
+        pingColor: 'bg-amber-500',
+        pingRing: 'bg-amber-400',
+        needleX2: '50',
+        needleY2: '50',
+        needleColor: '#f59e0b',
+        progressColor: 'bg-amber-500',
+        headerIconColor: 'text-amber-500',
+        radarColor: 'rgba(245, 158, 11, 0.4)',
+        levelLabelEn: 'HIGH',
+        levelLabelAr: 'مرتفع',
+        defconBadge: 'bg-amber-900 text-amber-100 border border-amber-700',
+        defconText: 'DEFCON 2',
+        tagBg: 'bg-amber-950 text-amber-300 border-amber-800'
+      };
+    case 'MODERATE':
+      return {
+        levelKey: 'moderate',
+        bannerGradient: 'bg-gradient-to-r from-yellow-950/80 via-[#1b190a] to-[#0c0d0f]',
+        bannerBorder: 'border-yellow-500/70',
+        bannerGlow: 'shadow-[0_0_35px_rgba(234,179,8,0.22)]',
+        badgeBg: 'bg-yellow-950/90 text-yellow-300 border-yellow-700/80',
+        activePillBg: 'bg-yellow-950 text-yellow-200 border-yellow-500 shadow-[0_0_12px_rgba(234,179,8,0.35)]',
+        accentText: 'text-yellow-400',
+        accentBorder: 'border-yellow-500',
+        pingColor: 'bg-yellow-500',
+        pingRing: 'bg-yellow-400',
+        needleX2: '35',
+        needleY2: '60',
+        needleColor: '#eab308',
+        progressColor: 'bg-yellow-500',
+        headerIconColor: 'text-yellow-500',
+        radarColor: 'rgba(234, 179, 8, 0.4)',
+        levelLabelEn: 'MODERATE',
+        levelLabelAr: 'متوسط',
+        defconBadge: 'bg-yellow-900 text-yellow-100 border border-yellow-700',
+        defconText: 'DEFCON 3',
+        tagBg: 'bg-yellow-950 text-yellow-300 border-yellow-800'
+      };
+    case 'LOW':
+    default:
+      return {
+        levelKey: 'low',
+        bannerGradient: 'bg-gradient-to-r from-emerald-950/80 via-[#071912] to-[#0c0d0f]',
+        bannerBorder: 'border-emerald-500/70',
+        bannerGlow: 'shadow-[0_0_35px_rgba(16,185,129,0.22)]',
+        badgeBg: 'bg-emerald-950/90 text-emerald-300 border-emerald-700/80',
+        activePillBg: 'bg-emerald-950 text-emerald-200 border-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.35)]',
+        accentText: 'text-emerald-400',
+        accentBorder: 'border-emerald-500',
+        pingColor: 'bg-emerald-500',
+        pingRing: 'bg-emerald-400',
+        needleX2: '20',
+        needleY2: '70',
+        needleColor: '#10b981',
+        progressColor: 'bg-emerald-500',
+        headerIconColor: 'text-emerald-500',
+        radarColor: 'rgba(16, 185, 129, 0.4)',
+        levelLabelEn: 'LOW',
+        levelLabelAr: 'منخفض',
+        defconBadge: 'bg-emerald-900 text-emerald-100 border border-emerald-700',
+        defconText: 'DEFCON 4',
+        tagBg: 'bg-emerald-950 text-emerald-300 border-emerald-800'
+      };
+  }
+}
 
 interface WarRoomProps {
   language: 'ar' | 'en';
@@ -1736,6 +2052,8 @@ export default function WarRoom({
 }: WarRoomProps) {
   const isAr = language === 'ar';
   
+  const [selectedRegionId, setSelectedRegionId] = useState<string>('hormuz-gulf');
+  const [filterByRegion, setFilterByRegion] = useState<boolean>(false);
   const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('iran-escalation-scenarios-europe-undersea-cables-2026');
   const [activeMapTool, setActiveMapTool] = useState<'tracker' | 'bypass'>('tracker');
   
@@ -1769,6 +2087,28 @@ export default function WarRoom({
     active: boolean;
   } | null>(null);
 
+  // Selected Crisis Region & Dynamic Threat Theme
+  const currentRegion = useMemo(() => {
+    return CRISIS_REGIONS.find(r => r.id === selectedRegionId) || CRISIS_REGIONS[0];
+  }, [selectedRegionId]);
+
+  const threatTheme = useMemo(() => {
+    return getThreatTheme(currentRegion.threatLevel);
+  }, [currentRegion]);
+
+  // Sync region when selecting a specific dossier if user clicks sync
+  const syncRegionToDossier = (dossier: TacticalDossier) => {
+    const dText = (dossier.regionEn + ' ' + dossier.regionAr + ' ' + dossier.titleEn + ' ' + dossier.titleAr).toLowerCase();
+    const matchedRegion = CRISIS_REGIONS.find(r => 
+      r.id !== 'all-theaters' && r.keywords.some(k => dText.includes(k.toLowerCase()))
+    );
+    if (matchedRegion) {
+      setSelectedRegionId(matchedRegion.id);
+    } else {
+      setSelectedRegionId('all-theaters');
+    }
+  };
+
   // Trigger glow effect when a new breaking report is pushed to the live wire
   useEffect(() => {
     if (latestBreaking) {
@@ -1793,8 +2133,8 @@ export default function WarRoom({
   const triggerSimulatedBreakingPush = () => {
     setIsGlowing(true);
     setSimulatedBreaking({
-      titleEn: "FLASH WIRE: Fifth Fleet signals increased radar clutter; threat level synchronized",
-      titleAr: "بث عاجل: الأسطول الخامس يرصد تشويشاً رادارياً متصاعداً وتأهب مستوى التهديد",
+      titleEn: `FLASH WIRE: ${currentRegion.nameEn} reports elevated threat activity; defense matrix re-aligned`,
+      titleAr: `بث عاجل: ${currentRegion.nameAr} يسجل نشاطاً قتالياً متصاعداً وتحديث مصفوفة الدفاع`,
       active: true
     });
     
@@ -1832,6 +2172,7 @@ export default function WarRoom({
       const summary = isAr ? d.summaryAr : d.summaryEn;
       const content = isAr ? d.contentAr : d.contentEn;
       const codeName = d.codeName;
+      const regionText = (d.regionEn + ' ' + d.regionAr).toLowerCase();
       
       const query = searchQuery.toLowerCase();
       const matchesSearch = !query || 
@@ -1839,11 +2180,21 @@ export default function WarRoom({
         summary.toLowerCase().includes(query) || 
         content.toLowerCase().includes(query) ||
         codeName.toLowerCase().includes(query) ||
+        regionText.includes(query) ||
         d.id.toLowerCase().includes(query);
+      
+      const matchesRegion = !filterByRegion || 
+        selectedRegionId === 'all-theaters' ||
+        currentRegion.keywords.some(k => 
+          regionText.includes(k.toLowerCase()) || 
+          title.toLowerCase().includes(k.toLowerCase()) ||
+          summary.toLowerCase().includes(k.toLowerCase()) ||
+          d.id.toLowerCase().includes(k.toLowerCase())
+        );
         
-      return matchesThreat && matchesSearch;
+      return matchesThreat && matchesSearch && matchesRegion;
     });
-  }, [threatFilter, searchQuery, isAr]);
+  }, [threatFilter, searchQuery, filterByRegion, selectedRegionId, currentRegion, isAr]);
 
   const activeEstimate = useMemo(() => {
     const content = isAr ? activeDossier.contentAr : activeDossier.contentEn;
@@ -2047,120 +2398,275 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
 
   return (
     <div id="war-room-container" className="bg-[#0c0d0f] text-[#d4d4d8] min-h-screen border border-zinc-800 p-4 md:p-8 font-sans transition-all">
-      {/* War Room Intelligence Header */}
-      <div className="border-b border-zinc-800 pb-6 mb-8 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6">
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-red-600 animate-ping"></span>
-            <span className="text-[10px] font-mono font-extrabold text-red-500 tracking-widest uppercase">
-              {isAr ? 'قناة اتصال مشفرة ومصنفة' : 'CLASSIFIED SITUATIONAL INTERCEPTED TRANSMISSION'}
+      {/* Dynamic War Room Strategic Command Banner with Reactive Threat Level Theme */}
+      <div 
+        id="war-room-threat-banner"
+        className={`p-5 md:p-7 rounded-xl border transition-all duration-700 mb-8 relative overflow-hidden shadow-2xl ${threatTheme.bannerGradient} ${threatTheme.bannerBorder} ${threatTheme.bannerGlow}`}
+      >
+        {/* Subtle grid background texture & ambient radar sweep */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent pointer-events-none" />
+        
+        {/* Banner Top Classification Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4 mb-5 relative z-10">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-3 w-3">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${threatTheme.pingRing}`}></span>
+              <span className={`relative inline-flex rounded-full h-3 w-3 ${threatTheme.pingColor}`}></span>
+            </span>
+            <span className={`text-[11px] font-mono font-black tracking-widest uppercase px-2 py-0.5 rounded border ${threatTheme.badgeBg}`}>
+              {isAr ? 'قناة اتصال مشفرة // مصفوفة رصد التهديد الميداني' : 'CLASSIFIED SITUATIONAL MATRIX // SECTOR THREAT GRID'}
             </span>
           </div>
-          <h1 className="text-2xl md:text-4xl font-sans font-black text-white tracking-tight leading-none uppercase">
-            {isAr ? 'غرفة الحرب الاستخباراتية' : 'Al-Warraq Geopolitical War Room'}
-          </h1>
-          <p className="text-xs md:text-sm text-zinc-400 mt-2 max-w-2xl font-sans">
-            {isAr 
-              ? 'ديوان الرصد الفوري والتحليل العسكري للأزمة الدائرة بين إيران والولايات المتحدة وحلفائهما الإقليميين والنزاع البحري المستمر.' 
-              : 'Real-time intercept mapping, naval doctrine assessments, and strategic logistical shunts concerning the ongoing US-Iran geopolitical conflict.'}
-          </p>
+
+          <div className="flex items-center gap-2 font-mono text-[11px]">
+            <span className="text-zinc-400 bg-black/40 px-2 py-0.5 rounded border border-white/10 hidden sm:inline-block">
+              {currentRegion.code}
+            </span>
+            <span className="text-zinc-400 bg-black/40 px-2 py-0.5 rounded border border-white/10 hidden md:inline-block">
+              <MapPin size={10} className="inline mr-1 text-zinc-400" />
+              {currentRegion.coordinates}
+            </span>
+            <span className={`font-black uppercase px-2.5 py-0.5 rounded shadow-sm ${threatTheme.defconBadge}`}>
+              {threatTheme.defconText} {isAr ? `(تأهب ${currentRegion.defcon})` : `(DEFCON ${currentRegion.defcon})`}
+            </span>
+          </div>
         </div>
 
-        {/* Header Widgets Container */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 w-full xl:w-auto">
-          {/* Visual Threat Level Gauge Widget */}
-          <div className={`border p-3 rounded-md flex items-center gap-4 text-xs font-mono select-none shadow-md flex-1 md:flex-none transition-all duration-500 ${
-            isGlowing 
-              ? 'breathing-threat-glow border-red-500/80 bg-red-950/20' 
-              : 'bg-zinc-900/40 border-zinc-800'
-          }`}>
-            <div className="relative w-16 h-10 flex items-center justify-center overflow-hidden">
-              <svg className="w-16 h-16 absolute -bottom-8" viewBox="0 0 100 100">
-                {/* Background Arc */}
-                <path d="M 15,85 A 35,35 0 0,1 85,85" stroke="#27272a" strokeWidth="10" fill="none" strokeLinecap="round" />
-                {/* Green (Moderate), Yellow (High), Red (Critical) sectors */}
-                <path d="M 15,85 A 35,35 0 0,1 38,55" stroke="#10b981" strokeWidth="10" fill="none" />
-                <path d="M 38,55 A 35,35 0 0,1 62,55" stroke="#f59e0b" strokeWidth="10" fill="none" />
-                <path d="M 62,55 A 35,35 0 0,1 85,85" stroke="#ef4444" strokeWidth="10" fill="none" />
-                
-                {/* Dynamic needle based on TACTICAL_DOSSIERS[0].threatLevel (which is CRITICAL) */}
-                <line 
-                  x1="50" 
-                  y1="85" 
-                  x2={
-                    TACTICAL_DOSSIERS[0].threatLevel === 'CRITICAL' ? "80" :
-                    TACTICAL_DOSSIERS[0].threatLevel === 'HIGH' ? "50" : "20"
-                  } 
-                  y2={
-                    TACTICAL_DOSSIERS[0].threatLevel === 'CRITICAL' ? "70" :
-                    TACTICAL_DOSSIERS[0].threatLevel === 'HIGH' ? "50" : "70"
-                  } 
-                  stroke="#ffffff" 
-                  strokeWidth="3.5" 
-                  strokeLinecap="round" 
-                  className="origin-[50px_85px]" 
-                />
-                <circle cx="50" cy="85" r="5.5" fill="#ffffff" />
-              </svg>
-            </div>
+        {/* Banner Main Row: Strategic Context + Dynamic Threat Level Indicator */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
+          {/* Left / Primary Strategic Dossier Details (7 cols) */}
+          <div className="lg:col-span-7 space-y-4">
             <div>
-              <span className="text-zinc-500 block uppercase text-[8px] font-black tracking-widest">{isAr ? 'مقياس التوتر العسكري الحرج' : 'MILITARY TENSION GAUGE'}</span>
-              <span className={`${
-                isGlowing 
-                  ? 'text-red-400 font-black drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]' 
-                  : 'text-red-600 font-bold'
-              } text-[11px] tracking-wider uppercase flex items-center gap-1.5 mt-0.5 transition-all duration-500`}>
-                <span className={`w-1.5 h-1.5 rounded-full inline-block ${
-                  isGlowing ? 'bg-red-400 animate-ping shadow-[0_0_8px_#ef4444]' : 'bg-red-600'
-                }`}></span>
-                {isGlowing ? (
-                  isAr 
-                    ? `مستوى الخطر: حرج (صدمة جديدة نشطة)` 
-                    : `Level: CRITICAL (ACTIVE REPORT PUSH)`
-                ) : (
-                  isAr 
-                    ? `الحالة الحالية: ${TACTICAL_DOSSIERS[0].threatLevel}` 
-                    : `CURRENT STATUS: ${TACTICAL_DOSSIERS[0].threatLevel}`
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider">
+                  {isAr ? 'غرفة العمليات والتحليل الجيوسياسي' : 'AL-WARRAQ GEOPOLITICAL WAR ROOM'}
+                </span>
+                <span className="text-zinc-600">•</span>
+                <span className={`text-xs font-mono font-extrabold uppercase ${threatTheme.accentText}`}>
+                  {isAr ? currentRegion.theaterAr : currentRegion.theaterEn}
+                </span>
+              </div>
+              <h1 className="text-2xl md:text-3xl font-sans font-black text-white tracking-tight leading-tight uppercase">
+                {isAr ? currentRegion.nameAr : currentRegion.nameEn}
+              </h1>
+            </div>
+
+            {/* Operational Status Headline */}
+            <div className={`p-3 rounded-lg border bg-black/40 ${threatTheme.bannerBorder}`}>
+              <div className="flex items-start gap-2.5">
+                <Shield size={16} className={`shrink-0 mt-0.5 ${threatTheme.headerIconColor}`} />
+                <div>
+                  <div className={`text-xs font-mono font-black uppercase tracking-wide mb-1 ${threatTheme.accentText}`}>
+                    {isAr ? currentRegion.statusTextAr : currentRegion.statusTextEn}
+                  </div>
+                  <p className="text-xs md:text-[13px] text-zinc-300 font-sans leading-relaxed">
+                    {isAr ? currentRegion.synopsisAr : currentRegion.synopsisEn}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Regional Crisis Sector Selector Bar */}
+            <div>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className="text-[10px] font-mono font-bold uppercase text-zinc-400 flex items-center gap-1">
+                  <Target size={11} className={threatTheme.headerIconColor} />
+                  <span>{isAr ? 'اختر مسرح العمليات لتحديث مستوى التهديد والمظهر:' : 'SELECT CRISIS REGION / THEATER TO UPDATE THREAT LEVEL & BANNER THEME:'}</span>
+                </span>
+                {filterByRegion && (
+                  <span className="text-[9px] font-mono text-amber-400 bg-amber-950/60 px-1.5 py-0.2 rounded border border-amber-800 animate-pulse">
+                    {isAr ? 'التصفية مفعلة' : 'FILTER ACTIVE'}
+                  </span>
                 )}
-              </span>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {CRISIS_REGIONS.map((region) => {
+                  const isSelected = selectedRegionId === region.id;
+                  const regionTheme = getThreatTheme(region.threatLevel);
+                  return (
+                    <button
+                      key={region.id}
+                      onClick={() => setSelectedRegionId(region.id)}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 border ${
+                        isSelected
+                          ? regionTheme.activePillBg
+                          : 'bg-black/50 text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-zinc-200'
+                      }`}
+                      title={isAr ? region.nameAr : region.nameEn}
+                    >
+                      <span className={`w-1.5 h-1.5 rounded-full ${
+                        region.threatLevel === 'CRITICAL' ? 'bg-red-500' :
+                        region.threatLevel === 'HIGH' ? 'bg-amber-500' :
+                        region.threatLevel === 'MODERATE' ? 'bg-yellow-500' : 'bg-emerald-500'
+                      }`}></span>
+                      <span>{isAr ? region.nameAr : region.nameEn}</span>
+                      <span className={`text-[9px] px-1 py-0.2 rounded uppercase font-black ${
+                        region.threatLevel === 'CRITICAL' ? 'text-red-400 bg-red-950/80' :
+                        region.threatLevel === 'HIGH' ? 'text-amber-400 bg-amber-950/80' :
+                        region.threatLevel === 'MODERATE' ? 'text-yellow-400 bg-yellow-950/80' : 'text-emerald-400 bg-emerald-950/80'
+                      }`}>
+                        {region.threatLevel === 'CRITICAL' ? (isAr ? 'حرج' : 'CRIT') :
+                         region.threatLevel === 'HIGH' ? (isAr ? 'مرتفع' : 'HIGH') :
+                         region.threatLevel === 'MODERATE' ? (isAr ? 'متوسط' : 'MOD') : (isAr ? 'منخفض' : 'LOW')}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Quick Actions Bar */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px]">
+              <button
+                onClick={() => setFilterByRegion(!filterByRegion)}
+                className={`px-2.5 py-1 rounded font-bold border cursor-pointer transition-all flex items-center gap-1.5 ${
+                  filterByRegion
+                    ? 'bg-amber-600 text-black border-amber-400 shadow-md font-extrabold'
+                    : 'bg-zinc-900/80 hover:bg-zinc-800 text-zinc-300 border-zinc-700'
+                }`}
+                title={isAr ? 'تصفية الملفات الاستخباراتية لهذا المسرح' : 'Filter intelligence dossiers for this theater'}
+              >
+                <Filter size={12} />
+                <span>
+                  {filterByRegion 
+                    ? (isAr ? 'إلغاء تصفية المسرح' : 'DISABLE THEATER FILTER') 
+                    : (isAr ? `تصفية الملفات لمسرح (${isAr ? currentRegion.nameAr : currentRegion.nameEn})` : `FILTER DOSSIERS FOR ${currentRegion.nameEn}`)}
+                </span>
+              </button>
+
+              <button
+                onClick={() => syncRegionToDossier(activeDossier)}
+                className="px-2.5 py-1 rounded font-bold bg-zinc-900/80 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 cursor-pointer transition-all flex items-center gap-1.5"
+                title={isAr ? 'مزامنة المسرح مع الملف الاستخباري المفتوح حالياً' : 'Sync theater selection to active open dossier'}
+              >
+                <RefreshCw size={12} />
+                <span>{isAr ? 'مزامنة مع الملف المعروض' : 'SYNC WITH ACTIVE DOSSIER'}</span>
+              </button>
             </div>
           </div>
 
-          {/* Telemetry quick status */}
-          <div className="bg-zinc-900/60 border border-zinc-800 p-3 rounded flex flex-wrap items-center gap-4 text-xs font-mono select-none flex-1 md:flex-none">
-            <div>
-              <span className="text-zinc-500 block uppercase text-[9px]">{isAr ? 'مؤشر خطورة المضيق' : 'HORMA CHOKE RISK'}</span>
-              <span className="text-red-500 font-bold text-base">{blockadeRisk}%</span>
-            </div>
-            <div className="h-8 w-px bg-zinc-800"></div>
-            <div>
-              <span className="text-zinc-500 block uppercase text-[9px]">{isAr ? 'أجهزة الرصد الحية' : 'ACTIVE INTERCEPTS'}</span>
-              <span className="text-amber-500 font-bold text-base">{activeSensors}</span>
-            </div>
-            <div className="h-8 w-px bg-zinc-800"></div>
-            <div>
-              <span className="text-zinc-500 block uppercase text-[9px]">{isAr ? 'حالة المضيق' : 'STRAIT STATUS'}</span>
-              <button 
-                onClick={toggleStraitSimulation}
-                className={`px-1.5 py-0.5 rounded text-[10px] font-extrabold cursor-pointer transition-all ${
-                  straitStatus === 'BLOCKED' ? 'bg-red-950 text-red-400 border border-red-800' :
-                  straitStatus === 'CONTRASTED' ? 'bg-amber-950 text-amber-400 border border-amber-800' :
-                  'bg-emerald-950 text-emerald-400 border border-emerald-800'
-                }`}
-              >
-                {straitStatus} ↻
-              </button>
-            </div>
-            <div className="h-8 w-px bg-zinc-800"></div>
-            <div>
-              <span className="text-zinc-500 block uppercase text-[9px]">{isAr ? 'البث المباشر' : 'LIVE WIRE'}</span>
-              <button 
-                onClick={triggerSimulatedBreakingPush}
-                className="px-1.5 py-0.5 rounded text-[10px] font-extrabold cursor-pointer transition-all bg-red-950 text-red-400 border border-red-800 hover:bg-red-900 hover:text-white"
-                title={isAr ? 'بث خبر عاجل محاكي' : 'Push simulated breaking wire briefing'}
-              >
-                {isAr ? 'بث ⚡' : 'PUSH ⚡'}
-              </button>
+          {/* Right / Dynamic Threat Level Indicator & Gauge Widget (5 cols) */}
+          <div className="lg:col-span-5 space-y-3">
+            <div className={`p-4 rounded-xl border bg-black/60 backdrop-blur shadow-lg ${threatTheme.bannerBorder}`}>
+              {/* Dynamic Threat Level Top Header */}
+              <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3 font-mono">
+                <div className="flex items-center gap-2">
+                  <Flame size={16} className={threatTheme.headerIconColor} />
+                  <span className="text-[10px] uppercase font-black tracking-wider text-zinc-400">
+                    {isAr ? 'مؤشر مستوى التهديد الديناميكي' : 'DYNAMIC THREAT LEVEL INDICATOR'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className={`w-2 h-2 rounded-full animate-ping ${threatTheme.pingColor}`}></span>
+                  <span className={`text-[11px] font-black uppercase px-2 py-0.5 rounded border ${threatTheme.badgeBg}`}>
+                    {isAr ? threatTheme.levelLabelAr : threatTheme.levelLabelEn}
+                  </span>
+                </div>
+              </div>
+
+              {/* Gauge and Threat Score Display */}
+              <div className="flex items-center justify-between gap-4">
+                {/* SVG Tension & Threat Arc Gauge */}
+                <div className="relative w-28 h-16 flex items-center justify-center overflow-hidden shrink-0">
+                  <svg className="w-28 h-28 absolute -bottom-12" viewBox="0 0 100 100">
+                    {/* Background Arc */}
+                    <path d="M 15,85 A 35,35 0 0,1 85,85" stroke="#27272a" strokeWidth="11" fill="none" strokeLinecap="round" />
+                    {/* Green (Low/Moderate), Yellow (High), Red (Critical) sectors */}
+                    <path d="M 15,85 A 35,35 0 0,1 38,55" stroke="#10b981" strokeWidth="11" fill="none" />
+                    <path d="M 38,55 A 35,35 0 0,1 62,55" stroke="#f59e0b" strokeWidth="11" fill="none" />
+                    <path d="M 62,55 A 35,35 0 0,1 85,85" stroke="#ef4444" strokeWidth="11" fill="none" />
+                    
+                    {/* Dynamically angled needle reflecting the active region's threat status */}
+                    <line 
+                      x1="50" 
+                      y1="85" 
+                      x2={threatTheme.needleX2} 
+                      y2={threatTheme.needleY2} 
+                      stroke={threatTheme.needleColor} 
+                      strokeWidth="4" 
+                      strokeLinecap="round" 
+                      className="transition-all duration-700 ease-out origin-[50px_85px]" 
+                    />
+                    <circle cx="50" cy="85" r="6" fill="#ffffff" />
+                    <circle cx="50" cy="85" r="3" fill={threatTheme.needleColor} />
+                  </svg>
+                </div>
+
+                {/* Score & Risk Index */}
+                <div className="flex-1 space-y-1.5 font-mono">
+                  <div className="flex justify-between items-baseline">
+                    <span className="text-[10px] text-zinc-400 uppercase font-bold">
+                      {isAr ? 'مؤشر خطورة المسرح:' : 'THEATER THREAT INDEX:'}
+                    </span>
+                    <span className={`text-xl font-black ${threatTheme.accentText}`}>
+                      {currentRegion.threatScore}%
+                    </span>
+                  </div>
+
+                  {/* Animated Threat Score Bar */}
+                  <div className="w-full bg-zinc-800/80 rounded-full h-2 overflow-hidden border border-white/10">
+                    <div 
+                      className={`h-full transition-all duration-700 ease-out rounded-full ${threatTheme.progressColor}`}
+                      style={{ width: `${currentRegion.threatScore}%` }}
+                    />
+                  </div>
+
+                  <div className="flex justify-between text-[9px] text-zinc-500 pt-0.5">
+                    <span>{isAr ? 'منخفض (0)' : 'LOW (0)'}</span>
+                    <span>{isAr ? 'مرتفع (50)' : 'HIGH (50)'}</span>
+                    <span className="text-red-400 font-bold">{isAr ? 'حرج (100)' : 'CRITICAL (100)'}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dynamic Telemetry Metric Strip */}
+              <div className="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-white/10 text-center font-mono">
+                <div className="bg-black/40 p-2 rounded border border-white/5">
+                  <span className="text-zinc-500 block uppercase text-[8px]">
+                    {isAr ? 'مؤشر الحصار/التوتر' : 'CHOKE RISK'}
+                  </span>
+                  <span className={`font-black text-sm ${threatTheme.accentText}`}>
+                    {currentRegion.blockadeRisk}%
+                  </span>
+                </div>
+
+                <div className="bg-black/40 p-2 rounded border border-white/5">
+                  <span className="text-zinc-500 block uppercase text-[8px]">
+                    {isAr ? 'حساسات الرصد' : 'SENSORS'}
+                  </span>
+                  <span className="text-amber-400 font-black text-sm">
+                    {currentRegion.activeSensors}
+                  </span>
+                </div>
+
+                <div className="bg-black/40 p-2 rounded border border-white/5">
+                  <span className="text-zinc-500 block uppercase text-[8px]">
+                    {isAr ? 'إنذارات نشطة' : 'ALERTS'}
+                  </span>
+                  <span className={`font-black text-sm ${
+                    currentRegion.activeAlerts > 5 ? 'text-red-400' :
+                    currentRegion.activeAlerts > 2 ? 'text-amber-400' : 'text-emerald-400'
+                  }`}>
+                    {currentRegion.activeAlerts}
+                  </span>
+                </div>
+              </div>
+
+              {/* Live Simulation Trigger */}
+              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono">
+                <span className="text-zinc-400">
+                  {isAr ? 'بث الإشارات المباشرة:' : 'LIVE INTERCEPT FEED:'}
+                </span>
+                <button 
+                  onClick={triggerSimulatedBreakingPush}
+                  className={`px-2 py-0.5 rounded font-extrabold cursor-pointer transition-all border ${threatTheme.badgeBg} hover:opacity-90 flex items-center gap-1`}
+                  title={isAr ? 'بث خبر عاجل محاكي لهذا المسرح' : 'Push simulated breaking wire briefing for this theater'}
+                >
+                  <span>⚡</span>
+                  <span>{isAr ? 'بث عاجل للمسرح' : 'PUSH FLASH'}</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2175,13 +2681,13 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
             exit={{ opacity: 0, height: 0, y: -10 }}
             className="mb-6 overflow-hidden"
           >
-            <div className="bg-red-950/40 border border-red-900/60 p-3 rounded-md flex items-center justify-between gap-4">
+            <div className={`border p-3 rounded-md flex items-center justify-between gap-4 transition-colors ${threatTheme.bannerGradient} ${threatTheme.bannerBorder}`}>
               <div className="flex items-center gap-3">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${threatTheme.pingRing}`}></span>
+                  <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${threatTheme.pingColor}`}></span>
                 </span>
-                <span className="text-[9px] font-mono font-black text-red-400 bg-red-950/80 px-1.5 py-0.5 border border-red-900/40 rounded uppercase tracking-widest whitespace-nowrap">
+                <span className={`text-[9px] font-mono font-black px-1.5 py-0.5 border rounded uppercase tracking-widest whitespace-nowrap ${threatTheme.badgeBg}`}>
                   {isAr ? 'إشارة عاجلة واردة' : 'LIVE WIRE INTERCEPT'}
                 </span>
                 <p className="text-xs font-sans text-zinc-100 font-extrabold leading-tight">
@@ -2189,7 +2695,7 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
                     ? (isAr ? simulatedBreaking.titleAr : simulatedBreaking.titleEn)
                     : (latestBreaking 
                         ? (isAr ? `عاجل: ${latestBreaking.titleAr}` : `FLASH: ${latestBreaking.titleEn}`)
-                        : (isAr ? 'تم رصد نشاط عسكري متزايد في المنطقة المجاورة' : 'Increased military activity detected in the active quadrant')
+                        : (isAr ? `تم رصد نشاط عسكري متزايد في قطاع ${currentRegion.nameAr}` : `Increased military activity detected in sector ${currentRegion.nameEn}`)
                       )
                   }
                 </p>
@@ -2203,7 +2709,7 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
                         ? (isAr ? simulatedBreaking.titleAr : simulatedBreaking.titleEn)
                         : (latestBreaking 
                             ? (isAr ? latestBreaking.titleAr : latestBreaking.titleEn)
-                            : (isAr ? 'تطورات عسكرية حية في ملف الحرب الإيرانية الأمريكية' : 'Live Military Developments in Iran-US War')
+                            : (isAr ? `تطورات عسكرية حية في قطاع ${currentRegion.nameAr}` : `Live Military Developments in ${currentRegion.nameEn}`)
                           )
                     }*\n\n` +
                     `👉 ${window.location.origin}/?room=war`

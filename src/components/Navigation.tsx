@@ -38,11 +38,11 @@ const DESK_METADATA: Record<string, {
 }> = {
   // Sovereign Desk
   'alwarraq-investigations': {
-    taglineAr: 'تحقيقات استقصائية',
-    taglineEn: 'Investigative Dossiers',
-    subAr: 'ملفات كاشفة للحقائق ووثائق سرية استثنائية',
-    subEn: 'Deep investigations and leaked diplomatic folders',
-    badge: 'INTEL',
+    taglineAr: 'بوابة التحقيقات الاستقصائية للورّاق',
+    taglineEn: 'Al-Warraq Investigative Portal',
+    subAr: 'وثائق سيادية حرة ومفتوحة والتحقيقات الاستقصائية الكبرى',
+    subEn: 'Open sovereign dossiers and declassified investigative intelligence',
+    badge: 'SOVEREIGN INTEL',
     badgeColor: 'bg-red-900/85 text-red-100 border-red-700'
   },
   'war-room': {

@@ -2,6 +2,871 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'ft-israeli-military-religious-zionism-shift-2026',
+    slug: 'تقرير-فايننشال-تايمز-تحول-بنيوي-الجيش-الإسرائيلي-صعود-الصهيونية-الدينية-2026',
+    focusKeyword: 'فايننشال-تايمز-الجيش-الإسرائيلي-الصهيونية-الدينية-المכיخوت-هيئة-الأركان-غزة-الاستيطان-معن-البرازي',
+    category: 'translations',
+    categories: ['translations', 'international', 'war-room', 'middle-east', 'research-reports'],
+    titleAr: 'تقرير فايننشال تايمز: صعود الصهيونية الدينية وانتقال خطاب الاستيطان والانتقام لقلب الجيش الإسرائيلي',
+    titleEn: 'Financial Times Report: The Rise of Religious Zionism and the Structural Transformation of the Israeli Military',
+    summaryAr: 'تقرير استقصائي موسع لصحيفة "فايننشال تايمز" البريطانية يرصد تحولاً بنيوياً عميقاً داخل الجيش الإسرائيلي، يتمثل في صعود تيار الصهيونية الدينية وانتقال خطاب الاستيطان والانتقام العقائدي من الهامش إلى صميم القيادة الميدانية وهيئة الأركان العامة، وتزايد نفوذ خريجي المدارس الدينية التحضيرية (المخيخوت) الذين باتوا يشكلون ثلث الضباط المتخرجين سنوياً.',
+    summaryEn: 'An extensive investigative report by the Financial Times detailing a profound structural transformation within the Israeli military: the rapid ascent of Religious Zionism, the migration of messianic settler rhetoric into senior command, and the surging influence of pre-military religious academies (Mechinot) whose graduates now comprise one-third of all newly commissioned officers.',
+    excerptAr: 'ترجمة خاصة: كيف غيّرت الصهيونية الدينية ومدارس "المخيخوت" عقيدة الجيش الإسرائيلي؟ شهادات من ضباط وجنرالات حول تحويل القتال إلى "حرب دينية خلاصية".',
+    excerptEn: 'Special Translation & Analysis: How Religious Zionism and Mechinot academies reshaped Israeli military doctrine from secular professionalism to theological warfare.',
+    author: {
+      nameAr: 'ترجمة وإعداد: وحدة الترجمات الاستراتيجية — صحيفة الورّاق (عن فايننشال تايمز)',
+      nameEn: 'Translated & Annotated by Strategic Translations Bureau — Al-Warraq (via Financial Times)',
+      titleAr: 'مكتب الترجمات الدولية والدراسات العسكرية',
+      titleEn: 'International Translations & Defense Studies Bureau',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-06',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 31200,
+    tags: [
+      'فايننشال_تايمز', 'ترجمات_دولية', 'الجيش_الإسرائيلي', 'الصهيونية_الدينية', 'المخيخوت', 'الاستيطان', 'حرب_غزة', 'هيئة_الأركان',
+      'FinancialTimes', 'IsraeliMilitary', 'ReligiousZionism', 'Mechinot', 'IDFTransformation', 'SettlerMovement'
+    ],
+    hashtags: ['FinancialTimesInvestigation', 'IDFReligiousShift', 'ReligiousZionismRise', 'AlwarraqTranslations'],
+    contentAr: `### تقرير فايننشال تايمز: صعود الصهيونية الدينية وانتقال خطاب الاستيطان والانتقام لقلب الجيش الإسرائيلي
+#### إعداد وترجمة استراتيجية موثقة: وحدة الترجمات الدولية — صحيفة الورّاق
+**المصدر الأصلي:** فايننشال تايمز (Financial Times)  
+**تاريخ الرصد والتوثيق:** 6 سبتمبر 2026  
+**التصنيف:** شؤون عسكرية واستخباراتية دولية / دراسات التحول العقائدي  
+
+---
+
+### ملخص التقرير والتحول البنيوي
+يرصد تقرير استقصائي معمق نشرته صحيفة **"فايننشال تايمز"** البريطانية تحولاً بنيوياً وتاريخياً غير مسبوق داخل المؤسسة العسكرية الإسرائيلية، يتمثل في **صعود تيار الصهيونية الدينية وانتقال خطاب الاستيطان والانتقام الخلاصي من الهوامش المتطرفة إلى قلب مراكز القرار العسكري والعملياتي**.
+
+يكشف التقرير، بالاستناد إلى مقابلات مع قادة عسكريين حاليين وسابقين وخبراء أمنيين، عن التآكل المتسارع للطابع "العلماني وغير السياسي" الذي ميز الجيش الإسرائيلي لعقود، وتحوله إلى بيئة مواتية لترسيخ الأيديولوجيا الدينية المتشددة.
+
+---
+
+### أبرز المحاور والحقائق الاستقصائية في التقرير
+
+🔷 **1. تحويل القتال إلى «حرب دينية تُخاض باسم الله»**
+ينقل التقرير عن ضابط احتياط خدم نحو عقدين في صفوف الجيش الإسرائيلي قوله إنه سمع خلال حرب غزة الأخيرة **«عشرات المرات»** جنوداً وضباطاً كباراً يصفون القتال علناً بأنه *"حرب دينية مقدسة تُخاض باسم الرب ولتحقيق نبوءات توراتية"*.
+ويؤكد الضابط أن مثل هذا الخطاب العقائدي كان يُعد من **المحرمات الصارمة والخطوط الحمر** داخل المؤسسة العسكرية قبل عشرين عاماً، لكنه أصبح اليوم لغة متداولة ومقبولة على نطاق واسع حتى على المستويات القيادية والعملياتية.
+
+🔷 **2. تراجع سلطة الضباط لصالح توجيه الحاخامات وكراس «تطهير الأرض»**
+يكشف تحقيق فايننشال تايمز عن تحول جذري في **سلطة التوجيه المعنوي والأخلاقي** داخل الوحدات القتالية:
+* بات الحاخامات العسكريون وحاخامات المستوطنات هم من يقدمون **خطابات التحفيز والتعبئة الروحية** للجنود قبل اقتحام المناطق والعمليات القتالية بدلاً من القادة الميدانيين.
+* تم رصد توزيع كراسات ومنشورات دينية متطرفة بين الجنود، من بينها كراس بعنوان **«تطهير الأرض»**، والذي يضفي على العمليات العسكرية أبعاداً لاهوتية خلاصية تبرر العنف وتطمس قواعد الاشتباك العسكرية المعيارية.
+
+🔷 **3. هيمنة خريجي المدارس الدينية التحضيرية (المخيخوت)**
+يسلط التقرير الضوء على الدور المحوري لشبكة المدارس الدينية التحضيرية للخدمة العسكرية، المعروفة بـ **«المخيخوت» (Mechinot)**:
+* يدير معظم هذه المدارس حاخامات ينتمون إلى صلب تيار الصهيونية الدينية وغلاة المستوطنين في الضفة الغربية.
+* تُظهر البيانات الإحصائية أن خريجي هذه المدارس باتوا يشكلون اليوم **نحو ثلث (33%) من إجمالي الضباط المتخرجين سنوياً من الكلية العسكرية لإعداد الضباط (بهاد 1)**، مقارنة بنحو **2% فقط** في ثمانينيات القرن الماضي.
+* أدى هذا التدفق المنظم إلى إنشاء شبكة متماسكة من الضباط الميدانيين الذين يتشاركون رؤية عقدية واحدة تتطابق مع أجندة الاستيطان وإعادة احتلال غزة وتوسيع السيادة في الضفة الغربية.
+
+🔷 **4. الوصول إلى قمة الهرم: ثلاثة جنرالات بـ «القلنسوة الدينية» في هيئة الأركان**
+يؤكد التقرير أن هذا التحول لم يعد مقتصراً على الرتب الدنيا والمتوسطة في كتائب المشاة، بل **اخترق أعلى هرم القيادة العسكرية**:
+* تضم هيئة الأركان العامة للجيش الإسرائيلي اليوم **ثلاثة جنرالات يعتمرون القلنسوة الدينية المنحازة للتيار الصهيوني الديني**، وهو أعلى تمثيل تاريخي لهذا التيار في تاريخ القيادة العليا للجيش.
+* يعزز هذا الحضور قدرة التيار على التأثير المباشر في التعيينات الحساسة وصياغة العقيدة القتالية وتقديرات الموقف الاستراتيجي.
+
+---
+
+### جدول مقارن: التحول الديموغرافي والعقائدي في الجيش الإسرائيلي
+
+| المؤشر | الجيش الإسرائيلي (الثمانينيات والتسعينيات) | الجيش الإسرائيلي اليوم (2024–2026) |
+| :--- | :--- | :--- |
+| **نسبة الضباط المتخرجين من المدارس الدينية (المخيخوت)** | ~ 2% فقط | ~ 33% (ثلث سلاح المشاة والضباط) |
+| **خطاب التعبئة قبل المعركة** | قومي، علماني، يركز على "الدفاع عن أمن الدولة والمواطنين". | ديني خلاصي، اقتباسات تلمودية، خطاب "الانتقام والحرب المقدسة". |
+| **المرجعية المعنوية للجنود** | الانضباط العسكري الصارم لأوامر القيادة وسلسلة المراتب. | تداخل متزايد مع فتاوى وتوجيهات حاخامات الصهيونية الدينية. |
+| **تمثيل الصهيونية الدينية في هيئة الأركان** | نادر أو منعدم تماماً في الرتب العليا. | 3 جنرالات يرتدون القلنسوة في قلب هيئة الأركان العامة. |
+
+---
+
+### تحذيرات أمنية من تفكك الانضباط والجيش "غير المسيس"
+ينقل التقرير تحذيرات بالغة الخطورة على لسان مسؤولين أمنيين كبار وخبراء عسكريين قابلتهم الصحيفة، شددوا فيها على أن:
+1. **تآكل الطابع المهني غير السياسي:** تصاعد نفوذ اليمين الديني يعيد تشكيل قرارات الجيش الميدانية بما يخدم مصالح سياسية وحزبية ضيقة للمستوطنين.
+2. **أزمة الولاء المزدوج:** تنامي المخاوف من أن ولاء بعض الضباط والجنود أصبح معقوداً للقيادة الحاخامية والسياسية اليمينية أكثر من انضباطهم لأوامر رئيس هيئة الأركان والقيادة العسكرية الرسمية.
+3. **احتمال رفض الأوامر:** في حال اتخاذ قرارات حكومية مستقبلية تتعارض مع المشروع الاستيطاني (كإخلاء بؤر استيطانية أو تسويات سياسية)، فإن ولاء هؤلاء الضباط لمرجعياتهم الدينية يهدد بحدوث انقسامات داخلية غير مسبوقة وتمرد داخل الوحدات المقاتلة.`,
+    contentEn: `### Financial Times Report: The Rise of Religious Zionism and the Structural Transformation of the Israeli Military
+#### Strategic Translation & Analysis Bureau — Al-Warraq Newspaper
+**Original Source:** The Financial Times  
+**Date:** September 6, 2026  
+**Category:** Strategic Translations / Military & Security Dossiers  
+
+---
+
+### Executive Overview
+An in-depth investigative dossier published by the **Financial Times** documents an unprecedented structural shift within the Israeli military (IDF): the rapid ascent of **Religious Zionism** and the migration of messianic settler ideology and theological vengeance from the ideological fringe into the epicenter of operational command and the General Staff.
+
+Drawing upon interviews with current and former commanders, security officials, and military sociologists, the report traces the erosion of the military's traditional secular ethos and the institutionalization of religious nationalist doctrines across combat battalions.
+
+---
+
+### Key Takeaways from the Financial Times Investigation
+
+🔷 **1. The Rhetoric of "Holy War" in Combat**
+A veteran reserve officer with two decades of active service recounted hearing soldiers and senior officers describe the war in Gaza **"dozens of times"** as a theological war fought explicitly in the name of God. Such rhetoric, once considered taboo and prohibited within the military establishment twenty years ago, has now become commonplace and tolerated across senior field leadership.
+
+🔷 **2. The Shift in Moral Authority: Rabbis and "Cleansing the Land"**
+The report identifies a dramatic realignment of moral and ideological authority at the unit level:
+* Rabbis frequently deliver pre-combat motivational addresses to assault forces in lieu of traditional operational briefings by commanders.
+* The proliferation of ideological pamphlets, including booklets titled *"Cleansing the Land"*, has infused military operations with redemptive theological imperatives that blur standard rules of engagement.
+
+🔷 **3. The Dominance of Pre-Military Religious Academies (Mechinot)**
+The report highlights the transformative role of the pre-military academies:
+* Overseen primarily by hardline religious Zionist and settler rabbis in the West Bank.
+* Graduates of these academies now account for **approximately one-third (33%) of all newly commissioned infantry and combat officers** graduating from Officer Training School (Bahad 1), compared to merely **2% in the 1980s**.
+* This pipeline has created an interconnected cohort of field commanders bonded by shared messianic convictions regarding settlement expansion and territorial control.
+
+🔷 **4. Ascent to the High Command: Yarmulke-Wearing Generals**
+The transformation has reached the apex of military hierarchy:
+* The IDF General Staff currently includes **three yarmulke-wearing generals** closely associated with the national-religious movement—the highest concentration in the state's history.
+* This presence guarantees institutional leverage over doctrinal formulation, appointments, and strategic assessments.
+
+---
+
+### Comparative Analysis: Historical vs. Modern IDF Demographics
+
+| Metric | IDF Baseline (1980s–1990s) | Current IDF Reality (2024–2026) |
+| :--- | :--- | :--- |
+| **Officer Corps from Religious Academies (Mechinot)** | ~ 2% of graduates | ~ 33% of officer corps |
+| **Pre-Battle Briefing Ethos** | Secular-nationalist, institutional defense. | Theological, messianic, redemptive rhetoric. |
+| **Moral Reference Point** | Chain of command and military law. | Dual loyalty: Military command vs. Rabbinic authority. |
+| **General Staff Representation** | Negligible religious Zionist presence. | 3 yarmulke-wearing Generals on the General Staff. |
+
+---
+
+### Strategic Repercussions: The Threat of Split Loyalty
+Security veterans interviewed by the Financial Times warned of grave risks to military cohesion:
+1. **Politicization of Doctrine:** Tactical decisions increasingly mirror the ideological objectives of the radical settler lobby.
+2. **Dual Loyalty Dilemma:** Severe concerns regarding whether combat units will defer to military command or rabbinical edicts when contentious political decisions—such as outpost dismantling or ceasefire protocols—are enacted.`
+  },
+  {
+    id: 'europe-economy-end-of-quiet-miracle-model-crisis-2026',
+    slug: 'نهاية-المعجزة-الهادئة-أوروبا-وأزمة-البحث-عن-نموذج-اقتصادي-جديد-2026',
+    focusKeyword: 'المعجزة-الهادئة-اقتصاد-أوروبا-ماريو-دراغي-أزمة-الطاقة-التنافسية-التكنولوجية-الاتحاد-الأوروبي-معن-البرازي',
+    category: 'economy',
+    categories: ['economy', 'international', 'markets', 'research-reports'],
+    titleAr: 'نهاية "المعجزة الهادئة".. أوروبا وأزمة البحث عن نموذج جديد',
+    titleEn: 'The End of the "Quiet Miracle": Europe and the Crisis of Finding a New Economic Model',
+    summaryAr: 'عُقدت عقود النمو الأوروبي الذهبية في مرحلة ما بعد الحرب العالمية الثانية على ركائز ثلاث بدت حتمية: تجارة عالمية مفتوحة، صناعة تعتمد على طاقة رخيصة، ومظلة أمنية دولية مستقرة. اليوم، تسقط هذه الأركان متتابعة بفعل التقييدات التجارية المتصاعدة وتكاليف الطاقة القياسية والتخلف التكنولوجي أمام أمريكا والصين، مما يضع القارة العجوز أمام تحدي إعادة اختراع نموذجها الاقتصادي الجذري.',
+    summaryEn: 'Europe\'s golden post-war growth rested on three pillars: open global trade, cheap energy-dependent manufacturing, and a stable international security umbrella. Today, escalating trade barriers, soaring energy costs, and a widening technological gap with the US and China threaten this model, forcing the continent into an urgent reckoning to reinvent its economic foundation.',
+    excerptAr: 'تحليل اقتصادي استراتيجي: كيف تلاشت ركائز النمو الأوروبي الذهبية، ولماذا تواجه القارة العجوز مأزق الفجوة التكنولوجية وارتفاع تكاليف الطاقة والحمائية العالمية؟',
+    excerptEn: 'Strategic Economic Analysis: The structural erosion of Europe\'s competitive pillars and the continent\'s battle against energy inflation, deindustrialization, and tech lag.',
+    author: {
+      nameAr: 'معن البرازي — قسم الدراسات الاقتصادية (الورّاق)',
+      nameEn: 'Maan Barazy — Economic Research Desk (Al-Warraq)',
+      titleAr: 'مستشار التحليلات الاقتصادية والسيادية',
+      titleEn: 'Economic & Sovereign Analysis Advisor',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-06',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    views: 25600,
+    tags: [
+      'اقتصاد_أوروبا', 'المعجزة_الهادئة', 'أزمة_الطاقة', 'التنافسية_الأوروبية', 'ماريو_دراغي', 'التجارة_العالمية', 'الاتحاد_الأوروبي', 'معن_البرازي',
+      'EuropeanEconomy', 'QuietMiracle', 'EnergyCrisis', 'EUCompetitiveness', 'MarioDraghi', 'GlobalTrade'
+    ],
+    hashtags: ['EuropeanEconomyInCrisis', 'EndOfTheQuietMiracle', 'EUIndustryChallenge', 'AlwarraqEconomy'],
+    contentAr: `### نهاية "المعجزة الهادئة".. أوروبا وأزمة البحث عن نموذج جديد
+#### تحليل اقتصادي استراتيجي بقلم: معن البرازي — قسم الدراسات الاقتصادية (الورّاق نيوز)
+
+**تاريخ النشر والتوثيق:** 6 سبتمبر 2026  
+**المنصة:** Alwarraqnews.com  
+
+---
+
+عُقدت عقود النمو الأوروبي الذهبية في مرحلة ما بعد الحرب العالمية الثانية على ركائز ثلاث بدت حتمية وغير قابلة للكسر:
+1. **تجارة عالمية مفتوحة بلا قيود.**
+2. **صناعة متوسطة التكنولوجيا تعتمد على طاقة رخيصة ومستقرة.**
+3. **نظام عالمي مستقر تحتل فيه أوروبا موقع المرتاح تحت مظلة أمنية دولية.**
+
+اليوم، يقف هذا النموذج عند **مفترق طرق خطير**. إن التغيرات الهيكلية المتسارعة تسقط هذه الأركان متتابعة، لتضع القارة العجوز أمام واقع اقتصادي وسياسي لا يرحم؛ فالتقييدات التجارية المتصاعدة التي تجاوزت **2,500 تقييد عالمي** خلال العام الماضي، والارتفاع القياسي في تكاليف الطاقة مقارنة بالمنافسين الدوليين، إلى جانب تحول الثقل التكنولوجي الحاسم نحو الذكاء الاصطناعي، الحوسبة السحابية، أشباه الموصلات، والتقنيات الرقمية المتقدمة، كل ذلك يكشف عمق **الفجوة التنافسية الهيكلية** التي تعاني منها أوروبا.
+
+---
+
+### أولاً: تآكل الركائز الثلاث للنموذج الأوروبي
+
+| الركيزة التقليدية | التحول الهيكلي والصدمة الراهنة | النتيجة الاقتصادية على الاتحاد الأوروبي |
+| :--- | :--- | :--- |
+| **التجارة العالمية المفتوحة** | صعود موجات الحمائية والنزاعات الجمركية وتجاوز الحواجز التجارية 2,500 إجراء سنوياً. | انكماش حصة الصادرات الصناعية الأوروبية وانكشاف سلاسل الإمداد العالمية. |
+| **الطاقة الرخيصة (الغاز والنفط الروسي سابقاً)** | انقطاع الإمدادات الرخيصة وارتفاع تكلفة الكهرباء والغاز لمستويات تفوق نظيرتها الأمريكية بـ 3 إلى 4 أضعاف. | تآكل هوامش الربحية في الصناعات الثقيلة (الكيميائية، السيارات، المعادن) ونزوح الاستثمارات. |
+| **المظلة الأمنية والاستقرار الجيوسياسي** | تفجر الحرب في شرق أوروبا، تصاعد التوترات الجيوسياسية، والضغط لرفع الإنفاق الدفاعي إلى 2.5%–3% من الناتج المحلي. | ضغوط مالية خانقة على الموازنات العامة وتقليص مخصصات الابتكار والتحفيز الصناعي. |
+
+---
+
+### ثانياً: فجوة الإنتاجية والابتكار التكنولوجي
+
+تكشف البيانات المقارنة بين الاتحاد الأوروبي والولايات المتحدة والصين عن اتساع فجوة الإنتاجية والاستثمار الرأسمالي:
+* **الهيمنة الرقمية والذكاء الاصطناعي:** تتركز أكثر من 70% من الاستثمارات العالمية في نماذج الذكاء الاصطناعي التوليدي والبنية التحتية للحوسبة السحابية في الشركات الأمريكية والصينية، بينما تكتفي أوروبا بدور المشرّع والمنظّم (*Regulatory Power*) دون خلق أبطال صناعيين عالميين.
+* **تراجع الإنفاق على البحث والتطوير (R&D):** يقل متوسط إنفاق دول الاتحاد الأوروبي على الابتكار بأكثر من 1.2% من الناتج المحلي مقارنة بنظيراتها في أمريكا وشرق آسيا، مما يهدد بتحويل الاقتصاد الأوروبي إلى مستهلك تكنولوجي خاضع لتبعيات خارجية.
+
+---
+
+### ثالثاً: تقرير دراغي ومأزق الإصلاح الهيكلي
+
+جاء تقرير ماريو دراغي (رئيس البنك المركزي الأوروبي ورئيس وزراء إيطاليا الأسبق) ليدق ناقوس الخطر الأخير:
+1. **الحاجة لتمويل هائل:** يتطلب سد الفجوة التنافسية الأوروبية ضخ استثمارات إضافية تتراوح بين **750 إلى 800 مليار يورو سنوياً** (ما يعادل 4.5% إلى 5% من الناتج الإجمالي للاتحاد).
+2. **عقبة الديون المشتركة:** يواجه مقترح إصدار سندات دين أوروبية موحدة معارضة شرسة من دول "الشمال المالي المتقشف" (ألمانيا، هولندا، النمسا)، مما يهدد بتعطيل أي خطة إنقاذ شجاعة.
+3. **البيروقراطية والتفتت التنظيمي:** يعاني السوق الأوروبي الموحد من تجزئة قطاع الخدمات والاتصالات وأسواق رأس المال، مما يعيق الشركات الناشئة عن التوسع ويجبرها على الهجرة إلى أسواق وول ستريت.
+
+---
+
+### الخلاصة والآفاق الاستراتيجية
+
+لم تعد أزمة أوروبا مجرد تباطؤ دوري في الدورة الاقتصادية، بل هي **أزمة نموذج وجودي**. إذا لم ينجح الاتحاد الأوروبي في:
+* خفض تكاليف الطاقة عبر الاستثمار الجريء في مصادر الطاقة النظيفة والنووية والشبكات المترابطة،
+* تحرير أسواق رأس المال وتوحيد المنظومة التمويلية للابتكار،
+* وصياغة سياسة صناعية مشتركة توازن بين السيادة الاستراتيجية وحرية الأسواق،
+
+فإن القارة العجوز ستواجه مساراً حتمياً نحو **الركود التنافسي المزمن والتهميش في النظام الاقتصادي العالمي الجديد**.`,
+    contentEn: `### The End of the "Quiet Miracle": Europe and the Crisis of Finding a New Economic Model
+#### Strategic Economic Analysis by Maan Barazy — Economic Research Desk (Al-Warraq News)
+
+**Publication Date:** September 6, 2026  
+**Platform:** Alwarraqnews.com  
+
+---
+
+Europe's post-WWII golden era of prosperity rested on three pillars deemed unshakeable:
+1. **Frictionless global trade and open export markets.**
+2. **Mid-tech manufacturing fueled by inexpensive, stable energy.**
+3. **A stable international geopolitical order guaranteed by external security umbrellas.**
+
+Today, this foundational paradigm stands at an existential breaking point. Structural global shocks are toppling these pillars simultaneously:
+* Escalating global trade restrictions exceeding **2,500 non-tariff barriers** annually.
+* Structural energy cost inflation that leaves European industry paying 3 to 4 times more for power and gas than US peers.
+* The decisive global shift of economic value creation toward Generative AI, cloud clusters, advanced semiconductors, and deep-tech ecosystems.
+
+---
+
+### 1. Structural Breakdown of the European Model
+
+| Core Historic Pillar | The Structural Disruption | Strategic Impact on the EU |
+| :--- | :--- | :--- |
+| **Open Global Trade** | Surge in unilateral tariffs, trade friction, and industrial subsidies abroad. | Declining export market shares and severe supply chain vulnerabilities. |
+| **Cheap Energy Inputs** | Loss of cheap pipeline gas and structural parity deficits. | Deindustrialization pressures across chemical, automotive, and metallurgical giants. |
+| **Geopolitical Stability** | War in Eastern Europe and defense spending hikes to 2.5%–3.0% of GDP. | Escalating fiscal deficits and reallocation of public funds away from innovation. |
+
+---
+
+### 2. The Productivity and Technology Deficit
+
+* **Digital Ecosystems & AI:** Over 70% of global venture funding and model training infrastructure is concentrated in the US and China. The EU remains primarily a regulatory authority rather than a producer of technological leaders.
+* **R&D Underinvestment:** The EU under-invests in research and development relative to the US by more than 1.2% of GDP annually.
+
+---
+
+### 3. The Draghi Imperative and Reform Bottlenecks
+
+Mario Draghi's landmark competitiveness blueprint underscores an urgent reality:
+* **Massive Capital Injection:** The EU requires **€750–€800 billion in additional annual investments** (~4.5% to 5% of EU GDP).
+* **Joint Debt Impasse:** Frugal Northern European capitals continue to resist mutualized sovereign debt instruments.
+* **Fragmented Single Market:** Disjointed financial and capital markets stifle high-growth tech firms, forcing them to seek capitalization in the US.
+
+---
+
+### Conclusion & Strategic Outlook
+
+Europe's dilemma is not merely a cyclical recession; it is an **existential paradigm exhaustion**. Without unified capital markets, aggressive clean-power scale, and coordinated industrial strategy, the continent risks sliding into structural secular stagnation and peripheral irrelevance in the emerging multipolar economic order.`
+  },
+  {
+    id: 'ft-israeli-military-religious-zionism-shift-2026',
+    slug: 'تقرير-فايننشال-تايمز-التحول-البنيوي-في-الجيش-الإسرائيلي-صعود-الصهيونية-الدينية-والاستيطان-2026',
+    focusKeyword: 'فايننشال-تايمز-الجيش-الإسرائيلي-الصهيونية-الدينية-الحرداليم-الاستيطان-ياغيل-ليفي-أبراهام-زربيف-غزة-الاحتياط',
+    category: 'translations',
+    categories: ['translations', 'international', 'war-room', 'investigations'],
+    titleAr: 'فايننشال تايمز: التحول البنيوي داخل الجيش الإسرائيلي.. صعود الصهيونية الدينية وانتقال خطاب الاستيطان والانتقام إلى قلب المؤسسة العسكرية',
+    titleEn: 'Financial Times: The Structural Transformation in the IDF – The Rise of Religious Zionism & Settler-Vengeance Ideology',
+    summaryAr: 'تقرير استقصائي مترجم عن "فايننشال تايمز": رصد التحول الهيكلي العميق داخل الجيش الإسرائيلي مع صعود تيار الصهيونية الدينية (الحرداليم) وسيطرته على 34.8% من طلاب ضباط المشاة و31% من قوات الاحتياط، وانتقال خطاب الاستيطان والانتقام واستدعاء نصوص "عماليق" من الهامش المتطرف إلى صلب عقيدة القيادة العسكرية.',
+    summaryEn: 'Financial Times investigation: Dissecting the structural shift within the Israeli military as Religious Zionism and Hardal ideological networks capture 34.8% of infantry officer cadets and 31% of reservists, institutionalizing settler expansionism, religious warfare framing, and biblical vengeance doctrines at the core of command.',
+    excerptAr: 'ترجمة خاصة: بالأرقام والشهادات الميدانية.. كيف غيّر تيار الصهيونية الدينية ثقافة وضباط الجيش الإسرائيلي من النخبة العلمانية إلى عقيدة الاستيطان والانتقام؟',
+    excerptEn: 'Special FT Translation: Field telemetry and statistical analysis on how religious nationalism systematically redefined the Israeli military leadership and operational ethics.',
+    author: {
+      nameAr: 'قسم الترجمات والدراسات الدولية — فايننشال تايمز / الورّاق',
+      nameEn: 'International Translations Desk — Financial Times / Alwarraq',
+      titleAr: 'ترجمات وتحليلات الصحافة الدولية المتخصصة',
+      titleEn: 'International Strategic Press & Intelligence Translations',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-06',
+    readTimeAr: '٨ دقائق قراءة',
+    readTimeEn: '8 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    views: 38700,
+    tags: [
+      'فايننشال_تايمز', 'ترجمات_الورّاق', 'الجيش_الإسرائيلي', 'الصهيونية_الدينية', 'الحرداليم', 'حرب_غزة', 'الاستيطان', 'ياغيل_ليفي', 'ضباط_المشاة',
+      'FinancialTimes', 'Translations', 'IDF', 'ReligiousZionism', 'Hardal', 'GazaWar', 'SettlerMovement', 'MilitarySociology', 'IsraelPolitics'
+    ],
+    hashtags: ['FinancialTimesInvestigation', 'IDFStructuralShift', 'ReligiousZionismInIDF', 'SettlerIdeology', 'AlwarraqTranslations'],
+    contentAr: `### فايننشال تايمز: التحول البنيوي داخل الجيش الإسرائيلي
+## صعود الصهيونية الدينية وانتقال خطاب الاستيطان والانتقام من الهامش إلى قلب المؤسسة العسكرية
+
+**المصدر:** صحيفة فايننشال تايمز البريطانية (Financial Times)  
+**الترجمة والتحرير التوثيقي:** قسم الترجمات والدراسات الدولية — Alwarraqnews.com  
+**تاريخ النشر:** 6 سبتمبر 2026  
+
+---
+
+يرصد هذا التقرير الاستقصائي المطول من صحيفة **"فايننشال تايمز"** تحولاً بنيوياً عميقاً يشهده الجيش الإسرائيلي، يتمثل في الصعود المتسارع لنفوذ **الصهيونية الدينية** وانتقال خطاب الاستيطان والانتقام العقائدي من الهوامش المتطرفة إلى قلب المؤسسة العسكرية ومراكز اتخاذ القرار الميداني.
+
+---
+
+### أولاً: شهادات الميدان وانقلاب لغة المعركة
+
+* **حرب دينية باسم الله:**  
+  ينقل التقرير عن ضابط احتياط خدم نحو عقدين في الجيش الإسرائيلي أنه سمع خلال حرب غزة، **«عشرات المرات»**، جنوداً وضباطاً كباراً يصفون القتال بأنه **"حرب دينية تُخاض باسم الله"**. ويؤكد الضابط أن مثل هذا الخطاب العقائدي كان يُعد من المحرمات القاطعة داخل الجيش قبل عشرين عاماً، لكنه أصبح اليوم مقبولاً وقابلاً للتداول والترويج حتى على أرفع المستويات القيادية.
+
+* **الحاخامات بديلاً عن الضباط في التوجيه المعنوي:**  
+  يكشف التقرير عن تحول جوهري في سلطة التوجيه داخل الوحدات العسكرية؛ إذ بات الحاخامات يقدمون خطابات التحفيز والتعبئة العقائدية للجنود قبل خوض المعارك، بدلاً من اقتصار هذه المهمة التاريخية على القادة العسكريين والضباط الميدانيين.
+
+---
+
+### ثانياً: استراتيجية "الحرداليم" والأكاديميات التحضيرية
+
+بحسب خبير العلاقات المدنية–العسكرية الإسرائيلي البارز **ياغيل ليفي (Yagil Levy)**، لم يكن صعود الصهيونية الدينية عفوياً بالكامل، بل جاء نتاج خطة منهجية:
+
+1. **مشروع ما بعد انسحاب غزة 2005:**  
+   عمل جناح **«الحرداليم»** (وهو التيار القومي الديني الأكثر تشدداً وتزمتاً) طوال سنوات على زيادة نفوذه وحضوره داخل الجيش، خصوصاً بعد صدمة الانسحاب الإسرائيلي وتفكيك مستوطنات قطاع غزة عام 2005، لضمان عدم تكرار إخلاء أي مستوطنة مستقبلاً.
+
+2. **شبكة الأكاديميات العسكرية التحضيرية (المخيخوت):**  
+   كانت الأداة التنفيذية الرئيسية لهذا المشروع هي **شبكة الأكاديميات التحضيرية السابقة للخدمة العسكرية**. استُخدمت هذه المؤسسات التعليمية لغرس رؤية دينية قومية مشبعة بالأيديولوجيا لدى الشباب، وتشجيع التحاقهم المكثف بالوحدات القتالية المتقدمة ومسارات إعداد الضباط، تلتها ممارسة البيئة الدينية القومية لضغوط منظمة لدعم ترقيتهم في سلك القيادة.
+
+3. **الوصول إلى قمة هرم القيادة:**  
+   لم تعد النتيجة مقتصرة على زيادة أعداد الجنود المتدينين، بل امتدت لتشمل مواقع قيادية بالغة التأثير في هيئة الأركان والعمليات، ومن أبرز هذه الشخصيات:
+   * **آفي بلوط (Avi Bluth):** قائد العمليات الإسرائيلية والمنطقة الوسطى في الضفة الغربية.
+   * **دادو بار خليفة (Dado Bar Khalifa):** رئيس مديرية القوى البشرية في الجيش الإسرائيلي.
+
+---
+
+### ثالثاً: تسليح الأيديولوجيا وظاهرة "الاستيطان والانتقام"
+
+* **جنود الاحتياط كناشطين سياسيين:**  
+  يؤكد رئيس منظمة **«كسر الصمت» (Breaking the Silence)** أن حرب غزة كانت أول حرب يخوضها جنود الاحتياط بصفتهم **ناشطين سياسيين ومستوطنين عقائديين في آن واحد**. فقد دخل عناصر الاحتياط أرض المعركة وهم يحملون الأعلام البرتقالية والشعارات التي ترمز إلى مستوطنات "غوش قطيف" التي أُخليت عام 2005، وجلب بعضهم عبوات طلاء لكتابة شعارات استيطانية وعنصرية على جدران المنازل والمنشآت.
+
+* **«حتى النهاية.. حتى الاستيطان»:**  
+  يرتبط هذا السلوك بهدف استراتيجي يتجاوز القضاء على المقاومة إلى إعادة إدراج استيطان غزة ضمن الأفق السياسي والعسكري للحرب. ويظهر ذلك صراحة في مقاطع الفيديو التي بثها الحاخام والجندي الاحتياطي **أبراهام زربيف (Abraham Zerbib)**، الذي أعلن وسط ركام غزة: *«حتى النهاية، حتى النصر، حتى الاستيطان»*.
+
+* **تحول الهدم إلى ثقافة تكريم رسمية:**  
+  زعم زربيف أنه كان يهدم أثناء عمله سائق جرافة عسكرية نحو **50 مبنى ومنزلاً أسبوعياً**. وتحولت شهرته إلى ظاهرة ثقافية في أوساط اليمين؛ حيث صار مؤيدوه يستخدمون اسمه كفعل مرادف لـ**«التسوية بالأرض»**. وعلى الرغم من اعتراضات قوى المعارضة، كرمته الحكومة اليمينية رسمياً في مراسم ما يسمى عيد الاستقلال عام 2026. وتحمل هذه الخطوة دلالة قاطعة على أن نموذج الجندي الذي يمزج التدمير بالاستيطان والخطاب الديني قد انتقل من هامش المجتمع إلى المنصة الرسمية للدولة.
+
+---
+
+### رابعاً: البيانات الإحصائية والانقلاب الديموغرافي داخل الجيش
+
+تظهر الدراسات السوسيولوجية تحولاً جذرياً في التوازن البشري بين العلمانيين والتيار القومي الديني:
+
+| الفئة الديموغرافية | النسبة من المجتمع الإسرائيلي | النسبة من طلاب ضباط المشاة (2018) | النسبة من قوات الاحتياط (2025) |
+| :--- | :--- | :--- | :--- |
+| **القوميون الدينيون (Religious Zionists)** | **15%** | **34.8%** *(مقارنة بـ 2.5% فقط عام 1990)* | **31.0%** *(أكثر من ضعفي وزنهم السكاني)* |
+| **العلمانيون (Secular Jews)** | **41%** | في تراجع مستمر | **33.0%** *(أقل بكثير من وزنهم السكاني)* |
+
+يوضح هذا الجدول أن حضور القوميين الدينيين في مسار قيادة المشاة تجاوز ضعفي وزنهم الديموغرافي، في حين يتراجع حضور العلمانيين في خدمة الاحتياط؛ وهي العملية التي تعمل بمرور الوقت على **تغيير ثقافة الوحدات القتالية وتجفيف مخزون المرشحين العلمانيين للترقية العليا**.
+
+---
+
+### خامساً: عقيدة "أرض إسرائيل" وشرعنة خطاب "عماليق"
+
+* **القتال كواجب عقائدي:**  
+  تنطلق الصهيونية الدينية من الإيمان بوجود التزام ديني مطلق باستيطان كامل «أرض إسرائيل الكبرى»، وهو مفهوم يشمل حكماً الضفة الغربية وقطاع غزة. دخول هذا التصور إلى العقيدة العسكرية يجعل السيطرة على الأرض وتهجير سكانها والاستيطان فيها جزءاً لا يتجزأ من المعنى الوجودي للقتال، وليس مجرد قرار سياسي تكتيكي تتخذه الحكومة.
+
+* **تعميم «أخلاق الانتقام»:**  
+  يشير ياغيل ليفي إلى أن التداعيات الأخطر تكمن في فرض **«أخلاق الانتقام»** داخل المؤسسة العسكرية، مستدلاً بخطابات الحاخامات والقادة العسكريين وفيديوهات الجنود وهم يبتهجون بتدمير الأحياء السكنية.
+
+* **استدعاء تشبيه "عماليق":**  
+  تمثل الأخطر في استخدام التشبيه التوراتي لسكان غزة بـ**«عماليق»**؛ العدو التاريخي الذي يرتبط في القراءة الدينية بالأمر بإبادة الرجال والنساء والأطفال. ويرى ليفي أن هذا التوظيف الديني ساعد بشكل مباشر على شرعنة القناعة السائدة بين الجنود بأنه *«لا يوجد مدنيون أبرياء في غزة»*.
+
+---
+
+### الخلاصة والتقدير الاستراتيجي
+
+1. **تآكل الاحتكار العلماني:**  
+   التحول الأبرز ليس مجرد أن الجيش الإسرائيلي "أصبح جيشاً دينياً" بصفة مطلقة ومكتملة، بل أن **احتكاره التاريخي من قبل النخبة العلمانية الليبرالية يتآكل بصورة متسارعة**، لصالح كتلة بشرية وتنظيمية متماسكة يبنيها التيار القومي الديني داخل الوحدات القتالية، سلاح المشاة، وقوات الاحتياط.
+
+2. **إعادة تشكيل أداة القوة:**  
+   لم تعد الصهيونية الدينية تكتفي بالتأثير السياسي على قرارات الائتلاف الحكومي بشأن الحرب والاستيطان؛ بل باتت **تعيد تشكيل الأداة العسكرية التي تنفذ تلك القرارات على الأرض**، مما يجعل سياسات الاستيطان، التهجير، والانتقام أكثر رسوخاً ومناعة من تقلبات أي حكومة سياسية قادمة.`,
+    contentEn: `### Financial Times: The Structural Transformation in the IDF
+## The Rise of Religious Zionism: How Settler-Vengeance Ideology Captured the Military Core
+
+**Source:** The Financial Times  
+**Documentary Translation & Analysis:** International Studies Desk — Alwarraqnews.com  
+**Date:** September 6, 2026  
+
+---
+
+This investigative report by the **Financial Times** charts a profound structural transformation within the Israel Defense Forces (IDF): the rapid institutional ascent of **Religious Zionism** and the migration of settler-expansionist and religious vengeance rhetoric from the radical fringe directly into the core of military command.
+
+---
+
+### 1. Battlefield Telemetry: Redefining Warfare in Divine Terms
+
+* **Holy War Framing:**  
+  A reservist officer with two decades of service recounted hearing senior commanders and soldiers in Gaza frame the fighting **dozens of times** as a *"holy war fought in God's name."* Such rhetoric, strictly taboo twenty years ago, has become normalized and articulated at senior operational levels.
+* **Rabbinical Pre-Battle Exhortation:**  
+  Rabbis increasingly deliver ideological battle exhortations to combat units prior to engagement, supplanting traditional military commanders in providing operational and moral orientation.
+
+---
+
+### 2. The Hardal Strategy & Pre-Military Academies (Mechinot)
+
+According to prominent military sociologist **Yagil Levy**, the ascent of religious nationalism was a deliberate structural project:
+
+1. **Post-2005 Gaza Disengagement Strategy:**  
+   Following the trauma of evacuating settlements in 2005, the hardline **Hardal** faction systematically mobilized to expand its footprint inside the armed forces to preclude future territorial surrenders.
+2. **Pre-Military Prep Academies:**  
+   Networks of religious-nationalist preparatory schools channeled motivated religious youth into elite combat brigades and officer training pipelines, supported by community-wide promotion lobbying.
+3. **Ascent to Senior Command:**  
+   Religious nationalists now hold pivotal posts, including:
+   * **Avi Bluth:** Head of IDF Central Command (West Bank operations).
+   * **Dado Bar Khalifa:** Head of the IDF Personnel Directorate.
+
+---
+
+### 3. Settler Activism & The Culture of Demolition
+
+* **Reservists as Political Activists:**  
+  The head of **Breaking the Silence** noted that Gaza was the first conflict where reservists deployed openly as political activists, flying orange flags symbolizing evacuated settlements and spray-painting territorial slogans.
+* **"Until Settlement" Doctrine:**  
+  Rabbi and reserve combat engineer **Abraham Zerbib** broadcasted from the rubble: *"Until the end, until victory, until settlement."*
+* **The "Zerbib" Demolition Cult:**  
+  Claiming to demolish ~50 structures weekly with armored bulldozers, Zerbib became a cultural icon on the right, his surname becoming a colloquial verb for flattening buildings. He was officially honored by the right-wing government at Independence Day ceremonies in 2026.
+
+---
+
+### 4. Demographic & Sociological Shift
+
+| Category | Share of Israeli Population | Share of Infantry Officer Cadets (2018) | Share of Reserve Forces (2025) |
+| :--- | :--- | :--- | :--- |
+| **Religious Nationalists** | **15%** | **34.8%** *(up from 2.5% in 1990)* | **31.0%** *(>2x demographic weight)* |
+| **Secular Israelis** | **41%** | Progressively Declining | **33.0%** *(disproportionately low)* |
+
+The data proves that religious nationalists hold more than double their demographic proportion in combat officer tracks, while secular participation in reserves wanes, fundamentally reshaping unit culture and the pool of future generals.
+
+---
+
+### 5. "Greater Israel" Doctrine & The "Amalek" Justification
+
+* **Theological Territorial Imperative:**  
+  Religious Zionism treats the settlement of the West Bank and Gaza as a divine obligation rather than a tactical government policy.
+* **Institutionalizing Vengeance:**  
+  Levy argues this paradigm generalises an "ethic of vengeance" backed by rabbinical decrees.
+* **The "Amalek" Biblical Analogy:**  
+  Invoking the biblical command to eradicate the Amalekites legitimized the premise that *"there are no innocent civilians in Gaza."*
+
+---
+
+### Strategic Assessment & Conclusion
+
+1. **Erosion of Secular Monopoly:** The IDF is no longer exclusively governed by its historic secular-liberal elite; a disciplined religious-nationalist cadre now dominates combat leadership and reserve mobilization.
+2. **Reshaping the Instrument of State Power:** Religious Zionism is no longer merely influencing government coalitions; it has fundamentally reshaped the armed force that executes state policy, embedding settler and vengeance dynamics beyond the lifespan of any single political government.`
+  },
+  {
+    id: 'war-room-ali-al-taher-hill-border-buffer-zone-2026',
+    slug: 'غرفة-العمليات-غموض-تلة-علي-الطاهر-وتكتيك-المنطقة-العازلة-يتحديان-الوساطة-الأمريكية-2026',
+    focusKeyword: 'تلة-علي-الطاهر-النبطية-إقليم-التفاح-المنطقة-العازلة-غرفة-العمليات-حزب-الله-الجيش-اللبناني-اليونيفيل-الوساطة-الأمريكية',
+    category: 'war-room',
+    categories: ['war-room', 'lebanon', 'security', 'exclusives', 'middle-east'],
+    titleAr: 'غرفة العمليات: غموض ميداني وتجريف للحدود.. معركة تلة "علي الطاهر" وتكتيك المنطقة العازلة يتحديان الوساطة الأمريكية',
+    titleEn: 'War Room: Battlefield Ambiguity & Border Bulldozing – The Ali Al-Taher Hill Battle and the De Facto Buffer Zone Challenge US Mediation',
+    summaryAr: 'تقرير عسكري واستراتيجي من غرفة العمليات في بيروت: تضارب الأنباء حول السيطرة على موقع "تلة علي الطاهر" الاستراتيجي المشرف على النبطية وإقليم التفاح، وحساسية التقاطع مع قنوات الاتصال الأمريكية–الإيرانية، بالتوازي مع سياسة الأرض المحروقة الإسرائيلية لفرض منطقة عازلة (No Man\'s Land) تسابق مفاوضات وقف إطلاق النار وتعيق انتشار الجيش اللبناني.',
+    summaryEn: 'Military & Strategic Intelligence from the Beirut War Room: Conflicting battlefield claims over the strategic Ali Al-Taher hill overlooking Nabatieh and Iqlim al-Tuffah, entangled with US-Tehran backchannel sensitivities, alongside an aggressive scorched-earth bulldozing campaign creating a de facto border buffer zone ("No Man’s Land") challenging international diplomacy and UN resolution enforcement.',
+    excerptAr: 'غرفة العمليات — بيروت: صراع السيطرة على مرتفعات علي الطاهر، استراتيجية تجريف القرى الحدودية، ومأزق الدبلوماسية الدولية أمام فرض الوقائع الجغرافية بالقوة.',
+    excerptEn: 'War Room Beirut: Tactical analysis of the battle for Ali Al-Taher heights, de facto border depopulation, and the diplomatic impasse confronting US mediation.',
+    author: {
+      nameAr: 'غرفة العمليات والمتابعة العسكرية — Alwarraqnews.com',
+      nameEn: 'War Room Military Intelligence — Alwarraqnews.com',
+      titleAr: 'التحليل التكتيكي والأمن القومي',
+      titleEn: 'Tactical Analysis & National Security Desk',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-06',
+    readTimeAr: '٦ دقائق قراءة',
+    readTimeEn: '6 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 29400,
+    tags: [
+      'غرفة_العمليات', 'جنوب_لبنان', 'تلة_علي_الطاهر', 'النبطية', 'إقليم_التفاح', 'المنطقة_العازلة', 'الوساطة_الأمريكية', 'الجيش_اللبناني', 'اليونيفيل', 'الأرض_المحروقة',
+      'WarRoom', 'SouthLebanon', 'AliAlTaher', 'Nabatieh', 'BufferZone', 'USMediation', 'LAF', 'UNIFIL', 'ScorchedEarth', 'Hezbollah'
+    ],
+    hashtags: ['WarRoomLebanon', 'AliAlTaherHill', 'BorderBufferZone', 'SouthLebanonConflict', 'AlwarraqIntelligence'],
+    contentAr: `### غموض ميداني وتجريف للحدود: غموض تلة "علي الطاهر" وتكتيك المنطقة العازلة يتحديان الوساطة الأمريكية
+#### تقرير خاص من غرفة العمليات والتحليل العسكري (War Room) — بيروت
+
+**المنصة:** Alwarraqnews.com  
+**تاريخ الرصد والتوثيق:** 6 سبتمبر 2026  
+
+---
+
+تتداخل الضبابية العسكرية مع الضغوط الدبلوماسية المعقدة في جنوب لبنان، وسط تضارب الأنباء بشأن السيطرة على موقع **"تلة علي الطاهر" الاستراتيجي** المطل على منطقتي النبطية وإقليم التفاح.
+
+وفي الوقت الذي تدور فيه تسريبات استخباراتية عن أبعاد إقليمية للعملية، يتسارع التدمير الميداني للقرى الحدودية، ما يفرض واقعاً ميدانياً جديداً يضع المساعي الدبلوماسية الدولية والوساطة الأمريكية على المحك الصعب.
+
+---
+
+### أولاً: معركة تلة "علي الطاهر": واقع ميداني وتقاطع إقليمي
+
+تسعى القوات الإسرائيلية للسيطرة العملياتية على مرتفعات علي الطاهر—والتي تضم مجمعاً أنفاقياً متطوراً ومراكز قيادة وسيطرة أنشئت على مدى سنوات—ضمن مساعٍ لتفجير وتفكيك البنية التحتية العسكرية بالكامل.
+
+| محور الاشتباك | الوقائع الميدانية والتكتيكية | الأبعاد الإقليمية والعملياتية |
+| :--- | :--- | :--- |
+| **التضارب الميداني** | يطرح الجانب الإسرائيلي بيانات تؤكد السيطرة الميدانية والعملياتية على التلة. | يتجنب حزب الله إعطاء تأكيدات حاسمة للرواية الإسرائيلية، متبعاً تكتيك التعتيم الأمني الصارم (*Operational Security - OpSec*) لحماية تحركاته وخلاياه التكتيكية المتبقية. |
+| **البعد الإقليمي والسياسي** | اكتسب التقدم نحو التلة حساسية فائقة عقب تقارير تناولت أوامر بتخفيف وتيرة العمليات العسكرية المباشرة. | تجنب عرقلة الاتصالات غير المباشرة الجارية بين واشنطن وطهران، لا سيما مع ورود أنباء وتقارير استخباراتية أفادت بوجود عناصر ومستشارين ميدانيين تابعين للحرس الثوري الإيراني برفقة مقاتلي المنطقة. |
+
+---
+
+### ثانياً: سياسة الأرض المحروقة: بناء "منطقة عازلة" بحكم الأمر الواقع
+
+بالتوازي مع العمليات المحدودة في المرتفعات والتلال الحاكمة، تشهد البلدات والقرى الحدودية في الحافة الأمامية موجة غير مسبوقة من التفجيرات الهندسية المنسقة لتدمير الأحياء السكنية والبنى التحتية بالكامل:
+
+* **تدمير المكون السكني والعمراني:**  
+  تشير القراءات الميدانية والمسوحات الجوية إلى أن عمليات التفجير والتجريف المتواصلة تهدف بشكل منهجي إلى تحويل الشريط الحدودي الجنوبي إلى **"منطقة جرداء وغير صالحة للحياة" (No Man's Land)**.
+
+* **الهدف التكتيكي والاستراتيجي:**  
+  إنهاء الخطوط الدفاعية الأولى لمنع أي إمكانية لإعادة الانتشار المستقبلي لعناصر حزب الله وسلاحه، وإيجاد **حزام أمني جغرافي بحكم الأمر الواقع (De Facto Buffer Zone)** يعوض عدم الوصول إلى اتفاقات سياسية ودبلوماسية مكتوبة تضمن تحييد الحدود وتأمين عودة سكان الشمال الإسرائيلي.
+
+---
+
+### ثالثاً: مأزق الدبلوماسية الأمريكية والمجتمع الدولي
+
+تضع هذه التطورات الميدانية المتسارعة المبادرات الدبلوماسية التي ترعاها الولايات المتحدة والشركاء الدوليون أمام تحديات جوهرية مأزومة:
+
+1. **تقويض أهداف القرارات الدولية:**  
+   تعتمد خطط التهدئة والتسوية الأمريكية المطروحة على فرض التهدئة ونشر **الجيش اللبناني (LAF)** والقوات الدولية (**اليونيفيل**) جنوب نهر الليطاني. غير أن القضاء الكامل على التجمعات السكنية، شبكات المياه، الكهرباء، والمرافق العامة يجعل من مهمة انتشار الجيش في بيئة مدمرة ومفرغة ديموغرافياً مهمة بالغة التعقيد، وتجعل الدبلوماسية لاهثة وراء الوقائع التدميرية على الأرض.
+
+2. **السباق مع القواعد الميدانية (Facts on the Ground):**  
+   تسعى العمليات العسكرية الإسرائيلية المتسارعة لخلق **مرجعية جغرافية وميدانية جديدة** قبل فرض أي وقف لإطلاق النار أو التوصل إلى مسودة تسوية رسمية، مما يقلص بصورة حادة قدرة المفاوضين الدوليين على تقديم ضمانات أمنية وسياسية متوازنة تقبل بها جميع الأطراف المعنية.`,
+    contentEn: `### War Room Intelligence: Ali Al-Taher Hill Ambiguity & Border Bulldozing
+#### Battlefield Dynamics and De Facto Buffer Zone Strategy Challenge US Diplomacy in South Lebanon
+
+**Location:** Beirut — South Lebanon Front  
+**Publishing Platform:** Alwarraqnews.com (War Room Military Desk)  
+**Date:** September 6, 2026  
+
+---
+
+Military ambiguity intersects with severe diplomatic friction in South Lebanon amid conflicting battlefield claims over the strategic **Ali Al-Taher hill**, which overlooks Nabatieh and Iqlim al-Tuffah.
+
+Concurrently with leaks regarding sensitive regional dynamics, an aggressive scorched-earth engineering campaign along the border is establishing a new geographic reality, severely straining US and international mediation efforts.
+
+---
+
+### 1. The Battle for Ali Al-Taher Hill: Tactical Grid & Regional Overlay
+
+Israeli ground units are attempting operational control over the Ali Al-Taher heights—home to a fortified subterranean tunnel network and multi-tiered command nodes constructed over years—aiming for complete structural demolition.
+
+| Operational Dimension | Tactical Field Dynamics | Regional Intelligence Context |
+| :--- | :--- | :--- |
+| **Conflicting Claims** | Israeli military channels announce operational capture of the heights. | Hezbollah maintains strict Operational Security (OpSec), withholding formal confirmation to shield tactical maneuver teams and ambushes. |
+| **Regional Sensitivities** | The advance acquired elevated sensitivity following reports of operational throttling orders. | Avoiding interference with indirect Washington-Tehran channels, amidst intelligence reports alleging the presence of IRGC field advisors alongside local tactical units. |
+
+---
+
+### 2. Scorched Earth Policy: Engineering a De Facto Buffer Zone
+
+Parallel to highland engagements, forward border villages are undergoing systematic, heavy engineering demolitions:
+
+* **Eradication of Residential Fabric:**  
+  Aerial surveillance and battlefield telemetry confirm systematic detonations designed to transform the border strip into an uninhabitable **No Man’s Land**.
+* **Tactical Objective:**  
+  Obliterating forward defensive lines to prevent Hezbollah re-entrenchment, effectively engineering a **geographic buffer zone** that substitutes for formal written security treaties.
+
+---
+
+### 3. Diplomatic Impasse Confronting US Mediation
+
+These facts on the ground undermine core pillars of the US-led diplomatic track:
+
+1. **Undermining International Frameworks:**  
+   Diplomatic proposals hinge on deploying the **Lebanese Armed Forces (LAF)** and **UNIFIL** south of the Litani River. However, the comprehensive destruction of villages, utilities, and infrastructure complicates LAF logistics in depopulated, scorched terrain.
+2. **Racing Against Established Facts:**  
+   Rapid Israeli field engineering seeks to establish irreversible geographic baselines before any ceasefire is enacted, sharply curtailing mediators' capacity to craft balanced, sustainable security guarantees.`
+  },
+  {
+    id: 'editorial-fadi-khalaf-abl-report-denial-maan-barazy-2026',
+    slug: 'افتتاحية-الأمين-العام-لجمعية-مصارف-لبنان-الدكتور-فادي-خلف-خطاب-الهروب-إلى-الأمام-وإنكار-المسؤولية',
+    focusKeyword: 'جمعية-مصارف-لبنان-فادي-خلف-تقرير-آب-2026-المودعين-هندسات-مالية-إعادة-هيكلة-المصارف-معن-البرازي-الوراق-نيوز',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'opinion', 'lebanon', 'economy', 'banking', 'exclusives'],
+    titleAr: 'الافتتاحية التي كتبها الأمين العام لجمعية مصارف لبنان، الدكتور فادي خلف: خطاب الهروب إلى الأمام وإنكار المسؤولية',
+    titleEn: 'Editorial: The Discourse of ABL Secretary General Dr. Fadi Khalaf – Forward Flight, Denial, and the Protection of Zombie Banks',
+    summaryAr: 'بقلم رئيس التحرير معن البرازي (الورّاق نيوز) — تفكيك ونقد شامل لافتتاحية تقرير آب 2026 الصادرة عن جمعية مصارف لبنان: كشف محاولات التنصل من المسؤولية الفردية للبنوك تحت ذريعة "الأزمة النظامية"، واستخدام المودعين كدروع لحماية المؤسسات المفلسة، والمطالبة بالحصانة وتفصيل قوانين إعادة الهيكلة على مقاس المتسببين بالأزمة.',
+    summaryEn: 'By Editor-in-Chief Maan Barazy (Alwarraq News) — A forensic critique of the August 2026 editorial by the Secretary General of the Association of Banks in Lebanon (ABL), Dr. Fadi Khalaf: exposing systemic evasion, using depositors as shields to preserve insolvent zombie banks, and attempting to dictate restructuring laws to guarantee impunity.',
+    excerptAr: 'بقلم معن البرازي: تحت عباءة "الواقعية".. كيف تعيد جمعية المصارف إنتاج مغالطات الإنكار، ولماذا يمثل اشتراط الحصانة والمقايضة المبتذلة استمراراً لنهج تصفية حقوق المودعين؟',
+    excerptEn: 'By Maan Barazy: Dissecting the latest ABL editorial – how bank leadership weaponizes depositor rights to block genuine bail-in restructuring and regulatory accountability.',
+    author: {
+      nameAr: 'معن البرازي — رئيس التحرير (الورّاق نيوز)',
+      nameEn: 'Maan Barazy — Editor-in-Chief (Alwarraq News)',
+      titleAr: 'رئيس التحرير وكبير المحللين الماليين والاقتصاديين',
+      titleEn: 'Editor-in-Chief & Lead Financial Analyst',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-06',
+    readTimeAr: '٧ دقائق قراءة',
+    readTimeEn: '7 min read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    views: 22150,
+    tags: [
+      'جمعية_المصارف', 'فادي_خلف', 'معن_البرازي', 'افتتاحية_الورّاق', 'المودعين', 'إعادة_الهيكلة', 'الهندسات_المالية', 'القطاع_المصرفي', 'لبنان',
+      'ABL', 'FadiKhalaf', 'MaanBarazy', 'Editorial', 'Depositors', 'Restructuring', 'BailIn', 'BankingCrisis', 'LebanonFinance'
+    ],
+    hashtags: ['FadiKhalafCritique', 'ABLEditorialAnalysis', 'MaanBarazy', 'LebanonBankingAccountability', 'ZombieBanks'],
+    contentAr: `### الافتتاحية التي كتبها الأمين العام لجمعية مصارف لبنان، الدكتور فادي خلف:
+## خطاب الهروب إلى الأمام وإنكار المسؤولية
+
+**بقلم: معن البرازي — رئيس التحرير (Alwarraqnews.com)**  
+*تاريخ النشر: 6 سبتمبر 2026*  
+
+---
+
+تأتي افتتاحية تقرير آب 2026 بقلم الأمين العام لجمعية مصارف لبنان، الدكتور فادي خلف، كنموذج صارخ للخطاب التبريري الذي يمارسه القطاع المصرفي منذ اندلاع الأزمة المالية في عام 2019. 
+
+تحت عباءة **"الواقعية"** والدعوة إلى **"العقلانية والحلول العادلة"**، يحاول النص الالتفاف على جوهر المشكلة عبر إعادة إنتاج المغالطات نفسها التي أسهمت في إيصال الاقتصاد اللبناني والمودعين إلى هذه الكارثة الإنسانية والمالية.
+
+---
+
+### 1. تنصل مستمر من المسؤولية وإلقاء اللوم على "الأزمة النظامية"
+يصر الكاتب على توصيف ما حدث بأنه **"أزمة نظامية"** طالت الجميع، معتبراً أنه لا يجوز تحميل المصارف النتائج بمفردها. 
+
+* هذا الطرح يمثل **محاولة مكشوفة لتذويب المسؤولية الفردية للقطاع المصرفي**؛ فالمصارف ليست مجرد ضحية لسياسات الدولة ومصرف لبنان، بل كانت شريكاً أسيادياً ومستفيداً أولاً من هندسات مالية غير مسبوقة جنيت منها أرباح طائلة بالمليارات لسنوات طويلة.
+* إن ادعاء "الاستعداد لتحمل الحصة" يفرغ من مضمونه تماماً عندما يرافقه رفض دائم لأي آلية عملية تعيد هيكلة القطاع بجدية، أو تفرض الاقتطاع من رؤوس أموال أصحاب المصارف وكبار مساهميها (**Bail-in**).
+
+---
+
+### 2. المقايضة المبتذلة: "حماية المودع من حماية المصرف"
+يجسد النص المغالطة الفكرية والأخلاقية الأكثر خطورة بدعواه أن *"حماية المودعين واستمرارية المصارف السليمة ليستا هدفين متناقضين"*.
+
+* **الواقع الميداني يعكس خلاف ذلك تماماً:** إن حماية "النظام المصرفي الحالي" بنفس شخوصه ومجالس إداراته وكياناته جاءت حصراً عبر **استنزاف ودائع الناس وأرزاقهم** طوال ست سنوات من الأزمة والتعاميم المجحفة.
+* إن استخدام حقوق المودعين كـ **"درع بشري"** لمنع تصفية وحل المصارف غير المليئة والمفلسة عملياً ليس سوى محاولة يائسة للإبقاء على مؤسسات **"زومبي" (Zombie Banks)** تعتاش على اقتطاع القيمة الفعلية للودائع بأسعار صرف مجتزأة.
+
+---
+
+### 3. التباكي على الاستثمار واشتراط الحصانة القانونية
+يتحول النص إلى ممارسة الضغط والنفوذ التشريعي تحت ذريعة *"جذب المستثمرين"* و*"حماية الملكية الخاصة"*.
+
+* يتساءل الأمين العام عما إذا كانت الملكية مصانة والحدود محددة قبل وضع "دولار واحد"، في **إشارة ضمنية واضحة تهدف إلى عرقلة التعديلات القانونية الصارمة**.
+* الهدف هنا هو **تحصين كبار الماليين والمساهمين من المساءلة والمحاسبة القضائية**، وتحويل مفهوم "الإصلاح العادل" إلى مجرد **عفو عام مالي** عن التجاوزات والتحويلات المشبوهة السابقة.
+
+---
+
+### 4. إقحام المصارف في التشريع كحكم وخصم في آن واحد
+يطالب الكاتب بأن تكون المصارف حاضرة كطرف أساسي في رسم وتفصيل الآليات التطبيقية للعملية الهيكلية بدعوى **"الخبرة العملية الميدانية"**.
+
+* إن منح القطاع المصرفي مقعداً للتحكم في كيفية صياغة وتطبيق قوانين إعادة الهيكلة والانتظام المالي هو **تكريس فج لسياسة تأمين المصالح الضيقة وتعارض المصالح الصارخ**.
+* هذه الدعوة تعني عملياً **تفصيل القوانين واللوائح الرقابية على مقاس من تسببوا بالانهيار** لضمان نجاتهم من الخسائر.
+
+---
+
+### 5. الانفصال عن الواقع والتنصل التكتيكي المزدوج
+تُختتم هذه الافتتاحية بملاحظة تملصية تدعي أن المقال يعبر عن **"الرأي الشخصي"** للأمين العام ولا يلزم بالضرورة موقف الجمعية الرسمي!
+
+* إن استخدام منبر الجمعية الرسمي، وموقعها، ونشر الافتتاحية باسم صفتها المؤسسية ثم **التنصل منها أخلاقياً وقانونياً في هامش الصفحة**، يعكس حالة الفصام والتهرب من المسؤولية التي تعبر بدقة عن أداء جمعية المصارف والقطاع برمته.
+
+---
+
+### خاتمة الموقف التحليلي
+إن هذه الافتتاحية لا تقدم رؤية جادة للتعافي المالي بقدر ما تقدم **مكرراً بائساً لخطاب حماية أرباح وكبار مساهمي المصارف**.
+
+إن التعافي الحقيقي لا يبدأ بمهادنة المتسببين بالأزمة أو بإعادة تدوير المصارف العاجزة، بل بـ:
+1. **الاعتراف الصريح بالخسائر وحجم الانهيار**.
+2. **تصفية المؤسسات غير المليئة وحماية صغار المودعين فعلياً**.
+3. **تطبيق مبدأ المحاسبة وسيادة القانون واسترداد الأموال المهربة دون استثناءات أو حصانات**.`,
+    contentEn: `### Dissecting the Editorial by ABL Secretary General Dr. Fadi Khalaf:
+## The Discourse of Forward Flight, Denial, and the Protection of Zombie Banks
+
+**By: Maan Barazy — Editor-in-Chief (Alwarraqnews.com)**  
+*Published: September 6, 2026*  
+
+---
+
+The editorial in the August 2026 report penned by the Secretary General of the Association of Banks in Lebanon (ABL), Dr. Fadi Khalaf, represents an archetype of the deflectionist rhetoric practiced by the banking oligarchy since the onset of the financial meltdown in 2019.
+
+Under the guise of **"realism"** and appeals to **"rationality and fair solutions,"** the text attempts to circumvent the core issue by reproducing the exact fallacies that engineered the collapse of the Lebanese economy and the dispossession of depositors.
+
+---
+
+### 1. Continuous Evasion: Blaming the "Systemic Crisis"
+The author insists on framing the collapse as an abstract **"systemic crisis"** affecting all sectors, arguing that banks should not shoulder the burden alone.
+* This constitutes a transparent attempt to **dissolve the individual liability of commercial banks**. Banks were not mere victims of State and Central Bank policies; they were sovereign partners and primary beneficiaries of unprecedented financial engineering schemes that yielded billions in private dividends.
+* Assertions of "readiness to bear a fair share" become empty posturing when paired with systematic resistance to mandatory bank resolution frameworks and shareholder equity wipeouts (**Bail-in**).
+
+---
+
+### 2. The False Dichotomy: "Protecting Depositors Means Protecting the Bank"
+The text advances its most insidious fallacy by asserting that *"protecting depositors and preserving sound banks are not contradictory goals."*
+* **Field Reality Refutes This Claim:** Preserving the existing banking cartel with its historical shareholders has occurred exclusively through the **continuous depletion of depositor wealth** via harsh haircuts and coercive circulars.
+* Deploying depositor rights as a **"human shield"** to prevent the liquidation of insolvent **"zombie banks"** merely sustains entities that feed on eroding the real value of deposits.
+
+---
+
+### 3. Lamenting Capital Flight & Demanding Judicial Immunity
+The narrative transitions into legislative lobbying under the pretext of *"attracting investors"* and *"protecting private property."*
+* Inquiring whether property rights are guaranteed before committing "a single dollar" serves as a veiled effort to **block robust restructuring legislation**.
+* The objective is to **immunize senior bankers and major shareholders from judicial accountability**, mutating "reform" into a blanket financial amnesty.
+
+---
+
+### 4. Co-opting Legislation: The Perpetrator as Judge and Jury
+Dr. Khalaf demands that commercial banks sit at the drafting table of structural resolution mechanisms under the banner of **"operational expertise."**
+* Granting the banking lobby veto power over financial recovery legislation institutionalizes a flagrant **conflict of interest**.
+* It tailors restructuring bills to insulate the very actors responsible for the systemic insolvency.
+
+---
+
+### 5. Institutional Schizophrenia: The "Personal View" Disclaimer
+The editorial concludes with a disclaimer asserting that the article reflects the **"personal opinion"** of the Secretary General rather than the official position of the ABL.
+* Publishing an ideological defense through the Association's official periodical while disclaiming legal and ethical responsibility in the footnote exemplifies the **structural denial and evasion** characterizing the entire banking establishment.
+
+---
+
+### Conclusion
+True financial recovery will never emerge from appeasing insolvent actors or recycling failed balance sheets. Genuine restoration demands:
+1. **Unambiguous recognition of losses**.
+2. **Immediate resolution and liquidation of non-viable institutions**.
+3. **Strict application of the rule of law, forensic asset recovery, and unconditional accountability**.`
+  },
+  {
+    id: 'opinion-lebanese-banks-stable-joke-abl-maan-barazy-2026',
+    slug: 'المصارف-اللبنانية-مستقرة-ومتينة-نكتة-الموسم-من-جمعية-البنوك-معن-البرازي-2026',
+    focusKeyword: 'المصارف-اللبنانية-مستقرة-ومتينة-جمعية-مصارف-لبنان-نكتة-الموسم-قانون-التجارة-النقد-والتسليف-المودعين-معن-البرازي-الوراق-نيوز',
+    category: 'editor-desk',
+    categories: ['editor-desk', 'opinion', 'lebanon', 'banking', 'economy', 'exclusives'],
+    titleAr: 'المصارف اللبنانية «مستقرة ومتينة»: نكتة الموسم من جمعية البنوك!',
+    titleEn: 'Lebanese Banks "Stable and Solid": The Joke of the Season from the Association of Banks in Lebanon',
+    summaryAr: 'مقال رأي وموقف بقلم رئيس التحرير معن البرازي (الورّاق نيوز): رسالة حاسمة إلى جمعية المصارف رداً على بيانها الأخير حول "متانة واستقرار" القطاع المصرفي.. القوانين لا تُحترم بذكر أرقامها وتواريخ إقرارها في البيانات، بل بتطبيق بنودها وحماية أموال المودعين التي أُوتمنت عليها!',
+    summaryEn: 'Sharp opinion piece by Editor-in-Chief Maan Barazy (Alwarraq News): A direct message to the Association of Banks in Lebanon on their latest PR release claiming banking stability. Laws like the 1942 Code of Commerce and 1963 Monetary Law are respected by executing their fiduciary mandates, not by reciting their enactment dates while holding deposits hostage.',
+    excerptAr: 'معن البرازي: إذا كنت تعتقد أنك سمعت كل أشكال الكوميديا السوداء، فاقرأ بيان جمعية المصارف الأخير عن "استقرار ومتانة" البنوك في بلد محتجز الودائع منذ 6 سنوات!',
+    excerptEn: 'By Maan Barazy: Dark comedy from the Association of Banks in Lebanon claiming the banking sector is "stable and solid" amidst a multi-year deposit freeze.',
+    author: {
+      nameAr: 'معن البرازي — رئيس التحرير (الورّاق نيوز)',
+      nameEn: 'Maan Barazy — Editor-in-Chief (Alwarraq News)',
+      titleAr: 'رئيس التحرير وكبير المحللين الماليين والاقتصاديين',
+      titleEn: 'Editor-in-Chief & Lead Financial Analyst',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-06',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 26800,
+    tags: [
+      'جمعية_المصارف', 'معن_البرازي', 'رأي_الورّاق', 'أموال_المودعين', 'قانون_النقد_والتسليف', 'قانون_التجارة', 'الكوميديا_السوداء', 'القطاع_المصرفي', 'لبنان',
+      'ABL', 'MaanBarazy', 'Opinion', 'Depositors', 'CodeOfCommerce', 'MonetaryLaw', 'BankingCrisis', 'LebanonFinance', 'PublicAccountability'
+    ],
+    hashtags: ['BankingJokeOfTheYear', 'ABLRealityCheck', 'MaanBarazyOpinion', 'LebanonDepositorsRights', 'AlwarraqDesk'],
+    contentAr: `### المصارف اللبنانية «مستقرة ومتينة»: نكتة الموسم من جمعية البنوك!
+#### رسالة إلى الجمعية: القوانين لا تُحترم بذكر أرقامها وتواريخ إقرارها في البيانات، بل بتطبيق بَنودها وحماية أموال المودعين التي أُوتمنت عليها!
+
+**بقلم: معن البرازي — رئيس التحرير (Alwarraqnews.com)**  
+*تاريخ النشر: 6 سبتمبر 2026*  
+
+---
+
+إذا كنت تعتقد أنك سمعت كل أشكال الكوميديا السوداء في لبنان، فربما عليك إعادة التفكير وقراءة البيان الأخير المنشور على الموقع الرسمي لـ **جمعية مصارف لبنان (ABL)**!
+
+في وقت يُلزم فيه المودع بالوقوف في طوابير الذل والاقتطاع القسري لاستعادة بضع عشرات أو مئات من الدولارات المجتزأة من جنى عمره، تخرج علينا الجمعية بشرى سارة تُثلج الصدور: **"القطاع المصرفي اللبناني مستقرّ ومتين مالياً"!**
+
+نعم، عزيزي المودع، أنت لا تحلم، ومدخراتك "المبخرة" هي مجرد وهم بصري؛ لأن المصارف – بحسب البيان – ما زالت *"تسيطر على النظام المالي ومتمسكة بدورها كممول أكبر للأفراد والمؤسسات"*. 
+
+**تمويل من؟ وكيف؟** لا أحد يعلم! ربما يقصدون تمويل طوابير الانتظار المذلة، أو تمويل القهر اليومي للمواطنين والمتقاعدين.
+
+---
+
+### احترام القوانين... أم انتهاك عابر للقارات؟
+
+يزيد البيان من جرعة السخرية والتذاكي عندما يذكر بفخر أن النشاط المصرفي يخضع لـ **قانون التجارة (1942)** و**قانون النقد والتسليف (1963)**. وهنا يحق لأي مواطن أو خبير قانوني أن يسأل: **هل يتحدث البيان عن مصارف تعمل في كوكب آخر؟**
+
+* **قانون النقد والتسليف (1963):**  
+  ينص صراحة في مواده الأساسية على حماية السلامة النقدية والمصرفية، وإلزام المصارف بالحفاظ على أمان الودائع وإعادتها عند الطلب. ولكن كيف طبقت المصارف هذا القانون على أرض الواقع؟  
+  عبر **احتجاز ودائع الناس، فرض "هيركات" غير معلن، والامتناع القسري عن تسليم الأموال ببلطجة مصرفية غير مسبوقة!**
+
+* **قانون التجارة اللبناني (1942):**  
+  يحظر صراحة الامتناع عن دفع الديون المستحقة والإفلاس المقنع والتوقف عن الدفع. لكن المصارف اللبنانية ابتكرت مدرسة جديدة في فقه التجارة:  
+  *«أنا آخذ أموالك، أتصرف بها، ثم أخبرك في بيان رسمي أنني متين ومستقر مالياً.. ولكن لا أملك ما أعطيك إياه!»*
+
+---
+
+### إنكار متواصل وحالة «فصام» مالي متقدمة
+
+إن وصف القطاع المصرفي بـ **"المتين والمستقر"** في ظل أزمة سيولة خانقة، وتوقف عن الدفع، واحتجاز للودائع منذ أكثر من ست سنوات، ليس مجرد تجميل للواقع؛ بل هو حالة متقدمة من **"الإنكار المالي والانفصال التام عن الواقع"**:
+
+1. **حقوق المودعين خارج الحسابات:**  
+   تتجاهل الجمعية عمداً أن المودع بات محروماً دستورياً وقانونياً من التصرف بملكيته الخاصة، وهو ينظر بحسرة إلى أمواله المحتجزة بينما تبشره المصارف بمتانة أصولها ورسملتها المزعومة على الورق.
+
+2. **المهيمن المفلوس:**  
+   نعم، المصارف "مهيمنة" على النظام المالي، ولكنها **هيمنة الشلل الكامل**؛ حيث توقفت حركة التسليف والإقراض الاستثماري الحقيقي، واقتصر الدور المصرفي على تحويل الأموال وتطبيق التعاميم الاستثنائية الترقيعية.
+
+---
+
+### خلاصة الرسالة إلى جمعية المصارف
+
+بدلاً من الاعتراف الشفاف والصادق بحجم الخسائر، والعمل الجاد على إعادة بناء الثقة وردّ الحقوق لأصحابها، تصر جمعية المصارف على **بيع الأوهام وإصدار بيانات "العلاقات العامة" الجوفاء** التي تزيد من نقمة الشارع وتهز ما تبقى من مصداقيتها أمام المجتمعين المحلي والدولي.
+
+> **رسالة واضحة للجمعية:**  
+> **القوانين لا تُحترم بذكر أرقامها وتواريخ إقرارها في البيانات الصحفية، بل بتطبيق بنودها وحماية أموال المودعين التي أُوتمنتم عليها!**`,
+    contentEn: `### Lebanese Banks "Stable and Solid": The Joke of the Season from the Association of Banks!
+#### A Message to the ABL: Laws Are Respected by Fulfilling Their Mandates and Protecting Entrusted Deposits, Not by Quoting Their Dates in PR Statements!
+
+**By: Maan Barazy — Editor-in-Chief (Alwarraqnews.com)**  
+*Published: September 6, 2026*  
+
+---
+
+If you thought you had witnessed every form of dark humor in Lebanon, read the latest official release published by the **Association of Banks in Lebanon (ABL)**.
+
+While depositors are subjected to humiliating queues and coercive deductions to retrieve small portions of their life savings, the ABL issues an extraordinary announcement: **"The Lebanese banking sector is financially stable and solid!"**
+
+According to the statement, banks supposedly *"dominate the financial system and remain committed to their role as the primary financier of individuals and enterprises."* 
+
+**Financing whom? And how?** Perhaps they mean financing queues of humiliation and the daily distress of citizens and pensioners.
+
+---
+
+### Respecting the Law... or Flagrant Violation?
+
+The release escalates into self-parody by citing that banking activities are governed by the **Code of Commerce (1942)** and the **Code of Money and Credit (1963)**. Any observer must ask: **Are they referring to banks operating on another planet?**
+
+* **Code of Money and Credit (1963):**  
+  Explicitly obligates institutions to safeguard the integrity of deposits and return them upon maturity. How did Lebanese banks implement this statute? By freezing accounts, imposing informal haircuts, and refusing restitution.
+* **Code of Commerce (1942):**  
+  Prohibits cessation of payments and disguised insolvency. Yet the banking lobby invented a novel doctrine: *"We hold your capital, deploy it for private gains, declare ourselves solvent, yet possess nothing to return to you."*
+
+---
+
+### Chronic Denial & Advanced Financial Dissociation
+
+Describing a crippled, illiquid banking sector as "stable and solid" after six years of frozen deposits is not mere public relations spin—it is a severe case of **institutional dissociation**:
+
+1. **Depositors Disregarded:** Depositors are systematically barred from their property rights while reading circulars praising paper capitalization.
+2. **Dominant Insolvency:** Dominating the financial system has become synonymous with total credit paralysis, reducing banks to fee-charging transfer windows and circular enforcers.
+
+---
+
+### Direct Message to the Banking Association
+
+Rather than acknowledging losses transparently and working toward genuine restructuring, the banking lobby persists in **peddling illusions and empty PR releases** that deepen public outrage and destroy remaining credibility.
+
+> **Our message is straightforward:**  
+> **Laws are not honored by citing their article numbers and historical dates in press releases; they are honored by upholding fiduciary duties and protecting the deposits entrusted to your care!**`
+  },
+  {
     id: 'europe-end-of-quiet-miracle-new-economic-model-2026',
     slug: 'نهاية-المعجزة-الهادئة-أوروبا-وأزمة-البحث-عن-نموذج-جديد-2026',
     focusKeyword: 'أوروبا-المعجزة-الهادئة-النموذج-الاقتصادي-السوق-الموحدة-الذكاء-الاصطناعي-أسواق-رأس-المال-الاتحاد-الأوروبي-الطاقة-التنافسية',

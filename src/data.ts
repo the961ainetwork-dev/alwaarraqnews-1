@@ -5,7 +5,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'all', labelAr: 'الرئيسية', labelEn: 'Home' },
   { id: 'urgent-release', labelAr: 'يحدث الآن', labelEn: 'Happening Now' },
   { id: 'in-case-you-missed-it', labelAr: 'في حال فاتك', labelEn: 'In Case You Missed It' },
-  { id: 'alwarraq-investigations', labelAr: 'التحقيقات الاستقصائية للورّاق', labelEn: 'AlWarraq Investigative Reporting' },
+  { id: 'alwarraq-investigations', labelAr: 'بوابة التحقيقات الاستقصائية للورّاق', labelEn: 'Al-Warraq Investigative Reporting Portal' },
   { id: 'war-room', labelAr: 'غرفة الحرب الجيوسياسية', labelEn: 'War Room Intel' },
   { id: 'pulse-of-the-street', labelAr: 'نبض الشارع', labelEn: 'Pulse of the Street' },
   { id: 'sentiment-analysis', labelAr: 'تحليل المشاعر', labelEn: 'Sentiment Analysis' },

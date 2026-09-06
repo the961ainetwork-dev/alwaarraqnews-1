@@ -37,6 +37,10 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
 
   // Target specific IDs requested by the user for key secondary dossier stories
   const targetIds = [
+    'opinion-lebanese-banks-stable-joke-abl-maan-barazy-2026',
+    'editorial-fadi-khalaf-abl-report-denial-maan-barazy-2026',
+    'war-room-ali-al-taher-hill-border-buffer-zone-2026',
+    'ft-israeli-military-religious-zionism-shift-2026',
     'europe-end-of-quiet-miracle-new-economic-model-2026',
     'solidere-transit-vehicle-lollar-cash-economy-editorial-2026',
     'solidere-investigation-aug-2026-ownership-valuation',

@@ -1503,7 +1503,118 @@ export default function App() {
                 {activeCategory === 'all' && renderWidgetsByLocation('header')}
                 {activeCategory === 'all' && renderWidgetsByLocation('sidebar')}
 
-                {/* UPPER BANNER: ALWARRAQ INVESTIGATIVE DOSSIERS ACCESS */}
+                {/* SECTION 1: HERO SECTION - PULSE OF THE STREET (نبض الشارع وثمن الصراع) */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <div className="mb-8" id="homepage-hero-pulse-of-the-street">
+                    <PulseOfTheStreet 
+                      language={language} 
+                      layoutMode={layoutMode} 
+                      isFullPage={false}
+                      onNavigateToPulse={() => {
+                        setActiveCategory('pulse-of-the-street');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                    />
+                  </div>
+                )}
+
+                {/* SECTION 2: WAR ROOM SECTION (غرفة الحرب الجيوسياسية) */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <div className="my-8 border-4 border-double border-red-600 bg-zinc-950 p-6 text-white shadow-[6px_6px_0px_rgba(220,38,38,0.15)] relative overflow-hidden" id="war-room-introduction-banner">
+                    {/* Glowing pulse indicator */}
+                    <div className="absolute top-4 right-4 flex items-center gap-2 bg-red-600/20 text-red-400 border border-red-500/30 px-3 py-1 font-mono text-xxs font-black tracking-widest uppercase">
+                      <span className="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+                      <span>{isAr ? 'عاجل - جبهة مشتعلة' : 'LIVE CONFLICT ALERT'}</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                      <div className="md:col-span-8 space-y-4">
+                        <div className="flex items-center gap-2">
+                          <Flame className="text-orange-500 animate-pulse" size={24} />
+                          <h3 className="font-sans font-black text-xl md:text-2xl text-white">
+                            {isAr ? 'غرفة الحرب الجيوسياسية للورّاق' : 'Al-Warraq Geopolitical War Room'}
+                          </h3>
+                        </div>
+
+                        <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-medium">
+                          {isAr 
+                            ? 'بوابة الرصد العملياتي والتحليلات العسكرية الميدانية الفورية. تابع تحركات الجيوش، الاستخبارات اللوجستية، خرائط السيطرة، وتقدير المواقف الاستراتيجي في الشرق الأوسط وممرات الطاقة الحيوية.'
+                            : 'Real-time operational monitoring, military intel, and tactical briefings. Track troop movements, logistics intelligence, control maps, and strategic assessments of active hot zones and maritime energy corridors.'
+                          }
+                        </p>
+
+                        {/* Interactive Sneak Peek Bullet */}
+                        <div className="bg-zinc-900/80 border border-zinc-800 p-3.5 space-y-2 text-right rtl:text-right ltr:text-left">
+                          <span className="text-[10px] font-mono font-black text-orange-400 uppercase tracking-wider block">
+                            {isAr ? 'آخر تحديث تكتيكي' : 'Latest Tactical Dossier'}
+                          </span>
+                          <h4 className="font-bold text-xs md:text-sm text-white hover:underline cursor-pointer" onClick={() => { setActiveCategory('war-room'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                            {isAr 
+                              ? 'تصاعد التوترات العسكرية بين الولايات المتحدة وإيران وتهديد اتفاق وقف إطلاق النار (مضيق هرمز)'
+                              : 'US-Iran Military Tensions Escalate: Strait of Hormuz Ceasefire Accord Under Imminent Collapse'
+                            }
+                          </h4>
+                          <p className="text-zinc-400 text-xxs leading-relaxed line-clamp-2">
+                            {isAr
+                              ? 'شهدت منطقة مضيق هرمز تصعيداً عسكرياً خطيراً وتبادلاً مكثفاً للضربات بين القوات الأمريكية وإيران، مما يهدد بانهيار مذكرة التفاهم واتفاق وقف إطلاق النار الذي وُقّع قبل نحو 10 أيام فقط لإنهاء الحرب بين البلدين.'
+                              : 'A dangerous military escalation in the Strait of Hormuz has triggered intense direct strikes between US forces and Iran, threatening the complete collapse of the historic ceasefire and MOU.'
+                            }
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="md:col-span-4 flex flex-col justify-center items-center md:items-end gap-3">
+                        <button
+                          onClick={() => {
+                            setActiveCategory('war-room');
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-black text-xs px-6 py-3.5 tracking-wider uppercase transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-[4px_4px_0px_#7f1d1d]"
+                        >
+                          <Flame size={14} className="animate-bounce" />
+                          <span>{isAr ? 'دخول غرفة الحرب والخرائط التكتيكية' : 'Access Tactical War Room'}</span>
+                        </button>
+                        <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase tracking-widest">
+                          {isAr ? 'مؤشر التهديد: حرج (CRITICAL)' : 'Threat Assessment: CRITICAL'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* SECTION 3: HOMEPAGE ARTICLE GRID - LAST SIX ARTICLES (2 ROWS × 3 COLUMNS) */}
+                {activeCategory === 'all' && (
+                  <section className="space-y-6 my-8" id="homepage-last-six-articles-grid">
+                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
+                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
+                        <Newspaper size={18} className="text-black shrink-0" />
+                        <span>{isAr ? 'آخر ستة تحقيقات وبرقيات إخبارية' : 'Latest Six Investigations & Wires'}</span>
+                      </h3>
+                      <span className="font-mono text-xxs font-bold text-zinc-500">
+                        {isAr ? 'عرض ستة تحقيقات حديثة (شبكة ٣ أعمدة × صفين)' : 'Latest 6 Dispatches (3 Columns × 2 Rows)'}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                      {allArticles.slice(0, 6).map((story) => (
+                        <div key={story.id} className="break-inside-avoid flex flex-col justify-between h-full">
+                          <ArticleCard
+                            article={story}
+                            layoutMode={layoutMode}
+                            language={language}
+                            variant="standard"
+                            onSelect={(article) => setSelectedArticle(article)}
+                            isSaved={savedArticleIds.includes(story.id)}
+                            onToggleSave={handleToggleSaveArticle}
+                            onTagClick={handleTagClick}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
+                {/* SECTION 4: ALWARRAQ INVESTIGATIVE REPORTING PORTAL ACCESS BANNER */}
                 {activeCategory === 'all' && !searchQuery && (
                   <div className="border-4 border-black p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] overflow-hidden rounded-sm group/banner" id="alwarraq-investigations-access-banner">
                     {/* Architectural Grid Watermark Backing */}
@@ -2094,7 +2205,7 @@ export default function App() {
                 )}
 
                 {/* SECTION: EXCLUSIVES (التحقيقات الصحفية) - Moved right after NarrativeLebanonCrisisInfographics */}
-                {(activeCategory === 'all' || activeCategory === 'exclusives') && exclusivesArticles.length > 0 && (
+                {activeCategory === 'exclusives' && exclusivesArticles.length > 0 && (
                   <section className="space-y-5 my-8">
                     <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
                       <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
@@ -2206,10 +2317,10 @@ export default function App() {
                 )}
 
                 {/* THE WORLD OF ARTIFICIAL INTELLIGENCE SECTION */}
-                {activeCategory === 'all' && !searchQuery && (
+                {activeCategory === 'world-of-ai' && (
                   <WorldOfAI 
                     language={language} 
-                    mode="excerpt" 
+                    mode="full" 
                     onNavigate={() => {
                       setActiveCategory('world-of-ai');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2628,70 +2739,6 @@ export default function App() {
                             {isAr ? 'تحليل حصري ومحمي بموجب امتياز مجلس الإعلام' : 'Licensed under Council of Strategic Media'}
                           </p>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* STANDALONE WAR ROOM INTRO SECTION UNDER SLIDER */}
-                {activeCategory === 'all' && !searchQuery && (
-                  <div className="my-8 border-4 border-double border-red-600 bg-zinc-950 p-6 text-white shadow-[6px_6px_0px_rgba(220,38,38,0.15)] relative overflow-hidden" id="war-room-introduction-banner">
-                    {/* Glowing pulse indicator */}
-                    <div className="absolute top-4 right-4 flex items-center gap-2 bg-red-600/20 text-red-400 border border-red-500/30 px-3 py-1 font-mono text-xxs font-black tracking-widest uppercase">
-                      <span className="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
-                      <span>{isAr ? 'عاجل - جبهة مشتعلة' : 'LIVE CONFLICT ALERT'}</span>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                      <div className="md:col-span-8 space-y-4">
-                        <div className="flex items-center gap-2">
-                          <Flame className="text-orange-500 animate-pulse" size={24} />
-                          <h3 className="font-sans font-black text-xl md:text-2xl text-white">
-                            {isAr ? 'غرفة الحرب الجيوسياسية للورّاق' : 'Al-Warraq Geopolitical War Room'}
-                          </h3>
-                        </div>
-
-                        <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-medium">
-                          {isAr 
-                            ? 'بوابة الرصد العملياتي والتحليلات العسكرية الميدانية الفورية. تابع تحركات الجيوش، الاستخبارات اللوجستية، خرائط السيطرة، وتقدير المواقف الاستراتيجي في الشرق الأوسط وممرات الطاقة الحيوية.'
-                            : 'Real-time operational monitoring, military intel, and tactical briefings. Track troop movements, logistics intelligence, control maps, and strategic assessments of active hot zones and maritime energy corridors.'
-                          }
-                        </p>
-
-                        {/* Interactive Sneak Peek Bullet */}
-                        <div className="bg-zinc-900/80 border border-zinc-800 p-3.5 space-y-2 text-right rtl:text-right ltr:text-left">
-                          <span className="text-[10px] font-mono font-black text-orange-400 uppercase tracking-wider block">
-                            {isAr ? 'آخر تحديث تكتيكي' : 'Latest Tactical Dossier'}
-                          </span>
-                          <h4 className="font-bold text-xs md:text-sm text-white hover:underline cursor-pointer" onClick={() => { setActiveCategory('war-room'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                            {isAr 
-                              ? 'تصاعد التوترات العسكرية بين الولايات المتحدة وإيران وتهديد اتفاق وقف إطلاق النار (مضيق هرمز)'
-                              : 'US-Iran Military Tensions Escalate: Strait of Hormuz Ceasefire Accord Under Imminent Collapse'
-                            }
-                          </h4>
-                          <p className="text-zinc-400 text-xxs leading-relaxed line-clamp-2">
-                            {isAr
-                              ? 'شهدت منطقة مضيق هرمز تصعيداً عسكرياً خطيراً وتبادلاً مكثفاً للضربات بين القوات الأمريكية وإيران، مما يهدد بانهيار مذكرة التفاهم واتفاق وقف إطلاق النار الذي وُقّع قبل نحو 10 أيام فقط لإنهاء الحرب بين البلدين.'
-                              : 'A dangerous military escalation in the Strait of Hormuz has triggered intense direct strikes between US forces and Iran, threatening the complete collapse of the historic ceasefire and MOU.'
-                            }
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="md:col-span-4 flex flex-col justify-center items-center md:items-end gap-3">
-                        <button
-                          onClick={() => {
-                            setActiveCategory('war-room');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-black text-xs px-6 py-3.5 tracking-wider uppercase transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-[4px_4px_0px_#7f1d1d]"
-                        >
-                          <Flame size={14} className="animate-bounce" />
-                          <span>{isAr ? 'دخول غرفة الحرب والخرائط التكتيكية' : 'Access Tactical War Room'}</span>
-                        </button>
-                        <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase tracking-widest">
-                          {isAr ? 'مستويات التهديد: حرجة جداً' : 'Threat Assessment: CRITICAL'}
-                        </span>
                       </div>
                     </div>
                   </div>
