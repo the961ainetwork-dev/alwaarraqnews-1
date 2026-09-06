@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   Search, 
   FileText, 
@@ -373,6 +373,8 @@ export default function AlWarraqInvestigations({
   const [speechRate, setSpeechRate] = useState<number>(1.0);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedArticleId, setCopiedArticleId] = useState<string | null>(null);
+  const [searchFilter, setSearchFilter] = useState('');
+  const [activeTopicFilter, setActiveTopicFilter] = useState<'all' | 'sovereign' | 'economy' | 'solidere' | 'energy' | 'regional'>('all');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleCopyLink = () => {
@@ -383,42 +385,95 @@ export default function AlWarraqInvestigations({
     });
   };
 
-  // Filter to keep only the main investigations
-  const investigativeArticles = allArticles.filter(article => {
-    return (
-      article.id === 'solidere-cabinet-decision-2026-investigation' ||
-      article.id === 'solidere-cabinet-proposal-pros-cons-analysis-2026' ||
-      article.id === 'global-proven-oil-reserves-analysis-2026' ||
-      article.id === 'damascus-extended-shadow-syrian-role-lebanon-2026' ||
-      article.id === 'lebanese-eurobonds-market-analysis-2026' ||
-      article.id === 'fifa-leadership-crisis-infantino-resignation-2026' ||
-      article.id === 'riad-salameh-prosecution-health-political-dimensions-2026' ||
-      article.id === 'saudi-diplomacy-regional-equation-2026' ||
-      article.id === 'lebanon-framework-agreement-analysis-2026' ||
-      article.id === 'solidere-extension-2069' ||
-      article.id === 'lebanon-ceasefire-mirage-2026' ||
-      article.id === 'lebanon-economic-abyss-2026' ||
-      article.id === 'ch12-hebrew-jd-vance-criticism-2026' ||
-      article.id === 'israel-lebanon-deal-behind-scenes' ||
-      article.id === 'south-lebanon-secret-annex-investigation' ||
-      article.id === 'iran-frozen-assets-2026' ||
-      article.id === 'lebanon-deposits-crisis-2026' ||
-      article.id === 'submarine-cables-geopolitics-2026' ||
-      article.id === 'fuel-profiteering-cartel-2026' ||
-      article.id === 'bdl-versus-salameh-2026' ||
-      article.id === 'us-spr-release-172m-2026' ||
-      article.id === 'syria-terror-list-removal-2026' ||
-      article.id === 'infrastructure-war-gcc-iran-2026' ||
-      article.id === 'sp-gcc-corporate-war-risk-2026' ||
-      article.category === 'alwarraq-investigations' ||
-      article.category === 'investigations' ||
-      article.categories?.includes('alwarraq-investigations') ||
-      article.categories?.includes('investigations')
-    );
-  });
+  // Helper to ensure every article gets high-precision dossier metadata
+  const getArticleMeta = (article: Article) => {
+    if (DOSSIER_DESKTOP_META[article.id]) {
+      return DOSSIER_DESKTOP_META[article.id];
+    }
+    return {
+      fileId: `AW-INV-${article.id.slice(0, 8).toUpperCase()}`,
+      badge: 'SPECIAL INVESTIGATION',
+      titleAr: article.titleAr,
+      titleEn: article.titleEn,
+      descAr: article.excerptAr || article.summaryAr || (article.contentAr ? article.contentAr.slice(0, 180) + '...' : ''),
+      descEn: article.excerptEn || article.summaryEn || (article.contentEn ? article.contentEn.slice(0, 180) + '...' : '')
+    };
+  };
+
+  // Filter to keep ALL investigative dossiers, files, and reports
+  const investigativeArticles = useMemo(() => {
+    return allArticles.filter(article => {
+      return (
+        DOSSIER_DESKTOP_META[article.id] !== undefined ||
+        article.category === 'exclusives' ||
+        article.category === 'alwarraq-investigations' ||
+        article.category === 'special-investigations' ||
+        article.category === 'research-reports' ||
+        (article.categories && (
+          article.categories.includes('exclusives') ||
+          article.categories.includes('alwarraq-investigations') ||
+          article.categories.includes('special-investigations') ||
+          article.categories.includes('research-reports')
+        )) ||
+        article.id.includes('solidere') ||
+        article.id.includes('damascus') ||
+        article.id.includes('framework') ||
+        article.id.includes('liquidity') ||
+        article.id.includes('remittance') ||
+        article.id.includes('salameh') ||
+        article.id.includes('cables') ||
+        article.id.includes('fuel') ||
+        article.id.includes('bdl') ||
+        article.id.includes('syria') ||
+        article.id.includes('iran') ||
+        article.id.includes('israel') ||
+        article.id.includes('ceasefire') ||
+        article.id.includes('eurobond') ||
+        article.id.includes('oil-reserves') ||
+        article.id.includes('investigation') ||
+        article.id.includes('dossier') ||
+        article.id.includes('excl')
+      );
+    });
+  }, [allArticles]);
+
+  // Apply search query & topic category filtering
+  const filteredInvestigativeArticles = useMemo(() => {
+    return investigativeArticles.filter(article => {
+      const meta = getArticleMeta(article);
+      
+      // Topic match
+      if (activeTopicFilter === 'sovereign') {
+        const isSovereign = article.id.includes('damascus') || article.id.includes('syria') || article.id.includes('israel') || article.id.includes('iran') || article.id.includes('annex') || article.id.includes('ceasefire') || article.id.includes('saudi');
+        if (!isSovereign) return false;
+      } else if (activeTopicFilter === 'economy') {
+        const isEconomy = article.id.includes('eurobond') || article.id.includes('liquidity') || article.id.includes('salameh') || article.id.includes('remittance') || article.id.includes('bdl') || article.id.includes('deposits') || article.id.includes('m3') || article.id.includes('debt');
+        if (!isEconomy) return false;
+      } else if (activeTopicFilter === 'solidere') {
+        const isSolidere = article.id.includes('solidere');
+        if (!isSolidere) return false;
+      } else if (activeTopicFilter === 'energy') {
+        const isEnergy = article.id.includes('oil') || article.id.includes('cables') || article.id.includes('fuel') || article.id.includes('framework') || article.id.includes('spr') || article.id.includes('energy');
+        if (!isEnergy) return false;
+      } else if (activeTopicFilter === 'regional') {
+        const isRegional = article.id.includes('fifa') || article.id.includes('china') || article.id.includes('us-') || article.id.includes('gcc') || article.id.includes('vance');
+        if (!isRegional) return false;
+      }
+
+      // Search match
+      if (searchFilter.trim()) {
+        const q = searchFilter.toLowerCase().trim();
+        const textAr = `${meta.titleAr} ${meta.descAr} ${meta.badge} ${meta.fileId} ${article.tags?.join(' ') || ''}`.toLowerCase();
+        const textEn = `${meta.titleEn} ${meta.descEn} ${meta.badge} ${meta.fileId} ${article.tags?.join(' ') || ''}`.toLowerCase();
+        return textAr.includes(q) || textEn.includes(q);
+      }
+
+      return true;
+    });
+  }, [investigativeArticles, activeTopicFilter, searchFilter]);
 
   // Get active dossier object
-  const activeDossier = investigativeArticles.find(a => a.id === selectedDossierId) || investigativeArticles[0] || null;
+  const activeDossier = investigativeArticles.find(a => a.id === selectedDossierId) || filteredInvestigativeArticles[0] || investigativeArticles[0] || null;
 
   // Helper to calculate word count and read time dynamically
   const getReadTimeEstimate = (article: Article) => {
@@ -625,10 +680,117 @@ export default function AlWarraqInvestigations({
         </div>
       </div>
 
+      {/* TOPIC FILTER TABS & SEARCH CONTROLS */}
+      <div className="bg-stone-100 border-2 border-black p-4 space-y-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4">
+          
+          {/* Topic Filter Pills */}
+          <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+            <button
+              onClick={() => setActiveTopicFilter('all')}
+              className={`px-3 py-1.5 font-bold uppercase transition-all border cursor-pointer ${
+                activeTopicFilter === 'all'
+                  ? 'bg-red-950 text-amber-300 border-red-950 shadow-[2px_2px_0px_#000]'
+                  : 'bg-white text-zinc-800 border-zinc-300 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? `الكل (${investigativeArticles.length})` : `All (${investigativeArticles.length})`}
+            </button>
+
+            <button
+              onClick={() => setActiveTopicFilter('sovereign')}
+              className={`px-3 py-1.5 font-bold uppercase transition-all border cursor-pointer ${
+                activeTopicFilter === 'sovereign'
+                  ? 'bg-red-950 text-amber-300 border-red-950 shadow-[2px_2px_0px_#000]'
+                  : 'bg-white text-zinc-800 border-zinc-300 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'ملفات سيادية وجيوسياسية' : 'Sovereign & Geopolitics'}
+            </button>
+
+            <button
+              onClick={() => setActiveTopicFilter('economy')}
+              className={`px-3 py-1.5 font-bold uppercase transition-all border cursor-pointer ${
+                activeTopicFilter === 'economy'
+                  ? 'bg-red-950 text-amber-300 border-red-950 shadow-[2px_2px_0px_#000]'
+                  : 'bg-white text-zinc-800 border-zinc-300 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'النقد والمصارف والسيولة' : 'Banking & Liquidity'}
+            </button>
+
+            <button
+              onClick={() => setActiveTopicFilter('solidere')}
+              className={`px-3 py-1.5 font-bold uppercase transition-all border cursor-pointer ${
+                activeTopicFilter === 'solidere'
+                  ? 'bg-red-950 text-amber-300 border-red-950 shadow-[2px_2px_0px_#000]'
+                  : 'bg-white text-zinc-800 border-zinc-300 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'ملفات سوليدير والعقارات' : 'Solidere & Real Estate'}
+            </button>
+
+            <button
+              onClick={() => setActiveTopicFilter('energy')}
+              className={`px-3 py-1.5 font-bold uppercase transition-all border cursor-pointer ${
+                activeTopicFilter === 'energy'
+                  ? 'bg-red-950 text-amber-300 border-red-950 shadow-[2px_2px_0px_#000]'
+                  : 'bg-white text-zinc-800 border-zinc-300 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'الطاقة والنفط والغاز' : 'Oil & Energy'}
+            </button>
+
+            <button
+              onClick={() => setActiveTopicFilter('regional')}
+              className={`px-3 py-1.5 font-bold uppercase transition-all border cursor-pointer ${
+                activeTopicFilter === 'regional'
+                  ? 'bg-red-950 text-amber-300 border-red-950 shadow-[2px_2px_0px_#000]'
+                  : 'bg-white text-zinc-800 border-zinc-300 hover:bg-zinc-200'
+              }`}
+            >
+              {isAr ? 'شؤون إقليمية ودولية' : 'Regional & International'}
+            </button>
+          </div>
+
+          {/* Search Filter Input */}
+          <div className="relative w-full lg:w-72">
+            <Search size={14} className="absolute top-1/2 -translate-y-1/2 right-3 rtl:right-3 ltr:left-3 text-zinc-400 pointer-events-none" />
+            <input
+              type="text"
+              value={searchFilter}
+              onChange={(e) => setSearchFilter(e.target.value)}
+              placeholder={isAr ? 'ابحث في الملفات والتحقيقات...' : 'Search investigations...'}
+              className="w-full text-xs font-serif bg-white border border-zinc-400 py-2 px-8 focus:outline-none focus:border-red-800 shadow-inner"
+            />
+            {searchFilter && (
+              <button
+                onClick={() => setSearchFilter('')}
+                className="absolute top-1/2 -translate-y-1/2 left-3 rtl:left-3 ltr:right-3 text-xs text-zinc-400 hover:text-black font-bold"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Counter Bar */}
+        <div className="flex justify-between items-center text-[11px] font-mono text-zinc-600 border-t border-zinc-200 pt-2">
+          <span>
+            {isAr 
+              ? `عرض ${filteredInvestigativeArticles.length} ملف استقصائي من أصل ${investigativeArticles.length}` 
+              : `Displaying ${filteredInvestigativeArticles.length} of ${investigativeArticles.length} dossiers`}
+          </span>
+          <span className="font-bold text-red-900">
+            {isAr ? 'ديوان الورّاق للتحقيقات الحرة' : 'AL-WARRAQ FREE INVESTIGATIVE ARCHIVES'}
+          </span>
+        </div>
+      </div>
+
       {/* DOSSIER SELECTOR TABS - Vintage design, full width */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-        {investigativeArticles.map((article) => {
-          const meta = DOSSIER_DESKTOP_META[article.id];
+        {filteredInvestigativeArticles.map((article) => {
+          const meta = getArticleMeta(article);
           const isSelected = selectedDossierId === article.id;
           const estimate = getReadTimeEstimate(article);
           if (!meta) return null;
@@ -1247,6 +1409,83 @@ export default function AlWarraqInvestigations({
           )}
         </div>
 
+      {/* COMPREHENSIVE SPECIAL INVESTIGATIONS ARCHIVE CATALOG */}
+      <section className="mt-12 pt-8 border-t-4 border-double border-zinc-950 space-y-6" id="special-investigations-full-archive">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-zinc-950 text-white p-5 border-2 border-zinc-800">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <Sparkles size={16} className="text-amber-400 animate-pulse" />
+              <h3 className="text-lg md:text-xl font-black font-sans text-white">
+                {isAr ? 'الأرشيف الكامل للتحقيقات الخاصة والملفات السيادية' : 'Complete Special Investigations Archive'}
+              </h3>
+            </div>
+            <p className="text-xs text-zinc-400 font-serif">
+              {isAr 
+                ? `تصفح كافة التحقيقات والوثائق (${filteredInvestigativeArticles.length} مادة استقصائية مسجلة)` 
+                : `Browse all declassified files and investigative dossiers (${filteredInvestigativeArticles.length} records registered)`}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 text-xs font-mono">
+            <span className="bg-red-900 text-amber-200 px-3 py-1 font-bold border border-red-700">
+              {isAr ? 'تغطية شاملة وموثقة' : '100% VERIFIED LEAKS'}
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredInvestigativeArticles.map((article) => {
+            const meta = getArticleMeta(article);
+            const isSelected = selectedDossierId === article.id;
+            const estimate = getReadTimeEstimate(article);
+
+            return (
+              <div 
+                key={article.id}
+                onClick={() => {
+                  setSelectedDossierId(article.id);
+                  if (scrollContainerRef.current) {
+                    scrollContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className={`p-5 flex flex-col justify-between transition-all cursor-pointer border ${
+                  isSelected 
+                    ? 'bg-amber-50/80 border-red-900 shadow-[4px_4px_0px_#7f1d1d]' 
+                    : 'bg-white hover:bg-stone-50 border-zinc-300 hover:border-black shadow-[3px_3px_0px_rgba(0,0,0,0.08)]'
+                }`}
+              >
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center text-[10px] font-mono border-b border-zinc-200 pb-2">
+                    <span className="bg-zinc-100 text-zinc-800 px-2 py-0.5 font-bold uppercase border border-zinc-200">
+                      {meta.fileId}
+                    </span>
+                    <span className="text-red-800 font-bold uppercase">{meta.badge}</span>
+                  </div>
+
+                  <h4 className="font-sans font-black text-sm md:text-base text-zinc-950 leading-snug line-clamp-3 hover:text-red-900 transition-colors">
+                    {isAr ? meta.titleAr : meta.titleEn}
+                  </h4>
+
+                  <p className="font-serif text-xs text-zinc-600 line-clamp-3 leading-relaxed">
+                    {isAr ? meta.descAr : meta.descEn}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-dashed border-zinc-200 flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-zinc-500 font-bold">
+                    {isAr ? estimate.displayAr : estimate.displayEn}
+                  </span>
+
+                  <span className="text-red-900 font-black flex items-center gap-1 group">
+                    <span>{isAr ? 'فتح الملف' : 'Read Dossier'}</span>
+                    <span className="rtl:rotate-180 transition-transform group-hover:translate-x-1">→</span>
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* FOOTER GENERAL LICENSE NOTICE */}
       <div className="border-t border-zinc-200 pt-4 text-center text-xxs font-mono text-zinc-500">

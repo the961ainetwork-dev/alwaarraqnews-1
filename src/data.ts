@@ -3,6 +3,7 @@ import { NEW_ARTICLES } from './newArticles';
 
 export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'all', labelAr: 'الرئيسية', labelEn: 'Home' },
+  { id: 'special-investigations', labelAr: 'التحقيقات الخاصة', labelEn: 'Special Investigations' },
   { id: 'urgent-release', labelAr: 'يحدث الآن', labelEn: 'Happening Now' },
   { id: 'in-case-you-missed-it', labelAr: 'في حال فاتك', labelEn: 'In Case You Missed It' },
   { id: 'alwarraq-investigations', labelAr: 'بوابة التحقيقات الاستقصائية للورّاق', labelEn: 'Al-Warraq Investigative Reporting Portal' },
@@ -24,7 +25,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'arab-markets', labelAr: 'الأسواق العربية', labelEn: 'Arab Markets Indicators' },
   { id: 'telecom-internet', labelAr: 'الاتصالات والإنترنت', labelEn: 'Telecom & Internet' },
   { id: 'world-of-ai', labelAr: 'عالم الذكاء الاصطناعي', labelEn: 'World of AI' },
-  { id: 'research-reports', labelAr: 'أبحاث ودراسات', labelEn: 'Research & Reports' },
+  { id: 'research-reports', labelAr: 'التقارير الاستقصائية والأبحاث', labelEn: 'Investigative Reports & Research' },
   { id: 'sports', labelAr: 'رياضة', labelEn: 'Sports' },
   { id: 'wellness-lifestyle', labelAr: 'الصحة', labelEn: 'Curae News' },
   { id: 'what-if-simulator', labelAr: 'محاكي تقدير المواقف "ماذا لو"', labelEn: 'Geopolitical "What-If" Simulator' },

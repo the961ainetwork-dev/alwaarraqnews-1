@@ -37,6 +37,14 @@ const DESK_METADATA: Record<string, {
   badgeColor?: string;
 }> = {
   // Sovereign Desk
+  'special-investigations': {
+    taglineAr: 'التحقيقات الخاصة',
+    taglineEn: 'Special Investigations',
+    subAr: 'كافة التحقيقات والملفات الاستقصائية والوثائق السيادية المفرج عنها',
+    subEn: 'Complete investigative dossiers, declassified records, and deep-dive archives',
+    badge: 'SPECIAL INTEL',
+    badgeColor: 'bg-red-950 text-amber-300 border-amber-600'
+  },
   'alwarraq-investigations': {
     taglineAr: 'بوابة التحقيقات الاستقصائية للورّاق',
     taglineEn: 'Al-Warraq Investigative Portal',
@@ -124,10 +132,12 @@ const DESK_METADATA: Record<string, {
     subEn: 'Submarine fiber optic networks and rural satellite internet'
   },
   'research-reports': {
-    taglineAr: 'دراسات أكاديمية',
-    taglineEn: 'Specialized Studies',
-    subAr: 'أبحاث مائية شاملة وخطط الأمن الغذائي المستقبلي',
-    subEn: 'Hydrological reports, agricultural audit, and demographics'
+    taglineAr: 'التقارير الاستقصائية والأبحاث',
+    taglineEn: 'Investigative Reports & Studies',
+    subAr: 'قاعدة بيانات شاملة لكافة التقارير الاستقصائية والأبحاث والدراسات الميدانية المعمقة',
+    subEn: 'Complete repository of declassified investigative reports, strategic studies, and field research',
+    badge: 'INVESTIGATIVE',
+    badgeColor: 'bg-red-950 text-amber-300 border-red-700'
   },
   'iraq-us-dossier': {
     taglineAr: 'وثائق سيادية استثنائية',

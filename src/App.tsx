@@ -21,6 +21,7 @@ import LebanonAMLVisualizer from './components/LebanonAMLVisualizer';
 import { SolidereInfographic } from './components/SolidereInfographic';
 import { NarrativeLebanonCrisisInfographics } from './components/NarrativeLebanonCrisisInfographics';
 import AlWarraqInvestigations, { DOSSIER_DESKTOP_META } from './components/AlWarraqInvestigations';
+import InvestigativeReports from './components/InvestigativeReports';
 import { PrintableDossier } from './components/PrintableDossier';
 import AlWarraqVideos from './components/AlWarraqVideos';
 import { AlWarraqPodcast } from './components/AlWarraqPodcast';
@@ -1040,6 +1041,30 @@ export default function App() {
     return searchFilteredArticles.filter(story => story.category === 'exclusives' || (story.categories && story.categories.includes('exclusives')));
   }, [searchFilteredArticles]);
 
+  const specialInvestigationsArticles = useMemo(() => {
+    return searchFilteredArticles.filter(story => 
+      story.category === 'exclusives' || 
+      story.category === 'alwarraq-investigations' ||
+      story.category === 'special-investigations' ||
+      (story.categories && (
+        story.categories.includes('exclusives') || 
+        story.categories.includes('alwarraq-investigations') ||
+        story.categories.includes('special-investigations')
+      )) ||
+      story.id.includes('solidere') ||
+      story.id.includes('damascus') ||
+      story.id.includes('framework') ||
+      story.id.includes('liquidity') ||
+      story.id.includes('remittance') ||
+      story.id.includes('investigation') ||
+      story.id.includes('dossier') ||
+      story.id.includes('salameh') ||
+      story.id.includes('eurobond') ||
+      story.id.includes('oil-reserves') ||
+      story.id.includes('excl')
+    );
+  }, [searchFilteredArticles]);
+
   const editorDeskArticles = useMemo(() => {
     return searchFilteredArticles.filter(story => story.category === 'editor-desk' || (story.categories && story.categories.includes('editor-desk')));
   }, [searchFilteredArticles]);
@@ -1073,7 +1098,25 @@ export default function App() {
   }, [searchFilteredArticles]);
 
   const researchArticles = useMemo(() => {
-    return searchFilteredArticles.filter(story => story.category === 'research-reports' || (story.categories && story.categories.includes('research-reports')));
+    return searchFilteredArticles.filter(story => 
+      story.category === 'research-reports' || 
+      story.category === 'investigative-reports' ||
+      (story.categories && (
+        story.categories.includes('research-reports') ||
+        story.categories.includes('investigative-reports')
+      )) ||
+      story.id.includes('report') ||
+      story.id.includes('shift') ||
+      story.id.includes('analysis') ||
+      story.id.includes('investigation') ||
+      story.id.includes('reserves') ||
+      story.id.includes('eurobond') ||
+      story.id.includes('liquidity') ||
+      story.id.includes('remittance') ||
+      story.id.includes('solidere') ||
+      story.id.includes('ft-') ||
+      story.id.includes('sp-')
+    );
   }, [searchFilteredArticles]);
 
   const sportsArticles = useMemo(() => {
@@ -1084,7 +1127,7 @@ export default function App() {
     return searchFilteredArticles.filter(story => story.category === 'wellness-lifestyle' || (story.categories && story.categories.includes('wellness-lifestyle')));
   }, [searchFilteredArticles]);
 
-  // Sliced arrays for rendering on homepage (all) to load at most 2 rows (8 items)
+  // Sliced arrays for rendering on homepage (all) to load at most 2 rows (8 items, 6 for investigations/reports)
   const displayedFifa = useMemo(() => {
     return activeCategory === 'all' ? fifaArticles.slice(0, 8) : fifaArticles;
   }, [fifaArticles, activeCategory]);
@@ -1126,7 +1169,7 @@ export default function App() {
   }, [telecomArticles, activeCategory]);
 
   const displayedResearch = useMemo(() => {
-    return activeCategory === 'all' ? researchArticles.slice(0, 8) : researchArticles;
+    return activeCategory === 'all' ? researchArticles.slice(0, 6) : researchArticles;
   }, [researchArticles, activeCategory]);
 
   const displayedSports = useMemo(() => {
@@ -1138,7 +1181,7 @@ export default function App() {
   }, [wellnessArticles, activeCategory]);
 
   // Quick fallback counts (Bypass empty check for InStats & PulseOfTheStreet standalone category views)
-  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'markets' || activeCategory === 'oil-energy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
+  const hasResults = searchFilteredArticles.length > 0 || activeCategory === 'economy' || activeCategory === 'markets' || activeCategory === 'oil-energy' || activeCategory === 'instats' || activeCategory === 'pulse-of-the-street' || activeCategory === 'premium-pricing' || activeCategory === 'alwarraq-investigations' || activeCategory === 'special-investigations' || activeCategory === 'research-reports' || activeCategory === 'investigative-reports' || activeCategory === 'war-room' || activeCategory === 'press-releases' || activeCategory === 'in-case-you-missed-it' || activeCategory === 'podcast' || activeCategory === 'world-of-ai' || activeCategory === 'iraq-us-dossier';
 
   return (
     <div
@@ -1355,7 +1398,7 @@ export default function App() {
               <WorldOfAI
                 language={language}
               />
-            ) : activeCategory === 'alwarraq-investigations' ? (
+            ) : (activeCategory === 'special-investigations' || activeCategory === 'alwarraq-investigations') ? (
               <AlWarraqInvestigations
                 language={language}
                 allArticles={allArticles}
@@ -1365,6 +1408,25 @@ export default function App() {
                 }}
                 selectedDossierId={selectedDossierId}
                 onSelectDossier={setSelectedDossierId}
+                currentUser={currentUser}
+                isHomeDemoUser={isHomeDemoUser}
+                onNavigateToPremium={() => {
+                  setActiveCategory('premium-pricing');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onOpenQrShare={(url) => {
+                  setQrShareUrl(url);
+                  setShowQrOverlay(true);
+                }}
+              />
+            ) : (activeCategory === 'research-reports' || activeCategory === 'investigative-reports') ? (
+              <InvestigativeReports
+                language={language}
+                allArticles={allArticles}
+                onSelectArticle={(article) => {
+                  setSelectedArticle(article);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 currentUser={currentUser}
                 isHomeDemoUser={isHomeDemoUser}
                 onNavigateToPremium={() => {
@@ -1582,21 +1644,36 @@ export default function App() {
                   </div>
                 )}
 
-                {/* SECTION 3: HOMEPAGE ARTICLE GRID - LAST SIX ARTICLES (2 ROWS × 3 COLUMNS) */}
+                {/* SECTION 3: HOMEPAGE SPECIAL INVESTIGATIONS GRID - LAST SIX ARTICLES (2 ROWS × 3 COLUMNS) */}
                 {activeCategory === 'all' && (
-                  <section className="space-y-6 my-8" id="homepage-last-six-articles-grid">
-                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
-                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
-                        <Newspaper size={18} className="text-black shrink-0" />
-                        <span>{isAr ? 'آخر ستة تحقيقات وبرقيات إخبارية' : 'Latest Six Investigations & Wires'}</span>
-                      </h3>
-                      <span className="font-mono text-xxs font-bold text-zinc-500">
-                        {isAr ? 'عرض ستة تحقيقات حديثة (شبكة ٣ أعمدة × صفين)' : 'Latest 6 Dispatches (3 Columns × 2 Rows)'}
-                      </span>
+                  <section className="space-y-6 my-8" id="homepage-special-investigations-grid">
+                    <div className="border-double-editorial-bottom pb-2 flex flex-col sm:flex-row justify-between sm:items-center gap-3 text-black">
+                      <div className="flex items-center gap-2">
+                        <Sparkles size={20} className="text-red-700 shrink-0 animate-pulse" />
+                        <div>
+                          <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2 text-zinc-950">
+                            <span>{isAr ? 'التحقيقات الخاصة' : 'Special Investigations'}</span>
+                          </h3>
+                          <span className="font-mono text-xxs font-bold text-zinc-500 block">
+                            {isAr ? 'أحدث ٦ تحقيقات استقصائية معتمدة (شبكة ٣ أعمدة × صفين)' : 'Latest 6 Certified Investigations (3 Columns × 2 Rows)'}
+                          </span>
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={() => {
+                          setActiveCategory('special-investigations');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="self-start sm:self-auto bg-black hover:bg-zinc-800 text-white font-mono font-bold text-xs px-4 py-2 flex items-center gap-2 transition-colors cursor-pointer border border-black shadow-[3px_3px_0px_#b91c1c]"
+                      >
+                        <span>{isAr ? `عرض كافة التحقيقات الخاصة (${specialInvestigationsArticles.length || allArticles.length})` : `View All Special Investigations (${specialInvestigationsArticles.length || allArticles.length})`}</span>
+                        <span className="rtl:rotate-180">→</span>
+                      </button>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                      {allArticles.slice(0, 6).map((story) => (
+                      {(specialInvestigationsArticles.length >= 6 ? specialInvestigationsArticles : allArticles).slice(0, 6).map((story) => (
                         <div key={story.id} className="break-inside-avoid flex flex-col justify-between h-full">
                           <ArticleCard
                             article={story}
@@ -3656,23 +3733,37 @@ export default function App() {
               </section>
             )}
 
-            {/* SECTION 7: RESEARCH & REPORTS (أبحاث وتقارير) */}
-            {(activeCategory === 'all' || activeCategory === 'research-reports') && researchArticles.length > 0 && (
-              <section className="space-y-5">
-                <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
-                  <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
-                    <BookOpen size={18} className="text-black shrink-0" />
-                    <span>{isAr ? 'أبحاث ودراساة' : 'Research & Reports'}</span>
-                  </h3>
-                  <span className="font-mono text-xxs font-bold text-zinc-500">
-                    {isAr ? 'بيانات المركز الوطني' : 'Quantitative & Policy Analytics'}
-                  </span>
+            {/* SECTION 7: INVESTIGATIVE REPORTS & RESEARCH (التقارير الاستقصائية والأبحاث) */}
+            {(activeCategory === 'all' || activeCategory === 'research-reports' || activeCategory === 'investigative-reports') && researchArticles.length > 0 && (
+              <section className="space-y-5 my-8">
+                <div className="border-double-editorial-bottom pb-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-black">
+                  <div className="flex items-center gap-2.5">
+                    <BookOpen size={18} className="text-red-900 shrink-0" />
+                    <div>
+                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight text-black">
+                        {isAr ? 'التقارير الاستقصائية والأبحاث' : 'Investigative Reports & Studies'}
+                      </h3>
+                      <span className="font-mono text-xxs font-bold text-zinc-500 block">
+                        {isAr ? `المطالع: آخر ٦ تقارير موثقة من أصل ${researchArticles.length} دراسة استقصائية` : `Latest 6 of ${researchArticles.length} filed investigative studies`}
+                      </span>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setActiveCategory('research-reports');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="px-3.5 py-1.5 bg-red-950 hover:bg-black text-amber-300 font-mono font-bold text-xs uppercase cursor-pointer transition-all border border-red-900 flex items-center gap-1.5 shadow-[2px_2px_0px_#000]"
+                  >
+                    <span>{isAr ? `عرض كافة التقارير الاستقصائية (${researchArticles.length}) ←` : `View All Reports (${researchArticles.length}) →`}</span>
+                  </button>
                 </div>
 
-                {/* 4 Cards in a Row masonry style */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {/* 2 Rows x 3 Columns Grid (6 reports) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                   {displayedResearch.map((story) => (
-                    <div key={story.id} className="break-inside-avoid">
+                    <div key={story.id} className="break-inside-avoid flex flex-col justify-between">
                       <ArticleCard
                         article={story}
                         layoutMode={layoutMode}
@@ -3697,7 +3788,7 @@ export default function App() {
                       }}
                       className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
                     >
-                      <span>{isAr ? 'طالع كامل ملفات الأبحاث والمسوح ←' : 'Read More Research & Reports →'}</span>
+                      <span>{isAr ? 'الذهاب إلى ديوان التقارير الاستقصائية والأبحاث بالكامل ←' : 'Browse Complete Investigative Reports Hub →'}</span>
                     </button>
                   </div>
                 )}
