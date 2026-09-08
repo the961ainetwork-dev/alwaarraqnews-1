@@ -98,3 +98,20 @@
   animation: breathing-threat-pulse 2.2s infinite ease-in-out;
 }
 
+/* War Room Strategic Command Banner - Slow Pulse for Critical Threat Level */
+@keyframes war-room-critical-pulse {
+  0%, 100% {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.25), inset 0 0 15px rgba(220, 38, 38, 0.06);
+  }
+  50% {
+    border-color: rgba(239, 68, 68, 0.95);
+    box-shadow: 0 0 50px rgba(239, 68, 68, 0.65), inset 0 0 30px rgba(239, 68, 68, 0.22);
+  }
+}
+
+.war-room-critical-pulse {
+  animation: war-room-critical-pulse 3.6s infinite ease-in-out;
+}
+
+

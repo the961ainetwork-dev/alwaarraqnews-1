@@ -2,6 +2,351 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'lebanon-budget-2027-tax-amendments-investigation',
+    slug: 'موازنة-2027-التعديلات-الضريبية-الأساسية-والأحكام-المالية',
+    focusKeyword: 'موازنة-2027-التعديلات-الضريبية-الأحكام-المالية-معن-برازي-الضرائب-غير-المباشرة-القيمة-المضافة-الشركات-القابضة-الأوفشور',
+    category: 'special-investigations',
+    categories: ['special-investigations', 'alwarraq-investigations', 'economy', 'lebanon', 'exclusives', 'research-reports'],
+    titleAr: 'موازنة 2027: التعديلات الضريبية الأساسية والأحكام المالية',
+    titleEn: 'Lebanon Budget 2027: Key Tax Amendments and Financial Provisions',
+    summaryAr: 'تحقيق استقصائي حصري يفكك مسودة مشروع موازنة 2027 المحالة لمجلس الوزراء: اعتماد أكبر على الضرائب غير المباشرة والاستهلاك، وتركيز جباية ضريبة الدخل المباشرة على رواتب الموظفين بدلاً من أرباح الشركات والثروات، مع خطة لمضاعفة ضرائب شركات الأوفشور والشركات القابضة (Holding) أربعة أضعاف، وسط هيمنة فاتورة أجور القطاع العام بنسبة 53.54% وفجوة هائلة في ضرائب الأرباح بقيمة تتجاوز مليار دولار.',
+    summaryEn: 'An exclusive investigative dossier dissecting the draft Budget 2027 submitted to the Cabinet: heavy reliance on indirect consumption taxes (VAT), direct income taxes collected from wage-earners rather than corporate profits or accumulated wealth, a 4x tax hike on offshore and holding firms, and a public wage bill swallowing 53.54% of total appropriations alongside a $1B+ corporate tax revenue gap.',
+    excerptAr: 'تحقيق بقلم معن برازي: تشريح مسودة موازنة 2027، ومضاعفة ضرائب الأوفشور والهولدينغ، واقتطاع الرواتب مقابل تدني ضرائب أرباح الشركات إلى 1.04% فقط من GDP.',
+    excerptEn: 'Investigative dossier by Maan Barazi: Dissecting Lebanon’s 2027 Draft Budget, 4x tax hikes on offshore and holding entities, and the deep corporate income tax disparity.',
+    author: {
+      nameAr: 'معن برازي – الورّاق نيوز',
+      nameEn: 'Maan Barazi – Al-Warraq News',
+      titleAr: 'رئيس التحرير ووحدة الدراسات والتحقيقات الاقتصادية',
+      titleEn: 'Editor-in-Chief & Financial Investigations Desk',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-08',
+    readTimeAr: '١٠ دقائق قراءة استقصائية',
+    readTimeEn: '10 min investigative read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 24580,
+    tags: [
+      'موازنة_2027', 'الضرائب_في_لبنان', 'معن_برازي', 'ضريبة_القيمة_المضافة', 'شركات_الأوفشور', 'الشركات_القابضة', 'الأرباح_الرأسمالية_العقارية', 'قانون_الموازنة', 'التحقيقات_الاستقصائية', 'الرواتب_والأجور',
+      'LebanonBudget2027', 'TaxReform', 'MaanBarazi', 'VAT', 'CorporateTax', 'OffshoreHolding', 'LebanonEconomy', 'CapitalGains'
+    ],
+    hashtags: ['LebanonBudget2027', 'TaxAmendments', 'MaanBarazi', 'AlWarraqInvestigates', 'LebanonEconomy'],
+    contentAr: `### موازنة 2027: التعديلات الضريبية الأساسية والأحكام المالية
+
+**اعتماد أكبر على الضرائب غير المباشرة المتركزة على الضريبة على القيمة المضافة والضرائب القائمة على الاستهلاك.**  
+**الزيادات في تحصيلات ضريبة الدخل المباشرة تتأتى بشكل كبير من الارتفاع في الضرائب المقتطعة على الرواتب الرسمية بدلاً من فرض ضرائب هيكلية على أرباح الشركات العالية أو الثروات المتراكمة.**
+
+**بقلم: معن برازي – الورّاق نيوز**
+
+أُحيل مشروع مسودة موازنة 2027 إلى مجلس الوزراء في أواخر شهر آب/أغسطس، ويتضمن خطة لمضاعفة الضرائب المفروضة على شركات "الأوفشور" والشركات القابضة (Holding) أربعة أضعاف.
+
+---
+
+### أولاً: فرضية غياب العجز وزيادة النفقات
+
+* **تفاصيل الإنفاق:** يبلغ إجمالي الإنفاق المقترح **6.87 مليار دولار** (ما يتجاوز 614 تريليون ليرة لبنانية)، بزيادة قدرها **15%** مقارنة بموازنة 2026 التي أقرها البرلمان في أواخر كانون الثاني/يناير، وارتفاع يقارب **40%** مقارنة بموازنة 2025.
+* **توازن الموازنة:** تتوقع وزارة المالية تحقيق توازن مالي وعدم تسجيل أي عجز في السنة المالية 2027.
+* **هيمنة فاتورة الأجور:** يُتوقع أن ترتفع نفقات الأجور في القطاع العام بفعل تعديلات الرواتب المعتمدة في 2026 لتصل إلى نحو **8.61% من الناتج المحلي الإجمالي**، لتلتهم ما يقارب **53.54% من إجمالي اعتمادات موازنة 2027**.
+
+---
+
+### ثانياً: تدني جباية ضرائب الأرباح: تباين حاد مقارنة بالمعايير الدولية
+
+* **توقعات ضعيفة لضرائب الأرباح:** يتوقع مشروع الموازنة تحصيل **444 مليون دولار فقط** من ضرائب أرباح الشركات، وهو ما يمثل **1.04% فقط من الناتج المحلي الإجمالي**.
+* **المؤشرات المرجعية العالمية:** يتخلف المستهدف في لبنان بشكل حاد وفادح عن المعايير الدولية المعمول بها:
+  * **المتوسط العالمي:** 3.5% من الناتج المحلي الإجمالي.
+  * **الدول متوسطة الدخل:** 3.6% من الناتج المحلي الإجمالي.
+  * **دول منظمة التعاون الاقتصادي والتنمية (OECD):** 3.8% من الناتج المحلي الإجمالي.
+  * **متوسط الدول الأفريقية:** 3.3% من الناتج المحلي الإجمالي.
+* **فجوة الإيرادات الضائعة:** لو جَبَى لبنان ضرائب الأرباح وفق المتوسط العالمي (3.5%)، لبلغت الإيرادات نحو **1.5 مليار دولار** — أي أكثر من **ثلاثة أضعاف المبلغ المرصود** في مسودة موازنة 2027، ما يشير إلى فجوة جبائية تفوق 1.05 مليار دولار من الإيرادات المهدورة.
+
+---
+
+### ثالثاً: دولرة الإيرادات الضريبية مقابل جمود الأجور
+
+* **تحديث سعر استيفاء الضرائب:** أصبحت إيرادات الدولة والرسوم والضرائب تُقيّم وتُستوفى بالكامل تقريباً وفق سعر الصرف المعدل البالغ **89,500 ليرة للدولار**.
+* **تأخر القدرة الشرائية:** بينما عدلت الحكومة جباية الضرائب والرسوم وفق أسعار الصرف الحالية، لا تزال رواتب القطاع العام وجزء كبير من القطاع الخاص عالقة عند المعدلات القديمة — إذ لا تتجاوز في أفضل الأحوال **30,000 ليرة للدولار**.
+* **ضغوط تضخمية غير مضبوطة:** يواصل التضخم المستمر تآكل القدرة الشرائية للعمال، في ظل فشل السياسات الحكومية في كبح ارتفاع الأسعار أو حماية ذوي الدخل المحدود.
+
+---
+
+### رابعاً: تفكيك التعديلات الضريبية الأساسية والأحكام المالية (الفصل الثالث: المواد 15–58)
+
+#### 1. ضريبة الدخل وتعديلات الشركات
+
+* **التصريح عن ضريبة الرواتب (المادة 15):** يتوجب على جميع المكلفين والمؤسسات المعفاة تقديم بيانات سنوية بجميع الرواتب والأجور المدفوعة بحلول **1 نيسان/أبريل**، إلى جانب تقارير فردية تفصل اقتطاعات الضرائب وإنهاء خدمات الموظفين خلال العام.
+* **التنزيل الأساسي للأجور اليومية (المادة 16):** تحديد تنزيل ضريبي أساسي قدره **1,500,000 ليرة لبنانية يومياً** للعمال باليومية والساعة بغض النظر عن وضعهم العائلي. أما أجور العمالة المؤقتة/المقطوعة فتخضع لضريبة مقطوعة بنسبة **3%** دون أي تنزيلات أساسية.
+* **مهلة التسوية على الدخل الخارجي (المادة 17):** يُمنح الأشخاص الطبيعيون والمعنويون المقيمون الخاضعون للمادة 82 من قانون ضريبة الدخل **مهلة 6 أشهر** للتصريح وسداد الضرائب عن الدخل الخارجي السابق غير المنقضي دون فرض غرامات.
+* **فقدان الإعفاء بسبب عدم الالتزام (المادة 18):** تفقد الجهات المعفاة من الضريبة إعفاءها الضريبي عن العام المعني وتواجه عقوبات بموجب قانون الإجراءات الضريبية إذا أخلت بتقديم التصاريح السنوية المطلوبة أو رفضت إطلاع الإدارة الضريبية على دفاترها.
+* **الأرباح الرأسمالية العقارية (المادة 19):** تُفرض ضريبة بنسبة **10%** (للأشخاص الطبيعيين غير الخاضعين لضريبة الدخل) أو **15%** (لسائر الأشخاص الطبيعيين والمعنويين) على الأرباح الرأسمالية المحققة من التفرغ عن العقارات من قبل الأشخاص غير الخاضعين للضريبة أو المعفيين أو الأشخاص الذين لا تشكل العقارات جزءاً من أصول أعمالهم. وتستفيد العقارات المملوكة قبل 1 كانون الثاني/يناير 2026 من معدل مخفض مؤقت بنسبة **1%**. وتُعفى المساكن الرئيسية (حتى مسكنين) بالكامل. كما يطبق تخفيض ضريبي بنسبة **8% عن كل سنة ملكية كاملة**، مما يؤدي إلى **إعفاء كامل بعد 12 سنة ملكية مكتملة**.
+* **شركات الأوفشور والشركات القابضة (Holding) (المواد 20–24):** يمكن لشركات الأوفشور والشركات القابضة مسك محاسبتها وتقديم تصاريحها بالدولار أو اليورو إذا كان رأس مالها محدداً بهذه العملات. وتخضع كلا الفئتين لضريبة سنوية مقطوعة معدلة قدرها **200,000,000 ليرة لبنانية** (أو ما يعادلها بالدولار/اليورو) اعتباراً من السنة المالية 2027 (مضاعفة 4 أضعاف).
+
+#### 2. الضرائب غير المباشرة والضريبة على القيمة المضافة (VAT)
+
+* **رسم الاستهلاك على مشروبات الطاقة (المادة 25):** فرض رسم استهلاك داخلي على مشروبات الطاقة المعبأة بقيمة **15,000 ليرة لبنانية لكل لتر** اعتباراً من 30 تشرين الأول/أكتوبر 2025، مع موجبات تقديم تقارير سنوية للمنتجين المحليين وآليات استرداد للرسم عند إعادة التصدير.
+* **الضريبة على القيمة المضافة لمزودي الخدمات الرقمية والخارجية (المادة 48):** يتوجب على غير المقيمين الذين يقومون بأنشطة خاضعة للضريبة غير معفاة في لبنان تعيين ممثل ضريبي. كما يتوجب على مزودي الخدمات الرقمية والإلكترونية الأجانب الذين يبيعون خدمات مستخدمة في لبنان تعيين ممثل ضريبي محلي وتحصيل الضريبة على القيمة المضافة بغض النظر عن حجم أعمالهم. ويتوجب على المستهلكين المقيمين الذين يستفيدون من خدمات غير معفاة من الخارج التصريح عن الضريبة وسدادها.
+* **عقوبات ممارسة نشاط خاضع للضريبة على القيمة المضافة دون تسجيل (المادة 47):** يواجه الأشخاص الذين يستوفون شروط التسجيل الإلزامي في الضريبة على القيمة المضافة ويتخلفون عن التسجيل في المهلة المحددة تكليفاً رتعياً بالضريبة بناءً على إيرادات ضريبة الأملاك المبنية أو ضعف نسبة هامش الربح المقطوع، دون الحق في خصم الضريبة على المدخلات.
+* **التفرغ عن المؤسسات الفردية (المادة 45):** يُعفى التفرغ الكامل عن المؤسسات الفردية من الضريبة على القيمة المضافة باعتبار المؤسسة نشاطاً مستمراً.
+
+#### 3. رسم الطابع المالي، التركات، والضرائب المحلية
+
+* **أحكام رسم الطابع المالي (المواد 26–30):** إجبارية تقديم تصاريح فصلية إلكترونية للجهات التي تصدر فواتير وإيصالات خاضعة لرسم الطابع المالي. وتخضع البيانات الجمركية العادية لرسم طابع مالي ثابت قدره **3,000,000 ليرة لبنانية**.
+* **الضريبة على عقود تأمين الحياة (المادة 31):** لا تدخل مبالغ تأمين الحياة ضمن أصول التركة، وتخضع لضريبة مقطوعة بنسبة **5% دون إعفاءات**، وتقتطع مباشرة عبر شركات التأمين.
+* **ضريبة الأملاك المبنية على الشاغر (المادة 37):** تتوقف العقارات التجارية الشاغرة عن إنتاج إيرادات خاضعة للضريبة بمجرد التصريح عن شغورها. أما العقارات السكنية المبنية من قبل المطورين العقاريين فلها حد أقصى لوقف الضريبة بسبب الشغور يبلغ 3 سنوات، بينما يحصل غير المطورين على سنة واحدة. وبعد انقضاء هذه المدد، تُفرض الضريبة على أساس **50% من الإيراد المفترض** عن فترة الشغور.
+* **رسوم التحقق من الاستيراد (المادة 56):** إعادة فرض التحقق الإلزامي من الفواتير التجارية وشهادات المنشأ عبر البعثات الدبلوماسية اللبنانية في الخارج، مع استيفاء رسم قدره **0.4% (4 في الألف)** من قيمة الفاتورة.
+
+---
+
+### خامساً: مصفوفة الإدارة الضريبية والإنفاذ
+
+| المجال | المواد القانونية | الأحكام والتعديلات الرئيسية |
+| :--- | :--- | :--- |
+| **التسجيل والبيانات** | المادتان 38 و42 | التسجيل الإلزامي خلال شهرين من بدء النشاط. يتوجب على أصحاب العمل تسجيل العمال الجدد خلال 15 يوماً من نهاية الفصل مع تبادل تصاريح الضرائب آلياً مع الصندوق الوطني للضمان الاجتماعي؛ وتترتب على الفروقات بين تصاريح ضريبة الرواتب وتقارير الضمان غرامة تعادل ضعف قيمة الفارق في الأجور. |
+| **إجراءات التدقيق** | المادة 39 | يتلقى المكلفون نتائج التدقيق الأولية مع مهلة 15 يوماً فقط لإبداء الملاحظات قبل التكليف النهائي. يمكن تجاوز الإخطارات الأولية للشركات غير المسجلة/المكتومة أو غير المصرّحة. |
+| **سقوف الحد الأدنى لغرامات التدقيق** | المادتان 40–41 | تُحدد غرامات نقص التصريح بسقف 20% من الضريبة الإضافية المتوجبة. الحد الأدنى للغرامات: 18.75 مليون ليرة (للشركات المساهمة)، 12.5 مليون ليرة (لشركات الأشخاص/المحدودة المسؤولية)، 2.5 مليون ليرة (للأفراد). لا تترتب غرامة على التصاريح المعدلة المقدمة خلال 3 أشهر إذا كان الفارق أقل من 10%. |
+| **حظر براءات الذمة الضريبية** | المادة 43 | يمكن لمجلس الوزراء توجيه الجهات العامة لحجب الخدمات أو المعاملات الإدارية عن المكلفين الذين تتوجب عليهم متأخرات ضريبية غير مسددة. |
+| **تخفيض تسوية الغرامات** | المادة 44 | تخفيض استثنائي بنسبة 85% على غرامات الدولة والبلديات والمؤسسات العامة في حال تسديد الضرائب الأساسية والغرامات المخفضة خلال 6 أشهر من نشر القانون. |
+
+---
+
+### سادساً: أبرز الاستنتاجات التحقيقية
+
+1. **توسيع القاعدة الضريبية:** يستهدف المشروع الشركات غير الملتزمة، الخدمات الرقمية غير المقيمة، الأرباح الرأسمالية العقارية، والدخل المكتسب في الخارج.
+2. **التحول الرقمي الكثيف:** الانتقال نحو التصاريح الإلكترونية الإلزامية لرسم الطابع المالي، رسوم الانتقال، شغور العقارات، والتسجيل الضريبي.
+3. **الإنفاذ المتقاطع بين الإدارات:** ربط السجلات الضريبية لوزارة المالية مع بيانات الضمان الاجتماعي والخدمات الإدارية العامة للحد من التهرب الضريبي.
+
+---
+
+### سابعاً: التقييم النقدي: هل هذا النظام الضريبي عادل؟
+
+تعتمد تقييم عدالة مشروع قانون موازنة 2027 وآثاره على الاقتصاد الكلي بدرجة كبيرة على الزاوية التي يُنظر منها إليه: هل هي تحصيل إيرادات الدولة أم العدالة الاقتصادية والنمو؟
+
+#### 1. العناصر التصاعدية (الأحكام العادلة)
+* **فرض الضرائب على المضاربة العقارية والثروة:** إن رفع ضريبة الأرباح الرأسمالية على العقارات غير التجارية إلى 10%–15% يستهدف عمليات المضاربة السريعة، مع تقديم إعفاء كامل بعد 12 عاماً من الملكية والحفاظ على حماية المساكن الرئيسية.
+* **التسوية الضريبية على الدخل الخارجي:** إن السماح للمقيمين بالتصريح عن الدخل الخارجي السابق غير المنقضي دون غرامات يوازن بين التهرب السابق وتحصيل الإيرادات، مما يضع عبئاً أكثر عدالة على الأفراد الأكثر ثراءً ممن يحققون أرباحاً في الخارج.
+* **التعديل على الشركات:** إن تحديث الضرائب المقطوعة على شركات الأوفشور والشركات القابضة إلى 200 مليون ليرة سنوياً يمنع الكيانات الكبيرة من الاستفادة من معدلات ضريبية قديمة انخفضت قيمتها بفعل التضخم.
+
+#### 2. العناصر التنازلية (الأحكام غير العادلة)
+* **الاعتماد الأكبر على الضرائب غير المباشرة:** المحرك الأساسي للإيرادات يظل مركزاً على الضريبة على القيمة المضافة والضرائب القائمة على الاستهلاك. ولأن الأسر ذات الدخل المنخفض والمتوسط تنفق حصة أكبر من دخلها المتاح على الاستهلاك، فإن الضرائب غير المباشرة تصيب الفئات الأكثر هشاشة بالضرر الأكبر.
+* **أصحاب الأجور مقابل أصحاب الأرباح:** إن الزيادات في تحصيلات ضريبة الدخل المباشرة تتأتى بشكل كبير من الارتفاع في الضرائب المقتطعة على الرواتب الرسمية بدلاً من فرض ضرائب هيكلية على أرباح الشركات العالية أو الثروات المتراكمة.
+
+---
+
+### ثامناً: الأثر على مؤشر أسعار المستهلك (CPI) والاقتصاد الكلي
+
+* **ضغوط تصاعدية مباشرة على التضخم:** إن توسيع نطاق الضريبة على القيمة المضافة ليشمل الخدمات الرقمية/الخارجية، وتوسيع الضرائب الاستهلاكية الداخلية (مثل مشروبات الطاقة)، وإعادة فرض رسم 0.4% للتحقق من الفواتير الأجنبية، كلها عوامل ترفع مباشرة من تكاليف الاستيراد والتفريغ. وسيقوم المستوردون وتجار التجزئة بنقل هذه التكاليف إلى المستهلك النهائي.
+* **صدمات أسعار قصيرة الأجل:** التغييرات الهيكلية في رسم الطابع المالي وتكاليف التخليص الجمركي ترفع أسعار الجملة تدريجياً، مما يفاقم الاتجاهات التضخمية الناتجة عن تعديلات العملة أو الاعتماد على الاستيراد.
+
+#### مصفوفة الأثر الأوسع على الاقتصاد:
+* **الرسمية واقتصاد الظل:** تشجع قواعد براءة الذمة الصارمة (حجب الخدمات العامة عن غير الملتزمين) والعقوبات القاسية على الشركات غير المسجلة في الضريبة على القيمة المضافة على تنظيم الأوضاع والتسجيل. ومع ذلك، فإن ارتفاع تكاليف الامتثال يخاطر بدفع المؤسسات الصغيرة والمتوسطة التي تعاني مالياً بدرجة أكبر نحو الاقتصاد غير الرسمي القائم على النقد (Cash Economy).
+* **بيئة الأعمال:** إن السماح لشركات الأوفشور والشركات القابضة بمسك دفاترها بالعملات الأجنبية يقلل من مخاطر عدم تطابق العملات والأعباء التشغيلية. وفي المقابل، فإن ارتفاع الحد الأدنى للغرامات وتضييق مهل التدقيق (15 يوماً فقط) يقللان من المرونة المتاحة للشركات التي تواجه صعوبات مالية.
+* **الاستقرار المالي مقابل النمو:** الهدف الأساسي للمشروع هو تحقيق استقرار مالي قصير الأجل عبر تقليص عجز الموازنة من خلال ضبط الإيرادات الضريبية الضائعة. ومع ذلك، ونظراً لأن الإنفاق يظل موجهاً بشدة نحو النفقات التشغيلية وفاتورة الأجور بدلاً من الاستثمارات الرأسمالية أو البنية التحتية، فإن الحزمة الضريبية تعمل كأداة للجباية بدلاً من أن تكون محفزاً للنمو.`,
+    contentEn: `### Lebanon Budget 2027: Key Tax Amendments and Financial Provisions
+
+**Heavier reliance on indirect taxation centered on Value-Added Tax (VAT) and consumption-based levies.**  
+**Direct income tax revenue increases are predominantly derived from higher withholdings on official payrolls rather than structural taxes on high corporate profits or accumulated wealth.**
+
+**By: Maan Barazi – Al-Warraq News**
+
+The draft 2027 budget bill was submitted to the Council of Ministers in late August, featuring a comprehensive plan to quadruple the flat annual taxes imposed on offshore and holding companies.
+
+---
+
+### I. The Zero-Deficit Hypothesis & Spending Expansion
+
+* **Total Expenditure Outlay:** Proposed aggregate spending stands at **$6.87 Billion** (surpassing 614 Trillion Lebanese Pounds), reflecting a **15% increase** compared to the 2026 budget ratified by Parliament in late January, and an almost **40% surge** compared to the 2025 budget.
+* **Budget Equilibrium:** The Ministry of Finance projects full fiscal balance with zero recorded deficit for fiscal year 2027.
+* **Dominance of the Public Wage Bill:** Public sector personnel expenditures are projected to escalate following the 2026 salary scale revisions, reaching approximately **8.61% of GDP**, and devouring roughly **53.54% of total budget appropriations**.
+
+---
+
+### II. Depressed Corporate Profit Tax Collection: Acute Global Disparity
+
+* **Anemic Corporate Yield Projections:** The draft budget projects corporate income tax collections of merely **$444 Million**, representing a frail **1.04% of GDP**.
+* **International Benchmarks:** Lebanon’s fiscal targets fall dramatically below regional and global baselines:
+  * **Global Average:** 3.5% of GDP.
+  * **Middle-Income Countries (MICs):** 3.6% of GDP.
+  * **OECD Member Nations:** 3.8% of GDP.
+  * **African Continental Average:** 3.3% of GDP.
+* **The Structural Revenue Gap:** Had Lebanon collected corporate taxes in line with the modest global average (3.5%), receipts would have totaled approximately **$1.5 Billion** — more than **three times the amount budgeted** in the 2027 draft, revealing an uncollected fiscal gap exceeding $1.05 Billion.
+
+---
+
+### III. Dollarized Tax Collection vs. Wage Stagnation
+
+* **Updated Collection Exchange Rates:** State revenues, customs tariffs, duties, and official fees are now assessed and collected almost entirely at the unified rate of **89,500 LBP per USD**.
+* **Purchasing Power Lag:** While the state instantly recalibrated its revenue extraction to current market exchange rates, public sector compensation and large swathes of the private sector remain pinned to obsolete tiers — scarcely exceeding **30,000 LBP per USD** under optimal conditions.
+* **Unanchored Inflationary Strain:** Continuous inflation steadily erodes workers’ real income amid state policy inertia in stabilizing price hikes or shielding vulnerable demographics.
+
+---
+
+### IV. Detailed Breakdown of Key Tax Amendments (Chapter III: Articles 15–58)
+
+#### 1. Income Taxes & Corporate Entity Revisions
+
+* **Payroll Tax Declarations (Article 15):** All taxpayers and exempt entities must submit annual filings detailing all salaries and wages paid by **April 1st**, accompanied by individual itemized reports detailing tax withholdings and employee terminations.
+* **Basic Daily Wage Allowance (Article 16):** Establishment of a basic tax-free allowance of **1,500,000 LBP per day** for daily and hourly wage-earners regardless of marital status. Temporary and lump-sum contract labor is subject to a flat **3% withholding tax** without deductions.
+* **Grace Period for Foreign-Sourced Income (Article 17):** Resident natural and legal persons subject to Article 82 of the Income Tax Law are granted a **6-month amnesty window** to declare and settle outstanding taxes on past undeclared foreign income free of penalty charges.
+* **Loss of Tax Exemption for Non-Compliance (Article 18):** Tax-exempt entities forfeit their exemption for the relevant tax year and face statutory penalties under the Tax Procedures Code if they fail to file annual returns or refuse inspection access to accounting ledgers.
+* **Real Estate Capital Gains Tax (Article 19):** A capital gains tax of **10%** (for non-business natural persons) or **15%** (for other entities and corporate persons) is imposed on property disposal gains. Properties acquired prior to January 1, 2026 benefit from a temporary concessionary **1% rate**. Primary residential units (up to two dwellings) are fully exempt. An **8% annual reduction** applies for each complete year of ownership, culminating in **complete exemption after 12 full years**.
+* **Offshore & Holding Companies (Articles 20–24):** Offshore and holding entities may maintain ledgers and file returns in USD or Euros if their capital is denominated in these foreign currencies. Both entity categories are subject to an updated flat annual lump-sum tax of **200,000,000 LBP** (or foreign currency equivalent) starting FY 2027 (a 4-fold increase).
+
+#### 2. Indirect Taxes & Value-Added Tax (VAT)
+
+* **Energy Drink Excise Duty (Article 25):** Imposition of a domestic consumption duty of **15,000 LBP per liter** on packaged energy drinks effective October 30, 2025, with reporting mandates for local manufacturers and refund mechanisms on re-exported volumes.
+* **VAT on Non-Resident & Digital Services (Article 48):** Non-resident entities performing taxable non-exempt activities in Lebanon must designate a fiscal representative. Foreign digital and electronic service providers selling services consumed in Lebanon must appoint a local fiscal representative and remit VAT irrespective of turnover volume.
+* **Sanctions on Unregistered VAT Activity (Article 47):** Persons meeting mandatory VAT registration thresholds who fail to register within prescribed deadlines face ex-officio assessments based on built property rental values or double the standard lump-sum profit margin, forfeiting all input tax deduction rights.
+* **Sole Proprietorship Asset Disposals (Article 45):** Complete transfers and disposals of sole proprietorship businesses are exempt from VAT, treated legally as going-concern continuity.
+
+#### 3. Stamp Duties, Estates, and Municipal Levies
+
+* **Fiscal Stamp Duty Procedures (Articles 26–30):** Mandatory quarterly electronic returns for all entities issuing invoices and receipts subject to stamp duty. Standard customs clearance declarations face a fixed stamp duty of **3,000,000 LBP**.
+* **Life Insurance Policy Taxation (Article 31):** Life insurance proceeds are excluded from the deceased's taxable estate assets and subjected to a flat **5% withholding tax** without exemptions, collected directly by insurance carriers.
+* **Vacant Built Property Tax Relief (Article 37):** Vacant commercial properties cease generating taxable income upon formal vacancy notification. Developer-built residential units enjoy a tax freeze of up to 3 years, compared to 1 year for non-developers, after which tax is levied on **50% of imputed rental yield**.
+* **Import Consular Verification Surcharge (Article 56):** Reinstating mandatory consular invoice and certificate of origin verification via Lebanese diplomatic missions abroad, levying an ad-valorem fee of **0.4% (4‰)** of invoice value.
+
+---
+
+### V. Tax Administration & Enforcement Matrix
+
+| Domain | Statutory Reference | Core Provisions & Enforcement Mechanisms |
+| :--- | :--- | :--- |
+| **Registration & Labor Data** | Articles 38 & 42 | Mandatory registration within two months of commercial inception. Employers must register new personnel within 15 days of calendar quarter-end, with automated data synchronization with the National Social Security Fund (NSSF); wage variances between payroll tax and NSSF returns trigger a fine equal to twice the wage discrepancy. |
+| **Audit Timelines & Due Process** | Article 39 | Taxpayers receive preliminary audit findings with a strict 15-day window to submit objections prior to final assessment. Preliminary notices may be bypassed for undeclared, clandestine, or unregistered enterprises. |
+| **Minimum Penalty Floors** | Articles 40–41 | Deficiency penalties capped at 20% of additional tax liability. Minimum penalty floors: 18.75M LBP (Joint-stock SALs), 12.5M LBP (LLCs/Partnerships), 2.5M LBP (Sole proprietorships/individuals). |
+| **Clearance Certificate Denial** | Article 43 | The Council of Ministers may instruct public agencies and ministries to suspend public administrative services and transactions for taxpayers carrying delinquent tax arrears. |
+| **Fine Settlement Amnesty** | Article 44 | Exceptional 85% reduction on state, municipal, and public institution delay penalties provided principal tax dues and discounted fines are settled within 6 months of legislative enactment. |
+
+---
+
+### VI. Investigative Synthesis: Is the Tax System Equitable?
+
+#### 1. Progressive Elements
+* **Targeting Speculation & Wealth:** The 10%–15% real estate capital gains tax curbs rapid land speculation while preserving family homes through a 12-year progressive exit path.
+* **Foreign Income Grace Window:** Allowing voluntary disclosure of past undeclared offshore income places a fairer contribution burden on affluent international earners.
+* **Rebalancing Corporate Shells:** Quadrupling flat taxes on offshore and holding companies to 200 Million LBP prevents large holding structures from exploiting deflated paper levies.
+
+#### 2. Regressive Elements
+* **Predominance of Consumption Taxes:** Relying on VAT and excises disproportionately penalizes lower- and middle-income families who allocate the bulk of their disposable cash flow to basic sustenance.
+* **Wage-Earners vs. Corporate Windfalls:** The bill focuses enforcement on transparent formal employee payrolls rather than implementing aggressive structural taxes on accumulated wealth or windfall financial sector profits.
+* **CPI Inflation & Shadow Cash Drift:** Increasing administrative compliance costs and import fees (0.4%) risks driving struggling SMEs deeper into the unregistered cash economy while transferring higher shelf prices directly onto consumers.`
+  },
+  {
+    id: 'nawaf-salam-financial-gap-banking-restructuring-2026',
+    slug: 'نواف-سلام-وإعادة-هيكلة-القطاع-المالي-معركة-التشريع-بوجه-المصالح-النافذة',
+    focusKeyword: 'نواف-سلام-إعادة-هيكلة-القطاع-المالي-الفجوة-المالية-استرداد-الودائع-مجلس-النواب-صندوق-النقد-جمعية-المصارف',
+    category: 'lebanon',
+    categories: ['lebanon', 'economy', 'exclusives', 'special-investigations', 'research-reports'],
+    titleAr: 'نواف سلام وإعادة هيكلة القطاع المالي: معركة التشريع بوجه المصالح النافذة',
+    titleEn: 'Nawaf Salam and Financial Sector Restructuring: The Legislative Battle Against Entrenched Interests',
+    summaryAr: 'حسم رئيس الحكومة نواف سلام الجدل القائم حول مشروع قانون إطار إعادة التوازن المالي واسترداد الودائع (المعروف بقانون الفجوة المالية). وفي ردٍّ مباشر على المواقف الأخيرة لرئيس حزب القوات اللبنانية سمير جعجع، أعلن سلام أن الشق التشريعي للمشروع بات رسمياً في عهدة مجلس النواب، مشدداً على ضرورة إدراج التحضيرات في لجنة المال والموازنة لتسريع دراسته ومناقشته، في ظل استمرار التنسيق مع صندوق النقد الدولي وتحفظات جمعية المصارف ومصرف لبنان.',
+    summaryEn: 'Prime Minister Nawaf Salam settled the debate surrounding the draft Financial Gap and Deposit Recovery Framework Law. In a direct response to recent political pushback, Salam announced that the legislative bill is now officially with Parliament, emphasizing the urgency of Finance and Budget Committee deliberations amid IMF coordination and pushback from the Association of Banks in Lebanon and the Central Bank.',
+    excerptAr: 'حسم رئيس الحكومة نواف سلام الجدل حول قانون الفجوة المالية واسترداد الودائع، مؤكداً إحالته رسمياً للبرلمان ورافضاً المماطلة ومواقف قوى سياسية ومصرفية نافذة.',
+    excerptEn: 'Prime Minister Nawaf Salam moves the Financial Gap & Deposit Recovery bill to Parliament, pushing back against banking resistance and legislative stalling.',
+    author: {
+      nameAr: 'مكتب الشؤون السياسية والمالية — صحيفة الورّاق',
+      nameEn: 'Political & Sovereign Finance Bureau — Al-Warraq',
+      titleAr: 'متابعات الشأن اللبناني والإصلاح المصرفي',
+      titleEn: 'Lebanese Affairs & Banking Reform Desk',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-08',
+    readTimeAr: '٥ دقائق قراءة',
+    readTimeEn: '5 min read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 18940,
+    tags: [
+      'نواف_سلام', 'أخبار_لبنان', 'إعادة_هيكلة_المصارف', 'الفجوة_المالية', 'استرداد_الودائع', 'مجلس_النواب', 'صندوق_النقد_الدولي', 'جمعية_المصارف', 'إبراهيم_كنعان',
+      'NawafSalam', 'LebanonEconomy', 'BankingReform', 'FinancialGap', 'IMF', 'DepositorRights'
+    ],
+    hashtags: ['LebanonBankingReform', 'NawafSalam', 'FinancialGapLaw', 'AlWarraqLebanon'],
+    contentAr: `### نواف سلام وإعادة هيكلة القطاع المالي: معركة التشريع بوجه المصالح النافذة
+
+حسم رئيس الحكومة **نواف سلام** الجدل القائم حول **مشروع قانون إطار إعادة التوازن المالي واسترداد الودائع** (المعروف بـ *قانون الفجوة المالية*). 
+
+وفي ردٍّ مباشر على المواقف الأخيرة لرئيس حزب القوات اللبنانية سمير جعجع، أعلن سلام أن الشق التشريعي للمشروع بات **رسمياً في عهدة مجلس النواب**، مشدداً على ضرورة إدراج التحضيرات في **لجنة المال والموازنة** لتسريع دراسته ومناقشته.
+
+---
+
+### سياق الخطوة وخلفيات الإصرار الحكومي
+
+تأتي هذه الخطوة في ظل إصرار حكومي على تحقيق خرق نوعي في منظومة القوانين الإصلاحية؛ إذ ينظر الرئيس سلام إلى استكمال هذا الملف باعتباره **الامتداد الطبيعي لتبني وإقرار قوانين رفع السرية المصرفية وإصلاح وهيكلة القطاع المصرفي**. 
+
+غير أن التحديات الميدانية والسياسية تبدو المعبر الأقسى لإنجاز مشروع القانون، في ظل جبهة معارضة عريضة تجمع قوى سياسية متباينة — من *القوات اللبنانية* إلى *حزب الله* — وصولاً إلى تحفظات قاطعة وحاسمة أبداها رئيس لجنة المال والموازنة النائب **إبراهيم كنعان**.
+
+---
+
+### محاور النزاع الجوهري حول مشروع قانون الفجوة المالية
+
+1. **الموقف المصرفي والنقدي:**
+   - تواجه الصيغة المطروحة رفضاً حاداً ومطلقاً من **جمعية مصارف لبنان**.
+   - بالتوازي، أبدى **مصرف لبنان (البنك المركزي)** تحفظات جوهرية، مطالباً بإدخال تعديلات هيكلية تتصل بآليات المعالجة، توزيع الخسائر، وتحديد المسؤوليات المالية بين الدولة، المصرف المركزي، والمصارف التجارية.
+
+2. **الموقف الحكومي والنهج التفاوضي:**
+   - يُظهر رئيس الحكومة صلابة حيال تسيير القوانين وعدم رهنها للفيتوات المسبقة.
+   - يؤكد سلام فتح الباب أمام التعديلات المشروطة بـ **جدول زمني محدد ودقيق**، رافضاً إعادة إنتاج سيناريوهات المماطلة وتضييع الوقت التي فرضتها المصالح المصرفية والمناورات الشعبوية على حساب حقوق المودعين.
+
+3. **التنسيق مع المؤسسات الدولية وصندوق النقد:**
+   - تتواصل اللقاءات شبه اليومية بين الفريق الحكومي و**صندوق النقد الدولي (IMF)** لتبادل المقترحات والتعديلات الفنية الممكنة.
+   - من المقرر إرسال الصيغ المعدلة والنهائية إلى البرلمان فور نضوجها وتوافقها مع المعايير الدولية، استناداً إلى آلية التعامل السابقة المعتمدة في قانون إصلاح المصارف.
+
+---
+
+### الأبعاد الجيوسياسية والرقابة الدولية
+
+تخضع هذه المواجهة لمتابعة حثيثة ولصيقة من قِبل:
+- **المؤسسات المالية الدولية (البنك الدولي وصندوق النقد).**
+- **الشركاء الأوروبيين والإدارة الأمريكية.**
+
+حيث يُشكل هذا الملف **المعيار الحقيقي والفاصل** لفرز القوى والكتل السياسية بين:
+- الداعمين لمسار الإصلاح البنيوي واستعادة الانتظام المالي والمصرفي والعدالة للمودعين.
+- المتمسكين بحماية مراكز النفوذ، الحصانات المصرفية، والمصالح الفئوية الضيقة.`,
+    contentEn: `### Nawaf Salam and Financial Sector Restructuring: The Legislative Battle Against Entrenched Interests
+
+Prime Minister **Nawaf Salam** has firmly resolved the lingering debate surrounding the **Draft Framework Law on Financial Balance Restoration and Deposit Recovery** (commonly known as the *Financial Gap Law*).
+
+Responding directly to recent political positions from Lebanese Forces leader Samir Geagea, Prime Minister Salam announced that the legislative mandate of the bill is now **officially in the custody of Parliament**, stressing the imperative of expediting committee hearings within the **Parliamentary Finance and Budget Committee**.
+
+---
+
+### Executive Determination and Reform Momentum
+
+This decisive executive step reflects the government's steadfast commitment to breaking the legislative deadlock on crucial reform packages. Prime Minister Salam views this milestone as the logical and indispensable extension of prior milestones, notably the **banking secrecy overhaul** and comprehensive **banking sector restructuring laws**.
+
+However, field and political hurdles represent the steepest obstacle. The draft faces a broad and heterogeneous opposition coalition spanning divergent political blocs—from the *Lebanese Forces* to *Hezbollah*—culminating in firm reservations voiced by the Chairman of the Parliamentary Finance and Budget Committee, MP **Ibrahim Kanaan**.
+
+---
+
+### Core Pillars of Contention over the Financial Gap Law
+
+1. **Banking & Monetary Stance:**
+   - The proposed formula confronts staunch opposition from the **Association of Banks in Lebanon (ABL)**.
+   - Meanwhile, **Banque du Liban (BDL)** has raised core reservations, demanding structural adjustments regarding loss-distribution mechanics, recapitalization parameters, and financial accountability across the state, the central bank, and commercial lenders.
+
+2. **Governmental Strategy & Negotiating Stance:**
+   - The Prime Minister maintains a resolute position on passing reforms without succumbing to preliminary vetoes.
+   - Salam underscores openness to constructive amendments strictly bound by **tight, defined timetables**, rejecting any recurrence of historical stalling tactics orchestrated by banking lobbies and populist maneuvers at the expense of depositors' fundamental rights.
+
+3. **International Coordination with the IMF:**
+   - Near-daily consultations continue between the executive cabinet and the **International Monetary Fund (IMF)** to harmonize technical proposals.
+   - Refined drafts will be transmitted directly to Parliament upon finalization, mirroring the collaborative framework previously utilized for the banking reform statute.
+
+---
+
+### Geopolitical Dimensions & Global Scrutiny
+
+This confrontation is subject to intense, continuous monitoring by:
+- **International Financial Institutions (World Bank & IMF).**
+- **European and US bilateral partners.**
+
+The resolution of the Financial Gap dossier serves as the **defining litmus test** delineating political forces dedicated to structural recovery and depositor justice from those safeguarding entrenched privileges, banking immunities, and narrow clientelist interests.`
+  },
+  {
     id: 'ft-israeli-military-religious-zionism-shift-2026',
     slug: 'تقرير-فايننشال-تايمز-تحول-بنيوي-الجيش-الإسرائيلي-صعود-الصهيونية-الدينية-2026',
     focusKeyword: 'فايننشال-تايمز-الجيش-الإسرائيلي-الصهيونية-الدينية-المכיخوت-هيئة-الأركان-غزة-الاستيطان-معن-البرازي',

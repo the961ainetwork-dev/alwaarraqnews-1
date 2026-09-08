@@ -258,6 +258,7 @@ export function getThreatTheme(threat: ThreatLevel) {
         bannerGradient: 'bg-gradient-to-r from-red-950/90 via-[#1c0a0a] to-[#0c0d0f]',
         bannerBorder: 'border-red-600/70',
         bannerGlow: 'shadow-[0_0_35px_rgba(220,38,38,0.28)]',
+        bannerAnimation: 'war-room-critical-pulse',
         badgeBg: 'bg-red-950/90 text-red-300 border-red-700/80',
         activePillBg: 'bg-red-950 text-red-200 border-red-600 shadow-[0_0_12px_rgba(239,68,68,0.4)]',
         accentText: 'text-red-400',
@@ -282,6 +283,7 @@ export function getThreatTheme(threat: ThreatLevel) {
         bannerGradient: 'bg-gradient-to-r from-amber-950/90 via-[#1c1206] to-[#0c0d0f]',
         bannerBorder: 'border-amber-500/70',
         bannerGlow: 'shadow-[0_0_35px_rgba(245,158,11,0.25)]',
+        bannerAnimation: '',
         badgeBg: 'bg-amber-950/90 text-amber-300 border-amber-700/80',
         activePillBg: 'bg-amber-950 text-amber-200 border-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.35)]',
         accentText: 'text-amber-400',
@@ -306,6 +308,7 @@ export function getThreatTheme(threat: ThreatLevel) {
         bannerGradient: 'bg-gradient-to-r from-yellow-950/80 via-[#1b190a] to-[#0c0d0f]',
         bannerBorder: 'border-yellow-500/70',
         bannerGlow: 'shadow-[0_0_35px_rgba(234,179,8,0.22)]',
+        bannerAnimation: '',
         badgeBg: 'bg-yellow-950/90 text-yellow-300 border-yellow-700/80',
         activePillBg: 'bg-yellow-950 text-yellow-200 border-yellow-500 shadow-[0_0_12px_rgba(234,179,8,0.35)]',
         accentText: 'text-yellow-400',
@@ -331,6 +334,7 @@ export function getThreatTheme(threat: ThreatLevel) {
         bannerGradient: 'bg-gradient-to-r from-emerald-950/80 via-[#071912] to-[#0c0d0f]',
         bannerBorder: 'border-emerald-500/70',
         bannerGlow: 'shadow-[0_0_35px_rgba(16,185,129,0.22)]',
+        bannerAnimation: '',
         badgeBg: 'bg-emerald-950/90 text-emerald-300 border-emerald-700/80',
         activePillBg: 'bg-emerald-950 text-emerald-200 border-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.35)]',
         accentText: 'text-emerald-400',
@@ -2401,7 +2405,7 @@ ${isAr ? 'تنبيه: يحظر نشر هذه المواد خارج المنصا�
       {/* Dynamic War Room Strategic Command Banner with Reactive Threat Level Theme */}
       <div 
         id="war-room-threat-banner"
-        className={`p-5 md:p-7 rounded-xl border transition-all duration-700 mb-8 relative overflow-hidden shadow-2xl ${threatTheme.bannerGradient} ${threatTheme.bannerBorder} ${threatTheme.bannerGlow}`}
+        className={`p-5 md:p-7 rounded-xl border transition-all duration-700 mb-8 relative overflow-hidden shadow-2xl ${threatTheme.bannerGradient} ${threatTheme.bannerBorder} ${threatTheme.bannerGlow} ${threatTheme.bannerAnimation || ''} ${isGlowing ? 'breathing-threat-glow' : ''}`}
       >
         {/* Subtle grid background texture & ambient radar sweep */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent pointer-events-none" />

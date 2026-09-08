@@ -26,7 +26,8 @@ import {
   Flame,
   Megaphone,
   AlertCircle,
-  ShieldAlert
+  ShieldAlert,
+  Newspaper
 } from 'lucide-react';
 
 const DESK_METADATA: Record<string, {
@@ -485,6 +486,22 @@ export default function Navigation({ language, activeCategory, setActiveCategory
               </button>
             </li>
 
+            {/* Direct Link: Daily Market Dispatch Publication (Barron's Print Edition) */}
+            <li>
+              <button
+                id="nav-tab-publication"
+                onClick={() => selectTab('publication')}
+                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
+                  activeCategory === 'publication' || activeCategory === 'daily-market-dispatch' || activeCategory === 'dispatch'
+                    ? 'bg-[#0b1a30] text-amber-400 font-black border-b-2 border-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.25)]'
+                    : 'text-amber-300/90 hover:text-amber-100 hover:bg-zinc-900 border border-amber-900/40'
+                }`}
+              >
+                <Newspaper size={13} className="text-amber-400" />
+                <span className="font-extrabold uppercase">{isAr ? 'إصدار الصحيفة (Barron\'s)' : 'Daily Dispatch'}</span>
+              </button>
+            </li>
+
             {/* 2. Structured Group Dropdowns */}
             {menuGroups.map((group) => {
               const isOpen = activeDropdown === group.id;
@@ -845,6 +862,21 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                 >
                   <ShieldAlert size={13} className={activeCategory === 'special-investigations' || activeCategory === 'investigations' ? 'text-amber-400 animate-pulse' : 'text-amber-500'} />
                   <span>{isAr ? 'التحقيقات' : 'Investigations'}</span>
+                </button>
+
+                {/* Daily Market Dispatch Publication Mobile Link */}
+                <button
+                  id="nav-tab-mobile-publication"
+                  onClick={() => selectTab('publication')}
+                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
+                    activeCategory === 'publication' || activeCategory === 'daily-market-dispatch' || activeCategory === 'dispatch'
+                      ? 'bg-[#0b1a30] text-amber-400 font-extrabold border-r-4 border-amber-400'
+                      : 'text-amber-300/90 hover:text-white bg-[#0b1a30]/30 border border-amber-900/30'
+                  }`}
+                  style={{ textAlign: isAr ? 'right' : 'left' }}
+                >
+                  <Newspaper size={13} className="text-amber-400" />
+                  <span>{isAr ? 'إصدار الصحيفة البريدي (Barron\'s)' : 'Daily Market Dispatch (Barron\'s)'}</span>
                 </button>
 
                 {/* Standalone War Room Link */}
