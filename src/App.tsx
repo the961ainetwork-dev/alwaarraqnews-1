@@ -1659,11 +1659,6 @@ export default function App() {
                       ))}
                     </div>
 
-                    {/* Comparative Money Laundering Risk Visualization Section */}
-                    <div className="py-6">
-                      <LebanonAMLVisualizer language={language} layoutMode={layoutMode} />
-                    </div>
-
                     {/* THE TEASER BANNER INTRODUCING CONSUMER SENTIMENT SCRAPER */}
                     <div 
                       id="sentiment-promotional-banner" 
@@ -3634,6 +3629,13 @@ export default function App() {
                   </div>
                 )}
               </section>
+            )}
+
+            {/* SECTION 5.1: BASEL AML RISK INDEX & LEBANON BENCHMARK REPORT (فهرس بازل لمخاطر غسل الأموال وتصنيف لبنان) */}
+            {(activeCategory === 'all' || activeCategory === 'markets') && (
+              <div className="py-6" id="basel-aml-risk-section">
+                <LebanonAMLVisualizer language={language} layoutMode={layoutMode} />
+              </div>
             )}
 
             {/* SECTION 5.5: OIL & ENERGY (النفط والطاقة) */}
