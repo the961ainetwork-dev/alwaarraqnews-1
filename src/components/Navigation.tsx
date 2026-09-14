@@ -367,7 +367,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'الرأي والتفاعل',
       icon: <MessageSquare size={13} />,
       labelEn: 'Opinion & Risk Sandboxes',
-      tabIds: ['intelligence-dispatch', 'editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter', 'world-of-ai'],
+      tabIds: ['intelligence-dispatch', 'editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'world-of-ai'],
       descAr: 'أعمدة رئيس التحرير، سيناريوهات محاكاة المخاطر الرياضية ورصد المشاعر العامة',
       descEn: 'Editorial columns, mathematical scenario simulations, and AI public mood tracking models.'
     },
@@ -495,35 +495,23 @@ export default function Navigation({ language, activeCategory, setActiveCategory
               </button>
             </li>
 
-            {/* Direct Link: Daily Market Dispatch Publication (Barron's Print Edition) */}
+            {/* Direct Link: Current Daily Intelligence Dispatch (البرقية الاستخباراتية اليومية) */}
             <li>
               <button
-                id="nav-tab-publication"
-                onClick={() => selectTab('publication')}
-                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
-                  activeCategory === 'publication' || activeCategory === 'daily-market-dispatch' || activeCategory === 'dispatch'
-                    ? 'bg-[#0b1a30] text-amber-400 font-black border-b-2 border-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.25)]'
-                    : 'text-amber-300/90 hover:text-amber-100 hover:bg-zinc-900 border border-amber-900/40'
-                }`}
-              >
-                <Newspaper size={13} className="text-amber-400" />
-                <span className="font-extrabold uppercase">{isAr ? 'إصدار الصحيفة (Barron\'s)' : 'Daily Dispatch'}</span>
-              </button>
-            </li>
-
-            {/* Direct Link: Daily Intelligence Broadcast Dispatch (البرقية الاستخباراتية) */}
-            <li>
-              <button
-                id="nav-tab-intelligence-dispatch"
+                id="nav-tab-current-dispatch"
                 onClick={() => selectTab('intelligence-dispatch')}
                 className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
-                  activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'broadcast-dispatch'
-                    ? 'bg-red-950 text-white font-black border-b-2 border-red-500 shadow-[0_0_12px_rgba(239,68,68,0.35)]'
+                  activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'broadcast-dispatch' || activeCategory === 'current-dispatch'
+                    ? 'bg-red-950 text-white font-black border-b-2 border-red-500 shadow-[0_0_14px_rgba(239,68,68,0.4)]'
                     : 'text-red-400 hover:text-white hover:bg-zinc-900 border border-red-900/50'
                 }`}
+                title={isAr ? 'البرقية الاستخباراتية اليومية الصادرة عن غرفة التحرير' : 'Current Daily Intelligence Dispatch'}
               >
                 <Radio size={13} className="text-red-500 animate-pulse" />
                 <span className="font-extrabold uppercase">{isAr ? 'البرقية الاستخباراتية' : 'Daily Intel Wire'}</span>
+                <span className="bg-red-600 text-white text-[9px] font-mono font-black px-1.5 py-0.2 rounded-xs animate-pulse">
+                  {isAr ? 'حي' : 'LIVE'}
+                </span>
               </button>
             </li>
 
@@ -889,34 +877,24 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                   <span>{isAr ? 'التحقيقات' : 'Investigations'}</span>
                 </button>
 
-                {/* Daily Market Dispatch Publication Mobile Link */}
+                {/* Current Daily Intelligence Dispatch Mobile Link */}
                 <button
-                  id="nav-tab-mobile-publication"
-                  onClick={() => selectTab('publication')}
-                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
-                    activeCategory === 'publication' || activeCategory === 'daily-market-dispatch' || activeCategory === 'dispatch'
-                      ? 'bg-[#0b1a30] text-amber-400 font-extrabold border-r-4 border-amber-400'
-                      : 'text-amber-300/90 hover:text-white bg-[#0b1a30]/30 border border-amber-900/30'
-                  }`}
-                  style={{ textAlign: isAr ? 'right' : 'left' }}
-                >
-                  <Newspaper size={13} className="text-amber-400" />
-                  <span>{isAr ? 'إصدار الصحيفة البريدي (Barron\'s)' : 'Daily Market Dispatch (Barron\'s)'}</span>
-                </button>
-
-                {/* Intelligence Broadcast Dispatch Mobile Link */}
-                <button
-                  id="nav-tab-mobile-intelligence-dispatch"
+                  id="nav-tab-mobile-current-dispatch"
                   onClick={() => selectTab('intelligence-dispatch')}
-                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
-                    activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'broadcast-dispatch'
+                  className={`w-full py-2.5 px-3 flex items-center justify-between gap-2 transition-all rounded ${
+                    activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'broadcast-dispatch' || activeCategory === 'current-dispatch'
                       ? 'bg-red-950 text-white font-extrabold border-r-4 border-red-500'
                       : 'text-red-400 hover:text-white bg-red-950/40 border border-red-900/40'
                   }`}
                   style={{ textAlign: isAr ? 'right' : 'left' }}
                 >
-                  <Radio size={13} className="text-red-500 animate-pulse" />
-                  <span>{isAr ? 'برقيات البث الاستخباراتي اليومي' : 'Daily Intelligence Wire'}</span>
+                  <div className="flex items-center gap-2">
+                    <Radio size={13} className="text-red-500 animate-pulse" />
+                    <span>{isAr ? 'البرقية الاستخباراتية اليومية (الإصدار الحي)' : 'Current Daily Intelligence Dispatch'}</span>
+                  </div>
+                  <span className="bg-red-600 text-white text-[9px] font-mono font-black px-1.5 py-0.5 rounded-xs animate-pulse">
+                    {isAr ? 'حي' : 'LIVE'}
+                  </span>
                 </button>
 
                 {/* Standalone War Room Link */}

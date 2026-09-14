@@ -36,13 +36,15 @@ import UrgentRelease from './components/UrgentRelease';
 import PressReleases, { PRESS_RELEASES } from './components/PressReleases';
 import { PublicationPage } from './components/PublicationPage';
 import WorldOfAI from './components/WorldOfAI';
+import IntelligenceDispatchPage from './components/IntelligenceDispatchPage';
+import CurrentDispatchSection from './components/CurrentDispatchSection';
 import { IraqUSInvestmentDossier } from './components/IraqUSInvestmentDossier';
 import { Sparkline } from './components/Sparkline';
 import { OilCurrencyVolatilityChart } from './components/OilCurrencyVolatilityChart';
 import ArabGasPipelineD3Map from './components/ArabGasPipelineD3Map';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode, ShieldAlert } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode, ShieldAlert, Radio } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
@@ -137,9 +139,9 @@ export default function App() {
     if (cleanPath === 'admin') {
       return 'admin';
     } else if (cleanPath === 'newsletter') {
-      return 'newsletter';
-    } else if (cleanPath === 'publication' || cleanPath === 'daily-market-dispatch' || cleanPath === 'dispatch') {
-      return 'publication';
+      return 'intelligence-dispatch';
+    } else if (cleanPath === 'intelligence-dispatch' || cleanPath === 'daily-dispatch' || cleanPath === 'dispatch' || cleanPath === 'broadcast-dispatch' || cleanPath === 'publication' || cleanPath === 'daily-market-dispatch' || cleanPath === 'current-dispatch') {
+      return 'intelligence-dispatch';
     } else if (cleanPath === 'workspace') {
       return 'workspace';
     } else if (cleanPath.startsWith('section/')) {
@@ -1375,15 +1377,15 @@ export default function App() {
                     </button>
 
                     <button
-                      id="hero-publication-page-btn"
+                      id="hero-current-dispatch-btn"
                       onClick={() => {
-                        setActiveCategory('publication');
+                        setActiveCategory('intelligence-dispatch');
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className="w-full md:w-auto bg-[#0b1a30] hover:bg-[#132c52] text-amber-300 hover:text-amber-200 font-sans font-black text-xs px-5 py-3 rounded tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap uppercase border border-amber-500/40 hover:scale-[1.02] shadow-[0_0_15px_rgba(245,158,11,0.15)]"
+                      className="w-full md:w-auto bg-red-950 hover:bg-red-900 text-white font-sans font-black text-xs px-5 py-3 rounded tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap uppercase border border-red-500/60 hover:scale-[1.02] shadow-[0_0_15px_rgba(239,68,68,0.3)]"
                     >
-                      <Newspaper size={14} className="text-amber-400" />
-                      <span>{isAr ? 'إصدار الصحيفة البريدي (Barron\'s)' : 'DAILY MARKET DISPATCH (PUBLICATION)'}</span>
+                      <Radio size={14} className="text-red-400 animate-pulse" />
+                      <span>{isAr ? 'برقية اليوم الاستخباراتية (الإصدار الحي)' : 'CURRENT DAILY INTELLIGENCE DISPATCH'}</span>
                       {isAr ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
                     </button>
                   </div>
@@ -1406,13 +1408,22 @@ export default function App() {
                 dynamicWidgets={dynamicWidgets}
                 setDynamicWidgets={setDynamicWidgets}
               />
-            ) : (activeCategory === 'publication' || activeCategory === 'daily-market-dispatch' || activeCategory === 'dispatch') ? (
-              <PublicationPage
+            ) : (activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'dispatch' || activeCategory === 'broadcast-dispatch' || activeCategory === 'current-dispatch' || activeCategory === 'publication') ? (
+              <IntelligenceDispatchPage
                 language={language}
+                layoutMode={layoutMode}
+                articles={allArticles}
                 subscribers={subscribers}
                 setSubscribers={setSubscribers}
+                onSelectArticle={(article) => {
+                  setSelectedArticle(article);
+                }}
                 onNavigateHome={() => {
                   setActiveCategory('all');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onNavigateToComposer={() => {
+                  setActiveCategory('admin');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
@@ -2557,14 +2568,14 @@ export default function App() {
 
                         <div 
                           onClick={() => {
-                            setActiveCategory('newsletter');
+                            setActiveCategory('intelligence-dispatch');
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                           }}
                           className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3 cursor-pointer transition-all flex items-center justify-between group text-right rtl:text-right ltr:text-left"
                         >
                           <div className="space-y-1">
-                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'بث تيلكس فوري' : 'TELETYPE TELEGRAM'}</span>
-                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'نشرة التيلكس' : 'Telex Newsletter'}</span>
+                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'برقية استخباراتية فورية' : 'LIVE DAILY DISPATCH'}</span>
+                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'البرقية الاستخباراتية اليومية' : 'Daily Intelligence Wire'}</span>
                           </div>
                           <Unlock size={14} className="text-emerald-400" />
                         </div>
@@ -3382,69 +3393,18 @@ export default function App() {
             )}
 
             {activeCategory === 'all' && !searchQuery && (
-              <section 
-                onClick={() => {
-                  setActiveCategory('newsletter');
+              <CurrentDispatchSection
+                language={language}
+                layoutMode={layoutMode}
+                articles={allArticles}
+                subscribers={subscribers}
+                setSubscribers={setSubscribers}
+                onNavigateToDispatch={(issueId) => {
+                  setActiveCategory('intelligence-dispatch');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="relative overflow-hidden border-4 border-black p-6 bg-zinc-950 text-white my-6 cursor-pointer group hover:border-red-650 transition-colors"
-              >
-                {/* Visual Accent Lines */}
-                <div className="absolute top-0 right-0 w-32 h-full bg-red-600/10 transform skew-x-12 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-12 w-64 h-1/3 bg-zinc-800/10 transform -skew-x-12 pointer-events-none"></div>
-
-                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-                  {/* Left Column: Cover Preview Art */}
-                  <div className="flex items-center gap-5 w-full md:w-auto">
-                    {/* Compact CSS Magazine Mock */}
-                    <div className="relative w-16 h-22 bg-white border-2 border-black flex flex-col justify-between p-1.5 shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] shrink-0 transform -rotate-2 group-hover:rotate-0 transition-transform">
-                      <div className="border-b border-black pb-0.5 text-center">
-                        <span className="font-sans font-black text-[8px] uppercase tracking-tighter text-black">
-                          {isAr ? 'الورّاق' : 'AL-WARRAQ'}
-                        </span>
-                      </div>
-                      <div className="h-8 bg-zinc-105 border border-zinc-300 flex items-center justify-center text-zinc-500 text-[6px] font-mono">
-                        {isAr ? 'طبعة ٢٠٢٦' : 'ISSUE 18'}
-                      </div>
-                      <div className="flex justify-between items-center text-[5px] font-black text-red-600">
-                        <span>PRINT</span>
-                        <span>06/17</span>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <span className="bg-red-700 text-white text-[9px] font-sans font-bold px-2 py-0.5 uppercase tracking-wider font-mono">
-                        {isAr ? 'الصحيفة المطبوعة والملخص الفكري الأسبوعي' : 'QUARTERLY PRINT & TELEX DIRECT'}
-                      </span>
-                      <h3 className="font-sans font-black text-lg md:text-xl text-white mt-1.5 leading-tight group-hover:text-red-400 transition-colors">
-                        {isAr 
-                          ? 'ديوان ورثة المحبرة: تصفح ملخص التحقيقات المطبوع بالكامل' 
-                          : 'The Sovereign Intelligence Dispatch: Access June Quarterly Edition'}
-                      </h3>
-                      <p className="text-zinc-400 text-xs mt-1 max-w-xl font-medium">
-                        {isAr 
-                          ? 'استكشف طبعة الصحافة الحرة للتحقيقات الاستقصائية المستقلة ومقالات رئيس التحرير لعام ٢٠٢٦، متوفرة مجاناً لمشتركينا.' 
-                          : 'Explore deep structural breakdowns, sovereign asset updates, and monetary maps compiled by our editorial office.'}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Link / Action Call-To-Action */}
-                  <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-end shrink-0">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActiveCategory('newsletter');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="bg-red-700 hover:bg-red-600 text-white border border-red-600 font-mono font-black text-xs px-6 py-3.5 uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] group-hover:shadow-[3px_3px_0px_0px_rgba(239,68,68,1)]"
-                    >
-                      <span>{isAr ? 'طالعة الطبعة الكاملة' : 'OPEN WIRE DISPATCH'}</span>
-                      <ArrowRight size={14} className="rtl:rotate-180" />
-                    </button>
-                  </div>
-                </div>
-              </section>
+                onSelectArticle={(article) => setSelectedArticle(article)}
+              />
             )}
 
             {(activeCategory === 'all' || activeCategory === 'translations') && translationsArticles.length > 0 && (

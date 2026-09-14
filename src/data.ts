@@ -30,9 +30,7 @@ export const NAVIGATION_TABS: NavigationTab[] = [
   { id: 'wellness-lifestyle', labelAr: 'الصحة', labelEn: 'Curae News' },
   { id: 'what-if-simulator', labelAr: 'محاكي تقدير المواقف "ماذا لو"', labelEn: 'Geopolitical "What-If" Simulator' },
   { id: 'press-releases', labelAr: 'البيانات الصحفية', labelEn: 'Press Releases' },
-  { id: 'publication', labelAr: 'إصدار الصحيفة المطبوع والبريدي (Barron\'s)', labelEn: 'Daily Market Dispatch (Publication)' },
-  { id: 'intelligence-dispatch', labelAr: 'البرقية الاستخباراتية اليومية', labelEn: 'Intelligence Dispatch' },
-  { id: 'newsletter', labelAr: 'النشرة البريدية الكلاسيكية', labelEn: 'Classic Newsletter' },
+  { id: 'intelligence-dispatch', labelAr: 'البرقية الاستخباراتية اليومية (الإصدار الحي)', labelEn: 'Current Daily Intelligence Dispatch' },
   { id: 'premium-pricing', labelAr: 'الخدمة الممتازة والاشتراكات', labelEn: 'Premium & Subscriptions' },
   { id: 'iraq-us-dossier', labelAr: 'التقارير السيادية الخاصة', labelEn: 'Sovereign Special Reports' },
 ];

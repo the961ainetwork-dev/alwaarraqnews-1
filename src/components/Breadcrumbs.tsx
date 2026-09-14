@@ -120,8 +120,10 @@ export default function Breadcrumbs({
                   ? (isAr ? 'العضوية البريميوم الفاخرة ($)' : 'Sovereign Premium ($)')
                   : activeCategory === 'saved-articles'
                   ? (isAr ? 'المقالات المحفوظة' : 'Saved Articles')
+                  : activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'dispatch'
+                  ? (isAr ? 'البرقية الاستخباراتية اليومية' : 'Daily Intelligence Dispatch')
                   : activeCategory === 'newsletter'
-                  ? (isAr ? 'النشرة البريدية الكلاسيكية' : 'Classic Newsletter')
+                  ? (isAr ? 'البرقية الاستخباراتية اليومية' : 'Daily Intelligence Dispatch')
                   : activeCategory === 'sentiment-analysis'
                   ? (isAr ? 'تحليل المشاعر' : 'Sentiment Analysis')
                   : activeCategory === 'what-if-simulator'
