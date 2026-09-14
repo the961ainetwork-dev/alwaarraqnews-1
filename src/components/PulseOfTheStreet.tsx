@@ -1,21 +1,27 @@
 import React from 'react';
 import { 
   Activity, ArrowLeft, ArrowRight, MapPin, TrendingUp, AlertTriangle, 
-  FileText, Landmark, Users, DollarSign, ArrowUpRight, BarChart3, HelpCircle, Shield 
+  FileText, Landmark, Users, DollarSign, ArrowUpRight, BarChart3, HelpCircle, Shield,
+  Scale, AlertCircle, Building2, Percent, CheckCircle2, ChevronRight, CornerDownLeft
 } from 'lucide-react';
+import { Article } from '../types';
 
 interface PulseOfTheStreetProps {
   language: 'ar' | 'en';
   layoutMode: 'digital' | 'classic-print';
   isFullPage?: boolean;
   onNavigateToPulse?: () => void;
+  onSelectArticle?: (article: Article) => void;
+  allArticles?: Article[];
 }
 
 export default function PulseOfTheStreet({ 
   language, 
   layoutMode, 
   isFullPage = false, 
-  onNavigateToPulse 
+  onNavigateToPulse,
+  onSelectArticle,
+  allArticles = []
 }: PulseOfTheStreetProps) {
   const isAr = language === 'ar';
   const isPrint = layoutMode === 'classic-print';
@@ -29,6 +35,12 @@ export default function PulseOfTheStreet({
 
   const beirutStoryExcerptAr = 'هناك عنف صامت في الأرقام. بينما تمتلئ سماء الجنوب بدخان المدفعية، يقع هجوم آخر أكثر مكراً في الأسواق، ومحطات الوقود، ومكاتب الفواتير في لبنان. لقد أصبح مؤشر أسعار المستهلك (CPI) بمثابة دفتر حسابات للابتزاز، ليفترس ما تبقى من ميزانية الأسرة المنهكة بالتواطؤ مع الاحتكارات ومافيات المولدات والتجار المحلية.';
   const beirutStoryExcerptEn = 'There is silent violence in numbers. While the skies of the South fill with smoke, another insidious attack occurs in the markets, gasoline stations, and billing offices of Lebanon. The Consumer Price Index (CPI) has turned into an extortion ledger, devouring what is left of the family budget through local monopolies and generator syndicates.';
+
+  const budgetStoryExcerptAr = 'تحقيق استقصائي بقلم رئيس التحرير معن برازي: كيف تدفع مسودة قانون موازنة 2027 والعقوبات الجزائية والجبايات غير المتوازنة الشركات النظامية نحو اقتصاد الكاش الموازي، مما يوسع الفجوة الضريبية ويعزز هيمنة السوق السوداء البالغة 10 مليارات دولار (نحو 50% من الناتج المحلي).';
+  const budgetStoryExcerptEn = 'Investigative dossier by Editor-in-Chief Maan Barazy: How the 2027 Draft Budget Law, punitive clearance certificate barriers, and regressive consumption levies penalize compliant businesses while fueling Lebanon’s $10B shadow cash economy.';
+
+  const bdlStoryExcerptAr = 'تشريح قانوني ومالي للقرار الأساسي رقم 13836 (التعميم 174) الصادر عن مصرف لبنان: إنشاء نظام موحد لمركزية المودعين، ومحاذير اختراق السرية المصرفية المصانة بالقانون، ومأسسة التمييز غير الدستوري بين الأموال القديمة والجديدة.';
+  const bdlStoryExcerptEn = 'Forensic legal analysis of BDL Basic Circular 174: Establishing the Depositors’ Central Registry, constitutional conflicts with Banking Secrecy, and institutionalizing discrimination between Pre-2019 and Fresh USD deposits.';
 
   // Render full dossier view
   if (isFullPage) {
@@ -440,6 +452,308 @@ export default function PulseOfTheStreet({
           </div>
         </section>
 
+        {/* ========================================================================= */}
+        {/* STORY 4: LEBANON BUDGET 2027 & THE INFORMAL CASH ECONOMY (معن برازي)     */}
+        {/* ========================================================================= */}
+        <section className="border-t-2 border-current pt-8 space-y-6" id="pulse-story-budget-2027">
+          <div className="space-y-2">
+            <div className="flex flex-wrap items-center gap-2 text-xxs font-mono uppercase tracking-widest text-rose-500 font-extrabold">
+              <span className="p-1 px-2 bg-rose-650/20 border border-rose-500 flex items-center gap-1">
+                <Scale size={11} /> {isAr ? 'موازنة 2027 • دراسة استقصائية' : '2027 BUDGET • FORENSIC AUDIT'}
+              </span>
+              <span>•</span>
+              <span className="text-zinc-400">#CASH-ECONOMY-27</span>
+              <span>•</span>
+              <span>{isAr ? 'بقلم رئيس التحرير: معن برازي' : 'By Editor-in-Chief: Maan Barazy'}</span>
+            </div>
+            
+            <h2 className="font-sans font-black text-2xl md:text-3.5xl tracking-tight leading-tight text-rose-600 dark:text-rose-400">
+              {isAr 
+                ? 'تمويل الاقتصاد غير الرسمي: لماذا يضر مشروع قانون موازنة 2027 بالاقتصاد الرسمي؟' 
+                : 'Financing the Informal Economy: Why the 2027 Draft Budget Law Harms the Formal Sector'}
+            </h2>
+            <div className="text-xs font-mono text-zinc-400">
+              {isAr ? 'بيروت — 8 أيلول 2026 • ملف الرقابة المالية والتهرب الضريبي' : 'Beirut — September 8, 2026 • Fiscal Scrutiny & Tax Evasion Desk'}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Sidebar / Key Metrics Box */}
+            <div className="lg:col-span-4 space-y-4 font-sans">
+              <div className="border border-current p-4 bg-black/5 dark:bg-white/5 space-y-3">
+                <h4 className="font-sans font-black text-xs uppercase tracking-wider text-rose-600 flex items-center gap-1.5">
+                  <BarChart3 size={14} />
+                  {isAr ? 'مؤشرات اقتصاد الكاش والموازنة' : 'Cash Economy & Budget Telemetry'}
+                </h4>
+                
+                <div className="space-y-3 text-xs font-mono">
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs opacity-70">{isAr ? 'حجم الاقتصاد النقدي في لبنان' : 'Estimated Cash Economy Volume'}</div>
+                    <div className="text-lg font-black text-rose-500">$10,000,000,000</div>
+                    <div className="text-xxs text-zinc-400">{isAr ? 'نحو 50% من الناتج المحلي الإجمالي' : '~50% of Lebanon\'s GDP'}</div>
+                  </div>
+
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs opacity-70">{isAr ? 'نسبة الضرائب غير المباشرة' : 'Indirect Tax Share of Revenue'}</div>
+                    <div className="text-lg font-black text-amber-500">86%</div>
+                    <div className="text-xxs text-zinc-400">{isAr ? 'الضريبة على القيمة المضافة تمثل 39%' : 'VAT represents 39% alone'}</div>
+                  </div>
+
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs opacity-70">{isAr ? 'الإنفاق الاستثماري الرأسمالي' : 'Capital & Infrastructure Spend'}</div>
+                    <div className="text-lg font-black text-emerald-500">3.7%</div>
+                    <div className="text-xxs text-zinc-400">{isAr ? 'مقابل 96.3% مصاريف جارية وتشغيلية' : 'vs 96.3% current/operational spend'}</div>
+                  </div>
+
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs opacity-70">{isAr ? 'القفزة في اقتطاعات الرواتب' : 'Payroll Tax Surge in Draft'}</div>
+                    <div className="text-lg font-black text-rose-600">+66%</div>
+                    <div className="text-xxs text-zinc-400">{isAr ? 'عبء خانق على الموظف والشركات' : 'Punitive burden on formal employers'}</div>
+                  </div>
+                </div>
+
+                <div className="p-3 border border-rose-500/40 bg-rose-500/10 text-xxs font-mono leading-relaxed text-rose-300">
+                  <p className="font-bold">
+                    {isAr 
+                      ? 'خلاصة التحقيق: مشروع موازنة 2027 لا يعالج الانهيار بل يحول الدولة إلى "جابي قسري" يطارد الشريحة الشفافة المتبقية، بينما يمنح اقتصاد الظل النقدي حصانة مجانية.' 
+                      : 'Audit Conclusion: The 2027 budget turns the treasury into an extractive toll-collector penalizing the transparent formal minority while giving the $10B shadow economy total impunity.'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Maan Barazy Editorial Box */}
+              <div className="border border-double border-current p-3 bg-neutral-900/5 text-xs font-mono">
+                <p className="italic">
+                  {isAr 
+                    ? '"إن ملاحقة الشركات النظامية عبر تجميد براءات الذمة وفرض غرامات تأخير خيالية تصل لـ 100% دون التمييز بين القوة القاهرة والتهرب المتعمد، ستؤدي إلى نتيجة حتمية واحدة: إغلاق السجلات التجارية والتحول الكامل للدفع بالشنطة النقدية."' 
+                    : '"Hunting compliant enterprises through blocked clearance certificates and 100% penalty floors leads to one inevitable outcome: closing commercial registries and migrating 100% into cash duffel bags."'}
+                </p>
+                <div className="mt-2 text-xxs font-bold text-right rtl:text-left">
+                  — {isAr ? 'معن برازي، رئيس تحرير الورّاق نيوز' : 'Maan Barazy, Editor-in-Chief Al-Warraq'}
+                </div>
+              </div>
+            </div>
+
+            {/* Main Analytical Body */}
+            <div className="lg:col-span-8 space-y-4 text-sm md:text-base leading-relaxed">
+              <p className="font-semibold text-base md:text-lg">
+                {isAr 
+                  ? 'يعاني لبنان من مفارقة ضريبية هيكلية غير مسبوقة في تاريخ الموازنات العامة: فبدلاً من توسيع القاعدة الضريبية واسترداد مليارات الدولارات المتداولة في السوق الموازي واقتصاد التهريب والنشاطات غير المصرح بها، يأتي مشروع قانون موازنة 2027 ليعاقب القطاع النظامي والشركات الممتثلة لمعايير الشفافية.'
+                  : 'Lebanon suffers from an unprecedented fiscal paradox: rather than expanding the tax base into billions circulating in illicit smuggling and shadow markets, the 2027 Draft Budget Law penalizes the compliant formal economy.'}
+              </p>
+
+              <div className="border border-current/30 p-4 bg-current/5 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-rose-500 flex items-center gap-1.5">
+                  <AlertCircle size={14} />
+                  {isAr ? '1. حزام العقوبات والمصائد الإجرائية (المادة 68 وسلاح براءة الذمة)' : '1. Draconian Procedural Traps & Clearance Certificate Weapons'}
+                </h3>
+                <p className="text-xs md:text-sm leading-relaxed">
+                  {isAr 
+                    ? 'يشترط المشروع حيازة "براءة ذمة مالية" مسبقة لإتمام أي معاملة تجارية، أو استيراد بضائع عبر مرفأ بيروت، أو إجراء تحويلات مصرفية. وفي ظل شلل الإدارات الرسمية وإضرابات موظفي القطاع العام، يستغرق استصدار هذه الشهادة أشهراً، مما يترتب عليه غرامات تأخير وتجميد للسيولة، بينما تجار السوق الموازي يستوردون ويوزعون بضائعهم نقداً دون أي حاجة لبراءة ذمة أو رقم مالي.'
+                    : 'The draft mandates prior tax clearance certificates for customs clearance, banking transfers, and commercial filings. With civil service strikes, obtaining this certificate takes months, incurring compounding fines, while shadow cash operators bypass all regulatory checkpoints entirely.'}
+                </p>
+              </div>
+
+              <div className="border border-current/30 p-4 bg-current/5 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-amber-500 flex items-center gap-1.5">
+                  <Percent size={14} />
+                  {isAr ? '2. هيكل الجباية غير المتوازن: 86% ضرائب غير مباشرة' : '2. Asymmetric Revenue: 86% Derived from Regressive Levies'}
+                </h3>
+                <p className="text-xs md:text-sm leading-relaxed">
+                  {isAr 
+                    ? 'تعتمد الموازنة بشكل شبه كامل على الضرائب الاستهلاكية غير المباشرة (TVA بنسبة 39% والرسوم الجمركية بنسبة 27%)، بالإضافة إلى قفزة بنسبة 66% في ضرائب الرواتب والأجور. هذا النموذج يعاقب المستهلك النهائي والموظف النظامي، بينما يعفي أصحاب الثروات النقدية ومضاربي العقارات والعملات من أي مساهمة عادلة في الإنقاذ الوطني.'
+                    : 'The budget relies almost entirely on consumption taxes (VAT at 39%, tariffs at 27%) and hikes payroll withholding by 66%. This formula extracts wealth from wage earners while granting complete tax amnesty to untracked cash empires and speculative currency traders.'}
+                </p>
+              </div>
+
+              <div className="border border-current/30 p-4 bg-current/5 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-indigo-400 flex items-center gap-1.5">
+                  <Building2 size={14} />
+                  {isAr ? '3. هجرة الشركات النظامية نحو الملاذات الإقليمية' : '3. Corporate Exodus to Regional Havens (Cyprus & UAE)'}
+                </h3>
+                <p className="text-xs md:text-sm leading-relaxed">
+                  {isAr 
+                    ? 'نتيجة لهذه الإجراءات العقابية، سجلت الأشهر الستة الأولى من عام 2026 هجرة أكثر من 420 شركة تقنية وخدمية واستشارية لنقل مقراتها الضريبية إلى نيقوسيا ودبي، هرباً من الابتزاز البيروقراطي واحتجاز الأرصدة، مما أفقد الخزينة ملايين الدولارات من الإيرادات الحقيقية المستدامة.'
+                    : 'Over 420 tech, consulting, and service firms shifted their tax domicile to Nicosia and Dubai in early 2026, escaping bureaucratic extortion and locked capital, stripping the treasury of sustainable long-term revenues.'}
+                </p>
+              </div>
+
+              {/* Action Button to Open Full Article */}
+              {allArticles && allArticles.length > 0 && onSelectArticle && (
+                <div className="pt-2 flex justify-end">
+                  <button
+                    onClick={() => {
+                      const art = allArticles.find(a => a.id === 'lebanon-budget-2027-informal-cash-economy-punitive-measures');
+                      if (art) onSelectArticle(art);
+                    }}
+                    className="px-4 py-2 bg-rose-650 text-white font-mono text-xs font-black uppercase flex items-center gap-2 hover:bg-rose-700 cursor-pointer transition-all"
+                  >
+                    <span>{isAr ? 'فتح التحقيق الاستقصائي بالكامل في نافذة القراءة' : 'Open Full Investigation in Reader Modal'}</span>
+                    <ArrowUpRight size={13} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* STORY 5: BDL CIRCULAR 174 & DEPOSITORS CENTRAL REGISTRY (معن البرازي)     */}
+        {/* ========================================================================= */}
+        <section className="border-t-2 border-current pt-8 space-y-6" id="pulse-story-bdl-174">
+          <div className="space-y-2">
+            <div className="flex flex-wrap items-center gap-2 text-xxs font-mono uppercase tracking-widest text-cyan-400 font-extrabold">
+              <span className="p-1 px-2 bg-cyan-650/20 border border-cyan-500 flex items-center gap-1">
+                <Landmark size={11} /> {isAr ? 'مصرف لبنان • تشريح قانوني ومالي' : 'BANQUE DU LIBAN • FORENSIC & LEGAL REPORT'}
+              </span>
+              <span>•</span>
+              <span className="text-zinc-400">#CIRCULAR-174</span>
+              <span>•</span>
+              <span>{isAr ? 'المحلل: معن البرازي — وحدة التحليل الاقتصادي' : 'Lead Analyst: Maan Barazy — Economic Analysis Unit'}</span>
+            </div>
+            
+            <h2 className="font-sans font-black text-2xl md:text-3.5xl tracking-tight leading-tight text-cyan-500 dark:text-cyan-300">
+              {isAr 
+                ? 'نظام مركزية المودعين (التعميم الأساسي رقم 174): الإشكالية القانونية في التعامل مع السرية المصرفية ومأسسة التمييز بين الأموال' 
+                : 'The Depositors\' Central Registry (BDL Basic Circular 174): Legal Conflicts with Banking Secrecy & Institutionalizing Discrimination'}
+            </h2>
+            <div className="text-xs font-mono text-zinc-400">
+              {isAr ? 'القرار الأساسي رقم 13836 تاريخ 13 آب 2026 • الحاكم بالإنابة كريم سعيد' : 'Basic Decision No. 13836 dated Aug 13, 2026 • Acting Governor Karim Said'}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Sidebar / Legal Dilemmas Box */}
+            <div className="lg:col-span-4 space-y-4 font-sans">
+              <div className="border border-current p-4 bg-black/5 dark:bg-white/5 space-y-3">
+                <h4 className="font-sans font-black text-xs uppercase tracking-wider text-cyan-500 flex items-center gap-1.5">
+                  <Shield size={14} />
+                  {isAr ? 'المعضلات القانونية والدستورية الأربع' : 'The Four Constitutional & Legal Conflicts'}
+                </h4>
+                
+                <div className="space-y-3 text-xs font-mono">
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs font-bold text-cyan-400">{isAr ? '1. خرق السرية المصرفية' : '1. Banking Secrecy Breach'}</div>
+                    <div className="text-xxs text-zinc-300 leading-tight mt-1">
+                      {isAr 
+                        ? 'مخالفة المادة 151 نقد وتسليف وقانون 1956 بجمع أرصدة المودعين دون نص تشريعي صريح من البرلمان.' 
+                        : 'Breaches Art. 151 Money & Credit Code and 1956 Law by aggregating private balances without parliamentary statute.'}
+                    </div>
+                  </div>
+
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs font-bold text-rose-400">{isAr ? '2. مأسسة التمييز بين الأموال' : '2. Institutionalized Apartheid'}</div>
+                    <div className="text-xxs text-zinc-300 leading-tight mt-1">
+                      {isAr 
+                        ? 'تكريس غير دستوري للتمييز بين ودائع "قبل 17 تشرين" و"فريش"، خارقاً المادة 7 من الدستور (المساواة).' 
+                        : 'Unconstitutionally entrenches discrimination between pre-2019 and fresh funds, violating constitutional equality.'}
+                    </div>
+                  </div>
+
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs font-bold text-amber-400">{isAr ? '3. معضلة الحسابات المشتركة' : '3. Joint Accounts Dilemma'}</div>
+                    <div className="text-xxs text-zinc-300 leading-tight mt-1">
+                      {isAr 
+                        ? 'فرض قسمة افتراضية بنسبة 50% على الحسابات المشتركة، متجاهلاً عقود فتح الحساب وأحكام التركات.' 
+                        : 'Arbitrarily splits joint accounts 50/50 regardless of true ownership or mandate, sparking inheritance litigation.'}
+                    </div>
+                  </div>
+
+                  <div className="p-2 border border-current/20 bg-current/5">
+                    <div className="text-xxs font-bold text-red-500">{isAr ? '4. عقوبات المادة 208 الرادعة' : '4. Punitive Article 208 Sanctions'}</div>
+                    <div className="text-xxs text-zinc-300 leading-tight mt-1">
+                      {isAr 
+                        ? 'إحالة المصارف والمودعين المخالفين إلى الهيئة المصرفية العليا وتجميد الحسابات والاستفادات الشهرية.' 
+                        : 'Referral of violators to the Higher Banking Commission with punitive asset freezes and suspension of circular payouts.'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-3 border border-cyan-500/40 bg-cyan-500/10 text-xxs font-mono leading-relaxed text-cyan-300">
+                  <p className="font-bold">
+                    {isAr 
+                      ? 'مفارقة المقارنة: مركزية المخاطر (قروض) تهدف لحماية الائتمان، بينما مركزية المودعين (أمانات) تحاصر حقوق أصحاب المال وتشرعن تسييل الودائع بهيركات مقنع.' 
+                      : 'Core Paradox: Centrale des Risques tracks debt risk to protect credit, whereas Centrale des Déposants tracks depositors\' own money to regulate staged liquidation.'}
+                  </p>
+                </div>
+              </div>
+
+              {/* BDL Circular Quote Box */}
+              <div className="border border-double border-current p-3 bg-neutral-900/5 text-xs font-mono">
+                <p className="italic">
+                  {isAr 
+                    ? '"إن إنشاء مركزية المودعين خطوة رقابية متأخرة ست سنوات، نجحت تقنياً في وقف الاستفادات المزدوجة من التعميمين 158 و166، لكنها سقطت قانونياً في فخ تشريع تفتيت الودائع والالتفاف على قانون السرية المصرفية."' 
+                    : '"The Central Depositors Registry is a surveillance tool six years overdue. While stopping duplicate circular withdrawals, it fell into the legal trap of legitimizing deposit destruction."'}
+                </p>
+                <div className="mt-2 text-xxs font-bold text-right rtl:text-left">
+                  — {isAr ? 'معن البرازي، الورّاق نيوز' : 'Maan Barazy, Al-Warraq News'}
+                </div>
+              </div>
+            </div>
+
+            {/* Main Analytical Body */}
+            <div className="lg:col-span-8 space-y-4 text-sm md:text-base leading-relaxed">
+              <p className="font-semibold text-base md:text-lg">
+                {isAr 
+                  ? 'أصدر مصرف لبنان في 13 آب 2026 القرار الأساسي رقم 13836 المتعلق بإنشاء "نظام مركزية المودعين" (Centrale des Déposants)، وهو نظام معلوماتي مركزي يربط كافة المصارف العاملة بقاعدة بيانات موحدة تحت إشراف الحاكمية ولجنة الرقابة على المصارف.'
+                  : 'On August 13, 2026, Banque du Liban issued Basic Decision No. 13836 (Circular 174) establishing the "Depositors\' Central Registry", interconnecting all commercial banks under BDL and Banking Control Commission oversight.'}
+              </p>
+
+              <div className="border border-current/30 p-4 bg-current/5 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-cyan-400 flex items-center gap-1.5">
+                  <CheckCircle2 size={14} />
+                  {isAr ? 'الإيجابية التقنية: ضبط سقف الـ 400 دولار ومنع الاستفادة المزدوجة' : 'Technical Merit: Capping Payouts & Halting Duplicate Withdrawals'}
+                </h3>
+                <p className="text-xs md:text-sm leading-relaxed">
+                  {isAr 
+                    ? 'الهدف المباشر للتعميم كان سد ثغرة سمحت لبعض كبار المودعين بفتح حسابات في عدة مصارف وسحب مبالغ مضاعفة بموجب التعميم 158 (300 أو 400 دولار) والتعميم 166 (150 دولار)، مما استنزف سيولة مصرف لبنان بالعملات الأجنبية. النظام الجديد وحّد هوية المودع عبر الرقم المالي أو بطاقة الهوية، وفرض سقفاً مطلقاً لا يتجاوز 400 دولار للشخص الواحد عبر القطاع المصرفي برمته.'
+                    : 'The primary operational objective was closing a loophole where depositors drew multiple allowances across several banks under Circulars 158 and 166. The new centralized system binds every account to a single tax or national ID, strictly enforcing the $400/month aggregate ceiling.'}
+                </p>
+              </div>
+
+              <div className="border border-current/30 p-4 bg-current/5 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-rose-400 flex items-center gap-1.5">
+                  <Scale size={14} />
+                  {isAr ? 'السقوط الدستوري: غياب الغطاء التشريعي ومخالفة قانون 1956' : 'Constitutional Pitfall: Lack of Legislative Mandate & 1956 Law Breach'}
+                </h3>
+                <p className="text-xs md:text-sm leading-relaxed">
+                  {isAr 
+                    ? 'وفقاً لفقهاء القانون المصرفي، لا يملك المجلس المركزي لمصرف لبنان صلاحية إنشاء سجل يكشف حسابات وأرصدة المواطنين بمجرد تعميم إداري. فالسرية المصرفية في لبنان من النظام العام ولا تُرفع إلا بحكم قضائي بات أو بموجب قانون صادر عن مجلس النواب (كما جرى في قانون رفع السرية المصرفية لعام 2022 في قضايا الفساد والجرائم المالية).'
+                    : 'Banking jurisprudence establishes that BDL\'s Central Council cannot unilaterally pierce banking secrecy via administrative circular. Banking secrecy is public policy in Lebanon, waivable only through judicial verdicts or explicit parliamentary statutes.'}
+                </p>
+              </div>
+
+              <div className="border border-current/30 p-4 bg-current/5 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-amber-400 flex items-center gap-1.5">
+                  <AlertTriangle size={14} />
+                  {isAr ? 'أزمة الحسابات المشتركة: فوضى التركات والشركات العائلية' : 'The Joint Account Crisis: Chaos for Family Estates & Partnerships'}
+                </h3>
+                <p className="text-xs md:text-sm leading-relaxed">
+                  {isAr 
+                    ? 'نص التعميم على احتساب الحساب المشترك مناصفة (50% لكل شريك) ما لم ينص العقد على خلاف ذلك. هذا التبسيط الإداري فجر نزاعات قضائية واسعة بين الورثة والشركاء التجاريين، حيث حُرم أحد الشركاء من الاستفادة من حسابه الخاص لمجرد كونه شريكاً في حساب تجاري خامل.'
+                    : 'The circular automatically assigns a 50% quota to each co-holder of a joint account, generating litigation among heirs and business partners where an individual is barred from private circular relief due to an inactive partnership account.'}
+                </p>
+              </div>
+
+              {/* Action Button to Open Full Article */}
+              {allArticles && allArticles.length > 0 && onSelectArticle && (
+                <div className="pt-2 flex justify-end">
+                  <button
+                    onClick={() => {
+                      const art = allArticles.find(a => a.id === 'bdl-circular-174-depositors-central-registry-forensic-analysis');
+                      if (art) onSelectArticle(art);
+                    }}
+                    className="px-4 py-2 bg-cyan-700 text-white font-mono text-xs font-black uppercase flex items-center gap-2 hover:bg-cyan-800 cursor-pointer transition-all"
+                  >
+                    <span>{isAr ? 'فتح التحقيق الاستقصائي بالكامل في نافذة القراءة' : 'Open Full Investigation in Reader Modal'}</span>
+                    <ArrowUpRight size={13} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
         {/* Back button at the bottom */}
         <div className="pt-8 border-t-2 border-current flex justify-center">
           <button
@@ -572,29 +886,29 @@ export default function PulseOfTheStreet({
       {/* Double divider row before additional columns requested */}
       <div className="border-t-4 border-double border-current my-4"></div>
 
-      {/* ==================== TWO COLUMNS ROW: STORIES 2 AND 3 TEASERS ==================== */}
+      {/* ==================== 4-CARD SUPPLEMENTAL DISPATCHES GRID ==================== */}
       <div className="space-y-4">
         <div className="text-xs font-mono font-extrabold uppercase text-indigo-500 flex items-center gap-1.5 justify-start">
           <Activity size={12} className="text-red-600 animate-pulse" />
-          <span>{isAr ? 'تغطيات وتحقيقات إضافية مرصودة ميدانياً' : 'Supplemental Investigative dispatches from the front'}</span>
+          <span>{isAr ? 'ملفات وتحقيقات نبض الشارع المرصودة ميدانياً' : 'Pulse of the Street Field Investigations & Audits'}</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           
-          {/* Column 1: Teaser of South Story (Story 2) */}
+          {/* Card 1: South Story (Story 2) */}
           <div className="border border-current p-4 md:p-5 bg-black/5 dark:bg-white/5 flex flex-col justify-between space-y-4">
             <div className="space-y-3">
               <div className="flex items-center gap-2 justify-between">
                 <div className="flex items-center gap-1 text-xxs text-red-600 font-mono font-bold">
                   <MapPin size={11} />
-                  <span>{isAr ? 'بصور، محافظة الجنوب' : 'Sour, South Governorate'}</span>
+                  <span>{isAr ? 'صور، النبطية، الجنوب' : 'Sour, Nabatieh, South'}</span>
                 </div>
                 <span className="font-mono text-[9px] opacity-60">#SOUTH-26</span>
               </div>
-              <h3 className="font-sans font-black text-lg text-black dark:text-zinc-200 leading-tight">
+              <h3 className="font-sans font-black text-base md:text-lg text-black dark:text-zinc-200 leading-tight">
                 {isAr ? 'أرقام الدمار وخط الليطاني المحروق: محنة الجنوب' : 'Shattered Olive Groves & Flat Homes: Plight of the South'}
               </h3>
-              <p className="text-xs text-zinc-650 dark:text-zinc-300 leading-relaxed font-sans line-clamp-4">
+              <p className="text-xs text-zinc-650 dark:text-zinc-300 leading-relaxed font-sans line-clamp-3">
                 {isAr ? southStoryExcerptAr : southStoryExcerptEn}
               </p>
             </div>
@@ -607,13 +921,13 @@ export default function PulseOfTheStreet({
                 onClick={onNavigateToPulse}
                 className="text-xs font-black uppercase text-red-600 hover:underline flex items-center gap-1 cursor-pointer"
               >
-                <span>{isAr ? 'اقرأ التقرير كاملاً ⭔' : 'Read full report ⭔'}</span>
+                <span>{isAr ? 'اقرأ التقرير ⭔' : 'Read report ⭔'}</span>
                 {isAr ? <ArrowLeft size={11} /> : <ArrowRight size={11} />}
               </button>
             </div>
           </div>
 
-          {/* Column 2: Teaser of Beirut Story (Story 3) */}
+          {/* Card 2: Beirut Inflation Story (Story 3) */}
           <div className="border border-current p-4 md:p-5 bg-black/5 dark:bg-white/5 flex flex-col justify-between space-y-4">
             <div className="space-y-3">
               <div className="flex items-center gap-2 justify-between">
@@ -623,10 +937,10 @@ export default function PulseOfTheStreet({
                 </div>
                 <span className="font-mono text-[9px] opacity-60">#CPI-26</span>
               </div>
-              <h3 className="font-sans font-black text-lg text-black dark:text-zinc-200 leading-tight">
+              <h3 className="font-sans font-black text-base md:text-lg text-black dark:text-zinc-200 leading-tight">
                 {isAr ? 'العنف الصامت في الأسواق: تشريح تضخم ٢٠٢٦ والابتزاز النفطي' : 'Silent Extraction: March 2026 CPI Hikes & Fuel Extortion'}
               </h3>
-              <p className="text-xs text-zinc-650 dark:text-zinc-300 leading-relaxed font-sans line-clamp-4">
+              <p className="text-xs text-zinc-650 dark:text-zinc-300 leading-relaxed font-sans line-clamp-3">
                 {isAr ? beirutStoryExcerptAr : beirutStoryExcerptEn}
               </p>
             </div>
@@ -639,11 +953,88 @@ export default function PulseOfTheStreet({
                 onClick={onNavigateToPulse}
                 className="text-xs font-black uppercase text-indigo-500 hover:underline flex items-center gap-1 cursor-pointer"
               >
-                <span>{isAr ? 'اقرأ التقرير كاملاً ⭔' : 'Read full report ⭔'}</span>
+                <span>{isAr ? 'اقرأ التقرير ⭔' : 'Read report ⭔'}</span>
                 {isAr ? <ArrowLeft size={11} /> : <ArrowRight size={11} />}
               </button>
             </div>
+          </div>
 
+          {/* Card 3: Lebanon Budget 2027 & Informal Cash Economy (Story 4) */}
+          <div className="border border-current p-4 md:p-5 bg-black/5 dark:bg-white/5 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 justify-between">
+                <div className="flex items-center gap-1 text-xxs text-rose-500 font-mono font-bold">
+                  <Scale size={11} />
+                  <span>{isAr ? 'موازنة 2027 • معن برازي' : '2027 Budget • Maan Barazy'}</span>
+                </div>
+                <span className="font-mono text-[9px] opacity-60">#BUDGET-27</span>
+              </div>
+              <h3 className="font-sans font-black text-base md:text-lg text-black dark:text-zinc-200 leading-tight">
+                {isAr ? 'تمويل الاقتصاد غير الرسمي: خنق الشركات النظامية بمسودة موازنة 2027' : 'Financing the Shadow Economy: Penalizing Formal Sector in Budget 2027'}
+              </h3>
+              <p className="text-xs text-zinc-650 dark:text-zinc-300 leading-relaxed font-sans line-clamp-3">
+                {isAr ? budgetStoryExcerptAr : budgetStoryExcerptEn}
+              </p>
+            </div>
+
+            <div className="pt-2 border-t border-dashed border-current/30 flex justify-between items-center">
+              <span className="text-xxs font-mono text-rose-500 font-bold">
+                {isAr ? 'حجم الكاش: 10 مليارات دولار' : 'Cash: $10B (~50% GDP)'}
+              </span>
+              <button 
+                onClick={() => {
+                  const art = allArticles.find(a => a.id === 'lebanon-budget-2027-informal-cash-economy-punitive-measures');
+                  if (art && onSelectArticle) {
+                    onSelectArticle(art);
+                  } else {
+                    onNavigateToPulse?.();
+                  }
+                }}
+                className="text-xs font-black uppercase text-rose-500 hover:underline flex items-center gap-1 cursor-pointer"
+              >
+                <span>{isAr ? 'اقرأ التحقيق ⭔' : 'Read dossier ⭔'}</span>
+                {isAr ? <ArrowLeft size={11} /> : <ArrowRight size={11} />}
+              </button>
+            </div>
+          </div>
+
+          {/* Card 4: BDL Circular 174 & Depositors Central Registry (Story 5) */}
+          <div className="border border-current p-4 md:p-5 bg-black/5 dark:bg-white/5 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 justify-between">
+                <div className="flex items-center gap-1 text-xxs text-cyan-400 font-mono font-bold">
+                  <Landmark size={11} />
+                  <span>{isAr ? 'مصرف لبنان • تعميم 174' : 'BDL • Circular 174'}</span>
+                </div>
+                <span className="font-mono text-[9px] opacity-60">#CIRC-174</span>
+              </div>
+              <h3 className="font-sans font-black text-base md:text-lg text-black dark:text-zinc-200 leading-tight">
+                {isAr ? 'مركزية المودعين والسرية المصرفية: مأسسة التمييز بين الأموال' : 'Depositors Registry & Secrecy: Legal Autopsy of Circular 174'}
+              </h3>
+              <p className="text-xs text-zinc-650 dark:text-zinc-300 leading-relaxed font-sans line-clamp-3">
+                {isAr ? bdlStoryExcerptAr : bdlStoryExcerptEn}
+              </p>
+            </div>
+
+            <div className="pt-2 border-t border-dashed border-current/30 flex justify-between items-center">
+              <span className="text-xxs font-mono text-cyan-400 font-bold">
+                {isAr ? 'سقف السحب: 400 دولار' : 'BDL Cap: $400 / Month'}
+              </span>
+              <button 
+                onClick={() => {
+                  const art = allArticles.find(a => a.id === 'bdl-circular-174-depositors-central-registry-forensic-analysis');
+                  if (art && onSelectArticle) {
+                    onSelectArticle(art);
+                  } else {
+                    onNavigateToPulse?.();
+                  }
+                }}
+                className="text-xs font-black uppercase text-cyan-400 hover:underline flex items-center gap-1 cursor-pointer"
+              >
+                <span>{isAr ? 'اقرأ التحقيق ⭔' : 'Read dossier ⭔'}</span>
+                {isAr ? <ArrowLeft size={11} /> : <ArrowRight size={11} />}
+              </button>
+            </div>
           </div>
 
         </div>

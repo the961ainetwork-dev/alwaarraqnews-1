@@ -110,7 +110,7 @@ export const InvestigativeReports: React.FC<InvestigativeReportsProps> = ({
 
   // Filter all investigative reports, policy research papers, and forensic briefs
   const investigativeReports = useMemo(() => {
-    return allArticles.filter(article => {
+    const list = allArticles.filter(article => {
       return (
         article.category === 'research-reports' ||
         article.category === 'investigative-reports' ||
@@ -140,6 +140,12 @@ export const InvestigativeReports: React.FC<InvestigativeReportsProps> = ({
         article.id.includes('ft-') ||
         article.id.includes('sp-')
       );
+    });
+    const seen = new Set<string>();
+    return list.filter(a => {
+      if (!a || !a.id || seen.has(a.id)) return false;
+      seen.add(a.id);
+      return true;
     });
   }, [allArticles]);
 
@@ -672,7 +678,7 @@ export const InvestigativeReports: React.FC<InvestigativeReportsProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredReports.map((article) => {
+          {filteredReports.map((article, idx) => {
             const isSelected = activeReport.id === article.id;
             const estimate = getReadTimeEstimate(article);
             const reportCode = getReportCode(article);
@@ -680,7 +686,7 @@ export const InvestigativeReports: React.FC<InvestigativeReportsProps> = ({
 
             return (
               <div 
-                key={article.id}
+                key={`${article.id}-${idx}`}
                 onClick={() => {
                   setSelectedReportId(article.id);
                   if (onSelectReport) onSelectReport(article.id);

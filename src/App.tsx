@@ -190,8 +190,8 @@ export default function App() {
           const initialMap = new Map(INITIAL_ARTICLES.map(a => [a.id, a]));
           const merged = parsed.map((a: any) => {
             if (a && a.id && initialMap.has(a.id)) {
-              // Always prefer code definitions for Solidere, Editor Desk, Exclusives, Remittance, Strategic, M3 Liquidity, Translations, and BLOMINVEST PPP articles to keep fresh edits
-              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy') || a.id.includes('liquidity') || a.id.includes('money-supply') || a.id.includes('treasury') || a.id.includes('hill') || a.id.includes('bessent') || a.id.includes('blominvest') || a.id.includes('ppp')) {
+              // Always prefer code definitions for key updated articles to keep fresh edits
+              if (a.id.includes('solidere') || a.id.includes('editor') || a.id.includes('excl') || a.id.includes('remittance') || a.id.includes('strategic') || a.id.includes('debt-energy') || a.id.includes('liquidity') || a.id.includes('money-supply') || a.id.includes('treasury') || a.id.includes('hill') || a.id.includes('bessent') || a.id.includes('blominvest') || a.id.includes('ppp') || a.id.includes('budget-2027') || a.id.includes('circular-174')) {
                 return initialMap.get(a.id);
               }
             }
@@ -213,7 +213,18 @@ export default function App() {
       articles = [target, ...rest];
     }
 
-    // Update local storage to persist the prepended order
+    // Strict deduplication by ID to prevent duplicate key collisions
+    const seen = new Set<string>();
+    const deduplicated: Article[] = [];
+    for (const a of articles) {
+      if (a && a.id && !seen.has(a.id)) {
+        seen.add(a.id);
+        deduplicated.push(a);
+      }
+    }
+    articles = deduplicated;
+
+    // Update local storage to persist the clean deduplicated order
     localStorage.setItem('alwarraq_all_articles', JSON.stringify(articles));
     return articles;
   });
@@ -231,10 +242,22 @@ export default function App() {
           // Merge to add missing tabs like what-if-simulator
           const merged = [...parsed];
           NAVIGATION_TABS.forEach(tab => {
-            if (!merged.some(m => m.id === tab.id)) {
+            const existingIdx = merged.findIndex(m => m.id === tab.id);
+            if (existingIdx === -1) {
               merged.push(tab);
+            } else if (tab.id === 'lebanon') {
+              // Update label if changed
+              merged[existingIdx] = { ...merged[existingIdx], labelAr: tab.labelAr, labelEn: tab.labelEn };
             }
           });
+          // Ensure Lebanon is always positioned right after pulse-of-the-street
+          const pulseIdx = merged.findIndex(t => t.id === 'pulse-of-the-street');
+          const lebIdx = merged.findIndex(t => t.id === 'lebanon');
+          if (pulseIdx > -1 && lebIdx > -1 && lebIdx !== pulseIdx + 1) {
+            const [lebTab] = merged.splice(lebIdx, 1);
+            const newPulseIdx = merged.findIndex(t => t.id === 'pulse-of-the-street');
+            merged.splice(newPulseIdx + 1, 0, lebTab);
+          }
           return merged;
         }
       } catch (e) {}
@@ -632,7 +655,12 @@ export default function App() {
   };
 
   const savedArticles = useMemo(() => {
-    return allArticles.filter(art => savedArticleIds.includes(art.id));
+    const seen = new Set<string>();
+    return allArticles.filter(art => {
+      if (!art || !art.id || seen.has(art.id)) return false;
+      seen.add(art.id);
+      return savedArticleIds.includes(art.id);
+    });
   }, [allArticles, savedArticleIds]);
 
   const [isAuthOpen, setIsAuthOpen] = useState(false);
@@ -976,7 +1004,13 @@ export default function App() {
   // Handle Search queries across translated titles and summaries
   const searchFilteredArticles = useMemo(() => {
     const term = searchQuery.toLowerCase().trim();
-    const sorted = [...allArticles].sort((a, b) => {
+    const seen = new Set<string>();
+    const uniqueArticles = allArticles.filter(a => {
+      if (!a || !a.id || seen.has(a.id)) return false;
+      seen.add(a.id);
+      return true;
+    });
+    const sorted = [...uniqueArticles].sort((a, b) => {
       return parseArabicOrEnglishDate(b.date) - parseArabicOrEnglishDate(a.date);
     });
     if (!term) return sorted;
@@ -1513,6 +1547,8 @@ export default function App() {
                   setActiveCategory('all');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
+                onSelectArticle={setSelectedArticle}
+                allArticles={allArticles}
               />
             ) : activeCategory === 'iraq-us-dossier' ? (
               <IraqUSInvestmentDossier
@@ -1592,22 +1628,7 @@ export default function App() {
                 {activeCategory === 'all' && renderWidgetsByLocation('header')}
                 {activeCategory === 'all' && renderWidgetsByLocation('sidebar')}
 
-                {/* SECTION 1: HERO SECTION - PULSE OF THE STREET (نبض الشارع وثمن الصراع) */}
-                {activeCategory === 'all' && !searchQuery && (
-                  <div className="mb-8" id="homepage-hero-pulse-of-the-street">
-                    <PulseOfTheStreet 
-                      language={language} 
-                      layoutMode={layoutMode} 
-                      isFullPage={false}
-                      onNavigateToPulse={() => {
-                        setActiveCategory('pulse-of-the-street');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                    />
-                  </div>
-                )}
-
-                {/* SECTION 2: LEBANON NEWS (أخبار وقضايا لبنان والشرق الأدنى) */}
+                {/* SECTION 1: LEBANON NEWS (أخبار وقضايا لبنان والشرق الأدنى) - TOP OF PAGE */}
                 {(activeCategory === 'all' || activeCategory === 'lebanon') && lebanonArticles.length > 0 && (
                   <section className="space-y-5 my-8" id="homepage-lebanon-section">
                     <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
@@ -1622,8 +1643,8 @@ export default function App() {
 
                     {/* 4 Cards in a Row masonry style */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                      {displayedLebanon.map((story) => (
-                        <div key={story.id} className="break-inside-avoid">
+                      {displayedLebanon.map((story, idx) => (
+                        <div key={`${story.id}-${idx}`} className="break-inside-avoid">
                           <ArticleCard
                             article={story}
                             layoutMode={layoutMode}
@@ -1720,6 +1741,23 @@ export default function App() {
                       </div>
                     )}
                   </section>
+                )}
+
+                {/* SECTION 2: HERO SECTION - PULSE OF THE STREET (نبض الشارع وثمن الصراع) */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <div className="mb-8" id="homepage-hero-pulse-of-the-street">
+                    <PulseOfTheStreet 
+                      language={language} 
+                      layoutMode={layoutMode} 
+                      isFullPage={false}
+                      onNavigateToPulse={() => {
+                        setActiveCategory('pulse-of-the-street');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      onSelectArticle={setSelectedArticle}
+                      allArticles={allArticles}
+                    />
+                  </div>
                 )}
 
                 {/* THE ECONOMY (الملف الاقتصادي والمالي) - ONLY IN ECONOMY CATEGORY VIEW */}

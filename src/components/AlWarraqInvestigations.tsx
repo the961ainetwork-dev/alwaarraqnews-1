@@ -328,6 +328,22 @@ export const DOSSIER_DESKTOP_META: Record<string, {
     titleEn: 'Dossier XXXI: Editorial: Solidere as a Transit Vehicle: How "Lollar" Share Trading Feeds Lebanon’s Cash Economy',
     descAr: 'افتتاحية رئيس التحرير: تفكيك آلية تسييل الودائع المحتجزة عبر أسهم سوليدير، وإعادة بيعها في السوق الموازي نقداً، وتداعياتها على تهميش البنوك والتهرب الضريبي.',
     descEn: 'Editor-in-Chief Maan Barazy breaks down the mechanics of liquidating trapped lollar deposits into fresh cash via Solidere shares, entrenching shadow cash dynamics and disintermediating banks.'
+  },
+  'lebanon-budget-2027-informal-cash-economy-punitive-measures': {
+    fileId: 'AW-FILE-32',
+    badge: 'BUDGET & CASH ECONOMY DOSSIER',
+    titleAr: 'الملف الثاني والثلاثون: تمويل الاقتصاد غير الرسمي: لماذا يضر مشروع قانون موازنة 2027 بالاقتصاد الرسمي؟ (معن برازي)',
+    titleEn: 'Dossier XXXII: Financing the Informal Economy: Why the 2027 Draft Budget Law Harms the Formal Sector (Maan Barazy)',
+    descAr: 'دراسة استقصائية معمقة بقلم معن برازي: العقوبات الصارمة والجبايات غير المتوازنة في مسودة موازنة 2027 ستجبر الشركات النظامية على التخفي، وتغذي اقتصاد الكاش الموازي المتضخم لـ 10 مليارات دولار.',
+    descEn: 'An exhaustive investigative analysis by Maan Barazy: Punitive compliance penalties, steep withholding floors, and indirect tax hikes in the 2027 Draft Budget Law will push formal firms into the $10B shadow cash economy.'
+  },
+  'bdl-circular-174-depositors-central-registry-forensic-analysis': {
+    fileId: 'AW-FILE-33',
+    badge: 'CENTRAL REGISTRY & BANKING SECRECY',
+    titleAr: 'الملف الثالث والثلاثون: نظام مركزية المودعين (التعميم الأساسي رقم 174): الإشكالية القانونية في التعامل مع السرية المصرفية ومأسسة التمييز بين الأموال',
+    titleEn: 'Dossier XXXIII: The Depositors\' Central Registry (BDL Basic Circular 174): Legal Conflicts with Banking Secrecy & Institutionalizing "Fresh" vs. "Non-Fresh" Segregation',
+    descAr: 'تشريح قانوني ومالي دقيق للقرار الأساسي رقم 13836 الصادر عن الحاكم بالإنابة كريم سعيد: إنشاء نظام موحد للمودعين، محاذير اختراق السرية المصرفية، ومأسسة التمييز غير الدستوري بين الأموال القديمة والجديدة.',
+    descEn: 'A forensic legal and financial autopsy of BDL Basic Decision 13836 (Circular 174) enacted by acting Governor Karim Said: Establishing a unified Depositors\' Central Registry and its clashes with Banking Secrecy.'
   }
 };
 

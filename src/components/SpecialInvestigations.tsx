@@ -202,6 +202,32 @@ export const SPECIAL_DOSSIERS_INDEX: Record<string, {
     descEn: 'An exhaustive dossier mapping the Development Road, associated gas capture projects, and US-Iraqi strategic pacts.',
     leadAnalystAr: 'ديوان العلاقات الدولية والاستثمارات السيادية',
     leadAnalystEn: 'Sovereign Investments & International Pacts Desk'
+  },
+  'lebanon-budget-2027-informal-cash-economy-punitive-measures': {
+    fileId: 'DOSSIER-SEC-09',
+    classification: 'FISCAL AUDIT & SHADOW ECONOMY',
+    badge: 'CASH ECONOMY',
+    badgeColor: 'bg-rose-950 text-rose-200 border-rose-700',
+    theme: 'economy',
+    titleAr: 'تحقيق موازنة 2027: تمويل الاقتصاد غير الرسمي وعقوبات خنق الشركات الرسمية',
+    titleEn: '2027 Budget Dossier: Financing the Informal Economy & Penalty Traps',
+    descAr: 'تحقيق استقصائي بقلم معن برازي: كيف تدفع بنود موازنة 2027 والعقوبات الجزائية التعسفية الشركات اللبنانية نحو اقتصاد الكاش الموازي وتعميق الانهيار المالي.',
+    descEn: 'Investigative dossier by Maan Barazy: How punitive 2027 budget penalties, clearance certificate withholding, and fiscal distortion push formal Lebanese firms into the shadow cash economy.',
+    leadAnalystAr: 'معن برازي — وحدة التحليلات المالية والسيادية',
+    leadAnalystEn: 'Maan Barazy — Sovereign Fiscal Analysis Desk'
+  },
+  'bdl-circular-174-depositors-central-registry-forensic-analysis': {
+    fileId: 'DOSSIER-SEC-10',
+    classification: 'BANKING JURISPRUDENCE & FORENSICS',
+    badge: 'BANKING SECRECY',
+    badgeColor: 'bg-cyan-950 text-cyan-200 border-cyan-700',
+    theme: 'governance',
+    titleAr: 'تحقيق مصرف لبنان: نظام مركزية المودعين (التعميم 174) وإشكاليات السرية المصرفية',
+    titleEn: 'BDL Dossier: Depositors Central Registry (Circular 174) & Banking Secrecy Conflicts',
+    descAr: 'تشريح قانوني ومالي دقيق للقرار الأساسي رقم 13836 الصادر عن مصرف لبنان: محاذير اختراق السرية المصرفية، مأسسة التمييز بين الأموال القديمة والجديدة، ومعضلة الحسابات المشتركة.',
+    descEn: 'Forensic and legal analysis of BDL Circular 174: Central Depositors Registry mechanics, banking secrecy risks, constitutional dilemmas of Fresh vs. Non-Fresh deposits, and joint account disputes.',
+    leadAnalystAr: 'وحدة الدراسات التشريعية والمالية المصرفية — معن البرازي',
+    leadAnalystEn: 'Banking & Legislative Research Desk — Maan Barazy'
   }
 };
 
@@ -273,7 +299,7 @@ export const SpecialInvestigations: React.FC<SpecialInvestigationsProps> = ({
 
   // Aggregate all articles that belong to dossiers, investigative reports, and research dispatches
   const aggregatedInvestigations = useMemo(() => {
-    return allArticles.filter(article => {
+    const list = allArticles.filter(article => {
       const cat = article.category || '';
       const cats = article.categories || [];
       const id = article.id || '';
@@ -306,6 +332,12 @@ export const SpecialInvestigations: React.FC<SpecialInvestigationsProps> = ({
         id.includes('ft-') ||
         id.includes('sp-')
       );
+    });
+    const seen = new Set<string>();
+    return list.filter(a => {
+      if (!a || !a.id || seen.has(a.id)) return false;
+      seen.add(a.id);
+      return true;
     });
   }, [allArticles]);
 
@@ -646,7 +678,7 @@ export const SpecialInvestigations: React.FC<SpecialInvestigationsProps> = ({
       {/* 3. FAST MULTI-DOSSIER SELECTOR STRIP */}
       <div className="overflow-x-auto pb-2 scrollbar-thin">
         <div className="flex items-center gap-3 min-w-max">
-          {filteredInvestigations.slice(0, 8).map((article) => {
+          {filteredInvestigations.slice(0, 8).map((article, idx) => {
             const isSelected = activeDossier.id === article.id;
             const meta = SPECIAL_DOSSIERS_INDEX[article.id] || {
               fileId: article.id.slice(0, 10).toUpperCase(),
@@ -655,7 +687,7 @@ export const SpecialInvestigations: React.FC<SpecialInvestigationsProps> = ({
 
             return (
               <button
-                key={article.id}
+                key={`${article.id}-${idx}`}
                 onClick={() => {
                   setSelectedDossierId(article.id);
                   if (onSelectDossier) onSelectDossier(article.id);
@@ -949,7 +981,7 @@ export const SpecialInvestigations: React.FC<SpecialInvestigationsProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredInvestigations.map((article) => {
+          {filteredInvestigations.map((article, idx) => {
             const isSelected = activeDossier.id === article.id;
             const meta = SPECIAL_DOSSIERS_INDEX[article.id] || {
               fileId: `AW-DOC-${article.id.slice(0, 6).toUpperCase()}`,
@@ -959,7 +991,7 @@ export const SpecialInvestigations: React.FC<SpecialInvestigationsProps> = ({
 
             return (
               <div 
-                key={article.id}
+                key={`${article.id}-${idx}`}
                 onClick={() => {
                   setSelectedDossierId(article.id);
                   if (onSelectDossier) onSelectDossier(article.id);

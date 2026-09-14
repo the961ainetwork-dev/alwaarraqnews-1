@@ -58,15 +58,21 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
     'egypt-energy-hub-tamar-gas-sumed-pipeline-2026'
   ];
 
-  // Find articles matching target IDs
+  // Find articles matching target IDs (strictly deduplicated)
+  const seenIds = new Set<string>();
   const matchedArticles = targetIds
     .map(id => articles.find(a => a.id === id))
-    .filter((a): a is Article => a !== undefined);
+    .filter((a): a is Article => {
+      if (!a || !a.id || seenIds.has(a.id)) return false;
+      seenIds.add(a.id);
+      return true;
+    });
 
   // Fallback if articles list is passed without those IDs yet
-  const fallbackArticles = articles.filter(a => 
-    a.category === 'war-room' || a.categories?.includes('war-room') || a.isBreaking
-  ).slice(0, 4);
+  const fallbackArticles = articles.filter(a => {
+    if (!a || !a.id || seenIds.has(a.id)) return false;
+    return a.category === 'war-room' || a.categories?.includes('war-room') || a.isBreaking;
+  }).slice(0, 4);
 
   const displayList = matchedArticles.length > 0 ? matchedArticles : fallbackArticles;
 
@@ -223,7 +229,7 @@ export const HappeningNowSection: React.FC<HappeningNowSectionProps> = ({
 
             return (
               <div 
-                key={story.id}
+                key={`${story.id}-${idx}`}
                 onClick={() => onSelectArticle(story)}
                 className="bg-white border-2 border-zinc-900 hover:border-red-800 p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(185,28,28,1)] transition-all cursor-pointer flex flex-col justify-between group text-right rtl:text-right ltr:text-left relative"
               >
