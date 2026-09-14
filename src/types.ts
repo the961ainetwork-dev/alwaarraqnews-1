@@ -121,4 +121,46 @@ export interface PublishedPodcast {
   publishedAt: string;
 }
 
+export interface IntelligenceDispatchStoryOverride {
+  articleId: string;
+  customHeadlineAr?: string;
+  customHeadlineEn?: string;
+  customNotesAr?: string;
+  customNotesEn?: string;
+  isPinnedLead?: boolean;
+}
+
+export interface IntelligenceDispatchSection {
+  sectionId: string;
+  sectionTitleAr: string;
+  sectionTitleEn: string;
+  articleIds: string[];
+  storyOverrides?: Record<string, IntelligenceDispatchStoryOverride>;
+}
+
+export interface IntelligenceDispatch {
+  id: string;
+  issueNumber: number;
+  dateStr: string;
+  dateStrAr: string;
+  timestamp: number;
+  titleAr: string;
+  titleEn: string;
+  classificationAr: string;
+  classificationEn: string;
+  executiveBriefingAr: string;
+  executiveBriefingEn: string;
+  leadArticleId?: string;
+  sections: IntelligenceDispatchSection[];
+  keyTakeaways: string[];
+  readTimeMinutes?: number;
+  authorAr?: string;
+  authorEn?: string;
+  customNotes?: string;
+  status: 'published' | 'draft';
+  views?: number;
+  broadcastSentAt?: string;
+  subscriberCountAtBroadcast?: number;
+}
+
 

@@ -27,7 +27,8 @@ import {
   Megaphone,
   AlertCircle,
   ShieldAlert,
-  Newspaper
+  Newspaper,
+  Radio
 } from 'lucide-react';
 
 const DESK_METADATA: Record<string, {
@@ -182,6 +183,14 @@ const DESK_METADATA: Record<string, {
     taglineEn: 'Classic Briefings',
     subAr: 'تسجيل الاشتراكات واستعراض النشرات الاستراتيجية المؤرشفة',
     subEn: 'Subscribe to classified reports and browse past archives'
+  },
+  'intelligence-dispatch': {
+    taglineAr: 'البرقية الاستخباراتية',
+    taglineEn: 'Daily Intel Wire',
+    subAr: 'برقيات البث الاستخباراتي اليومي الصادرة عن غرفة التحرير مع الأرشيف الكامل للأعداد',
+    subEn: 'Daily sovereign intelligence wire, executive editorial briefing, and issues archive',
+    badge: 'DAILY WIRE',
+    badgeColor: 'bg-red-700 text-white border-red-800 animate-pulse'
   },
   'world-of-ai': {
     taglineAr: 'عالم الذكاء الاصطناعي',
@@ -358,7 +367,7 @@ export default function Navigation({ language, activeCategory, setActiveCategory
       labelAr: 'الرأي والتفاعل',
       icon: <MessageSquare size={13} />,
       labelEn: 'Opinion & Risk Sandboxes',
-      tabIds: ['editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter', 'world-of-ai'],
+      tabIds: ['intelligence-dispatch', 'editor-desk', 'sentiment-analysis', 'what-if-simulator', 'press-releases', 'newsletter', 'world-of-ai'],
       descAr: 'أعمدة رئيس التحرير، سيناريوهات محاكاة المخاطر الرياضية ورصد المشاعر العامة',
       descEn: 'Editorial columns, mathematical scenario simulations, and AI public mood tracking models.'
     },
@@ -499,6 +508,22 @@ export default function Navigation({ language, activeCategory, setActiveCategory
               >
                 <Newspaper size={13} className="text-amber-400" />
                 <span className="font-extrabold uppercase">{isAr ? 'إصدار الصحيفة (Barron\'s)' : 'Daily Dispatch'}</span>
+              </button>
+            </li>
+
+            {/* Direct Link: Daily Intelligence Broadcast Dispatch (البرقية الاستخباراتية) */}
+            <li>
+              <button
+                id="nav-tab-intelligence-dispatch"
+                onClick={() => selectTab('intelligence-dispatch')}
+                className={`px-3 py-2 flex items-center gap-1.5 rounded-sm transition-all duration-200 cursor-pointer ${
+                  activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'broadcast-dispatch'
+                    ? 'bg-red-950 text-white font-black border-b-2 border-red-500 shadow-[0_0_12px_rgba(239,68,68,0.35)]'
+                    : 'text-red-400 hover:text-white hover:bg-zinc-900 border border-red-900/50'
+                }`}
+              >
+                <Radio size={13} className="text-red-500 animate-pulse" />
+                <span className="font-extrabold uppercase">{isAr ? 'البرقية الاستخباراتية' : 'Daily Intel Wire'}</span>
               </button>
             </li>
 
@@ -877,6 +902,21 @@ export default function Navigation({ language, activeCategory, setActiveCategory
                 >
                   <Newspaper size={13} className="text-amber-400" />
                   <span>{isAr ? 'إصدار الصحيفة البريدي (Barron\'s)' : 'Daily Market Dispatch (Barron\'s)'}</span>
+                </button>
+
+                {/* Intelligence Broadcast Dispatch Mobile Link */}
+                <button
+                  id="nav-tab-mobile-intelligence-dispatch"
+                  onClick={() => selectTab('intelligence-dispatch')}
+                  className={`w-full py-2.5 px-3 flex items-center gap-2 transition-all rounded ${
+                    activeCategory === 'intelligence-dispatch' || activeCategory === 'daily-dispatch' || activeCategory === 'broadcast-dispatch'
+                      ? 'bg-red-950 text-white font-extrabold border-r-4 border-red-500'
+                      : 'text-red-400 hover:text-white bg-red-950/40 border border-red-900/40'
+                  }`}
+                  style={{ textAlign: isAr ? 'right' : 'left' }}
+                >
+                  <Radio size={13} className="text-red-500 animate-pulse" />
+                  <span>{isAr ? 'برقيات البث الاستخباراتي اليومي' : 'Daily Intelligence Wire'}</span>
                 </button>
 
                 {/* Standalone War Room Link */}

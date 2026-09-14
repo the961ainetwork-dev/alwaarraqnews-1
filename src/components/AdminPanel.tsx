@@ -4,7 +4,7 @@ import {
   Lock, KeyRound, Check, Plus, Trash2, Edit3, Save, RotateCcw, 
   Send, Layers, Newspaper, Users, Mail, UserCheck, AlertCircle, FileEdit, Network,
   Palette, LayoutGrid, ShieldCheck, SlidersHorizontal, RefreshCw, UploadCloud, FileUp, Tag, Sparkles,
-  Instagram, BarChart3, AudioLines, Copy, Download, Briefcase, Building2, Globe, Search
+  Instagram, BarChart3, AudioLines, Copy, Download, Briefcase, Building2, Globe, Search, Radio
 } from 'lucide-react';
 import { SEO_SILOS } from '../seoData';
 import ArticleCurator from './ArticleCurator';
@@ -12,6 +12,7 @@ import DeploymentManager from './DeploymentManager';
 import SocialInfographicCreator from './SocialInfographicCreator';
 import AdminDashboardStats from './AdminDashboardStats';
 import AdminPodcastManager from './AdminPodcastManager';
+import IntelligenceDispatchComposer from './IntelligenceDispatchComposer';
 
 interface AdminPanelProps {
   language: 'ar' | 'en';
@@ -25,6 +26,8 @@ interface AdminPanelProps {
   setSiteDesign: React.Dispatch<React.SetStateAction<SiteDesign>>;
   dynamicWidgets: DynamicWidget[];
   setDynamicWidgets: React.Dispatch<React.SetStateAction<DynamicWidget[]>>;
+  onNavigateToPublicDispatch?: () => void;
+  onSelectArticle?: (article: Article) => void;
 }
 
 export default function AdminPanel({
@@ -38,7 +41,9 @@ export default function AdminPanel({
   siteDesign,
   setSiteDesign,
   dynamicWidgets,
-  setDynamicWidgets
+  setDynamicWidgets,
+  onNavigateToPublicDispatch,
+  onSelectArticle
 }: AdminPanelProps) {
   const isAr = language === 'ar';
   
@@ -1271,13 +1276,13 @@ export default function AdminPanel({
             onClick={() => setActiveSubTab('newsletter')}
             className={`w-full text-left rtl:text-right px-4 py-2.5 text-xs font-black uppercase flex items-center gap-2.5 border-2 ${
               activeSubTab === 'newsletter' 
-                ? 'bg-black text-white border-black' 
+                ? 'bg-black text-white border-black shadow-[2px_2px_0px_0px_rgba(220,38,38,1)]' 
                 : 'bg-neutral-50 hover:bg-neutral-100 text-black border-transparent'
             }`}
           >
-            <Mail size={14} />
-            <span>{isAr ? 'إدارة وبث النشرات والمشتركين' : 'Newsletter Senders'}</span>
-            <span className="ml-auto rtl:mr-auto font-mono text-[10px] bg-zinc-250 px-1 text-black font-extrabold">{subscribers.length}</span>
+            <Radio size={14} className="text-red-600 animate-pulse shrink-0" />
+            <span className="truncate">{isAr ? 'مؤلف برقيات النشرة الاستخباراتية' : 'Dispatch Composer'}</span>
+            <span className="ml-auto rtl:mr-auto font-mono text-[9px] bg-red-700 text-white px-1.5 py-0.5 font-black uppercase tracking-wider">WIRE</span>
           </button>
 
           <button
@@ -3615,268 +3620,19 @@ export default function AdminPanel({
             </div>
           )}
 
-          {/* TAB 4: NEWSLETTER BROADCAST CONTROL */}
+          {/* TAB 4: INTELLIGENCE BROADCAST DISPATCH COMPOSER */}
           {activeSubTab === 'newsletter' && (
-            <div className="space-y-6 animate-fade-in text-xs font-semibold">
-              <div className="border-b border-black pb-3">
-                <h3 className="font-sans font-black text-lg uppercase flex items-center gap-2">
-                  <Mail size={16} />
-                  {isAr ? 'مستودع المراسلة ونظام التيلكس اليومي' : 'Telex & Newsletter Broadcasting Platform'}
-                </h3>
-                <p className="text-xxs text-zinc-500 mt-0.5">
-                  {isAr ? 'قائمة ديوان المشتركين وبث الصكوك اللحظية للبريد.' : 'Configure custom circular despatches and broadcast them directly to active subscribers directory.'}
-                </p>
-              </div>
+            <div className="space-y-8 animate-fade-in text-xs font-semibold">
+              <IntelligenceDispatchComposer
+                language={language}
+                articles={articles}
+                categories={categories}
+                subscribers={subscribers}
+                setSubscribers={setSubscribers}
+                onNavigateToPublicDispatch={onNavigateToPublicDispatch}
+                onSelectArticle={onSelectArticle}
+              />
 
-              {/* BENTO DIGITAL INGESTION PORTAL */}
-              <div className="border border-black p-5 bg-[#fafafa] space-y-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-                <div className="flex justify-between items-start border-b border-black pb-3">
-                  <div>
-                    <h4 className="font-sans font-black text-sm uppercase flex items-center gap-2">
-                      <UploadCloud size={16} className="text-[#b91c1c]" />
-                      {isAr ? 'ديوان التلقي الرقمي وتفريغ الوثائق بالذكاء الاصطناعي' : 'DIWAN INTELLIGENCE INGESTION PORT'}
-                    </h4>
-                    <p className="text-[10px] text-zinc-500 font-medium">
-                      {isAr ? 'اسحب وأفلت مستندات التحليل (PDF/BILD/TEXT) لدمجها تلقائيًا مع نشرة تيلكس اليوم.' : 'Overlay raw records (PDF, PNG, JPEG, TXT) here to automatically parse & fuse into today’s live newsletter feed via Gemini.'}
-                    </p>
-                  </div>
-                  <span className="font-mono text-[9px] bg-black text-[#10b981] px-2 py-0.5 font-bold uppercase tracking-widest border border-[#10b981]">
-                    {isAr ? 'دمج حي بالذكاء' : 'AUTOMATED EXTRACTION'}
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                  {/* File Upload Dropzone Form (7/12) */}
-                  <div className="md:col-span-7 space-y-3">
-                    <div 
-                      onDragOver={(e) => {
-                        e.preventDefault();
-                        setIsIngestingDrag(true);
-                      }}
-                      onDragLeave={() => setIsIngestingDrag(false)}
-                      onDrop={(e) => {
-                        e.preventDefault();
-                        setIsIngestingDrag(false);
-                        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-                          setIngestFile(e.dataTransfer.files[0]);
-                          setIngestError(null);
-                        }
-                      }}
-                      className={`border-2 border-dashed p-6 text-center transition-all flex flex-col items-center justify-center cursor-pointer min-h-[140px] ${
-                        isIngestingDrag 
-                          ? 'border-emerald-500 bg-emerald-50/40' 
-                          : ingestFile 
-                            ? 'border-black bg-zinc-100' 
-                            : 'border-zinc-350 hover:border-black bg-white'
-                      }`}
-                      onClick={() => document.getElementById('ingest-file-picker')?.click()}
-                    >
-                      <input 
-                        id="ingest-file-picker"
-                        type="file" 
-                        className="hidden" 
-                        accept="application/pdf,image/*,text/*"
-                        onChange={(e) => {
-                          if (e.target.files && e.target.files.length > 0) {
-                            setIngestFile(e.target.files[0]);
-                            setIngestError(null);
-                          }
-                        }}
-                      />
-                      {isIngestingLoading ? (
-                        <div className="space-y-2 animate-pulse flex flex-col items-center">
-                          <div className="w-8 h-8 rounded-full border-4 border-black border-t-red-600 animate-spin"></div>
-                          <span className="font-mono text-xs font-bold text-red-600 uppercase tracking-widest">{isAr ? 'جاري قراءة الشيفرة...' : 'DECODING RAW INTELLIGENCE...'}</span>
-                        </div>
-                      ) : ingestFile ? (
-                        <div className="space-y-1">
-                          <FileUp className="w-10 h-10 text-red-600 mx-auto" />
-                          <p className="font-sans font-bold text-xs max-w-[280px] truncate mx-auto text-black">{ingestFile.name}</p>
-                          <p className="font-mono text-[9px] text-zinc-500 font-bold uppercase mt-1">
-                            ({(ingestFile.size / 1024).toFixed(1)} KB) • {isAr ? 'جاهز للتنقيب' : 'READY FOR EXTRACTION'}
-                          </p>
-                        </div>
-                      ) : (
-                        <div className="space-y-2 text-zinc-400">
-                          <UploadCloud className="w-10 h-10 mx-auto text-zinc-400" />
-                          <div>
-                            <span className="font-sans font-black text-xs block text-black">
-                              {isAr ? 'انقر أو اسحب الملفات هنا للاستيراد' : 'Click or drag files here to upload'}
-                            </span>
-                            <span className="font-mono text-[10px] block mt-1 text-zinc-400">
-                              PDF, PNG, JPG, JPEG, TXT
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Optional steer text for Gemini */}
-                    <div>
-                      <label className="block text-[10px] font-mono font-black text-zinc-500 mb-1 uppercase">
-                        {isAr ? 'توجيهات إضافية لزاوية الطرح وبث الإرسالية (اختياري)' : 'Optional Editorial Steer (Angle / Directives)'}
-                      </label>
-                      <input 
-                        type="text"
-                        placeholder={isAr ? 'مثال: وجّه الذكاء الاصطناعي للتركيز على الانعكاس المعيشي والتضخم المالي...' : 'e.g., Focus heavily on trading volumes, premium slants, or specific port bypass issues.'}
-                        value={ingestInstructions}
-                        onChange={(e) => setIngestInstructions(e.target.value)}
-                        className="w-full text-xs p-2 border border-zinc-400 bg-white"
-                        disabled={isIngestingLoading}
-                      />
-                    </div>
-
-                    <div className="flex gap-2">
-                      <button
-                        type="button"
-                        onClick={() => handleIngestFileSubmit(ingestFile)}
-                        disabled={!ingestFile || isIngestingLoading}
-                        className={`flex-1 text-white font-mono font-black text-xs py-2 px-4 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] uppercase cursor-pointer text-center flex items-center justify-center gap-1.5 border border-black ${
-                          !ingestFile || isIngestingLoading
-                            ? 'bg-zinc-400 border-zinc-400 cursor-not-allowed shadow-none'
-                            : 'bg-red-700 hover:bg-red-800'
-                        }`}
-                      >
-                        <FileUp size={13} />
-                        {isAr ? 'بدء التحليل والدمج المعرفي' : 'EXTRACT & INGEST DOCUMENT'}
-                      </button>
-                      
-                      {ingestFile && (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setIngestFile(null);
-                            setIngestError(null);
-                          }}
-                          className="bg-zinc-200 hover:bg-zinc-300 text-black border border-black px-4 py-2 font-mono text-xs uppercase"
-                        >
-                          {isAr ? 'إلغاء' : 'CLEAR'}
-                        </button>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Extraction Feedback Panel (5/12) */}
-                  <div className="md:col-span-5 border border-black p-4 bg-white flex flex-col justify-between min-h-[220px]">
-                    <div className="space-y-3 h-full flex flex-col justify-between">
-                      <div className="space-y-3">
-                        <div className="border-b border-dashed border-zinc-300 pb-2">
-                          <span className="font-mono text-[9px] font-black uppercase text-zinc-400 block">
-                            {isAr ? 'مخرجات التحليل والبيان النيوروني' : 'NEURAL INGESTION MANIFEST'}
-                          </span>
-                        </div>
-
-                        {ingestError && (
-                          <div className="p-3 bg-red-50 border border-red-300 text-red-700 font-mono text-[10px] space-y-1">
-                            <p className="font-bold uppercase flex items-center gap-1">❌ {isAr ? 'عطل في التلقي:' : 'Ingestion Failure:'}</p>
-                            <p>{ingestError}</p>
-                          </div>
-                        )}
-
-                        {ingestSuccessStory ? (
-                          <div className="space-y-3 animate-fade-in text-[10px] font-sans">
-                            <div className="p-2 border border-emerald-300 bg-emerald-50/40 text-emerald-800 font-mono flex items-center gap-1.5 uppercase font-bold text-xxs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                              {isAr ? 'تم الاستيراد والدمج بنجاح!' : 'FUSED INTO CURRENT LIVE WIRE!'}
-                            </div>
-                            
-                            <div className="space-y-1.5 bg-neutral-50 p-2 border font-mono text-xxs">
-                              <div className="flex justify-between text-[9px] text-zinc-450 font-bold border-b pb-1">
-                                <span>CATEGORY: {ingestSuccessStory.category.toUpperCase()}</span>
-                                <span>STATUS: ACTIVE LIVE</span>
-                              </div>
-                              <h5 className="font-sans font-black text-black leading-snug">
-                                EN: {ingestSuccessStory.headlineEn}
-                              </h5>
-                              <h5 className="font-sans font-black text-black text-right leading-snug">
-                                AR: {ingestSuccessStory.headlineAr}
-                              </h5>
-                            </div>
-                            <p className="text-[10px] text-zinc-500 leading-normal border-t border-dashed pt-2">
-                              {isAr 
-                                ? '✓ تم دمج هذه الإرسالية مع نشرة تيلكس المتابعين بنجاح!' 
-                                : '✓ This wire is now available directly in subscribers telex and updates tickers.'}
-                            </p>
-
-                            <button
-                              type="button"
-                              onClick={() => handleOpenDispatchForEditing(ingestSuccessStory)}
-                              className="w-full mt-3 bg-[#b91c1c] hover:bg-black text-white font-sans font-black text-xxs uppercase py-2 px-3 border border-black cursor-pointer transition-all flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-                            >
-                              <FileEdit size={12} />
-                              {isAr ? 'فتح وتعديل لنشر المادة بالجريدة' : 'OPEN & EDIT STORY FOR PUBLISHING'}
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="py-6 flex flex-col items-center justify-center text-zinc-350">
-                            <FileUp className="w-12 h-12 stroke-[1] mb-2" />
-                            <p className="font-mono text-[10px] text-center max-w-[200px] leading-relaxed">
-                              {isAr 
-                                ? 'بانتظار تلقي مستند خارجي لبدء تصفية القراءة الخوارزمية.' 
-                                : 'Awaiting raw document stream to trigger neural curation.'}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Curated Dispatches Library */}
-                <div className="border-t border-dashed border-zinc-300 pt-5 mt-5 space-y-4">
-                  <div className="flex justify-between items-center pb-1 border-b border-zinc-200">
-                    <div>
-                      <h5 className="font-mono text-xxs font-black uppercase text-zinc-500">
-                        {isAr ? 'أرشيف وحصاد الإرساليات والبرقيات المنسقة' : 'CURATED DISPATCHES & NEURAL WIRES LIBRARY'}
-                      </h5>
-                      <p className="text-[9px] text-zinc-400 font-medium">
-                        {isAr ? 'هنا تجد كافة الإرساليات الرقمية المستوردة؛ يمكنك مراجعتها، تعديلها، وتوجيهها لأي قسم لنشرها.' : 'Review, customize and route newly ingested satellite archives to any category.'}
-                      </p>
-                    </div>
-                    {isCurationLoading && (
-                      <span className="font-mono text-[9px] text-red-600 animate-pulse">SYNCING WIRES...</span>
-                    )}
-                  </div>
-                  
-                  {curatedDispatches.length === 0 ? (
-                    <div className="py-4 text-center border-2 border-dashed border-zinc-350 bg-white">
-                      <p className="text-[10px] text-zinc-400 font-mono italic">
-                        {isAr ? 'لا توجد برقيات منسقة مسبقاً في قاعدة المزامنة.' : 'No pre-curated dispatches found in synchronization buffer.'}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {curatedDispatches.map((dispatch, idx) => (
-                        <div key={dispatch.id || idx} className="border-2 border-black bg-white p-4 space-y-3 flex flex-col justify-between hover:scale-[1.01] transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center border-b pb-1.5 border-dashed">
-                              <span className="font-mono text-[9px] font-black text-red-650 bg-red-50 px-1.5 py-0.5 border border-red-200 uppercase">
-                                {dispatch.category || 'sovereign-intel'}
-                              </span>
-                              <span className="font-mono text-[8px] text-zinc-400 font-bold">ID: {dispatch.id}</span>
-                            </div>
-                            <h5 className="font-sans font-black text-[11px] text-black leading-snug">
-                              {isAr ? (dispatch.headlineAr || dispatch.headlineEn) : dispatch.headlineEn}
-                            </h5>
-                            <p className="text-[10px] text-zinc-500 line-clamp-3 leading-relaxed font-serif">
-                              {isAr ? (dispatch.synopsisAr || dispatch.synopsisEn) : dispatch.synopsisEn}
-                            </p>
-                          </div>
-                          
-                          <button
-                            type="button"
-                            onClick={() => handleOpenDispatchForEditing(dispatch)}
-                            className="w-full mt-2 bg-neutral-50 hover:bg-black hover:text-white border-2 border-black text-black font-mono font-black text-[9px] py-2 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-                          >
-                            <FileEdit size={10} />
-                            {isAr ? 'مراجعة وتحرير للنشر' : 'OPEN & EDIT FOR PUBLISHING'}
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
 
               {/* SOVEREIGN EDITING & PUBLISHING DESK MODAL OVERLAY */}
               {editingDispatch && (
@@ -4103,102 +3859,7 @@ export default function AdminPanel({
                 </div>
               )}
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                
-                {/* Mail dispatch form (8/12) */}
-                <div className="lg:col-span-7 space-y-4">
-                  <form onSubmit={handleSendNewsletter} className="space-y-4 border border-black p-4 bg-neutral-50">
-                    <span className="font-mono text-xxs font-black uppercase text-zinc-500 block pb-2 border-b border-zinc-200">
-                      {isAr ? 'نموذج تدوير التيلكس المفتوح' : 'TELEX BROADCAST ENVELOPE DRAFT'}
-                    </span>
 
-                    <div className="space-y-1">
-                      <label className="block text-xxs font-mono font-black text-zinc-500">SUBJECT/BROADCAST LINE</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder={isAr ? 'تحديث عاجل: أرباح سندات الإعمار في العقد الجديد' : 'BULLETIN: Special Reconstruction Dispatch - Al-Warraq Scribes'}
-                        value={newsletterSubject}
-                        onChange={(e) => setNewsletterSubject(e.target.value)}
-                        className="w-full text-xs p-2.5 border-2 border-black bg-white"
-                        disabled={isBroadcasting}
-                      />
-                    </div>
-
-                    <div className="space-y-1">
-                      <label className="block text-xxs font-mono font-black text-zinc-500">NEWSLETTER CONTENT BODY</label>
-                      <textarea
-                        rows={6}
-                        required
-                        placeholder={isAr ? 'أعضاء ديوان الوراق الأفاضل، تليكم نشرة اليوم محملة بالتفاصيل الميدانية عن إعادة توازن عوائد لبنان السيادية...' : 'Beloved subscribers, we present the compiled digital telex summarizing the regional fiscal shifts and rehabilitation efforts in Lebanon...'}
-                        value={newsletterBody}
-                        onChange={(e) => setNewsletterBody(e.target.value)}
-                        className="w-full text-xs p-2.5 border-2 border-black bg-white font-serif leading-relaxed"
-                        disabled={isBroadcasting}
-                      />
-                    </div>
-
-                    {isBroadcasting ? (
-                      <div className="py-2 space-y-1">
-                        <div className="flex justify-between items-baseline font-mono text-[10px]">
-                          <span>{isAr ? 'بث الإشارات المغناطيسية...' : 'BROADCAST TRANSCEIVER ENGAGED'}</span>
-                          <span className="font-extrabold">{broadcastProgress}%</span>
-                        </div>
-                        <div className="w-full bg-zinc-200 h-2 border border-black relative">
-                          <div className="bg-red-605 h-full transition-all duration-300" style={{ width: `${broadcastProgress}%` }}></div>
-                        </div>
-                      </div>
-                    ) : (
-                      <button
-                        type="submit"
-                        className="w-full bg-black hover:bg-zinc-800 text-white font-black text-xs uppercase py-3 border border-black cursor-pointer transition-all flex items-center justify-center gap-1.5"
-                      >
-                        <Send size={13} />
-                        {isAr ? 'بث نشرة البريد كليا للمشتركين' : 'EXECUTE MAIL BROADCAST IN REAL-TIME'}
-                      </button>
-                    )}
-                  </form>
-
-                  {/* Active logs */}
-                  {broadcastLogs.length > 0 && (
-                    <div className="bg-[#1c1917] text-[#16a34a] border-2 border-black p-4 font-mono text-[10px] space-y-1.5 max-h-[220px] overflow-y-auto">
-                      <span className="text-zinc-500 block font-black border-b border-zinc-700 pb-1 mb-2 uppercase">OUTPUT LOG TELEMETRY FILE:</span>
-                      {broadcastLogs.map((log, lIdx) => (
-                        <div key={lIdx} className="leading-snug">{log}</div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Subscribers list (4/12) */}
-                <div className="lg:col-span-5 border border-black p-4 space-y-4">
-                  <div className="pb-2 border-b border-dashed border-current">
-                    <span className="font-mono text-xxs font-black uppercase text-zinc-500 block">
-                      {isAr ? 'قائمة ديوان المشتركين' : 'SUBSCRIBER REGISTRY LIST'}
-                    </span>
-                    <span className="text-[10px] text-zinc-400 font-bold block">
-                      {isAr ? `${subscribers.length} عنوان متصل حاليا` : `${subscribers.length} mail destinations connected`}
-                    </span>
-                  </div>
-
-                  <div className="space-y-1 bg-neutral-50 border p-2 max-h-[200px] overflow-y-auto font-mono text-[10px]">
-                    {subscribers.map((mail, mIdx) => (
-                      <div key={mIdx} className="flex justify-between items-center py-1 border-b border-neutral-200/50 last:border-0">
-                        <span className="font-black text-zinc-700 select-all">{mail}</span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Subscription note */}
-                  <div className="p-3 bg-neutral-100/60 text-[10px] text-zinc-500 leading-normal border border-dashed border-zinc-300">
-                    {isAr 
-                      ? '✓ تتألف هذه القائمة من عناوين ديوان الوراق بالإضافة لأعضاء البريد المباشر الذي يسجل قرّاء الموقع عبر استمارة القاع.' 
-                      : '✓ The registry list gets automatically appended whenever a random visitor enrolls their subscription inside the footer panel.'}
-                  </div>
-                </div>
-
-              </div>
 
               {/* SOVEREIGN USER PREMIUM DIRECTORY AND ACTION PORT */}
               <div className="border-t border-black pt-6 space-y-4">
