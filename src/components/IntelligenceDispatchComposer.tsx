@@ -10,6 +10,7 @@ import {
   getStoredDispatches, 
   saveNewOrUpdatedDispatch 
 } from '../data/intelligenceDispatches';
+import AlWarraqLogo from './AlWarraqLogo';
 import { 
   Radio, 
   CheckSquare, 
@@ -1139,32 +1140,39 @@ ${selectedArticles.map((a, i) => `${i + 1}. [${a.category}] ${a.titleAr} - ${a.s
           )}
 
           {/* THE ARABIC NEWSLETTER BROADCAST CANVAS */}
-          <div className="max-w-4xl mx-auto bg-[#fbfbfa] border-4 border-black p-6 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-black">
+          <div className="max-w-4xl mx-auto bg-[#fefefc] border-2 border-zinc-900 p-6 md:p-10 shadow-[0_4px_25px_rgba(0,0,0,0.06)] text-black">
             
             {/* Masthead Header */}
-            <div className="border-b-4 border-black pb-6 text-center space-y-2">
-              <div className="flex justify-between items-center font-mono text-[10px] md:text-xs text-zinc-600 uppercase border-b border-black pb-2 mb-3">
-                <span>{compiledDispatch.classificationAr}</span>
-                <span className="text-red-700 font-black tracking-widest">{compiledDispatch.classificationEn}</span>
+            <div className="border-b-2 border-black pb-6 text-center space-y-3">
+              <div className="flex justify-between items-center font-mono text-[10px] md:text-xs text-zinc-500 uppercase border-b border-zinc-300 pb-2 mb-3">
+                <span className="font-bold">{compiledDispatch.classificationAr}</span>
+                <span className="text-zinc-400">ISSN 2958-824X</span>
                 <span>{compiledDispatch.dateStr}</span>
               </div>
 
-              <div className="inline-block bg-black text-white px-4 py-1 font-mono text-xs font-black uppercase tracking-widest mb-1">
-                // AL-WARRAQ INTELLIGENCE BROADCAST DISPATCH //
+              {/* Al-Warraq Logo Seal */}
+              <div className="flex flex-col items-center justify-center pt-1 pb-2">
+                <AlWarraqLogo size="md" variant="black" showText={false} />
+                <span className="font-mono text-[10px] tracking-[0.2em] text-red-700 font-black uppercase mt-2 block">
+                  {isAr ? 'ديوان الرصد والاستخبارات الاقتصادية والجيوسياسية' : 'SOVEREIGN INTELLIGENCE DESK'}
+                </span>
+                <h2 className="font-serif font-black text-2xl md:text-3xl text-black">
+                  {isAr ? 'نشرة الورّاق الاستخباراتية' : 'Al-Warraq Intelligence Dispatch'}
+                </h2>
               </div>
 
-              <h1 className="font-serif font-black text-2xl md:text-4xl text-black leading-tight">
+              <h1 className="font-serif font-black text-xl md:text-2xl text-zinc-900 leading-tight">
                 {compiledDispatch.titleAr}
               </h1>
 
-              <div className="flex flex-wrap justify-center items-center gap-3 font-mono text-xs text-zinc-700 pt-2">
-                <span className="font-black text-red-700">العدد #{compiledDispatch.issueNumber}</span>
+              <div className="border-y border-zinc-300 py-2 flex flex-wrap justify-center items-center gap-3 font-mono text-xs text-zinc-700">
+                <span className="font-black bg-black text-amber-300 px-2 py-0.5">العدد #{compiledDispatch.issueNumber}</span>
                 <span>•</span>
                 <span className="font-bold">{compiledDispatch.dateStrAr}</span>
                 <span>•</span>
                 <span>زمن القراءة: {compiledDispatch.readTimeMinutes} دقائق</span>
                 <span>•</span>
-                <span className="bg-amber-200 px-2 py-0.5 border border-black font-black">
+                <span className="bg-zinc-100 text-zinc-800 px-2 py-0.5 border border-zinc-300 font-bold">
                   {totalSelectedCount} ملفات استراتيجية
                 </span>
               </div>

@@ -6,6 +6,7 @@ import {
 import { 
   getStoredDispatches 
 } from '../data/intelligenceDispatches';
+import AlWarraqLogo from './AlWarraqLogo';
 import { 
   Radio, 
   Share2, 
@@ -29,7 +30,11 @@ import {
   CheckCircle2, 
   ExternalLink,
   ChevronDown,
-  Layers
+  FileText,
+  Clock,
+  Send,
+  Eye,
+  Type
 } from 'lucide-react';
 
 interface IntelligenceDispatchPageProps {
@@ -55,19 +60,22 @@ export default function IntelligenceDispatchPage({
 }: IntelligenceDispatchPageProps) {
   const isAr = language === 'ar';
 
-  // Load all dispatches from storage (including published ones)
+  // Load dispatches from storage
   const [allDispatches, setAllDispatches] = useState<IntelligenceDispatch[]>(() => getStoredDispatches());
 
-  // Currently viewed issue (defaults to latest issue)
+  // Selected issue
   const [selectedIssueId, setSelectedIssueId] = useState<string>(() => {
     const latest = allDispatches[0];
     return latest ? latest.id : 'dispatch-2026-09-14-144';
   });
 
-  // Current active tab: 'reader' (full dispatch issue view) vs 'archive' (all issues catalog)
+  // Current active view
   const [activeTab, setActiveTab] = useState<'reader' | 'archive'>('reader');
 
-  // Find active dispatch
+  // Text sizing option for enhanced readability
+  const [fontSizeScale, setFontSizeScale] = useState<'standard' | 'large'>('standard');
+
+  // Active dispatch issue
   const currentDispatch = useMemo(() => {
     return allDispatches.find(d => d.id === selectedIssueId) || allDispatches[0];
   }, [allDispatches, selectedIssueId]);
@@ -82,7 +90,7 @@ export default function IntelligenceDispatchPage({
   // Copy feedback state
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
-  // Subscriber email signup state
+  // Subscriber email state
   const [subEmail, setSubEmail] = useState('');
   const [subSuccess, setSubSuccess] = useState(false);
 
@@ -96,353 +104,413 @@ export default function IntelligenceDispatchPage({
             setIsPlayingAudio(false);
             return 0;
           }
-          return prev + 2;
+          return prev + 1.5;
         });
-      }, 500);
+      }, 300);
     }
     return () => {
       if (timer) clearInterval(timer);
     };
   }, [isPlayingAudio]);
 
-  // Handle subscription form
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    const cleanMail = subEmail.trim().toLowerCase();
-    if (!cleanMail) return;
-
-    if (setSubscribers) {
-      setSubscribers(prev => {
-        if (prev.includes(cleanMail)) return prev;
-        const updated = [...prev, cleanMail];
-        try {
-          localStorage.setItem('alwarraq_subscribers', JSON.stringify(updated));
-        } catch (e) {}
-        return updated;
-      });
-    }
-    setSubSuccess(true);
-    setSubEmail('');
-    setTimeout(() => setSubSuccess(false), 5000);
-  };
-
-  // Copy WhatsApp formatted text
+  // Copy WhatsApp
   const handleCopyWhatsApp = () => {
     if (!currentDispatch) return;
-
-    let text = `🚨 *${currentDispatch.titleAr}*\n`;
-    text += `📡 *العدد ${currentDispatch.issueNumber}* | ${currentDispatch.dateStrAr}\n`;
-    text += `🔒 _[${currentDispatch.classificationAr}]_\n\n`;
-    text += `━━━━━━━━━━━━━━━━━━━━━\n`;
-    text += `📌 *الموجز التنفيذي لغرفة التحرير:*\n${currentDispatch.executiveBriefingAr}\n\n`;
-
-    if (currentDispatch.keyTakeaways && currentDispatch.keyTakeaways.length > 0) {
-      text += `🎯 *إشارات الرصد الاستخباري:*\n`;
-      currentDispatch.keyTakeaways.forEach(k => {
-        text += `• ${k}\n`;
-      });
-      text += `\n`;
-    }
-
-    text += `━━━━━━━━━━━━━━━━━━━━━\n`;
-    text += `📑 *أبرز محاور وقضايا العدد:*\n\n`;
-
-    currentDispatch.sections.forEach(sec => {
-      text += `*【 ${sec.sectionTitleAr} 】*\n`;
-      sec.articleIds.forEach(id => {
-        const art = articles.find(a => a.id === id);
-        if (art) {
-          const override = sec.storyOverrides?.[id];
-          text += `▸ *${override?.customHeadlineAr || art.titleAr}*\n`;
-          text += `  ${override?.customNotesAr || art.summaryAr.slice(0, 130)}...\n`;
-          text += `  🔗 https://alwarraqnews.com/?article=${art.id}\n\n`;
-        }
-      });
+    let text = `📰 *${isAr ? 'نشرة الورّاق الاستخباراتية اليومية' : 'Al-Warraq Daily Intelligence Dispatch'}*\n`;
+    text += `📅 ${isAr ? currentDispatch.dateStrAr : currentDispatch.dateStr} | ${isAr ? `العدد #${currentDispatch.issueNumber}` : `Issue #${currentDispatch.issueNumber}`}\n`;
+    text += `🔒 ${isAr ? currentDispatch.classificationAr : currentDispatch.classificationEn}\n\n`;
+    text += `*${isAr ? currentDispatch.titleAr : currentDispatch.titleEn}*\n\n`;
+    text += `📌 *${isAr ? 'الإيجاز التنفيذي:' : 'Executive Briefing:'}*\n${isAr ? currentDispatch.executiveBriefingAr : currentDispatch.executiveBriefingEn}\n\n`;
+    text += `⚡ *${isAr ? 'المحددات الاستراتيجية الحاكمة:' : 'Key Strategic Takeaways:'}*\n`;
+    currentDispatch.keyTakeaways.forEach((t, i) => {
+      text += `${i + 1}. ${t}\n`;
     });
+    text += `\n🌐 ${isAr ? 'طالع العدد كاملاً مع الوثائق عبر ديوان الورّاق:' : 'Read full edition & dossiers on Al-Warraq:'} https://alwarraqnews.com/?category=intelligence-dispatch\n`;
 
-    text += `━━━━━━━━━━━━━━━━━━━━━\n`;
-    text += `🌐 طالع العدد كاملاً عبر الموقع: https://alwarraqnews.com/intelligence-dispatch\n`;
-
-    navigator.clipboard.writeText(text);
-    setCopiedKey('whatsapp');
-    setTimeout(() => setCopiedKey(null), 2500);
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedKey('whatsapp');
+      setTimeout(() => setCopiedKey(null), 2500);
+    });
   };
 
-  // Print current issue
+  // Copy Raw Dispatch
+  const handleCopyRaw = () => {
+    if (!currentDispatch) return;
+    let text = `═══════════════════════════════════════════════════════════\n`;
+    text += `      AL-WARRAQ DAILY INTELLIGENCE DISPATCH // نشرة الورّاق\n`;
+    text += `═══════════════════════════════════════════════════════════\n`;
+    text += `ISSUE: #${currentDispatch.issueNumber} | DATE: ${currentDispatch.dateStrAr}\n`;
+    text += `CLASSIFICATION: ${currentDispatch.classificationAr}\n\n`;
+    text += `TITLE: ${currentDispatch.titleAr}\n\n`;
+    text += `EXECUTIVE BRIEFING:\n${currentDispatch.executiveBriefingAr}\n\n`;
+    text += `KEY TAKEAWAYS:\n`;
+    currentDispatch.keyTakeaways.forEach((t, i) => {
+      text += `[${i + 1}] ${t}\n`;
+    });
+    text += `\nSECTIONS IN THIS ISSUE:\n`;
+    currentDispatch.sections.forEach(s => {
+      text += `• ${s.sectionTitleAr} (${s.articleIds.length} reports)\n`;
+    });
+    text += `═══════════════════════════════════════════════════════════\n`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedKey('raw');
+      setTimeout(() => setCopiedKey(null), 2500);
+    });
+  };
+
+  // Print Dispatch
   const handlePrint = () => {
     window.print();
   };
 
-  // Filtered archived dispatches
+  // Subscribe submit
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!subEmail || !subEmail.includes('@')) return;
+    if (setSubscribers && !subscribers.includes(subEmail)) {
+      setSubscribers(prev => [...prev, subEmail]);
+    }
+    setSubSuccess(true);
+    setSubEmail('');
+  };
+
+  // Filtered dispatches for archive
   const filteredDispatches = useMemo(() => {
-    if (!archiveSearch.trim()) return allDispatches;
-    const term = archiveSearch.toLowerCase();
+    if (!archiveSearch) return allDispatches;
+    const q = archiveSearch.toLowerCase();
     return allDispatches.filter(d => 
-      d.titleAr.toLowerCase().includes(term) ||
-      d.titleEn.toLowerCase().includes(term) ||
-      d.executiveBriefingAr.toLowerCase().includes(term) ||
-      d.issueNumber.toString().includes(term) ||
-      d.dateStrAr.toLowerCase().includes(term)
+      d.titleAr.toLowerCase().includes(q) ||
+      d.titleEn.toLowerCase().includes(q) ||
+      d.issueNumber.toString().includes(q) ||
+      d.dateStrAr.toLowerCase().includes(q)
     );
   }, [allDispatches, archiveSearch]);
 
   if (!currentDispatch) {
     return (
-      <div className="p-12 text-center text-zinc-500 font-mono">
-        {isAr ? 'لا توجد برقيات استخباراتية منشورة حالياً.' : 'No intelligence dispatches available.'}
+      <div className="p-16 text-center text-zinc-500 font-mono">
+        {isAr ? 'لا توجد نشرات استخباراتية منشورة حالياً.' : 'No intelligence dispatches available.'}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f4f4f2] text-black font-sans pb-20 text-right rtl:text-right ltr:text-left" id="intelligence-dispatch-page">
+    <div 
+      className="min-h-screen bg-[#f7f6f2] text-black font-sans pb-24 text-right rtl:text-right ltr:text-left selection:bg-red-900 selection:text-white"
+      id="intelligence-dispatch-page"
+    >
       
-      {/* 1. TOP HEADER & MASTHEAD BANNER */}
-      <div className="bg-white border-b-4 border-black">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+      {/* 1. TOP NEWSLETTER CONTROL BAR */}
+      <nav className="bg-zinc-950 text-white border-b-2 border-red-800 sticky top-0 z-30 shadow-md">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs">
           
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b-2 border-black pb-4">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-[10px] bg-red-700 text-white px-2 py-0.5 font-bold uppercase tracking-wider flex items-center gap-1.5 animate-pulse">
-                  <Radio size={12} />
-                  {isAr ? 'البث الاستخباراتي اليومي' : 'DAILY INTELLIGENCE WIRE'}
-                </span>
-                <span className="font-mono text-[10px] bg-black text-amber-300 px-2 py-0.5 font-bold">
-                  {isAr ? `العدد #${currentDispatch.issueNumber}` : `ISSUE #${currentDispatch.issueNumber}`}
-                </span>
-                <span className="font-mono text-[10px] bg-zinc-200 text-zinc-700 px-2 py-0.5 font-bold">
-                  {currentDispatch.dateStrAr}
-                </span>
-              </div>
-              <h1 className="font-serif font-black text-2xl md:text-4xl text-black uppercase tracking-tight">
-                {isAr ? 'برقيات البث الاستخباراتي اليومي' : 'Intelligence Broadcast Dispatch'}
-              </h1>
-              <p className="text-xs md:text-sm text-zinc-600 font-medium">
-                {isAr 
-                  ? 'نشرة التحرير والاستخبارات الاقتصادية والجيوسياسية اليومية للورّاق — مختارات مركزة من كبريات التحقيقات والأسواق والملفات السيادية.' 
-                  : 'Al-Warraq daily high-density intelligence briefing: Curated investigations, macro-financial signals, and sovereign dossiers.'}
-              </p>
-            </div>
-
-            {/* Navigation Switchers & Composer Shortcut */}
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                onClick={() => setActiveTab('reader')}
-                className={`px-4 py-2 font-mono text-xs font-black uppercase flex items-center gap-1.5 border-2 transition-all cursor-pointer ${
-                  activeTab === 'reader'
-                    ? 'bg-black text-white border-black shadow-[2px_2px_0px_0px_rgba(220,38,38,1)]'
-                    : 'bg-white text-black border-black hover:bg-zinc-100'
-                }`}
-              >
-                <BookOpen size={13} />
-                <span>{isAr ? 'العدد الصادر' : 'Current Issue'}</span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab('archive')}
-                className={`px-4 py-2 font-mono text-xs font-black uppercase flex items-center gap-1.5 border-2 transition-all cursor-pointer ${
-                  activeTab === 'archive'
-                    ? 'bg-black text-white border-black shadow-[2px_2px_0px_0px_rgba(220,38,38,1)]'
-                    : 'bg-white text-black border-black hover:bg-zinc-100'
-                }`}
-              >
-                <Archive size={13} />
-                <span>{isAr ? 'أرشيف الأعداد' : 'All Issues Archive'}</span>
-                <span className="font-mono text-[10px] bg-red-700 text-white px-1.5 py-0.2 rounded-full">
-                  {allDispatches.length}
-                </span>
-              </button>
-
-              {onNavigateToComposer && (
-                <button
-                  onClick={onNavigateToComposer}
-                  className="px-3.5 py-2 bg-amber-300 hover:bg-amber-400 text-black font-mono text-xs font-black uppercase flex items-center gap-1.5 border-2 border-black transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                >
-                  <Sliders size={13} />
-                  <span>{isAr ? 'مؤلف البرقية (الإدارة)' : 'Composer'}</span>
-                </button>
-              )}
+          {/* Left: Dispatch Identity & Pulse */}
+          <div className="flex items-center gap-2.5">
+            <AlWarraqLogo size="sm" variant="dark" showText={false} />
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[10px] font-black text-red-400 uppercase tracking-widest flex items-center gap-1">
+                <Radio size={12} className="text-red-500 animate-pulse" />
+                {isAr ? 'نشرة التحرير اليومية' : 'DAILY NEWSLETTER'}
+              </span>
+              <span className="text-zinc-600 hidden sm:inline">|</span>
+              <span className="font-mono text-[11px] font-bold text-amber-300">
+                {isAr ? `العدد #${currentDispatch.issueNumber}` : `Issue #${currentDispatch.issueNumber}`}
+              </span>
             </div>
           </div>
 
-          {/* Quick Issue Selector Strip (when multiple issues exist) */}
-          <div className="pt-3 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-zinc-500">{isAr ? 'تصفح الأعداد الأخيرة:' : 'Recent Issues:'}</span>
-              <div className="flex items-center gap-1.5 overflow-x-auto">
-                {allDispatches.slice(0, 6).map(disp => (
-                  <button
-                    key={disp.id}
-                    onClick={() => {
-                      setSelectedIssueId(disp.id);
-                      setActiveTab('reader');
-                    }}
-                    className={`px-2.5 py-1 text-xs border font-bold transition-all cursor-pointer ${
-                      selectedIssueId === disp.id && activeTab === 'reader'
-                        ? 'bg-red-700 text-white border-red-800 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]'
-                        : 'bg-zinc-100 text-black border-zinc-300 hover:bg-zinc-200'
-                    }`}
-                  >
-                    #{disp.issueNumber}
-                  </button>
-                ))}
-              </div>
-            </div>
+          {/* Center/Right: View Switcher & Actions */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              onClick={() => setActiveTab('reader')}
+              className={`px-3 py-1 font-mono text-[11px] font-black uppercase rounded-xs transition-all cursor-pointer flex items-center gap-1.5 ${
+                activeTab === 'reader'
+                  ? 'bg-red-700 text-white shadow-xs'
+                  : 'bg-zinc-900 text-zinc-300 hover:text-white hover:bg-zinc-800'
+              }`}
+            >
+              <BookOpen size={12} />
+              <span>{isAr ? 'قراءة النشرة' : 'Read Newsletter'}</span>
+            </button>
 
-            <div className="text-zinc-500 text-[11px]">
-              {isAr ? 'تصنيف البرقية:' : 'Classification:'} <strong className="text-red-700">{currentDispatch.classificationAr}</strong>
-            </div>
+            <button
+              onClick={() => setActiveTab('archive')}
+              className={`px-3 py-1 font-mono text-[11px] font-black uppercase rounded-xs transition-all cursor-pointer flex items-center gap-1.5 ${
+                activeTab === 'archive'
+                  ? 'bg-red-700 text-white shadow-xs'
+                  : 'bg-zinc-900 text-zinc-300 hover:text-white hover:bg-zinc-800'
+              }`}
+            >
+              <Archive size={12} />
+              <span>{isAr ? 'الأرشيف' : 'Archive'}</span>
+              <span className="bg-zinc-800 text-zinc-400 px-1 py-0.2 text-[9px] rounded-xs">
+                {allDispatches.length}
+              </span>
+            </button>
+
+            {/* Font Scaler */}
+            <button
+              onClick={() => setFontSizeScale(fontSizeScale === 'standard' ? 'large' : 'standard')}
+              className="p-1.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 rounded-xs transition-colors cursor-pointer"
+              title={isAr ? 'تكبير / تصغير حجم الخط' : 'Toggle text scale'}
+            >
+              <Type size={13} />
+            </button>
+
+            {onNavigateToComposer && (
+              <button
+                onClick={onNavigateToComposer}
+                className="px-2.5 py-1 bg-amber-400 hover:bg-amber-300 text-black font-mono text-[10px] font-black uppercase tracking-wider rounded-xs flex items-center gap-1 transition-colors cursor-pointer"
+                title={isAr ? 'فتح استوديو التحرير ومؤلف النشرة' : 'Composer'}
+              >
+                <Sliders size={11} />
+                <span className="hidden sm:inline">{isAr ? 'مؤلف النشرة' : 'Composer'}</span>
+              </button>
+            )}
+
+            {onNavigateHome && (
+              <button
+                onClick={onNavigateHome}
+                className="px-2.5 py-1 text-zinc-400 hover:text-white font-mono text-[11px] transition-colors cursor-pointer"
+              >
+                {isAr ? 'الرئيسية' : 'Home'}
+              </button>
+            )}
           </div>
 
         </div>
-      </div>
+      </nav>
 
-      {/* 2. MAIN CONTENT AREA */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8">
-        
-        {/* TAB A: CURRENT DISPATCH READER */}
+      {/* 2. MAIN READING CONTAINER */}
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-6 md:pt-10">
+
+        {/* TAB A: CURRENT NEWSLETTER EDITION */}
         {activeTab === 'reader' && (
-          <div className="space-y-8">
-            
-            {/* Action Bar Floating/Top */}
-            <div className="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                {/* Audio Briefing Simulator Button */}
-                <button
-                  type="button"
-                  onClick={() => setIsPlayingAudio(!isPlayingAudio)}
-                  className={`px-3 py-1.5 font-mono text-xs font-bold uppercase flex items-center gap-2 border border-black cursor-pointer transition-all ${
-                    isPlayingAudio ? 'bg-red-700 text-white' : 'bg-zinc-100 hover:bg-zinc-200 text-black'
-                  }`}
-                >
-                  {isPlayingAudio ? <Pause size={13} /> : <Play size={13} />}
-                  <span>{isPlayingAudio ? (isAr ? 'إيقاف الموجز الصوتي' : 'Pause Audio') : (isAr ? 'استمع للموجز الصوتي' : 'Audio Briefing')}</span>
-                </button>
+          <div className="space-y-6">
 
-                {isPlayingAudio && (
-                  <div className="flex items-center gap-2 w-32 md:w-48 bg-zinc-200 h-2 border border-black relative">
-                    <div className="bg-red-600 h-full transition-all duration-300" style={{ width: `${audioProgress}%` }} />
-                  </div>
-                )}
-              </div>
-
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={handleCopyWhatsApp}
-                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white font-mono text-xs font-bold flex items-center gap-1.5 border border-black cursor-pointer shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
-                >
-                  {copiedKey === 'whatsapp' ? <Check size={12} /> : <Share2 size={12} />}
-                  <span>{copiedKey === 'whatsapp' ? (isAr ? 'تم النسخ!' : 'Copied!') : (isAr ? 'مشاركة بالواتساب' : 'Share WhatsApp')}</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={handlePrint}
-                  className="px-3 py-1.5 bg-white hover:bg-zinc-100 text-black font-mono text-xs font-bold flex items-center gap-1.5 border border-black cursor-pointer"
-                >
-                  <Printer size={12} />
-                  <span>{isAr ? 'طباعة البرقية' : 'Print Wire'}</span>
-                </button>
-              </div>
-            </div>
-
-            {/* THE COMPLETE DISPATCH CANVAS */}
-            <article className="bg-[#fcfcfa] border-4 border-black p-6 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-black">
+            {/* NEWSLETTER PAPER CANVAS */}
+            <article className="bg-[#fefefc] border-2 border-zinc-900 p-6 sm:p-10 md:p-12 shadow-[0_4px_25px_rgba(0,0,0,0.06)] relative">
               
-              {/* Masthead Header */}
-              <div className="border-b-4 border-black pb-8 text-center space-y-3">
-                <div className="flex justify-between items-center font-mono text-[10px] md:text-xs text-zinc-600 uppercase border-b border-black pb-2 mb-4">
-                  <span className="font-bold">{currentDispatch.classificationAr}</span>
-                  <span className="text-red-700 font-black tracking-widest">{currentDispatch.classificationEn}</span>
-                  <span className="font-bold">{currentDispatch.dateStrEn}</span>
-                </div>
-
-                <div className="inline-block bg-black text-white px-5 py-1.5 font-mono text-xs font-black uppercase tracking-widest">
-                  // AL-WARRAQ INTELLIGENCE BROADCAST DISPATCH //
-                </div>
-
-                <h1 className="font-serif font-black text-2xl md:text-4xl lg:text-5xl text-black leading-tight max-w-4xl mx-auto">
-                  {currentDispatch.titleAr}
-                </h1>
-
-                <div className="flex flex-wrap justify-center items-center gap-3 font-mono text-xs md:text-sm text-zinc-700 pt-3">
-                  <span className="font-black text-red-700 text-sm">العدد #{currentDispatch.issueNumber}</span>
-                  <span>•</span>
-                  <span className="font-bold">{currentDispatch.dateStrAr}</span>
-                  <span>•</span>
-                  <span className="text-zinc-600">زمن القراءة: {currentDispatch.readTimeMinutes} دقائق</span>
-                  <span>•</span>
-                  <span className="bg-amber-200 px-2 py-0.5 border border-black font-black text-black">
-                    {currentDispatch.sections.reduce((acc, s) => acc + s.articleIds.length, 0)} ملفات استراتيجية
-                  </span>
-                </div>
-              </div>
-
-              {/* Executive Editorial Briefing Box */}
-              <div className="my-8 p-6 md:p-8 bg-red-50/80 border-2 border-red-800 shadow-[4px_4px_0px_0px_rgba(185,28,28,1)]">
-                <div className="flex items-center gap-2 mb-4 border-b border-red-800/40 pb-3">
-                  <span className="p-1.5 bg-red-800 text-white font-mono text-[10px] font-black uppercase">
-                    CONFIDENTIAL INTEL
-                  </span>
-                  <h3 className="font-sans font-black text-base md:text-lg text-red-950 uppercase">
-                    {isAr ? 'الموجز التنفيذي لديوان التحرير الاستخباراتي' : 'Executive Editorial Telegram'}
-                  </h3>
-                </div>
+              {/* Top Watermark & Authentic Metadata Header */}
+              <div className="flex flex-col items-center border-b-2 border-black pb-6 space-y-4">
                 
-                <p className="font-serif text-base md:text-lg text-zinc-950 leading-relaxed whitespace-pre-line">
-                  {currentDispatch.executiveBriefingAr}
-                </p>
+                {/* Micro Dateline Strip */}
+                <div className="w-full flex justify-between items-center text-[10px] font-mono text-zinc-500 uppercase border-b border-zinc-300 pb-2">
+                  <span className="font-bold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-600 inline-block animate-pulse"></span>
+                    {isAr ? 'وثيقة تداول سيادي واقتصادي موثقة' : 'AUTHENTICATED SOVEREIGN CIRCULATION'}
+                  </span>
+                  <span className="text-zinc-400">ISSN 2958-824X</span>
+                  <span>{isAr ? 'بيروت، لبنان' : 'BEIRUT, LEBANON'}</span>
+                </div>
 
-                <div className="mt-6 pt-4 border-t border-red-800/30 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs font-mono text-red-900">
-                  <span className="font-black">{currentDispatch.authorAr || 'ديوان الرصد والتحليل الاستخباراتي - الورّاق'}</span>
-                  <span className="font-bold tracking-wider">BEIRUT BUREAU • SOVEREIGN TELEGRAPH</span>
+                {/* THE OFFICIAL AL-WARRAQ LOGO SEAL & MASTHEAD */}
+                <div className="flex flex-col items-center text-center space-y-2 pt-2">
+                  <div className="hover:scale-105 transition-transform duration-300">
+                    <AlWarraqLogo size="lg" variant="black" showText={false} />
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="font-mono text-[10px] tracking-[0.25em] text-red-700 font-black uppercase block">
+                      {isAr ? 'ديوان الرصد والاستخبارات الاقتصادية والجيوسياسية' : 'SOVEREIGN INTELLIGENCE & MACRO DESK'}
+                    </span>
+                    <h1 className="font-serif font-black text-2xl sm:text-4xl md:text-5xl text-black tracking-tight leading-none">
+                      {isAr ? 'نشرة الورّاق الاستخباراتية' : 'Al-Warraq Intelligence Dispatch'}
+                    </h1>
+                    <span className="font-serif italic text-xs md:text-sm text-zinc-600 block pt-1">
+                      {isAr 
+                        ? 'البرقية اليومية الموثقة للمتعاملين، الدبلوماسيين، وصناع القرار في الشرق الأدنى والخليج'
+                        : 'The daily morning intelligence brief for asset managers, diplomats, and policy executives'}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Double Rule Dateline Strip */}
+                <div className="w-full border-y-2 border-black py-2.5 flex flex-wrap justify-between items-center gap-2 font-mono text-xs text-black">
+                  <div className="flex items-center gap-3">
+                    <span className="font-black bg-black text-amber-300 px-2.5 py-0.5 text-[11px] uppercase tracking-wider">
+                      {isAr ? `العدد: #${currentDispatch.issueNumber}` : `Issue #${currentDispatch.issueNumber}`}
+                    </span>
+                    <span className="font-bold text-zinc-800">
+                      {isAr ? currentDispatch.dateStrAr : currentDispatch.dateStr}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-zinc-600 text-[11px]">
+                    <span className="flex items-center gap-1">
+                      <Clock size={12} className="text-red-700" />
+                      <span>{isAr ? `${currentDispatch.readTimeMinutes} دقائق قراءة` : `${currentDispatch.readTimeMinutes} min read`}</span>
+                    </span>
+                    <span>•</span>
+                    <span className="bg-zinc-100 text-zinc-800 px-2 py-0.5 border border-zinc-300 font-bold">
+                      {isAr ? currentDispatch.classificationAr : currentDispatch.classificationEn}
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Newsletter Interactive Quick Toolbar */}
+              <div className="my-5 p-3 bg-[#f5f4ef] border border-zinc-300 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                
+                {/* Audio Briefing Player */}
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => setIsPlayingAudio(!isPlayingAudio)}
+                    className={`px-3 py-1.5 font-bold uppercase flex items-center gap-1.5 border transition-all cursor-pointer ${
+                      isPlayingAudio 
+                        ? 'bg-red-700 text-white border-red-800 shadow-xs' 
+                        : 'bg-white hover:bg-zinc-100 text-black border-zinc-400'
+                    }`}
+                  >
+                    {isPlayingAudio ? <Pause size={12} /> : <Play size={12} />}
+                    <span>{isPlayingAudio ? (isAr ? 'إيقاف الموجز الصوتي' : 'Pause Audio') : (isAr ? 'استمع للموجز الصوتي' : 'Listen Audio Brief')}</span>
+                  </button>
+
+                  {isPlayingAudio && (
+                    <div className="flex items-center gap-2">
+                      <div className="w-24 md:w-36 bg-zinc-300 h-1.5 border border-zinc-400 relative overflow-hidden">
+                        <div className="bg-red-700 h-full transition-all duration-300" style={{ width: `${audioProgress}%` }}></div>
+                      </div>
+                      <span className="text-[10px] text-zinc-500">{Math.round(audioProgress)}%</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Sharing & Printing Utilities */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleCopyWhatsApp}
+                    className="px-2.5 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold flex items-center gap-1 border border-emerald-900 transition-colors cursor-pointer"
+                    title={isAr ? 'مشاركة النص بتنسيق مهني عبر واتساب' : 'Share formatted text to WhatsApp'}
+                  >
+                    {copiedKey === 'whatsapp' ? <Check size={12} /> : <Share2 size={12} />}
+                    <span>{copiedKey === 'whatsapp' ? (isAr ? 'تم النسخ!' : 'Copied!') : (isAr ? 'مشاركة واتساب' : 'WhatsApp')}</span>
+                  </button>
+
+                  <button
+                    onClick={handleCopyRaw}
+                    className="px-2.5 py-1.5 bg-white hover:bg-zinc-100 text-zinc-800 font-bold flex items-center gap-1 border border-zinc-400 transition-colors cursor-pointer"
+                    title={isAr ? 'نسخ نص التيلكس بالكامل' : 'Copy telex wire'}
+                  >
+                    {copiedKey === 'raw' ? <Check size={12} className="text-emerald-600" /> : <Copy size={12} />}
+                    <span>{copiedKey === 'raw' ? (isAr ? 'تم النسخ!' : 'Copied!') : (isAr ? 'نسخ التيلكس' : 'Copy Telex')}</span>
+                  </button>
+
+                  <button
+                    onClick={handlePrint}
+                    className="px-2.5 py-1.5 bg-white hover:bg-zinc-100 text-zinc-800 font-bold flex items-center gap-1 border border-zinc-400 transition-colors cursor-pointer"
+                    title={isAr ? 'طباعة نسخة ورقية نظيفة' : 'Print edition'}
+                  >
+                    <Printer size={12} />
+                    <span>{isAr ? 'طباعة' : 'Print'}</span>
+                  </button>
+                </div>
+
+              </div>
+
+              {/* NEWSLETTER MAIN DISPATCH HEADLINE */}
+              <div className="py-4 space-y-3">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-red-50 border border-red-200 text-red-900 font-mono text-[10px] font-black uppercase tracking-wider">
+                  <ShieldAlert size={12} className="text-red-600" />
+                  <span>{isAr ? 'المطالعة الحاكمة لليوم' : 'TODAY\'S CORE DISPATCH'}</span>
+                </div>
+
+                <h2 className={`font-serif font-black text-black leading-tight tracking-tight ${
+                  fontSizeScale === 'large' ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-xl sm:text-2xl md:text-3xl'
+                }`}>
+                  {isAr ? currentDispatch.titleAr : currentDispatch.titleEn}
+                </h2>
+              </div>
+
+              {/* EXECUTIVE EDITORIAL LETTER / MEMORANDUM */}
+              <div className="my-6 p-6 sm:p-7 bg-[#faf8f2] border-r-4 rtl:border-r-4 rtl:border-l-0 ltr:border-l-4 ltr:border-r-0 border-red-700 shadow-xs space-y-4">
+                <div className="flex items-center justify-between border-b border-zinc-300 pb-2.5">
+                  <span className="font-serif italic font-bold text-sm text-zinc-900">
+                    {isAr ? 'حضرة السادة المشتركين وصناع القرار،' : 'Dear Executives & Subscribers,'}
+                  </span>
+                  <span className="font-mono text-[10px] text-zinc-500 font-bold uppercase">
+                    {isAr ? 'مذكرة ديوان التحرير' : 'DESK MEMORANDUM'}
+                  </span>
+                </div>
+
+                <div className={`font-serif text-zinc-900 leading-relaxed space-y-3 ${
+                  fontSizeScale === 'large' ? 'text-base md:text-lg' : 'text-sm md:text-base'
+                }`}>
+                  <p className="whitespace-pre-line first-letter:text-3xl first-letter:font-black first-letter:float-right rtl:first-letter:float-right ltr:first-letter:float-left first-letter:ml-3 rtl:first-letter:ml-3 ltr:first-letter:mr-3 first-letter:text-red-800">
+                    {isAr ? currentDispatch.executiveBriefingAr : currentDispatch.executiveBriefingEn}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-zinc-300/80 flex flex-wrap justify-between items-center text-xs font-mono text-zinc-600">
+                  <span className="font-bold text-black">
+                    {isAr ? (currentDispatch.authorAr || 'ديوان الرصد والتحليل الاستخباراتي - الورّاق') : (currentDispatch.authorEn || 'Al-Warraq Intelligence Bureau')}
+                  </span>
+                  <span className="text-[11px] text-zinc-500">
+                    {isAr ? 'بث رقمي مؤمّن • 06:00 UTC' : 'Secured Digital Transmission • 06:00 UTC'}
+                  </span>
                 </div>
               </div>
 
-              {/* Strategic Radar Signals */}
+              {/* KEY STRATEGIC SIGNALS (THE 3 CORE TAKEAWAYS) */}
               {currentDispatch.keyTakeaways && currentDispatch.keyTakeaways.length > 0 && (
-                <div className="my-8 p-5 bg-zinc-100 border-2 border-black">
-                  <div className="font-mono text-xs md:text-sm font-black uppercase text-black mb-4 flex items-center gap-2 border-b border-black pb-2">
-                    <Flame size={16} className="text-red-700" />
-                    <span>{isAr ? 'أهم ۳ إشارات رصد استراتيجي للمتعاملين وصناع القرار' : 'Strategic Radar Signals'}</span>
+                <div className="my-8 border-2 border-black p-5 sm:p-6 bg-white space-y-4">
+                  <div className="flex items-center justify-between border-b border-black pb-2.5">
+                    <div className="flex items-center gap-2">
+                      <Flame size={15} className="text-red-700" />
+                      <h3 className="font-mono text-xs md:text-sm font-black uppercase tracking-wider text-black">
+                        {isAr ? 'النقاط الاستراتيجية الحاكمة في إصدار اليوم' : 'The Governing Signals (3 Core Takeaways)'}
+                      </h3>
+                    </div>
+                    <span className="font-mono text-[10px] text-zinc-500 font-bold uppercase">
+                      {isAr ? 'إيجاز صانع القرار' : 'Executive Brief'}
+                    </span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+
+                  <div className="space-y-3">
                     {currentDispatch.keyTakeaways.map((point, idx) => (
-                      <div key={idx} className="p-3.5 bg-white border-2 border-black font-sans text-xs md:text-sm font-semibold leading-relaxed shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <span className="font-mono text-xs font-black bg-black text-white px-2 py-0.5 ml-2 rtl:ml-2 ltr:mr-2">
+                      <div 
+                        key={idx} 
+                        className="flex items-start gap-3 p-3 bg-[#fbfbfa] border border-zinc-200 hover:border-zinc-400 transition-colors"
+                      >
+                        <span className="font-mono font-black text-xs px-2 py-0.5 bg-black text-amber-300 shrink-0">
                           0{idx + 1}
                         </span>
-                        {point}
+                        <p className={`font-sans text-zinc-900 leading-snug ${
+                          fontSizeScale === 'large' ? 'text-sm md:text-base font-medium' : 'text-xs md:text-sm font-medium'
+                        }`}>
+                          {point}
+                        </p>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Grouped Sections Content */}
-              <div className="space-y-10 my-10">
+              {/* CATEGORIZED NEWSLETTER DESKS & INVESTIGATIONS */}
+              <div className="space-y-12 my-10 pt-4">
                 {currentDispatch.sections.map((sec, secIdx) => (
-                  <div key={sec.sectionId} className="space-y-4">
-                    {/* Section Header */}
-                    <div className="flex items-center justify-between border-b-2 border-black pb-2.5">
+                  <section key={sec.sectionId} className="space-y-5">
+                    
+                    {/* Desk Section Header */}
+                    <div className="border-b-2 border-black pb-2 flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
-                        <span className="font-mono text-xs font-black bg-black text-white px-2.5 py-1">
-                          0{secIdx + 1}
+                        <span className="font-mono text-xs font-black bg-red-800 text-white px-2 py-0.5">
+                          {isAr ? `الباب 0${secIdx + 1}` : `SECTION 0${secIdx + 1}`}
                         </span>
-                        <h3 className="font-sans font-black text-lg md:text-xl text-black uppercase">
-                          {sec.sectionTitleAr}
+                        <h3 className="font-serif font-black text-lg md:text-xl text-black">
+                          {isAr ? sec.sectionTitleAr : sec.sectionTitleEn}
                         </h3>
                       </div>
-                      <span className="font-mono text-xs text-zinc-500 font-bold">
-                        {sec.articleIds.length} {isAr ? 'تقارير' : 'reports'}
+                      <span className="font-mono text-[11px] text-zinc-500 font-bold">
+                        {sec.articleIds.length} {isAr ? 'تقارير موثقة' : 'filed reports'}
                       </span>
                     </div>
 
-                    {/* Section Stories Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      {sec.articleIds.map(id => {
+                    {/* Desk Stories List (Newsletter Card Layout) */}
+                    <div className="space-y-5">
+                      {sec.articleIds.map((id, aIdx) => {
                         const article = articles.find(a => a.id === id);
                         if (!article) return null;
                         const override = sec.storyOverrides?.[id];
@@ -451,100 +519,143 @@ export default function IntelligenceDispatchPage({
                         return (
                           <div 
                             key={id}
-                            className={`p-5 border-2 transition-all flex flex-col justify-between ${
+                            className={`p-5 sm:p-6 transition-all border ${
                               isLead 
-                                ? 'border-red-800 bg-white shadow-[5px_5px_0px_0px_rgba(185,28,28,1)]' 
-                                : 'border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]'
+                                ? 'bg-[#fcfbf7] border-2 border-red-800 shadow-[3px_3px_0px_0px_rgba(185,28,28,0.15)]' 
+                                : 'bg-white border-zinc-300 hover:border-zinc-500 shadow-xs'
                             }`}
                           >
-                            <div>
-                              {isLead && (
-                                <div className="inline-block bg-red-700 text-white font-mono text-[9px] font-black px-2 py-0.5 uppercase tracking-wider mb-2">
-                                  ★ {isAr ? 'الملف الافتتاحي البارز' : 'FEATURED LEAD'}
-                                </div>
-                              )}
+                            {isLead && (
+                              <div className="inline-flex items-center gap-1.5 bg-red-800 text-white font-mono text-[9px] font-black px-2 py-0.5 uppercase tracking-wider mb-2.5">
+                                <span>★</span>
+                                <span>{isAr ? 'الملف الافتتاحي للباب' : 'FEATURED LEAD DOSSIER'}</span>
+                              </div>
+                            )}
 
-                              <h4 className="font-sans font-black text-base md:text-lg text-black leading-snug hover:text-red-700 transition-colors">
-                                {override?.customHeadlineAr || article.titleAr}
-                              </h4>
+                            <h4 
+                              onClick={() => onSelectArticle && onSelectArticle(article)}
+                              className={`font-serif font-black text-black hover:text-red-700 transition-colors leading-snug cursor-pointer ${
+                                isLead 
+                                  ? (fontSizeScale === 'large' ? 'text-lg sm:text-xl md:text-2xl' : 'text-base sm:text-lg md:text-xl')
+                                  : (fontSizeScale === 'large' ? 'text-base sm:text-lg' : 'text-sm sm:text-base')
+                              }`}
+                            >
+                              {override?.customHeadlineAr || (isAr ? article.titleAr : article.titleEn)}
+                            </h4>
 
-                              <p className="font-serif text-xs md:text-sm text-zinc-800 mt-2.5 leading-relaxed">
-                                {article.summaryAr}
-                              </p>
+                            <p className={`font-serif text-zinc-700 mt-2 leading-relaxed ${
+                              fontSizeScale === 'large' ? 'text-sm md:text-base' : 'text-xs md:text-sm'
+                            }`}>
+                              {isAr ? article.summaryAr : article.summaryEn}
+                            </p>
 
-                              {override?.customNotesAr && (
-                                <div className="mt-3 p-2.5 bg-amber-50 border-r-2 border-amber-600 font-sans text-xs text-amber-950 font-medium">
-                                  <strong>{isAr ? 'ملاحظة ديوان التحرير:' : 'Note:'}</strong> {override.customNotesAr}
-                                </div>
-                              )}
-                            </div>
+                            {/* Editorial Angle Note */}
+                            {override?.customNotesAr && (
+                              <div className="mt-3 p-3 bg-amber-50/80 border-r-3 rtl:border-r-3 rtl:border-l-0 ltr:border-l-3 ltr:border-r-0 border-amber-600 font-sans text-xs text-amber-950">
+                                <span className="font-mono font-black text-[10px] text-amber-800 uppercase block mb-0.5">
+                                  {isAr ? 'زاوية ديوان التحرير:' : 'EDITORIAL ANGLE & BOTTOM LINE:'}
+                                </span>
+                                <p>{override.customNotesAr}</p>
+                              </div>
+                            )}
 
-                            <div className="mt-5 pt-3 border-t border-dashed border-zinc-300 flex items-center justify-between text-xs font-mono">
-                              <span className="text-zinc-500 font-bold">{article.date}</span>
+                            {/* Article Card Footer Link */}
+                            <div className="mt-4 pt-3 border-t border-dashed border-zinc-200 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                              <span className="text-zinc-500 text-[11px] font-bold">
+                                {article.date} • {article.author}
+                              </span>
+
                               <button
-                                type="button"
                                 onClick={() => onSelectArticle && onSelectArticle(article)}
-                                className="text-red-700 font-black hover:underline flex items-center gap-1 cursor-pointer"
+                                className="text-red-700 hover:text-red-900 font-black flex items-center gap-1.5 transition-colors cursor-pointer group"
                               >
-                                <span>{isAr ? 'طالع التحليل الكامل ←' : 'Read Full File →'}</span>
+                                <span>{isAr ? 'طالع التحقيق والوثائق كاملة' : 'Read Full Dossier'}</span>
+                                <span className="transform group-hover:translate-x-0.5 transition-transform rtl:rotate-180">→</span>
                               </button>
                             </div>
+
                           </div>
                         );
                       })}
                     </div>
-                  </div>
+
+                  </section>
                 ))}
               </div>
 
-              {/* Newsletter Dispatch Footer */}
-              <div className="border-t-4 border-black pt-8 mt-12 text-center space-y-4">
-                <div className="font-mono text-xs text-zinc-600 max-w-xl mx-auto">
-                  {isAr 
-                    ? 'تم تنضيد وبث هذه البرقية من مكاتب ديوان التحرير في بيروت • معهد الورّاق للدراسات السيادية والاستخبارات الاقتصادية' 
-                    : 'Transmitted from Al-Warraq Editorial Bureau, Beirut • Institute for Sovereign Studies'}
+              {/* NEWSLETTER CLOSING / EDITORIAL SIGN-OFF */}
+              <div className="border-t-2 border-black pt-8 mt-12 space-y-6">
+                
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 bg-[#f7f6f2] p-6 border border-zinc-300">
+                  <div className="space-y-2">
+                    <span className="font-mono text-[10px] font-black text-zinc-500 uppercase tracking-widest block">
+                      {isAr ? 'التوقيع والاعتماد التحريري' : 'EDITORIAL VERIFICATION'}
+                    </span>
+                    <p className="font-serif italic text-sm text-zinc-800">
+                      {isAr 
+                        ? 'تُرسل هذه النشرة للمشتركين حصرياً. حقوق النشر والتحليل محفوظة لمؤسسة الورّاق الصحفية المستقلة.' 
+                        : 'Transmitted exclusively to registered decision-makers. Copyright © Al-Warraq Independent Press.'}
+                    </p>
+                    <div className="pt-2 font-serif font-black text-base text-black">
+                      {isAr ? 'ديوان الرصد والتحليل الاستخباراتي — بيروت' : 'Al-Warraq Intelligence Monitoring Bureau — Beirut'}
+                    </div>
+                  </div>
+
+                  {/* Stamp & Seal */}
+                  <div className="shrink-0 flex flex-col items-center sm:items-end">
+                    <div className="p-2 border-2 border-red-800 bg-white shadow-xs">
+                      <AlWarraqLogo size="md" variant="crimson" showText={false} />
+                    </div>
+                    <span className="font-mono text-[8px] text-red-800 font-bold uppercase tracking-widest mt-1">
+                      VERIFIED DISPATCH // 2026
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-3 font-mono text-xs">
+                {/* Newsletter Bottom Actions */}
+                <div className="flex flex-wrap justify-center items-center gap-3 pt-2">
                   <button
-                    type="button"
                     onClick={handleCopyWhatsApp}
-                    className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-mono text-xs font-black uppercase flex items-center gap-2 border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer"
                   >
-                    {isAr ? 'مشاركة البرقية عبر الواتساب' : 'Share via WhatsApp'}
+                    <Share2 size={13} />
+                    <span>{isAr ? 'مشاركة النشرة بالواتساب' : 'Share via WhatsApp'}</span>
                   </button>
 
                   <button
-                    type="button"
                     onClick={handlePrint}
-                    className="px-5 py-2.5 bg-black hover:bg-zinc-800 text-white font-bold cursor-pointer"
+                    className="px-5 py-2.5 bg-black hover:bg-zinc-800 text-white font-mono text-xs font-black uppercase flex items-center gap-2 border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer"
                   >
-                    {isAr ? 'طباعة نسخة ورقية' : 'Print Issue'}
+                    <Printer size={13} />
+                    <span>{isAr ? 'طباعة نسخة ورقية' : 'Print Hardcopy'}</span>
                   </button>
                 </div>
+
               </div>
 
             </article>
 
-            {/* VIP SUBSCRIBER REGISTRATION BOX */}
-            <div className="bg-black text-white p-6 md:p-8 border-4 border-black shadow-[6px_6px_0px_0px_rgba(220,38,38,1)]">
-              <div className="max-w-2xl mx-auto text-center space-y-3">
-                <div className="inline-block bg-red-700 text-white font-mono text-[10px] font-black px-3 py-1 uppercase tracking-widest">
-                  VIP INTELLIGENCE WIRE ACCESS
+            {/* SUBSCRIBER NEWSLETTER INBOX SIGNUP CARD */}
+            <div className="bg-zinc-950 text-white p-6 sm:p-8 border-2 border-zinc-900 shadow-md">
+              <div className="max-w-xl mx-auto text-center space-y-3">
+                <div className="inline-block bg-red-700 text-white font-mono text-[9px] font-black px-2.5 py-0.5 uppercase tracking-widest">
+                  {isAr ? 'اشتراك مباشر في النشرة الصباحية' : 'MORNING DISPATCH INBOX'}
                 </div>
-                <h3 className="font-serif font-black text-xl md:text-3xl text-white">
-                  {isAr ? 'اشترك لاستلام برقيات البث الاستخباراتي اليومية' : 'Subscribe to Al-Warraq Intelligence Daily Wire'}
+
+                <h3 className="font-serif font-black text-xl sm:text-2xl text-white">
+                  {isAr ? 'استلم برقية الورّاق الاستخباراتية يومياً في بريدك' : 'Get Al-Warraq Intelligence Dispatch in Your Inbox'}
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-300">
+
+                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
                   {isAr 
-                    ? 'احصل على ملخص تحليلي يومي فجر كل صباح يحتوي على أهم التحقيقات والإشارات الاستراتيجية في بريدك.' 
-                    : 'Receive confidential daily briefings directly in your inbox before regional markets open.'}
+                    ? 'إيجاز تنفيذي فجر كل يوم يشمل أهم مؤشرات أسواق المال والطاقة والتحقيقات السيادية قبل بدء تداولات المنطقة.'
+                    : 'A high-density briefing delivered every morning at 06:00 UTC covering markets, energy, and sovereign investigations.'}
                 </p>
 
                 {subSuccess ? (
-                  <div className="p-3 bg-emerald-900 border border-emerald-500 text-emerald-100 font-bold text-xs flex items-center justify-center gap-2">
-                    <CheckCircle2 size={16} />
-                    <span>{isAr ? '✓ تم تسجيل اشتراككم بنجاح في ديوان البرقيات اليومية.' : '✓ Successfully subscribed to the daily wire.'}</span>
+                  <div className="p-3 bg-emerald-950 border border-emerald-500 text-emerald-300 font-mono text-xs flex items-center justify-center gap-2">
+                    <CheckCircle2 size={15} />
+                    <span>{isAr ? '✓ تم تسجيل بريدكم بنجاح لاستلام النشرة القادمة.' : '✓ Subscribed! You will receive the next morning dispatch.'}</span>
                   </div>
                 ) : (
                   <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 pt-2 max-w-md mx-auto">
@@ -553,14 +664,14 @@ export default function IntelligenceDispatchPage({
                       required
                       value={subEmail}
                       onChange={(e) => setSubEmail(e.target.value)}
-                      placeholder={isAr ? 'أدخل بريدك الإلكتروني هنا...' : 'Enter your corporate email...'}
-                      className="flex-1 p-2.5 text-xs text-black bg-white border-2 border-zinc-400 font-sans"
+                      placeholder={isAr ? 'أدخل عنوان بريدك الإلكتروني...' : 'Enter your corporate email...'}
+                      className="flex-1 p-2.5 text-xs text-white bg-zinc-900 border border-zinc-700 font-mono placeholder:text-zinc-500 outline-none focus:border-red-500"
                     />
                     <button
                       type="submit"
-                      className="px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white font-mono text-xs font-black uppercase tracking-wider border border-white cursor-pointer transition-all"
+                      className="px-5 py-2.5 bg-red-700 hover:bg-red-600 text-white font-mono text-xs font-black uppercase tracking-wider border border-red-500 cursor-pointer transition-colors"
                     >
-                      {isAr ? 'انضمام للبث' : 'SUBSCRIBE'}
+                      {isAr ? 'تسجيل الاشتراك' : 'SUBSCRIBE'}
                     </button>
                   </form>
                 )}
@@ -574,16 +685,18 @@ export default function IntelligenceDispatchPage({
         {activeTab === 'archive' && (
           <div className="space-y-6">
             
-            {/* Archive Search & Title */}
-            <div className="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <div>
-                <h2 className="font-sans font-black text-lg md:text-xl uppercase text-black flex items-center gap-2">
-                  <Archive className="text-red-700" size={20} />
-                  {isAr ? 'أرشيف برقيات البث الاستخباراتي اليومي' : 'Intelligence Dispatches Archive'}
-                </h2>
-                <p className="text-xs text-zinc-500">
-                  {isAr ? 'تصفح كافة الأعداد الصادرة والوثائق الاستخباراتية المؤرشفة.' : 'Browse all historical editions and classified telegraph reports.'}
-                </p>
+            {/* Archive Header & Search Bar */}
+            <div className="bg-white border-2 border-black p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <div className="flex items-center gap-3">
+                <AlWarraqLogo size="sm" variant="black" showText={false} />
+                <div>
+                  <h2 className="font-serif font-black text-lg md:text-xl text-black">
+                    {isAr ? 'أرشيف أعداد نشرة الورّاق الاستخباراتية' : 'Intelligence Dispatches Archive'}
+                  </h2>
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    {isAr ? 'تصفح كافة الأعداد الصادرة والتحليلات السيادية السابقة.' : 'Browse all historical editions and analytical telegraphs.'}
+                  </p>
+                </div>
               </div>
 
               <div className="relative w-full sm:w-72">
@@ -592,14 +705,14 @@ export default function IntelligenceDispatchPage({
                   type="text"
                   value={archiveSearch}
                   onChange={(e) => setArchiveSearch(e.target.value)}
-                  placeholder={isAr ? 'بحث في الأرشيف (رقم، عنوان، تاريخ)...' : 'Search issues by keyword...'}
-                  className="w-full pl-3 pr-8 py-2 text-xs border-2 border-black bg-zinc-50"
+                  placeholder={isAr ? 'بحث في الأرشيف (رقم، عنوان)...' : 'Search issues...'}
+                  className="w-full pl-3 pr-8 py-2 text-xs border border-zinc-400 bg-[#fafaf8] font-mono outline-none focus:border-black"
                 />
               </div>
             </div>
 
-            {/* Archive Issues Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {/* Archive Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {filteredDispatches.map(disp => (
                 <div
                   key={disp.id}
@@ -608,43 +721,41 @@ export default function IntelligenceDispatchPage({
                     setActiveTab('reader');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(185,28,28,1)] hover:border-red-700 transition-all cursor-pointer flex flex-col justify-between group"
+                  className="bg-white border border-zinc-300 hover:border-black p-5 sm:p-6 transition-all cursor-pointer flex flex-col justify-between group shadow-xs hover:shadow-md"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-mono text-xs font-black bg-red-700 text-white px-2 py-0.5">
-                        العدد #{disp.issueNumber}
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-black bg-black text-amber-300 px-2 py-0.5">
+                        {isAr ? `العدد #${disp.issueNumber}` : `Issue #${disp.issueNumber}`}
                       </span>
-                      <span className="font-mono text-[10px] text-zinc-500 font-bold">
+                      <span className="font-mono text-[11px] text-zinc-500 font-bold">
                         {disp.dateStrAr}
                       </span>
                     </div>
 
-                    <h3 className="font-sans font-black text-base text-black group-hover:text-red-700 transition-colors leading-snug mb-2">
+                    <h3 className="font-serif font-black text-base text-black group-hover:text-red-700 transition-colors leading-snug">
                       {disp.titleAr}
                     </h3>
 
-                    <p className="font-serif text-xs text-zinc-600 line-clamp-3 leading-relaxed mb-4">
+                    <p className="font-serif text-xs text-zinc-600 line-clamp-3 leading-relaxed">
                       {disp.executiveBriefingAr}
                     </p>
 
-                    <div className="flex flex-wrap gap-1 mb-3">
+                    <div className="flex flex-wrap gap-1.5 pt-1">
                       {disp.sections.map(s => (
-                        <span key={s.sectionId} className="font-mono text-[9px] bg-zinc-100 border border-zinc-300 px-1.5 py-0.5 text-zinc-700 font-bold">
+                        <span key={s.sectionId} className="font-mono text-[9px] bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 text-zinc-700 font-bold">
                           {s.sectionTitleAr} ({s.articleIds.length})
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-zinc-200 flex items-center justify-between text-xs font-mono">
-                    <span className="text-zinc-500">
-                      {disp.views || 0} {isAr ? 'قراءة' : 'views'}
+                  <div className="pt-4 mt-4 border-t border-zinc-200 flex items-center justify-between text-xs font-mono">
+                    <span className="text-zinc-500 text-[11px]">
+                      {disp.views || 0} {isAr ? 'قارئ نشط' : 'readers'}
                     </span>
                     <span className="text-red-700 font-bold flex items-center gap-1 group-hover:underline">
-                      <span>{isAr ? 'فتح العدد' : 'Read Issue'}</span>
-                      <ArrowLeft size={12} className="rtl:inline ltr:hidden" />
-                      <ArrowRight size={12} className="ltr:inline rtl:hidden" />
+                      <span>{isAr ? 'فتح قراءة العدد ←' : 'Read Issue →'}</span>
                     </span>
                   </div>
                 </div>
@@ -654,7 +765,7 @@ export default function IntelligenceDispatchPage({
           </div>
         )}
 
-      </div>
+      </main>
 
     </div>
   );
