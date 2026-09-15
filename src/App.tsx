@@ -1280,6 +1280,24 @@ export default function App() {
         siteDesign={siteDesign}
       />
 
+      {/* 5. Current Daily Intelligence Dispatch (Moved to Top between Breaking News Bar & Breadcrumbs) */}
+      {activeCategory === 'all' && !searchQuery && !selectedArticle && (
+        <div className="max-w-7xl mx-auto w-full px-4 pt-6">
+          <CurrentDispatchSection
+            language={language}
+            layoutMode={layoutMode}
+            articles={allArticles}
+            subscribers={subscribers}
+            setSubscribers={setSubscribers}
+            onNavigateToDispatch={(issueId) => {
+              setActiveCategory('intelligence-dispatch');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onSelectArticle={(article) => setSelectedArticle(article)}
+          />
+        </div>
+      )}
+
       {/* Main Container */}
       <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-8">
         
@@ -1315,8 +1333,8 @@ export default function App() {
         ) : (
           <div className="space-y-12">
 
-            {/* Spectacular "Happening Now" Hero Section at the top of all pages */}
-            {activeCategory !== 'urgent-release' && activeCategory !== 'admin' && !selectedArticle && (
+            {/* Spectacular "Happening Now" Hero Section - only on urgent-release page, deleted from Home page */}
+            {activeCategory === 'urgent-release' && !selectedArticle && (
               <div className="bg-zinc-950 border-t-4 border-b-4 border-double border-red-600 text-white p-6 md:p-8 mb-10 relative overflow-hidden shadow-xl transition-all text-right md:text-right rtl:text-right ltr:text-left select-text">
                 {/* Visual watermark pattern overlay */}
                 <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial-gradient from-red-600/10 to-transparent pointer-events-none" />
@@ -1640,23 +1658,37 @@ export default function App() {
                 {activeCategory === 'all' && renderWidgetsByLocation('header')}
                 {activeCategory === 'all' && renderWidgetsByLocation('sidebar')}
 
-                {/* SECTION 1: LEBANON NEWS (أخبار وقضايا لبنان والشرق الأدنى) - TOP OF PAGE */}
-                {(activeCategory === 'all' || activeCategory === 'lebanon') && lebanonArticles.length > 0 && (
-                  <section className="space-y-5 my-8" id="homepage-lebanon-section">
-                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
-                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
-                        <Newspaper size={18} className="text-black shrink-0" />
-                        <span>{isAr ? 'أخبار وقضايا لبنان والشرق الأدنى' : 'Lebanon & Levant Bureau'}</span>
-                      </h3>
-                      <span className="font-mono text-xxs font-bold text-zinc-500">
-                        {isAr ? 'تغطية بيروت الحية' : 'Beirut Wire Feed'}
-                      </span>
+                {/* 1. HOMEPAGE SPECIAL INVESTIGATIONS GRID - 6 STORIES (2 ROWS × 3 COLUMNS) */}
+                {activeCategory === 'all' && (
+                  <section className="space-y-6 my-8" id="homepage-special-investigations-grid">
+                    <div className="border-double-editorial-bottom pb-2 flex flex-col sm:flex-row justify-between sm:items-center gap-3 text-black">
+                      <div className="flex items-center gap-2">
+                        <Sparkles size={20} className="text-red-700 shrink-0 animate-pulse" />
+                        <div>
+                          <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2 text-zinc-950">
+                            <span>{isAr ? 'التحقيقات الخاصة' : 'Special Investigations'}</span>
+                          </h3>
+                          <span className="font-mono text-xxs font-bold text-zinc-500 block">
+                            {isAr ? 'أحدث ٦ تحقيقات استقصائية معتمدة (شبكة ٣ أعمدة × صفين)' : 'Latest 6 Certified Investigations (3 Columns × 2 Rows)'}
+                          </span>
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={() => {
+                          setActiveCategory('special-investigations');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="self-start sm:self-auto bg-black hover:bg-zinc-800 text-white font-mono font-bold text-xs px-4 py-2 flex items-center gap-2 transition-colors cursor-pointer border border-black shadow-[3px_3px_0px_#b91c1c]"
+                      >
+                        <span>{isAr ? `عرض كافة التحقيقات الخاصة (${specialInvestigationsArticles.length || allArticles.length})` : `View All Special Investigations (${specialInvestigationsArticles.length || allArticles.length})`}</span>
+                        <span className="rtl:rotate-180">→</span>
+                      </button>
                     </div>
 
-                    {/* 4 Cards in a Row masonry style */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                      {displayedLebanon.map((story, idx) => (
-                        <div key={`${story.id}-${idx}`} className="break-inside-avoid">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                      {(specialInvestigationsArticles.length >= 6 ? specialInvestigationsArticles : allArticles).slice(0, 6).map((story) => (
+                        <div key={story.id} className="break-inside-avoid flex flex-col justify-between h-full">
                           <ArticleCard
                             article={story}
                             layoutMode={layoutMode}
@@ -1670,161 +1702,10 @@ export default function App() {
                         </div>
                       ))}
                     </div>
-
-                    {/* THE TEASER BANNER INTRODUCING CONSUMER SENTIMENT SCRAPER */}
-                    <div 
-                      id="sentiment-promotional-banner" 
-                      className="border-4 border-black p-5 bg-zinc-50 relative overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] my-6"
-                    >
-                      {/* Decorative retro tag */}
-                      <div className="absolute top-0 right-0 bg-[#b91c1c] text-white font-mono text-[9px] px-3 py-1 uppercase font-black tracking-widest">
-                        {isAr ? 'الاستخبارات الفورية' : 'AI SENTIMENT TELEMETRY'}
-                      </div>
-                      
-                      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-                        <div className="space-y-2 max-w-3xl">
-                          <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
-                            <span className="font-mono text-xxs font-extrabold text-[#b91c1c] uppercase tracking-wider">
-                              {isAr ? 'مؤشر رضا الرأي العام: بيروت الرقمية (+68)' : 'LEBANESE TECH DISCOURSE RADAR (+68)'}
-                            </span>
-                          </div>
-                          
-                          <h4 className="font-sans font-black text-sm md:text-base text-black tracking-tight leading-snug uppercase">
-                            {isAr 
-                              ? 'نموذج محاكاة الرأي العام وقياس رضا الشارع الرقمي (ديوان رصد المشاعر)' 
-                              : 'EXPLORE MULTI-PLATFORM SENTIMENT FEED & OSINT ANALYSIS'}
-                          </h4>
-                          
-                          <p className="text-xs text-zinc-650 leading-relaxed font-serif">
-                            {isAr 
-                              ? 'تحليل إحصائي معقد لنسب التقييم الإيجابي والسلبي للمؤسسات والبنية التحتية والحدث الرياضي بلبنان. يدمج البث المباشر الموحد لـ 12 ناقل عبر ست منصات رائدة بدعم الذكاء الاصطناعي.' 
-                              : 'Explore real-time data harvesting across major sub-networks detailing user sentiment, public satisfaction, and discussion heatmaps regarding local tech hubs (BDD) and sovereign institutions.'}
-                          </p>
-
-                          {/* Brief bullet findings */}
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                            <div className="bg-white border border-zinc-250 p-2 text-left rounded-xs">
-                              <span className="block font-mono text-[8px] text-zinc-400 font-bold uppercase">{isAr ? 'الهدف الرئيسي' : 'TRACKED ASSET'}</span>
-                              <span className="font-sans font-extrabold text-[10px] text-black">Beirut Digital District (BDD)</span>
-                            </div>
-                            <div className="bg-white border border-zinc-250 p-2 text-left rounded-xs">
-                              <span className="block font-mono text-[8px] text-zinc-400 font-bold uppercase">{isAr ? 'المشاعر المهيمنة' : 'DOMINANT INSIGHT'}</span>
-                              <span className="font-sans font-extrabold text-[10px] text-emerald-600">🟢 Positive Tech Resilience</span>
-                            </div>
-                            <div className="bg-white border border-zinc-250 p-2 text-left rounded-xs">
-                              <span className="block font-mono text-[8px] text-zinc-400 font-bold uppercase">{isAr ? 'الكلمات الرائجة' : 'TOP COGNITIVE TAG'}</span>
-                              <span className="font-sans font-extrabold text-[10px] text-black">#infrastructure #beirut</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="shrink-0 w-full md:w-auto">
-                          <button
-                            onClick={() => {
-                              setActiveCategory('sentiment-analysis');
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }}
-                            className="w-full bg-[#b91c1c] hover:bg-black text-white font-mono font-black text-xxs tracking-widest uppercase py-3 px-5 border-2 border-black cursor-pointer transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none flex items-center justify-center gap-1.5"
-                          >
-                            <span>{isAr ? 'إطلاق ديوان رصد المشاعر الكامل ←' : 'LAUNCH SENTIMENT WIRE DECK →'}</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* REDIRECT READ MORE */}
-                    {activeCategory === 'all' && lebanonArticles.length > 0 && (
-                      <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
-                        <button
-                          onClick={() => {
-                            setActiveCategory('lebanon');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
-                        >
-                          <span>{isAr ? 'طالع كامل ملف الشؤون اللبنانية ←' : 'Read More in Lebanon Bureau →'}</span>
-                        </button>
-                      </div>
-                    )}
                   </section>
                 )}
 
-                {/* SECTION 2: HERO SECTION - PULSE OF THE STREET (نبض الشارع وثمن الصراع) */}
-                {activeCategory === 'all' && !searchQuery && (
-                  <div className="mb-8" id="homepage-hero-pulse-of-the-street">
-                    <PulseOfTheStreet 
-                      language={language} 
-                      layoutMode={layoutMode} 
-                      isFullPage={false}
-                      onNavigateToPulse={() => {
-                        setActiveCategory('pulse-of-the-street');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      onSelectArticle={setSelectedArticle}
-                      allArticles={allArticles}
-                    />
-                  </div>
-                )}
-
-                {/* THE ECONOMY (الملف الاقتصادي والمالي) - ONLY IN ECONOMY CATEGORY VIEW */}
-                {activeCategory === 'economy' && economyArticles.length > 0 && (
-                  <section className="space-y-5 my-8" id="economy-section">
-                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
-                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
-                        <TrendingUp size={18} className="text-black shrink-0" />
-                        <span>{isAr ? 'الملف الاقتصادي والمالي' : 'Geo-Economy & Finance'}</span>
-                      </h3>
-                      <span className="font-mono text-xxs font-bold text-zinc-500">
-                        {isAr ? `التقارير المالية والاستقصائية: ${economyArticles.length} تقارير` : `${economyArticles.length} Reports Filed`}
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                      {displayedEconomy.map((story) => (
-                        <div key={story.id} className="break-inside-avoid">
-                          <ArticleCard
-                            article={story}
-                            layoutMode={layoutMode}
-                            language={language}
-                            variant="standard"
-                            onSelect={(article) => setSelectedArticle(article)}
-                            isSaved={savedArticleIds.includes(story.id)}
-                            onToggleSave={handleToggleSaveArticle}
-                            onTagClick={handleTagClick}
-                            hideImage={true}
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Saudi-UAE Financial Restrictions & Capital Flow Scrutiny Widget & Lebanon Telecom Finance Dashboard */}
-                    <div className="my-6 space-y-6">
-                      <SaudiUaeFinancialChart language={language} layoutMode={layoutMode} />
-                      <LebanonTelecomFinanceDashboard 
-                        language={language} 
-                        layoutMode={layoutMode} 
-                        onSelectArticle={(article) => setSelectedArticle(article)} 
-                      />
-                    </div>
-
-                    {activeCategory === 'all' && economyArticles.length > 0 && (
-                      <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
-                        <button
-                          onClick={() => {
-                            setActiveCategory('economy');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
-                        >
-                          <span>{isAr ? 'طالع كامل صفحات شؤون الاقتصاد ←' : 'Read More in The Economy →'}</span>
-                        </button>
-                      </div>
-                    )}
-                  </section>
-                )}
-
-                {/* SECTION 3: FROM THE EDITOR'S DESK (من طاولة رئيس التحرير) */}
+                {/* 2. FROM THE EDITOR'S DESK (من طاولة رئيس التحرير) */}
                 {(activeCategory === 'all' || activeCategory === 'editor-desk') && editorDeskArticles.length > 0 && (
                   <section className="space-y-5 my-8" id="homepage-editor-desk-section">
                     <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
@@ -1872,381 +1753,7 @@ export default function App() {
                   </section>
                 )}
 
-                {/* SECTION 5: HOMEPAGE SPECIAL INVESTIGATIONS GRID - 6 STORIES (2 ROWS × 3 COLUMNS) */}
-                {activeCategory === 'all' && (
-                  <section className="space-y-6 my-8" id="homepage-special-investigations-grid">
-                    <div className="border-double-editorial-bottom pb-2 flex flex-col sm:flex-row justify-between sm:items-center gap-3 text-black">
-                      <div className="flex items-center gap-2">
-                        <Sparkles size={20} className="text-red-700 shrink-0 animate-pulse" />
-                        <div>
-                          <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2 text-zinc-950">
-                            <span>{isAr ? 'التحقيقات الخاصة' : 'Special Investigations'}</span>
-                          </h3>
-                          <span className="font-mono text-xxs font-bold text-zinc-500 block">
-                            {isAr ? 'أحدث ٦ تحقيقات استقصائية معتمدة (شبكة ٣ أعمدة × صفين)' : 'Latest 6 Certified Investigations (3 Columns × 2 Rows)'}
-                          </span>
-                        </div>
-                      </div>
-
-                      <button
-                        onClick={() => {
-                          setActiveCategory('special-investigations');
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}
-                        className="self-start sm:self-auto bg-black hover:bg-zinc-800 text-white font-mono font-bold text-xs px-4 py-2 flex items-center gap-2 transition-colors cursor-pointer border border-black shadow-[3px_3px_0px_#b91c1c]"
-                      >
-                        <span>{isAr ? `عرض كافة التحقيقات الخاصة (${specialInvestigationsArticles.length || allArticles.length})` : `View All Special Investigations (${specialInvestigationsArticles.length || allArticles.length})`}</span>
-                        <span className="rtl:rotate-180">→</span>
-                      </button>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                      {(specialInvestigationsArticles.length >= 6 ? specialInvestigationsArticles : allArticles).slice(0, 6).map((story) => (
-                        <div key={story.id} className="break-inside-avoid flex flex-col justify-between h-full">
-                          <ArticleCard
-                            article={story}
-                            layoutMode={layoutMode}
-                            language={language}
-                            variant="standard"
-                            onSelect={(article) => setSelectedArticle(article)}
-                            isSaved={savedArticleIds.includes(story.id)}
-                            onToggleSave={handleToggleSaveArticle}
-                            onTagClick={handleTagClick}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-                )}
-
-                {/* SECTION 4: ALWARRAQ INVESTIGATIVE REPORTING PORTAL ACCESS BANNER */}
-                {activeCategory === 'all' && !searchQuery && (
-                  <div className="border-4 border-black p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] overflow-hidden rounded-sm group/banner" id="alwarraq-investigations-access-banner">
-                    {/* Architectural Grid Watermark Backing */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-                    {/* Glowing ambient background spots */}
-                    <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none transition-transform duration-1000 group-hover/banner:scale-110"></div>
-                    <div className="absolute -bottom-20 -right-10 w-80 h-80 bg-red-700/10 rounded-full blur-3xl pointer-events-none"></div>
-                    
-                    {/* Fine aesthetic border line accents inside */}
-                    <div className="absolute top-2 right-2 bottom-2 left-2 border border-amber-500/15 pointer-events-none"></div>
-
-                    <div className="relative z-10">
-                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                        
-                        {/* Main Info Columns (8 Columns) */}
-                        <div className="lg:col-span-8 flex flex-col justify-between space-y-6 text-right rtl:text-right ltr:text-left">
-                          <div className="space-y-4">
-                            {/* Tags row */}
-                            <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
-                              <span className="bg-amber-500 text-zinc-950 text-[10px] font-mono font-black px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 border border-amber-400">
-                                <Sparkles size={11} className="animate-pulse text-red-700" />
-                                {isAr ? 'بوابة التحقيقات الاستقصائية للورّاق' : 'ALWARRAQ INVESTIGATIVE DOSSIERS'}
-                              </span>
-                              <span className="bg-zinc-900 text-amber-300 text-[10px] font-mono px-3 py-1 font-bold border border-zinc-700 inline-flex items-center gap-1">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                                {isAr ? 'وثائق سيادية حرة ومفتوحة' : 'DECLASSIFIED CORE INTEL'}
-                              </span>
-                            </div>
-                            
-                            {/* High-Impact Main Title */}
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white font-sans leading-tight">
-                              {isAr 
-                                ? 'التحقيقات الاستقصائية الكبرى' 
-                                : 'Sovereign Investigations Vault'}
-                              <span className="text-amber-400">.</span>
-                            </h2>
-                            
-                            {/* Serif Subtitle Description */}
-                            <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed max-w-4xl">
-                              {isAr 
-                                ? 'نظام وصول معلوماتي متكامل لتقارير معن البرازي الحصريّة. تتبّع خرائط النفوذ الجيو-سياسي، ومنحنيات بورصة بيروت التاريخية، ومستندات بطلان عقود سوليدير لعام ٢٠٦٩ في واجهة مستندات تفاعلية حية.' 
-                                : 'A comprehensive intelligence matrix hosting Maan Barazy’s classified economic dispatches. Navigate interactive geopolitical assets, corporate proxy charts, and physical Solidere 2069 archives in standard fidelity.'}
-                            </p>
-                          </div>
-
-                          {/* Redesigned 3 Prime Dossier Highlight Badges (Bento Style Preview Row) */}
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-4 border-t border-zinc-800">
-                            <div className="bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 p-3 rounded transition-all group/item cursor-pointer"
-                                 onClick={() => {
-                                   setSelectedDossierId('solidere-bonds');
-                                   setActiveCategory('alwarraq-investigations');
-                                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                                 }}>
-                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
-                                <span className="p-1 bg-red-950 text-red-400 rounded border border-red-900 text-[10px]">01</span>
-                                <span className="text-[10px] font-mono font-black uppercase text-amber-400 tracking-tight">SOLIDERE 2069</span>
-                              </div>
-                              <h4 className="text-xs font-bold text-white group-hover/item:text-amber-400 transition-colors line-clamp-1">
-                                {isAr ? 'عقود سوليدير والأراضي' : 'Solidere Land Covenants'}
-                              </h4>
-                            </div>
-
-                            <div className="bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 p-3 rounded transition-all group/item cursor-pointer"
-                                 onClick={() => {
-                                   setSelectedDossierId('sovereign-gold');
-                                   setActiveCategory('alwarraq-investigations');
-                                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                                 }}>
-                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
-                                <span className="p-1 bg-amber-950 text-amber-400 rounded border border-amber-950 text-[10px]">02</span>
-                                <span className="text-[10px] font-mono font-black uppercase text-amber-400 tracking-tight">RESERVE VAULTS</span>
-                              </div>
-                              <h4 className="text-xs font-bold text-white group-hover/item:text-amber-400 transition-colors line-clamp-1">
-                                {isAr ? 'احتياطي الذهب السيادي' : 'Central Gold Telemetry'}
-                              </h4>
-                            </div>
-
-                            <div className="bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 p-3 rounded transition-all group/item cursor-pointer"
-                                 onClick={() => {
-                                   setSelectedDossierId('beirut-exchange');
-                                   setActiveCategory('alwarraq-investigations');
-                                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                                 }}>
-                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
-                                <span className="p-1 bg-emerald-950 text-emerald-400 rounded border border-emerald-950 text-[10px]">03</span>
-                                <span className="text-[10px] font-mono font-black uppercase text-amber-400 tracking-tight">MARKET CORNER</span>
-                              </div>
-                              <h4 className="text-xs font-bold text-white group-hover/item:text-amber-400 transition-colors line-clamp-1">
-                                {isAr ? 'صراع بورصة بيروت والأسهم' : 'Stock Takeover Proxies'}
-                              </h4>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Interactive Dossier Terminal Panel (4 Columns) */}
-                        <div className="lg:col-span-4 bg-zinc-900/90 border-2 border-amber-500/30 p-5 rounded flex flex-col justify-between items-stretch text-center relative shadow-[6px_6px_20px_0px_rgba(0,0,0,0.4)]">
-                          <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-amber-500 via-red-500 to-amber-500"></div>
-                          
-                          <div className="space-y-4">
-                            <div>
-                              <span className="font-mono text-[9px] font-black text-amber-400 block uppercase tracking-widest mb-1">
-                                {isAr ? 'بوابة التشفير والفك' : 'CLASSIFIED VAULT GATEWAY'}
-                              </span>
-                              <p className="text-[10px] text-zinc-400 font-mono">
-                                {isAr ? 'مستند تصريح الوراق رقم ٧' : 'CITIZEN REPORTING LEVEL 4'}
-                              </p>
-                            </div>
-
-                            <div className="border-t border-b border-zinc-800 py-3 my-2 space-y-1 text-right rtl:text-right ltr:text-left">
-                              <div className="flex justify-between items-center text-[10px] font-mono">
-                                <span className="text-zinc-500">{isAr ? 'حالة البث:' : 'Stream status:'}</span>
-                                <span className="text-emerald-400 font-bold flex items-center gap-1">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                  {isAr ? 'متصل' : 'ONLINE'}
-                                </span>
-                              </div>
-                              <div className="flex justify-between items-center text-[10px] font-mono">
-                                <span className="text-zinc-500">{isAr ? 'الملف الحالي:' : 'Active dossier:'}</span>
-                                <span className="text-white font-extrabold truncate max-w-[120px]" title={DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}>
-                                  {DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="space-y-2 mt-4 lg:mt-0">
-                            <button
-                              onClick={() => {
-                                setActiveCategory('alwarraq-investigations');
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                              }}
-                              className="w-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans text-xs font-black py-3 px-4 uppercase border border-amber-400 tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5 rounded-sm"
-                            >
-                              <Compass size={15} className="animate-spin-slow text-zinc-950" />
-                              <span>
-                                {isAr ? 'تصفح كافة التحقيقات ➜' : 'ENTER VAULT ROOM ➜'}
-                              </span>
-                            </button>
-
-                            <button
-                              onClick={() => setIsPrintingDossier(true)}
-                              className="w-full bg-zinc-850 hover:bg-zinc-800 text-white font-mono text-xxs font-bold py-2 px-3 uppercase border border-zinc-700 tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-xs"
-                              title={isAr ? `تصدير ملف التحقيق المختار (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) كـ PDF` : `Export selected dossier (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) as formatted PDF`}
-                            >
-                              <Download size={12} className="text-amber-400" />
-                              <span>
-                                {isAr 
-                                  ? `تنزيل ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'الملف'} PDF` 
-                                  : `EXPORT ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'DOSSIER'} PDF`}
-                              </span>
-                            </button>
-                          </div>
-                          
-                          <p className="text-[9px] text-zinc-500 mt-3 font-mono leading-none">
-                            {isAr ? 'مستند رسمي محمي بحقوق الملكية الفكرية للوراق' : 'Official dossier seal & cryptographic logs'}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Summary points of Curated 6 Investigations (2 Rows x 3 Columns) */}
-                      <div className="border-t border-zinc-800 mt-6 pt-6 text-right rtl:text-right ltr:text-left">
-                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
-                          <h3 className="font-sans font-bold text-xs uppercase tracking-wider text-amber-400 font-mono">
-                            {isAr 
-                              ? `مختارات من التحقيقات الاستقصائية المعتمدة (٦ ملفات رئيسية):` 
-                              : `FEATURED INVESTIGATIVE DOSSIERS (6 SELECTED FILES):`}
-                          </h3>
-                          <span className="text-xxs font-mono text-zinc-400">
-                            {isAr ? 'شبكة ٣ أعمدة × صفين' : '3 Columns × 2 Rows'}
-                          </span>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {Object.entries(DOSSIER_DESKTOP_META).slice(0, 6).map(([id, meta], index) => {
-                            const isRead = !!readDossiers[id];
-                            const isBookmarked = savedArticleIds.includes(id);
-                            return (
-                              <div
-                                key={id}
-                                onClick={() => {
-                                  setSelectedDossierId(id);
-                                  setActiveCategory('alwarraq-investigations');
-                                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }}
-                                className={`group border cursor-pointer p-4 flex flex-col justify-between space-y-3 relative shadow-[3px_3px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all text-right rtl:text-right ltr:text-left dossier-card-animate ${
-                                  isRead 
-                                    ? 'border-emerald-455 bg-emerald-50/10 hover:bg-emerald-50/20 shadow-[3px_3px_0px_0px_rgba(16,185,129,0.1)]' 
-                                    : 'border-zinc-300 bg-white/70 hover:bg-amber-100/40 hover:border-black'
-                                }`}
-                                style={{ animationDelay: `${index * 100}ms` }}
-                              >
-                                <div>
-                                  {/* Badge & ID */}
-                                  <div className="flex items-center justify-between gap-2 mb-2">
-                                    <div className="flex items-center gap-1.5">
-                                      <span className="font-mono text-[9px] font-black text-amber-900 bg-amber-100 px-1.5 py-0.5 border border-amber-900/10">
-                                        {meta.fileId}
-                                      </span>
-                                      {isRead && (
-                                        <span className="flex items-center gap-0.5 text-[9px] font-mono font-black text-emerald-700 bg-emerald-100/60 px-1.5 py-0.5 border border-emerald-300/40 animate-pulse rounded-xs">
-                                          <Check size={10} className="stroke-[3.5]" />
-                                          <span>{isAr ? 'تم الاطّلاع' : 'SEEN'}</span>
-                                        </span>
-                                      )}
-                                    </div>
-                                    <button
-                                      onClick={(e) => toggleReadDossier(id, e)}
-                                      className={`font-mono text-[9px] font-black px-1.5 py-0.5 border transition-all cursor-pointer ${
-                                        isRead
-                                          ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-700'
-                                          : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700 border-zinc-300 hover:border-zinc-400'
-                                      }`}
-                                      title={isRead ? (isAr ? 'تعليم كغير مقروء' : 'Mark as Unread') : (isAr ? 'تعليم كمقروء' : 'Mark as Read')}
-                                    >
-                                      {isRead ? (isAr ? '✓ مقروء' : '✓ SEEN') : (isAr ? 'تحديد كمقروء' : 'MARK READ')}
-                                    </button>
-                                  </div>
-                                  {/* Title */}
-                                  <h4 className={`font-sans font-black text-sm leading-snug group-hover:text-amber-900 transition-colors line-clamp-2 ${
-                                    isRead ? 'text-zinc-600 line-through opacity-85' : 'text-zinc-950'
-                                  }`}>
-                                    {isAr ? meta.titleAr : meta.titleEn}
-                                  </h4>
-                                  {/* Description */}
-                                  <p className="font-serif text-xxs md:text-xs text-zinc-650 leading-relaxed mt-2 line-clamp-3">
-                                    {isAr ? meta.descAr : meta.descEn}
-                                  </p>
-                                </div>
-                                {/* Footer Action with Quick-Share Buttons */}
-                                <div className="pt-2.5 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-2 text-xxs font-mono" onClick={(e) => e.stopPropagation()}>
-                                  <button
-                                    onClick={() => {
-                                      setSelectedDossierId(id);
-                                      setActiveCategory('alwarraq-investigations');
-                                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    }}
-                                    className="font-mono text-[10px] font-black text-zinc-900 hover:text-red-900 transition-colors uppercase cursor-pointer"
-                                  >
-                                    {isAr ? 'افتح التقرير ➜' : 'OPEN DOSSIER ➜'}
-                                  </button>
-
-                                  <div className="flex items-center gap-1 text-[8px] font-bold">
-                                    {/* WhatsApp */}
-                                    <a
-                                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تحقيق سيادي من الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${id}`)}`}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="px-1.5 py-0.5 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors"
-                                      title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
-                                    >
-                                      {isAr ? 'واتساب' : 'WA'}
-                                    </a>
-
-                                    {/* Copy Link */}
-                                    <button
-                                      onClick={() => {
-                                        const link = `${window.location.origin}/?category=alwarraq-investigations&dossier=${id}`;
-                                        navigator.clipboard.writeText(link).then(() => {
-                                          alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
-                                        });
-                                      }}
-                                      className="px-1.5 py-0.5 bg-zinc-800 hover:bg-black text-white transition-colors border border-black cursor-pointer"
-                                    >
-                                      {isAr ? 'نسخ' : 'LINK'}
-                                    </button>
-
-                                    {/* PDF / Print */}
-                                    <button
-                                      onClick={() => {
-                                        setSelectedDossierId(id);
-                                        setActiveCategory('alwarraq-investigations');
-                                        setTimeout(() => {
-                                          window.print();
-                                        }, 300);
-                                      }}
-                                      className="px-1.5 py-0.5 bg-red-900 hover:bg-red-950 text-white transition-colors border border-red-950 cursor-pointer"
-                                      title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
-                                    >
-                                      PDF
-                                    </button>
-
-                                    {/* Quick Save Heart Button */}
-                                    <button
-                                      onClick={(e) => {
-                                        e.stopPropagation();
-                                        const dossierArticle = allArticles.find(a => a.id === id);
-                                        handleToggleSaveArticle(dossierArticle || ({ id, titleAr: meta.titleAr, titleEn: meta.titleEn } as any), e);
-                                      }}
-                                      className={`px-1.5 py-0.5 transition-colors border cursor-pointer flex items-center gap-1 ${
-                                        isBookmarked
-                                          ? 'bg-rose-600 hover:bg-rose-700 text-white border-rose-700'
-                                          : 'bg-white hover:bg-rose-50 text-rose-600 border-zinc-300 hover:border-rose-400'
-                                      }`}
-                                      title={isBookmarked ? (isAr ? 'إلغاء الحفظ الفوري' : 'Remove Quick Save') : (isAr ? 'حفظ سريع في المفضلة' : 'Quick Save Bookmark')}
-                                    >
-                                      <Heart size={10} className={isBookmarked ? 'fill-current text-white' : 'text-rose-600'} />
-                                      <span>{isBookmarked ? (isAr ? 'محفوظ' : 'SAVED') : (isAr ? 'حفظ' : 'SAVE')}</span>
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-
-                        {/* Navigation link to dedicated Investigations Page */}
-                        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 pt-5 border-t border-zinc-800">
-                          <div className="text-zinc-400 font-mono text-xs">
-                            {isAr 
-                              ? `يوجد ${Object.keys(DOSSIER_DESKTOP_META).length} ملفاً استقصائياً موثقاً في ديوان التحقيقات الكامل.`
-                              : `There are ${Object.keys(DOSSIER_DESKTOP_META).length} total certified dossiers documented in the full investigative archive.`}
-                          </div>
-                          <button
-                            onClick={() => {
-                              setActiveCategory('alwarraq-investigations');
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }}
-                            className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-mono font-black text-xs px-5 py-2.5 flex items-center gap-2 transition-all cursor-pointer border border-amber-300 shadow-[3px_3px_0px_#000]"
-                          >
-                            <span>{isAr ? `تصفح كافة التحقيقات والاستقصاءات في صفحة مستقلة (${Object.keys(DOSSIER_DESKTOP_META).length}+ تحقيقاً) ←` : `View All ${Object.keys(DOSSIER_DESKTOP_META).length}+ Investigations in Dedicated Page →`}</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* SECTION 6: WAR ROOM SECTION (غرفة الحرب الجيوسياسية) */}
+                {/* 3. WAR ROOM SECTION (غرفة الحرب الجيوسياسية) */}
                 {activeCategory === 'all' && !searchQuery && (
                   <div className="my-8 border-4 border-double border-red-600 bg-zinc-950 p-6 text-white shadow-[6px_6px_0px_rgba(220,38,38,0.15)] relative overflow-hidden" id="war-room-introduction-banner">
                     {/* Glowing pulse indicator */}
@@ -2310,280 +1817,552 @@ export default function App() {
                   </div>
                 )}
 
-                {/* LOWER BANNER: GOLDEN PRIME WORKSPACE & 24H DEMO ACCOUNT ACCESS */}
+                {/* 4. "The Region in the Hormuz New Order" Report Banner */}
                 {activeCategory === 'all' && !searchQuery && (
-                  <div className="border-4 border-red-800 p-5 md:p-6 bg-stone-900 text-white my-6 relative shadow-[8px_8px_0px_0px_rgba(153,27,27,1)] overflow-hidden" id="premium-home-banner">
-                    {/* Retro watermark lines */}
-                    <div className="absolute inset-0 bg-[radial-gradient(#991b1b_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none"></div>
+                  <div className="border-4 border-red-700 p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] overflow-hidden rounded-sm group/hormuz" id="hormuz-new-order-report-banner">
+                    {/* Grid overlay background */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+                    <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
                     
-                    <div className="relative z-10 flex flex-col lg:flex-row justify-between items-stretch gap-6">
-                      
-                      {/* Left: Branding & Message */}
-                      <div className="flex-1 space-y-4 text-right rtl:text-right ltr:text-left">
-                        <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
-                          <span className="bg-red-800 text-white text-[10px] font-mono font-black px-2.5 py-1 uppercase tracking-widest inline-block animate-pulse">
-                            {isAr ? 'بوابة التحليلات ومساحة عمل جولدن برايم' : 'GOLDEN PRIME ANALYTICS & SOVEREIGN TELEMETRY'}
-                          </span>
-                          <span className="bg-zinc-800 text-amber-400 text-[10px] font-mono px-2 py-1 font-bold border border-amber-500/20">
-                            {isAr ? 'ترقية فورية ٢٠٢٦' : 'LEVEL-1 INTEL EXPEDITED'}
-                          </span>
-                        </div>
-                        
-                        <h2 className="text-2xl md:text-3.5xl font-black tracking-tight text-white font-sans leading-tight">
-                          {isAr 
-                            ? 'أطلق أدوات لوحة تحليلات جولدن برايم ومحاكي "ماذا لو" الجغرافي' 
-                            : 'Unlock Golden Prime Analytics & Geopolitical What-If Simulator'}
-                        </h2>
-                        
-                        <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed max-w-3xl">
-                          {isAr 
-                            ? 'بث فوري لتدفقات الأموال ومكافحة غسيل الأموال اللبنانية (AML Tracker)، وأدوات المحاكاة الاستراتيجية الجيو سياسية المتقدمة. قم بتنشيط حساب تجريبي فوري لـ ٢٤ ساعة دون قيود.' 
-                            : 'Instantaneous telemetry of the anti-money laundering (AML) database, deep flow-of-funds trackers, and advanced strategic geopolitical simulators. Activate your instant 24-hour trial bypass.'}
-                        </p>
+                    {/* Internal accent frame */}
+                    <div className="absolute top-2 right-2 bottom-2 left-2 border border-red-500/15 pointer-events-none"></div>
 
-                        {/* Interactive Status indicators */}
-                        <div className="flex flex-wrap items-center gap-4 pt-1 text-xs font-mono justify-start rtl:justify-start ltr:justify-end">
-                          <div className="flex items-center gap-1.5 text-zinc-400">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                            <span>{isAr ? 'حالة البوابة: متصل' : 'Sovereign Port: ONLINE'}</span>
-                          </div>
-                          <div className="flex items-center gap-1.5 text-zinc-400">
-                            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
-                            <span>{isAr ? 'رتبة الدخول الحالية:' : 'Access Level:'} {currentUser ? (currentUser.isPremiumSubscriber ? (isAr ? 'عضو جولدن برايم' : 'Golden Prime Member') : (isAr ? 'قارئ عادي' : 'Standard Reader')) : (isAr ? 'زائر غير مسجل' : 'Unregistered Guest')}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Right: Direct Controls */}
-                      <div className="w-full lg:w-96 flex flex-col justify-center gap-3 bg-zinc-950 p-4 md:p-5 border-2 border-red-800 shrink-0 self-center">
+                    <div className="relative z-10">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                         
-                        {/* Demo/Redirect Section */}
-                        {homeDemoSuccess ? (
-                          <div className="p-4 bg-emerald-950/40 border border-emerald-500 text-white text-center space-y-2 animate-fade-in">
-                            <span className="text-emerald-400 text-lg">⚡</span>
-                            <strong className="block text-xs uppercase font-mono font-black text-emerald-400">
-                              {isAr ? 'تم التحقق والتنشيط!' : 'SOVEREIGN TUNNEL READY!'}
-                            </strong>
-                            <p className="text-xxs text-zinc-300 font-mono">
-                              {isAr ? 'جاري إعادة التوجيه الفوري لمساحة العمل...' : 'EXPEDITING GATEWAY ROUTE NOW...'}
+                        {/* Main info side */}
+                        <div className="lg:col-span-8 flex flex-col justify-between space-y-6 text-right rtl:text-right ltr:text-left">
+                          <div className="space-y-4">
+                            {/* Badges row */}
+                            <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
+                              <span className="bg-red-700 text-white text-[10px] font-mono font-black px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 border border-red-600">
+                                <Sparkles size={11} className="animate-pulse text-amber-300" />
+                                {isAr ? 'تقرير استقصائي خاص عاجل' : 'SPECIAL INVESTIGATIVE DISPATCH'}
+                              </span>
+                              <span className="bg-zinc-900 text-amber-400 text-[10px] font-mono px-3 py-1 font-bold border border-zinc-800 inline-flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                                {isAr ? 'ملف صراع المعابر وسلاسل الإمداد ٢٠٢٦' : 'CORRIDOR WARS & SUPPLY CHAIN INTEL'}
+                              </span>
+                            </div>
+
+                            {/* Main Title */}
+                            <h2 className="text-2xl md:text-3xl lg:text-4.5xl font-black tracking-tight text-white font-sans leading-tight">
+                              {isAr 
+                                ? 'الإقليم في ظل النظام الجديد لمضيق هرمز' 
+                                : 'The Region in the Hormuz New Order'}
+                              <span className="text-red-500">.</span>
+                            </h2>
+
+                            {/* Subtitle / Excerpt */}
+                            <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed">
+                              {isAr 
+                                ? 'تحليل جيوسياسي ومالي موسّع يدمج بين إدارة الأزمات المالية وحروب الممرات البحرية، وطموحات الذكاء الاصطناعي السيادية الخليجية المدعومة بالثروة السيادية، وتوقعات النمو الاقتصادي لعام ٢٠٢٦.' 
+                                : 'An expansive geopolitical and financial investigation merging maritime choke point crises, sovereign AI ambitions in the Gulf backed by trillions in wealth assets, and updated growth forecasts for 2026.'}
                             </p>
                           </div>
-                        ) : isHomeDemoUser ? (
-                          <div className="p-3 bg-zinc-900 border border-amber-600 text-center space-y-2.5">
-                            <span className="bg-amber-600 text-black text-[9px] font-mono font-black px-2 py-0.5 uppercase tracking-wider inline-block">
-                              {isAr ? 'الحساب التجريبي نشط حالياً' : 'DEMO ACCOUNT RUNNING'}
-                            </span>
-                            <div className="font-mono text-xs font-bold text-amber-400">
-                              ⏱ {isAr ? 'الوقت المتبقي:' : 'TIME LEFT:'} {homeDemoTimeLeft}
+
+                          {/* Preview of the two main stories inside */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-zinc-900">
+                            {/* Story 1 */}
+                            <div className="bg-zinc-900/40 border border-zinc-900 p-4 rounded-sm hover:bg-zinc-900/70 transition-all cursor-pointer"
+                                 onClick={() => {
+                                   const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
+                                   if (art) {
+                                     setSelectedArticle(art);
+                                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                                   }
+                                 }}>
+                              <span className="text-[9px] font-mono font-bold text-red-400 uppercase tracking-widest block mb-1">
+                                {isAr ? 'المسار الأول' : 'TRACK ONE'}
+                              </span>
+                              <h4 className="text-xs font-bold text-white mb-1.5 line-clamp-1">
+                                {isAr ? 'إدارة الأزمات وتأمين سلاسل الإمداد' : 'Crisis Management & Supply Chains'}
+                              </h4>
+                              <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
+                                {isAr 
+                                  ? 'ارتفاع أقساط التأمين البحري بـ ١٠ أضعاف، وتحديات الديون السيادية، والانضباط المالي والتنويع غير النفطي.' 
+                                  : 'Maritime insurance premiums surging tenfold, sovereign debt pressure, and GCC non-oil resilience.'}
+                              </p>
                             </div>
+
+                            {/* Story 2 */}
+                            <div className="bg-zinc-900/40 border border-zinc-900 p-4 rounded-sm hover:bg-zinc-900/70 transition-all cursor-pointer"
+                                 onClick={() => {
+                                   const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
+                                   if (art) {
+                                     setSelectedArticle(art);
+                                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                                   }
+                                 }}>
+                              <span className="text-[9px] font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
+                                {isAr ? 'المسار الثاني' : 'TRACK TWO'}
+                              </span>
+                              <h4 className="text-xs font-bold text-white mb-1.5 line-clamp-1">
+                                {isAr ? 'التحول التكنولوجي والثروة السيادية' : 'Technological Leap & Sovereign Wealth'}
+                              </h4>
+                              <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
+                                {isAr 
+                                  ? 'استثمارات تفوق ٦٦ مليار دولار في الذكاء الاصطناعي وبناء البنية التحتية لمراكز البيانات والقدرات الحسابية.' 
+                                  : 'Over $66 billion deployed toward AI computing grids and hyperscale data centers.'}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Interactive Side Action Terminal */}
+                        <div className="lg:col-span-4 bg-zinc-900/80 border-2 border-red-500/20 p-5 rounded-sm flex flex-col justify-between items-stretch text-center relative shadow-[6px_6px_20px_0px_rgba(0,0,0,0.4)]">
+                          <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-red-600 via-amber-500 to-red-600"></div>
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <span className="font-mono text-[9px] font-black text-red-400 block uppercase tracking-widest mb-1">
+                                {isAr ? 'مستند استراتيجي عاجل' : 'CLASSIFIED REPORT FILE'}
+                              </span>
+                              <p className="text-[10px] text-zinc-500 font-mono">
+                                {isAr ? 'ملف التحريات السيادية رقم هرمز-٢٦' : 'REF: HOR-ORDER-2026'}
+                              </p>
+                            </div>
+
+                            {/* Mini Stats box */}
+                            <div className="border-t border-b border-zinc-850 py-3 my-2 space-y-2 text-right rtl:text-right ltr:text-left">
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'معدل النمو الإقليمي:' : 'MENA GDP Growth:'}</span>
+                                <span className="text-red-400 font-extrabold">1.6% (Revised)</span>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'صناديق الثروة الخليجية:' : 'GCC SWF Assets:'}</span>
+                                <span className="text-amber-400 font-extrabold">$6+ Trillion</span>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'الاستثمار التكنولوجي:' : 'AI CapEx Target:'}</span>
+                                <span className="text-emerald-400 font-extrabold">$66+ Billion</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2 mt-4 lg:mt-0">
                             <button
                               onClick={() => {
-                                setActiveCategory('workspace');
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
+                                if (art) {
+                                  setSelectedArticle(art);
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
                               }}
-                              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-xxs font-black py-2 uppercase border border-black cursor-pointer shadow-[3px_3px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 transition-all"
+                              className="w-full bg-red-700 hover:bg-red-600 text-white font-sans text-xs font-black py-3.5 px-4 uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5 rounded-sm"
                             >
-                              {isAr ? 'الذهاب لمساحة العمل الفاخرة ➜' : 'ENTER PREMIUM WORKSPACE ➜'}
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="space-y-2.5">
-                            {/* Demo Button for instant redirect */}
-                            <button
-                              disabled={homeDemoIsSubmitting}
-                              onClick={currentUser ? activateHomeDemoForCurrentUser : activateInstantGuestDemo}
-                              className="w-full bg-amber-600 hover:bg-amber-500 text-black font-mono text-xs font-black py-3 px-4 uppercase border-2 border-black tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[4px_4px_0px_0px_rgba(255,255,255,0.9)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:translate-x-1 active:translate-y-1 disabled:opacity-50"
-                            >
-                              <Zap size={15} className="fill-current animate-bounce" />
+                              <BookOpen size={15} className="text-white" />
                               <span>
-                                {homeDemoIsSubmitting 
-                                  ? (isAr ? 'جاري التنشيط والولوج...' : 'ACTIVATING TUNNEL...') 
-                                  : (isAr ? 'تشغيل حساب تجريبي ٢٤ ساعة (ولوج فوري) ⚡' : 'TRY 24H INSTANT FREE DEMO ⚡')}
+                                {isAr ? 'طالع الملف الاستقصائي الكامل ➜' : 'READ FULL DISPATCH ➜'}
                               </span>
                             </button>
-                            <p className="text-[10px] text-zinc-400 text-center font-mono uppercase tracking-tight">
-                              {isAr ? '* تفعيل فوري بضغطة واحدة دون الحاجة لبطاقة ائتمان' : '* 1-click bypass, no payment or card requested'}
-                            </p>
+
+                            <button
+                              onClick={() => {
+                                window.print();
+                              }}
+                              className="w-full bg-zinc-850 hover:bg-zinc-800 text-white font-mono text-xxs font-bold py-2.5 px-3 uppercase border border-zinc-700 tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-xs"
+                              title={isAr ? 'طباعة التقرير الاستقصائي كـ PDF' : 'Print investigative report as PDF'}
+                            >
+                              <Download size={12} className="text-red-400" />
+                              <span>
+                                {isAr ? 'تصدير التقرير PDF' : 'EXPORT REPORT PDF'}
+                              </span>
+                            </button>
                           </div>
-                        )}
-
-                        {/* Separator line */}
-                        <div className="border-t border-zinc-800 my-1"></div>
-
-                        {/* Interactive Buttons: Sign Up Premium + Menu Button */}
-                        <div className="grid grid-cols-2 gap-2">
-                          <button
-                            onClick={() => {
-                              setActiveCategory('premium-pricing');
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }}
-                            className="bg-red-800 hover:bg-red-700 text-white font-mono text-xxs font-black py-2 px-3 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center"
-                          >
-                            {isAr ? 'الاشتراك الفاخر ★' : 'PREMIUM PLANS ★'}
-                          </button>
-
-                          <button
-                            onClick={() => setIsBannerMenuOpen(!isBannerMenuOpen)}
-                            className={`font-mono text-xxs font-black py-2 px-3 border border-black uppercase transition-all flex items-center justify-center gap-1 cursor-pointer text-center ${
-                              isBannerMenuOpen ? 'bg-amber-500 text-black border-amber-600' : 'bg-zinc-800 hover:bg-zinc-700 text-white'
-                            }`}
-                          >
-                            <Menu size={12} />
-                            <span>{isAr ? 'دليل المزايا ☰' : 'FEATURE MENU ☰'}</span>
-                          </button>
+                          
+                          <p className="text-[9px] text-zinc-500 mt-3 font-mono leading-none">
+                            {isAr ? 'تحليل حصري ومحمي بموجب امتياز مجلس الإعلام' : 'Licensed under Council of Strategic Media'}
+                          </p>
                         </div>
-
-                        {/* Download as PDF for Premium Users */}
-                        <button
-                          onClick={() => {
-                            const isPremium = isHomeDemoUser || (currentUser && currentUser.isPremiumSubscriber);
-                            if (isPremium) {
-                              setIsPrintingDossier(true);
-                            } else {
-                              alert(isAr 
-                                ? 'هذه الميزة الحصرية متاحة فقط لمشتركي جولدن برايم. يمكنك تفعيل الحساب التجريبي المجاني لمدة ٢٤ ساعة بالأعلى للوصول الفوري!' 
-                                : 'This exclusive feature is only available to Golden Prime subscribers. You can activate the free 24-hour demo above for instant access!');
-                            }
-                          }}
-                          className="w-full mt-2 bg-emerald-700 hover:bg-emerald-600 text-white font-mono text-xxs font-black py-2 px-3 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                          title={isAr ? 'تحميل ملخص مساحة العمل كملف PDF' : 'Download workspace summary as PDF'}
-                        >
-                          <Download size={12} className="text-amber-400" />
-                          <span>{isAr ? 'تحميل كملف PDF ⬇' : 'DOWNLOAD AS PDF ⬇'}</span>
-                        </button>
-
-                        {/* Share section */}
-                        <div className="grid grid-cols-3 gap-1.5 mt-2">
-                          {/* WhatsApp Share Link */}
-                          <a
-                            href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                              isAr 
-                                ? `ديوان تحريات الورّاق - بوابة التحليلات ومساحة العمل السيادية للجولدن برايم:\n\n👉 ${window.location.origin}`
-                                : `Al-Warraq - Golden Prime Analytics & Sovereign Telemetry Workspace:\n\n👉 ${window.location.origin}`
-                            )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-zinc-800 hover:bg-zinc-700 text-emerald-400 font-mono text-[9px] sm:text-[10px] font-black py-2 px-1.5 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-                            title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
-                          >
-                            <span>{isAr ? 'واتساب' : 'WHATSAPP'}</span>
-                          </a>
-
-                          {/* Share on Twitter/X Button */}
-                          <a
-                            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                              isAr
-                                ? `تابعوا البث الفوري لتدفقات الأموال والتحليلات الجيوسياسية على ديوان تحريات الورّاق #الورّاق #تحقيقات_استقصائية`
-                                : `Explore the sovereign flow-of-funds telemetry & geopolitical simulators on Al-Warraq #AlWarraq #InvestigativeReporting`
-                            )}&url=${encodeURIComponent(window.location.origin)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[9px] sm:text-[10px] font-black py-2 px-1.5 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-                            title={isAr ? 'مشاركة عبر تويتر/X' : 'Share on Twitter/X'}
-                          >
-                            <Twitter size={10} className="text-sky-400" />
-                            <span>{isAr ? 'تويتر/X' : 'TWITTER/X'}</span>
-                          </a>
-
-                          {/* Share via QR Code Button */}
-                          <button
-                            onClick={() => setShowQrOverlay(true)}
-                            className="bg-zinc-800 hover:bg-zinc-700 text-amber-400 font-mono text-[9px] sm:text-[10px] font-black py-2 px-1.5 border border-black uppercase transition-all hover:translate-y-[-1px] cursor-pointer text-center flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
-                            title={isAr ? 'عرض رمز الاستجابة السريعة (QR) للمشاركة' : 'Show QR Code for sharing'}
-                          >
-                            <QrCode size={10} className="text-amber-400" />
-                            <span>{isAr ? 'رمز QR' : 'QR CODE'}</span>
-                          </button>
-                        </div>
-
                       </div>
                     </div>
+                  </div>
+                )}
 
-                    {/* Expandable Menu Panel */}
-                    {isBannerMenuOpen && (
-                      <div className="mt-5 pt-5 border-t border-zinc-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 animate-fade-in relative z-10 text-right rtl:text-right ltr:text-left">
-                        
-                        <div 
-                          onClick={() => {
-                            setActiveCategory('workspace');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3 cursor-pointer transition-all flex items-center justify-between group text-right rtl:text-right ltr:text-left"
-                        >
-                          <div className="space-y-1">
-                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'لوحة البيانات الكبرى' : 'PRIMARY ANALYTICS'}</span>
-                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'مساحة العمل البحثية' : 'Research Workspace'}</span>
+                {/* 5. LEBANON & LEVANT BUREAU NEWS (أخبار وقضايا لبنان والشرق الأدنى) - INCLUDES BASEL AML RISK INDEX */}
+                {(activeCategory === 'all' || activeCategory === 'lebanon') && (
+                  <section className="space-y-5 my-8" id="homepage-lebanon-section">
+                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
+                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
+                        <Newspaper size={18} className="text-black shrink-0" />
+                        <span>{isAr ? 'أخبار وقضايا لبنان والشرق الأدنى' : 'Lebanon & Levant Bureau'}</span>
+                      </h3>
+                      <span className="font-mono text-xxs font-bold text-zinc-500">
+                        {isAr ? 'الملف اللبناني وتصنيف بازل لمخاطر غسل الأموال' : 'Lebanon Bureau & Basel AML Benchmark'}
+                      </span>
+                    </div>
+
+                    {/* Dedicated Category View for Lebanon only shows articles grid */}
+                    {(activeCategory === 'all' || activeCategory === 'lebanon') && lebanonArticles.length > 0 && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {displayedLebanon.map((story, idx) => (
+                          <div key={`${story.id}-${idx}`} className="break-inside-avoid">
+                            <ArticleCard
+                              article={story}
+                              layoutMode={layoutMode}
+                              language={language}
+                              variant="standard"
+                              onSelect={(article) => setSelectedArticle(article)}
+                              isSaved={savedArticleIds.includes(story.id)}
+                              onToggleSave={handleToggleSaveArticle}
+                              onTagClick={handleTagClick}
+                            />
                           </div>
-                          {isHomeDemoUser || (currentUser && currentUser.isPremiumSubscriber) ? (
-                            <Unlock size={14} className="text-emerald-400" />
-                          ) : (
-                            <Lock size={14} className="text-amber-500" />
-                          )}
-                        </div>
-
-                        <div 
-                          onClick={() => {
-                            setActiveCategory('what-if-simulator');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3 cursor-pointer transition-all flex items-center justify-between group text-right rtl:text-right ltr:text-left"
-                        >
-                          <div className="space-y-1">
-                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'المحاكاة الجغرافية' : 'STRATEGIC GAMEPLAY'}</span>
-                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'محاكي "ماذا لو"' : 'What-If Simulator'}</span>
-                          </div>
-                          {isHomeDemoUser || (currentUser && currentUser.isPremiumSubscriber) ? (
-                            <Unlock size={14} className="text-emerald-400" />
-                          ) : (
-                            <Lock size={14} className="text-amber-500" />
-                          )}
-                        </div>
-
-                        <div 
-                          onClick={() => {
-                            setActiveCategory('alwarraq-investigations');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3 cursor-pointer transition-all flex items-center justify-between group text-right rtl:text-right ltr:text-left"
-                        >
-                          <div className="space-y-1">
-                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'ملفات خاصة حصرية' : 'EXCLUSIVE INQUIRIES'}</span>
-                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'التحقيقات الكبرى' : 'Investigations Hub'}</span>
-                          </div>
-                          <Unlock size={14} className="text-emerald-400" />
-                        </div>
-
-                        <div 
-                          onClick={() => {
-                            setActiveCategory('pulse-of-the-street');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3 cursor-pointer transition-all flex items-center justify-between group text-right rtl:text-right ltr:text-left"
-                        >
-                          <div className="space-y-1">
-                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'استقصاء الرأي العام' : 'CIVIC PUBLIC PULSE'}</span>
-                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'نبض الشارع والمشاعر' : 'Pulse & Sentiment'}</span>
-                          </div>
-                          <Unlock size={14} className="text-emerald-400" />
-                        </div>
-
-                        <div 
-                          onClick={() => {
-                            setActiveCategory('intelligence-dispatch');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3 cursor-pointer transition-all flex items-center justify-between group text-right rtl:text-right ltr:text-left"
-                        >
-                          <div className="space-y-1">
-                            <span className="font-mono text-[9px] text-zinc-500 uppercase block">{isAr ? 'برقية استخباراتية فورية' : 'LIVE DAILY DISPATCH'}</span>
-                            <span className="text-xs font-black text-white group-hover:text-amber-400 block">{isAr ? 'البرقية الاستخباراتية اليومية' : 'Daily Intelligence Wire'}</span>
-                          </div>
-                          <Unlock size={14} className="text-emerald-400" />
-                        </div>
-
+                        ))}
                       </div>
                     )}
 
+                    {/* Basel AML Risk Index & Lebanon Benchmark (Moved to Lebanon Section as requested) */}
+                    <div className="py-2" id="basel-aml-risk-section">
+                      <LebanonAMLVisualizer language={language} layoutMode={layoutMode} />
+                    </div>
+
+                    {/* REDIRECT READ MORE */}
+                    {activeCategory === 'all' && (
+                      <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
+                        <button
+                          onClick={() => {
+                            setActiveCategory('lebanon');
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
+                        >
+                          <span>{isAr ? 'طالع كامل ملف الشؤون اللبنانية ←' : 'Read More in Lebanon Bureau →'}</span>
+                        </button>
+                      </div>
+                    )}
+                  </section>
+                )}
+
+                {/* 7. TERMINAL BANNER: ALWARRAQ INVESTIGATIVE REPORTING PORTAL (PRIMARY DOSSIERS: SOLIDERE 2069, CENTRAL GOLD, BEIRUT STOCK EXCHANGE) - WHITE BACKGROUND & LIGHT THEME */}
+                {activeCategory === 'all' && !searchQuery && (
+                  <div className="border-4 border-black p-6 md:p-8 bg-white text-zinc-950 my-8 relative shadow-[10px_10px_0px_0px_#000000] overflow-hidden rounded-sm group/banner" id="alwarraq-investigations-access-banner">
+                    {/* Architectural Grid Watermark Backing */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+                    {/* Ambient subtle warm background glows */}
+                    <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none transition-transform duration-1000 group-hover/banner:scale-110"></div>
+                    <div className="absolute -bottom-20 -right-10 w-80 h-80 bg-red-700/5 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    {/* Fine aesthetic border line accents inside */}
+                    <div className="absolute top-2 right-2 bottom-2 left-2 border border-zinc-200 pointer-events-none"></div>
+
+                    <div className="relative z-10">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        
+                        {/* Main Info Columns (8 Columns) */}
+                        <div className="lg:col-span-8 flex flex-col justify-between space-y-6 text-right rtl:text-right ltr:text-left">
+                          <div className="space-y-4">
+                            {/* Tags row */}
+                            <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
+                              <span className="bg-red-700 text-white text-[10px] font-mono font-black px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 border border-red-800">
+                                <Sparkles size={11} className="animate-pulse text-amber-300" />
+                                {isAr ? 'بوابة التحقيقات الاستقصائية للورّاق' : 'ALWARRAQ INVESTIGATIVE DOSSIERS'}
+                              </span>
+                              <span className="bg-zinc-100 text-zinc-900 text-[10px] font-mono px-3 py-1 font-bold border border-zinc-300 inline-flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></span>
+                                {isAr ? 'وثائق سيادية حرة ومفتوحة' : 'DECLASSIFIED CORE INTEL'}
+                              </span>
+                            </div>
+                            
+                            {/* High-Impact Main Title */}
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-zinc-950 font-sans leading-tight">
+                              {isAr 
+                                ? 'التحقيقات الاستقصائية الكبرى' 
+                                : 'Sovereign Investigations Vault'}
+                              <span className="text-red-700">.</span>
+                            </h2>
+                            
+                            {/* Serif Subtitle Description */}
+                            <p className="text-sm md:text-base text-zinc-700 font-serif leading-relaxed max-w-4xl">
+                              {isAr 
+                                ? 'نظام وصول معلوماتي متكامل لتقارير معن البرازي الحصريّة. تتبّع خرائط النفوذ الجيو-سياسي، ومنحنيات بورصة بيروت التاريخية، ومستندات بطلان عقود سوليدير لعام ٢٠٦٩ في واجهة مستندات تفاعلية حية.' 
+                                : 'A comprehensive intelligence matrix hosting Maan Barazy’s classified economic dispatches. Navigate interactive geopolitical assets, corporate proxy charts, and physical Solidere 2069 archives in standard fidelity.'}
+                            </p>
+                          </div>
+
+                          {/* Redesigned 3 Prime Dossier Highlight Badges (Solidere 2069, Central Gold Reserves, Beirut Stock Exchange) */}
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-4 border-t border-zinc-200">
+                            <div className="bg-zinc-50 hover:bg-red-50/70 border border-zinc-200 hover:border-black p-3.5 rounded-sm transition-all group/item cursor-pointer shadow-xs"
+                                 onClick={() => {
+                                   setSelectedDossierId('solidere-bonds');
+                                   setActiveCategory('alwarraq-investigations');
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}>
+                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
+                                <span className="p-1 bg-red-100 text-red-700 rounded-xs border border-red-200 text-[10px] font-mono font-black">01</span>
+                                <span className="text-[10px] font-mono font-black uppercase text-red-700 tracking-tight">SOLIDERE 2069</span>
+                              </div>
+                              <h4 className="text-xs font-bold text-zinc-900 group-hover/item:text-red-700 transition-colors line-clamp-1">
+                                {isAr ? 'عقود سوليدير والأراضي' : 'Solidere Land Covenants'}
+                              </h4>
+                            </div>
+
+                            <div className="bg-zinc-50 hover:bg-amber-50/70 border border-zinc-200 hover:border-black p-3.5 rounded-sm transition-all group/item cursor-pointer shadow-xs"
+                                 onClick={() => {
+                                   setSelectedDossierId('sovereign-gold');
+                                   setActiveCategory('alwarraq-investigations');
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}>
+                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
+                                <span className="p-1 bg-amber-100 text-amber-800 rounded-xs border border-amber-300 text-[10px] font-mono font-black">02</span>
+                                <span className="text-[10px] font-mono font-black uppercase text-amber-800 tracking-tight">RESERVE VAULTS</span>
+                              </div>
+                              <h4 className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800 transition-colors line-clamp-1">
+                                {isAr ? 'احتياطي الذهب السيادي' : 'Central Gold Telemetry'}
+                              </h4>
+                            </div>
+
+                            <div className="bg-zinc-50 hover:bg-emerald-50/70 border border-zinc-200 hover:border-black p-3.5 rounded-sm transition-all group/item cursor-pointer shadow-xs"
+                                 onClick={() => {
+                                   setSelectedDossierId('beirut-exchange');
+                                   setActiveCategory('alwarraq-investigations');
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}>
+                              <div className="flex items-center gap-2 mb-1 justify-start rtl:justify-start ltr:justify-end">
+                                <span className="p-1 bg-emerald-100 text-emerald-800 rounded-xs border border-emerald-300 text-[10px] font-mono font-black">03</span>
+                                <span className="text-[10px] font-mono font-black uppercase text-emerald-800 tracking-tight">MARKET CORNER</span>
+                              </div>
+                              <h4 className="text-xs font-bold text-zinc-900 group-hover/item:text-emerald-800 transition-colors line-clamp-1">
+                                {isAr ? 'صراع بورصة بيروت والأسهم' : 'Stock Takeover Proxies'}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Interactive Dossier Terminal Panel (4 Columns) */}
+                        <div className="lg:col-span-4 bg-zinc-50 border-2 border-black p-5 rounded-sm flex flex-col justify-between items-stretch text-center relative shadow-[4px_4px_0px_0px_#000000]">
+                          <div className="absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-r from-red-700 via-amber-500 to-red-700"></div>
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <span className="font-mono text-[9px] font-black text-red-700 block uppercase tracking-widest mb-1">
+                                {isAr ? 'بوابة التشفير والفك' : 'CLASSIFIED VAULT GATEWAY'}
+                              </span>
+                              <p className="text-[10px] text-zinc-500 font-mono">
+                                {isAr ? 'مستند تصريح الوراق رقم ٧' : 'CITIZEN REPORTING LEVEL 4'}
+                              </p>
+                            </div>
+
+                            <div className="border-t border-b border-zinc-200 py-3 my-2 space-y-1.5 text-right rtl:text-right ltr:text-left">
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'حالة البث:' : 'Stream status:'}</span>
+                                <span className="text-emerald-700 font-bold flex items-center gap-1">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                                  {isAr ? 'متصل' : 'ONLINE'}
+                                </span>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] font-mono">
+                                <span className="text-zinc-500">{isAr ? 'الملف الحالي:' : 'Active dossier:'}</span>
+                                <span className="text-zinc-950 font-extrabold truncate max-w-[140px]" title={DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}>
+                                  {DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div className="space-y-2 mt-4 lg:mt-0">
+                            <button
+                              onClick={() => {
+                                setActiveCategory('alwarraq-investigations');
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }}
+                              className="w-full bg-black hover:bg-zinc-800 text-white font-sans text-xs font-black py-3.5 px-4 uppercase border border-black tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_0px_#b91c1c] active:translate-y-0.5 rounded-sm"
+                            >
+                              <Compass size={15} className="animate-spin-slow text-amber-400" />
+                              <span>
+                                {isAr ? 'تصفح كافة التحقيقات ➜' : 'ENTER VAULT ROOM ➜'}
+                              </span>
+                            </button>
+
+                            <button
+                              onClick={() => setIsPrintingDossier(true)}
+                              className="w-full bg-white hover:bg-zinc-100 text-zinc-900 font-mono text-xxs font-bold py-2.5 px-3 uppercase border border-zinc-300 tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-sm shadow-xs"
+                              title={isAr ? `تصدير ملف التحقيق المختار (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) كـ PDF` : `Export selected dossier (${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'AW-FILE'}) as formatted PDF`}
+                            >
+                              <Download size={12} className="text-red-700" />
+                              <span>
+                                {isAr 
+                                  ? `تنزيل ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'الملف'} PDF` 
+                                  : `EXPORT ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'DOSSIER'} PDF`}
+                              </span>
+                            </button>
+                          </div>
+                          
+                          <p className="text-[9px] text-zinc-500 mt-3 font-mono leading-none">
+                            {isAr ? 'مستند رسمي محمي بحقوق الملكية الفكرية للوراق' : 'Official dossier seal & cryptographic logs'}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Summary points of Curated 6 Investigations (2 Rows x 3 Columns) with PDF/WhatsApp export tools */}
+                      <div className="border-t border-zinc-200 mt-6 pt-6 text-right rtl:text-right ltr:text-left">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
+                          <h3 className="font-sans font-black text-xs uppercase tracking-wider text-zinc-950 font-mono flex items-center gap-2">
+                            <Sparkles size={13} className="text-red-700 shrink-0" />
+                            <span>
+                              {isAr 
+                                ? `مختارات من التحقيقات الاستقصائية المعتمدة (٦ ملفات رئيسية):` 
+                                : `FEATURED INVESTIGATIVE DOSSIERS (6 SELECTED FILES):`}
+                            </span>
+                          </h3>
+                          <span className="text-xxs font-mono text-zinc-500">
+                            {isAr ? 'شبكة ٣ أعمدة × صفين' : '3 Columns × 2 Rows'}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {Object.entries(DOSSIER_DESKTOP_META).slice(0, 6).map(([id, meta], index) => {
+                            const isRead = !!readDossiers[id];
+                            const isBookmarked = savedArticleIds.includes(id);
+                            return (
+                              <div
+                                key={id}
+                                onClick={() => {
+                                  setSelectedDossierId(id);
+                                  setActiveCategory('alwarraq-investigations');
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className={`group border cursor-pointer p-4 flex flex-col justify-between space-y-3 relative transition-all text-right rtl:text-right ltr:text-left dossier-card-animate rounded-sm ${
+                                  isRead 
+                                    ? 'border-emerald-300 bg-emerald-50/50 hover:bg-emerald-50 shadow-[2px_2px_0px_0px_rgba(16,185,129,0.2)]' 
+                                    : 'border-zinc-200 bg-zinc-50/80 hover:bg-white hover:border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.06)] hover:shadow-[4px_4px_0px_0px_#000000]'
+                                }`}
+                                style={{ animationDelay: `${index * 100}ms` }}
+                              >
+                                <div>
+                                  {/* Badge & ID */}
+                                  <div className="flex items-center justify-between gap-2 mb-2">
+                                    <div className="flex items-center gap-1.5">
+                                      <span className="font-mono text-[9px] font-black text-zinc-800 bg-zinc-200/80 px-1.5 py-0.5 border border-zinc-300">
+                                        {meta.fileId}
+                                      </span>
+                                      {isRead && (
+                                        <span className="flex items-center gap-0.5 text-[9px] font-mono font-black text-emerald-700 bg-emerald-100/60 px-1.5 py-0.5 border border-emerald-300/40 rounded-xs">
+                                          <Check size={10} className="stroke-[3.5]" />
+                                          <span>{isAr ? 'تم الاطّلاع' : 'SEEN'}</span>
+                                        </span>
+                                      )}
+                                    </div>
+                                    <button
+                                      onClick={(e) => toggleReadDossier(id, e)}
+                                      className={`font-mono text-[9px] font-black px-1.5 py-0.5 border transition-all cursor-pointer rounded-xs ${
+                                        isRead
+                                          ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-700'
+                                          : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700 border-zinc-300 hover:border-zinc-400'
+                                      }`}
+                                      title={isRead ? (isAr ? 'تعليم كغير مقروء' : 'Mark as Unread') : (isAr ? 'تعليم كمقروء' : 'Mark as Read')}
+                                    >
+                                      {isRead ? (isAr ? '✓ مقروء' : '✓ SEEN') : (isAr ? 'تحديد كمقروء' : 'MARK READ')}
+                                    </button>
+                                  </div>
+                                  {/* Title */}
+                                  <h4 className={`font-sans font-black text-sm leading-snug group-hover:text-red-700 transition-colors line-clamp-2 ${
+                                    isRead ? 'text-zinc-400 line-through opacity-85' : 'text-zinc-950'
+                                  }`}>
+                                    {isAr ? meta.titleAr : meta.titleEn}
+                                  </h4>
+                                  {/* Description */}
+                                  <p className="font-serif text-xxs md:text-xs text-zinc-600 leading-relaxed mt-2 line-clamp-3">
+                                    {isAr ? meta.descAr : meta.descEn}
+                                  </p>
+                                </div>
+                                {/* Footer Action with Quick-Share Buttons */}
+                                <div className="pt-2.5 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-2 text-xxs font-mono" onClick={(e) => e.stopPropagation()}>
+                                  <button
+                                    onClick={() => {
+                                      setSelectedDossierId(id);
+                                      setActiveCategory('alwarraq-investigations');
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    className="font-mono text-[10px] font-black text-zinc-900 hover:text-red-700 transition-colors uppercase cursor-pointer"
+                                  >
+                                    {isAr ? 'افتح التقرير ➜' : 'OPEN DOSSIER ➜'}
+                                  </button>
+
+                                  <div className="flex items-center gap-1 text-[8px] font-bold">
+                                    {/* WhatsApp */}
+                                    <a
+                                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${isAr ? 'تحقيق سيادي من الورّاق:\n\n' : 'Classified sovereign dossier from Al-Warraq:\n\n'}*${isAr ? meta.titleAr : meta.titleEn}*\n\n👉 ${window.location.origin}/?category=alwarraq-investigations&dossier=${id}`)}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="px-2 py-0.5 bg-emerald-600 hover:bg-emerald-700 text-white transition-colors rounded-xs"
+                                      title={isAr ? 'مشاركة عبر واتساب' : 'Share on WhatsApp'}
+                                    >
+                                      {isAr ? 'واتساب' : 'WA'}
+                                    </a>
+
+                                    {/* Copy Link */}
+                                    <button
+                                      onClick={() => {
+                                        const link = `${window.location.origin}/?category=alwarraq-investigations&dossier=${id}`;
+                                        navigator.clipboard.writeText(link).then(() => {
+                                          alert(isAr ? 'تم نسخ الرابط!' : 'Copied link!');
+                                        });
+                                      }}
+                                      className="px-2 py-0.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 transition-colors border border-zinc-300 rounded-xs cursor-pointer"
+                                    >
+                                      {isAr ? 'نسخ' : 'LINK'}
+                                    </button>
+
+                                    {/* PDF / Print */}
+                                    <button
+                                      onClick={() => {
+                                        setSelectedDossierId(id);
+                                        setActiveCategory('alwarraq-investigations');
+                                        setTimeout(() => {
+                                          window.print();
+                                        }, 300);
+                                      }}
+                                      className="px-2 py-0.5 bg-red-700 hover:bg-red-800 text-white transition-colors border border-red-700 rounded-xs cursor-pointer"
+                                      title={isAr ? 'تحميل كملف PDF' : 'Download as PDF'}
+                                    >
+                                      PDF
+                                    </button>
+
+                                    {/* Quick Save Heart Button */}
+                                    <button
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        const dossierArticle = allArticles.find(a => a.id === id);
+                                        handleToggleSaveArticle(dossierArticle || ({ id, titleAr: meta.titleAr, titleEn: meta.titleEn } as any), e);
+                                      }}
+                                      className={`px-1.5 py-0.5 transition-colors border cursor-pointer flex items-center gap-1 rounded-xs ${
+                                        isBookmarked
+                                          ? 'bg-rose-600 hover:bg-rose-700 text-white border-rose-700'
+                                          : 'bg-white hover:bg-rose-50 text-rose-600 border-zinc-300 hover:border-rose-400'
+                                      }`}
+                                      title={isBookmarked ? (isAr ? 'إلغاء الحفظ الفوري' : 'Remove Quick Save') : (isAr ? 'حفظ سريع في المفضلة' : 'Quick Save Bookmark')}
+                                    >
+                                      <Heart size={10} className={isBookmarked ? 'fill-current text-white' : 'text-rose-600'} />
+                                      <span>{isBookmarked ? (isAr ? 'محفوظ' : 'SAVED') : (isAr ? 'حفظ' : 'SAVE')}</span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {/* Navigation link to dedicated Investigations Page */}
+                        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 pt-5 border-t border-zinc-200">
+                          <div className="text-zinc-600 font-mono text-xs">
+                            {isAr 
+                              ? `يوجد ${Object.keys(DOSSIER_DESKTOP_META).length} ملفاً استقصائياً موثقاً في ديوان التحقيقات الكامل.`
+                              : `There are ${Object.keys(DOSSIER_DESKTOP_META).length} total certified dossiers documented in the full investigative archive.`}
+                          </div>
+                          <button
+                            onClick={() => {
+                              setActiveCategory('alwarraq-investigations');
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
+                            className="bg-black hover:bg-zinc-800 text-white font-mono font-black text-xs px-5 py-2.5 flex items-center gap-2 transition-all cursor-pointer border border-black shadow-[3px_3px_0px_#b91c1c]"
+                          >
+                            <span>{isAr ? `تصفح كافة التحقيقات والاستقصاءات في صفحة مستقلة (${Object.keys(DOSSIER_DESKTOP_META).length}+ تحقيقاً) ←` : `View All ${Object.keys(DOSSIER_DESKTOP_META).length}+ Investigations in Dedicated Page →`}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
 
@@ -2594,6 +2373,49 @@ export default function App() {
                     articles={allArticles}
                     onSelectArticle={(article) => setSelectedArticle(article)}
                   />
+                )}
+
+                {/* THE ECONOMY (الملف الاقتصادي والمالي) - ONLY IN ECONOMY CATEGORY VIEW */}
+                {activeCategory === 'economy' && economyArticles.length > 0 && (
+                  <section className="space-y-5 my-8" id="economy-section">
+                    <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
+                      <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
+                        <TrendingUp size={18} className="text-black shrink-0" />
+                        <span>{isAr ? 'الملف الاقتصادي والمالي' : 'Geo-Economy & Finance'}</span>
+                      </h3>
+                      <span className="font-mono text-xxs font-bold text-zinc-500">
+                        {isAr ? `التقارير المالية والاستقصائية: ${economyArticles.length} تقارير` : `${economyArticles.length} Reports Filed`}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                      {displayedEconomy.map((story) => (
+                        <div key={story.id} className="break-inside-avoid">
+                          <ArticleCard
+                            article={story}
+                            layoutMode={layoutMode}
+                            language={language}
+                            variant="standard"
+                            onSelect={(article) => setSelectedArticle(article)}
+                            isSaved={savedArticleIds.includes(story.id)}
+                            onToggleSave={handleToggleSaveArticle}
+                            onTagClick={handleTagClick}
+                            hideImage={true}
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Saudi-UAE Financial Restrictions & Capital Flow Scrutiny Widget & Lebanon Telecom Finance Dashboard */}
+                    <div className="my-6 space-y-6">
+                      <SaudiUaeFinancialChart language={language} layoutMode={layoutMode} />
+                      <LebanonTelecomFinanceDashboard 
+                        language={language} 
+                        layoutMode={layoutMode} 
+                        onSelectArticle={(article) => setSelectedArticle(article)} 
+                      />
+                    </div>
+                  </section>
                 )}
 
                 {/* SECTION: EXCLUSIVES (التحقيقات الصحفية) - Moved right after NarrativeLebanonCrisisInfographics */}
@@ -2972,442 +2794,6 @@ export default function App() {
                   </div>
                 )}
 
-                {/* NEW INVESTIGATIVE REPORT BANNER: THE REGION IN THE HORMUZ NEW ORDER */}
-                {activeCategory === 'all' && !searchQuery && (
-                  <div className="border-4 border-red-700 p-6 md:p-8 bg-zinc-950 text-white my-8 relative shadow-[10px_10px_0px_0px_rgba(185,28,28,1)] overflow-hidden rounded-sm group/hormuz" id="hormuz-new-order-report-banner">
-                    {/* Grid overlay background */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-                    <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                    <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
-                    
-                    {/* Internal accent frame */}
-                    <div className="absolute top-2 right-2 bottom-2 left-2 border border-red-500/15 pointer-events-none"></div>
-
-                    <div className="relative z-10">
-                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                        
-                        {/* Main info side */}
-                        <div className="lg:col-span-8 flex flex-col justify-between space-y-6 text-right rtl:text-right ltr:text-left">
-                          <div className="space-y-4">
-                            {/* Badges row */}
-                            <div className="flex flex-wrap items-center gap-2 justify-start rtl:justify-start ltr:justify-end">
-                              <span className="bg-red-700 text-white text-[10px] font-mono font-black px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 border border-red-600">
-                                <Sparkles size={11} className="animate-pulse text-amber-300" />
-                                {isAr ? 'تقرير استقصائي خاص عاجل' : 'SPECIAL INVESTIGATIVE DISPATCH'}
-                              </span>
-                              <span className="bg-zinc-900 text-amber-400 text-[10px] font-mono px-3 py-1 font-bold border border-zinc-800 inline-flex items-center gap-1">
-                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
-                                {isAr ? 'ملف صراع المعابر وسلاسل الإمداد ٢٠٢٦' : 'CORRIDOR WARS & SUPPLY CHAIN INTEL'}
-                              </span>
-                            </div>
-
-                            {/* Main Title */}
-                            <h2 className="text-2xl md:text-3xl lg:text-4.5xl font-black tracking-tight text-white font-sans leading-tight">
-                              {isAr 
-                                ? 'الإقليم في ظل النظام الجديد لمضيق هرمز' 
-                                : 'The Region in the Hormuz New Order'}
-                              <span className="text-red-500">.</span>
-                            </h2>
-
-                            {/* Subtitle / Excerpt */}
-                            <p className="text-sm md:text-base text-zinc-300 font-serif leading-relaxed">
-                              {isAr 
-                                ? 'تحليل جيوسياسي ومالي موسّع يدمج بين إدارة الأزمات المالية وحروب الممرات البحرية، وطموحات الذكاء الاصطناعي السيادية الخليجية المدعومة بالثروة السيادية، وتوقعات النمو الاقتصادي لعام ٢٠٢٦.' 
-                                : 'An expansive geopolitical and financial investigation merging maritime choke point crises, sovereign AI ambitions in the Gulf backed by trillions in wealth assets, and updated growth forecasts for 2026.'}
-                            </p>
-                          </div>
-
-                          {/* Preview of the two main stories inside */}
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-zinc-900">
-                            {/* Story 1 */}
-                            <div className="bg-zinc-900/40 border border-zinc-900 p-4 rounded-sm hover:bg-zinc-900/70 transition-all cursor-pointer"
-                                 onClick={() => {
-                                   const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
-                                   if (art) {
-                                     setSelectedArticle(art);
-                                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                                   }
-                                 }}>
-                              <span className="text-[9px] font-mono font-bold text-red-400 uppercase tracking-widest block mb-1">
-                                {isAr ? 'المسار الأول' : 'TRACK ONE'}
-                              </span>
-                              <h4 className="text-xs font-bold text-white mb-1.5 line-clamp-1">
-                                {isAr ? 'إدارة الأزمات وتأمين سلاسل الإمداد' : 'Crisis Management & Supply Chains'}
-                              </h4>
-                              <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
-                                {isAr 
-                                  ? 'ارتفاع أقساط التأمين البحري بـ ١٠ أضعاف، وتحديات الديون السيادية، والانضباط المالي والتنويع غير النفطي.' 
-                                  : 'Maritime insurance premiums surging tenfold, sovereign debt pressure, and GCC non-oil resilience.'}
-                              </p>
-                            </div>
-
-                            {/* Story 2 */}
-                            <div className="bg-zinc-900/40 border border-zinc-900 p-4 rounded-sm hover:bg-zinc-900/70 transition-all cursor-pointer"
-                                 onClick={() => {
-                                   const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
-                                   if (art) {
-                                     setSelectedArticle(art);
-                                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                                   }
-                                 }}>
-                              <span className="text-[9px] font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
-                                {isAr ? 'المسار الثاني' : 'TRACK TWO'}
-                              </span>
-                              <h4 className="text-xs font-bold text-white mb-1.5 line-clamp-1">
-                                {isAr ? 'التحول التكنولوجي والثروة السيادية' : 'Technological Leap & Sovereign Wealth'}
-                              </h4>
-                              <p className="text-[11px] text-zinc-400 line-clamp-2 leading-relaxed">
-                                {isAr 
-                                  ? 'استثمارات تفوق ٦٦ مليار دولار في الذكاء الاصطناعي وبناء البنية التحتية لمراكز البيانات والقدرات الحسابية.' 
-                                  : 'Over $66 billion deployed toward AI computing grids and hyperscale data centers.'}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Interactive Side Action Terminal */}
-                        <div className="lg:col-span-4 bg-zinc-900/80 border-2 border-red-500/20 p-5 rounded-sm flex flex-col justify-between items-stretch text-center relative shadow-[6px_6px_20px_0px_rgba(0,0,0,0.4)]">
-                          <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-red-600 via-amber-500 to-red-600"></div>
-                          
-                          <div className="space-y-4">
-                            <div>
-                              <span className="font-mono text-[9px] font-black text-red-400 block uppercase tracking-widest mb-1">
-                                {isAr ? 'مستند استراتيجي عاجل' : 'CLASSIFIED REPORT FILE'}
-                              </span>
-                              <p className="text-[10px] text-zinc-500 font-mono">
-                                {isAr ? 'ملف التحريات السيادية رقم هرمز-٢٦' : 'REF: HOR-ORDER-2026'}
-                              </p>
-                            </div>
-
-                            {/* Mini Stats box */}
-                            <div className="border-t border-b border-zinc-850 py-3 my-2 space-y-2 text-right rtl:text-right ltr:text-left">
-                              <div className="flex justify-between items-center text-[10px] font-mono">
-                                <span className="text-zinc-500">{isAr ? 'معدل النمو الإقليمي:' : 'MENA GDP Growth:'}</span>
-                                <span className="text-red-400 font-extrabold">1.6% (Revised)</span>
-                              </div>
-                              <div className="flex justify-between items-center text-[10px] font-mono">
-                                <span className="text-zinc-500">{isAr ? 'صناديق الثروة الخليجية:' : 'GCC SWF Assets:'}</span>
-                                <span className="text-amber-400 font-extrabold">$6+ Trillion</span>
-                              </div>
-                              <div className="flex justify-between items-center text-[10px] font-mono">
-                                <span className="text-zinc-500">{isAr ? 'الاستثمار التكنولوجي:' : 'AI CapEx Target:'}</span>
-                                <span className="text-emerald-400 font-extrabold">$66+ Billion</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="space-y-2 mt-4 lg:mt-0">
-                            <button
-                              onClick={() => {
-                                const art = allArticles.find(a => a.id === 'region-hormuz-new-order-2026');
-                                if (art) {
-                                  setSelectedArticle(art);
-                                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                              }}
-                              className="w-full bg-red-700 hover:bg-red-600 text-white font-sans text-xs font-black py-3.5 px-4 uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[3px_3px_0px_0px_rgba(255,255,255,0.1)] active:translate-y-0.5 rounded-sm"
-                            >
-                              <BookOpen size={15} className="text-white" />
-                              <span>
-                                {isAr ? 'طالع الملف الاستقصائي الكامل ➜' : 'READ FULL DISPATCH ➜'}
-                              </span>
-                            </button>
-
-                            <button
-                              onClick={() => {
-                                window.print();
-                              }}
-                              className="w-full bg-zinc-850 hover:bg-zinc-800 text-white font-mono text-xxs font-bold py-2.5 px-3 uppercase border border-zinc-700 tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-xs"
-                              title={isAr ? 'طباعة التقرير الاستقصائي كـ PDF' : 'Print investigative report as PDF'}
-                            >
-                              <Download size={12} className="text-red-400" />
-                              <span>
-                                {isAr ? 'تصدير التقرير PDF' : 'EXPORT REPORT PDF'}
-                              </span>
-                            </button>
-                          </div>
-                          
-                          <p className="text-[9px] text-zinc-500 mt-3 font-mono leading-none">
-                            {isAr ? 'تحليل حصري ومحمي بموجب امتياز مجلس الإعلام' : 'Licensed under Council of Strategic Media'}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-            {/* COHESIVE UNIFIED SYNDICATE MEMBERSHIP & DEMO TRIAL BANNER */}
-            {activeCategory === 'all' && !searchQuery && (
-              <section className="border-4 border-amber-600 p-6 bg-zinc-950 text-white my-6 shadow-[5px_5px_0px_0px_#d97706] text-left rtl:text-right relative overflow-hidden animate-fade-in">
-                {/* Background design elements */}
-                <div className="absolute top-0 right-0 w-32 h-full bg-amber-500/5 transform skew-x-12 pointer-events-none"></div>
-                
-                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                  <div className="lg:col-span-7 space-y-4">
-                    <div className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-1 text-[11.5px] font-mono tracking-wider uppercase font-black">
-                      ⚡ {isAr ? 'ديوان الورّاق للمشتركين والفترة التجريبية الفاخرة' : 'AL-WARRAQ SYNDICATE & SOVEREIGN DEMO PORT'}
-                    </div>
-                    
-                    <h3 className="font-sans font-black text-2xl md:text-3xl uppercase text-white leading-tight flex items-center gap-2">
-                      <Sparkles size={24} className="text-[#f59e0b] animate-pulse shrink-0" />
-                      <span>
-                        {isAr 
-                          ? 'انضم إلى شبكة التحقيقات وأطلق فترتك التجريبية الفاخرة فوراً' 
-                          : 'JOIN THE WIRE & LAUNCH YOUR INSTANT 24H TRIAL PERIOD'}
-                      </span>
-                    </h3>
-                    
-                    <p className="text-zinc-100 font-serif text-[16px] leading-relaxed">
-                      {isAr 
-                        ? 'تجاوز فترات الانتظار والترشيح الطويلة! انضم لشبكتنا الصحفية المستقلة وقم بتنشيط حسابك التجريبي الفوري لـ غولدن برايم لمدة ٢٤ ساعة للوصول المباشر إلى مصادر المستندات السيادية والمسودة البحثية الفاخرة، أو انضم لنشرة تيلكس المجانية.'
-                        : 'Bypass long verification buffers! Join our independent press syndicate and activate an instant 24-hour Golden Prime demo trial to operate the full-stack research dashboard, utilize interactive compilation tools, or subscribe to our free briefs.'}
-                    </p>
-
-                    {/* Benefit Tiers Checkboxes - Font +2pt, Grey to White */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2 font-mono text-[13px] text-white">
-                      <div className="bg-zinc-900 border border-zinc-800 p-3 flex items-start gap-2.5">
-                        <span className="text-amber-400 font-bold shrink-0 text-sm">✉</span>
-                        <div>
-                          <strong className="block text-white text-sm">{isAr ? 'الديوان المجاني (ديوان التيلكس)' : 'FREE BRIEFING'}</strong>
-                          <span className="text-white text-[12px] leading-snug block mt-0.5">{isAr ? 'نشرات يومية برأس مال تحليلي وموجز مبسط.' : 'Daily briefing bulletins delivered straight to your mailbox.'}</span>
-                        </div>
-                      </div>
-                      <div className="bg-zinc-900 border border-zinc-800 p-3 flex items-start gap-2.5">
-                        <span className="text-amber-400 font-bold shrink-0 text-sm">★</span>
-                        <div>
-                          <strong className="block text-amber-300 text-sm">{isAr ? 'العضوية الفاخرة (دعم صيرورة وصكوك)' : 'SOVEREIGN PREMIUM'}</strong>
-                          <span className="text-white text-[12px] leading-snug block mt-0.5">{isAr ? 'فتح التحقيقات السيادية، وإشعارات حية، وتيلكس كربوني.' : 'Unrestricted investigative access, report breach alerts & live updates.'}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Interactive Dynamic Action Card Column (5/12) */}
-                  <div className="lg:col-span-5 bg-zinc-900 border-2 border-amber-500 p-5 shadow-[4px_4px_0_0_rgba(217,119,6,0.15)] space-y-4">
-                    <span className="font-mono text-[11px] text-white block uppercase font-extrabold tracking-wider">
-                      {isAr ? 'بوابة التحكم والولوج الفوري للمنصة' : 'DEMO CONTROL & SUBSCRIBER PORT'}
-                    </span>
-
-                    {homeDemoSuccess ? (
-                      <div className="p-4 bg-amber-500/10 border-2 border-amber-600 text-white rounded-none space-y-2 text-center animate-fade-in">
-                        <strong className="block text-sm uppercase font-sans font-black text-amber-300">
-                          ⚡ {isAr ? 'تم تنشيط الحساب التجريبي بنجاح!' : 'DEMO ACTIVATED SUCCESSFULLY!'}
-                        </strong>
-                        <p className="text-[13px] font-serif leading-relaxed">
-                          {isAr 
-                            ? 'جاري نقلكم مباشرة إلى مساحة العمل البحثية لتصفح الوثائق واستخدام المسودة...'
-                            : 'Redirecting you directly to the workspace to run inquiries and compile briefs...'}
-                        </p>
-                      </div>
-                    ) : isHomeDemoUser ? (
-                      <div className="p-4 bg-zinc-950 border-2 border-emerald-600 text-white rounded-none space-y-3 text-center">
-                        <strong className="block text-sm uppercase font-sans font-black text-emerald-400">
-                          {isAr ? '✓ حسابك التجريبي الفوري نشط الآن!' : '✓ YOUR INSTANT DEMO ACCOUNT IS ACTIVE!'}
-                        </strong>
-                        <div className="font-mono text-sm font-black text-amber-400 tracking-wider flex items-center justify-center gap-2 bg-zinc-900 px-3 py-1.5 border border-amber-500/30">
-                          <span>⏱</span>
-                          <span>{isAr ? 'الوقت المتبقي:' : 'TIME REMAINING:'} {homeDemoTimeLeft}</span>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setActiveCategory('workspace');
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }}
-                          className="bg-amber-600 hover:bg-amber-700 text-white font-mono text-xs font-black py-2.5 px-4 uppercase tracking-wider transition-all w-full shadow-[2px_2px_0px_0px_#10b981] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
-                        >
-                          {isAr ? 'دخول مساحة العمل البحثية ⚡' : 'ENTER RESEARCH WORKSPACE ⚡'}
-                        </button>
-                      </div>
-                    ) : bannerSubscribed ? (
-                      <div className="p-4 bg-zinc-950 border-2 border-emerald-500 text-white rounded-none space-y-2 text-center">
-                        <strong className="block text-sm uppercase font-sans font-black text-emerald-400">
-                          {isAr ? '✓ تم تسجيل حضورك في الديوان!' : '✓ WELCOME TO AL-WARRAQ REGISTER!'}
-                        </strong>
-                        <p className="text-[13px] font-serif leading-relaxed">
-                          {bannerTierSelected === 'premium' ? (
-                            isAr 
-                              ? `تم إدراج بريدك (${bannerEmail}) في قوائم البث والتحقق الفوري. نوجهك الآن لتنشيط حسابك السنوي وترقية رتبتك الاستراتيجية.`
-                              : `Excellent! Your designated mail (${bannerEmail}) is verified. Moving you directly to our sovereign premium dashboard to activate your strategic access.`
-                          ) : (
-                            isAr 
-                              ? `تم بنجاح إلحاق بريدك (${bannerEmail}) بسجل المشتركين في الديوان. ستتلقى أول بث تيلكس استراتيجي في النشرة القادمة.`
-                              : `Subscription active! Your destination (${bannerEmail}) has been successfully cached in the Al-Warraq mailing database.`
-                          )}
-                        </p>
-                      </div>
-                    ) : currentUser ? (
-                      <div className="space-y-4 text-center py-2">
-                        <p className="text-[13.5px] font-sans font-semibold text-white leading-normal">
-                          {isAr 
-                            ? `مرحباً بك، ${currentUser.username || currentUser.email}. يمكنك بنقرة واحدة تنشيط دخولك التجريبي المجاني والكامل لكافة الأدوات الاستقصائية.`
-                            : `Welcome, ${currentUser.username || currentUser.email}. With a single click, activate your instant 24-hour trial period to access all premium investigative services.`}
-                        </p>
-                        <button
-                          type="button"
-                          disabled={homeDemoIsSubmitting}
-                          onClick={activateHomeDemoForCurrentUser}
-                          className="bg-amber-600 hover:bg-amber-700 text-white font-mono text-xs font-black py-3 px-4 border border-black uppercase tracking-wider transition-all cursor-pointer shadow-[3px_3px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 w-full flex items-center justify-center gap-2"
-                        >
-                          <span>{homeDemoIsSubmitting ? (isAr ? 'جاري التنشيط والاعتماد...' : 'ACTIVATING DEMO...') : (isAr ? 'تنشيط وتشغيل الحساب التجريبي مجاناً ⚡' : 'ACTIVATE INSTANT FREE DEMO ⚡')}</span>
-                        </button>
-                      </div>
-                    ) : (
-                      <form 
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          // Fallback triggers direct demo signup on general submit
-                          handleHomeDemoSignupSubmit(e);
-                        }} 
-                        className="space-y-3"
-                      >
-                        <div className="space-y-1 text-left rtl:text-right">
-                          <label className="block text-[11px] font-mono uppercase font-black text-white">
-                            {isAr ? 'اسم الباحث' : 'Researcher Name'}
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Maan Barazy"
-                            value={homeDemoUsername}
-                            onChange={(e) => setHomeDemoUsername(e.target.value)}
-                            className="w-full text-xs p-2.5 border border-amber-500 bg-zinc-950 text-white font-bold placeholder-zinc-500 outline-none focus:border-white"
-                          />
-                        </div>
-
-                        <div className="space-y-1 text-left rtl:text-right">
-                          <label className="block text-[11px] font-mono uppercase font-black text-white">
-                            {isAr ? 'البريد الإلكتروني للديوان' : 'Registry Email Address'}
-                          </label>
-                          <input
-                            type="email"
-                            required
-                            placeholder="researcher@example.com"
-                            value={homeDemoEmail}
-                            onChange={(e) => {
-                              setHomeDemoEmail(e.target.value);
-                              setBannerEmail(e.target.value);
-                            }}
-                            className="w-full text-xs p-2.5 border border-amber-500 bg-zinc-950 text-white font-semibold placeholder-zinc-500 outline-none focus:border-white"
-                          />
-                        </div>
-
-                        {/* Interactive Buttons for Single Combined Form */}
-                        <div className="flex flex-col gap-2 pt-2">
-                          <button
-                            type="button"
-                            disabled={homeDemoIsSubmitting}
-                            onClick={handleHomeDemoSignupSubmit}
-                            className="bg-amber-600 hover:bg-amber-700 text-white font-mono text-xs font-black py-3 px-4 border border-black uppercase tracking-wider transition-all cursor-pointer shadow-[3px_3px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 w-full flex items-center justify-center gap-1.5"
-                          >
-                            <span>⚡ {isAr ? 'تنشيط الدخول التجريبي المجاني (٢٤ ساعة)' : 'ACTIVATE FREE 24H TRIAL'}</span>
-                          </button>
-
-                          <button
-                            type="button"
-                            onClick={() => {
-                              const cleanMail = homeDemoEmail.trim().toLowerCase();
-                              if (!cleanMail || !cleanMail.includes('@')) {
-                                alert(isAr ? 'يرجى إدخال بريد إلكتروني صحيح' : 'Please enter a valid email address.');
-                                return;
-                              }
-                              if (!subscribers.includes(cleanMail)) {
-                                setSubscribers([...subscribers, cleanMail]);
-                              }
-                              setBannerSubscribed(true);
-                              setBannerTierSelected('free');
-                            }}
-                            className="bg-zinc-950 hover:bg-zinc-900 text-white font-mono text-xs font-black py-2.5 px-3 border border-amber-500/60 uppercase text-center select-none cursor-pointer transition-colors w-full flex items-center justify-center gap-1.5"
-                          >
-                            <span>✉ {isAr ? 'الاشتراك في نشرة التيلكس فقط' : 'SUBSCRIBE TO TELEX WIRE ONLY'}</span>
-                          </button>
-                        </div>
-                      </form>
-                    )}
-                  </div>
-                </div>
-              </section>
-            )}
-
-
-
-            {/* High-Impact "Golden Prime Research Engine" & Magazine/Newsletter Promo Sections */}
-            {activeCategory === 'all' && !searchQuery && (
-              <section 
-                className="relative overflow-hidden border-4 border-black p-6 bg-zinc-950 text-white my-6 animate-fade-in"
-              >
-                {/* Visual Terminal / Grid Decoration */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,18,18,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(18,18,18,0.1)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-30"></div>
-                <div className="absolute top-0 right-0 w-48 h-full bg-amber-500/5 transform skew-x-12 pointer-events-none"></div>
-                
-                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-right rtl:text-right ltr:text-left">
-                  <div className="space-y-3 flex-1">
-                    <div className="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 text-[10px] font-mono tracking-widest uppercase">
-                      <Sparkles size={11} className="animate-pulse text-amber-400" />
-                      <span>{isAr ? 'منصة الأبحاث السيادية الذكية' : 'AI-NATIVE SOVEREIGN WORKSPACE'}</span>
-                    </div>
-                    
-                    <h3 className="font-sans font-black text-xl md:text-2xl text-white tracking-tight leading-tight uppercase">
-                      {isAr 
-                        ? 'نقدم لكم: محرك الأبحاث الذكي "غولدن برايم"' 
-                        : 'Introducing: The Golden Prime Research Engine'}
-                    </h3>
-                    
-                    <p className="text-zinc-400 text-xs md:text-[13px] max-w-3xl leading-relaxed font-sans">
-                      {isAr 
-                        ? 'هذا ليس مجرد منبر للأخبار—إنه مساحتك الخاصة والآمنة لرفع مستنداتك الخارجية، وتوليف البيانات الاستقصائية والسيادية الحية، وتشكيل تقاريرك الاستخباراتية بالتكامل مع نموذج ذكاء اصطناعي مخصص ومعزز بأدوات التحرير المتقدمة.'
-                        : 'This is not just news delivery—it’s a secure, private intelligence workspace. Upload external documents, synthesize real-time research against our live sovereign indexes, and draft complete briefs side-by-side with our tailored research models.'}
-                    </p>
-
-                    <div className="flex flex-wrap gap-4 text-[11px] font-mono text-zinc-500 font-bold uppercase pt-1">
-                      <div className="flex items-center gap-1">
-                        <span className="text-amber-500">✓</span>
-                        <span>{isAr ? 'خزانة المستندات المستقلة' : 'Independent Source Vault'}</span>
-                      </div>
-                      <span>•</span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-amber-500">✓</span>
-                        <span>{isAr ? 'توليف ومقاطعة البيانات الموجهة' : 'Source-Grounded AI Synthesis'}</span>
-                      </div>
-                      <span>•</span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-amber-500">✓</span>
-                        <span>{isAr ? 'محرر ومسودة صياغة التقارير' : 'Live Report Compiler Canvas'}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="shrink-0 w-full lg:w-auto flex flex-col sm:flex-row gap-3">
-                    <button
-                      onClick={() => {
-                        setActiveCategory('premium-pricing');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="bg-amber-600 hover:bg-amber-500 text-white font-sans font-black text-xs px-6 py-4 uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_#fff]"
-                    >
-                      <span>{isAr ? 'انضم إلى غولدن برايم الآن' : 'APPLY FOR GOLDEN PRIME'}</span>
-                      <ArrowRight size={14} className="rtl:rotate-180" />
-                    </button>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {activeCategory === 'all' && !searchQuery && (
-              <CurrentDispatchSection
-                language={language}
-                layoutMode={layoutMode}
-                articles={allArticles}
-                subscribers={subscribers}
-                setSubscribers={setSubscribers}
-                onNavigateToDispatch={(issueId) => {
-                  setActiveCategory('intelligence-dispatch');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                onSelectArticle={(article) => setSelectedArticle(article)}
-              />
-            )}
-
             {(activeCategory === 'all' || activeCategory === 'translations') && translationsArticles.length > 0 && (
               <section className="space-y-5">
                 <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
@@ -3590,13 +2976,6 @@ export default function App() {
                   </div>
                 )}
               </section>
-            )}
-
-            {/* SECTION 5.1: BASEL AML RISK INDEX & LEBANON BENCHMARK REPORT (فهرس بازل لمخاطر غسل الأموال وتصنيف لبنان) */}
-            {(activeCategory === 'all' || activeCategory === 'markets') && (
-              <div className="py-6" id="basel-aml-risk-section">
-                <LebanonAMLVisualizer language={language} layoutMode={layoutMode} />
-              </div>
             )}
 
             {/* SECTION 5.5: OIL & ENERGY (النفط والطاقة) */}
@@ -3876,8 +3255,8 @@ export default function App() {
               </section>
             )}
 
-            {/* SECTION: FIFA 2026 (فيفا 2026) moved under Sports */}
-            {(activeCategory === 'all' || activeCategory === 'fifa-2026') && fifaArticles.length > 0 && (
+            {/* SECTION: FIFA 2026 (فيفا 2026) - Dedicated category tab only */}
+            {activeCategory === 'fifa-2026' && fifaArticles.length > 0 && (
               <section className="space-y-5">
                 <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
                   <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
@@ -3906,26 +3285,11 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-
-                {/* REDIRECT READ MORE */}
-                {activeCategory === 'all' && fifaArticles.length > 0 && (
-                  <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
-                    <button
-                      onClick={() => {
-                        setActiveCategory('fifa-2026');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
-                    >
-                      <span>{isAr ? 'طالع كامل صفحات فيفا 2026 ←' : 'Read More in FIFA 2026 →'}</span>
-                    </button>
-                  </div>
-                )}
               </section>
             )}
 
-            {/* SECTION 9: WELLNESS & LIFESTYLE (صحة وأسلوب حياة) */}
-            {(activeCategory === 'all' || activeCategory === 'wellness-lifestyle') && wellnessArticles.length > 0 && (
+            {/* SECTION 9: WELLNESS & LIFESTYLE (صحة وأسلوب حياة) - Dedicated category tab only */}
+            {activeCategory === 'wellness-lifestyle' && wellnessArticles.length > 0 && (
               <section className="space-y-5">
                 <div className="border-double-editorial-bottom pb-2 flex justify-between items-center text-black">
                   <h3 className="font-sans font-black text-lg md:text-xl tracking-tight flex items-center gap-2">
@@ -3954,21 +3318,6 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-
-                {/* REDIRECT READ MORE */}
-                {activeCategory === 'all' && wellnessArticles.length > 0 && (
-                  <div className="flex justify-end pt-4 border-t border-dashed border-zinc-200">
-                    <button
-                      onClick={() => {
-                        setActiveCategory('wellness-lifestyle');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="px-4 py-2 border border-black hover:bg-black hover:text-white font-sans font-extrabold text-[11px] uppercase cursor-pointer transition-all flex items-center gap-1.5"
-                    >
-                      <span>{isAr ? 'طالع ملفات النقاء والعافية ←' : 'Read More in Wellness →'}</span>
-                    </button>
-                  </div>
-                )}
               </section>
             )}
 
