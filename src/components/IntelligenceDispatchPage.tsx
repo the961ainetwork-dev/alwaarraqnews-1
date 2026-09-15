@@ -7,6 +7,7 @@ import {
   getStoredDispatches 
 } from '../data/intelligenceDispatches';
 import AlWarraqLogo from './AlWarraqLogo';
+import Breadcrumbs from './Breadcrumbs';
 import { 
   Radio, 
   Share2, 
@@ -284,6 +285,32 @@ export default function IntelligenceDispatchPage({
 
       {/* 2. MAIN READING CONTAINER */}
       <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-6 md:pt-10">
+
+        {/* Top Breadcrumb Navigation */}
+        <Breadcrumbs
+          language={language}
+          activeCategory="intelligence-dispatch"
+          setActiveCategory={(catId) => {
+            if (catId === 'all' && onNavigateHome) {
+              onNavigateHome();
+            } else {
+              const url = new URL(window.location.href);
+              if (catId === 'all') {
+                url.searchParams.delete('category');
+              } else {
+                url.searchParams.set('category', catId);
+              }
+              window.history.pushState({}, '', url.toString());
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }
+          }}
+          subSectionTitle={
+            activeTab === 'archive' 
+              ? (isAr ? 'أرشيف الأعداد السابقة' : 'Archive Editions') 
+              : (isAr ? `العدد #${currentDispatch.issueNumber}` : `Issue #${currentDispatch.issueNumber}`)
+          }
+          className="mb-6"
+        />
 
         {/* TAB A: CURRENT NEWSLETTER EDITION */}
         {activeTab === 'reader' && (

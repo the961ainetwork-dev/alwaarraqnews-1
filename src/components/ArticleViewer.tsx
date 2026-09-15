@@ -20,6 +20,7 @@ import HormuzRealtimeTracker from './HormuzRealtimeTracker';
 import RiskSimulationSandbox from './RiskSimulationSandbox';
 import ContextualDossier from './ContextualDossier';
 import LebanonM3MoneySupplyChart from './LebanonM3MoneySupplyChart';
+import Breadcrumbs from './Breadcrumbs';
 
 interface ArticleViewerProps {
   article: Article;
@@ -783,36 +784,27 @@ export default function ArticleViewer({
           ) : (
             <div className="max-w-3xl mx-auto flex flex-col gap-6">
             
-            {/* Breadcrumbs & simulated Permalink URL */}
-            <div className="border border-zinc-200 bg-zinc-55/80 p-3 font-mono text-[10px] leading-relaxed flex flex-col gap-1.5 select-none text-black">
-              <div className="flex items-center flex-wrap gap-1 text-zinc-500">
-                <span className="hover:underline cursor-pointer font-bold" onClick={() => { stopAudio(); onClose(); }}>
-                  {isAr ? 'الرئيسية' : 'Home'}
-                </span>
-                <span>&gt;</span>
-                <span className="text-zinc-700 font-bold">
-                  {article.category === 'fifa-2026' && (isAr ? 'فيفا 2026' : 'FIFA 2026')}
-                  {article.category === 'exclusives' && (isAr ? 'التحقيقات الصحفية' : 'Investigations')}
-                  {article.category === 'editor-desk' && (isAr ? 'من رئيس التحرير' : 'From the Editor')}
-                  {article.category === 'lebanon' && (isAr ? 'أخبار لبنان' : 'Lebanon News')}
-                  {article.category === 'instats' && (isAr ? 'إحصاءات الورّاق' : 'In Stats')}
-                  {article.category === 'middle-east' && (isAr ? 'شؤون الشرق الأوسط' : 'Middle East')}
-                  {article.category === 'markets' && (isAr ? 'أسواق المال' : 'Markets')}
-                  {article.category === 'telecom-internet' && (isAr ? 'لاتصالات والإنترنت' : 'Telecom & Internet')}
-                  {article.category === 'research-reports' && (isAr ? 'أبحاث ودراساة' : 'Research & Reports')}
-                  {article.category === 'sports' && (isAr ? 'رياضة' : 'Sports')}
-                  {article.category === 'wellness-lifestyle' && (isAr ? 'الصحة' : 'Curae News')}
-                </span>
-                <span>&gt;</span>
-                <span className="text-black font-extrabold line-clamp-1">{title}</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-[10px] text-zinc-600 border-t border-zinc-200/60 pt-1.5 mt-0.5">
-                <span className="text-zinc-400 font-sans font-bold">{isAr ? 'رابط المقال السريع:' : 'Permalink URL:'}</span>
-                <span className="bg-zinc-200/50 px-1.5 py-0.5 select-all text-black font-black">
-                  https://alwarraqnews.com/article/{article.id}
-                </span>
-              </div>
-            </div>
+            {/* Breadcrumbs for Article Reader */}
+            <Breadcrumbs
+              language={language}
+              activeCategory={article.category}
+              setActiveCategory={(catId) => {
+                stopAudio();
+                onClose();
+                const url = new URL(window.location.href);
+                if (catId === 'all') {
+                  url.searchParams.delete('category');
+                } else {
+                  url.searchParams.set('category', catId);
+                }
+                url.searchParams.delete('article');
+                url.searchParams.delete('dossier');
+                window.history.pushState({}, '', url.toString());
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}
+              articleTitle={title}
+              className="mb-2"
+            />
 
             {/* Article Editorial Label */}
             <div className="flex items-center justify-between">

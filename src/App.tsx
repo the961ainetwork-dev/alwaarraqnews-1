@@ -1283,6 +1283,16 @@ export default function App() {
       {/* Main Container */}
       <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-8">
         
+        {/* Dynamic Breadcrumbs and Simulated Page-Section URL bar - ALWAYS visible on all pages and sections */}
+        <Breadcrumbs
+          language={language}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          categories={categories}
+          searchQuery={searchQuery}
+          className="mb-8"
+        />
+
         {/* If searching or customized view but no content */}
         {!hasResults && activeCategory !== 'admin' ? (
           <div className="text-center py-24 bg-white border-2 border-black p-8 rounded-none max-w-2xl mx-auto">
@@ -1304,15 +1314,6 @@ export default function App() {
           </div>
         ) : (
           <div className="space-y-12">
-            
-            {/* Dynamic Breadcrumbs and Simulated Page-Section URL bar */}
-            <Breadcrumbs
-              language={language}
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-              categories={categories}
-              searchQuery={searchQuery}
-            />
 
             {/* Spectacular "Happening Now" Hero Section at the top of all pages */}
             {activeCategory !== 'urgent-release' && activeCategory !== 'admin' && !selectedArticle && (
