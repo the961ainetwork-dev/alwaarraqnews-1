@@ -1288,17 +1288,50 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-8">
-        
-        {/* Dynamic Breadcrumbs and Simulated Page-Section URL bar - ALWAYS visible on all pages and sections */}
-        <Breadcrumbs
-          language={language}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          categories={categories}
-          searchQuery={searchQuery}
-          className="mb-8"
-        />
+      <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-8" role="main" aria-label={isAr ? 'المحتوى الرئيسي للصحيفة' : 'Main newspaper content'}>
+        {selectedArticle ? (
+          <ArticleViewer
+            article={selectedArticle}
+            layoutMode={layoutMode}
+            language={language}
+            currentUser={currentUser}
+            onClose={() => {
+              setSelectedArticle(null);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onAuthClick={() => setIsAuthOpen(true)}
+            onSubscribeClick={() => { 
+              setSelectedArticle(null); 
+              setActiveCategory('premium-pricing'); 
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            allArticles={allArticles}
+            categories={categories}
+            onSelectCategory={(catId) => {
+              setSelectedArticle(null);
+              setActiveCategory(catId);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onSelectArticle={(art) => {
+              setSelectedArticle(art);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            savedArticleIds={savedArticleIds}
+            onToggleSaveMultipleArticles={handleToggleSaveMultipleArticles}
+            onTagClick={handleTagClick}
+            onLoginSuccess={(user) => setCurrentUser(user)}
+          />
+        ) : (
+          <>
+            {/* Dynamic Breadcrumbs and Simulated Page-Section URL bar - ALWAYS visible on all pages and sections */}
+            <Breadcrumbs
+              language={language}
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+              categories={categories}
+              searchQuery={searchQuery}
+              className="mb-8"
+            />
 
         {/* If searching or customized view but no content */}
         {!hasResults && activeCategory !== 'admin' ? (
@@ -3641,26 +3674,9 @@ export default function App() {
 
           </div>
         )}
+          </>
+        )}
       </main>
-
-      {/* Reader Modal details room */}
-      {selectedArticle && (
-        <ArticleViewer
-          article={selectedArticle}
-          layoutMode={layoutMode}
-          language={language}
-          currentUser={currentUser}
-          onClose={() => setSelectedArticle(null)}
-          onAuthClick={() => setIsAuthOpen(true)}
-          onSubscribeClick={() => { setSelectedArticle(null); setActiveCategory('premium-pricing'); }}
-          allArticles={allArticles}
-          onSelectArticle={(art) => setSelectedArticle(art)}
-          savedArticleIds={savedArticleIds}
-          onToggleSaveMultipleArticles={handleToggleSaveMultipleArticles}
-          onTagClick={handleTagClick}
-          onLoginSuccess={(user) => setCurrentUser(user)}
-        />
-      )}
 
       {/* AI News Editorial builder */}
       {isGeneratorOpen && (

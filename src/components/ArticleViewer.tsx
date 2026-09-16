@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { X, Volume2, Type, Sparkles, BookOpen, Languages, Shield, ChevronLeft, ChevronRight, Play, Square, Lock, CreditCard, Share2, Send, Check, Link, Facebook, Twitter, Linkedin, ArrowRight, Tag, BookMarked, ExternalLink, Globe, Award, Download } from 'lucide-react';
-import { Article, LayoutMode } from '../types';
+import { Article, LayoutMode, NavigationTab } from '../types';
 import { INITIAL_ARTICLES } from '../data';
 import SEOMetadataManager from './SEOMetadataManager';
 import { SEO_SILOS, getAuthorProfile, AuthorProfile } from '../seoData';
+import ArticleRightColumn from './ArticleRightColumn';
 import AliAlTaherMap from './AliAlTaherMap';
 import LebanonConflictMap from './LebanonConflictMap';
 import { SolidereStockInfographic } from './SolidereStockInfographic';
@@ -31,6 +32,8 @@ interface ArticleViewerProps {
   onAuthClick: () => void;
   onSubscribeClick: () => void;
   allArticles?: Article[];
+  categories?: NavigationTab[];
+  onSelectCategory?: (categoryId: string) => void;
   onSelectArticle?: (article: Article) => void;
   savedArticleIds?: string[];
   onToggleSaveMultipleArticles?: (articles: Article[], save: boolean) => void;
@@ -47,6 +50,8 @@ export default function ArticleViewer({
   onAuthClick,
   onSubscribeClick,
   allArticles,
+  categories,
+  onSelectCategory,
   onSelectArticle,
   savedArticleIds = [],
   onToggleSaveMultipleArticles,
@@ -559,78 +564,69 @@ export default function ArticleViewer({
   return (
     <>
       <SEOMetadataManager article={article} language={activeLang} />
-      <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-      className="ArticleViewer fixed inset-0 z-50 bg-black/65 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 md:p-8 cursor-default"
-      dir={activeLang === 'ar' ? 'rtl' : 'ltr'}
-      onClick={() => { stopAudio(); onClose(); }}
-    >
-      {/* Centered Modal Container Panel */}
-      <motion.div 
-        id="reader-drawer"
-        initial={{ opacity: 0, scale: 0.97, y: 12 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.35, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-        onClick={(e) => e.stopPropagation()} 
-        className={`w-full max-w-4xl max-h-[92vh] rounded-md shadow-2xl flex flex-col overflow-hidden border border-zinc-350 ${
+      <motion.article 
+        id="article-page-view"
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
+        className={`w-full min-h-screen py-2 transition-all select-text ${
           isPrint ? 'bg-[#fbf9f4] text-[#1b2b1d]' : 'bg-white text-gray-900'
         }`}
+        dir={activeLang === 'ar' ? 'rtl' : 'ltr'}
       >
-        {/* Top Sticky bar for controlling viewer config */}
-        <div className={`border-b py-3 px-5 flex items-center justify-between font-sans text-xs shrink-0 select-none ${
-          isPrint ? 'bg-[#fbf9f4] border-[#1b2b1d]/20 text-[#1b2b1d]' : 'bg-white border-gray-200/90 text-gray-950'
+        {/* Top Editorial Utility / Action Bar */}
+        <div className={`border-2 border-black py-3 px-4 md:px-6 mb-6 flex flex-wrap items-center justify-between gap-3 font-sans text-xs select-none shadow-[3px_3px_0_0_#1b1c1e] ${
+          isPrint ? 'bg-[#fbf9f4]' : 'bg-zinc-50'
         }`}>
           <div className="flex items-center gap-3">
             <button
               onClick={() => { stopAudio(); onClose(); }}
               id="btn-close-reader"
-              className="p-1 px-3 rounded-md hover:bg-gray-100 flex items-center gap-1 font-semibold text-gray-500 cursor-pointer"
-              title={activeLang === 'ar' ? 'إغلاق القارئ' : 'Close Reader'}
+              className="bg-black hover:bg-zinc-800 text-white font-mono text-xs font-black px-3.5 py-2 flex items-center gap-1.5 cursor-pointer transition-all border border-black shadow-[2px_2px_0_0_#b91c1c] uppercase"
+              title={activeLang === 'ar' ? 'الرجوع لكافة الأخبار والصحيفة' : 'Back to News'}
             >
-              <X size={15} />
-              <span>{activeLang === 'ar' ? 'الرجوع للصحيفة' : 'Back to News'}</span>
+              {activeLang === 'ar' ? <ChevronRight size={15} /> : <ChevronLeft size={15} />}
+              <span>{activeLang === 'ar' ? 'الرجوع للصحيفة والأخبار' : 'Back to Newsroom'}</span>
             </button>
             <span className="text-gray-300">|</span>
-            <div className="flex bg-gray-150 rounded-sm p-0.5 items-center gap-1 border border-zinc-200">
+            <div className="flex bg-white rounded-none p-0.5 items-center gap-1 border border-black shadow-[1px_1px_0_0_#1b1c1e]">
               <button 
                 onClick={handleDecreaseFontSize} 
                 disabled={fontSize === 'sm'}
-                className={`px-2 py-0.5 rounded-xs font-black transition-all cursor-pointer ${
+                className={`px-2 py-0.5 rounded-none font-mono font-black transition-all cursor-pointer ${
                   fontSize === 'sm' 
                     ? 'text-gray-300 cursor-not-allowed opacity-50' 
-                    : 'text-gray-700 hover:bg-gray-200'
+                    : 'text-gray-900 hover:bg-gray-100'
                 }`}
                 title={activeLang === 'ar' ? 'تصغير الخط A-' : 'Decrease Font Size A-'}
               >A-</button>
               
-              <span className="text-[10px] text-gray-500 font-mono px-1 select-none font-bold uppercase">
+              <span className="text-[10px] text-gray-600 font-mono px-1 select-none font-bold uppercase">
                 {fontSize}
               </span>
 
               <button 
                 onClick={handleIncreaseFontSize} 
                 disabled={fontSize === 'xl'}
-                className={`px-2 py-0.5 rounded-xs font-black transition-all cursor-pointer ${
+                className={`px-2 py-0.5 rounded-none font-mono font-black transition-all cursor-pointer ${
                   fontSize === 'xl' 
                     ? 'text-gray-300 cursor-not-allowed opacity-50' 
-                    : 'text-gray-700 hover:bg-gray-200'
+                    : 'text-gray-900 hover:bg-gray-100'
                 }`}
                 title={activeLang === 'ar' ? 'تكبير الخط A+' : 'Increase Font Size A+'}
               >A+</button>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {/* Audio narration button */}
             <button
               onClick={handleSpeak}
               id="btn-narrate-story"
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs cursor-pointer transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 border border-black font-mono text-xs font-black cursor-pointer transition-colors ${
                 isPlayingContent 
-                  ? 'bg-red-500 text-white hover:bg-red-600' 
-                  : 'bg-primary/10 text-primary hover:bg-primary/20'
+                  ? 'bg-red-600 text-white animate-pulse' 
+                  : 'bg-white hover:bg-zinc-100 text-zinc-900 shadow-[2px_2px_0_0_#1b1c1e]'
               }`}
             >
               {isPlayingContent ? <Square size={13} className="animate-bounce" /> : <Play size={13} />}
@@ -641,18 +637,31 @@ export default function ArticleViewer({
             <button
               onClick={handleLanguageToggle}
               id="btn-reader-translation"
-              className="flex items-center gap-1 bg-accent/10 border border-accent/20 hover:bg-accent/20 text-accent px-3 py-1.5 rounded-md text-xs cursor-pointer"
+              className="flex items-center gap-1.5 bg-white hover:bg-zinc-100 text-zinc-900 border border-black px-3 py-1.5 font-mono text-xs font-black cursor-pointer shadow-[2px_2px_0_0_#1b1c1e]"
             >
-              <Languages size={13} />
+              <Languages size={13} className="text-[#b91c1c]" />
               <span>{activeLang === 'ar' ? 'English Translation' : 'الترجمة العربية'}</span>
+            </button>
+
+            {/* Share link button */}
+            <button
+              onClick={handleCopyLink}
+              id="btn-reader-copy-link"
+              className="flex items-center gap-1.5 bg-white hover:bg-zinc-100 text-zinc-900 border border-black px-3 py-1.5 font-mono text-xs font-bold cursor-pointer shadow-[2px_2px_0_0_#1b1c1e]"
+              title={activeLang === 'ar' ? 'نسخ رابط الخبر' : 'Copy Story Link'}
+            >
+              {copiedLink ? <Check size={13} className="text-emerald-600" /> : <Link size={13} />}
+              <span>{copiedLink ? (activeLang === 'ar' ? 'تم النسخ!' : 'Copied!') : (activeLang === 'ar' ? 'مشاركة' : 'Share')}</span>
             </button>
           </div>
         </div>
 
-        {/* Scrollable Article Content Box */}
-        <div className="flex-1 overflow-y-auto p-6 md:p-10 font-sans">
-          {activeAuthorProfile ? (
-            <div className="max-w-3xl mx-auto space-y-8 animate-fade-in text-gray-900 border-2 border-black p-6 md:p-8 bg-zinc-50 shadow-[4px_4px_0_0_#1b1c1e]">
+        {/* 2-COLUMN NEWSPAPER TEMPLATE GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Main Article Content Column */}
+          <div className="lg:col-span-8 order-1 lg:rtl:order-2 lg:ltr:order-1 space-y-6 min-w-0">
+            {activeAuthorProfile ? (
+              <div className="w-full space-y-8 animate-fade-in text-gray-900 border-2 border-black p-6 md:p-8 bg-zinc-50 shadow-[4px_4px_0_0_#1b1c1e]">
               {/* Header Navigation link */}
               <div className="flex items-center justify-between border-b border-black pb-4">
                 <button
@@ -782,7 +791,7 @@ export default function ArticleViewer({
               </div>
             </div>
           ) : (
-            <div className="max-w-3xl mx-auto flex flex-col gap-6">
+            <div className="w-full flex flex-col gap-6">
             
             {/* Breadcrumbs for Article Reader */}
             <Breadcrumbs
@@ -1715,8 +1724,28 @@ export default function ArticleViewer({
           </div>
         )}
         </div>
-      </motion.div>
-    </motion.div>
+
+        {/* RIGHT COLUMN: SECTIONS & LATEST STORIES (Always on the physical RIGHT on desktop) */}
+        <div className="lg:col-span-4 order-2 lg:rtl:order-1 lg:ltr:order-2 sticky top-20">
+          <ArticleRightColumn
+            currentArticleId={article.id}
+            currentCategoryId={article.category}
+            allArticles={articlesList}
+            categories={categories}
+            language={activeLang}
+            onSelectArticle={handleSelectRelated}
+            onSelectCategory={(catId) => {
+              stopAudio();
+              if (onSelectCategory) {
+                onSelectCategory(catId);
+              } else {
+                onClose();
+              }
+            }}
+          />
+        </div>
+      </div>
+    </motion.article>
     </>
   );
 }
