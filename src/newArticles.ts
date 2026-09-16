@@ -2,6 +2,141 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'lebanon-fuel-imports-russia-sts-70-percent-investigation',
+    slug: 'لبنان-واردات-الوقود-الروسي-70-بالمئة-تحقيق-استقصائي',
+    focusKeyword: 'واردات-الوقود-الروسي-لبنان-عمليات-STS-سقف-الأسعار-G7-2Rivers-مارك-أيوب',
+    category: 'special-investigations',
+    categories: ['special-investigations', 'alwarraq-investigations', 'lebanon', 'oil-energy', 'economy', 'exclusives', 'research-reports'],
+    titleAr: 'لبنان دفع ما يصل إلى 70 بالمئة فوق القيمة الفعلية لواردات الوقود، وفق ما كشفه تحقيق صحفي',
+    titleEn: 'Lebanon Paid Up to 70% Over Actual Value for Fuel Imports, Investigation Reveals',
+    summaryAr: '60 بالمئة من الشحنات الروسية المتجهة إلى لبنان نفذت عمليات نقل من سفينة إلى أخرى (STS). تحقيق استقصائي يربط واردات الطاقة اللبنانية بشبكات أسطول الظل الروسية والتلاعب بشهادات المنشأ وتحقيق أرباح غير مشروعة بخرق لسقف أسعار G7، مع استنزاف عشرات الملايين من الدولارات من احتياطيات النقد الأجنبي.',
+    summaryEn: '60% of Russian shipments to Lebanon performed ship-to-ship (STS) transfers. An investigative report exposes how international commodity traders billed Lebanon up to 70% over the actual value of Russian fuel imports, circumventing G7 price caps and siphoning tens of millions of dollars from foreign reserves.',
+    excerptAr: 'تحقيق خاص — ALwarraqnews.com: 60 بالمئة من الشحنات الروسية المتجهة إلى لبنان نفذت عمليات نقل من سفينة إلى أخرى (STS)، وتجار دوليون فرضوا فواتير تصل إلى 70 بالمئة فوق القيمة الفعلية.',
+    excerptEn: 'Special Investigation — ALwarraqnews.com: 60% of Russian shipments to Lebanon executed ship-to-ship (STS) transfers, and global traders billed Lebanon up to 70% over actual value.',
+    author: {
+      nameAr: 'تحقيق خاص — ALwarraqnews.com',
+      nameEn: 'Special Investigation — ALwarraqnews.com',
+      titleAr: 'وحدة التحقيقات الاستقصائية وتتبع الملاحة والطاقة بالتعاون مع ائتلاف بحثي',
+      titleEn: 'Investigative & Maritime Energy Tracking Unit in partnership with Research Coalition',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-16',
+    readTimeAr: '١٢ دقيقة قراءة استقصائية',
+    readTimeEn: '12 min investigative read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 38920,
+    tags: [
+      'واردات_الوقود_لبنان', 'النفط_الروسي', 'عمليات_STS', 'سقف_الأسعار_G7', 'مارك_أيوب', 'المفكرة_القانونية', 'شبكة_2Rivers', 'أسطول_الظل', 'كهرباء_لبنان', 'تحقيقات_خاصة', 'Iplom', 'Sahara_Energy', 'OFAC', 'وزارة_الطاقة',
+      'LebanonFuelImports', 'RussianFuel', 'STSTransfers', 'G7PriceCap', 'ShadowFleet', '2RiversGroup', 'LebanonEnergyCrisis', 'OFAC'
+    ],
+    hashtags: ['LebanonFuel', 'STSTransfers', 'RussianOil', 'G7PriceCap', 'AlWarraqInvestigates', 'LebanonEconomy'],
+    contentAr: `### لبنان دفع ما يصل إلى 70 بالمئة فوق القيمة الفعلية لواردات الوقود، وفق ما كشفه تحقيق صحفي
+#### 60 بالمئة من الشحنات الروسية المتجهة إلى لبنان نفذت عمليات نقل من سفينة إلى أخرى (STS)
+**تحقيق خاص — ALwarraqnews.com**
+
+إن ارتفاع أسعار المحروقات في جميع أنحاء لبنان—حيث يستمر سعر صفيحة البنزين القياسية سعة 20 ليترًا في الارتفاع—بات يرتبط اليوم بشكل صريح بالتربح في السوق وتضخم الأسعار، وفق ما كشفه تحقيق صحفي. 
+
+قام تجار السلع الدوليون بفرض فواتير على لبنان تصل إلى **70 بالمئة فوق القيمة الفعلية** لواردات الوقود الروسي. وقدمت هذه الهوامش المرتفعة المبالغ فيها مكاسب وأرباحًا طائلة لكيانات وسيطة في خرق صريح للعقوبات المفروضة على سقف الأسعار من قبل مجموعة الدول السبع (G7). 
+
+وأظهرت جهود تتبع مشتركة قام بها محلل الطاقة **مارك أيوب** وائتلاف بحثي يضم **«المفكرة القانونية»** و**«المؤسسة اللبنانية للطاقات المتجددة» (LFRE)** وصول ما لا يقل عن **20 ناقلة نفط روسية** إلى الموانئ اللبنانية منذ عام 2023. 
+
+---
+
+### أبرز نتائج التحقيق:
+* **استنزاف اقتصادي مباشر:** تسببت الواردات التي تم تسعيرها فوق حدود سقف مجموعة الدول السبع في استنزاف عشرات الملايين من الدولارات من احتياطيات النقد الأجنبي المتبقية في لبنان على مدى العامين الماضيين، وفقًا لبيانات وزارة الطاقة والمياه. 
+* **تكتيكات بحرية عالية المخاطر:** تظهر سجلات تتبع السفن أن **60 بالمئة من الشحنات الروسية المتجهة إلى لبنان نفذت عمليات نقل من سفينة إلى أخرى (STS)**. ويحدد مكتب مراقبة الأصول الأجنبية التابع لوزارة الخزانة الأمريكية (OFAC) نشاط STS كمؤشر رئيسي للتهرب من العقوبات والاحتيال الضريبي وإخفاء منشأ البضائع. 
+* **إخطار الحكومة:** قدم الائتلاف البحثي نتائج أولية مباشرة إلى وزارة الطاقة والمياه في أيار/مايو 2025 كجزء من تحقيق مستمر في آليات استيراد الوقود في البلاد. 
+
+ربطت العشرات من سجلات الشحن والتسريبات القضائية وبيانات تتبع السفن واحدة من أكبر فضائح قطاع الطاقة في لبنان بشبكة بحرية روسية متهربة من العقوبات، مما كشف أن التجار الدوليين ربما فرضوا فواتير على الدولة تصل إلى 70 بالمئة فوق القيمة الفعلية لواردات الوقود الروسي مع تحقيق أرباح ضخمة في خرق لسقف أسعار مجموعة الدول السبع. 
+
+تأتي هذه الكشوفات في وقت توسع فيه السلطات اللبنانية تحقيقاتها القضائية، حيث فتحت قضيتين إضافيتين للتحقيق في الاحتيال المحتمل والفساد والإثراء غير المشروع داخل سلاسل التوريد التي تغذي شبكة الكهرباء الوطنية. 
+
+---
+
+### المضاربة على سقف الأسعار والعمليات الظلية
+منذ عام 2021، اعتمد لبنان على اتفاقية تبادل دولية (Swap) للفيول أويل. ولأن النفط الخام العراقي غير المكرر الممنوح بشروط تفضيلية لم يكن متوافقًا مع محطات توليد الكهرباء المحلية، أصدرت الحكومة مناقصات رسمية لتجار دوليين لمبادلة المنتج. وتفصل النتائج التحقيقية كيفية إدخال النفط الروسي المعاقب إلى هذه السلسلة: 
+
+* **هامش ربح ممنهج:** يزعم أن التجار اشتروا وقودًا روسيًا عالي الكبريت يخضع لسقف أسعار مجموعة السبع والاتحاد الأوروبي (45 دولارًا للبرميل لفيول أويل) وقاموا برفع سعره بنسبة تصل إلى 70 بالمئة فوق القيمة الفعلية. 
+* **تزوير شهادات المنشأ:** تم تزوير شهادات المنشأ لإظهار الشحنات على أنها مصرية أو تركية، مما سمح ببيع المنتج بأسعار السوق غير الخاضعة للسقف وتحقيق ملايين الدولارات كأرباح على حساب الخزينة اللبنانية. 
+* **عمليات نقل عالية المخاطر:** تكشف بيانات التتبع التي جمعها مارك أيوب، إلى جانب الائتلاف البحثي، عن وصول 20 ناقلة نفط على الأقل من روسيا إلى لبنان منذ عام 2023. 
+* **تمويه عبر STS:** نفذت 60 بالمئة من هذه الشحنات الروسية عمليات نقل من سفينة إلى أخرى (STS). ورغم أن هذه العمليات قد تكون مشروعة أحيانًا، فإن مكتب OFAC يعتبرها مؤشرًا رئيسيًا للتهرب من العقوبات والتهريب. 
+
+يقدر أيوب أن الانتهاكات الخاصة بسقف الأسعار استنزفت عشرات الملايين من الدولارات من خزينة الدولة خلال العامين الماضيين، وقد تم مشاركة النتائج الأولية مع وزارة الطاقة والمياه في أيار/مايو 2025. 
+
+---
+
+### الارتباط بشبكة "2Rivers"
+تظهر الوثائق أن الفائزين الرئيسي بالمناقصات الذين قاموا بتأمين الوقود المتجه إلى لبنان بين عامي 2023 و2025 حصلوا على الشحنات عبر شركات واجهة مرتبطة بمجموعة **2Rivers** (المعروفة سابقًا باسم **Coral Energy Group**). وتصف وزارة الخارجية البريطانية مجموعة 2Rivers بأنها واحدة من أكبر مشغلي أسطول الظل في العالم، وقد تم استهدافها هي والشركات التابعة لها بعقوبات بريطانية صارمة. 
+
+| الأصل / الكيان المتتبع | حالة العقوبات والتفاصيل | النتائج التشغيلية والتحقيقية |
+| :--- | :--- | :--- |
+| **TM Hai Ha 568** | خاضعة لعقوبات المملكة المتحدة والاتحاد الأوروبي والولايات المتحدة وكندا وسويسرا. | ناقلة ترفع علم فيتنام تم تتبع مسارها عبر قبرص ومصر؛ يُشتبه في تزوير منشئها المصري دون تحميل أي حمولة هناك. |
+| **LINXOIL** | تم تصنيفها من قبل المملكة المتحدة في عام 2026 لارتباطها بـ 2Rivers. | قامت بتأمين الوقود للشركة الفائزة بالمناقصة BB Energy في عام 2025؛ لم تكن خاضعة للعقوبات وقت الصفقة. |
+| **2Rivers Group** | خاضعة لعقوبات السلطات الغربية وتخضع لعملية حل رسمية. | البنية التحتية الأم التي توفر سفن أسطول الظل وشركات الواجهة لتوزيع النفط الخام الروسي. |
+
+---
+
+### التداعيات القضائية واستجابة الدولة
+تأتي هذه الكشوفات في وقت تعاني فيه مؤسسة كهرباء لبنان (EDL) من عجز مزمن، حيث تؤمن ساعات قليلة فقط من الكهرباء يوميًا وسط عقود من سوء الإدارة والفساد في القطاع. 
+
+* **ملاحقات قضائية جديدة:** وجه النيابة العامة المالية اتهامات في ملفين منفصلين—أحدهما يستهدف شركة التداول Iplom بخصوص ممارسات احتيالية مزعومة، والآخر ضد Sahara Energy Resources بتهمة الفساد المؤدي إلى الإثراء غير المشروع. ولم تصدر أي أحكام قضائية نهائية ضد أي من الشركتين. 
+* **ضمانات تعاقدية:** أكد وزير الطاقة جوزيف صدي أنه تم تعديل دفتر الشروط للمناقصات فورًا لفرض تتبع صارم، وإلغاء التحميل التحميلي أوفشور، وإلزام الامتثال للقوانين الدولية، مع إحالة العقود المشبوهة السابقة مباشرة إلى القضاء. كما تم إنهاء ترتيبات المبادلة مع العراق.`,
+    contentEn: `### Lebanon Paid Up to 70% Over Actual Value for Fuel Imports, Investigation Reveals
+#### 60% of Russian Shipments to Lebanon Executed Ship-to-Ship (STS) Transfers
+**Special Investigation — ALwarraqnews.com**
+
+Rising fuel prices across Lebanon—where the standard 20-liter gasoline canister continues to climb—are now explicitly linked to market profiteering and price inflation, according to a newly revealed investigative probe.
+
+International commodity traders billed Lebanon up to **70 percent above the actual value** of Russian fuel imports. These exorbitant, inflated margins generated massive profits for intermediary entities in blatant breach of price-cap sanctions imposed by the Group of Seven (G7).
+
+A joint tracking effort conducted by energy analyst **Marc Ayoub** and a research coalition including **The Legal Agenda** and the **Lebanese Foundation for Renewable Energy (LFRE)** confirmed the arrival of at least **20 Russian oil tankers** at Lebanese ports since 2023.
+
+---
+
+### Key Findings of the Investigation:
+* **Direct Economic Drain:** Imports priced far above G7 price cap thresholds drained tens of millions of dollars from Lebanon's remaining foreign currency reserves over the past two years, according to Ministry of Energy and Water data.
+* **High-Risk Maritime Tactics:** Vessel-tracking records reveal that **60 percent of Russian shipments destined for Lebanon performed ship-to-ship (STS) transfers**. The U.S. Treasury's Office of Foreign Assets Control (OFAC) identifies STS activity as a primary red flag for sanctions evasion, tax fraud, and origin masking.
+* **Government Notification:** The research coalition submitted initial findings directly to the Ministry of Energy and Water in May 2025 as part of an ongoing investigation into the country's fuel import mechanisms.
+
+Dozens of shipping manifests, judicial leaks, and vessel-tracking coordinates tie one of the largest scandals in Lebanon's energy sector to a sanctions-evading Russian maritime network, revealing that international traders charged the state up to 70 percent above actual value while pocketing windfall margins in breach of the G7 ceiling.
+
+These revelations come as Lebanese authorities broaden their judicial probes, opening two additional files to investigate alleged fraud, corruption, and illicit enrichment within the supply chains feeding the national power grid.
+
+---
+
+### Price Cap Arbitrage and Shadow Fleet Tactics
+Since 2021, Lebanon has relied on an international fuel oil swap agreement. Because raw, unrefined Iraqi crude provided under preferential terms was incompatible with local power plants, the government issued formal tenders to international traders to swap the product. The investigation details how sanctioned Russian oil entered this loop:
+
+* **Systemic Markup:** Traders allegedly bought high-sulfur Russian fuel subject to G7 and EU price caps ($45 per barrel for fuel oil) and marked it up by up to 70 percent above actual value.
+* **Falsified Certificates of Origin:** Certificates of origin were manipulated to present shipments as Egyptian or Turkish, allowing the product to be sold at uncapped market rates and generating millions of dollars in illicit profits at the expense of the Lebanese treasury.
+* **High-Risk Maritime Coordinates:** Tracking data collected by Marc Ayoub and the research coalition shows at least 20 tankers arriving from Russia to Lebanon since 2023.
+* **Camouflage via STS:** 60 percent of these Russian shipments executed ship-to-ship transfers. While STS operations can sometimes be legitimate, OFAC designates them as a critical indicator of sanctions circumvention and smuggling.
+
+Ayoub estimates that price-cap breaches drained tens of millions of dollars from state coffers over the past two years, with preliminary findings submitted to the Ministry of Energy and Water in May 2025.
+
+---
+
+### Links to the "2Rivers" Network
+Documents reveal that key tender winners securing fuel for Lebanon between 2023 and 2025 acquired shipments through front companies tied to the **2Rivers Group** (formerly known as **Coral Energy Group**). The UK Foreign Office describes 2Rivers as one of the world's largest shadow fleet operators, subjecting it and its affiliates to severe British sanctions.
+
+| Tracked Asset / Entity | Sanctions Status & Details | Operational & Investigative Findings |
+| :--- | :--- | :--- |
+| **TM Hai Ha 568** | Sanctioned by the UK, EU, US, Canada, and Switzerland. | Vietnam-flagged tanker tracked via Cyprus and Egypt; suspected of faking Egyptian origin without loading cargo there. |
+| **LINXOIL** | Designated by the UK in 2026 for ties to 2Rivers. | Secured fuel for tender winner BB Energy in 2025; was not sanctioned at the time of the transaction. |
+| **2Rivers Group** | Sanctioned by Western authorities and undergoing formal dissolution. | Parent infrastructure providing shadow fleet vessels and front companies for Russian crude distribution. |
+
+---
+
+### Judicial Fallout and State Response
+These revelations emerge as Electricité du Liban (EDL) suffers chronic deficits, providing only a few hours of electricity per day amid decades of sector mismanagement and corruption.
+
+* **New Judicial Indictments:** The Financial Public Prosecution has pressed charges in two separate cases—one targeting trading company Iplom over alleged fraudulent practices, and another against Sahara Energy Resources on corruption and illicit enrichment charges. No final judicial rulings have been issued against either company.
+* **Contractual Safeguards:** Energy Minister Joseph Saddi confirmed that tender specifications were immediately amended to enforce strict tracking, eliminate offshore STS transfers, and mandate international legal compliance, referring suspect historical contracts directly to the judiciary. The Iraqi swap arrangement was also officially concluded.`
+  },
+  {
     id: 'lebanon-budget-2027-tax-amendments-investigation',
     slug: 'موازنة-2027-التعديلات-الضريبية-الأساسية-والأحكام-المالية',
     focusKeyword: 'موازنة-2027-التعديلات-الضريبية-الأحكام-المالية-معن-برازي-الضرائب-غير-المباشرة-القيمة-المضافة-الشركات-القابضة-الأوفشور',

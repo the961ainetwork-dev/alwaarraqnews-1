@@ -44,7 +44,7 @@ import { OilCurrencyVolatilityChart } from './components/OilCurrencyVolatilityCh
 import ArabGasPipelineD3Map from './components/ArabGasPipelineD3Map';
 import { INITIAL_ARTICLES, NAVIGATION_TABS } from './data';
 import { Article, LayoutMode, NavigationTab, SiteDesign, DynamicWidget, UserProfile } from './types';
-import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode, ShieldAlert, Radio } from 'lucide-react';
+import { Newspaper, Sparkles, ChevronLeft, ChevronRight, Bookmark, ArrowRight, ArrowLeft, ArrowUp, Feather, Globe, TrendingUp, Cpu, BookOpen, Trophy, Heart, Menu, Crown, Zap, Compass, Lock, Unlock, Mail, Flame, Megaphone, Check, Download, Share2, Send, Link, Twitter, QrCode, ShieldAlert, Radio, Ship, Fuel, AlertTriangle } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 
 const parseArabicOrEnglishDate = (dateStr: string): number => {
@@ -207,12 +207,19 @@ export default function App() {
       } catch (e) {}
     }
 
-    // Explicitly place the latest M3 liquidity and strategic investigation at the top
-    const m3Idx = articles.findIndex(a => a && a.id === 'lebanon-liquidity-money-supply-m3-august-2026');
-    if (m3Idx > -1) {
-      const target = articles[m3Idx];
-      const rest = articles.filter(a => a && a.id !== 'lebanon-liquidity-money-supply-m3-august-2026');
+    // Explicitly place the latest fuel imports investigation and strategic dossiers at the top
+    const fuelIdx = articles.findIndex(a => a && a.id === 'lebanon-fuel-imports-russia-sts-70-percent-investigation');
+    if (fuelIdx > -1) {
+      const target = articles[fuelIdx];
+      const rest = articles.filter(a => a && a.id !== 'lebanon-fuel-imports-russia-sts-70-percent-investigation');
       articles = [target, ...rest];
+    } else {
+      const m3Idx = articles.findIndex(a => a && a.id === 'lebanon-liquidity-money-supply-m3-august-2026');
+      if (m3Idx > -1) {
+        const target = articles[m3Idx];
+        const rest = articles.filter(a => a && a.id !== 'lebanon-liquidity-money-supply-m3-august-2026');
+        articles = [target, ...rest];
+      }
     }
 
     // Strict deduplication by ID to prevent duplicate key collisions
@@ -1280,24 +1287,6 @@ export default function App() {
         siteDesign={siteDesign}
       />
 
-      {/* 5. Current Daily Intelligence Dispatch (Moved to Top between Breaking News Bar & Breadcrumbs) */}
-      {activeCategory === 'all' && !searchQuery && !selectedArticle && (
-        <div className="max-w-7xl mx-auto w-full px-4 pt-6">
-          <CurrentDispatchSection
-            language={language}
-            layoutMode={layoutMode}
-            articles={allArticles}
-            subscribers={subscribers}
-            setSubscribers={setSubscribers}
-            onNavigateToDispatch={(issueId) => {
-              setActiveCategory('intelligence-dispatch');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onSelectArticle={(article) => setSelectedArticle(article)}
-          />
-        </div>
-      )}
-
       {/* Main Container */}
       <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-8">
         
@@ -1654,11 +1643,7 @@ export default function App() {
               </section>
             ) : (
               <>
-                {/* Admin-Configured Header and Sidebar Component Injection Panels */}
-                {activeCategory === 'all' && renderWidgetsByLocation('header')}
-                {activeCategory === 'all' && renderWidgetsByLocation('sidebar')}
-
-                {/* 1. HOMEPAGE SPECIAL INVESTIGATIONS GRID - 6 STORIES (2 ROWS × 3 COLUMNS) */}
+                {/* 1. HOMEPAGE SPECIAL INVESTIGATIONS GRID - FIRST IN PAGE */}
                 {activeCategory === 'all' && (
                   <section className="space-y-6 my-8" id="homepage-special-investigations-grid">
                     <div className="border-double-editorial-bottom pb-2 flex flex-col sm:flex-row justify-between sm:items-center gap-3 text-black">
@@ -1669,7 +1654,7 @@ export default function App() {
                             <span>{isAr ? 'التحقيقات الخاصة' : 'Special Investigations'}</span>
                           </h3>
                           <span className="font-mono text-xxs font-bold text-zinc-500 block">
-                            {isAr ? 'أحدث ٦ تحقيقات استقصائية معتمدة (شبكة ٣ أعمدة × صفين)' : 'Latest 6 Certified Investigations (3 Columns × 2 Rows)'}
+                            {isAr ? 'تحقيق استقصائي حصري متصدر وشبكة التحقيقات المعتمدة' : 'Featured Flagship Investigation & Certified Dossiers'}
                           </span>
                         </div>
                       </div>
@@ -1686,24 +1671,254 @@ export default function App() {
                       </button>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                      {(specialInvestigationsArticles.length >= 6 ? specialInvestigationsArticles : allArticles).slice(0, 6).map((story) => (
-                        <div key={story.id} className="break-inside-avoid flex flex-col justify-between h-full">
-                          <ArticleCard
-                            article={story}
-                            layoutMode={layoutMode}
-                            language={language}
-                            variant="standard"
-                            onSelect={(article) => setSelectedArticle(article)}
-                            isSaved={savedArticleIds.includes(story.id)}
-                            onToggleSave={handleToggleSaveArticle}
-                            onTagClick={handleTagClick}
-                          />
+                    {/* LEAD INVESTIGATION DOSSIER SPOTLIGHT (واردات الوقود وعمليات STS) */}
+                    {(() => {
+                      const fuelLead = allArticles.find(a => a.id === 'lebanon-fuel-imports-russia-sts-70-percent-investigation') || specialInvestigationsArticles[0];
+                      if (!fuelLead) return null;
+                      return (
+                        <div className="border-2 border-black bg-white shadow-[6px_6px_0px_#b91c1c] transition-all overflow-hidden text-black" id="lead-fuel-investigation-spotlight">
+                          {/* Header Bar */}
+                          <div className="bg-zinc-950 text-white px-5 py-3 flex flex-wrap items-center justify-between gap-3 border-b-2 border-red-700">
+                            <div className="flex items-center gap-2.5">
+                              <span className="bg-red-600 text-white text-[10px] font-mono font-black px-2.5 py-0.5 tracking-wider uppercase animate-pulse flex items-center gap-1.5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                                {isAr ? 'تحقيق خاص — ALwarraqnews.com' : 'SPECIAL INVESTIGATION — ALWARRAQ'}
+                              </span>
+                              <span className="hidden sm:inline text-zinc-400 text-xs font-mono">
+                                {isAr ? 'تتبع سلاسل الإمداد وممرات أسطول الظل' : 'Supply Chain & Shadow Fleet Tracking'}
+                              </span>
+                            </div>
+
+                            <div className="flex items-center gap-3 text-xxs font-mono text-zinc-300">
+                              <span className="flex items-center gap-1">
+                                <Ship size={13} className="text-red-400" />
+                                <span>{isAr ? '٢٠ ناقلة نفط مرصودة' : '20 Tankers Monitored'}</span>
+                              </span>
+                              <span className="text-zinc-600">|</span>
+                              <span className="text-amber-400 font-bold">
+                                {isAr ? 'خرق سقف G7' : 'G7 Cap Breach'}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Main Body */}
+                          <div className="p-6 md:p-8 space-y-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                              {/* Content Column */}
+                              <div className="lg:col-span-8 space-y-4">
+                                <div className="space-y-2">
+                                  <div className="flex flex-wrap items-center gap-2 text-xxs font-mono font-bold text-red-700">
+                                    <span className="px-2 py-0.5 bg-red-50 border border-red-200">
+                                      {isAr ? 'فضيحة الفيول أويل ومناقصات الكهرباء' : 'Fuel Oil & EDL Tender Probe'}
+                                    </span>
+                                    <span className="px-2 py-0.5 bg-zinc-100 text-zinc-700 border border-zinc-200">
+                                      {isAr ? 'ائتلاف بحثي: مارك أيوب + المفكرة القانونية + LFRE' : 'Coalition: Marc Ayoub + Legal Agenda + LFRE'}
+                                    </span>
+                                  </div>
+
+                                  <h2 
+                                    onClick={() => {
+                                      setSelectedArticle(fuelLead);
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    className="text-xl md:text-2xl lg:text-3xl font-sans font-black text-zinc-950 leading-tight tracking-tight hover:text-red-700 transition-colors cursor-pointer"
+                                  >
+                                    {isAr ? fuelLead.titleAr : fuelLead.titleEn}
+                                  </h2>
+
+                                  <p className="text-sm md:text-base font-sans font-bold text-red-700 leading-snug">
+                                    {isAr 
+                                      ? '60 بالمئة من الشحنات الروسية المتجهة إلى لبنان نفذت عمليات نقل من سفينة إلى أخرى (STS)' 
+                                      : '60% of Russian Shipments to Lebanon Performed Ship-to-Ship (STS) Transfers'
+                                    }
+                                  </p>
+                                </div>
+
+                                <p className="text-xs md:text-sm text-zinc-700 leading-relaxed font-serif text-justify">
+                                  {isAr 
+                                    ? 'إن ارتفاع أسعار المحروقات في جميع أنحاء لبنان—حيث يستمر سعر صفيحة البنزين القياسية سعة 20 ليترًا في الارتفاع—بات يرتبط اليوم بشكل صريح بالتربح في السوق وتضخم الأسعار، وفق ما كشفه تحقيق صحفي. قام تجار السلع الدوليون بفرض فواتير على لبنان تصل إلى 70 بالمئة فوق القيمة الفعلية لواردات الوقود الروسي. وقدمت هذه الهوامش المرتفعة المبالغ فيها مكاسب وأرباحًا طائلة لكيانات وسيطة في خرق صريح للعقوبات المفروضة على سقف الأسعار من قبل مجموعة الدول السبع (G7).'
+                                    : 'Rising fuel prices across Lebanon are now explicitly tied to market profiteering and price inflation, according to a journalistic investigation. International commodity traders billed Lebanon up to 70 percent above the actual value of Russian fuel imports, pocketing exorbitant margins in blatant breach of G7 price caps while siphoning millions from foreign reserves.'
+                                  }
+                                </p>
+
+                                {/* 3 Key Findings Highlights */}
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                                  <div className="bg-zinc-50 border border-zinc-200 p-3 space-y-1">
+                                    <div className="flex items-center gap-1.5 text-xs font-mono font-black text-red-700">
+                                      <Fuel size={14} className="shrink-0" />
+                                      <span>{isAr ? 'استنزاف اقتصادي مباشر' : 'Economic Drain'}</span>
+                                    </div>
+                                    <p className="text-xxs text-zinc-600 leading-normal">
+                                      {isAr 
+                                        ? 'استنزاف عشرات الملايين من الدولارات من احتياطيات النقد الأجنبي المتبقية لدى مصرف لبنان ووزارة الطاقة.'
+                                        : 'Drained tens of millions of dollars from Lebanon’s remaining foreign currency reserves.'
+                                      }
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-zinc-50 border border-zinc-200 p-3 space-y-1">
+                                    <div className="flex items-center gap-1.5 text-xs font-mono font-black text-amber-700">
+                                      <Ship size={14} className="shrink-0" />
+                                      <span>{isAr ? 'تكتيكات STS البحرية' : 'High-Risk STS Tactics'}</span>
+                                    </div>
+                                    <p className="text-xxs text-zinc-600 leading-normal">
+                                      {isAr 
+                                        ? '60% من الشحنات نُفذت عبر النقل من سفينة لأخرى، وهو مؤشر رئيسي لدى OFAC للتهرب من العقوبات وتزوير المنشأ.'
+                                        : '60% of Russian cargoes used ship-to-ship transfers, a primary OFAC indicator for sanctions evasion.'
+                                      }
+                                    </p>
+                                  </div>
+
+                                  <div className="bg-zinc-50 border border-zinc-200 p-3 space-y-1">
+                                    <div className="flex items-center gap-1.5 text-xs font-mono font-black text-zinc-900">
+                                      <AlertTriangle size={14} className="shrink-0 text-red-600" />
+                                      <span>{isAr ? 'الملاحقات القضائية' : 'Judicial Action'}</span>
+                                    </div>
+                                    <p className="text-xxs text-zinc-600 leading-normal">
+                                      {isAr 
+                                        ? 'النيابة العامة المالية تدعي في ملفين ضد Iplom وSahara Energy Resources بتهم الفساد والإثراء غير المشروع.'
+                                        : 'Financial Prosecution opens two cases targeting Iplom and Sahara Energy Resources.'
+                                      }
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Sidebar Stats & Image Column */}
+                              <div className="lg:col-span-4 space-y-4">
+                                <div 
+                                  onClick={() => {
+                                    setSelectedArticle(fuelLead);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                  }}
+                                  className="relative group cursor-pointer overflow-hidden border border-black shadow-[4px_4px_0px_#18181b]"
+                                >
+                                  <img 
+                                    src={fuelLead.imageUrl} 
+                                    alt={fuelLead.titleAr} 
+                                    className="w-full h-48 md:h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-3.5 text-white">
+                                    <span className="text-[10px] font-mono font-bold tracking-wider text-amber-300 uppercase">
+                                      {isAr ? 'أسطول الظل وشبكة 2Rivers' : 'Shadow Fleet & 2Rivers Network'}
+                                    </span>
+                                    <span className="text-xs font-sans font-bold line-clamp-1">
+                                      {isAr ? 'تتبع الناقلات: TM Hai Ha 568 وLINXOIL' : 'Tracked Tankers: TM Hai Ha 568 & LINXOIL'}
+                                    </span>
+                                  </div>
+                                </div>
+
+                                {/* Key Metrics Pill Grid */}
+                                <div className="grid grid-cols-2 gap-2 text-center">
+                                  <div className="p-2.5 bg-red-50 border border-red-200">
+                                    <div className="font-mono font-black text-xl md:text-2xl text-red-700">+70%</div>
+                                    <div className="text-[10px] font-sans font-bold text-zinc-700 leading-tight mt-0.5">
+                                      {isAr ? 'فوق القيمة الفعلية' : 'Above Actual Value'}
+                                    </div>
+                                  </div>
+
+                                  <div className="p-2.5 bg-amber-50 border border-amber-200">
+                                    <div className="font-mono font-black text-xl md:text-2xl text-amber-800">60%</div>
+                                    <div className="text-[10px] font-sans font-bold text-zinc-700 leading-tight mt-0.5">
+                                      {isAr ? 'عمليات نقل STS' : 'STS Transfer Rate'}
+                                    </div>
+                                  </div>
+
+                                  <div className="p-2.5 bg-zinc-100 border border-zinc-200">
+                                    <div className="font-mono font-black text-xl md:text-2xl text-zinc-900">20</div>
+                                    <div className="text-[10px] font-sans font-bold text-zinc-700 leading-tight mt-0.5">
+                                      {isAr ? 'ناقلة نفط مرصودة' : 'Tracked Tankers'}
+                                    </div>
+                                  </div>
+
+                                  <div className="p-2.5 bg-zinc-100 border border-zinc-200">
+                                    <div className="font-mono font-black text-xl md:text-2xl text-zinc-900">45$</div>
+                                    <div className="text-[10px] font-sans font-bold text-zinc-700 leading-tight mt-0.5">
+                                      {isAr ? 'سقف G7 للبرميل' : 'G7 Price Cap'}
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="space-y-2 pt-1">
+                                  <button
+                                    onClick={() => {
+                                      setSelectedArticle(fuelLead);
+                                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    className="w-full bg-red-700 hover:bg-red-800 text-white font-sans font-black text-xs py-3 px-4 shadow-[3px_3px_0px_#000] border border-black transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
+                                  >
+                                    <span>{isAr ? 'طالع كامل نص ووثائق التحقيق الاستقصائي' : 'View Full Investigative Dossier'}</span>
+                                    {isAr ? <ArrowLeft size={15} /> : <ArrowRight size={15} />}
+                                  </button>
+
+                                  <button
+                                    onClick={(e) => handleToggleSaveArticle(fuelLead, e)}
+                                    className="w-full bg-white hover:bg-zinc-100 text-zinc-800 font-mono font-bold text-xs py-2 px-3 border border-zinc-300 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                                  >
+                                    <Bookmark size={14} className={savedArticleIds.includes(fuelLead.id) ? "fill-amber-500 text-amber-500" : ""} />
+                                    <span>
+                                      {savedArticleIds.includes(fuelLead.id)
+                                        ? (isAr ? 'محفوظ في أرشيفك' : 'Saved to Archive')
+                                        : (isAr ? 'حفظ التحقيق في الأرشيف الخاص' : 'Bookmark Investigation')
+                                      }
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      ))}
+                      );
+                    })()}
+
+                    <div className="pt-2">
+                      <div className="text-xs font-mono font-black text-zinc-500 uppercase tracking-wider pb-3 border-b border-zinc-200 mb-6 flex justify-between items-center">
+                        <span>{isAr ? 'أحدث ملفات التحقيقات الخاصة المعتمدة' : 'Latest Certified Special Investigation Dossiers'}</span>
+                        <span className="text-xxs font-normal text-zinc-400">{isAr ? 'شبكة العرض الاستقصائي' : 'Grid Display'}</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                        {(specialInvestigationsArticles.length >= 6 ? specialInvestigationsArticles : allArticles).slice(0, 6).map((story) => (
+                          <div key={story.id} className="break-inside-avoid flex flex-col justify-between h-full">
+                            <ArticleCard
+                              article={story}
+                              layoutMode={layoutMode}
+                              language={language}
+                              variant="standard"
+                              onSelect={(article) => setSelectedArticle(article)}
+                              isSaved={savedArticleIds.includes(story.id)}
+                              onToggleSave={handleToggleSaveArticle}
+                              onTagClick={handleTagClick}
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </section>
                 )}
+
+                {/* CURRENT DAILY INTELLIGENCE DISPATCH */}
+                {activeCategory === 'all' && !searchQuery && !selectedArticle && (
+                  <section className="my-8" id="homepage-current-dispatch-section">
+                    <CurrentDispatchSection
+                      language={language}
+                      layoutMode={layoutMode}
+                      articles={allArticles}
+                      subscribers={subscribers}
+                      setSubscribers={setSubscribers}
+                      onNavigateToDispatch={(issueId) => {
+                        setActiveCategory('intelligence-dispatch');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      onSelectArticle={(article) => setSelectedArticle(article)}
+                    />
+                  </section>
+                )}
+
+                {/* Admin-Configured Header and Sidebar Component Injection Panels */}
+                {activeCategory === 'all' && renderWidgetsByLocation('header')}
+                {activeCategory === 'all' && renderWidgetsByLocation('sidebar')}
 
                 {/* 2. FROM THE EDITOR'S DESK (من طاولة رئيس التحرير) */}
                 {(activeCategory === 'all' || activeCategory === 'editor-desk') && editorDeskArticles.length > 0 && (
@@ -2064,6 +2279,20 @@ export default function App() {
                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></span>
                                 {isAr ? 'وثائق سيادية حرة ومفتوحة' : 'DECLASSIFIED CORE INTEL'}
                               </span>
+                              <button
+                                id="terminal-badge-jump-to-lebanon"
+                                onClick={() => {
+                                  const el = document.getElementById('homepage-lebanon-section');
+                                  if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                  }
+                                }}
+                                className="bg-zinc-100 hover:bg-black hover:text-white text-zinc-800 text-[10px] font-mono font-bold px-3 py-1 border border-zinc-300 hover:border-black rounded-xs inline-flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+                                title={isAr ? 'الانتقال المباشر إلى قسم أخبار وقضايا لبنان والشرق الأدنى' : 'Jump directly to Lebanon & Levant Bureau section'}
+                              >
+                                <ArrowUp size={11} className="text-red-700" />
+                                <span>{isAr ? 'الانتقال إلى قسم لبنان ↑' : 'Jump to Lebanon ↑'}</span>
+                              </button>
                             </div>
                             
                             {/* High-Impact Main Title */}
@@ -2186,6 +2415,24 @@ export default function App() {
                                 {isAr 
                                   ? `تنزيل ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'الملف'} PDF` 
                                   : `EXPORT ${DOSSIER_DESKTOP_META[selectedDossierId]?.fileId || 'DOSSIER'} PDF`}
+                              </span>
+                            </button>
+
+                            {/* Jump to Lebanon shortcut button */}
+                            <button
+                              id="terminal-action-jump-to-lebanon"
+                              onClick={() => {
+                                const el = document.getElementById('homepage-lebanon-section');
+                                if (el) {
+                                  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                              }}
+                              className="w-full bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-sans text-xs font-black py-2.5 px-3 uppercase border border-zinc-300 hover:border-black tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer rounded-sm shadow-xs active:translate-y-0.5 group/jumpleb"
+                              title={isAr ? 'الانتقال المباشر إلى قسم أخبار وقضايا لبنان والشرق الأدنى' : 'Jump directly to Lebanon & Levant Bureau section'}
+                            >
+                              <ArrowUp size={13} className="text-red-700 group-hover/jumpleb:-translate-y-0.5 transition-transform" />
+                              <span>
+                                {isAr ? 'الانتقال إلى قسم لبنان والشرق الأدنى ↑' : 'JUMP TO LEBANON BUREAU ↑'}
                               </span>
                             </button>
                           </div>
