@@ -589,7 +589,9 @@ export default function IntelligenceDispatchPage({
                             {/* Article Card Footer Link */}
                             <div className="mt-4 pt-3 border-t border-dashed border-zinc-200 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                               <span className="text-zinc-500 text-[11px] font-bold">
-                                {article.date} • {article.author}
+                                {article.date} • {typeof article.author === 'object' && article.author !== null
+                                  ? (isAr ? article.author.nameAr : article.author.nameEn)
+                                  : (article.author || '')}
                               </span>
 
                               <button
