@@ -126,7 +126,7 @@ export const CRISIS_REGIONS: CrisisRegion[] = [
     statusTextEn: 'DEFCON 2: HIGH COMBAT ALERT // DRONE & USV THREATS',
     synopsisAr: 'ارتفاع أقساط التأمين ضد مخاطر الحرب، تحويل مسارات الشحن عبر رأس الرجاء الصالح، وتسيير قوافل حماية دولية.',
     synopsisEn: 'Surging war-risk insurance premiums, wide container rerouting around Cape of Good Hope, and active naval escort operations.',
-    keywords: ['red sea', 'bab el-mandeb', 'البحر الأحمر', 'باب المندب', 'mandeb', 'suez']
+    keywords: ['red sea', 'bab el-mandeb', 'البحر الأحمر', 'باب المندب', 'mandeb', 'suez', 'houthis', 'حوثي', 'الحوثيين', 'ميون', 'الرياض', 'البحر الأحمر والخليج']
   },
   {
     id: 'syria-iraq',
@@ -385,6 +385,82 @@ interface TacticalDossier {
 }
 
 const TACTICAL_DOSSIERS: TacticalDossier[] = [
+  {
+    id: 'red-sea-gulf-escalation-washington-tehran-riyadh-houthis-2026',
+    codeName: 'OPERATION BAB-EL-MANDEB CHOKEPOINT // RED SEA ESCALATION',
+    titleEn: 'Military Escalation in the Red Sea and the Gulf: Intersecting Interests of Washington, Tehran, Riyadh, and the Houthis',
+    titleAr: 'التصاعد العسكري في البحر الأحمر والخليج: قراءة في تقاطع المصالح بين واشنطن، طهران، الرياض، والحوثيين',
+    summaryEn: 'The region is enduring one of its most intricate military and geopolitical crises as the Red Sea and Bab el-Mandeb strait transform into an open theater of confrontation: renewed frontline friction, Houthi seizure of Mayun Island, emergency shutdowns of Saudi pipelines, and high-stakes strategic friction between Washington, Tehran, Riyadh, and the Houthis.',
+    summaryAr: 'تشهد المنطقة واحدة من أعقد أزماتها العسكرية والجيوسياسية، حيث تحول البحر الأحمر ومضيق باب المندب إلى مسرح مواجهة مفتوحة تتقاطع فيها الحسابات الإقليمية والدولية؛ مع تجدد التصعيد على مسارات ناقلات النفط السعودية، والسيطرة على جزيرة ميون، والتهديدات الموجهة لخط الأنابيب شرق-غرب، في مواجهة بين أربعة فاعلين رئيسيين.',
+    contentEn: `### Military Escalation in the Red Sea and the Gulf: Intersecting Interests of Washington, Tehran, Riyadh, and the Houthis
+
+The region is enduring one of its most intricate military and geopolitical crises as the Red Sea and Bab el-Mandeb strait transform into an open theater of confrontation where regional and global calculations intersect unprecedentedly. With persistent conflict and widening target perimeters, the friction between the Saudi coalition and the Houthis has re-emerged forcefully, while Washington and Tehran find themselves locked in high-stakes strategic friction.
+
+---
+
+### Key Field and Strategic Developments
+
+* **Renewed Field Escalation:** Following relative calm since truce arrangements, frontline sectors witnessed explicit escalation after Houthi attempts to enforce transit restrictions and interdict Saudi tankers transiting the Red Sea, in retaliation against measures targeting their logistical supply lines. *(Hindustan Times)*
+* **Houthi Control Over Critical Chokepoints:** Houthi forces seized strategically vital positions adjacent to the Bab el-Mandeb strait (such as Mayun Island), granting them the operational capacity to threaten commercial navigation and disrupt alternative Saudi crude export routes through the Red Sea. *(The Guardian)*
+* **Targeting Energy Infrastructure:** Missile and loitering munition salvos directed at petroleum corridors and vital facilities prompted Saudi authorities to implement precautionary emergency shutdowns of strategic pipelines (such as the East-West Pipeline), accompanied by stern warnings affirming decisive responses to any threats against sovereign installations. *(The Guardian)*
+
+---
+
+### Positions of Core Strategic Actors
+
+| Actor | Current Posture and Operational Movements |
+| :--- | :--- |
+| **Houthis (Ansar Allah)** | Leveraging regional friction to establish a new deterrence matrix against Riyadh and Washington, targeting shipping tied to Saudi and Western interests to restrict maritime passage and counter economic pressure. |
+| **Kingdom of Saudi Arabia** | Focused on safeguarding Red Sea crude export channels, intensifying diplomatic and defense coordination, while conducting precision strikes to curb Houthi missile-drone inventories and prevent Iranian maritime arms smuggling. |
+| **United States** | Maintaining reluctance regarding open-ended kinetic entanglement inside Yemen, focusing primarily on maritime defense shields while preserving high-level operational coordination with Riyadh via US Central Command (CENTCOM). |
+| **Iran** | Employing proxy deterrence strategies and supplying logistical and weaponization support to the Houthis, while concurrently sustaining backchannel diplomatic tracks with Gulf capitals regarding Hormuz navigation protocols. |
+
+---
+
+### Anticipated Forward Scenarios
+
+1. **Widening Total Confrontation:** Should the Houthis escalate attacks against maritime routes and domestic Saudi energy infrastructure, Washington and Riyadh may be compelled into a joint large-scale air campaign to paralyze the movement's missile launch complexes. *(Hindustan Times)*
+2. **Regional Containment and Accords:** Tehran and Riyadh resorting to quiet backchannel diplomacy (via mediators such as Oman) to de-escalate commercial vessel harassment across Hormuz and Bab el-Mandeb, averting systemic shocks to global hydrocarbon supply chains. *(The Guardian)*
+3. **Protracted Maritime War of Attrition:** Continuation of reciprocal point strikes, cyber disruption, and loitering drone operations beneath the threshold of full-scale war, steadily inflating maritime war-risk insurance premiums and global container freight tariffs. *(The Guardian)*`,
+    contentAr: `### التصاعد العسكري في البحر الأحمر والخليج: قراءة في تقاطع المصالح بين واشنطن، طهران، الرياض، والحوثيين
+
+تشهد المنطقة واحدة من أعقد أزماتها العسكرية والجيوسياسية، حيث تحول البحر الأحمر ومضيق باب المندب إلى مسرح مواجهة مفتوحة تتقاطع فيها الحسابات الإقليمية والدولية بشكل غير مسبوق. ومع استمرار الحرب وتوسع دائرة الاستهدافات، عادت المواجهة بين التحالف السعودي والحوثيين إلى الواجهة، بينما تبدو واشنطن وطهران في حالة تدافع إستراتيجي محفوف بالمخاطر.
+
+---
+
+### أبرز التطورات الميدانية والإستراتيجية
+
+* **تجدد التصعيد الميداني:** بعد هدوء نسبي استمر منذ اتفاق التهدئة، شهدت الجبهات عودة واضحة للتصعيد عقب محاولات الحوثيين فرض قيود وحظر حركة على الناقلات السعودية عبر البحر الأحمر، وذلك رداً على إجراءات استهدفت خطوط إمدادهم. *(Hindustan Times)*
+* **سيطرة الحوثيين على مواقع حيوية:** سيطر الحوثيون على مواقع ذات أهمية استراتيجية قرب مضيق باب المندب (مثل جزيرة ميون)، مما أتاح لهم إمكانية تهديد حركة الملاحة واستهداف مسارات نقل النفط البديلة للرياض عبر البحر الأحمر. *(The Guardian)*
+* **استهداف البنية التحتية للطاقة:** أدت الهجمات الصاروخية وبالمسيرات التي استهدفت خطوط نقل النفط والمرافق الحيوية إلى دفع السعودية لاتخاذ إجراءات احترازية وإغلاق خطوط أنابيب حيوية (مثل خط الأنابيب شرق-غرب)، إضافة إلى تحذيرات شديدة اللهجة بالرد «بحزم» على أي تهديد للمنشآت والمقدسات. *(The Guardian)*
+
+---
+
+### مواقف الفاعلين الأساسيين
+
+| الطرف | الموقف والتحركات الحالية |
+| :--- | :--- |
+| **الحوثيون (أنصار الله)** | استغلال المشهد الإقليمي لفرض معادلة ردع جديدة ضد الرياض وواشنطن، واستهداف حركة السفن المرتبطة بالمصالح السعودية والغربية لحظر الملاحة البحرية ورداً على الضغوط. |
+| **المملكة العربية السعودية** | السعي لتأمين مسارات صادراتها من النفط عبر البحر الأحمر وتكثيف التحركات الدبلوماسية والأمنية، مع توجيه ضربات عسكرية للحد من قدرات الحوثيين ومنع وصول المساعدات الإيرانية لهم. |
+| **الولايات المتحدة الأمريكية** | التحفظ على تورط عسكري مباشر وواسع النطاق ضد الحوثيين باليمن تركيزاً على الأمن البحري، رغم التنسيق العالي والمكثف مع الرياض على مستوى القيادة المركزية (CENTCOM). |
+| **إيران** | استخدام استراتيجية "حروب الوكالة" وتقديم الدعم التسليحي واللوجستي للحوثيين، بالتوازي مع فتح خطوط تواصل دبلوماسية مع دول الخليج للبحث في ترتيبات الملاحة بمضيق هرمز. |
+
+---
+
+### السيناريوهات المرتقبة
+
+1. **اتساع رقعة المواجهة الشاملة:** إذا استمر الحوثيون في استهداف خطوط الملاحة والمرافق النفطية في العمق السعودي، قد يُفرض على واشنطن والرياض تنفيذ حملة عسكرية واسعة النطاق لشل القدرات الصاروخية للجماعة. *(Hindustan Times)*
+2. **الاحتواء والتفاهمات الإقليمية:** لجوء طهران والرياض إلى القنوات الدبلوماسية (عبر وسطاء كعُمان) لتهدئة حركة السفن عبر مضيقي هرمز وباب المندب وتجنب انهيار سلاسل إمداد الطاقة العالمية. *(The Guardian)*
+3. **حرب استنزاف بحرية طويلة المدى:** استمرار الهجمات المتبادلة بأسلوب "الضربات النقطية" والحروب السيبرانية والمسيرات دون الانزلاق إلى حرب شاملة، مما يرفع تكاليف التأمين البحري وشحن البضائع عالمياً. *(The Guardian)*`,
+    threatLevel: 'CRITICAL',
+    regionEn: 'Red Sea, Bab el-Mandeb & Arabian Gulf',
+    regionAr: 'البحر الأحمر ومضيق باب المندب والخليج العربي',
+    coordinates: '12.5833° N, 43.3333° E // SECTOR-MANDAB-03',
+    dateEn: 'September 16, 2026',
+    dateAr: '١٦ أيلول / سبتمبر ٢٠٢٦',
+    sourceEn: 'Naval Intelligence Wire — The Guardian / Hindustan Times / Al-Warraq Assessments',
+    sourceAr: 'استخبارات العمليات البحرية — The Guardian / Hindustan Times / تقديرات الورّاق'
+  },
   {
     id: 'kneeling-under-debt-economic-warfare-iran-bombs-2026',
     codeName: 'OPERATION SOLVENCY SQUEEZE / TREASURY CHOKEPOINT',
@@ -2056,9 +2132,9 @@ export default function WarRoom({
 }: WarRoomProps) {
   const isAr = language === 'ar';
   
-  const [selectedRegionId, setSelectedRegionId] = useState<string>('hormuz-gulf');
+  const [selectedRegionId, setSelectedRegionId] = useState<string>('red-sea');
   const [filterByRegion, setFilterByRegion] = useState<boolean>(false);
-  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('iran-escalation-scenarios-europe-undersea-cables-2026');
+  const [localSelectedDossierId, setLocalSelectedDossierId] = useState<string>('red-sea-gulf-escalation-washington-tehran-riyadh-houthis-2026');
   const [activeMapTool, setActiveMapTool] = useState<'tracker' | 'bypass'>('tracker');
   
   const selectedDossierId = propSelectedDossierId && TACTICAL_DOSSIERS.some(d => d.id === propSelectedDossierId)

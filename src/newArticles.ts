@@ -2,6 +2,593 @@ import { Article } from './types';
 
 export const NEW_ARTICLES: Article[] = [
   {
+    id: 'lebanon-media-law-69-critical-deconstructive-analysis-2026',
+    slug: 'قراءة-نقدية-تفكيكية-قانون-الإعلام-رقم-69-لبنان',
+    focusKeyword: 'قانون-الإعلام-رقم-69-لبنان-الهيئة-الوطنية-للإعلام-حرية-التعبير-الصحافة-التحقيقية',
+    category: 'investigative-reports',
+    categories: ['investigative-reports', 'research-reports', 'special-investigations', 'alwarraq-investigations', 'lebanon', 'governance'],
+    titleAr: 'قراءة نقدية وتفكيكية لقانون الإعلام رقم 69 تاريخ 17 آب 2026: ترويض الرقمنة بمخالب زجرية',
+    titleEn: 'Critical & Deconstructive Legal Reading of Media Law No. 69 (Aug 17, 2026): Taming Digital Freedom with Coercive Claws',
+    summaryAr: 'يقدم القانون رقم 69 لسنة 2026 محاولة لدمج الصحافة التقليدية بالمنصات الرقمية، إلا أنه يسقط في فخ التناقضات الهيكلية عبر إنشاء "هيئة وطنية للإعلام" تتمتع بظاهر من الاستقلالية بينما تبسط ذراعاً رقابياً وزجرياً واسعاً، فضلاً عن فرض عقوبات مالية مغالى فيها وثغرات تُهدد حرية التعبير وإمكانية الوصول إلى المعلومات وعمل الصحافة الاستقصائية.',
+    summaryEn: 'Lebanon Media Law No. 69 of 2026 attempts to integrate traditional journalism with digital platforms, yet falls into structural contradictions by establishing a "National Media Authority" with superficial autonomy while wielding wide supervisory and coercive powers, excessive financial fines, and clauses that jeopardize investigative reporting and free speech.',
+    excerptAr: 'تفكيك قانوني مادة بمادة وبنداً ببند لمواد قانون الإعلام اللبناني الجديد رقم 69: تقييم الإنجازات الحقوقية الكبرى، وتعرية الثغرات الزجرية والتناقضات الهيكلية التي تخنق الإعلام المستقل والتحقيقي.',
+    excerptEn: 'Article-by-article legal forensic breakdown of Lebanon Media Law No. 69: dissecting historical legal breakthroughs alongside punitive traps and subtle censorship mechanisms.',
+    author: {
+      nameAr: 'وحدة الرصد القانوني والتحقيقات / الورّاق',
+      nameEn: 'Legal Forensics & Investigations Desk / Al-Warraq',
+      titleAr: 'قسم التشريعات والحريات العامة والصحافة الاستقصائية',
+      titleEn: 'Public Freedoms, Media Law & Investigative Forensics Unit',
+      avatar: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-16',
+    readTimeAr: '١٤ دقيقة قراءة تفكيكية',
+    readTimeEn: '14 min forensic read',
+    isBreaking: false,
+    isFeatured: true,
+    isPremium: false,
+    views: 62400,
+    tags: [
+      'قانون_الإعلام', 'قانون_رقم_69', 'الهيئة_الوطنية_للإعلام', 'حرية_الصحافة', 'الصحافة_التحقيقية', 'لبنان', 'التوقيف_الاحتياطي', 'المحكمة_العسكرية', 'مبادئ_رابات', 'خطاب_الكراهية', 'حق_الرد', 'الجرائم_الجزائية',
+      'MediaLaw69', 'PressFreedom', 'Lebanon', 'InvestigativeJournalism', 'RabatPlan', 'MediaGovernance', 'Censorship'
+    ],
+    hashtags: ['قانون_الإعلام_69', 'حرية_التعبير', 'الصحافة_الاستقصائية', 'الهيئة_الوطنية_للإعلام', 'لبنان'],
+    contentAr: `### قراءة نقدية وتفكيكية لقانون الإعلام رقم 69 تاريخ 17 آب 2026
+
+يقدم **القانون رقم 69 لسنة 2026** محاولة تشريعية طموحة لدمج الصحافة التقليدية بالمنصات الرقمية ومواكبة الثورة الاتصالية. غير أن التدقيق المتأني في بنوده يكشف عن سقوطه في فخ **التناقضات الهيكلية**؛ فبينما يعلن إنشاء "هيئة وطنية للإعلام" تتمتع بظاهر من الاستقلالية والنزاهة، فإنه يبسط ذراعاً رقابياً وزجرياً واسعاً، ويفرض عقوبات مالية مغالى فيها، ويحتفظ بثغرات خطيرة تُهدد حرية التعبير واستقلالية الصحافة الاستقصائية والوصول الحر للمعلومات.
+
+فيما يلي قراءة تفكيكية نقدية لمواد القانون مادة بمادة وبنداً ببند:
+
+---
+
+### القسم الأول: المؤسسات الإعلامية
+
+#### الباب الأول: الأحكام العامة
+
+* **المادة 1 (التعريفات):**
+  * **تعريف الإعلام:** إدخال مفردات مثل *"مراقبتها والتدقيق فيها وتعديلها"* ضمن تعريف الأعمال الإعلامية يمنح شرعية ضمنية للممارسة المسبقة التعديلية أو الرقابية داخل المؤسسات، وكان حرياً بالتعريف التركيز على النشر والإنتاج الحر المستقل دون تكريس أدوات التعديل والرقابة.
+  * **تعريف «الإعلامي»:** حصر الإعلامي بمن يستمد *"الجزء الأكبر من موارده من هذا العمل"* ويتقاضى *"أجراً أو بدلاً"* هو تعريف كلاسيكي قاصر؛ إذ يعزل الصحافيين المستقلين (Freelancers)، وصناع المحتوى التحقيقي، والنشطاء الحقوقيين الذين يمارسون العمل الصحافي دون التفرغ الكلي أو دون تقاضي أجر ثابت، مما يحرمهم من الحصانات القانونية المقررة في هذا القانون.
+
+* **المادة 2 (مبدأ الحرية):**
+  تفتح عبارة *"ولا يحد من هذه الحرية إلا ما نصت عليه القوانين العامة النافذة..."* الباب واسعاً للالتفاف على حماية حرية الإعلام عبر العودة إلى قوانين فضفاضة كقانون العقوبات وقوانين المصلحة العامة، مما يفرغ النص الحمائي من مضمونه الفعلي.
+
+* **المادة 3 (مبادئ وسياسات عامة):**
+  البند (6) يفرض على الوسائل الترويج لبرامج محددة (مثل الثقافة والتاريخ والتعليم)؛ ورغم إيجابية الهدف ظاهرياً، إلا أن فرض حصص برامجية بقوة القانون يشكل تدخلاً مباشراً في الخط التحريري والاستقلالية البرامجية للمؤسسات الخاصة.
+
+---
+
+#### الباب الثاني: ملكية وسائل الإعلام
+
+* **المادة 4 (الأحزاب والمؤسسات الدينية):**
+  يتيح للبلديات والأحزاب السياسية والمؤسسات الدينية تملك الوسائل الإعلامية، مما يكرس المحاصصة الطائفية والحزبية في المشهد الإعلامي اللبناني بدلاً من الحد منها لتعزيز بيئة إعلامية مستقلة وغير مرتهنة.
+
+* **المادة 5 (منع رعايا الدول العدوة والتمويل غير المباشر):**
+  منع تملك رعايا "الدول العدوة" أمر سيادي مبدئي، لكن غياب المعايير الواضحة للتعريف الضمني لـ *"التمويل غير المباشر"* قد يُستخدم كذريعة سياسية وأمنية للتضييق على وسائل إعلام ومؤسسات تمويل حقوقية أو مستقلة عبر توجيه اتهامات مبهمة لا تستند إلى أدلة مادية.
+
+* **المادة 6 (منع الاستفادة غير المشروعة):**
+  منع الاستفادة غير المشروعة والعقود مع الدولة خيار ممتاز تشريعياً، إلا أن آليات تطبيق بند "الكسب غير المشروع" تحال إلى نصوص قانونية أخرى قد تفتقر إلى النفاذ القضائي السريع والفعال.
+
+* **المادتان 7 و8 (ملكية المرئي والمسموع):**
+  * **ملكية الأجانب (20%):** تحديد نسبة ملكية الأجانب بـ 20% كحد أقصى في الشركات التي تبث برامج سياسية يحجم الاستثمار الخارجي الشفاف ويشجع قنوات التمويل السرية واستخدام "أسماء مستعارة" (Frontmen) محلية.
+  * **الشخص الواحد وتوسيع القرابة:** حصر الملكية بـ "شركة مغفلة لبنانية" تمتلك مؤسسة واحدة فقط منطقي لمنع الاحتكار، لكن تمطيط مفهوم "الشخص الواحد" ليشمل جميع الأقارب والأصهار سيصطدم بصعوبات إجرائية بالغة في الإثبات القانوني والتطبيق الواقعي.
+
+* **المواد 9 إلى 14 (مكاتب التمثيل الأجنبي):**
+  * **المادة 10:** إعفاء مكاتب التمثيل من التسجيل في السجل التجاري والاكتفاء بالعلم والخبر من الهيئة يخلق مساراً إدارياً استثنائياً قد يسبب تخبطاً وتضارباً مع وزارتي المال والعمل.
+  * **المادة 14 (الغرامات الزجرية):** فرض غرامة تتراوح بين 20 و100 ضعف الحد الأدنى للأجور يعد عقوبة مالية زجرية قاسية ومبالغاً فيها، وقد تؤدي إلى خنق مكاتب التمثيل الصغرى والمراسلات المستقلة.
+
+---
+
+#### الباب الثالث: موجبات مالكي وسائل الإعلام
+
+* **المواد 15 إلى 19 (موجب الإعلام والشفافية المالية):**
+  * **المادة 16 (إتاحة السجل للعموم):** إتاحة بيانات السجل الخاص للجمهور مجاناً تطبيقاً لقانون حق الوصول إلى المعلومات تعد خطوة ممتازة تدعم النزاهة والشفافية المؤسسية.
+  * **المادة 18 (الشفافية أثناء الانتخابات):** فرض كشف البيانات المالية التفصيلية (القروض، الهبات العينية والنقدية) خلال أسبوع أثناء الحملات الانتخابية نص ممتاز لمنع التمويل السياسي الفاسد، لكنه يتطلب جهاز تدقيق محاسبي ومالي ضخم لدى الهيئة لتطبيقه واقعياً دون استنسابية (المادة 19).
+
+* **المواد 20 إلى 23 (العقوبات الخاصة):**
+  * **المادة 21 (الإقفال والحل):** تنص على *"الإقفال النهائي الفوري واتخاذ القرار بحل المؤسسات المالكة"*؛ وهي عقوبة بالغة القسوة تتسم بالشطط وتخالف مبدأ تناسب العقوبة مع جسامة المخالفة، كما تفتح الباب على مصراعيه لتصفيات سياسية ضد المنافذ المعارضة.
+  * **المادة 23 (مهلة الإسقاط):** إعطاء مهلة أسبوع بعد الإنذار لإسقاط الملاحقة خطوة إيجابية وتصحيحية تحمي استقرار المؤسسات.
+
+---
+
+#### الباب الرابع: تنظيم وسائل الإعلام
+
+* **المواد 24 إلى 31 (المطبوعات الدورية):**
+  * **المادة 25 (إلغاء الترخيص المسبق):** إلغاء الترخيص المسبق للمطبوعات والاستعاضة عنه بـ "بيان إعلام" (علم وخبر) يُعد مكسباً تاريخياً كبيراً لحرية الصحافة والنشر.
+  * **المادة 27 (اشتراط الإجازة الجامعية):** فرض حيازة إجازة جامعية وخبرة 3 سنوات للمدير المسؤول هو تقييد غير مبرر لحرية العمل الصحافي، فالإدارة التحريرية تعتمد على الكفاءة والخبرة الميدانية لا على الشهادة الأكاديمية الرسمية.
+  * **المادة 31 (الوفاة والحل):** حظر إصدار المطبوعة فور وفاة صاحبها أو حل الشخص المعنوي يضر بالاستمرارية المؤسسية والمالية للصحيفة وحقوق العاملين فيها.
+
+* **المواد 32 إلى 38 (المطبوعات غير الدورية):**
+  * **المادة 34 (إيداع النسخة المسبق):** إيجاب إبلاغ الهيئة بنسخة عن المنشور (كالكتب والدراسات) قبل التوزيع والنشر يمثل شكلاً صريحاً من أشكال الرقابة المسبقة المستترة، حتى وإن استثنت المادة 35 بعض الكتب والدراسات؛ فالمادة 34 تبقى حجر عثرة وسيفاً مسلطاً أمام المنشورات الشعبية والتحليلية المستقلة.
+
+* **المواد 39 إلى 58 (الإذاعة والتلفزيون):**
+  * **المادة 40:** التصنيف المعتمد بين المؤسسات عبر الإنترنت/الأقمار الصناعية (علم وخبر) والبث الترددي الأرضي (ترخيص مسبق) منطقي تقنياً، لكن استناد البند الثاني إلى اتفاقيات ستوكهولم وجنيف القديمة للانتقال للبث الرقمي (تاريخ 2015) يعكس نقلاً حرفياً لنصوص متقادمة دون تحديث زمني لواقع البث التكنولوجي الراهن.
+  * **المادتان 43 و44 (مخطط التراخيص وسعة السوق):** منح الهيئة صلاحية رسم "مخطط التراخيص" وتحديد عدد الرخص بناء على *"القدرة التجارية للسوق"* يفتح الباب للتحكم الاستنسابي بسوق الإعلام وإغلاقه أمام الوافدين الجدد لحماية المحتكرين النافذين بحجة عدم قدرة السوق على الاستيعاب.
+  * **المادة 52 (الفقرة ب - فرض الإنتاج الدرامي):** إلزام الوسائل المرئية بإنتاج 60 ساعة دراما محلية سنوياً وعرض مسرحية شهرياً هو تدخل مباشر وصارخ في الاقتصاد الإعلامي والخط البرامجي والتجاري للشركات الخاصة.
+
+* **المادتان 59 و60 (الوكالات الإعلامية):**
+  اشتراط أن يتأتى نصف رقم أعمال الوكالة من المواد الإعلامية يُشكل تعقيداً محاسبياً للشركات الإعلامية الناشئة والصغرى.
+
+* **المواد 61 إلى 64 (المواقع الإلكترونية الإعلامية):**
+  * **المادة 62 (حرية الإعلام الإلكتروني):** النص الصريح بأن *"الإعلام الإلكتروني حر ولا يخضع لأي موافقة أو ترخيص مسبق"* يمثل خطوة تقدمية ممتازة لحماية البيئة الرقمية.
+  * **المادة 63 (شروط المدير المسؤول في المنصات):** اشتراط تعيين مدير مسؤول لبناني يحمل إجازة جامعية ومتفرغ مقيم للمواقع الإلكترونية المهنية يفرض أعباء مالية وإدارية هائلة على المنصات المستقلة والمواقع التحقيقية الناشئة التي تعمل بميزانيات محدودة وكوادر مرنة.
+
+---
+
+#### البابان الخامس والسادس: الإعلانات واستطلاعات الرأي
+
+* **المادة 66 (احتكار الريجي):** منع شركات الإعلانات (الريجي) من خدمة أكثر من شركة تلفزيونية واحدة خطوة صحية لمنع الاحتكار التجاري وتركز الهيمنة الإعلانية.
+* **المادة 67 (الفقرة أ - مصادقة الإحصاءات):** إكراه مؤسسات الإحصاء على إخضاع دراسات نسب المشاهدة لمصادقة الهيئة يمنح الهيئة سلطة وصاية وتدخل في السوق التجاري والبحثي المستقل.
+* **المادتان 69 و70 (استطلاعات الرأي):** تنظيم نشر استطلاعات الرأي وفرض شفافية العينة وهوية الجهة المموِّلة أمر إيجابي جداً لحماية الرأي العام من التضليل الانتخابي والسياسي.
+
+---
+
+### القسم الثاني: الهيئة الوطنية للإعلام
+
+#### الباب الأول: إنشاء الهيئة وتنظيمها
+
+* **المادة 72 (الاستقلالية والتبعية المالية):**
+  منح الهيئة الاستقلالية المالية والإدارية ومنع السلطة التنفيذية من حلها (الفقرة ج) أمر ممتاز، لكن ربط موازنتها بالخزينة العامة عبر وزارة المالية (المادة 87) يبقي "الحبل السري" المالي ممدوداً للسلطة للضغط عليها وخنقها عند الحاجة.
+
+* **المادة 74 (تركيبة الهيئة وآلية التعيين - المحاصصة المقنعة):**
+  الآلية هجينة ومعقدة؛ فبينما تُنتخب فئات من قبل النقابات والجامعات والهيئات الحقوقية (وهو مؤشر إيجابي)، تعود الفقرة (و) لتمنح مجلس الوزراء حق تعيين 3 أعضاء بأكثرية الثلثين من لائحة يقترحها رئيس الحكومة. هذا البند يعيد إنتاج المحاصصة السياسية والطائفية من الباب الخلفي إلى صلب التكوين التأسيسي للهيئة.
+
+* **المادة 76 (التمانع وتضارب المصالح):**
+  الشروط الصارمة لمنع تضارب المصالح ممتازة ومطلوبة لضمان حيادية وتجرد الأعضاء عن المصالح التجارية والسياسية.
+
+* **المادة 82 (الحصانة الإجرائية):**
+  إعطاء أعضاء الهيئة حصانة إجرائية تمنع الملاحقة القضائية إلا بإذن مسبق منها هو تدبير حمائي إيجابي ضد الكيدية، بشرط ألا يتحول إلى ملاذ للإفلات من المحاسبة.
+
+* **المادة 83 (إنهاء العضوية):**
+  إناطة إنهاء عضوية أي عضو بمجلس الوزراء بأكثرية الثلثين بناء على آلية تحقق قضائية يقلل من الاستبداد الإداري، لكن إبقاء الكلمة الفصل بيد مجلس الوزراء يمثل تهديداً متواصلاً لاستقلالية الأعضاء تجاه قرارات السلطة.
+
+---
+
+#### الأبواب الثاني والثالث والخامس: المهام، التدابير، ومدونات السلوك
+
+* **المادة 89 (مهام الهيئة):**
+  صياغة مهام الهيئة جاءت متوازنة ظاهرياً بين منح التراخيص، تلقي العلم والخبر، وحماية التعددية الإعلامية.
+* **المادة 90 (تدرج التدابير الزجرية):**
+  تدرج التدابير (استيضاح، تنبيه، إنذار، ثم فرض غرامات) أمر إيجابي، لكن المادة تفتقر إلى تحديد دقيق للمدى الزمني المتاح للمؤسسة للاعتراض الإداري والقضائي قبل الشروع في التنفيذ الفعلي للغرامات المالية.
+* **المادتان 95 و96 (مدونات السلوك والعبارات الفضفاضة):**
+  إعداد مدونات السلوك عبر التشاور المفتوح خطوة حميدة، ولكن البنود الواردة في المادة 96 (مثل *"احترام القيم الأسرية"*) تمثل عبارات مطاطية ومبهمة في لغة التشريع؛ إذ يمكن التذرع بها لقمع التعبير عن الرأي وتجريم تناول القضايا الاجتماعية والحريات الفردية تحت مسميات أخلاقية غير محددة المعالم.
+
+---
+
+### القسم الثالث: طرق المراجعة والجرائم الجزائية والأعمال غير المباحة
+
+#### الباب الأول: الرد والتصحيح
+
+* **المادة 98 (حظر تناول القضاء والتحقيقات الجنائية):**
+  حظر تناول القضاء والتحقيقات ما لم تكن "قضية رأي عام"، ومنع نشر محاضر التحقيق منعاً مطلقاً قبل صدور القرار الظني؛ **يمثل ضربة قاصمة للصحافة التحقيقية**. هذا البند يمنع الإعلام من كشف ملفات الفساد والجرائم المالية قبل صدور قرارات قضائية رسمية قد تتعرض للتعطيل أو الضغوط السياسية لسنوات.
+
+* **المادتان 100 و103 (حق الرد والغرامة الإكراهية):**
+  تنظيم حق الرد مفصل ومطلوب، إلا أن فرض نشر الرد بمهل زمنية ضيقة جداً وتحت طائلة الغرامة التهديدية الإكراهية (المادة 103) عبر قاضي الأمور المستعجلة قد يُستغل من قبل النافذين والسياسيين لإغراق المؤسسات الصحافية بالردود والملاحقات المستعجلة لإرباك عملها التحريري.
+
+---
+
+#### الباب الثاني: الجرائم الجزائية والأعمال غير المباحة
+
+* **المادة 104 (التحريض على الكراهية مقابل الأخبار الكاذبة والمؤذية):**
+  * **الفقرة (أ) - خطاب الكراهية واعتماد معايير رابات:** اعتماد اختبار السياق، المقام، النية، الانتشار، واحتمالية الضرر (المستمد حرفياً من **خطة عمل رابات الدولية**) هو إنجاز تشريعي تقدمي ونوعي يُحسب للقانون للحد من الشطط في تفسير وتجريم خطاب الكراهية.
+  * **الفقرة (ب) - الخطر الفادح لإبقاء عقوبة السجن:** تعيد المادة فرض عقوبة السجن (من 3 أشهر إلى 3 سنوات) لـ *"من تعمد اختلاق أضاليل ونشر أخبار كاذبة ومؤذية"*. هذا البند خطير للغاية؛ فعبارة *"أخبار مؤذية"* فضفاضة وسيئة السمعة في التشريعات الاستبدادية، واستمرار خيار الحبس للصحافيين ينسف كلياً الادعاء بحماية الحرية الإعلامية وإلغاء العقوبات السالبة للحرية.
+
+* **المادة 105 (توحيد المرجعية القانونية):**
+  إلغاء تطبيق أحكام القدح والذم والتحقير ونشر الأنباء الكاذبة الواردة في قانون العقوبات والقضاء العسكري على قضايا الإعلام هو خطوة إيجابية استثنائية لتوحيد المرجعية القضائية المدنية.
+
+* **المادتان 107 و108 (القدح والذم وإلغاء المسؤولية الجزائية):**
+  * **إلغاء التجريم الجزائي:** تحويل أفعال القدح والذم إلى أحكام "الأعمال غير المباحة" الخاضعة لقانون الموجبات والعقود (التعويض المدني) بدلاً من العقوبات الجزائية هو تحول تاريخي وإنجاز حقوقي مفصلي لحماية الصحافة من الترهيب.
+  * **تحصين الصحافي وحسن النية:** المادة 108 تلغي المسؤولية إذا كان الفعل المنسوب للموظف العام أو الشخصية العامة مقترناً بـ "حسن النية"، وركز على الوظيفة أو المصلحة العامة، واستند إلى أدلة أو قرائن معقولة، بالإضافة إلى إجازة كشف السرية المهنية دفاعاً عن النفس؛ وهذا يُعد مكسباً استثنائياً وصريحاً للصحافة التحقيقية ومكافحة الفساد.
+
+* **المادة 113 (إنهاء محاكمة الصحافيين عسكرياً):**
+  إلغاء صلاحية المحكمة العسكرية كلياً بالنسبة لجميع قضايا وجرائم الرأي والنشر والإعلام؛ إنجاز حقوقي كبير يُنهي عقوداً من استدعاء ومحاكمة المدنيين والصحافيين أمام القضاء العسكري الاستثنائي.
+
+* **المادة 114 (الحظر المطلق للتوقيف الاحتياطي):**
+  منع التوقيف الاحتياطي منعاً باتاً في الجرائم كافة التي تتم بواسطة وسائل الإعلام أو المنصات الإلكترونية أياً كانت صفة الفاعل؛ نص جوهري ومفصلي يمنع استخدام التوقيف الاحتياطي كأداة عقاب وانتقام مسبق بحق أصحاب الرأي.
+
+---
+
+### جدول المقارنة التقييمية لمخرجات القانون رقم 69/2026
+
+| المحور التشريعي | المكتسبات الحقوقية الإيجابية | الثغرات والمخاطر الزجرية والرقابية |
+| :--- | :--- | :--- |
+| **الحريات الشخصية والتقاضي** | • إلغاء التوقيف الاحتياطي كلياً (المادة 114)<br>• إلغاء اختصاص المحكمة العسكرية (المادة 113)<br>• نزع الطابع الجرمي عن القدح والذم وتحويله لتعويض مدني (107) | • الإبقاء على عقوبة السجن حتى 3 سنوات بتهمة "الأخبار الكاذبة والمؤذية" الفضفاضة (104/ب)<br>• غرامات تهديدية إكراهية عبر قاضي الأمور المستعجلة (103) |
+| **الصحافة التحقيقية** | • إقرار مبدأ "حسن النية" والمصلحة العامة لإسقاط المسؤولية (108)<br>• إجازة كشف السرية المهنية لحماية النفس وإثبات الفساد<br>• اعتماد معايير رابات الدولية لخطاب الكراهية (104/أ) | • حظر نشر محاضر التحقيق قبل القرار الظني مما يشل تحقيقات الفساد (98)<br>• اشتراط حيازة إجازة جامعية للإدارة التحريرية (27)<br>• تعريف قاصر لـ "الإعلامي" يحرم المستقلين من الحصانات (1) |
+| **الهيئة الوطنية للإعلام** | • استقلالية إدارية تمنع السلطة التنفيذية من حلها تعسفياً (72)<br>• شروط مشددة لمنع تضارب المصالح (76)<br>• تمثيل انتخابي للنقابات والجامعات والحقوقيين | • تعيين 3 أعضاء عبر مجلس الوزراء بثلثي الأصوات يكرس المحاصصة (74)<br>• ربط الموازنة بوزارة المالية يهدد استقلاليتها (87)<br>• مصطلحات فضفاضة بمدونات السلوك مثل "القيم الأسرية" (96) |
+| **الإعلام الرقمي والمؤسسات** | • إلغاء الترخيص المسبق للمطبوعات والمواقع والاكتفاء بالعلم والخبر (25 و62)<br>• إتاحة بيانات الملكية للعموم تطبيقاً لحق الوصول للمعلومات (16)<br>• منع احتكار شركات الإعلانات للوسائل (66) | • عقوبة الإقفال الفوري والحل النهائي للمؤسسات دون تناسب (21)<br>• إلزام المواقع بمدير متفرغ مجاز يرهق المنصات المستقلة (63)<br>• إيداع المنشورات غير الدورية قبل النشر كرقابة مسبقة (34) |
+
+---
+
+### الخلاصة التنفيذية
+
+يمتلك القانون رقم 69 لسنة 2026 نقاط قوة تاريخية لا يمكن إنكارها، تتمثل في: **إلغاء التوقيف الاحتياطي، إلغاء صلاحية المحكمة العسكرية، تحويل القدح والذم إلى نزاع مدني تعويضي، واعتماد معايير رابات الدولية لخطاب الكراهية**.
+
+غير أن هذه الإيجابيات تظل مهددة بفعل:
+1. **الإبقاء على عقوبة السجن** في بند "الأخبار الكاذبة والمؤذية" (المادة 104/ب).
+2. **إدخال التعيين السياسي** في تشكيل الهيئة الوطنية للإعلام عبر مجلس الوزراء (المادة 74).
+3. **فرض شروط تعجيزية وقيود إدارية** على الإعلام الإلكتروني والمستقل (المادة 63).
+4. **التضييق على الصحافة التحقيقية** في قضايا القضاء ومحاضر التحقيق (المادة 98).
+5. **التلويح بعقوبات الإقفال النهائي الفوري** للشركات (المادة 21) والغرامات المالية الباهظة.`,
+    contentEn: `### A Critical and Deconstructive Legal Reading of Media Law No. 69 (August 17, 2026)
+
+**Law No. 69 of 2026** represents an ambitious legislative initiative seeking to merge traditional journalism with emerging digital platforms. However, a meticulous legal forensic examination reveals that it falls into acute **structural contradictions**: while establishing a ostensibly independent "National Media Authority," it simultaneously equips it with broad supervisory and punitive powers, imposes disproportionately severe financial penalties, and preserves alarming loopholes that threaten press freedom, public access to information, and independent investigative reporting.
+
+Below is an article-by-article, clause-by-clause deconstructive legal critique of the statute:
+
+---
+
+### Part One: Media Institutions
+
+#### Chapter One: General Provisions
+
+* **Article 1 (Definitions):**
+  * **Definition of Media Work:** Incorporating phrases such as *"monitoring, inspecting, and editing"* into the statutory definition of media activities grants implicit legitimacy to prior censorship and arbitrary editorial tampering within newsrooms. The law should have anchored the definition strictly around uninhibited, independent production and dissemination.
+  * **Definition of "Journalist / Media Worker":** Restricting the definition strictly to individuals who derive *"the primary share of their livelihood from this occupation"* and receive *"a regular salary or contractual compensation"* is an outdated, restrictive formulation. It leaves freelance investigative journalists, digital creators, and civic researchers entirely stripped of statutory legal protections and safe harbors.
+
+* **Article 2 (The Principle of Freedom):**
+  The qualifying clause *"This freedom shall not be restricted except as stipulated by existing public laws..."* creates an expansive gateway for authorities to bypass media freedoms by invoking vague provisions in the general Penal Code and state-security statutes.
+
+* **Article 3 (General Principles and Policies):**
+  Clause (6) mandates private media outlets to broadcast designated programming quotas (such as state history, cultural preservation, and civic education). While seemingly noble, legislatively coercing program quotas constitutes direct infringement upon editorial autonomy.
+
+---
+
+#### Chapter Two: Ownership of Media Outlets
+
+* **Article 4 (Political Parties and Religious Entities):**
+  Permitting municipalities, political parties, and sectarian religious foundations to own media conglomerates entrenches sectarian-political clientelism across the media landscape, rather than curbing political patronage to foster genuine public-interest journalism.
+
+* **Article 5 (Foreign Enemy Citizens and Indirect Funding):**
+  Banning individuals from "enemy states" from media ownership is a recognized sovereign clause; however, the lack of defined parameters for *"indirect funding"* offers a pretext for arbitrary security clampdowns against independent media platforms and human rights funders.
+
+* **Article 6 (Illicit Enrichment):**
+  Barring illicit enrichment and preferential state contracting is commendable, but the enforcement mechanisms rely on slow and obstructed anti-corruption statutes.
+
+* **Articles 7 & 8 (Audiovisual Ownership):**
+  * **Foreign Equity Cap (20%):** Limiting foreign equity to 20% in entities broadcasting political commentary stifles transparent international venture capital and fuels domestic frontmen (*straw men*) arrangements.
+  * **Single Ownership & Kinship Reach:** Restricting ownership to a Lebanese joint-stock company operating a single institution curbs monopolization, yet stretching the definition of "single person" to encompass all relatives and in-laws will provoke insurmountable evidentiary disputes.
+
+* **Articles 9 to 14 (Foreign Representative Bureaus):**
+  * **Article 10:** Exempting foreign bureaus from the Commercial Register in exchange for simple notification to the Authority creates administrative confusion with the Ministries of Finance and Labor.
+  * **Article 14 (Punitive Fines):** Imposing fines ranging from 20 to 100 times the national minimum wage constitutes an exorbitant, coercive penalty capable of bankrupting small foreign correspondents and non-profit bureaus.
+
+---
+
+#### Chapter Three: Obligations of Media Owners
+
+* **Articles 15 to 19 (Transparency and Electoral Disclosure):**
+  * **Article 16 (Public Register Access):** Making media ownership data publicly accessible free of charge in accordance with Access to Information principles is an exemplary step forward.
+  * **Article 18 (Electoral Campaign Audits):** Requiring immediate disclosure of financial statements, loans, and in-kind contributions within one week during campaign seasons is vital to curb corrupt political money, though it demands immense forensic audit capacity within the Authority (Article 19).
+
+* **Articles 20 to 23 (Special Sanctions):**
+  * **Article 21 (Immediate Liquidation & Dissolution):** Authorizing *"immediate and final closure and judicial liquidation of owning companies"* is an extreme, disproportionate measure that violates legal proportionality and enables political purges.
+  * **Article 23 (Grace Period):** Granting a one-week rectification window post-warning prior to prosecution is a constructive safeguard.
+
+---
+
+#### Chapter Four: Regulation of Media Outlets
+
+* **Articles 24 to 31 (Periodic Publications):**
+  * **Article 25 (Abolition of Prior Licensing):** Replacing prior licensing with a declaratory notification (statement of establishment) is a monumental triumph for press liberty.
+  * **Article 27 (Mandatory Academic Degree):** Requiring an academic university degree and 3 years of experience for managing editors is an unjustified barrier to entry; editorial competence is forged through craft, integrity, and investigative merit, not formalized degrees.
+  * **Article 31 (Death of Publisher):** Halting publication immediately upon the death of the owner jeopardizes corporate continuity and workers' rights.
+
+* **Articles 32 to 38 (Non-Periodic Publications):**
+  * **Article 34 (Mandatory Advance Deposit):** Requiring copies of books, pamphlets, and studies to be deposited with the Authority prior to commercial circulation constitutes subtle prior censorship over independent policy papers and grassroots literature.
+
+* **Articles 39 to 58 (Broadcasting & Audiovisual Media):**
+  * **Article 40 (Frequency Licensing vs. Digital):** Relying on outdated Stockholm/Geneva digital migration accords (dating back to 2015) illustrates verbatim transcription of archaic provisions disconnected from current IP broadcasting.
+  * **Articles 43 & 44 (Licensing Market Cap):** Empowering the Authority to cap licenses based on *"commercial market absorption capacity"* invites subjective protectionism to safeguard entrenched oligarchic channels from new entrants.
+  * **Article 52(b) (Mandatory Drama Production):** Forcing TV stations to produce 60 hours of local drama annually and air monthly theatrical plays is a heavy-handed intrusion into private business models.
+
+* **Articles 61 to 64 (Digital and Online Media):**
+  * **Article 62 (Digital Freedom):** Explicitly declaring that *"Electronic media is free and subject to no prior authorization or licensing"* is a progressive pillar.
+  * **Article 63 (Managing Editor Restrictions):** Mandating digital platforms to employ a full-time, resident Lebanese university-educated managing editor places punitive operational costs on lean, independent investigative startups.
+
+---
+
+#### Chapters Five & Six: Advertising & Opinion Polls
+
+* **Article 66 (Regie Anti-Monopoly):** Barring ad sales agencies from representing more than one television entity prevents advertising monopolies.
+* **Article 67(a) (Audience Rating Certification):** Compelling statistical firms to submit TV viewership metrics to the Authority for certification grants government oversight over commercial market analytics.
+* **Articles 69 & 70 (Polling Transparency):** Mandating full disclosure of methodology, sample size, and funding sources for opinion polls protects civic discourse from electoral manipulation.
+
+---
+
+### Part Two: The National Media Authority
+
+#### Chapter One: Establishment & Governance
+
+* **Article 72 (Administrative vs. Fiscal Autonomy):**
+  Protecting the Authority from cabinet dissolution (Clause c) is commendable, yet tying its budget directly to the Ministry of Finance (Article 87) preserves political leverage over its purse strings.
+
+* **Article 74 (Appointment Mechanism & Political Quotas):**
+  While electing representatives from bar associations, universities, and press syndicates is progressive, Clause (f) allows the Council of Ministers to appoint 3 members by a two-thirds majority from a list submitted by the Prime Minister—re-injecting sectarian horse-trading into the regulator.
+
+* **Article 76 (Conflict of Interest):**
+  Stringent incompatibilities and financial disclosures prevent commercial capture of regulatory board members.
+
+* **Articles 82 & 83 (Immunity and Dismissal):**
+  Granting procedural immunity against harassment is sound, but reserving final member dismissal to a two-thirds cabinet vote maintains an executive sword over board independence.
+
+---
+
+#### Chapters Two, Three, & Five: Mandates, Measures, and Codes of Conduct
+
+* **Article 90 (Sanctions Escalation):**
+  Graduated sanctions (clarification, warning, formal notice, fines) are structured well, but the law fails to establish a clear timeline for administrative appeals before fines are enforced.
+* **Articles 95 & 96 (Vague Behavioral Norms):**
+  Drafting codes of conduct via open stakeholder consultation is progressive; however, statutory phrases like *"respecting family values"* (Article 96) serve as ambiguous pretexts to suppress reporting on social rights and civil liberties.
+
+---
+
+### Part Three: Remedies, Offenses, and Unlawful Acts
+
+#### Chapter One: Right of Reply and Rectification
+
+* **Article 98 (Draconian Gag on Judicial Coverage):**
+  Prohibiting news coverage of judicial inquiries unless declared a "matter of public interest," and **strictly outlawing the publication of investigative case records before the indictment stage**, inflicts a devastating blow against investigative reporting, shielding high-profile corruption from public exposure during prolonged procedural freezes.
+
+* **Articles 100 & 103 (Coercive Daily Fines):**
+  While the right of reply is legitimate, imposing rigid publication deadlines backed by daily coercive penalties issued through summary courts enables litigious public figures to bombard media outlets with punitive filings.
+
+---
+
+#### Chapter Two: Criminal Offenses and Unlawful Acts
+
+* **Article 104 (Hate Speech vs. "Harmful False News"):**
+  * **Paragraph (A) - Rabat Plan of Action:** Incorporating the internationally vetted Rabat thresholds (context, speaker status, intent, reach, and probability of harm) is a monumental legislative advance preventing abusive hate-speech prosecutions.
+  * **Paragraph (B) - The Return of Prison Sentences:** Re-imposing imprisonment (3 months to 3 years) for *"deliberately fabricating and disseminating false and harmful news"* is a catastrophic flaw. The term *"harmful news"* is notoriously weaponized by authoritarian regimes, completely undermining claims that the law abolishes custodial sentences for journalists.
+
+* **Article 105 (Unified Jurisdiction):**
+  Exempting press offenses from the general Penal Code and Military Court codes consolidates jurisdiction strictly under civil and press courts.
+
+* **Articles 107 & 108 (Decriminalizing Defamation & Good Faith Defense):**
+  * **Decriminalization:** Reclassifying slander and defamation from criminal offenses into torts under the Code of Obligations and Contracts (civil damages only) is an epochal achievement.
+  * **Good Faith Harbor:** Article 108 eliminates liability if reports on public officials are made in *"good faith,"* serve the public interest, and rest on reasonable evidence, while authorizing the disclosure of professional secrecy for self-defense—providing historic legal armor for anti-corruption investigations.
+
+* **Article 113 (Abolition of Military Court Jurisdiction):**
+  Terminating all Military Court jurisdiction over journalists and speech offenses definitively halts the trial of civilians before military tribunals.
+
+* **Article 114 (Absolute Prohibition of Pretrial Detention):**
+  Categorically banning pretrial detention in all media and digital communication cases regardless of the perpetrator's status guarantees that incarceration cannot be deployed as pretrial retaliation.
+
+---
+
+### Comprehensive Comparative Assessment Matrix: Law 69/2026
+
+| Legislative Dimension | Landmark Rights & Freedoms | Punitive Traps & Regulatory Risks |
+| :--- | :--- | :--- |
+| **Personal Freedoms & Due Process** | • Categorical ban on pretrial detention (Art. 114)<br>• Complete abolition of Military Court jurisdiction (Art. 113)<br>• Decriminalization of defamation into civil compensation (Art. 107) | • Retaining 3-year prison terms for vague "harmful false news" (Art. 104/B)<br>• Daily coercive fines through expedited judicial orders (Art. 103) |
+| **Investigative Journalism** | • "Good Faith" & public interest complete liability exemptions (Art. 108)<br>• Right to breach professional secrecy in self-defense<br>• Adoption of Rabat Plan standards for hate speech (Art. 104/A) | • Absolute ban on publishing investigative files before formal indictments (Art. 98)<br>• Academic degree prerequisites for editorial directors (Art. 27)<br>• Narrow definition of "journalist" excluding freelancers (Art. 1) |
+| **National Media Authority** | • Structural immunity against executive dissolution (Art. 72)<br>• Strict conflict-of-interest prohibitions (Art. 76)<br>• Democratic election of syndicate and civil society seats | • Cabinet appointment of 3 board members re-injects political quotas (Art. 74)<br>• Budget dependency on Ministry of Finance (Art. 87)<br>• Vague code of conduct mandates ("family values") (Art. 96) |
+| **Digital Platforms & Outlets** | • Elimination of prior licensing in favor of declaratory notice (Arts. 25 & 62)<br>• Public access to ownership registries (Art. 16)<br>• Prevention of commercial advertising monopolies (Art. 66) | • Immediate liquidation and permanent closure sanctions (Art. 21)<br>• Unrealistic staffing prerequisites for independent digital portals (Art. 63)<br>• Mandatory prior deposit of non-periodic literature (Art. 34) |
+
+---
+
+### Executive Conclusion
+
+Lebanon's Media Law No. 69 of 2026 contains indisputable historical milestones: **abolishing pretrial detention, stripping the Military Court of jurisdiction over journalists, decriminalizing defamation into civil damages, and institutionalizing the Rabat Plan thresholds**.
+
+Nonetheless, these accomplishments remain heavily compromised by:
+1. **Preserving custodial sentences** under the weaponized banner of "false and harmful news" (Article 104/b).
+2. **Sectarian political appointments** embedded in the National Media Authority (Article 74).
+3. **Imposing crippling administrative requirements** on independent and freelance digital newsrooms (Article 63).
+4. **Paralyzing investigative reporting** into judicial corruption and pre-indictment forensic disclosures (Article 98).
+5. **Brandishing immediate permanent shutdown sanctions** (Article 21) accompanied by disproportionate financial fines.`
+  },
+  {
+    id: 'red-sea-gulf-escalation-washington-tehran-riyadh-houthis-2026',
+    slug: 'التصاعد-العسكري-في-البحر-الأحمر-والخليج-واشنطن-طهران-الرياض-الحوثيون',
+    focusKeyword: 'التصاعد-العسكري-البحر-الأحمر-الخليج-واشنطن-طهران-الرياض-الحوثيون-باب-المندب-ميون',
+    category: 'war-room',
+    categories: ['war-room', 'middle-east', 'oil-energy', 'special-investigations', 'alwarraq-investigations'],
+    titleAr: 'التصاعد العسكري في البحر الأحمر والخليج: قراءة في تقاطع المصالح بين واشنطن، طهران، الرياض، والحوثيين',
+    titleEn: 'Military Escalation in the Red Sea and the Gulf: Intersecting Interests of Washington, Tehran, Riyadh, and the Houthis',
+    summaryAr: 'تشهد المنطقة واحدة من أعقد أزماتها العسكرية والجيوسياسية، حيث تحول البحر الأحمر ومضيق باب المندب إلى مسرح مواجهة مفتوحة تتقاطع فيها الحسابات الإقليمية والدولية؛ مع تجدد التصعيد على مسارات ناقلات النفط السعودية، والسيطرة على جزيرة ميون، والتهديدات الموجهة لخط الأنابيب شرق-غرب، في مواجهة بين أربعة فاعلين رئيسيين.',
+    summaryEn: 'The region is enduring one of its most intricate military and geopolitical crises as the Red Sea and Bab el-Mandeb strait transform into an open theater of confrontation: renewed frontline friction, Houthi seizure of Mayun Island, emergency shutdowns of Saudi pipelines, and high-stakes strategic friction between Washington, Tehran, Riyadh, and the Houthis.',
+    excerptAr: 'قراءة استراتيجية في تقاطع المصالح بين واشنطن وطهران والرياض والحوثيين بعد تجدد التصعيد في البحر الأحمر والسيطرة على جزيرة ميون واستهداف البنية التحتية للطاقة.',
+    excerptEn: 'Strategic assessment of intersecting interests between Washington, Tehran, Riyadh, and the Houthis amidst renewed Red Sea escalation and threats to energy corridors.',
+    author: {
+      nameAr: 'غرفة العمليات الاستراتيجية / الورّاق',
+      nameEn: 'War Room Strategic Bureau / Al-Warraq',
+      titleAr: 'وحدة الرصد العسكري وملاحة المضائق',
+      titleEn: 'Military Intelligence & Maritime Chokepoints Desk',
+      avatar: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-16',
+    readTimeAr: '٨ دقائق قراءة عسكرية',
+    readTimeEn: '8 min strategic read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 48900,
+    tags: [
+      'غرفة_العمليات', 'البحر_الأحمر', 'باب_المندب', 'الخليج_العربي', 'الحوثيون', 'الرياض', 'واشنطن', 'طهران', 'جزيرة_ميون', 'خط_أنابيب_شرق_غرب', 'سلاسل_إمداد_الطاقة',
+      'WarRoom', 'RedSea', 'BabElMandeb', 'Houthis', 'SaudiArabia', 'CENTCOM', 'Tehran', 'EnergySecurity'
+    ],
+    hashtags: ['غرفة_العمليات', 'البحر_الأحمر', 'باب_المندب', 'الحوثيون', 'الخليج_العربي', 'RedSeaEscalation'],
+    contentAr: `### التصاعد العسكري في البحر الأحمر والخليج: قراءة في تقاطع المصالح بين واشنطن، طهران، الرياض، والحوثيين
+
+تشهد المنطقة واحدة من أعقد أزماتها العسكرية والجيوسياسية، حيث تحول البحر الأحمر ومضيق باب المندب إلى مسرح مواجهة مفتوحة تتقاطع فيها الحسابات الإقليمية والدولية بشكل غير مسبوق. ومع استمرار الحرب وتوسع دائرة الاستهدافات، عادت المواجهة بين التحالف السعودي والحوثيين إلى الواجهة، بينما تبدو واشنطن وطهران في حالة تدافع إستراتيجي محفوف بالمخاطر.
+
+---
+
+### أبرز التطورات الميدانية والإستراتيجية
+
+* **تجدد التصعيد الميداني:** بعد هدوء نسبي استمر منذ اتفاق التهدئة، شهدت الجبهات عودة واضحة للتصعيد عقب محاولات الحوثيين فرض قيود وحظر حركة على الناقلات السعودية عبر البحر الأحمر، وذلك رداً على إجراءات استهدفت خطوط إمدادهم. *(Hindustan Times)*
+* **سيطرة الحوثيين على مواقع حيوية:** سيطر الحوثيون على مواقع ذات أهمية استراتيجية قرب مضيق باب المندب (مثل جزيرة ميون)، مما أتاح لهم إمكانية تهديد حركة الملاحة واستهداف مسارات نقل النفط البديلة للرياض عبر البحر الأحمر. *(The Guardian)*
+* **استهداف البنية التحتية للطاقة:** أدت الهجمات الصاروخية وبالمسيرات التي استهدفت خطوط نقل النفط والمرافق الحيوية إلى دفع السعودية لاتخاذ إجراءات احترازية وإغلاق خطوط أنابيب حيوية (مثل خط الأنابيب شرق-غرب)، إضافة إلى تحذيرات شديدة اللهجة بالرد «بحزم» على أي تهديد للمنشآت والمقدسات. *(The Guardian)*
+
+---
+
+### مواقف الفاعلين الأساسيين
+
+| الطرف | الموقف والتحركات الحالية |
+| :--- | :--- |
+| **الحوثيون (أنصار الله)** | استغلال المشهد الإقليمي لفرض معادلة ردع جديدة ضد الرياض وواشنطن، واستهداف حركة السفن المرتبطة بالمصالح السعودية والغربية لحظر الملاحة البحرية ورداً على الضغوط. |
+| **المملكة العربية السعودية** | السعي لتأمين مسارات صادراتها من النفط عبر البحر الأحمر وتكثيف التحركات الدبلوماسية والأمنية، مع توجيه ضربات عسكرية للحد من قدرات الحوثيين ومنع وصول المساعدات الإيرانية لهم. |
+| **الولايات المتحدة الأمريكية** | التحفظ على تورط عسكري مباشر وواسع النطاق ضد الحوثيين باليمن تركيزاً على الأمن البحري، رغم التنسيق العالي والمكثف مع الرياض على مستوى القيادة المركزية (CENTCOM). |
+| **إيران** | استخدام استراتيجية "حروب الوكالة" وتقديم الدعم التسليحي واللوجستي للحوثيين، بالتوازي مع فتح خطوط تواصل دبلوماسية مع دول الخليج للبحث في ترتيبات الملاحة بمضيق هرمز. |
+
+---
+
+### السيناريوهات المرتقبة
+
+1. **اتساع رقعة المواجهة الشاملة:** إذا استمر الحوثيون في استهداف خطوط الملاحة والمرافق النفطية في العمق السعودي، قد يُفرض على واشنطن والرياض تنفيذ حملة عسكرية واسعة النطاق لشل القدرات الصاروخية للجماعة. *(Hindustan Times)*
+2. **الاحتواء والتفاهمات الإقليمية:** لجوء طهران والرياض إلى القنوات الدبلوماسية (عبر وسطاء كعُمان) لتهدئة حركة السفن عبر مضيقي هرمز وباب المندب وتجنب انهيار سلاسل إمداد الطاقة العالمية. *(The Guardian)*
+3. **حرب استنزاف بحرية طويلة المدى:** استمرار الهجمات المتبادلة بأسلوب "الضربات النقطية" والحروب السيبرانية والمسيرات دون الانزلاق إلى حرب شاملة، مما يرفع تكاليف التأمين البحري وشحن البضائع عالمياً. *(The Guardian)*`,
+    contentEn: `### Military Escalation in the Red Sea and the Gulf: Intersecting Interests of Washington, Tehran, Riyadh, and the Houthis
+
+The region is enduring one of its most intricate military and geopolitical crises as the Red Sea and Bab el-Mandeb strait transform into an open theater of confrontation where regional and global calculations intersect unprecedentedly. With persistent conflict and widening target perimeters, the friction between the Saudi coalition and the Houthis has re-emerged forcefully, while Washington and Tehran find themselves locked in high-stakes strategic friction.
+
+---
+
+### Key Field and Strategic Developments
+
+* **Renewed Field Escalation:** Following relative calm since truce arrangements, frontline sectors witnessed explicit escalation after Houthi attempts to enforce transit restrictions and interdict Saudi tankers transiting the Red Sea, in retaliation against measures targeting their logistical supply lines. *(Hindustan Times)*
+* **Houthi Control Over Critical Chokepoints:** Houthi forces seized strategically vital positions adjacent to the Bab el-Mandeb strait (such as Mayun Island), granting them the operational capacity to threaten commercial navigation and disrupt alternative Saudi crude export routes through the Red Sea. *(The Guardian)*
+* **Targeting Energy Infrastructure:** Missile and loitering munition salvos directed at petroleum corridors and vital facilities prompted Saudi authorities to implement precautionary emergency shutdowns of strategic pipelines (such as the East-West Pipeline), accompanied by stern warnings affirming decisive responses to any threats against sovereign installations. *(The Guardian)*
+
+---
+
+### Positions of Core Strategic Actors
+
+| Actor | Current Posture and Operational Movements |
+| :--- | :--- |
+| **Houthis (Ansar Allah)** | Leveraging regional friction to establish a new deterrence matrix against Riyadh and Washington, targeting shipping tied to Saudi and Western interests to restrict maritime passage and counter economic pressure. |
+| **Kingdom of Saudi Arabia** | Focused on safeguarding Red Sea crude export channels, intensifying diplomatic and defense coordination, while conducting precision strikes to curb Houthi missile-drone inventories and prevent Iranian maritime arms smuggling. |
+| **United States** | Maintaining reluctance regarding open-ended kinetic entanglement inside Yemen, focusing primarily on maritime defense shields while preserving high-level operational coordination with Riyadh via US Central Command (CENTCOM). |
+| **Iran** | Employing proxy deterrence strategies and supplying logistical and weaponization support to the Houthis, while concurrently sustaining backchannel diplomatic tracks with Gulf capitals regarding Hormuz navigation protocols. |
+
+---
+
+### Anticipated Forward Scenarios
+
+1. **Widening Total Confrontation:** Should the Houthis escalate attacks against maritime routes and domestic Saudi energy infrastructure, Washington and Riyadh may be compelled into a joint large-scale air campaign to paralyze the movement's missile launch complexes. *(Hindustan Times)*
+2. **Regional Containment and Accords:** Tehran and Riyadh resorting to quiet backchannel diplomacy (via mediators such as Oman) to de-escalate commercial vessel harassment across Hormuz and Bab el-Mandeb, averting systemic shocks to global hydrocarbon supply chains. *(The Guardian)*
+3. **Protracted Maritime War of Attrition:** Continuation of reciprocal point strikes, cyber disruption, and loitering drone operations beneath the threshold of full-scale war, steadily inflating maritime war-risk insurance premiums and global container freight tariffs. *(The Guardian)*`
+  },
+  {
+    id: 'beirut-port-blast-indictment-aoun-70-officials-2026',
+    slug: 'انفجار-مرفأ-بيروت-مطالعة-التمييزية-اتهام-ميشال-عون-70-مسؤولا',
+    focusKeyword: 'انفجار-مرفأ-بيروت-ميشال-عون-طارق-البيطار-محمد-صعب-النيابة-التمييزية-نترات-الأمونيوم-العربي-الجديد',
+    category: 'lebanon',
+    categories: ['lebanon', 'special-investigations', 'exclusives', 'alwarraq-investigations'],
+    titleAr: 'تطور قضائي مفصلي في انفجار مرفأ بيروت: النيابة التمييزية تطلب اتهام ميشال عون و70 مسؤولاً بالقصد الاحتمالي والإهمال',
+    titleEn: 'Watershed Judicial Shift in Beirut Port Blast: Cassation Prosecution Demands Indictment of Michel Aoun and 70 Officials',
+    summaryAr: 'شهدت قضية انفجار مرفأ بيروت (4 آب 2020) تطوراً قضائياً مفصلياً يُعدّ الأكثر جرأة منذ سنوات؛ حيث رفعت النيابة العامة التمييزية في لبنان (عبر القاضي محمد صعب) مطالعتها للمحقق العدلي القاضي طارق البيطار، طالبةً توجيه الاتهام الرسمي لأكثر من 70 شخصية سياسية وأمنية وقضائية، وعلى رأسهم رئيس الجمهورية السابق ميشال عون استناداً إلى "التقصير والإهمال والقصد الاحتمالي".',
+    summaryEn: 'In a landmark judicial breakthrough, Lebanon’s Court of Cassation Public Prosecution (via Judge Mohammad Saab) has submitted its formal plea to Judicial Investigator Judge Tarek Bitar, demanding criminal indictment against over 70 high-ranking political, military, security, and administrative figures—led by former President Michel Aoun on grounds of criminal negligence and probable intent in the August 4 port blast.',
+    excerptAr: 'النيابة العامة التمييزية ترفع مطالعتها للمحقق العدلي طارق البيطار وتطلب توجيه الاتهام الرسمي لرئيس الجمهورية السابق ميشال عون و70 شخصية سياسية وأمنية وقضائية.',
+    excerptEn: 'Lebanon’s Cassation Public Prosecution submits historic plea to Judge Tarek Bitar requesting formal indictment of former President Michel Aoun and 70 senior officials.',
+    author: {
+      nameAr: 'العربي الجديد / الورّاق',
+      nameEn: 'Al-Araby Al-Jadeed / Al-Warraq',
+      titleAr: 'مكتب التحقيقات القضائية والشؤون اللبنانية',
+      titleEn: 'Judicial Investigations & Lebanon Bureau',
+      avatar: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=200&q=80'
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1200',
+    date: '2026-09-16',
+    readTimeAr: '٧ دقائق قراءة قضائية',
+    readTimeEn: '7 min judicial read',
+    isBreaking: true,
+    isFeatured: true,
+    isPremium: false,
+    views: 52400,
+    tags: [
+      'مرفأ_بيروت', 'انفجار_4_آب', 'ميشال_عون', 'طارق_البيطار', 'القاضي_محمد_صعب', 'النيابة_العامة_التمييزية', 'نترات_الأمونيوم', 'العنبر_12', 'حسان_دياب', 'المجلس_العدلي', 'أخبار_لبنان', 'العربي_الجديد',
+      'BeirutPortBlast', 'TarekBitar', 'MichelAoun', 'MohammadSaab', 'LebanonJudiciary', 'AmmoniumNitrate', 'HassanDiab'
+    ],
+    hashtags: ['مرفأ_بيروت', 'انفجار_المرفأ', 'ميشال_عون', 'طارق_البيطار', 'BeirutBlast', 'LebanonNews'],
+    contentAr: `### تطور قضائي مفصلي في قضية انفجار مرفأ بيروت
+#### النيابة العامة التمييزية تطالب باتهام ميشال عون وأكثر من 70 شخصية سياسية وأمنية وقضائية
+**المصدر: العربي الجديد + وثائق النيابة العامة التمييزية — تغطية خاصة ومتابعة توثيقية ALwarraqnews.com**
+
+شهدت قضية انفجار مرفأ بيروت (المؤرَّخة في 4 آب/أغسطس 2020) تطوراً قضائياً مفصلياً يُعدّ الأكثر جرأة منذ سنوات؛ حيث رفعت النيابة العامة التمييزية في لبنان (عبر القاضي محمد صعب) مطالعتها للمحقق العدلي القاضي طارق البيطار، طالبةً توجيه الاتهام الرسمي لعدد كبير من المسؤولين السياسيين والأمنيين، وعلى رأسهم رئيس الجمهورية السابق ميشال عون.
+
+---
+
+### المطالبة باتهام ميشال عون و70 شخصاً
+
+تُحدد المطالعة القضائية الأخيرة المسؤولية الجزائية لأكثر من **70 شخصية** شملت وزراء سابقين، ومسؤولين أمنيين، ومدراء عامين، وقضاة:
+
+* **اتهام ميشال عون:** استندت النيابة العامة إلى "التقصير والإهمال والقصد الاحتمالي"، حيث أثبتت التحقيقات أن عون كان على علم مسبق بوصل تقرير أمني رسمي يُحذّر من خطورة النيترات المخزنة في العنبر رقم 12 قبل أسبوعين من الانفجار، دون اتخاذ أجهزة الدولة السيادية أي إجراء احترازي لمنع الكارثة.
+* **توسع دائرة الاتهام (70 شخصاً):** تتوزع قائمة المتهمين والمطلوب الادعاء عليهم على مختلف مستويات السلطة، بين من أهمل التعامل مع الشحنة منذ وصولها عام 2013، ومن أدار عملية التخزين غير الآمن، ومن تستر على وجودها طوال 7 سنوات.
+
+---
+
+### من كان يعلم بوجود نترات الأمونيوم؟
+
+كشفت التحقيقات والتقارير الأمنية أن شحنة **2750 طناً من نترات الأمونيوم** (التي وصلت على متن السفينة Rhosus عام 2013) لم تكن سراً مكتوماً، بل كانت معلومة لدى أعلى هرم السلطة السياسية والعسكرية والأمنية والقضائية:
+
+#### 1. الرئاسات والحكومات:
+* **ميشال عون (رئيس الجمهورية السابق):** أقرّ علناً بعد الانفجار بأنه علم بالوجود الفعلي للنترات في 20 تموز/يوليو 2020 عبر جهاز أمن الدولة، وصرح بأنه أحال الملف إلى مجلس الدفاع الأعلى.
+* **حسان دياب (رئيس الحكومة السابق):** أُبلغ بالتقرير الأمني ذاته في تموز 2020، وكان قد ألغى زيارة معينة لمعاينة العنبر قبل الكارثة.
+* **وزراء الأشغال والمالية والعدل التعاقبيون (2013-2020):** استلموا مراسلات متعددة بشأن الشحنة المحتجزة والخطورة الناجمة عن إبقائها في المرفأ.
+
+#### 2. الأجهزة الأمنية والعسكرية:
+* **قيادة الجيش وخبراء الهندسة:** تقارير المراسلات تُظهر معرفتهم بوجود النيترات، واقتراح بيعها أو التخلص منها لعدم صلاحية العنبر للتخزين.
+* **جهاز أمن الدولة:** الجهاز الذي أعد التقرير التفصيلي الأخير رفيع المستوى ورفعه لرئاستي الجمهورية والحكومة قبل الانفجار بأيام.
+* **الأمن العام والجمارك:** إدارة الجمارك أرسلت عدة خطابات للقطاع القضائي تطلب إيجاد حل للشحنة دون متابعة جادة تنفيذية.
+
+#### 3. إدارة المرفأ والقضاء:
+* **إدارة وضبط المرفأ:** المسؤولون المباشرون عن تخزين المواد القابلة للانفجار بجانب ألعاب نارية ومواد سريعة الاشتعال في العنبر 12.
+* **قضاة الأمور المستعجلة:** الذين وردتهم طلبات متكررة من الجمارك للبت في مصير الشحنة دون اتخاذ قرارات حازمة لتفريغها أو إبعادها.
+
+---
+
+### المسار القانوني المرتقب
+
+ترمي المطالعة الجديدة بالكرة في ملعب المحقق العدلي القاضي طارق البيطار لإصدار القرار الاتهامي النهائي:
+
+* **تحديد مسار المحاكمات:** يُنتظر أن يحدد القرار الاتهامي مسار المحاكمات أمام المجلس العدلي.
+* **معركة الحصانات والاستدعاءات:** إعادة تسليط الضوء على رفع الحصانات ورفض الاستدعاءات الأمنية والسياسية التي عرقلت التحقيق لسنوات.`,
+    contentEn: `### Watershed Judicial Breakthrough in Beirut Port Blast Case
+#### Court of Cassation Public Prosecution Demands Indictment of Michel Aoun and Over 70 Political and Security Figures
+**Source: Al-Araby Al-Jadeed + Cassation Prosecution Records — Special Monitoring by ALwarraqnews.com**
+
+The investigation into the cataclysmic Beirut Port explosion of August 4, 2020, has witnessed a defining and audacious judicial turning point. Lebanon's Court of Cassation Public Prosecution, represented by Judge Mohammad Saab, has formally delivered its comprehensive indictment plea to Judicial Investigator Judge Tarek Bitar. The prosecution requests formal criminal indictments against an extensive list of top political, military, judicial, and security officials, headed by former President of the Republic Michel Aoun.
+
+---
+
+### Demand for Indictment of Michel Aoun and 70 Individuals
+
+The latest judicial plea delineates criminal liability for more than **70 high-profile individuals**, including former government ministers, senior security agency chiefs, director-generals, and judges:
+
+* **Indictment of Former President Michel Aoun:** The Public Prosecution grounded its charges on "dereliction of duty, criminal negligence, and probable intent" (dolus eventualis). Official findings established that Aoun had received advance knowledge via an official security intelligence briefing warning of the grave hazards posed by the ammonium nitrate stored in Hangar 12 two weeks prior to the blast, without sovereign state institutions executing decisive preventative safeguards.
+* **Expansion of the Indictment Perimeter (70 Officials):** The roster of targeted defendants spans multiple tiers of state authority—encompassing those who neglected the cargo upon its arrival in 2013, those who authorized unsafe warehousing adjacent to flammable fireworks, and those who concealed its presence across seven years.
+
+---
+
+### Who Knew About the Ammonium Nitrate?
+
+Judicial filings and security dossiers reveal that the cargo of **2,750 tons of ammonium nitrate**—transported aboard the vessel MV Rhosus in 2013—was far from an unrevealed mystery. It was thoroughly documented across the apex of political, military, security, and judicial authority:
+
+#### 1. Presidencies and Cabinets:
+* **Michel Aoun (Former President):** Publicly conceded after the blast that he learned of the physical presence of the nitrates on July 20, 2020, through State Security, stating he subsequently referred the dossier to the Supreme Defense Council.
+* **Hassan Diab (Former Prime Minister):** Notified of the identical intelligence report in July 2020; he had scheduled and later canceled an on-site inspection of Hangar 12 shortly before the catastrophe.
+* **Successive Ministers of Public Works, Finance, and Justice (2013–2020):** Received formal written correspondences alerting them to the seized cargo and the existential hazards of leaving it dockside.
+
+#### 2. Military and Security Apparatus:
+* **Army Command and Combat Engineers:** Official logs demonstrate awareness of the chemical stockpile, with past recommendations to either auction or dispose of it due to Hangar 12's unsuitability.
+* **State Security Directorate:** The agency that compiled the comprehensive high-level security brief submitted to both the President and Prime Minister days before the explosion.
+* **General Security and Customs Directorate:** Customs dispatched multiple letters to the judiciary requesting resolution of the cargo, but without energetic executive follow-through.
+
+#### 3. Port Management and Judiciary:
+* **Port Authorities and Harbor Oversight:** Officials directly responsible for permitting volatile explosive materials to sit beside commercial fireworks and combustible substances in Hangar 12.
+* **Summary Affairs Judges:** Magistrates who repeatedly received customs petitions concerning the cargo without issuing decisive eviction or offloading rulings.
+
+---
+
+### The Anticipated Legal Trajectory
+
+The new prosecution submission decisively places the initiative in the hands of Judicial Investigator Judge Tarek Bitar to formulate the final charging document:
+
+* **Defining the Judicial Roadmap:** The prospective indictment will delineate the proceedings and trial hearings before the Supreme Judicial Council.
+* **Confronting Immunity Barriers:** It reignites the battle over lifting parliamentary and executive immunities and defying security summonses that immobilized the judicial process for years.`
+  },
+  {
     id: 'lebanon-fuel-imports-russia-sts-70-percent-investigation',
     slug: 'لبنان-واردات-الوقود-الروسي-70-بالمئة-تحقيق-استقصائي',
     focusKeyword: 'واردات-الوقود-الروسي-لبنان-عمليات-STS-سقف-الأسعار-G7-2Rivers-مارك-أيوب',

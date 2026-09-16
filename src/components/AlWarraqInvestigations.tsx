@@ -73,6 +73,22 @@ export const DOSSIER_DESKTOP_META: Record<string, {
   descAr: string;
   descEn: string;
 }> = {
+  'lebanon-media-law-69-critical-deconstructive-analysis-2026': {
+    fileId: 'AW-LAW-69',
+    badge: 'LEGAL FORENSICS',
+    titleAr: 'تحقيق خاص: قراءة تفكيكية لقانون الإعلام رقم 69 لسنة 2026',
+    titleEn: 'Special Dossier: Forensic Analysis of Lebanon Media Law No. 69 (2026)',
+    descAr: 'تفكيك مادة بمادة لقانون الإعلام الجديد: بين إلغاء التوقيف الاحتياطي وثغرات عقوبة السجن والهيئة الوطنية للإعلام.',
+    descEn: 'Article-by-article legal forensic critique of the new media code, regulatory traps, and free speech guarantees.'
+  },
+  'red-sea-gulf-escalation-washington-tehran-riyadh-houthis-2026': {
+    fileId: 'AW-WAR-09',
+    badge: 'WAR ROOM INTEL',
+    titleAr: 'غرفة العمليات: التصاعد العسكري في البحر الأحمر والخليج',
+    titleEn: 'War Room: Military Escalation in the Red Sea & the Gulf',
+    descAr: 'قراءة في تقاطع المصالح والتهديدات بين واشنطن وطهران والرياض والحوثيين والسيطرة على جزيرة ميون.',
+    descEn: 'Strategic assessment of intersecting interests between Washington, Tehran, Riyadh, and the Houthis.'
+  },
   'damascus-extended-shadow-syrian-role-lebanon-2026': {
     fileId: 'AW-FILE-00',
     badge: 'PRIMARY DOSSIER',

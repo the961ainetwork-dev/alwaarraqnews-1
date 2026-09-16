@@ -56,7 +56,7 @@ export const InvestigativeReports: React.FC<InvestigativeReportsProps> = ({
 }) => {
   const isAr = language === 'ar';
   const [selectedReportId, setSelectedReportId] = useState<string>(
-    initialSelectedReportId || 'ft-israeli-military-religious-zionism-shift-2026'
+    initialSelectedReportId || 'lebanon-media-law-69-critical-deconstructive-analysis-2026'
   );
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xlarge'>('normal');
   const [isReading, setIsReading] = useState(false);
@@ -194,7 +194,9 @@ export const InvestigativeReports: React.FC<InvestigativeReportsProps> = ({
           article.id.includes('cabinet') || 
           article.id.includes('aml') || 
           article.id.includes('fifa') || 
-          article.id.includes('profiteering');
+          article.id.includes('profiteering') ||
+          article.id.includes('media-law') ||
+          article.id.includes('law');
         if (!isGov) return false;
       } else if (activeTopicFilter === 'tech') {
         const isTech = 
